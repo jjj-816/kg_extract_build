@@ -1,0 +1,20 @@
+{
+  "entity": "机械损伤",
+  "raw": "[\n  {\"head\": \"机械损伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防机械损伤的措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"机械损伤\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"穿越道路或其他易受机械损伤的区域\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "机械损伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "防机械损伤的措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "机械损伤",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "穿越道路或其他易受机械损伤的区域",
+      "tail_type": "时空信息"
+    }
+  ]
+}

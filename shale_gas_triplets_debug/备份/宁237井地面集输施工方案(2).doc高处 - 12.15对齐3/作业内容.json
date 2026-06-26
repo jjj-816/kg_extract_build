@@ -1,0 +1,48 @@
+{
+  "entity": "作业内容",
+  "raw": "[\n  {\"head\": \"作业内容\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"开工条件确认\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业内容\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"安全技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业内容\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"确认现场作业相关人员（项目负责人、申请人、安全监护人、特种作业人员）与作业许可指定人员一致（核查有效证件）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业内容\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"严格按照现场技术交底要求，向属地人员、作业人员、安全监护等全体人员明确作业内容、涉及风险作业及应急处置措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业内容\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"我已交代清楚以上事项，本次作业不涉及其它作业内容\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业内容\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"我已理解此项作业内容、范围、风险、控制措施、应急措施以及其他注意事项\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业内容\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"编制依据\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业内容\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"主要作业步骤\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业内容\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"工作内容\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "作业内容",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "开工条件确认",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业内容",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "安全技术交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业内容",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "我已交代清楚以上事项，本次作业不涉及其它作业内容",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业内容",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "编制依据",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业内容",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "主要作业步骤",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业内容",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "工作内容",
+      "tail_type": "作业活动"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "可燃气体检测仪",
+  "raw": "[\n  {\"head\": \"可燃气体检测仪\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"作业区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"可燃气体检测仪\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"受限空间\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"可燃气体检测仪\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"可燃气体检测仪\", \"head_type\": \"设备工具\", \"relation\": \"RECORDED_IN\", \"tail\": \"气体检测记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"可燃气体检测仪\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"气体检测记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"可燃气体检测仪\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"窒息\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "可燃气体检测仪",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "窒息",
+      "tail_type": "风险事件"
+    }
+  ]
+}

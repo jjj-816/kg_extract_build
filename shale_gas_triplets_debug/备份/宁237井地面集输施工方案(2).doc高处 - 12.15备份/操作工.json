@@ -1,0 +1,13 @@
+{
+  "entity": "操作工",
+  "raw": "[\n  {\"head\": \"操作工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"电仪班组\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"操作工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"电工\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"操作工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "操作工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    }
+  ]
+}

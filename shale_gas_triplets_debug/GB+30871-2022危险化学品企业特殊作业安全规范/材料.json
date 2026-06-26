@@ -1,0 +1,27 @@
+{
+  "entity": "材料",
+  "raw": "[\n  {\"head\": \"材料\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"抛掷材料\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"材料\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"投掷工具、材料及其他物品\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"材料\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"易滑动、易滚动的工具、材料堆放在脚手架上\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "材料",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "抛掷材料",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "材料",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "投掷工具、材料及其他物品",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "材料",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "易滑动、易滚动的工具、材料堆放在脚手架上",
+      "tail_type": "风险事件"
+    }
+  ]
+}

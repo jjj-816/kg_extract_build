@@ -1,0 +1,13 @@
+{
+  "entity": "吊装作业",
+  "raw": "[\n  {\"head\": \"吊装作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"人员必须离开吊装半径范围\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "吊装作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "人员必须离开吊装半径范围",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

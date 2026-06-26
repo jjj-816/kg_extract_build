@@ -1,0 +1,13 @@
+{
+  "entity": "临时用电的单相和混用线路要求按照TN-S三相五线制方式接线",
+  "raw": "[\n  {\"head\": \"临时用电的单相和混用线路要求按照TN-S三相五线制方式接线\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"安全措施\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "临时用电的单相和混用线路要求按照TN-S三相五线制方式接线",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "安全措施",
+      "tail_type": "施工记录"
+    }
+  ]
+}

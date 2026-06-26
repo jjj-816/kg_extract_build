@@ -1,0 +1,48 @@
+{
+  "entity": "设备设施",
+  "raw": "[\n  {\"head\": \"设备设施\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"设备装置评估表（工器具确认表）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"设备设施\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"目视化合格标志\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"设备设施\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"进场验收\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"设备设施\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"角磨机\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"设备设施\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"电源线\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"设备设施\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"插座\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "设备设施",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "设备装置评估表（工器具确认表）",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "设备设施",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "目视化合格标志",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "设备设施",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "进场验收",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "设备设施",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "角磨机",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "设备设施",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "电源线",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "设备设施",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "插座",
+      "tail_type": "施工对象"
+    }
+  ]
+}

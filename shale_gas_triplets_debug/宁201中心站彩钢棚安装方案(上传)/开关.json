@@ -1,0 +1,13 @@
+{
+  "entity": "开关",
+  "raw": "[\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"完好\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "完好",
+      "tail_type": "施工参数"
+    }
+  ]
+}

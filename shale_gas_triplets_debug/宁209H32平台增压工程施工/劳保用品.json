@@ -1,0 +1,41 @@
+{
+  "entity": "劳保用品",
+  "raw": "[\n  {\"head\": \"劳保用品\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"碰伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"摔伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"粉尘\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"气体中毒\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "劳保用品",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "劳保用品",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "碰伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "劳保用品",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "摔伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "劳保用品",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "粉尘",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "劳保用品",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "气体中毒",
+      "tail_type": "风险事件"
+    }
+  ]
+}

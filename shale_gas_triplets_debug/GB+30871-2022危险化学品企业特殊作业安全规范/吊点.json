@@ -1,0 +1,20 @@
+{
+  "entity": "吊点",
+  "raw": "[\n  {\"head\": \"吊点\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"吊物重心位置\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"吊点\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"吊装地点\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "吊点",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "吊物重心位置",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "吊点",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "吊装地点",
+      "tail_type": "时空信息"
+    }
+  ]
+}

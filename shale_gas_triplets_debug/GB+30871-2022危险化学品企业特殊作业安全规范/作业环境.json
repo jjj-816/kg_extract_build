@@ -1,0 +1,5 @@
+{
+  "entity": "作业环境",
+  "raw": "[\n  {\"head\": \"作业环境\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"安全要求\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业环境\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"动土作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"作业环境\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"忌氧环境\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业环境\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"平均气温等于或低于 $5^{\\circ}$ C\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业环境\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"有毒气体或空气中含氧量低于 19.5%（体积分数）\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业环境\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"可能会引起各种灾害事故\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": []
+}

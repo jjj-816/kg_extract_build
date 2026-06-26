@@ -1,0 +1,27 @@
+{
+  "entity": "劳保用品",
+  "raw": "[\n  {\"head\": \"劳保用品\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"机械伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"人员伤亡\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"现场\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "劳保用品",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "机械伤害",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "劳保用品",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "人员伤亡",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "劳保用品",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "现场",
+      "tail_type": "时空信息"
+    }
+  ]
+}

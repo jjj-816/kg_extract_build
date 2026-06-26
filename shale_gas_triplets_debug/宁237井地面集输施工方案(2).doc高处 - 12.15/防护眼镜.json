@@ -1,0 +1,20 @@
+{
+  "entity": "防护眼镜",
+  "raw": "[\n  {\"head\": \"防护眼镜\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"人员眼部粉尘伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"防护眼镜\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"正确佩戴护目镜\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "防护眼镜",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "人员眼部粉尘伤害",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "防护眼镜",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "正确佩戴护目镜",
+      "tail_type": "施工参数"
+    }
+  ]
+}

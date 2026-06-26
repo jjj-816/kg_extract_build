@@ -1,0 +1,34 @@
+{
+  "entity": "生产安全",
+  "raw": "[\n  {\"head\": \"生产安全\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"安全措施及应急响应程序\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"生产安全\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"安全生产管理协议\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"生产安全\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"安全生产责任制\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"生产安全\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"危险作业许可制度\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "生产安全",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "安全措施及应急响应程序",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "生产安全",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "安全生产管理协议",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "生产安全",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "安全生产责任制",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "生产安全",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "危险作业许可制度",
+      "tail_type": "控制措施"
+    }
+  ]
+}

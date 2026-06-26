@@ -1,0 +1,27 @@
+{
+  "entity": "打磨",
+  "raw": "[\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"角磨机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电镐\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"防护挡板\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "角磨机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "电镐",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "防护挡板",
+      "tail_type": "施工对象"
+    }
+  ]
+}

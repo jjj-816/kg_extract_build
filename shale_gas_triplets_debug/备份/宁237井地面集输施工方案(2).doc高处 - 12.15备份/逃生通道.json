@@ -1,0 +1,27 @@
+{
+  "entity": "逃生通道",
+  "raw": "[\n  {\"head\": \"逃生通道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"应急措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"逃生通道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"高空坠落应急\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"逃生通道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_OPERATION\", \"tail\": \"疏散人员\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"逃生通道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_OPERATION\", \"tail\": \"清理通道\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"逃生通道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"道路安全畅通\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"逃生通道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"现场人员配置\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "逃生通道",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "应急措施",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "逃生通道",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "道路安全畅通",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "逃生通道",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "现场人员配置",
+      "tail_type": "施工记录"
+    }
+  ]
+}

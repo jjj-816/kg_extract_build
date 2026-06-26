@@ -1,0 +1,20 @@
+{
+  "entity": "项目名称",
+  "raw": "[\n  {\"head\": \"项目名称\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"宁209H16平台\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"项目名称\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"2025年12月16日\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "项目名称",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "宁209H16平台",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "项目名称",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "2025年12月16日",
+      "tail_type": "时空信息"
+    }
+  ]
+}

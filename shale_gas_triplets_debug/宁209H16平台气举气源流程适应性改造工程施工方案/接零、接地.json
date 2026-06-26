@@ -1,0 +1,13 @@
+{
+  "entity": "接零、接地",
+  "raw": "[\n  {\"head\": \"接零、接地\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"用电管理规定要求\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "用电管理规定要求",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "接零、接地",
+      "tail_type": "未分类"
+    }
+  ]
+}

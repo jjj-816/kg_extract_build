@@ -1,0 +1,34 @@
+{
+  "entity": "电缆",
+  "raw": "[\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"电缆沟\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"电缆桥架\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"损坏埋地管线和电缆\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"完好无破损\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "电缆沟",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "电缆桥架",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "损坏埋地管线和电缆",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "完好无破损",
+      "tail_type": "施工参数"
+    }
+  ]
+}

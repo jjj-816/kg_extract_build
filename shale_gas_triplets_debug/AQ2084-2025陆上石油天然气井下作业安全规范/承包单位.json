@@ -1,0 +1,97 @@
+{
+  "entity": "承包单位",
+  "raw": "[\n  {\"head\": \"承包单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"建立企业主要负责人承诺制度\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"承包单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"建立健全安全管理体系\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"承包单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"建立健全并落实安全生产责任制\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"承包单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"建立危险作业许可制度\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"承包单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"满足安全生产条件\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"承包单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"设置安全生产管理机构\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"承包单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"配备专职或兼职安全生产管理人员\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"承包单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"进行安全生产检查\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"承包单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"对发现的问题和隐患采取纠正措施并限期整改\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"承包单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"建立健全井控管理制度\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"承包单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"建立专门的井控费用投入制度性规定和资金渠道\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"承包单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"对从业人员进行井控培训\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"承包单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"监督人员、井下作业队伍负责人及相关管理人员、技术人员、正（副）司钻（班长）、主（副）操作手等现场工作人员应持井控培训合格证上岗\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"承包单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"参与含硫油气井井下作业及从事现场技术服务的人员应接受硫化氢防护技术培训\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"承包单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"持硫化氢培训合格证上岗\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "承包单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "建立企业主要负责人承诺制度",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "承包单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "建立健全安全管理体系",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "承包单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "建立健全并落实安全生产责任制",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "承包单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "建立危险作业许可制度",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "承包单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "满足安全生产条件",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "承包单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "设置安全生产管理机构",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "承包单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "配备专职或兼职安全生产管理人员",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "承包单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "进行安全生产检查",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "承包单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "对发现的问题和隐患采取纠正措施并限期整改",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "承包单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "建立健全井控管理制度",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "承包单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "建立专门的井控费用投入制度性规定和资金渠道",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "承包单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "对从业人员进行井控培训",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "承包单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "持硫化氢培训合格证上岗",
+      "tail_type": "控制措施"
+    }
+  ]
+}

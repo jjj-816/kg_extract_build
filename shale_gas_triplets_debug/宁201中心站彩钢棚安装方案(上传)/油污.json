@@ -1,0 +1,13 @@
+{
+  "entity": "油污",
+  "raw": "[\n  {\"head\": \"油污\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"可燃物\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "油污",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "可燃物",
+      "tail_type": "风险事件"
+    }
+  ]
+}

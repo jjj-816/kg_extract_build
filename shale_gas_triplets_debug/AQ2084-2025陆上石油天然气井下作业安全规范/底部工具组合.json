@@ -1,0 +1,41 @@
+{
+  "entity": "底部工具组合",
+  "raw": "[\n  {\"head\": \"底部工具组合\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"起下管柱\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"底部工具组合\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"旋转作业\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"底部工具组合\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"起下大直径工具\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"底部工具组合\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"钢丝作业\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"底部工具组合\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"空井筒\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "底部工具组合",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "起下管柱",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "底部工具组合",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "旋转作业",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "底部工具组合",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "起下大直径工具",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "底部工具组合",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "钢丝作业",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "底部工具组合",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "空井筒",
+      "tail_type": "风险事件"
+    }
+  ]
+}

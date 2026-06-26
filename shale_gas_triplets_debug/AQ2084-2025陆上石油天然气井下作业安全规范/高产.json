@@ -1,0 +1,20 @@
+{
+  "entity": "高产",
+  "raw": "[\n  {\"head\": \"高产\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"关井、放喷、压井、点火等处理装置\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"高产\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"双地锚（基墩）固定\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "高产",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "关井、放喷、压井、点火等处理装置",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "高产",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "双地锚（基墩）固定",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "GB 51210",
+  "raw": "[\n  {\"head\": \"GB 51210\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"脚手架的搭设、拆除和使用\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "GB 51210",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "脚手架的搭设、拆除和使用",
+      "tail_type": "作业活动"
+    }
+  ]
+}

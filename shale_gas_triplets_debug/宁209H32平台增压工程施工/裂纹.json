@@ -1,0 +1,13 @@
+{
+  "entity": "裂纹",
+  "raw": "[\n  {\"head\": \"裂纹\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"检查法兰的外观是否完好，有无变形、裂纹等缺陷\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "裂纹",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "检查法兰的外观是否完好，有无变形、裂纹等缺陷",
+      "tail_type": "施工记录"
+    }
+  ]
+}

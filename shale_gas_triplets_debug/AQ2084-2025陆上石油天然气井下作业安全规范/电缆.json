@@ -1,0 +1,90 @@
+{
+  "entity": "电缆",
+  "raw": "[\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电缆剪断工具\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"负压条件下的电缆输送射孔作业\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电缆防喷装置\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压力应大于作业时最大井口压力的 1.2 倍\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"稳压时间不少于 10 min\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压降不超过 0.7 MPa\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"注脂控制系统压力和排量\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电缆上提速度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"电缆在注脂控制头遇卡\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"动密封失效\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井口泄漏\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电缆上提或下放过程中应控制速度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电缆\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"关闭电缆防喷器半封闸板\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "电缆剪断工具",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "负压条件下的电缆输送射孔作业",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "电缆防喷装置",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "压力应大于作业时最大井口压力的 1.2 倍",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "稳压时间不少于 10 min",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "压降不超过 0.7 MPa",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "注脂控制系统压力和排量",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "电缆上提速度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "电缆在注脂控制头遇卡",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "动密封失效",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井口泄漏",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "电缆",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "关闭电缆防喷器半封闸板",
+      "tail_type": "施工参数"
+    }
+  ]
+}

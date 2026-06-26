@@ -1,0 +1,20 @@
+{
+  "entity": "现场技术交底",
+  "raw": "[\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"设计复核\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"隔离护栏/围护/警戒带\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"警示标识\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"安全隔离区\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"防火帽\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "设计复核",
+      "tail_type": "作业活动"
+    }
+  ]
+}

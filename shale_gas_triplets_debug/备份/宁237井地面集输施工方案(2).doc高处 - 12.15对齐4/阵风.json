@@ -1,0 +1,34 @@
+{
+  "entity": "阵风",
+  "raw": "[\n  {\"head\": \"阵风\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防滑、防侧翻措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"阵风\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"临边/洞口防护\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"阵风\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"安全带高挂低用\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"阵风\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"操作平台稳固性\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"阵风\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"梯子、脚手架等登高载体稳固搭设\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "阵风",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "防滑、防侧翻措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "阵风",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "临边/洞口防护",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "阵风",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "安全带高挂低用",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "阵风",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "操作平台稳固性",
+      "tail_type": "控制措施"
+    }
+  ]
+}

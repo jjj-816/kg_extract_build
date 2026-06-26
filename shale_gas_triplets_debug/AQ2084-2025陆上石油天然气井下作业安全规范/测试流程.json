@@ -1,0 +1,13 @@
+{
+  "entity": "测试流程",
+  "raw": "[\n  {\"head\": \"测试流程\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"7.7.3\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "测试流程",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "7.7.3",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "防护眼镜",
+  "raw": "[\n  {\"head\": \"防护眼镜\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"打磨、切割时\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"防护眼镜\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"切割打磨、使用电镐时\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "防护眼镜",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "打磨、切割时",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "防护眼镜",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "切割打磨、使用电镐时",
+      "tail_type": "时空信息"
+    }
+  ]
+}

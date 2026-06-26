@@ -1,0 +1,13 @@
+{
+  "entity": "焊瘤",
+  "raw": "[\n  {\"head\": \"焊瘤\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"外观检查与尺寸检查\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "焊瘤",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "外观检查与尺寸检查",
+      "tail_type": "施工记录"
+    }
+  ]
+}

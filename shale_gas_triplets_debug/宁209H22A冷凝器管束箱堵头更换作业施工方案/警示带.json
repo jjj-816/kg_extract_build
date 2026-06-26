@@ -1,0 +1,20 @@
+{
+  "entity": "警示带",
+  "raw": "[\n  {\"head\": \"警示带\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"卷\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"警示带\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"2\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "警示带",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "卷",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "警示带",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "2",
+      "tail_type": "施工参数"
+    }
+  ]
+}

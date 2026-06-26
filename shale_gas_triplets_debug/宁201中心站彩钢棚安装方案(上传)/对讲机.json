@@ -1,0 +1,13 @@
+{
+  "entity": "对讲机",
+  "raw": "[\n  {\"head\": \"对讲机\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"人员进入吊装半径范围内\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "对讲机",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "人员进入吊装半径范围内",
+      "tail_type": "风险事件"
+    }
+  ]
+}

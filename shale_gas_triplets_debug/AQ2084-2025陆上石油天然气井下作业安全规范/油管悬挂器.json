@@ -1,0 +1,27 @@
+{
+  "entity": "油管悬挂器",
+  "raw": "[\n  {\"head\": \"油管悬挂器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"主通径\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"油管悬挂器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"油管头\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"油管悬挂器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"油管头额定工作压力\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "油管悬挂器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "主通径",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "油管悬挂器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "油管头",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "油管悬挂器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "油管头额定工作压力",
+      "tail_type": "施工参数"
+    }
+  ]
+}

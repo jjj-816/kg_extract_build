@@ -1,0 +1,20 @@
+{
+  "entity": "探井",
+  "raw": "[\n  {\"head\": \"探井\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"井口中心点\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"探井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"测井作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"探井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"固井作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"探井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"固井设计\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"探井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"钻井液设计\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"探井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"井喷失控处置\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"探井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"三高油气井、探井和其他重点井监督制度\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "探井",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "井口中心点",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "探井",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "三高油气井、探井和其他重点井监督制度",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "防喷器法兰垫环槽",
+  "raw": "[\n  {\"head\": \"防喷器法兰垫环槽\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"6.1.2.2\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"防喷器法兰垫环槽\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"清理干净,上下螺孔对正,上紧全部连接螺栓,两端无欠扣\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "防喷器法兰垫环槽",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "6.1.2.2",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "防喷器法兰垫环槽",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "清理干净,上下螺孔对正,上紧全部连接螺栓,两端无欠扣",
+      "tail_type": "施工记录"
+    }
+  ]
+}

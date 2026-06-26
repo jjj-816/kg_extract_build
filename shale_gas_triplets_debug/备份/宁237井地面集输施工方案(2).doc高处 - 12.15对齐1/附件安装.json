@@ -1,0 +1,27 @@
+{
+  "entity": "附件安装",
+  "raw": "[\n  {\"head\": \"附件安装\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"阀门\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"附件安装\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"过滤器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"附件安装\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"压力表\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "附件安装",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "阀门",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "附件安装",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "过滤器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "附件安装",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "压力表",
+      "tail_type": "设备工具"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "热变形",
+  "raw": "[\n  {\"head\": \"热变形\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"控制切割过程中的热变形\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"热变形\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"避免影响后续装配\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "热变形",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "控制切割过程中的热变形",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "热变形",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "避免影响后续装配",
+      "tail_type": "控制措施"
+    }
+  ]
+}

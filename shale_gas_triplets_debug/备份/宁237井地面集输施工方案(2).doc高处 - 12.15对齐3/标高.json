@@ -1,0 +1,20 @@
+{
+  "entity": "标高",
+  "raw": "[\n  {\"head\": \"标高\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"垂直度偏差难控制\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"标高\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"高空作业视线易受影响\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "标高",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "垂直度偏差难控制",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "标高",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "高空作业视线易受影响",
+      "tail_type": "施工记录"
+    }
+  ]
+}

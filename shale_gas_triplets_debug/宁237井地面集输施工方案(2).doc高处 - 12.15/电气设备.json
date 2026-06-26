@@ -1,0 +1,27 @@
+{
+  "entity": "电气设备",
+  "raw": "[\n  {\"head\": \"电气设备\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"不乱动机械和电器设备\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"电气设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"停验电并上锁挂牌\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电气设备\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井站\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "电气设备",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "不乱动机械和电器设备",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "电气设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "停验电并上锁挂牌",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电气设备",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井站",
+      "tail_type": "时空信息"
+    }
+  ]
+}

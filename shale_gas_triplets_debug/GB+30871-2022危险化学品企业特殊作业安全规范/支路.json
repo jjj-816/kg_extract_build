@@ -1,0 +1,13 @@
+{
+  "entity": "支路",
+  "raw": "[\n  {\"head\": \"支路\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"生产区域内\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "支路",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "生产区域内",
+      "tail_type": "时空信息"
+    }
+  ]
+}

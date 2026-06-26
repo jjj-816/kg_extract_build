@@ -1,0 +1,5 @@
+{
+  "entity": "钻台",
+  "raw": "[\n  {\"head\": \"钻台\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"6.1.5.4 有钻台作业，应准备好与半封闸板尺寸匹配的防喷单根\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"钻台\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"操作台\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"钻台\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"8.4 钻台(操作台)上下、机泵房等周围不应堆放杂物及易燃易爆物\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": []
+}

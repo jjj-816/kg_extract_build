@@ -1,0 +1,20 @@
+{
+  "entity": "夜间警示灯",
+  "raw": "[\n  {\"head\": \"夜间警示灯\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业现场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"夜间警示灯\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"坑、井、沟、孔洞\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "夜间警示灯",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业现场",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "夜间警示灯",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "坑、井、沟、孔洞",
+      "tail_type": "风险事件"
+    }
+  ]
+}

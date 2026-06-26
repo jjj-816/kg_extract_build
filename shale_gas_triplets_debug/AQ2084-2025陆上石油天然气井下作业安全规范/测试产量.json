@@ -1,0 +1,27 @@
+{
+  "entity": "测试产量",
+  "raw": "[\n  {\"head\": \"测试产量\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"$100 \\\\times 10^{4} \\\\, m^{3}/d$\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"测试产量\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"$500 \\\\, t/d$\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"测试产量\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"本构造邻近井数据\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "测试产量",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "$100 \\times 10^{4} \\, m^{3}/d$",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "测试产量",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "$500 \\, t/d$",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "测试产量",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "本构造邻近井数据",
+      "tail_type": "未分类"
+    }
+  ]
+}

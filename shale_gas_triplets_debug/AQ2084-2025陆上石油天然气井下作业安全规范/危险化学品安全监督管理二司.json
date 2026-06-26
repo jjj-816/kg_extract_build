@@ -1,0 +1,27 @@
+{
+  "entity": "危险化学品安全监督管理二司",
+  "raw": "[\n  {\"head\": \"危险化学品安全监督管理二司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"有毒有害气体监测及人身防护等设备的要求\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"危险化学品安全监督管理二司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"设置观察点,定时取样,测定井场各处有毒有害气体含量,划分安全范围\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"危险化学品安全监督管理二司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"防火防爆和防硫化氢等有毒有害气体的具体措施及器材准备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"危险化学品安全监督管理二司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"硫化氢检测仪器及防护器具的使用、检查和维护\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "危险化学品安全监督管理二司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "有毒有害气体监测及人身防护等设备的要求",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "危险化学品安全监督管理二司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "防火防爆和防硫化氢等有毒有害气体的具体措施及器材准备",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "危险化学品安全监督管理二司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "硫化氢检测仪器及防护器具的使用、检查和维护",
+      "tail_type": "控制措施"
+    }
+  ]
+}

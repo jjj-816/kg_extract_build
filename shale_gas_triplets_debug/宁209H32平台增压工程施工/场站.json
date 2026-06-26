@@ -1,0 +1,13 @@
+{
+  "entity": "场站",
+  "raw": "[\n  {\"head\": \"场站\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"场站区域\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "场站",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "场站区域",
+      "tail_type": "时空信息"
+    }
+  ]
+}

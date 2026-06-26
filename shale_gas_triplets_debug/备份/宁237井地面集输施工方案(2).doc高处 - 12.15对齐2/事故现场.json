@@ -1,0 +1,13 @@
+{
+  "entity": "事故现场",
+  "raw": "[\n  {\"head\": \"事故现场\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"8.高空坠落应急\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "事故现场",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "8.高空坠落应急",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "entity": "受限空间",
+  "raw": "[\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"受限空间进入前确认\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"气体检测合格\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"井口打磨、除锈、喷涂、摄像头立杆、摄像头安装等高处作业、受限空间\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"气体检测仪\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"进入受限空间进行救援前，应明确监护人与救援人员联络方法（口哨，人工喊话等），获得授权的救援人员应佩戴安全带、救生索等便于救援\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"高处作业\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"动火作业\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"天然气泄漏\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"火灾爆炸\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"触电\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"碰伤\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"物体打击\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"机械伤害\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"弧光伤害\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"火花飞溅\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"烫伤\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"车辆移动\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"气体中毒\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"冬季防冻\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"高处坠落\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"脚手架搭建\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"进入受限空间作业必须进行气体检测\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "受限空间进入前确认",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "气体检测合格",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "气体检测仪",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "高处作业",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "动火作业",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "天然气泄漏",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "火灾爆炸",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "触电",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "碰伤",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "物体打击",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "机械伤害",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "弧光伤害",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "火花飞溅",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "烫伤",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "车辆移动",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "气体中毒",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "冬季防冻",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "高处坠落",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "脚手架搭建",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "进入受限空间作业必须进行气体检测",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

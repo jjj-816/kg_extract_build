@@ -1,0 +1,34 @@
+{
+  "entity": "第五章 健康、安全、环保管理",
+  "raw": "[\n  {\"head\": \"第五章 健康、安全、环保管理\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"健康、安全、环保管理\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"第五章 健康、安全、环保管理\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"危害因素\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"第五章 健康、安全、环保管理\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"危害部位及影响\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"第五章 健康、安全、环保管理\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"安全控制措施\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "第五章 健康、安全、环保管理",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "健康、安全、环保管理",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "第五章 健康、安全、环保管理",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "危害因素",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "第五章 健康、安全、环保管理",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "危害部位及影响",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "第五章 健康、安全、环保管理",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "安全控制措施",
+      "tail_type": "规范条款"
+    }
+  ]
+}

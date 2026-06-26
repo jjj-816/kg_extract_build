@@ -1,0 +1,615 @@
+{
+  "entity": "垂直分层作业",
+  "raw": "[\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"吊装作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业申请单位\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业申请时间\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业地点\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业内容\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业高度\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"高处作业级别\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业单位\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"监护人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业负责人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"关联的其他特殊作业及安全作业票编号\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"风险辨识结果\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业实施时间\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"安全措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"安全交底人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"接受交底人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业负责人意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"所在单位意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"审核部门意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"审批部门意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"完工验收签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"升降(吊装)口\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"坑\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"井\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"池\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"沟\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"洞\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"易燃区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"易爆区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"易中毒区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"易灼伤区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"转动设备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"无平台\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"无护栏\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"塔\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"釜\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"炉\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"罐\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"化工容器\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"设备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"架空管道\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"受限空间\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"固壁支撑\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"断路作业\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"动土作业\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"地下隐蔽工程\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"安全帽\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"安全带\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"正压式空气呼吸器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"面罩\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"工具袋\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"安全绳\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"脚手架\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防护网\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"围栏\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"隔离设施\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"梯子\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"绳子\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"轻型棚\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"承重梁\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"柱\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"承重板\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"通信工具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"联络工具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"有毒气体\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"粉尘\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业高度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"高处作业级别\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"风力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"坠落\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"中毒\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"灼伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"爆炸\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"坍塌\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"窒息\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"其他风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"作业地点\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"作业实施时间\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"警戒区\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"露天\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"塔\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"釜\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"炉\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"罐\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"化工容器\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"设备\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"架空管道\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"受限空间\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"固壁支撑\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"断路作业\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"动土作业\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"垂直分层作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"地下隐蔽工程\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "高处作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "吊装作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "作业申请单位",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "作业申请时间",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "作业地点",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "作业内容",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "作业高度",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "高处作业级别",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "作业单位",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "监护人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "作业人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "作业负责人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "关联的其他特殊作业及安全作业票编号",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "风险辨识结果",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "作业实施时间",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "安全措施",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "安全交底人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "接受交底人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "作业负责人意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "所在单位意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "审核部门意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "审批部门意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "完工验收签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "升降(吊装)口",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "坑",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "井",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "池",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "沟",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "洞",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "转动设备",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "无平台",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "无护栏",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "塔",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "釜",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "炉",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "罐",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "化工容器",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "设备",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "架空管道",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "受限空间",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "固壁支撑",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "断路作业",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "动土作业",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "地下隐蔽工程",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "安全帽",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "安全带",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "正压式空气呼吸器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "面罩",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "工具袋",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "安全绳",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "脚手架",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防护网",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "围栏",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "隔离设施",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "梯子",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "绳子",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "轻型棚",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "承重梁",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "柱",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "承重板",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "通信工具",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "联络工具",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "有毒气体",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "粉尘",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业高度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "高处作业级别",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "风力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "中毒",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "灼伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "爆炸",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "作业地点",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "作业实施时间",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "警戒区",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "露天",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "塔",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "釜",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "炉",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "罐",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "化工容器",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "设备",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "架空管道",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "受限空间",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "固壁支撑",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "断路作业",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "动土作业",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "垂直分层作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "地下隐蔽工程",
+      "tail_type": "时空信息"
+    }
+  ]
+}

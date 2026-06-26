@@ -1,0 +1,62 @@
+{
+  "entity": "电缆线路",
+  "raw": "[\n  {\"head\": \"电缆线路\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"0.7m\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电缆线路\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"建筑物墙体根部\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电缆线路\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"机械损伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"电缆线路\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"地面\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电缆线路\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"墙面\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电缆线路\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"2.5m\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电缆线路\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"5m\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电缆线路\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火花损伤\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "电缆线路",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "0.7m",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电缆线路",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "建筑物墙体根部",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电缆线路",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "机械损伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "电缆线路",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "地面",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电缆线路",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "墙面",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电缆线路",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "2.5m",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电缆线路",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "5m",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电缆线路",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火花损伤",
+      "tail_type": "风险事件"
+    }
+  ]
+}

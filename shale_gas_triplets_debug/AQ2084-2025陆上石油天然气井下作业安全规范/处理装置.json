@@ -1,0 +1,69 @@
+{
+  "entity": "处理装置",
+  "raw": "[\n  {\"head\": \"处理装置\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"高压、高产油气井\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"处理装置\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"高含硫油气井\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"处理装置\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"关井\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"处理装置\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"放喷\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"处理装置\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"压井\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"处理装置\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"点火\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"处理装置\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"气体检测\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"处理装置\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"报警\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"处理装置\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"排风扩散\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "处理装置",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "高压、高产油气井",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "处理装置",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "高含硫油气井",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "处理装置",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "关井",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "处理装置",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "放喷",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "处理装置",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "压井",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "处理装置",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "点火",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "处理装置",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "气体检测",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "处理装置",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "报警",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "处理装置",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "排风扩散",
+      "tail_type": "风险事件"
+    }
+  ]
+}

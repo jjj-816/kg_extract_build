@@ -1,0 +1,83 @@
+{
+  "entity": "井站",
+  "raw": "[\n  {\"head\": \"井站\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"工作前安全分析表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井站\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"派工单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井站\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"逃生通道\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井站\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"逃生门\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井站\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"风向标\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井站\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"灭火器\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井站\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"可燃气体检测仪\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井站\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"报警声音\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井站\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"应急指挥人\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井站\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"清楚\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井站\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"不清楚\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "井站",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "工作前安全分析表",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井站",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "派工单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井站",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "逃生通道",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井站",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "逃生门",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井站",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "风向标",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井站",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "灭火器",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井站",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "可燃气体检测仪",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井站",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "报警声音",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井站",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "应急指挥人",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井站",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "清楚",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井站",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "不清楚",
+      "tail_type": "施工记录"
+    }
+  ]
+}

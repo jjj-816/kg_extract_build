@@ -1,0 +1,41 @@
+{
+  "entity": "机械伤害",
+  "raw": "[\n  {\"head\": \"机械伤害\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"关停设备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"机械伤害\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"拴挂保险绳\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"机械伤害\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"机械通风\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"机械伤害\", \"head_type\": \"风险事件\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"危险传动、转动部位\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"机械伤害\", \"head_type\": \"风险事件\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物料堆积\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"机械伤害\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "机械伤害",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "关停设备",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "机械伤害",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "拴挂保险绳",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "机械伤害",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "机械通风",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "危险传动、转动部位",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "机械伤害",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "物料堆积",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "机械伤害",
+      "tail_type": "风险事件"
+    }
+  ]
+}

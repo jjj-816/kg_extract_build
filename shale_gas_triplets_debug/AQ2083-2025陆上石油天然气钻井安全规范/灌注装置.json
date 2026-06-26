@@ -1,0 +1,13 @@
+{
+  "entity": "灌注装置",
+  "raw": "[\n  {\"head\": \"灌注装置\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"钻井液循环罐液面监测与报警装置\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "灌注装置",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "钻井液循环罐液面监测与报警装置",
+      "tail_type": "未分类"
+    }
+  ]
+}

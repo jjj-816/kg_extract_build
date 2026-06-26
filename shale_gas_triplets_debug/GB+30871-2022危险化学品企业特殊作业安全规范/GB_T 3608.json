@@ -1,0 +1,5 @@
+{
+  "entity": "GB/T 3608",
+  "raw": "[\n  {\"head\": \"GB/T 3608\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"作业高度 h\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"GB/T 3608\", \"head_type\": \"规范条款\", \"relation\": \"SPECIFIES_THRESHOLD\", \"tail\": \"$2 \\, m \\leqslant h \\leqslant 5 \\, m$\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"GB/T 3608\", \"head_type\": \"规范条款\", \"relation\": \"SPECIFIES_THRESHOLD\", \"tail\": \"$5 \\, m < h \\leqslant 15 \\, m$\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"GB/T 3608\", \"head_type\": \"规范条款\", \"relation\": \"SPECIFIES_THRESHOLD\", \"tail\": \"$15 \\, m < h \\leqslant 30 \\, m$\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"GB/T 3608\", \"head_type\": \"规范条款\", \"relation\": \"SPECIFIES_THRESHOLD\", \"tail\": \"$h > 30 \\, m$\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": []
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "双钩安全带",
+  "raw": "[\n  {\"head\": \"双钩安全带\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"双钩安全带\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"安全防护难点作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "高处作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "双钩安全带",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "安全防护难点作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "双钩安全带",
+      "tail_type": "设备工具"
+    }
+  ]
+}

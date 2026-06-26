@@ -1,0 +1,13 @@
+{
+  "entity": "车辆移动",
+  "raw": "[\n  {\"head\": \"车辆移动\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"放置枕木\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "车辆移动",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "放置枕木",
+      "tail_type": "控制措施"
+    }
+  ]
+}

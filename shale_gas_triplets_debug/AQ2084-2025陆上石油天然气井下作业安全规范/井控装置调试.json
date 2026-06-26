@@ -1,0 +1,20 @@
+{
+  "entity": "井控装置调试",
+  "raw": "[\n  {\"head\": \"井控装置调试\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"井控装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"井控装置调试\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"按设计要求安装井控装置\", \"tail_type\": \"未分类\"},\n  {\"head\": \"井控装置调试\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"准备好内防喷工具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"井控装置调试\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"防喷单根（或短节）\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"井控装置调试\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"配合接头\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "井控装置调试",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "井控装置",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "井控装置调试",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "按设计要求安装井控装置",
+      "tail_type": "未分类"
+    }
+  ]
+}

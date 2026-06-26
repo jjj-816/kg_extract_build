@@ -1,0 +1,20 @@
+{
+  "entity": "除锈",
+  "raw": "[\n  {\"head\": \"除锈\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防护眼镜\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"除锈\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防毒口罩\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "除锈",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防护眼镜",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "除锈",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防毒口罩",
+      "tail_type": "设备工具"
+    }
+  ]
+}

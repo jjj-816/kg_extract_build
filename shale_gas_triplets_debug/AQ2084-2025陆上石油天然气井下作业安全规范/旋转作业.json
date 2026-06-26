@@ -1,0 +1,34 @@
+{
+  "entity": "旋转作业",
+  "raw": "[\n  {\"head\": \"旋转作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"起下管柱\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"旋转作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"起下大直径工具\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"旋转作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"钢丝作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"旋转作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"空井筒\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "旋转作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "起下管柱",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "旋转作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "起下大直径工具",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "旋转作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "钢丝作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "旋转作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "空井筒",
+      "tail_type": "作业活动"
+    }
+  ]
+}

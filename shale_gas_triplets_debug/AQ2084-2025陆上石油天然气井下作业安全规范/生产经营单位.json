@@ -1,0 +1,48 @@
+{
+  "entity": "生产经营单位",
+  "raw": "[\n  {\"head\": \"生产经营单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"作业活动\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"生产经营单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全生产管理协议\", \"tail_type\": \"未分类\"},\n  {\"head\": \"生产经营单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"井控管理制度\", \"tail_type\": \"未分类\"},\n  {\"head\": \"生产经营单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"企业主体责任\", \"tail_type\": \"未分类\"},\n  {\"head\": \"生产经营单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"企业主要负责人承诺制度\", \"tail_type\": \"未分类\"},\n  {\"head\": \"生产经营单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"监督管理机制\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "生产经营单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "作业活动",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "生产经营单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全生产管理协议",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "生产经营单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "井控管理制度",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "生产经营单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "企业主体责任",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "生产经营单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "企业主要负责人承诺制度",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "生产经营单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "监督管理机制",
+      "tail_type": "未分类"
+    }
+  ]
+}

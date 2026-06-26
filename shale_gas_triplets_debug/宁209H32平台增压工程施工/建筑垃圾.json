@@ -1,0 +1,13 @@
+{
+  "entity": "建筑垃圾",
+  "raw": "[\n  {\"head\": \"建筑垃圾\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"地基沉降\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "建筑垃圾",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "地基沉降",
+      "tail_type": "风险事件"
+    }
+  ]
+}

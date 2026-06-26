@@ -1,0 +1,111 @@
+{
+  "entity": "作业人员",
+  "raw": "[\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"了解和熟悉现场环境\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"核实安全措施的可靠性\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"熟悉应急救援器材的位置及分布\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"立即停止作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"迅速撤离\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"通知相关单位及人员\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"持有效资格证书上岗\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"配备和使用的个体防护装备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"行为和现场安全作业条件\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全协调与联系\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"制止违章\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"收回安全作业票\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"中止作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"正确穿戴相应的个体防护装备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"与监护人员保持联络\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"携带与作业无关的物品\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "了解和熟悉现场环境",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "核实安全措施的可靠性",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "熟悉应急救援器材的位置及分布",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "立即停止作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "迅速撤离",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "通知相关单位及人员",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "持有效资格证书上岗",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "配备和使用的个体防护装备",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "行为和现场安全作业条件",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全协调与联系",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "制止违章",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "收回安全作业票",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "中止作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "正确穿戴相应的个体防护装备",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "携带与作业无关的物品",
+      "tail_type": "风险事件"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "触电",
+  "raw": "[\n  {\"head\": \"触电\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"正确佩戴橡胶绝缘手套，使用完好合格电器设备设施（角磨机、电源线、插座等）\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"触电\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"对电源导线定期进行检查，绝缘损坏的和有严重压痕的禁止使用\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"触电\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"立即停止作业，评估现场环境（如是否有二次坠落风险、触电风险等），设置警戒区域，禁止无关人员进入\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "触电",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "对电源导线定期进行检查，绝缘损坏的和有严重压痕的禁止使用",
+      "tail_type": "控制措施"
+    }
+  ]
+}

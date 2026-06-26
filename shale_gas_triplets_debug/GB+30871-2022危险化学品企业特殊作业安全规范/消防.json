@@ -1,0 +1,34 @@
+{
+  "entity": "消防",
+  "raw": "[\n  {\"head\": \"消防\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"消防通道\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"消防\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"消防器材\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"消防\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"消防车通行\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"消防\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"消防管线\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"消防\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"火灾爆炸危险场所\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "消防",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "消防通道",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "消防",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "消防器材",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "消防",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "消防管线",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "消防",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "火灾爆炸危险场所",
+      "tail_type": "风险事件"
+    }
+  ]
+}

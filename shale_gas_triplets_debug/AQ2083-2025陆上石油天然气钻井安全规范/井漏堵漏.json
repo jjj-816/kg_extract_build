@@ -1,0 +1,41 @@
+{
+  "entity": "井漏堵漏",
+  "raw": "[\n  {\"head\": \"井漏堵漏\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"起钻前\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"井漏堵漏\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"井筒\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"井漏堵漏\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"钻井液\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"井漏堵漏\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"水泥浆\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"井漏堵漏\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井喷\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "井漏堵漏",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "起钻前",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "井漏堵漏",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "井筒",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "井漏堵漏",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "钻井液",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "井漏堵漏",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "水泥浆",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "井漏堵漏",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井喷",
+      "tail_type": "风险事件"
+    }
+  ]
+}

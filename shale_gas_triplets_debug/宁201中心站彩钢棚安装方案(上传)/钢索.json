@@ -1,0 +1,13 @@
+{
+  "entity": "钢索",
+  "raw": "[\n  {\"head\": \"钢索\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"吊装前吊车及钢索检查不到位\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"钢索\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"检查到位\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "钢索",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "检查到位",
+      "tail_type": "施工参数"
+    }
+  ]
+}

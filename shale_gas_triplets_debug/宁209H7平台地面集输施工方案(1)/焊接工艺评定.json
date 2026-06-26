@@ -1,0 +1,48 @@
+{
+  "entity": "焊接工艺评定",
+  "raw": "[\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"焊接过程控制\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"焊后处理与检验\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"焊接工艺规程（WPS）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"焊工资格证书\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"工艺管线\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"焊工专用劳保\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"弧光\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"高\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "焊接工艺评定",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "焊接过程控制",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "焊接工艺评定",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "焊后处理与检验",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "焊接工艺评定",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "焊接工艺规程（WPS）",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "焊接工艺评定",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "工艺管线",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "焊接工艺评定",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "焊工专用劳保",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "焊接工艺评定",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "弧光",
+      "tail_type": "施工参数"
+    }
+  ]
+}

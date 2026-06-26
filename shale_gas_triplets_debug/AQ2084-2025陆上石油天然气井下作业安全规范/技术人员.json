@@ -1,0 +1,20 @@
+{
+  "entity": "技术人员",
+  "raw": "[\n  {\"head\": \"技术人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"井控培训\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"技术人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"持井控培训合格证上岗\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "技术人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "井控培训",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "技术人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "持井控培训合格证上岗",
+      "tail_type": "作业活动"
+    }
+  ]
+}

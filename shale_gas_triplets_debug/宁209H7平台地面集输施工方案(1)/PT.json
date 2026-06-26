@@ -1,0 +1,13 @@
+{
+  "entity": "PT",
+  "raw": "[\n  {\"head\": \"PT\", \"head_type\": \"未分类\", \"relation\": \"OPERATES_ON\", \"tail\": \"表面和近表面缺陷\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"PT\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"渗透检测\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "PT",
+      "head_type": "未分类",
+      "relation": "OPERATES_ON",
+      "tail": "表面和近表面缺陷",
+      "tail_type": "施工对象"
+    }
+  ]
+}

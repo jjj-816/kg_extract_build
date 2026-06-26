@@ -1,0 +1,20 @@
+{
+  "entity": "配电箱",
+  "raw": "[\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"漏电保护装置灵敏可靠\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"2025.12.16\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "配电箱",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "漏电保护装置灵敏可靠",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "配电箱",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "2025.12.16",
+      "tail_type": "时空信息"
+    }
+  ]
+}

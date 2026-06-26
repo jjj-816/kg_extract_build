@@ -1,0 +1,27 @@
+{
+  "entity": "注脂控制头",
+  "raw": "[\n  {\"head\": \"注脂控制头\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"电缆在注脂控制头遇卡\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"注脂控制头\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"动密封失效\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"注脂控制头\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井口泄漏\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "注脂控制头",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "电缆在注脂控制头遇卡",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "注脂控制头",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "动密封失效",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "注脂控制头",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井口泄漏",
+      "tail_type": "风险事件"
+    }
+  ]
+}

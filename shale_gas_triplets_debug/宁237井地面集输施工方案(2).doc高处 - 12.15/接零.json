@@ -1,0 +1,13 @@
+{
+  "entity": "接零",
+  "raw": "[\n  {\"head\": \"接零\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"用电管理规定要求\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "接零",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "用电管理规定要求",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "entity": "绳不齐",
+  "raw": "[\n  {\"head\": \"绳不齐\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"吊物捆扎坚固,未见绳打结、绳不齐现象,棱角吊物已采取衬垫措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"绳不齐\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"吊装绳索、揽风绳、拖拉绳等不应与带电线路接触,并保持安全距离\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"绳不齐\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"不应利用管道、管架、电杆、机电设备等作吊装锚点\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"绳不齐\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"吊物捆扎坚固,未见绳打结、绳不齐现象,棱角吊物已采取衬垫措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "绳不齐",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "吊物捆扎坚固,未见绳打结、绳不齐现象,棱角吊物已采取衬垫措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "绳不齐",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "吊装绳索、揽风绳、拖拉绳等不应与带电线路接触,并保持安全距离",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "绳不齐",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "不应利用管道、管架、电杆、机电设备等作吊装锚点",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "绳不齐",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "吊物捆扎坚固,未见绳打结、绳不齐现象,棱角吊物已采取衬垫措施",
+      "tail_type": "控制措施"
+    }
+  ]
+}

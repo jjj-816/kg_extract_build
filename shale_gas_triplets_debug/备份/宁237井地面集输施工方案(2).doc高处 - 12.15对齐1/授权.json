@@ -1,0 +1,13 @@
+{
+  "entity": "授权",
+  "raw": "[\n  {\"head\": \"授权\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"解除安全控制\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"授权\", \"head_type\": \"控制措施\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"批准人\", \"tail_type\": \"责任主体\"}\n]",
+  "triplets": [
+    {
+      "head": "批准人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "授权",
+      "tail_type": "控制措施"
+    }
+  ]
+}

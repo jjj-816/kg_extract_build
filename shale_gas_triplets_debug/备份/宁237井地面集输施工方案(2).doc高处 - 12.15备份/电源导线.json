@@ -1,0 +1,27 @@
+{
+  "entity": "电源导线",
+  "raw": "[\n  {\"head\": \"电源导线\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"电源导线\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电动扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"电源导线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"电源导线\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"配电箱\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"电源导线\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"发电机\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"电源导线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"漏电保护\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电源导线\", \"head_type\": \"设备工具\", \"relation\": \"RECORDS_IN\", \"tail\": \"日报\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"电源导线\", \"head_type\": \"设备工具\", \"relation\": \"REGULATES\", \"tail\": \"停验电\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"电源导线\", \"head_type\": \"设备工具\", \"relation\": \"REGULATES\", \"tail\": \"上锁挂牌\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"电源导线\", \"head_type\": \"设备工具\", \"relation\": \"REGULATES\", \"tail\": \"操作规程\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"电源导线\", \"head_type\": \"设备工具\", \"relation\": \"REGULATES\", \"tail\": \"GB50183-2004\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "电源导线",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "漏电保护",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "操作规程",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "电源导线",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "GB50183-2004",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "电源导线",
+      "tail_type": "设备工具"
+    }
+  ]
+}

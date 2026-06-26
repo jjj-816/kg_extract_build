@@ -1,0 +1,34 @@
+{
+  "entity": "下套管",
+  "raw": "[\n  {\"head\": \"下套管\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"电测\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"下套管\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"下油管\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"下套管\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"中途测试\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"下套管\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"起钻\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "下套管",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "电测",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "下套管",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "下油管",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "下套管",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "中途测试",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "下套管",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "起钻",
+      "tail_type": "作业活动"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "entity": "动火作业级别",
+  "raw": "[\n  {\"head\": \"动火作业级别\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"特级动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业级别\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"一级动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业级别\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"二级动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业级别\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"30 min\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"动火作业级别\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"60 min\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"动火作业级别\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾爆炸危险场所\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "动火作业级别",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "特级动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业级别",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "一级动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业级别",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "二级动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业级别",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "30 min",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "动火作业级别",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "60 min",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "动火作业级别",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾爆炸危险场所",
+      "tail_type": "风险事件"
+    }
+  ]
+}

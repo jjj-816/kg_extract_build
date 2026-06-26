@@ -1,0 +1,34 @@
+{
+  "entity": "作业场所",
+  "raw": "[\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"土建班组\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"大工\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"4\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "土建班组",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "大工",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "4",
+      "tail_type": "施工参数"
+    }
+  ]
+}

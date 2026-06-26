@@ -1,0 +1,27 @@
+{
+  "entity": "《天然气压缩机安装工程施工技术规范》（SY/T4111-2018）",
+  "raw": "[\n  {\"head\": \"《天然气压缩机安装工程施工技术规范》（SY/T4111-2018）\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"工艺管线预制、焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《天然气压缩机安装工程施工技术规范》（SY/T4111-2018）\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"配备气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"《天然气压缩机安装工程施工技术规范》（SY/T4111-2018）\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"作业前对作业区域进行气体检测\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《天然气压缩机安装工程施工技术规范》（SY/T4111-2018）\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"气体检测合格后方可进行施工作业\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "《天然气压缩机安装工程施工技术规范》（SY/T4111-2018）",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "工艺管线预制、焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《天然气压缩机安装工程施工技术规范》（SY/T4111-2018）",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "作业前对作业区域进行气体检测",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《天然气压缩机安装工程施工技术规范》（SY/T4111-2018）",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "气体检测合格后方可进行施工作业",
+      "tail_type": "控制措施"
+    }
+  ]
+}

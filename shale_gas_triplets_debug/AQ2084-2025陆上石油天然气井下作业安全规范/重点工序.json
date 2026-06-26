@@ -1,0 +1,27 @@
+{
+  "entity": "重点工序",
+  "raw": "[\n  {\"head\": \"重点工序\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"人员培训\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"重点工序\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"施工作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"重点工序\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"管理要求\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "重点工序",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "人员培训",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "重点工序",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "施工作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "重点工序",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "管理要求",
+      "tail_type": "施工记录"
+    }
+  ]
+}

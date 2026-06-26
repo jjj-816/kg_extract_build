@@ -1,0 +1,34 @@
+{
+  "entity": "现场作业人员",
+  "raw": "[\n  {\"head\": \"现场作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"井控风险防控\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"现场作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"硫化氢防护\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"现场作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"应急处置程序\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "现场作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "技术交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "井控风险防控",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "现场作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "硫化氢防护",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "现场作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "应急处置程序",
+      "tail_type": "控制措施"
+    }
+  ]
+}

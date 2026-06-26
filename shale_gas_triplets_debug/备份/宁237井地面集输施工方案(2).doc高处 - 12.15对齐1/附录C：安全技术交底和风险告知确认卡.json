@@ -1,0 +1,5 @@
+{
+  "entity": "附录C：安全技术交底和风险告知确认卡",
+  "raw": "[\n  {\"head\": \"附录C：安全技术交底和风险告知确认卡\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"附录C：安全技术交底和风险告知确认卡\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"设备装置评估表（工器具确认表）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"附录C：安全技术交底和风险告知确认卡\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"4.2.工作前安全分析\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"附录C：安全技术交底和风险告知确认卡\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"安全措施： 严格执行停电、挂牌、上锁制度\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": []
+}

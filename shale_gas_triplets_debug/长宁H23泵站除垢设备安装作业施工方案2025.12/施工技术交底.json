@@ -1,0 +1,55 @@
+{
+  "entity": "施工技术交底",
+  "raw": "[\n  {\"head\": \"施工技术交底\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"安全技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"入场人员提前做好安全交底\", \"tail_type\": \"未分类\"},\n  {\"head\": \"施工技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"劳保着装整齐\", \"tail_type\": \"未分类\"},\n  {\"head\": \"施工技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"施工机组相关人员\", \"tail_type\": \"未分类\"},\n  {\"head\": \"施工技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"焊接设备完好\", \"tail_type\": \"未分类\"},\n  {\"head\": \"施工技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"施工人员持证上岗\", \"tail_type\": \"未分类\"},\n  {\"head\": \"施工技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"《现场设备、工业管道焊接工程施工规范》 （GB50236-2011）\", \"tail_type\": \"未分类\"},\n  {\"head\": \"施工技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"施工现场配备灭火器\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "施工技术交底",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "安全技术交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工技术交底",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "入场人员提前做好安全交底",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "施工技术交底",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "劳保着装整齐",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "施工技术交底",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "施工机组相关人员",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "施工技术交底",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "焊接设备完好",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "施工技术交底",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "施工人员持证上岗",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "施工技术交底",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "施工现场配备灭火器",
+      "tail_type": "未分类"
+    }
+  ]
+}

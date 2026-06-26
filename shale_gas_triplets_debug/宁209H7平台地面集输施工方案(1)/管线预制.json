@@ -1,0 +1,5 @@
+{
+  "entity": "管线预制",
+  "raw": "[\n  {\"head\": \"管线预制\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"管道打磨\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管线预制\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"防雷接地扁铁焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管线预制\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"电缆沟开挖及回填等土建作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管线预制\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管道打磨\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管线预制\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"防雷接地扁铁焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管线预制\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"工艺管线\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管线预制\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"对口器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"管线预制\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"作业条件确认\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": []
+}

@@ -1,0 +1,111 @@
+{
+  "entity": "管沟开挖",
+  "raw": "[\n  {\"head\": \"管沟开挖\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"工艺管道切割\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟开挖\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"工艺管道焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟开挖\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"设备安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟开挖\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"吹扫\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟开挖\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"管沟回填\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟开挖\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"管沟开挖\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"损坏埋地管线和电缆\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"管沟开挖\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"作业前根据实际情况编制施工方案\", \"tail_type\": \"未分类\"},\n  {\"head\": \"管沟开挖\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"标注在运管线、电缆、光纤等路径\", \"tail_type\": \"未分类\"},\n  {\"head\": \"管沟开挖\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"相关方人员审核确认\", \"tail_type\": \"未分类\"},\n  {\"head\": \"管沟开挖\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管道切割\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟开挖\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管道焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟开挖\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"设备安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟开挖\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"吹扫\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟开挖\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管沟回填\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "管沟开挖",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "工艺管道切割",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟开挖",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "工艺管道焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟开挖",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "设备安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟开挖",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "吹扫",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟开挖",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "管沟回填",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟开挖",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "管沟开挖",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "损坏埋地管线和电缆",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "管沟开挖",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "作业前根据实际情况编制施工方案",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "管沟开挖",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "标注在运管线、电缆、光纤等路径",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "管沟开挖",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "相关方人员审核确认",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "管沟开挖",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管道切割",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟开挖",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管道焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟开挖",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "设备安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟开挖",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "吹扫",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟开挖",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管沟回填",
+      "tail_type": "作业活动"
+    }
+  ]
+}

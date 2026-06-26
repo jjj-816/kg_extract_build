@@ -1,0 +1,13 @@
+{
+  "entity": "中毒反应",
+  "raw": "[\n  {\"head\": \"中毒反应\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"硫化氢的来源、理化特性、中毒反应及中毒的现场救护\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "中毒反应",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "硫化氢的来源、理化特性、中毒反应及中毒的现场救护",
+      "tail_type": "施工记录"
+    }
+  ]
+}

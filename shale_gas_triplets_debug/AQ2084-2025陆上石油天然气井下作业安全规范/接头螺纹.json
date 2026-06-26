@@ -1,0 +1,13 @@
+{
+  "entity": "接头螺纹",
+  "raw": "[\n  {\"head\": \"接头螺纹\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"内防喷工具接头螺纹类型\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "接头螺纹",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "内防喷工具接头螺纹类型",
+      "tail_type": "施工参数"
+    }
+  ]
+}

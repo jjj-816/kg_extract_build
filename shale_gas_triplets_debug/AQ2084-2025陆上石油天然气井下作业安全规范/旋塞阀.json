@@ -1,0 +1,41 @@
+{
+  "entity": "旋塞阀",
+  "raw": "[\n  {\"head\": \"旋塞阀\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压力等级\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"旋塞阀\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"105 MPa 以上\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"旋塞阀\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业层位\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"旋塞阀\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"操作平台上\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"旋塞阀\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"第一根管柱或方钻杆下\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "旋塞阀",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "压力等级",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "旋塞阀",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "105 MPa 以上",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "旋塞阀",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业层位",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "旋塞阀",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "操作平台上",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "旋塞阀",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "第一根管柱或方钻杆下",
+      "tail_type": "时空信息"
+    }
+  ]
+}

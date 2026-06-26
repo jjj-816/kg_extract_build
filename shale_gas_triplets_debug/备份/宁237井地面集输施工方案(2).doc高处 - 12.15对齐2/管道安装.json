@@ -1,0 +1,34 @@
+{
+  "entity": "管道安装",
+  "raw": "[\n  {\"head\": \"管道安装\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"管道内部清洁\", \"tail_type\": \"未分类\"},\n  {\"head\": \"管道安装\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"焊接或法兰连接质量符合规范\", \"tail_type\": \"未分类\"},\n  {\"head\": \"管道安装\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"支架牢固可靠\", \"tail_type\": \"未分类\"},\n  {\"head\": \"管道安装\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"《天然气压缩机安装工程施工技术规范》（SY/T4111-2018）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"管道安装\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"《工业金属管道工程施工质量验收规范》（GB 50184-2011）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"管道安装\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"宁237井地面集输工程\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "管道安装",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "管道内部清洁",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管道安装",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "焊接或法兰连接质量符合规范",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "管道安装",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "支架牢固可靠",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "管道安装",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "宁237井地面集输工程",
+      "tail_type": "时空信息"
+    }
+  ]
+}

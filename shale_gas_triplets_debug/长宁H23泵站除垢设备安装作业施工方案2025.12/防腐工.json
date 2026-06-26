@@ -1,0 +1,13 @@
+{
+  "entity": "防腐工",
+  "raw": "[\n  {\"head\": \"防腐工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"防腐作业时施工人员佩戴好防毒口罩\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "防腐工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "防腐作业时施工人员佩戴好防毒口罩",
+      "tail_type": "作业活动"
+    }
+  ]
+}

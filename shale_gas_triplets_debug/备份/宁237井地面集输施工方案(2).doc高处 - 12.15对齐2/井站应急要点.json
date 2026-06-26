@@ -1,0 +1,97 @@
+{
+  "entity": "井站应急要点",
+  "raw": "[\n  {\"head\": \"井站应急要点\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"逃生通道\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"井站应急要点\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"逃生门\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"井站应急要点\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"风向标\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"井站应急要点\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"灭火器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"井站应急要点\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"可燃气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"井站应急要点\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"应急指挥人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井站应急要点\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"穿戴好防静电劳保用品\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井站应急要点\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"配备防火帽\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井站应急要点\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"高空坠落应急\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井站应急要点\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井站应急要点\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"坠落、中暑等突发情况的应急方案\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井站应急要点\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"配备应急救援器材\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井站应急要点\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"泄漏、火灾、设备故障等突发情况的应急预案\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "井站应急要点",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "逃生通道",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "井站应急要点",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "逃生门",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "井站应急要点",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "风向标",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "井站应急要点",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "灭火器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "井站应急要点",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "可燃气体检测仪",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "井站应急要点",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "应急指挥人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井站应急要点",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "穿戴好防静电劳保用品",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井站应急要点",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "配备防火帽",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井站应急要点",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "高空坠落应急",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井站应急要点",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井站应急要点",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "坠落、中暑等突发情况的应急方案",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井站应急要点",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "配备应急救援器材",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井站应急要点",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "泄漏、火灾、设备故障等突发情况的应急预案",
+      "tail_type": "作业活动"
+    }
+  ]
+}

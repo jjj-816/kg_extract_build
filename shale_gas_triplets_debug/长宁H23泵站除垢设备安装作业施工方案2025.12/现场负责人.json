@@ -1,0 +1,34 @@
+{
+  "entity": "现场负责人",
+  "raw": "[\n  {\"head\": \"现场负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"实施现场救护伤员\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"指定专人组织无关人员疏散\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"现场负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"立即停止所有作业，撤离人员到安全地带\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"现场负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"立即拨打 120 急救电话，电话中说明事故地点、性质、联系人电\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"现场负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场人员配置\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "现场负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "实施现场救护伤员",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "指定专人组织无关人员疏散",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "现场负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "立即停止所有作业，撤离人员到安全地带",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "现场负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场人员配置",
+      "tail_type": "未分类"
+    }
+  ]
+}

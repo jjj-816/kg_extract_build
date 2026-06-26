@@ -1,0 +1,20 @@
+{
+  "entity": "灼热部位",
+  "raw": "[\n  {\"head\": \"灼热部位\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"切割灼热物体\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"灼热部位\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"安全区域\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "灼热部位",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "切割灼热物体",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "灼热部位",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "安全区域",
+      "tail_type": "施工对象"
+    }
+  ]
+}

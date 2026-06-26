@@ -1,0 +1,76 @@
+{
+  "entity": "作业完毕",
+  "raw": "[\n  {\"head\": \"作业完毕\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"恢复作业时拆移的盖板、箅子板、扶手、栏杆、防护罩等安全设施的使用功能\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业完毕\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"恢复临时封闭的沟渠或地井\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业完毕\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"清理作业现场\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业完毕\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"恢复原状\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业完毕\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"进行验收确认\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业完毕\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"清理现场\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业完毕\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"确认无残留火种\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业完毕\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"再次进行清点\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业完毕\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"登记\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业完毕\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"清点\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业完毕\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"做如下工作\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "作业完毕",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "恢复临时封闭的沟渠或地井",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业完毕",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "清理作业现场",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业完毕",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "恢复原状",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业完毕",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "进行验收确认",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业完毕",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "清理现场",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业完毕",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "确认无残留火种",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业完毕",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "再次进行清点",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业完毕",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "登记",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业完毕",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "清点",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业完毕",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "做如下工作",
+      "tail_type": "作业活动"
+    }
+  ]
+}

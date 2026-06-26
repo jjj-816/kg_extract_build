@@ -1,0 +1,13 @@
+{
+  "entity": "除硫剂",
+  "raw": "[\n  {\"head\": \"除硫剂\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"硫化氢腐蚀及防腐\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "除硫剂",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "硫化氢腐蚀及防腐",
+      "tail_type": "风险事件"
+    }
+  ]
+}

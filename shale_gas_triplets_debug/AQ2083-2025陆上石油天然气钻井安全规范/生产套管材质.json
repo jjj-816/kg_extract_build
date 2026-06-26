@@ -1,0 +1,5 @@
+{
+  "entity": "生产套管材质",
+  "raw": "[\n  {\"head\": \"生产套管材质\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"未分类\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": []
+}

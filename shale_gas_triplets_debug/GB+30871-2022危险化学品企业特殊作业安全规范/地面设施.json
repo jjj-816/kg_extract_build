@@ -1,0 +1,13 @@
+{
+  "entity": "地面设施",
+  "raw": "[\n  {\"head\": \"地面设施\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"动土作业结束后,应及时回填土石,恢复地面设施\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "地面设施",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "动土作业结束后,应及时回填土石,恢复地面设施",
+      "tail_type": "施工记录"
+    }
+  ]
+}

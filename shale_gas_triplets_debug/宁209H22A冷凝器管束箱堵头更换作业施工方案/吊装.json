@@ -1,0 +1,20 @@
+{
+  "entity": "吊装",
+  "raw": "[\n  {\"head\": \"吊装\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"危险作业\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"吊装\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"人员必须离开吊装半径范围\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "吊装",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "危险作业",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "吊装",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "人员必须离开吊装半径范围",
+      "tail_type": "未分类"
+    }
+  ]
+}

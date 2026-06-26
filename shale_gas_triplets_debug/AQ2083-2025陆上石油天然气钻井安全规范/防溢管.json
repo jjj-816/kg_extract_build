@@ -1,0 +1,13 @@
+{
+  "entity": "防溢管",
+  "raw": "[\n  {\"head\": \"防溢管\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"防喷器顶部\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "防溢管",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "防喷器顶部",
+      "tail_type": "时空信息"
+    }
+  ]
+}

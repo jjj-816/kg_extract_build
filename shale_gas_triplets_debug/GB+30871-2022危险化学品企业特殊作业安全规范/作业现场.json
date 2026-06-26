@@ -1,0 +1,139 @@
+{
+  "entity": "作业现场",
+  "raw": "[\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"危险化学品企业应组织作业单位对作业现场和作业过程中可能存在的危险有害因素进行\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业现场和作业过程中可能存在的危险、有害因素及采取的具体安全措施与应急措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"会同作业单位组织作业人员到作业现场，了解和熟悉现场环境，进一步核实安全措施的可靠性，熟悉应急救援器材的位置及分布\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"涉及断路、动土作业时，应对作业现场的地下隐蔽工程进行交底\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"危险化学品企业应组织作业单位对作业现场及作业涉及的设备、设施、工器具等进行检查\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业现场消防通道、行车通道应保持畅通，影响作业安全的杂物应清理干净\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业现场的梯子、栏杆、平台、箅子板、盖板等设施应完整、牢固，采用的临时设施应确保安全\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业现场可能危及安全的坑、井、沟、孔洞等应采取有效防护措施，并设警示标志\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"当生产装置或作业现场出现异常,可能危及作业人员安全时,作业人员应立即停止作业,迅速撤离,并及时通知相关单位及人员\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"GB 39800.1 要求的个体防护装备\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"消防通道\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"行车通道\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"梯子\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"栏杆\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"平台\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"箅子板\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"盖板\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"临时设施\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"坑\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"井\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"沟\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"孔洞\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"地下隐蔽工程\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"设备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"设施\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"工器具\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"生产装置\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "涉及断路、动土作业时，应对作业现场的地下隐蔽工程进行交底",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "GB 39800.1 要求的个体防护装备",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "消防通道",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "行车通道",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "梯子",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "栏杆",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "平台",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "箅子板",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "盖板",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "临时设施",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "坑",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "井",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "沟",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "孔洞",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "地下隐蔽工程",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "设备",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "设施",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "工器具",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "生产装置",
+      "tail_type": "时空信息"
+    }
+  ]
+}

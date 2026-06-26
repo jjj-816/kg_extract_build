@@ -1,0 +1,13 @@
+{
+  "entity": "铁锈",
+  "raw": "[\n  {\"head\": \"铁锈\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"杂质\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "铁锈",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "杂质",
+      "tail_type": "风险事件"
+    }
+  ]
+}

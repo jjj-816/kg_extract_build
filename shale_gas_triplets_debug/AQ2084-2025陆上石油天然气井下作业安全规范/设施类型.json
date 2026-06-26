@@ -1,0 +1,76 @@
+{
+  "entity": "设施类型",
+  "raw": "[\n  {\"head\": \"设施类型\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"井控装置配备与安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设施类型\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"井控装置安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设施类型\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"检维修\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设施类型\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"试压\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设施类型\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"现场服务\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设施类型\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设施类型\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"调试\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设施类型\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"使用\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设施类型\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"维护保养\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设施类型\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"故障排除\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "设施类型",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "井控装置配备与安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "设施类型",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "井控装置安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "设施类型",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "检维修",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "设施类型",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "试压",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "设施类型",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "现场服务",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "设施类型",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "设施类型",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "调试",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "设施类型",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "使用",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "设施类型",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "维护保养",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "设施类型",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "故障排除",
+      "tail_type": "作业活动"
+    }
+  ]
+}

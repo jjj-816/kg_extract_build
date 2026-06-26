@@ -1,0 +1,62 @@
+{
+  "entity": "管理要求",
+  "raw": "[\n  {\"head\": \"管理要求\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"设计\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"管理要求\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"井控装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"管理要求\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"钻开油气层前的准备与检查验收\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管理要求\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"油气层施工作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管理要求\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"防火防爆措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"管理要求\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"防硫化氢措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"管理要求\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"溢流处置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管理要求\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"井喷失控处置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管理要求\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"企业主体责任\", \"tail_type\": \"未分类\"},\n  {\"head\": \"管理要求\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"企业主要负责人承诺制度\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "管理要求",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "设计",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "管理要求",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "井控装置",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "管理要求",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "钻开油气层前的准备与检查验收",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管理要求",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "油气层施工作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管理要求",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "溢流处置",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管理要求",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "井喷失控处置",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管理要求",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "企业主体责任",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "管理要求",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "企业主要负责人承诺制度",
+      "tail_type": "未分类"
+    }
+  ]
+}

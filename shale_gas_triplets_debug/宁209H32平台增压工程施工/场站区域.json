@@ -1,0 +1,34 @@
+{
+  "entity": "场站区域",
+  "raw": "[\n  {\"head\": \"场站区域\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"地下管线资料不全\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"场站区域\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"燃气、电力管线\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"场站区域\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"易挖断燃气、电力管线引发安全事故\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"场站区域\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"现场管理：陈明友\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "场站区域",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "地下管线资料不全",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "场站区域",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "燃气、电力管线",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "场站区域",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "易挖断燃气、电力管线引发安全事故",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "场站区域",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "现场管理：陈明友",
+      "tail_type": "施工记录"
+    }
+  ]
+}

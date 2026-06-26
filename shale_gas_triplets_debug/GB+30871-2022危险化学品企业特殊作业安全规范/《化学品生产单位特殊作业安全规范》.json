@@ -1,0 +1,83 @@
+{
+  "entity": "《化学品生产单位特殊作业安全规范》",
+  "raw": "[\n  {\"head\": \"《化学品生产单位特殊作业安全规范》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《化学品生产单位特殊作业安全规范》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"受限空间作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《化学品生产单位特殊作业安全规范》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"盲板抽堵作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《化学品生产单位特殊作业安全规范》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《化学品生产单位特殊作业安全规范》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"吊装作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《化学品生产单位特殊作业安全规范》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"临时用电作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《化学品生产单位特殊作业安全规范》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"动土作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《化学品生产单位特殊作业安全规范》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"断路作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《化学品生产单位特殊作业安全规范》\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"对拟作业的设备设施、管线进行处理\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"《化学品生产单位特殊作业安全规范》\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"对参加作业的人员进行安全措施交底\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"《化学品生产单位特殊作业安全规范》\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"告知上下游相关单位\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "《化学品生产单位特殊作业安全规范》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《化学品生产单位特殊作业安全规范》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "受限空间作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《化学品生产单位特殊作业安全规范》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "盲板抽堵作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《化学品生产单位特殊作业安全规范》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "高处作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《化学品生产单位特殊作业安全规范》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "吊装作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《化学品生产单位特殊作业安全规范》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "临时用电作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《化学品生产单位特殊作业安全规范》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "动土作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《化学品生产单位特殊作业安全规范》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "断路作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《化学品生产单位特殊作业安全规范》",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "对拟作业的设备设施、管线进行处理",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "《化学品生产单位特殊作业安全规范》",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "对参加作业的人员进行安全措施交底",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "《化学品生产单位特殊作业安全规范》",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "告知上下游相关单位",
+      "tail_type": "控制措施"
+    }
+  ]
+}

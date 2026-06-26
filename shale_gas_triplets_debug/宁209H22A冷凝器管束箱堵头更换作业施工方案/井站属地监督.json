@@ -1,0 +1,13 @@
+{
+  "entity": "井站属地监督",
+  "raw": "[\n  {\"head\": \"井站属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"应急要点\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "井站属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "应急要点",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "entity": "射孔作业",
+  "raw": "[\n  {\"head\": \"射孔作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"油管(钻杆)输送射孔作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"射孔作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"带压油管(钻杆)输送射孔作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"射孔作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"电缆输送射孔作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"射孔作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"带压电缆输送射孔作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"射孔作业\", \"head_type\": \"施工阶段\", \"relation\": \"PRECEDES\", \"tail\": \"井喷失控处置\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"射孔作业\", \"head_type\": \"施工阶段\", \"relation\": \"PRECEDES\", \"tail\": \"井控装置\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "射孔作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "油管(钻杆)输送射孔作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "射孔作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "带压油管(钻杆)输送射孔作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "射孔作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "电缆输送射孔作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "射孔作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "带压电缆输送射孔作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "射孔作业",
+      "head_type": "施工阶段",
+      "relation": "PRECEDES",
+      "tail": "井喷失控处置",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "射孔作业",
+      "head_type": "施工阶段",
+      "relation": "PRECEDES",
+      "tail": "井控装置",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

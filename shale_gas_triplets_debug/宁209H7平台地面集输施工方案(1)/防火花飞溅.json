@@ -1,0 +1,13 @@
+{
+  "entity": "防火花飞溅",
+  "raw": "[\n  {\"head\": \"防火花飞溅\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"焊工按规定穿戴焊工专用劳保\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"防火花飞溅\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"预备2具以上MFZ/ABC-8型干粉灭火器及气体检测仪放置于作业区域内\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "防火花飞溅",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "焊工按规定穿戴焊工专用劳保",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "entity": "物料堆放",
+  "raw": "[\n  {\"head\": \"物料堆放\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"物料搬运\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"物料堆放\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"底部垫设枕木\", \"tail_type\": \"未分类\"},\n  {\"head\": \"物料堆放\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"高度≥10cm\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"物料堆放\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"单层高度≤1.5m\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"物料堆放\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体坍塌\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"物料堆放\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"彩钢板\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"物料堆放\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"钢结构件\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"物料堆放\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"彩钢板\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"物料堆放\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"钢结构件\", \"tail_type\": \"材料介质\"}\n]",
+  "triplets": [
+    {
+      "head": "物料堆放",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "物料搬运",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "物料堆放",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "底部垫设枕木",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "物料堆放",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "高度≥10cm",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "物料堆放",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "单层高度≤1.5m",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "物料堆放",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体坍塌",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "物料堆放",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "彩钢板",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "物料堆放",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "钢结构件",
+      "tail_type": "材料介质"
+    }
+  ]
+}

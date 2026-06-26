@@ -1,0 +1,41 @@
+{
+  "entity": "项目负责人",
+  "raw": "[\n  {\"head\": \"项目负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"首次现场安全技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"项目负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"确认工程材料及备件符合设计要求\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"项目负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工作业现场存在的安全风险和危害因素\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"项目负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"风险和危害因素管控措施、要求及现场HSE管理制度\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"项目负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"应急要点\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"项目负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "项目负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "首次现场安全技术交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "项目负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "确认工程材料及备件符合设计要求",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "项目负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "风险和危害因素管控措施、要求及现场HSE管理制度",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "项目负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "应急要点",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "项目负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "未分类"
+    }
+  ]
+}

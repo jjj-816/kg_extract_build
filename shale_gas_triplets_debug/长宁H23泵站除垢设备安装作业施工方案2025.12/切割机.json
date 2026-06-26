@@ -1,0 +1,13 @@
+{
+  "entity": "切割机",
+  "raw": "[\n  {\"head\": \"切割机\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"管线切割\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "切割机",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "管线切割",
+      "tail_type": "时空信息"
+    }
+  ]
+}

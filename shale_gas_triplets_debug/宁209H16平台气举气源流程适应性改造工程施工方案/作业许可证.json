@@ -1,0 +1,188 @@
+{
+  "entity": "作业许可证",
+  "raw": "[\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业许可范围\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业环境\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业风险\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"控制措施\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"应急措施\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"注意事项\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"准入证\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"工作前安全分析表\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"施工作业方案\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"项目负责人\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"申请人\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"安全监护人\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"特种作业人员\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"验收人\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"属地监督\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"工业动火\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"有限空间作业\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"高处作业\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"临时用电\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"吊装\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"脚手架\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"特种作业资质\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"危险作业票证\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"作业现场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"现场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"作业许可证\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"井站\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业许可范围",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业环境",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业风险",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "控制措施",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "应急措施",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "注意事项",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "准入证",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "工作前安全分析表",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "施工作业方案",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "项目负责人",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "申请人",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "安全监护人",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "特种作业人员",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "验收人",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "属地监督",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "工业动火",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "有限空间作业",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "高处作业",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "临时用电",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "吊装",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "脚手架",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "特种作业资质",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "危险作业票证",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "作业现场",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "现场",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "作业许可证",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "井站",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "entity": "进场验收",
+  "raw": "[\n  {\"head\": \"进场验收\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"进场验收\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"现场人员配置\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"进场验收\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"应急处置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"进场验收\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"施工安排\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"进场验收\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"签名\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"进场验收\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"属地监督签字\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"进场验收\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"作业人员签字\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"进场验收\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"时间\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"进场验收\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"批准人\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"进场验收\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"应急措施\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "进场验收",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "进场验收",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "现场人员配置",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "进场验收",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "应急处置",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "进场验收",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "施工安排",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "进场验收",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "签名",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "进场验收",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "属地监督签字",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "进场验收",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "作业人员签字",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "进场验收",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "时间",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "进场验收",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "批准人",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "进场验收",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "应急措施",
+      "tail_type": "作业活动"
+    }
+  ]
+}

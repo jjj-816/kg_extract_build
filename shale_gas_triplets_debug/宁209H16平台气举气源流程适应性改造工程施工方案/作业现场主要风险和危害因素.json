@@ -1,0 +1,97 @@
+{
+  "entity": "作业现场主要风险和危害因素",
+  "raw": "[\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"培训目的\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"培训效果\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"安全技术交底和风险告知内容\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"控制措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"工艺\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"设备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"个人防护\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"应急措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"现场技术交底要求\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"属地人员\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"作业人员\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"安全监护\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"动火作业\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"动土作业\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"管线与设备打开作业\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"天然气泄漏引起的火灾爆炸\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"触电\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"物体打击\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"碰伤\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"工器具伤人\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"火花飞溅\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"烫伤\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"弧光\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业现场主要风险和危害因素\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"高压气体伤人\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "作业现场主要风险和危害因素",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "培训目的",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业现场主要风险和危害因素",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "培训效果",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业现场主要风险和危害因素",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "安全技术交底和风险告知内容",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业现场主要风险和危害因素",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "控制措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业现场主要风险和危害因素",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "工艺",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业现场主要风险和危害因素",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "设备",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业现场主要风险和危害因素",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "个人防护",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业现场主要风险和危害因素",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "应急措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业现场主要风险和危害因素",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "现场技术交底要求",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业现场主要风险和危害因素",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "属地人员",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业现场主要风险和危害因素",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "作业人员",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业现场主要风险和危害因素",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "安全监护",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业现场主要风险和危害因素",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "天然气泄漏引起的火灾爆炸",
+      "tail_type": "未分类"
+    }
+  ]
+}

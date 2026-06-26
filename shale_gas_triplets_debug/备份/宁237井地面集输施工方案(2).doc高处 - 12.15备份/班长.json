@@ -1,0 +1,13 @@
+{
+  "entity": "班长",
+  "raw": "[\n  {\"head\": \"班长\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场人员配置\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "班长",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场人员配置",
+      "tail_type": "施工记录"
+    }
+  ]
+}

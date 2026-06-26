@@ -1,0 +1,27 @@
+{
+  "entity": "排水沟",
+  "raw": "[\n  {\"head\": \"排水沟\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"火灾爆炸危险场所\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"排水沟\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"地下通信电(光)缆、局域网络电(光)缆\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"排水沟\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"排水沟的盖板\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "排水沟",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "火灾爆炸危险场所",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "排水沟",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "地下通信电(光)缆、局域网络电(光)缆",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "排水沟",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "排水沟的盖板",
+      "tail_type": "施工对象"
+    }
+  ]
+}

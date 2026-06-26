@@ -1,0 +1,76 @@
+{
+  "entity": "服务事业部现场安全监护人",
+  "raw": "[\n  {\"head\": \"服务事业部现场安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"服务事业部现场安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"熔化焊接与切割作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"服务事业部现场安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"电工作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"服务事业部现场安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"服务事业部现场安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"工业动火\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"服务事业部现场安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"有限空间作业\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"服务事业部现场安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"临时用电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"服务事业部现场安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"吊装\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"服务事业部现场安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"脚手架\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"服务事业部现场安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"危险作业票证\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "服务事业部现场安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "服务事业部现场安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "熔化焊接与切割作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "服务事业部现场安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "电工作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "服务事业部现场安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "高处作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "服务事业部现场安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "工业动火",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "服务事业部现场安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "有限空间作业",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "服务事业部现场安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "临时用电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "服务事业部现场安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "吊装",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "服务事业部现场安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "脚手架",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "服务事业部现场安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "危险作业票证",
+      "tail_type": "控制措施"
+    }
+  ]
+}

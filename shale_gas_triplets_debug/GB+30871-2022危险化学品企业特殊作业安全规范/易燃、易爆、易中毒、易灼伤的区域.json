@@ -1,0 +1,83 @@
+{
+  "entity": "易燃、易爆、易中毒、易灼伤的区域",
+  "raw": "[\n  {\"head\": \"易燃、易爆、易中毒、易灼伤的区域\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"升降(吊装)口、坑、井、池、沟、洞等上面或附近\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"易燃、易爆、易中毒、易灼伤的区域\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"转动设备附近\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"易燃、易爆、易中毒、易灼伤的区域\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"火灾爆炸危险场所\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"易燃、易爆、易中毒、易灼伤的区域\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"非火灾爆炸危险场所划出的专门用于动火的区域\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"易燃、易爆、易中毒、易灼伤的区域\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"禁火区内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"易燃、易爆、易中毒、易灼伤的区域\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"受热分解可产生易燃易爆、有毒有害物质的场所\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"易燃、易爆、易中毒、易灼伤的区域\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"火灾爆炸危险场所\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"易燃、易爆、易中毒、易灼伤的区域\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"生产装置设备、管道、储罐、容器等部位上\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"易燃、易爆、易中毒、易灼伤的区域\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"重大危险源罐区防火堤内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"易燃、易爆、易中毒、易灼伤的区域\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"火灾爆炸危险场所\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"易燃、易爆、易中毒、易灼伤的区域\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"管廊上\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "易燃、易爆、易中毒、易灼伤的区域",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "升降(吊装)口、坑、井、池、沟、洞等上面或附近",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "易燃、易爆、易中毒、易灼伤的区域",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "转动设备附近",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "易燃、易爆、易中毒、易灼伤的区域",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "火灾爆炸危险场所",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "易燃、易爆、易中毒、易灼伤的区域",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "非火灾爆炸危险场所划出的专门用于动火的区域",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "易燃、易爆、易中毒、易灼伤的区域",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "禁火区内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "易燃、易爆、易中毒、易灼伤的区域",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "受热分解可产生易燃易爆、有毒有害物质的场所",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "易燃、易爆、易中毒、易灼伤的区域",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "火灾爆炸危险场所",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "易燃、易爆、易中毒、易灼伤的区域",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "生产装置设备、管道、储罐、容器等部位上",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "易燃、易爆、易中毒、易灼伤的区域",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "重大危险源罐区防火堤内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "易燃、易爆、易中毒、易灼伤的区域",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "火灾爆炸危险场所",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "易燃、易爆、易中毒、易灼伤的区域",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "管廊上",
+      "tail_type": "时空信息"
+    }
+  ]
+}

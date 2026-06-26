@@ -1,0 +1,13 @@
+{
+  "entity": "电网",
+  "raw": "[\n  {\"head\": \"电网\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"临时用电\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "电网",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "临时用电",
+      "tail_type": "风险事件"
+    }
+  ]
+}

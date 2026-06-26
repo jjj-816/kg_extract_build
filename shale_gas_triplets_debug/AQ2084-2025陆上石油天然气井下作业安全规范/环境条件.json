@@ -1,0 +1,13 @@
+{
+  "entity": "环境条件",
+  "raw": "[\n  {\"head\": \"环境条件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"井喷应急预案\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "环境条件",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "井喷应急预案",
+      "tail_type": "未分类"
+    }
+  ]
+}

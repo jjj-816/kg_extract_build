@@ -1,0 +1,20 @@
+{
+  "entity": "特殊环境",
+  "raw": "[\n  {\"head\": \"特殊环境\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"有效应对措施\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"特殊环境\", \"head_type\": \"未分类\", \"relation\": \"OPERATES_ON\", \"tail\": \"恶劣天气\", \"tail_type\": \"环保对象\"}\n]",
+  "triplets": [
+    {
+      "head": "特殊环境",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "有效应对措施",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "特殊环境",
+      "head_type": "未分类",
+      "relation": "OPERATES_ON",
+      "tail": "恶劣天气",
+      "tail_type": "环保对象"
+    }
+  ]
+}

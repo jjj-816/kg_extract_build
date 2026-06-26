@@ -1,0 +1,62 @@
+{
+  "entity": "砂轮机切割拆除降噪房两边并开槽",
+  "raw": "[\n  {\"head\": \"砂轮机切割拆除降噪房两边并开槽\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"拆除管束堵头\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"砂轮机切割拆除降噪房两边并开槽\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"动火作业\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"砂轮机切割拆除降噪房两边并开槽\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"机械伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"砂轮机切割拆除降噪房两边并开槽\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"5.1.1砂轮机切割拆除降噪房两边并开槽：动火作业，机械伤害\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"砂轮机切割拆除降噪房两边并开槽\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"停机断电（放空）\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"砂轮机切割拆除降噪房两边并开槽\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"（能量隔离）上锁挂签\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"砂轮机切割拆除降噪房两边并开槽\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"氮气置换\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"砂轮机切割拆除降噪房两边并开槽\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"砂轮机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"砂轮机切割拆除降噪房两边并开槽\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"4.2.1.3 切割降噪房两边开槽：发电机发电及用电按照安全规程，作业人员须持有效特种作业证书\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "砂轮机切割拆除降噪房两边并开槽",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "拆除管束堵头",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "砂轮机切割拆除降噪房两边并开槽",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "动火作业",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "砂轮机切割拆除降噪房两边并开槽",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "机械伤害",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "砂轮机切割拆除降噪房两边并开槽",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "5.1.1砂轮机切割拆除降噪房两边并开槽：动火作业，机械伤害",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "砂轮机切割拆除降噪房两边并开槽",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "停机断电（放空）",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "砂轮机切割拆除降噪房两边并开槽",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "（能量隔离）上锁挂签",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "砂轮机切割拆除降噪房两边并开槽",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "氮气置换",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "砂轮机切割拆除降噪房两边并开槽",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "砂轮机",
+      "tail_type": "设备工具"
+    }
+  ]
+}

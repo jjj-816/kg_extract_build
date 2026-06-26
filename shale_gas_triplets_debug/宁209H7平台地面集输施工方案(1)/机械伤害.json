@@ -1,0 +1,13 @@
+{
+  "entity": "机械伤害",
+  "raw": "[\n  {\"head\": \"机械伤害\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"机械伤害风险控制措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "机械伤害",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "机械伤害风险控制措施",
+      "tail_type": "控制措施"
+    }
+  ]
+}

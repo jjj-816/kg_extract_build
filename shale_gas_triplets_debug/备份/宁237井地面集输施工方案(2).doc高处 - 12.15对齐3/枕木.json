@@ -1,0 +1,13 @@
+{
+  "entity": "枕木",
+  "raw": "[\n  {\"head\": \"枕木\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"车辆移动\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "枕木",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "车辆移动",
+      "tail_type": "风险事件"
+    }
+  ]
+}

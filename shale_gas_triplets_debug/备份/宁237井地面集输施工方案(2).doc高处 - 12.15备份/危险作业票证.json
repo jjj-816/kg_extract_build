@@ -1,0 +1,5 @@
+{
+  "entity": "危险作业票证",
+  "raw": "[\n  {\"head\": \"危险作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"危险作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"安全技术交底和风险告知确认卡\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"危险作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"应急处置\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"危险作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"车辆移动伤害控制措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"危险作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"危险作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"应急措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"危险作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"确切的事故发生地点\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"危险作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"确保道路安全畅通\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": []
+}

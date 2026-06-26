@@ -1,0 +1,13 @@
+{
+  "entity": "记录人员",
+  "raw": "[\n  {\"head\": \"记录人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"验收人\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "记录人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "验收人",
+      "tail_type": "作业活动"
+    }
+  ]
+}

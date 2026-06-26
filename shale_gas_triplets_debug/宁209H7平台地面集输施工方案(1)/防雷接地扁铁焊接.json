@@ -1,0 +1,104 @@
+{
+  "entity": "防雷接地扁铁焊接",
+  "raw": "[\n  {\"head\": \"防雷接地扁铁焊接\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"电缆沟开挖及回填等土建作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"防雷接地扁铁焊接\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管线预制\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"防雷接地扁铁焊接\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管道打磨\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"防雷接地扁铁焊接\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"防雷接地扁铁焊接\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"正确佩戴橡胶绝缘手套，使用完好合格电器设备设施（角磨机、电源线、插座等）\", \"tail_type\": \"未分类\"},\n  {\"head\": \"防雷接地扁铁焊接\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"焊工按规定穿戴焊工专用劳保\", \"tail_type\": \"未分类\"},\n  {\"head\": \"防雷接地扁铁焊接\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"防火花飞溅\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"防雷接地扁铁焊接\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"高\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防雷接地扁铁焊接\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"《钢制对焊管件 技术规范》（SY/T13401-2017）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"防雷接地扁铁焊接\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"角磨机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"防雷接地扁铁焊接\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电源线\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"防雷接地扁铁焊接\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"插座\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"防雷接地扁铁焊接\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"电缆沟\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"防雷接地扁铁焊接\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"防雷接沟地\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"防雷接地扁铁焊接\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"工艺管线预制、焊接\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "防雷接地扁铁焊接",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "电缆沟开挖及回填等土建作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "防雷接地扁铁焊接",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管线预制",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "防雷接地扁铁焊接",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管道打磨",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "防雷接地扁铁焊接",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "防雷接地扁铁焊接",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "焊工按规定穿戴焊工专用劳保",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "防雷接地扁铁焊接",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "防火花飞溅",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "防雷接地扁铁焊接",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "高",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防雷接地扁铁焊接",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "《钢制对焊管件 技术规范》（SY/T13401-2017）",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "防雷接地扁铁焊接",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "角磨机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "防雷接地扁铁焊接",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "电源线",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "防雷接地扁铁焊接",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "插座",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "防雷接地扁铁焊接",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "电缆沟",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "防雷接地扁铁焊接",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "防雷接沟地",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "防雷接地扁铁焊接",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "工艺管线预制、焊接",
+      "tail_type": "作业活动"
+    }
+  ]
+}

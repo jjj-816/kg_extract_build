@@ -1,0 +1,13 @@
+{
+  "entity": "宁209H32平台",
+  "raw": "[\n  {\"head\": \"宁209H32平台\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"《宁209H32平台增压工程》项目号：SCKH-DD250213-27\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"宁209H32平台\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"《供配电系统设计规范》（GB50052-2009）\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "宁209H32平台",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "《供配电系统设计规范》（GB50052-2009）",
+      "tail_type": "施工记录"
+    }
+  ]
+}

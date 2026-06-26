@@ -1,0 +1,20 @@
+{
+  "entity": "焊条头",
+  "raw": "[\n  {\"head\": \"焊条头\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"严禁徒手触碰\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"焊条头\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"严禁随意丢弃\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "焊条头",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "严禁徒手触碰",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "焊条头",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "严禁随意丢弃",
+      "tail_type": "风险事件"
+    }
+  ]
+}

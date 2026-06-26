@@ -1,0 +1,13 @@
+{
+  "entity": "短行程",
+  "raw": "[\n  {\"head\": \"短行程\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"用低高度、短行程试吊后，再吊起\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "短行程",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "用低高度、短行程试吊后，再吊起",
+      "tail_type": "施工记录"
+    }
+  ]
+}

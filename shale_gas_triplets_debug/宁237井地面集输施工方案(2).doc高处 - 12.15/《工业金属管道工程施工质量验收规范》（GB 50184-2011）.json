@@ -1,0 +1,34 @@
+{
+  "entity": "《工业金属管道工程施工质量验收规范》（GB 50184-2011）",
+  "raw": "[\n  {\"head\": \"《工业金属管道工程施工质量验收规范》（GB 50184-2011）\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"管道安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《工业金属管道工程施工质量验收规范》（GB 50184-2011）\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"确保管道内部清洁\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"《工业金属管道工程施工质量验收规范》（GB 50184-2011）\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"焊接或法兰连接质量符合规范\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"《工业金属管道工程施工质量验收规范》（GB 50184-2011）\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"支架牢固可靠\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "《工业金属管道工程施工质量验收规范》（GB 50184-2011）",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "管道安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《工业金属管道工程施工质量验收规范》（GB 50184-2011）",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "确保管道内部清洁",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "《工业金属管道工程施工质量验收规范》（GB 50184-2011）",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "焊接或法兰连接质量符合规范",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "《工业金属管道工程施工质量验收规范》（GB 50184-2011）",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "支架牢固可靠",
+      "tail_type": "控制措施"
+    }
+  ]
+}

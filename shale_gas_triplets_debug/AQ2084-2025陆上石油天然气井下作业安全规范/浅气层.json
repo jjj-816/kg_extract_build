@@ -1,0 +1,13 @@
+{
+  "entity": "浅气层",
+  "raw": "[\n  {\"head\": \"浅气层\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"本井或本构造区域\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "浅气层",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "本井或本构造区域",
+      "tail_type": "时空信息"
+    }
+  ]
+}

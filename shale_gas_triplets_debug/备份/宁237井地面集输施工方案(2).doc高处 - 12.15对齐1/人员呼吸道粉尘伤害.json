@@ -1,0 +1,20 @@
+{
+  "entity": "人员呼吸道粉尘伤害",
+  "raw": "[\n  {\"head\": \"人员呼吸道粉尘伤害\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"正确佩戴防尘口罩\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员呼吸道粉尘伤害\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"佩戴正压式空气呼吸器\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员呼吸道粉尘伤害\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"佩戴防毒口罩\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "人员呼吸道粉尘伤害",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "正确佩戴防尘口罩",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员呼吸道粉尘伤害",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "佩戴正压式空气呼吸器",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "液面检测装置",
+  "raw": "[\n  {\"head\": \"液面检测装置\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"钻井液循环罐\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"液面检测装置\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"计量罐\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"液面检测装置\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"定期校正\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "液面检测装置",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "钻井液循环罐",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "液面检测装置",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "计量罐",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "液面检测装置",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "定期校正",
+      "tail_type": "施工参数"
+    }
+  ]
+}

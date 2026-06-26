@@ -1,0 +1,90 @@
+{
+  "entity": "井喷失控处置",
+  "raw": "[\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"陆上石油天然气井下作业安全管理要求\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"设计\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"井控装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"施工作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"防火防爆措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"防硫化氢措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"溢流处置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"节流放喷\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"压井措施\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"陆上石油天然气井下作业安全规程\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"陆上石油天然气井下作业安全规范\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"放喷\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"测试\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"井口装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"测试流程\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"液气出口\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"井喷失控处置\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"立即关井处置\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "井喷失控处置",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "陆上石油天然气井下作业安全管理要求",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "井喷失控处置",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "设计",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "井喷失控处置",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "节流放喷",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井喷失控处置",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "压井措施",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井喷失控处置",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "陆上石油天然气井下作业安全规程",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井喷失控处置",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "陆上石油天然气井下作业安全规范",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井喷失控处置",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "放喷",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井喷失控处置",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "测试",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井喷失控处置",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "井口装置",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "井喷失控处置",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "测试流程",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "井喷失控处置",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "液气出口",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "井喷失控处置",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "立即关井处置",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "可燃气体泄漏",
+  "raw": "[\n  {\"head\": \"可燃气体泄漏\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"现场放置可燃气体检测仪进行持续检测\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"可燃气体泄漏\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"首次气体检测完成后，在受限空间内悬挂气体检测仪，连续监测\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"可燃气体泄漏\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"受限空间\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "可燃气体泄漏",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "现场放置可燃气体检测仪进行持续检测",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "可燃气体泄漏",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "首次气体检测完成后，在受限空间内悬挂气体检测仪，连续监测",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "可燃气体泄漏",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "受限空间",
+      "tail_type": "时空信息"
+    }
+  ]
+}

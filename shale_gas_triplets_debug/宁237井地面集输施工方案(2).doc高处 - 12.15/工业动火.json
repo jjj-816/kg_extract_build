@@ -1,0 +1,34 @@
+{
+  "entity": "工业动火",
+  "raw": "[\n  {\"head\": \"工业动火\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾、爆炸、烫伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"工业动火\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"杜绝施工人员穿戴化纤材料劳保用品\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"工业动火\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"严格施工程序\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"工业动火\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"危险作业票证\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工业动火\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"有限空间作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工业动火\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工业动火\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"临时用电\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工业动火\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"吊装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工业动火\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"脚手架\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "工业动火",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾、爆炸、烫伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "工业动火",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "杜绝施工人员穿戴化纤材料劳保用品",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "工业动火",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "严格施工程序",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "工业动火",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "危险作业票证",
+      "tail_type": "施工记录"
+    }
+  ]
+}

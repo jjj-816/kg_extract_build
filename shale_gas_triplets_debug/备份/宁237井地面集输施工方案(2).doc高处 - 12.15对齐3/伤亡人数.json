@@ -1,0 +1,5 @@
+{
+  "entity": "伤亡人数",
+  "raw": "[\n  {\"head\": \"伤亡人数\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"事故地点、伤亡人数、伤情（如是否昏迷、出血、骨折等）及联系方式\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": []
+}

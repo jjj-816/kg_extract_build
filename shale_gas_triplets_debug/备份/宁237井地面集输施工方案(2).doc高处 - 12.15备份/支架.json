@@ -1,0 +1,5 @@
+{
+  "entity": "支架",
+  "raw": "[\n  {\"head\": \"支架\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"管汇区\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": []
+}

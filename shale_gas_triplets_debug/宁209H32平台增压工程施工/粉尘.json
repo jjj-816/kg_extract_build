@@ -1,0 +1,41 @@
+{
+  "entity": "粉尘",
+  "raw": "[\n  {\"head\": \"粉尘\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"正确穿戴劳保用品\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"粉尘\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"遵守相关要求\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"粉尘\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"专人监护下进行施工作业\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"粉尘\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"佩戴防护口罩\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"粉尘\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"11、粉尘飞溅、中毒风险控制措施\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "粉尘",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "正确穿戴劳保用品",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "粉尘",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "遵守相关要求",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "粉尘",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "专人监护下进行施工作业",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "粉尘",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "佩戴防护口罩",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "粉尘",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "11、粉尘飞溅、中毒风险控制措施",
+      "tail_type": "施工记录"
+    }
+  ]
+}

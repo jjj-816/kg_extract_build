@@ -1,0 +1,34 @@
+{
+  "entity": "低压电工作业",
+  "raw": "[\n  {\"head\": \"低压电工作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"切割降噪房两边开槽\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"低压电工作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"持有效特种作业证书\", \"tail_type\": \"未分类\"},\n  {\"head\": \"低压电工作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"电气设备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"低压电工作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"电气设备检维修\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "低压电工作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "切割降噪房两边开槽",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "低压电工作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "持有效特种作业证书",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "低压电工作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "电气设备",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "低压电工作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "电气设备检维修",
+      "tail_type": "风险事件"
+    }
+  ]
+}

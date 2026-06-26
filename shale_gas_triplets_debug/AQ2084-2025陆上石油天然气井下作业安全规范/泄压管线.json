@@ -1,0 +1,13 @@
+{
+  "entity": "泄压管线",
+  "raw": "[\n  {\"head\": \"泄压管线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井场\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "泄压管线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井场",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "作业风险",
+  "raw": "[\n  {\"head\": \"作业风险\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"控制措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业风险\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"安全技术交底\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "作业风险",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "控制措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业风险",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "安全技术交底",
+      "tail_type": "施工记录"
+    }
+  ]
+}

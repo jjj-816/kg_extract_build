@@ -1,0 +1,48 @@
+{
+  "entity": "护目镜",
+  "raw": "[\n  {\"head\": \"护目镜\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"副\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"护目镜\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高处作业\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"护目镜\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"接触高温物件\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"护目镜\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"焊接件\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"护目镜\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"焊条头\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"护目镜\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"设备外壳\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "护目镜",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "副",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "护目镜",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高处作业",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "护目镜",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "接触高温物件",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "护目镜",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "焊接件",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "护目镜",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "焊条头",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "护目镜",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "设备外壳",
+      "tail_type": "时空信息"
+    }
+  ]
+}

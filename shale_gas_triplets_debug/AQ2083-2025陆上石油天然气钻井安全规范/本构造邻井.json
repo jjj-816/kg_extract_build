@@ -1,0 +1,48 @@
+{
+  "entity": "本构造邻井",
+  "raw": "[\n  {\"head\": \"本构造邻井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"钻探情况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"本构造邻井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"井身结构\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"本构造邻井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"水泥返高\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"本构造邻井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"固井质量\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"本构造邻井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"注采层位\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"本构造邻井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"钻井复杂情况\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "本构造邻井",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "钻探情况",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "本构造邻井",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "井身结构",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "本构造邻井",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "水泥返高",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "本构造邻井",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "固井质量",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "本构造邻井",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "注采层位",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "本构造邻井",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "钻井复杂情况",
+      "tail_type": "施工记录"
+    }
+  ]
+}

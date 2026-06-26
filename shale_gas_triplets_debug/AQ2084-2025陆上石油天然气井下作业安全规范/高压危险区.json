@@ -1,0 +1,13 @@
+{
+  "entity": "高压危险区",
+  "raw": "[\n  {\"head\": \"高压危险区\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"采取硬隔离措施防止无关人员进入\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "高压危险区",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "采取硬隔离措施防止无关人员进入",
+      "tail_type": "施工记录"
+    }
+  ]
+}

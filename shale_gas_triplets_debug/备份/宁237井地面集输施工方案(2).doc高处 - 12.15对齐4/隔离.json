@@ -1,0 +1,41 @@
+{
+  "entity": "隔离",
+  "raw": "[\n  {\"head\": \"隔离\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业隔离警示带\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"隔离\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"设备置换及隔离\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"隔离\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工区域警戒线隔离\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"隔离\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工区域警示隔离\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"隔离\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"对施工范围做好警示隔离\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "隔离",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "作业隔离警示带",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "隔离",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "设备置换及隔离",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "隔离",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "施工区域警戒线隔离",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "隔离",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "施工区域警示隔离",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "隔离",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "对施工范围做好警示隔离",
+      "tail_type": "施工记录"
+    }
+  ]
+}

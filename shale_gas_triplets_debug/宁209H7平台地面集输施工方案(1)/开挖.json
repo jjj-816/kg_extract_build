@@ -1,0 +1,41 @@
+{
+  "entity": "开挖",
+  "raw": "[\n  {\"head\": \"开挖\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"电缆沟开挖及回填等土建作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"开挖\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"管道打磨除锈及防腐\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"开挖\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"电缆桥架及电缆敷设及连接测试\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"开挖\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"损坏埋地管线和电缆\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开挖\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"作业条件确认\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"开挖\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"在运管线、电缆、光纤等路径\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "开挖",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "电缆沟开挖及回填等土建作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "开挖",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "管道打磨除锈及防腐",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "开挖",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "电缆桥架及电缆敷设及连接测试",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "开挖",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "损坏埋地管线和电缆",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开挖",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "作业条件确认",
+      "tail_type": "作业活动"
+    }
+  ]
+}

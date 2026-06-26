@@ -1,0 +1,13 @@
+{
+  "entity": "松疏",
+  "raw": "[\n  {\"head\": \"松疏\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"边坡\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "松疏",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "边坡",
+      "tail_type": "时空信息"
+    }
+  ]
+}

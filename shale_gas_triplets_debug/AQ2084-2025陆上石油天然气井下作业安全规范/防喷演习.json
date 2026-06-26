@@ -1,0 +1,27 @@
+{
+  "entity": "防喷演习",
+  "raw": "[\n  {\"head\": \"防喷演习\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"手动防喷器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"防喷演习\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"手动锁紧液压闸板防喷器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"防喷演习\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"手动操作工具\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "防喷演习",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "手动防喷器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "防喷演习",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "手动锁紧液压闸板防喷器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "防喷演习",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "手动操作工具",
+      "tail_type": "设备工具"
+    }
+  ]
+}

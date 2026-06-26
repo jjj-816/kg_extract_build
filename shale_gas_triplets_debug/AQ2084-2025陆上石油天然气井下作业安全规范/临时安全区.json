@@ -1,0 +1,13 @@
+{
+  "entity": "临时安全区",
+  "raw": "[\n  {\"head\": \"临时安全区\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"当地季节风的上风方向\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "临时安全区",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "当地季节风的上风方向",
+      "tail_type": "时空信息"
+    }
+  ]
+}

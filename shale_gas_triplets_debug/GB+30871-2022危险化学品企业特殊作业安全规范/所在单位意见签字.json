@@ -1,0 +1,13 @@
+{
+  "entity": "所在单位意见签字",
+  "raw": "[\n  {\"head\": \"所在单位意见签字\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"年 月 日 时 分\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "所在单位意见签字",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "年 月 日 时 分",
+      "tail_type": "时空信息"
+    }
+  ]
+}

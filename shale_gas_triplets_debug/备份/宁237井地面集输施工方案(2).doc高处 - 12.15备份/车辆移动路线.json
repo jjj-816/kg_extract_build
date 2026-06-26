@@ -1,0 +1,20 @@
+{
+  "entity": "车辆移动路线",
+  "raw": "[\n  {\"head\": \"车辆移动路线\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"踏勘记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"车辆移动路线\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"井站内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"车辆移动路线\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"场站内\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"车辆移动路线\", \"head_type\": \"施工对象\", \"relation\": \"RECORDED_IN\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"车辆移动路线\", \"head_type\": \"施工对象\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"车辆移动伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"车辆移动路线\", \"head_type\": \"施工对象\", \"relation\": \"MITIGATED_BY\", \"tail\": \"专人指挥\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"车辆移动路线\", \"head_type\": \"施工对象\", \"relation\": \"MITIGATED_BY\", \"tail\": \"放置枕木\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"车辆移动路线\", \"head_type\": \"施工对象\", \"relation\": \"MITIGATED_BY\", \"tail\": \"禁止无关人员靠近\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"车辆移动路线\", \"head_type\": \"施工对象\", \"relation\": \"MITIGATED_BY\", \"tail\": \"加强道路巡查\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"车辆移动路线\", \"head_type\": \"施工对象\", \"relation\": \"MITIGATED_BY\", \"tail\": \"清理积雪与结冰\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "车辆移动路线",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "井站内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "车辆移动路线",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "场站内",
+      "tail_type": "施工对象"
+    }
+  ]
+}

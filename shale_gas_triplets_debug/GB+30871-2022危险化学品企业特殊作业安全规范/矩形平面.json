@@ -1,0 +1,5 @@
+{
+  "entity": "矩形平面",
+  "raw": "[\n  {\"head\": \"矩形平面\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"任一边小于 500 mm\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": []
+}

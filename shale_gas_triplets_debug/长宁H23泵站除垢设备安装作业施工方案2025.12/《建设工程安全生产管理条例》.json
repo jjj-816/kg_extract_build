@@ -1,0 +1,41 @@
+{
+  "entity": "《建设工程安全生产管理条例》",
+  "raw": "[\n  {\"head\": \"《建设工程安全生产管理条例》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"施工作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《建设工程安全生产管理条例》\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"安全技术交底\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"《建设工程安全生产管理条例》\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"安全监护\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"《建设工程安全生产管理条例》\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"警示隔离\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"《建设工程安全生产管理条例》\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"交底记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"《建设工程安全生产管理条例》\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"警戒线\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"《建设工程安全生产管理条例》\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"警戒标识\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "《建设工程安全生产管理条例》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "施工作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《建设工程安全生产管理条例》",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "安全技术交底",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "《建设工程安全生产管理条例》",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "安全监护",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "《建设工程安全生产管理条例》",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "警示隔离",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "《建设工程安全生产管理条例》",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "交底记录",
+      "tail_type": "施工记录"
+    }
+  ]
+}

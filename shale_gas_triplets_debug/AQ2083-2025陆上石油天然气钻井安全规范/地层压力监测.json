@@ -1,0 +1,48 @@
+{
+  "entity": "地层压力监测",
+  "raw": "[\n  {\"head\": \"地层压力监测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"地层压力预测和监测\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"地层压力监测\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"实钻结果\", \"tail_type\": \"未分类\"},\n  {\"head\": \"地层压力监测\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"地层破裂压力试验\", \"tail_type\": \"未分类\"},\n  {\"head\": \"地层压力监测\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"关井立压\", \"tail_type\": \"未分类\"},\n  {\"head\": \"地层压力监测\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"关井套压\", \"tail_type\": \"未分类\"},\n  {\"head\": \"地层压力监测\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"溢流量\", \"tail_type\": \"未分类\"},\n  {\"head\": \"地层压力监测\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"最高地层压力\", \"tail_type\": \"未分类\"},\n  {\"head\": \"地层压力监测\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"预计最大关井压力\", \"tail_type\": \"未分类\"},\n  {\"head\": \"地层压力监测\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"溢流\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"地层压力监测\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井喷\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "地层压力监测",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "地层压力预测和监测",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "地层压力监测",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "地层破裂压力试验",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "地层压力监测",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "最高地层压力",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "地层压力监测",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "预计最大关井压力",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "地层压力监测",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "溢流",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "地层压力监测",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井喷",
+      "tail_type": "风险事件"
+    }
+  ]
+}

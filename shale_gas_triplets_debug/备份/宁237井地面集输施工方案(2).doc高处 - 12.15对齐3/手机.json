@@ -1,0 +1,20 @@
+{
+  "entity": "手机",
+  "raw": "[\n  {\"head\": \"手机\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业现场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"手机\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"生产场站\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "手机",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业现场",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "手机",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "生产场站",
+      "tail_type": "时空信息"
+    }
+  ]
+}

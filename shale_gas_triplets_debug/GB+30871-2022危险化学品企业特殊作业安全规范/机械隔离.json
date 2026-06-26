@@ -1,0 +1,13 @@
+{
+  "entity": "机械隔离",
+  "raw": "[\n  {\"head\": \"机械隔离\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"在设备、管道上安装或拆卸盲板的作业\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "机械隔离",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "在设备、管道上安装或拆卸盲板的作业",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "井下落物",
+  "raw": "[\n  {\"head\": \"井下落物\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"井筒现状\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "井下落物",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "井筒现状",
+      "tail_type": "施工记录"
+    }
+  ]
+}

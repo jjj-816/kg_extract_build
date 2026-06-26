@@ -1,0 +1,41 @@
+{
+  "entity": "管道打磨除锈",
+  "raw": "[\n  {\"head\": \"管道打磨除锈\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"电缆桥架及电缆敷设及连接测试、自控接线\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管道打磨除锈\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"管口内外表面必须彻底清理，去除油污、铁锈、水分、毛刺等任何杂质，露出金属光泽\", \"tail_type\": \"未分类\"},\n  {\"head\": \"管道打磨除锈\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"管口内外表面\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管道打磨除锈\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"铁锈\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管道打磨除锈\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管道打磨\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管道打磨除锈\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"防腐\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "管道打磨除锈",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "电缆桥架及电缆敷设及连接测试、自控接线",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管道打磨除锈",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "管口内外表面",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管道打磨除锈",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "铁锈",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管道打磨除锈",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管道打磨",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管道打磨除锈",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "防腐",
+      "tail_type": "作业活动"
+    }
+  ]
+}

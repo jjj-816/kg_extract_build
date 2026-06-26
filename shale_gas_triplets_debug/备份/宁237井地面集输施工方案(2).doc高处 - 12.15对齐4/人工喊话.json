@@ -1,0 +1,27 @@
+{
+  "entity": "人工喊话",
+  "raw": "[\n  {\"head\": \"人工喊话\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"救援\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"人工喊话\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"口哨\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"人工喊话\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"联络方法\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "人工喊话",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "救援",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "人工喊话",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "口哨",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "人工喊话",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "联络方法",
+      "tail_type": "施工对象"
+    }
+  ]
+}

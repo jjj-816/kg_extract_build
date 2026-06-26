@@ -1,0 +1,20 @@
+{
+  "entity": "发电机",
+  "raw": "[\n  {\"head\": \"发电机\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"配电箱\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"发电机\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"接地牢固、可靠\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "发电机",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "配电箱",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "发电机",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "接地牢固、可靠",
+      "tail_type": "施工参数"
+    }
+  ]
+}

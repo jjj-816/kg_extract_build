@@ -1,0 +1,41 @@
+{
+  "entity": "明敷",
+  "raw": "[\n  {\"head\": \"明敷\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"电缆线路\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"明敷\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"建筑物墙体根部\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"明敷\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"道路\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"明敷\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"周围环境应保持干燥\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"明敷\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"易受机械损伤的区域\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "明敷",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "电缆线路",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "明敷",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "建筑物墙体根部",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "明敷",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "道路",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "明敷",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "周围环境应保持干燥",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "明敷",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "易受机械损伤的区域",
+      "tail_type": "风险事件"
+    }
+  ]
+}

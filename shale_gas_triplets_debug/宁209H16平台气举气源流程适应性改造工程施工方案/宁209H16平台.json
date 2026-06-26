@@ -1,0 +1,27 @@
+{
+  "entity": "宁209H16平台",
+  "raw": "[\n  {\"head\": \"宁209H16平台\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"宁209H16平台\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"宁209H16平台\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"现场碰口6道DN80、2道DN50\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"宁209H16平台\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"2025年12月16日\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "宁209H16平台",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "宁209H16平台",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "宁209H16平台",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "现场碰口6道DN80、2道DN50",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "宁209H16平台",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "2025年12月16日",
+      "tail_type": "施工记录"
+    }
+  ]
+}

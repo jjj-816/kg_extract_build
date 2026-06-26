@@ -1,0 +1,20 @@
+{
+  "entity": "检测点",
+  "raw": "[\n  {\"head\": \"检测点\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"上、中、下(左、中、右)\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"检测点\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"上、中、下(左、中、右)\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "检测点",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "上、中、下(左、中、右)",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "检测点",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "上、中、下(左、中、右)",
+      "tail_type": "时空信息"
+    }
+  ]
+}

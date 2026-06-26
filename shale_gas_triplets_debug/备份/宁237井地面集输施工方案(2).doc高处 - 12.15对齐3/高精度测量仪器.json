@@ -1,0 +1,20 @@
+{
+  "entity": "高精度测量仪器",
+  "raw": "[\n  {\"head\": \"高精度测量仪器\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"标高、垂直度偏差难控制\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"高精度测量仪器\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"累积误差\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "高精度测量仪器",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "标高、垂直度偏差难控制",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "高精度测量仪器",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "累积误差",
+      "tail_type": "风险事件"
+    }
+  ]
+}

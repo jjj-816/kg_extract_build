@@ -1,0 +1,34 @@
+{
+  "entity": "吊装",
+  "raw": "[\n  {\"head\": \"吊装\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"人员必须离开吊装半径范围\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"吊装\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"危险作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"吊装\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"持有特种作业资质人员\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"吊装\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"危险作业票证\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "吊装",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "人员必须离开吊装半径范围",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "吊装",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "危险作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "吊装",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "持有特种作业资质人员",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "吊装",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "危险作业票证",
+      "tail_type": "施工记录"
+    }
+  ]
+}

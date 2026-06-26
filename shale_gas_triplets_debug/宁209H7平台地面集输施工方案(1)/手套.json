@@ -1,0 +1,34 @@
+{
+  "entity": "手套",
+  "raw": "[\n  {\"head\": \"手套\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"手套\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"手套\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"手套\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"冻伤风险\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "手套",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "手套",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "手套",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "手套",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "冻伤风险",
+      "tail_type": "风险事件"
+    }
+  ]
+}

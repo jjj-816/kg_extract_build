@@ -1,0 +1,13 @@
+{
+  "entity": "HSE管理",
+  "raw": "[\n  {\"head\": \"HSE管理\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"施工全过程\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "HSE管理",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "施工全过程",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

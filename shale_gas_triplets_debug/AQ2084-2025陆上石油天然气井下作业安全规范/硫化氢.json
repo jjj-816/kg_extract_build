@@ -1,0 +1,20 @@
+{
+  "entity": "硫化氢",
+  "raw": "[\n  {\"head\": \"硫化氢\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"中毒反应\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"硫化氢\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"硫化氢腐蚀\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "硫化氢",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "中毒反应",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "硫化氢",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "硫化氢腐蚀",
+      "tail_type": "风险事件"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "entity": "易燃易爆",
+  "raw": "[\n  {\"head\": \"易燃易爆\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"清除动火点5m范围内易燃易爆物质\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"易燃易爆\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"对不能清除的进行隔离处理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"易燃易爆\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"设置警戒线\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"易燃易爆\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"进入井站严禁携带易燃易爆等危险物品\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"易燃易爆\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"本井场生产（集输）天然气\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"易燃易爆\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"天然气具有易燃易爆特性\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "易燃易爆",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "清除动火点5m范围内易燃易爆物质",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "易燃易爆",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "对不能清除的进行隔离处理",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "易燃易爆",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "设置警戒线",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "易燃易爆",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "进入井站严禁携带易燃易爆等危险物品",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "易燃易爆",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "本井场生产（集输）天然气",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "易燃易爆",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "天然气具有易燃易爆特性",
+      "tail_type": "作业活动"
+    }
+  ]
+}

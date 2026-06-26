@@ -1,0 +1,13 @@
+{
+  "entity": "图纸复核",
+  "raw": "[\n  {\"head\": \"图纸复核\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"高处\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"图纸复核\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"四脚架\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "高处",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "图纸复核",
+      "tail_type": "施工记录"
+    }
+  ]
+}

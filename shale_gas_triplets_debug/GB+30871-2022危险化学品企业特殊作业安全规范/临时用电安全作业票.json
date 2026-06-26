@@ -1,0 +1,34 @@
+{
+  "entity": "临时用电安全作业票",
+  "raw": "[\n  {\"head\": \"临时用电安全作业票\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"配送电单位\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"临时用电安全作业票\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"配送电单位\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"临时用电安全作业票\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业单位(作业时)配送电执行人(作业结束后注销)\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"临时用电安全作业票\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电气管理部门\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "临时用电安全作业票",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "配送电单位",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "临时用电安全作业票",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "配送电单位",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "临时用电安全作业票",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业单位(作业时)配送电执行人(作业结束后注销)",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "临时用电安全作业票",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "电气管理部门",
+      "tail_type": "施工参数"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "entity": "井内钻井液密度",
+  "raw": "[\n  {\"head\": \"井内钻井液密度\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"各裸眼井段中的最高地层孔隙压力当量密度值\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"井内钻井液密度\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"钻井液、水泥浆等流体漏入地层\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"井内钻井液密度\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"地层流体侵入井内引起井口返出的钻井液量比泵入量大\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"井内钻井液密度\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"停泵后井口钻井液自动外溢\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"井内钻井液密度\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"地层流体持续无控制地流入井内\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"井内钻井液密度\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"调低井内钻井液密度后起钻前\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井内钻井液密度\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"溢流压井后起钻前\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "井内钻井液密度",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "各裸眼井段中的最高地层孔隙压力当量密度值",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "井内钻井液密度",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "钻井液、水泥浆等流体漏入地层",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "井内钻井液密度",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "地层流体侵入井内引起井口返出的钻井液量比泵入量大",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "井内钻井液密度",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "停泵后井口钻井液自动外溢",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "井内钻井液密度",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "地层流体持续无控制地流入井内",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "井内钻井液密度",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "调低井内钻井液密度后起钻前",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井内钻井液密度",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "溢流压井后起钻前",
+      "tail_type": "施工记录"
+    }
+  ]
+}

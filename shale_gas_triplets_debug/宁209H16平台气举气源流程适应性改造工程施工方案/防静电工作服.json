@@ -1,0 +1,27 @@
+{
+  "entity": "防静电工作服",
+  "raw": "[\n  {\"head\": \"防静电工作服\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"防静电工作服\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"人员触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"防静电工作服\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井站\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "防静电工作服",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "防静电工作服",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "人员触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "防静电工作服",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井站",
+      "tail_type": "时空信息"
+    }
+  ]
+}

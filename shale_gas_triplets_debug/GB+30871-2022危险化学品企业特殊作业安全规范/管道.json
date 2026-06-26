@@ -1,0 +1,104 @@
+{
+  "entity": "管道",
+  "raw": "[\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"升降(吊装)口、坑、井、池、沟、洞\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"易燃、易爆、易中毒、易灼伤的区域或转动设备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"无平台、无护栏的塔、釜、炉、罐等化工容器、设备及架空管道\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"塔、釜、炉、罐等设备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"排放有毒、有害气体、粉尘的放空管线或烟囱及设备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"盲板位置图\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"介质\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"温度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"盲板材质\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"盲板规格\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"盲板编号\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"安全措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"动火作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"较长的物料管线\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"墙面或地面\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"直埋管线 2 m 范围内\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "升降(吊装)口、坑、井、池、沟、洞",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "易燃、易爆、易中毒、易灼伤的区域或转动设备",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "无平台、无护栏的塔、釜、炉、罐等化工容器、设备及架空管道",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "塔、釜、炉、罐等设备",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "排放有毒、有害气体、粉尘的放空管线或烟囱及设备",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "盲板位置图",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "介质",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "温度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "安全措施",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "动火作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "较长的物料管线",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "墙面或地面",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "直埋管线 2 m 范围内",
+      "tail_type": "时空信息"
+    }
+  ]
+}

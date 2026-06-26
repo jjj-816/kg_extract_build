@@ -1,0 +1,48 @@
+{
+  "entity": "安全技术交底",
+  "raw": "[\n  {\"head\": \"安全技术交底\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"作业内容\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"作业风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"控制措施\", \"tail_type\": \"未分类\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业票\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"开工条件\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业票\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"《石油化工建设工程施工安全技术标准》（GB/T50484-2019）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"《建筑施工高处作业安全技术规范》（JGJ80-2016）\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "安全技术交底",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "作业内容",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全技术交底",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "作业票",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "安全技术交底",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "开工条件",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "安全技术交底",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "作业票",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "安全技术交底",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击风险",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "安全技术交底",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "《建筑施工高处作业安全技术规范》（JGJ80-2016）",
+      "tail_type": "施工记录"
+    }
+  ]
+}

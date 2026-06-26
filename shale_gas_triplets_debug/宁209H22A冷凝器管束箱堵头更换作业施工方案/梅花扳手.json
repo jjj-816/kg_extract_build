@@ -1,0 +1,20 @@
+{
+  "entity": "梅花扳手",
+  "raw": "[\n  {\"head\": \"梅花扳手\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"套\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"梅花扳手\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"1\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "梅花扳手",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "套",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "梅花扳手",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "1",
+      "tail_type": "施工参数"
+    }
+  ]
+}

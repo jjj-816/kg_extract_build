@@ -1,0 +1,20 @@
+{
+  "entity": "GB50349-2015",
+  "raw": "[\n  {\"head\": \"GB50349-2015\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"宁209H16平台气举气源流程适应性改造工程\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"GB50349-2015\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"宁209H16平台\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"GB50349-2015\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"第三章 施工准备与资源配置计划\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "GB50349-2015",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "宁209H16平台气举气源流程适应性改造工程",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "GB50349-2015",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "宁209H16平台",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

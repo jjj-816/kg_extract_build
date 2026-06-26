@@ -1,0 +1,13 @@
+{
+  "entity": "特级☐ 一级☐ 二级☐",
+  "raw": "[\n  {\"head\": \"特级☐ 一级☐ 二级☐\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"动火作业\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "特级☐ 一级☐ 二级☐",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "动火作业",
+      "tail_type": "风险事件"
+    }
+  ]
+}

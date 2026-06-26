@@ -1,0 +1,5 @@
+{
+  "entity": "施工设备",
+  "raw": "[\n  {\"head\": \"施工设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"设备装置评估表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工设备\", \"head_type\": \"设备工具\", \"relation\": \"RECORDED_IN\", \"tail\": \"设备装置评估表\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": []
+}

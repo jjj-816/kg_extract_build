@@ -1,0 +1,20 @@
+{
+  "entity": "漏电保护",
+  "raw": "[\n  {\"head\": \"漏电保护\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"停验电并上锁挂牌\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"漏电保护\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"一机一闸一保护\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"漏电保护\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"漏电保护\", \"head_type\": \"控制措施\", \"relation\": \"REGULATES\", \"tail\": \"用电设施的设置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"漏电保护\", \"head_type\": \"控制措施\", \"relation\": \"REGULATES\", \"tail\": \"接零、接地\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"漏电保护\", \"head_type\": \"控制措施\", \"relation\": \"MITIGATED_BY\", \"tail\": \"火灾爆炸风险\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "漏电保护",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "火灾爆炸风险",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "漏电保护",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "entity": "油、气、水层",
+  "raw": "[\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"监测出口排量\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"上提管柱\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"保持循环\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"分析原因\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"进、出口排量\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"产层的流体性质\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"井型\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"油气藏类型\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"邻井的注水\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"邻井的注气\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"邻井的注汽\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"井口压力\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"有毒有害气体\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"层位\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"井段\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油、气、水层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"厚度\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "油、气、水层",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "监测出口排量",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "油、气、水层",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "上提管柱",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "油、气、水层",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "保持循环",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "油、气、水层",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "分析原因",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "油、气、水层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "进、出口排量",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "油、气、水层",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "产层的流体性质",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "油、气、水层",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "井型",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "油、气、水层",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "油气藏类型",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "油、气、水层",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "邻井的注水",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "油、气、水层",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "井口压力",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "油、气、水层",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "有毒有害气体",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "油、气、水层",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "层位",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "油、气、水层",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "井段",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "油、气、水层",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "厚度",
+      "tail_type": "施工对象"
+    }
+  ]
+}

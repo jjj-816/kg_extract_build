@@ -1,0 +1,55 @@
+{
+  "entity": "《钢制管道焊接及验收》",
+  "raw": "[\n  {\"head\": \"《钢制管道焊接及验收》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"支撑焊接安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《钢制管道焊接及验收》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"除垢设备焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《钢制管道焊接及验收》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"设备准备工作\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《钢制管道焊接及验收》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"焊接设备完好\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"《钢制管道焊接及验收》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"施工人员持证上岗\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"《钢制管道焊接及验收》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"管道焊接工作记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"《钢制管道焊接及验收》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"焊口编号一致\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"《钢制管道焊接及验收》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"设备与管线焊接安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《钢制管道焊接及验收》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"管线\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"《钢制管道焊接及验收》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"对焊接和土建机组进行安全技术交底\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "《钢制管道焊接及验收》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "支撑焊接安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《钢制管道焊接及验收》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "除垢设备焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《钢制管道焊接及验收》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "设备准备工作",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《钢制管道焊接及验收》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "焊接设备完好",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "《钢制管道焊接及验收》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "设备与管线焊接安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《钢制管道焊接及验收》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "管线",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "《钢制管道焊接及验收》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "对焊接和土建机组进行安全技术交底",
+      "tail_type": "作业活动"
+    }
+  ]
+}

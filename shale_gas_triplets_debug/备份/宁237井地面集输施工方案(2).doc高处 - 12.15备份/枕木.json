@@ -1,0 +1,5 @@
+{
+  "entity": "枕木",
+  "raw": "[\n  {\"head\": \"枕木\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"施工安排\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": []
+}

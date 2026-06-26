@@ -1,0 +1,27 @@
+{
+  "entity": "弧光",
+  "raw": "[\n  {\"head\": \"弧光\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防护挡板\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"弧光\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"阻燃工作服\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"弧光\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防护面罩\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "弧光",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "防护挡板",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "弧光",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "阻燃工作服",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "弧光",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "防护面罩",
+      "tail_type": "控制措施"
+    }
+  ]
+}

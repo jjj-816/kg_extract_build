@@ -1,0 +1,13 @@
+{
+  "entity": "管道参数",
+  "raw": "[\n  {\"head\": \"管道参数\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"微正压\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "管道参数",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "微正压",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

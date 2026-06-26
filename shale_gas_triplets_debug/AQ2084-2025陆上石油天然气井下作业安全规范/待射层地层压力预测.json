@@ -1,0 +1,27 @@
+{
+  "entity": "待射层地层压力预测",
+  "raw": "[\n  {\"head\": \"待射层地层压力预测\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"射孔数据\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"待射层地层压力预测\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"预测最高井口关井压力\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"待射层地层压力预测\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"最大允许关井压力\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "待射层地层压力预测",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "射孔数据",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "待射层地层压力预测",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "预测最高井口关井压力",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "待射层地层压力预测",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "最大允许关井压力",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

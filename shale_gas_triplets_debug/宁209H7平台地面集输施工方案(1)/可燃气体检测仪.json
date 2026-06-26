@@ -1,0 +1,27 @@
+{
+  "entity": "可燃气体检测仪",
+  "raw": "[\n  {\"head\": \"可燃气体检测仪\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业区域内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"可燃气体检测仪\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"动火点周边\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"可燃气体检测仪\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"天然气泄漏引起火灾、爆炸\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "可燃气体检测仪",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业区域内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "可燃气体检测仪",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "动火点周边",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "可燃气体检测仪",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "天然气泄漏引起火灾、爆炸",
+      "tail_type": "风险事件"
+    }
+  ]
+}

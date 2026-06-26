@@ -1,0 +1,20 @@
+{
+  "entity": "氮气瓶",
+  "raw": "[\n  {\"head\": \"氮气瓶\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压力标准\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"氮气瓶\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"氮气置换\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "氮气瓶",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "压力标准",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "氮气瓶",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "氮气置换",
+      "tail_type": "风险事件"
+    }
+  ]
+}

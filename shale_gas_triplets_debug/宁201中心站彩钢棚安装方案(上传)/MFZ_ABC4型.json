@@ -1,0 +1,13 @@
+{
+  "entity": "MFZ/ABC4型",
+  "raw": "[\n  {\"head\": \"MFZ/ABC4型\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"动火点上风侧1.5-3米处\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "MFZ/ABC4型",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "动火点上风侧1.5-3米处",
+      "tail_type": "时空信息"
+    }
+  ]
+}

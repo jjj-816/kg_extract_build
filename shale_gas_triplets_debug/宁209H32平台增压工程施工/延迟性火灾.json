@@ -1,0 +1,27 @@
+{
+  "entity": "延迟性火灾",
+  "raw": "[\n  {\"head\": \"延迟性火灾\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"配备足量干粉灭火器、灭火毯等消防器材\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"延迟性火灾\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"设置专人监火（全程在岗，动火结束后留守30分钟确认无复燃风险）\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"延迟性火灾\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"预备2具以上MFZ/ABC-8型干粉灭火器及气体检测仪放置于作业区域内\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"延迟性火灾\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"做好动火点周边持续可燃气体检测，发现可燃气体泄漏立即停止作业\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"延迟性火灾\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"清除动火点周围易燃物，无法清除的需用防火毯覆盖隔离\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "延迟性火灾",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "配备足量干粉灭火器、灭火毯等消防器材",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "延迟性火灾",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "做好动火点周边持续可燃气体检测，发现可燃气体泄漏立即停止作业",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "延迟性火灾",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "清除动火点周围易燃物，无法清除的需用防火毯覆盖隔离",
+      "tail_type": "控制措施"
+    }
+  ]
+}

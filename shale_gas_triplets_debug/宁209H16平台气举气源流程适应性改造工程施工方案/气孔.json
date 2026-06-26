@@ -1,0 +1,13 @@
+{
+  "entity": "气孔",
+  "raw": "[\n  {\"head\": \"气孔\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"焊接质量难把控\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "气孔",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "焊接质量难把控",
+      "tail_type": "未分类"
+    }
+  ]
+}

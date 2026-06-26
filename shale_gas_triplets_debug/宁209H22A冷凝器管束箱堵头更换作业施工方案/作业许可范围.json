@@ -1,0 +1,118 @@
+{
+  "entity": "作业许可范围",
+  "raw": "[\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"用电\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"动火\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"焊割\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"属地监督\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"准入证\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"作业许可证\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"工作前安全分析表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"施工作业方案\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"工业动火\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"有限空间作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"临时用电\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"吊装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"脚手架\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"特种作业资质\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"危险作业票证\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "用电",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "动火",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "焊割",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "属地监督",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "准入证",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "作业许可证",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "工作前安全分析表",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "施工作业方案",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "工业动火",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "有限空间作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "高处作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "临时用电",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "吊装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "脚手架",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "特种作业资质",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业许可范围",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "危险作业票证",
+      "tail_type": "施工记录"
+    }
+  ]
+}

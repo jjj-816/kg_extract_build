@@ -1,0 +1,48 @@
+{
+  "entity": "密封垫环",
+  "raw": "[\n  {\"head\": \"密封垫环\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"密封垫环槽\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"密封垫环\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"法兰垫环槽\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"密封垫环\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"防喷器法兰垫环槽\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"密封垫环\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"密封垫环槽\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"密封垫环\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"GB/T 22513\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"密封垫环\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"不应重复使用\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "密封垫环",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "密封垫环槽",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "密封垫环",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "法兰垫环槽",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "密封垫环",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "防喷器法兰垫环槽",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "密封垫环",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "密封垫环槽",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "密封垫环",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "GB/T 22513",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "密封垫环",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "不应重复使用",
+      "tail_type": "风险事件"
+    }
+  ]
+}

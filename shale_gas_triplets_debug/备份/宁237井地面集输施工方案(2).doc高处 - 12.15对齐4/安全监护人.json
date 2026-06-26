@@ -1,0 +1,27 @@
+{
+  "entity": "安全监护人",
+  "raw": "[\n  {\"head\": \"安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"确认现场作业相关人员\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"向属地人员、作业人员、安全监护等全体人员明确作业内容、涉及风险作业及应急处置措施\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"严格执行停电、挂牌、上锁制度\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"员工应急施救前应做好自身安全防护\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "确认现场作业相关人员",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "严格执行停电、挂牌、上锁制度",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "员工应急施救前应做好自身安全防护",
+      "tail_type": "控制措施"
+    }
+  ]
+}

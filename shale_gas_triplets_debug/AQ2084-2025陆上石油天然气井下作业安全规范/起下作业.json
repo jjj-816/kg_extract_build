@@ -1,0 +1,34 @@
+{
+  "entity": "起下作业",
+  "raw": "[\n  {\"head\": \"起下作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"环形防喷器关闭压力设置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"起下作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"前期作业情况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"起下作业\", \"head_type\": \"施工阶段\", \"relation\": \"PRECEDES\", \"tail\": \"换装井口作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"起下作业\", \"head_type\": \"施工阶段\", \"relation\": \"PRECEDES\", \"tail\": \"放喷、测试作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "起下作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "环形防喷器关闭压力设置",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "起下作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "前期作业情况",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "起下作业",
+      "head_type": "施工阶段",
+      "relation": "PRECEDES",
+      "tail": "换装井口作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "起下作业",
+      "head_type": "施工阶段",
+      "relation": "PRECEDES",
+      "tail": "放喷、测试作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

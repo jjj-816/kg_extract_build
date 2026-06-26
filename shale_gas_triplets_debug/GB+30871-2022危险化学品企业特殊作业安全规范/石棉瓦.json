@@ -1,0 +1,5 @@
+{
+  "entity": "石棉瓦",
+  "raw": "[\n  {\"head\": \"石棉瓦\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"彩钢板屋顶\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": []
+}

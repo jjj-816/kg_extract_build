@@ -1,0 +1,13 @@
+{
+  "entity": "风险识别",
+  "raw": "[\n  {\"head\": \"风险识别\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工项目负责人保存记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"风险识别\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"风险分析\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "风险识别",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工项目负责人保存记录",
+      "tail_type": "施工记录"
+    }
+  ]
+}

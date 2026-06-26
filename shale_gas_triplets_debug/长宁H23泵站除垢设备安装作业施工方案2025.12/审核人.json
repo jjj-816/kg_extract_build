@@ -1,0 +1,20 @@
+{
+  "entity": "审核人",
+  "raw": "[\n  {\"head\": \"审核人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场人员配置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"审核人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"对现场进行警戒\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"审核人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"应急领导小组组长\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "审核人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场人员配置",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "审核人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "对现场进行警戒",
+      "tail_type": "控制措施"
+    }
+  ]
+}

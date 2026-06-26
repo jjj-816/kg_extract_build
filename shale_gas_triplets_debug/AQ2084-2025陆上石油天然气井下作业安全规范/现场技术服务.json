@@ -1,0 +1,62 @@
+{
+  "entity": "现场技术服务",
+  "raw": "[\n  {\"head\": \"现场技术服务\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"井控装置安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场技术服务\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"检维修\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场技术服务\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"试压\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场技术服务\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"现场服务\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场技术服务\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"硫化氢防护技术培训\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场技术服务\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"硫化氢培训合格证\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场技术服务\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"现场作业的安全措施\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场技术服务\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"应急响应程序\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "现场技术服务",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "井控装置安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场技术服务",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "检维修",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场技术服务",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "试压",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场技术服务",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "现场服务",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场技术服务",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "硫化氢防护技术培训",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场技术服务",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "硫化氢培训合格证",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场技术服务",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "现场作业的安全措施",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场技术服务",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "应急响应程序",
+      "tail_type": "作业活动"
+    }
+  ]
+}

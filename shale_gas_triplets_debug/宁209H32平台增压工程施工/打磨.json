@@ -1,0 +1,20 @@
+{
+  "entity": "打磨",
+  "raw": "[\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"打磨除锈\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"不平整处\", \"tail_type\": \"未分类\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"防护眼镜\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"防护口罩\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "打磨除锈",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "不平整处",
+      "tail_type": "未分类"
+    }
+  ]
+}

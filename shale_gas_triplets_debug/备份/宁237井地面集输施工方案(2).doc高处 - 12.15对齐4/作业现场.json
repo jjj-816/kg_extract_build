@@ -1,0 +1,76 @@
+{
+  "entity": "作业现场",
+  "raw": "[\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"培训目的\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"培训效果\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"工业动火\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"有限空间作业\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"高处作业\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"临时用电\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"吊装\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"脚手架\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业类型\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业内容\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "培训目的",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "培训效果",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "工业动火",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "有限空间作业",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "高处作业",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "临时用电",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "吊装",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "脚手架",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业类型",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业内容",
+      "tail_type": "施工记录"
+    }
+  ]
+}

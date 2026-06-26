@@ -1,0 +1,13 @@
+{
+  "entity": "垫片",
+  "raw": "[\n  {\"head\": \"垫片\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高压盲板使用前应经超声波探伤\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "垫片",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高压盲板使用前应经超声波探伤",
+      "tail_type": "风险事件"
+    }
+  ]
+}

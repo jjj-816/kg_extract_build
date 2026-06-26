@@ -1,0 +1,13 @@
+{
+  "entity": "非防爆通讯器材",
+  "raw": "[\n  {\"head\": \"非防爆通讯器材\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"生产场站\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "非防爆通讯器材",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "生产场站",
+      "tail_type": "时空信息"
+    }
+  ]
+}

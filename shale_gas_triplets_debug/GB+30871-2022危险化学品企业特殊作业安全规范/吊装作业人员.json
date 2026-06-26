@@ -1,0 +1,125 @@
+{
+  "entity": "吊装作业人员",
+  "raw": "[\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"吊装作业方案\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"个体防护装备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"起重吊装设备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"联络信号\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"法定资格证书\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"吊物捆扎\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"起重机安全装置\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"吊装绳索\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"吊装锚点\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"起吊物质量\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"管线、电缆桥架\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"围栏、警戒线、警告牌\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"架空线路\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"爆炸危险场所\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"环境风力\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"特殊作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"吊装作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"完工验收\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "吊装作业方案",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "个体防护装备",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "起重吊装设备",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "联络信号",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "法定资格证书",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "吊物捆扎",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "起重机安全装置",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "吊装绳索",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "吊装锚点",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "管线、电缆桥架",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "围栏、警戒线、警告牌",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "架空线路",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "爆炸危险场所",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "环境风力",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "特殊作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "吊装作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "完工验收",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "综合录井队",
+  "raw": "[\n  {\"head\": \"综合录井队\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安装液面检测装置\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "综合录井队",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安装液面检测装置",
+      "tail_type": "控制措施"
+    }
+  ]
+}

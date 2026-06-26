@@ -1,0 +1,5 @@
+{
+  "entity": "警戒标识",
+  "raw": "[\n  {\"head\": \"警戒标识\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工记录\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": []
+}

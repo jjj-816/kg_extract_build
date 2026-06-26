@@ -1,0 +1,48 @@
+{
+  "entity": "接头",
+  "raw": "[\n  {\"head\": \"接头\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾爆炸危险场所\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"接头\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高温\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"接头\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"振动\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"接头\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"腐蚀\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"接头\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"积水\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"接头\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"产生机械损伤\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "接头",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾爆炸危险场所",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "接头",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高温",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "接头",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "振动",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "接头",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "腐蚀",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "接头",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "积水",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "接头",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "产生机械损伤",
+      "tail_type": "风险事件"
+    }
+  ]
+}

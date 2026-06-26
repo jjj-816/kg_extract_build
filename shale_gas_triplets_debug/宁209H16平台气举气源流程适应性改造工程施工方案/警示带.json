@@ -1,0 +1,41 @@
+{
+  "entity": "警示带",
+  "raw": "[\n  {\"head\": \"警示带\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"砸伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"警示带\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"车辆移动伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"警示带\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"警示带\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业区域\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"警示带\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"施工范围\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "警示带",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "砸伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "警示带",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "车辆移动伤害",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "警示带",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "警示带",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业区域",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "警示带",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "施工范围",
+      "tail_type": "时空信息"
+    }
+  ]
+}

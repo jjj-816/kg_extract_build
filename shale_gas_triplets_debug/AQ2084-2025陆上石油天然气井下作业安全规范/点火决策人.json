@@ -1,0 +1,13 @@
+{
+  "entity": "点火决策人",
+  "raw": "[\n  {\"head\": \"点火决策人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"高含硫油气井失控井口点火的条件\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "点火决策人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "高含硫油气井失控井口点火的条件",
+      "tail_type": "控制措施"
+    }
+  ]
+}

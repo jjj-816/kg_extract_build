@@ -1,0 +1,27 @@
+{
+  "entity": "摔伤",
+  "raw": "[\n  {\"head\": \"摔伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"高空作业佩戴全身式安全带，安全带高挂低用\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"摔伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"高空作业佩戴全身式安全带\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"摔伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"安全带高挂低用\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "摔伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "高空作业佩戴全身式安全带，安全带高挂低用",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "摔伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "高空作业佩戴全身式安全带",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "摔伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "安全带高挂低用",
+      "tail_type": "控制措施"
+    }
+  ]
+}

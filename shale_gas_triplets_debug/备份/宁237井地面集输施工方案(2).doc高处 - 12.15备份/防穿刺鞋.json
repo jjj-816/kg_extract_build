@@ -1,0 +1,13 @@
+{
+  "entity": "防穿刺鞋",
+  "raw": "[\n  {\"head\": \"防穿刺鞋\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"安全防护\", \"tail_type\": \"未分类\"},\n  {\"head\": \"防穿刺鞋\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"高处作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"防穿刺鞋\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"作业平台\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "安全防护",
+      "head_type": "未分类",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防穿刺鞋",
+      "tail_type": "设备工具"
+    }
+  ]
+}

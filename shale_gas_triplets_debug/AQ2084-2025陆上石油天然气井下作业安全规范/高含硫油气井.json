@@ -1,0 +1,20 @@
+{
+  "entity": "高含硫油气井",
+  "raw": "[\n  {\"head\": \"高含硫油气井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"采油(气)井口装置\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"高含硫油气井\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"陆上石油天然气井下作业安全规范\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "高含硫油气井",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "采油(气)井口装置",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "高含硫油气井",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "陆上石油天然气井下作业安全规范",
+      "tail_type": "时空信息"
+    }
+  ]
+}

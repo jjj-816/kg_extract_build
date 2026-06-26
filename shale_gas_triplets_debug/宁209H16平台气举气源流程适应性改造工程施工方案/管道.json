@@ -1,0 +1,62 @@
+{
+  "entity": "管道",
+  "raw": "[\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"工艺管道切割\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"工艺管道焊接\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"管道切割\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"管道焊接\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"《流体输送用不锈钢无缝钢管》GB/T14976-2012\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"《石油天然气站内工艺管道工程施工规范》(2012年)GB50540-2009\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"角度误差≤±2°\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"地下管线\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"管道\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"管沟\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "工艺管道切割",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "工艺管道焊接",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "管道切割",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "管道焊接",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "《流体输送用不锈钢无缝钢管》GB/T14976-2012",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "角度误差≤±2°",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "地下管线",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "管道",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "管沟",
+      "tail_type": "时空信息"
+    }
+  ]
+}

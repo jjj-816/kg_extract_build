@@ -1,0 +1,55 @@
+{
+  "entity": "人、机、环作业前检查",
+  "raw": "[\n  {\"head\": \"人、机、环作业前检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"设备机具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"人、机、环作业前检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"线缆\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"人、机、环作业前检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"角磨机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"人、机、环作业前检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"电扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"人、机、环作业前检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"电钻\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"人、机、环作业前检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"作业人员\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"人、机、环作业前检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"材料\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"人、机、环作业前检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"机具\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "人、机、环作业前检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "设备机具",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "人、机、环作业前检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "线缆",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "人、机、环作业前检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "角磨机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "人、机、环作业前检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "电扳手",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "人、机、环作业前检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "电钻",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "人、机、环作业前检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "作业人员",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "人、机、环作业前检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "机具",
+      "tail_type": "设备工具"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "内表面质量",
+  "raw": "[\n  {\"head\": \"内表面质量\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"根焊\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "内表面质量",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "根焊",
+      "tail_type": "作业活动"
+    }
+  ]
+}

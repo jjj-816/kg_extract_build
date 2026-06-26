@@ -1,0 +1,13 @@
+{
+  "entity": "电流",
+  "raw": "[\n  {\"head\": \"电流\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"焊接工艺卡\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "电流",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "焊接工艺卡",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "救护",
+  "raw": "[\n  {\"head\": \"救护\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"现场人员配置\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "救护",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "现场人员配置",
+      "tail_type": "作业活动"
+    }
+  ]
+}

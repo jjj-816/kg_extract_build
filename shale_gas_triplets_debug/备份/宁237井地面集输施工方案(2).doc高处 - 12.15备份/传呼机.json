@@ -1,0 +1,5 @@
+{
+  "entity": "传呼机",
+  "raw": "[\n  {\"head\": \"传呼机\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"应急处置\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"传呼机\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"现场人员配置\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"传呼机\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"高空坠落应急\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"传呼机\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"火灾爆炸风险控制措施\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": []
+}

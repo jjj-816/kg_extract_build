@@ -1,0 +1,34 @@
+{
+  "entity": "特种作业证书",
+  "raw": "[\n  {\"head\": \"特种作业证书\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"作业人员\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"特种作业证书\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"人员\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"特种作业证书\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"持有效特种作业证书\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"特种作业证书\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"持有效特种作业证书\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "特种作业证书",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "作业人员",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "特种作业证书",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "人员",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "特种作业证书",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "持有效特种作业证书",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "特种作业证书",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "持有效特种作业证书",
+      "tail_type": "控制措施"
+    }
+  ]
+}

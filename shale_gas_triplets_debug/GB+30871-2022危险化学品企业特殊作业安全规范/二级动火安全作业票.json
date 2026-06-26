@@ -1,0 +1,13 @@
+{
+  "entity": "二级动火安全作业票",
+  "raw": "[\n  {\"head\": \"二级动火安全作业票\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"72 h\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "二级动火安全作业票",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "72 h",
+      "tail_type": "施工参数"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "管路冲洗",
+  "raw": "[\n  {\"head\": \"管路冲洗\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"焊渣、铁锈等杂质\", \"tail_type\": \"未分类\"},\n  {\"head\": \"管路冲洗\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"油污、铁锈、水分、毛刺等任何杂质\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "管路冲洗",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "焊渣、铁锈等杂质",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "管路冲洗",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "油污、铁锈、水分、毛刺等任何杂质",
+      "tail_type": "未分类"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "培训人",
+  "raw": "[\n  {\"head\": \"培训人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全教育培训\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"培训人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"冬季施工安全教育\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"培训人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"高处作业安全培训\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"培训人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"用电设备操作培训\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "培训人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全教育培训",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "培训人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "冬季施工安全教育",
+      "tail_type": "作业活动"
+    }
+  ]
+}

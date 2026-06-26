@@ -1,0 +1,97 @@
+{
+  "entity": "井口打磨",
+  "raw": "```json\n[\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"建渣清理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"清理退场\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"砂轮机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"灭火器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"常用工具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"高处\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动火\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"消防措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"防毒口罩\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"作业面放坡\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"有效支撑\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高处\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"动火\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"MITIGATED_BY\", \"tail\": \"灭火器\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防毒口罩\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"MITIGATED_BY\", \"tail\": \"作业面放坡\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"MITIGATED_BY\", \"tail\": \"有效支撑\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"宁237井地面集输工程施工图\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"REGULATES\", \"tail\": \"页岩气地面工程设计规范\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"REGULATES\", \"tail\": \"石油天然气工程设计防火规范\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"井口打磨\", \"head_type\": \"作业活动\", \"relation\": \"REGULATES\", \"tail\": \"石油天然气金属管道焊接工艺评定\", \"tail_type\": \"规范条款\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "井口打磨",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "建渣清理",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井口打磨",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "清理退场",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井口打磨",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "砂轮机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "井口打磨",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "灭火器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "井口打磨",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "常用工具",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "井口打磨",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "高处",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "井口打磨",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "动火",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "井口打磨",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高处",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "井口打磨",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "动火",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "井口打磨",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "宁237井地面集输工程施工图",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "页岩气地面工程设计规范",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "井口打磨",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "石油天然气工程设计防火规范",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "井口打磨",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "石油天然气金属管道焊接工艺评定",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "井口打磨",
+      "tail_type": "作业活动"
+    }
+  ]
+}

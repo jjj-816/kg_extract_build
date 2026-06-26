@@ -1,0 +1,13 @@
+{
+  "entity": "挥发性溶剂",
+  "raw": "[\n  {\"head\": \"挥发性溶剂\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"应采取强制通风措施\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "挥发性溶剂",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "应采取强制通风措施",
+      "tail_type": "风险事件"
+    }
+  ]
+}

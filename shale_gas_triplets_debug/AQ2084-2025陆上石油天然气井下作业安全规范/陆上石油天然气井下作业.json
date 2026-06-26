@@ -1,0 +1,41 @@
+{
+  "entity": "陆上石油天然气井下作业",
+  "raw": "[\n  {\"head\": \"陆上石油天然气井下作业\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"本文件规定了陆上石油天然气井下作业安全管理要求，以及设计、井控装置、施工作业、防火防爆措施、防硫化氢措施、溢流处置和井喷失控处置的要求\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"陆上石油天然气井下作业\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"陆上石油天然气(含页岩气)井下作业\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"陆上石油天然气井下作业\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"高产油气井\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"陆上石油天然气井下作业\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"三高油气井\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"陆上石油天然气井下作业\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"高压油气井\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"陆上石油天然气井下作业\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"高含硫油气井\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "陆上石油天然气井下作业",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "陆上石油天然气(含页岩气)井下作业",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "陆上石油天然气井下作业",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "高产油气井",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "陆上石油天然气井下作业",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "三高油气井",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "陆上石油天然气井下作业",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "高压油气井",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "陆上石油天然气井下作业",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "高含硫油气井",
+      "tail_type": "施工对象"
+    }
+  ]
+}

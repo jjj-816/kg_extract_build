@@ -1,0 +1,20 @@
+{
+  "entity": "井口中心间距",
+  "raw": "[\n  {\"head\": \"井口中心间距\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"不小于 2 m\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"井口中心间距\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"不小于 8 m\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "井口中心间距",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "不小于 2 m",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "井口中心间距",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "不小于 8 m",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

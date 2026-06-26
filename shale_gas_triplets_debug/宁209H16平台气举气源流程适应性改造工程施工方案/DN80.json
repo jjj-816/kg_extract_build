@@ -1,0 +1,48 @@
+{
+  "entity": "DN80",
+  "raw": "[\n  {\"head\": \"DN80\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"1只\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"DN80\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"2只\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"DN80\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"2只\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"DN80\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"16m\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"DN80\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"5只\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"DN80\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"6道\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "DN80",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "1只",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "DN80",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "2只",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "DN80",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "2只",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "DN80",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "16m",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "DN80",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "5只",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "DN80",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "6道",
+      "tail_type": "施工参数"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "entity": "设备检查",
+  "raw": "[\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"作业前检查工器具\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"对照施工方案，人、机、环作业前检查符合性\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"定期检查电气设备接线端子、插头插座\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"工器具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"角磨机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"电扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"电钻\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"设备机具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"线缆\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"电气设备\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工准备\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"机械故障\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体坍塌\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"机械划伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"砸伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设备检查\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"挤压伤\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "作业前检查工器具",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "对照施工方案，人、机、环作业前检查符合性",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "定期检查电气设备接线端子、插头插座",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "工器具",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "角磨机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "电扳手",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "电钻",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "设备机具",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "线缆",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "电气设备",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工准备",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "机械故障",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体坍塌",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "机械划伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "砸伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设备检查",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "挤压伤",
+      "tail_type": "风险事件"
+    }
+  ]
+}

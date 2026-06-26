@@ -1,0 +1,62 @@
+{
+  "entity": "套管",
+  "raw": "[\n  {\"head\": \"套管\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"套管头额定工作压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"套管\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"套管抗外挤强度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"套管\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"套管抗内压强度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"套管\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"套管允许最大掏空深度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"套管\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"套管腐蚀\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"套管\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"换装井口装置\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"套管\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"气举\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"套管\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"套管压裂\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "套管",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "套管头额定工作压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "套管",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "套管抗外挤强度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "套管",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "套管抗内压强度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "套管",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "套管允许最大掏空深度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "套管",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "套管腐蚀",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "套管",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "换装井口装置",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "套管",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "气举",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "套管",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "套管压裂",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

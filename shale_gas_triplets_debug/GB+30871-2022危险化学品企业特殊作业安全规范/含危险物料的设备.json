@@ -1,0 +1,41 @@
+{
+  "entity": "含危险物料的设备",
+  "raw": "[\n  {\"head\": \"含危险物料的设备\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"危险、有害因素\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"含危险物料的设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"停车\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"含危险物料的设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"放空物料\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"含危险物料的设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"置换\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"含危险物料的设备\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"吊装场所\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "含危险物料的设备",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "危险、有害因素",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "含危险物料的设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "停车",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "含危险物料的设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "放空物料",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "含危险物料的设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "置换",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "含危险物料的设备",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "吊装场所",
+      "tail_type": "时空信息"
+    }
+  ]
+}

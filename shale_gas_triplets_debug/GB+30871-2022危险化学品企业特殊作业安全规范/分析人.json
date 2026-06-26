@@ -1,0 +1,104 @@
+{
+  "entity": "分析人",
+  "raw": "[\n  {\"head\": \"分析人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"气体取样分析时间\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"代表性气体\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"分析结果/%\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"分析项目\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"有毒有害气体名称\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"可燃气体名称\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"氧气含量\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"取样分析时间\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"分析部位\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"分析数据\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"合格标准\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"分析时间\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"可燃气体检测结果\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"分析点\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "分析人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "气体取样分析时间",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "代表性气体",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "分析结果/%",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "分析项目",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "有毒有害气体名称",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "可燃气体名称",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "氧气含量",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "取样分析时间",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "分析部位",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "分析数据",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "合格标准",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "分析时间",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "可燃气体检测结果",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "分析点",
+      "tail_type": "作业活动"
+    }
+  ]
+}

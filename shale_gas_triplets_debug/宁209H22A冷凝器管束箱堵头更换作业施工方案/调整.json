@@ -1,0 +1,27 @@
+{
+  "entity": "调整",
+  "raw": "[\n  {\"head\": \"调整\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"设备组装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"调整\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"场地清理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"调整\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"设备\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "调整",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "设备组装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "调整",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "场地清理",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "调整",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "设备",
+      "tail_type": "设备工具"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "GB_NB_Q_SY",
+  "raw": "GB/NB/Q/SY - 属于 - 文件依据\nGB/NB/Q/SY - 包含 - 《宁 209H68 供水工程施工图》\nGB/NB/Q/SY - 包含 - 《中华人民共和国特种设备安全法》\nGB/NB/Q/SY - 用于 - 施工方案编制\nGB/NB/Q/SY - 用于 - 管道焊接管理\nGB/NB/Q/SY - 用于 - 风险分析\nGB/NB/Q/SY - 用于 - 风险控制措施",
+  "triplets": [
+    "GB/NB/Q/SY - 属于 - 文件依据",
+    "GB/NB/Q/SY - 包含 - 《宁 209H68 供水工程施工图》",
+    "GB/NB/Q/SY - 包含 - 《中华人民共和国特种设备安全法》",
+    "GB/NB/Q/SY - 用于 - 施工方案编制",
+    "GB/NB/Q/SY - 用于 - 管道焊接管理",
+    "GB/NB/Q/SY - 用于 - 风险分析",
+    "GB/NB/Q/SY - 用于 - 风险控制措施"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "铲子",
+  "raw": "[\n  {\"head\": \"铲子\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"常用工具\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "铲子",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "常用工具",
+      "tail_type": "时空信息"
+    }
+  ]
+}

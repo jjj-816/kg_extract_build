@@ -1,0 +1,48 @@
+{
+  "entity": "防喷器控制装置",
+  "raw": "[\n  {\"head\": \"防喷器控制装置\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"6.1.6\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"防喷器控制装置\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"6.3.2\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"防喷器控制装置\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"远程控制台控制全封闸板的手柄\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器控制装置\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"控制剪切闸板的手柄\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器控制装置\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防误操作的防护装置\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器控制装置\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防误操作的限位装置\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "防喷器控制装置",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "6.1.6",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "防喷器控制装置",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "6.3.2",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "防喷器控制装置",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "远程控制台控制全封闸板的手柄",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器控制装置",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "控制剪切闸板的手柄",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器控制装置",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "防误操作的防护装置",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器控制装置",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "防误操作的限位装置",
+      "tail_type": "施工参数"
+    }
+  ]
+}

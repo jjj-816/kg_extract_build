@@ -1,0 +1,13 @@
+{
+  "entity": "劳保手套",
+  "raw": "[\n  {\"head\": \"劳保手套\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "劳保手套",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    }
+  ]
+}

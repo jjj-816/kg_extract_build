@@ -1,0 +1,27 @@
+{
+  "entity": "作业内容",
+  "raw": "[\n  {\"head\": \"作业内容\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"我已交代清楚以上事项，本次作业不涉及其它作业内容\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业内容\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"我已理解此项作业内容、范围、风险、控制措施、应急措施以及其他注意事项\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业内容\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"场站动火作业\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业内容\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"场站动土作业\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "作业内容",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "我已交代清楚以上事项，本次作业不涉及其它作业内容",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业内容",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "场站动火作业",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业内容",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "场站动土作业",
+      "tail_type": "施工对象"
+    }
+  ]
+}

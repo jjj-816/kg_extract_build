@@ -1,0 +1,20 @@
+{
+  "entity": "气体中毒",
+  "raw": "[\n  {\"head\": \"气体中毒\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"MFZ/ABC-8型干粉灭火器\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"气体中毒\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"气体检测仪\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "气体中毒",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "MFZ/ABC-8型干粉灭火器",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "气体中毒",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "气体检测仪",
+      "tail_type": "控制措施"
+    }
+  ]
+}

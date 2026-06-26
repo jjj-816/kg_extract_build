@@ -1,0 +1,41 @@
+{
+  "entity": "火花",
+  "raw": "[\n  {\"head\": \"火花\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防止火花损伤电缆的措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"火花\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防火花飞溅措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"火花\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防火隔绝措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"火花\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防回火装置\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"火花\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防止火花损伤电缆的措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "火花",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "防止火花损伤电缆的措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "火花",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "防火花飞溅措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "火花",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "防火隔绝措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "火花",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "防回火装置",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "火花",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "防止火花损伤电缆的措施",
+      "tail_type": "控制措施"
+    }
+  ]
+}

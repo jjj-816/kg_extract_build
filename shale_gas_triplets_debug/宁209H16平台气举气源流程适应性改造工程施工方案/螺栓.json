@@ -1,0 +1,13 @@
+{
+  "entity": "螺栓",
+  "raw": "[\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"均匀紧固\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "均匀紧固",
+      "tail_type": "施工参数"
+    }
+  ]
+}

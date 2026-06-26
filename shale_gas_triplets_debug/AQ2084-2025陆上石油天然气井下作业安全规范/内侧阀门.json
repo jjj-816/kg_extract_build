@@ -1,0 +1,20 @@
+{
+  "entity": "内侧阀门",
+  "raw": "[\n  {\"head\": \"内侧阀门\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"双阀门时\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"内侧阀门\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"全开状态\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "内侧阀门",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "双阀门时",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "内侧阀门",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "全开状态",
+      "tail_type": "施工参数"
+    }
+  ]
+}

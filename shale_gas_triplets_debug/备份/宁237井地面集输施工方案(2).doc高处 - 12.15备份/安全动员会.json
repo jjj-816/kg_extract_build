@@ -1,0 +1,5 @@
+{
+  "entity": "安全动员会",
+  "raw": "[\n  {\"head\": \"安全动员会\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"应急施救前做好自身安全防护\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全动员会\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"安排人员保护事故现场\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全动员会\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"配合后续事故调查\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全动员会\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"整理应急记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安全动员会\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"加强冬季施工安全教育\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全动员会\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"提高施工人员安全意识\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全动员会\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"动火作业前现场确认安全措施\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": []
+}

@@ -1,0 +1,55 @@
+{
+  "entity": "带压作业",
+  "raw": "[\n  {\"head\": \"带压作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"最大无支撑长度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"带压作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"管柱起下速度要求\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"带压作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"安全防喷器组\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"带压作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"工作防喷器组\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"带压作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"气体燃烧装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"带压作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"操作台\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"带压作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"逃生装置\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "带压作业",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "最大无支撑长度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "带压作业",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "管柱起下速度要求",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "带压作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "安全防喷器组",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "带压作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "工作防喷器组",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "带压作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "气体燃烧装置",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "带压作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "操作台",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "带压作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "逃生装置",
+      "tail_type": "设备工具"
+    }
+  ]
+}

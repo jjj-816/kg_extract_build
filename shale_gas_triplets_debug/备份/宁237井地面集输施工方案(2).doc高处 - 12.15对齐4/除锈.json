@@ -1,0 +1,69 @@
+{
+  "entity": "除锈",
+  "raw": "[\n  {\"head\": \"除锈\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"井口打磨\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"除锈\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"喷涂\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"除锈\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"摄像头立杆\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"除锈\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"摄像头安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"除锈\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"除锈\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"正确佩戴橡胶绝缘手套\", \"tail_type\": \"未分类\"},\n  {\"head\": \"除锈\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"角磨机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"除锈\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电源线\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"除锈\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"插座\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "除锈",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "井口打磨",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "除锈",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "喷涂",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "除锈",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "摄像头立杆",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "除锈",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "摄像头安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "除锈",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "除锈",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "正确佩戴橡胶绝缘手套",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "除锈",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "角磨机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "除锈",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "电源线",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "除锈",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "插座",
+      "tail_type": "设备工具"
+    }
+  ]
+}

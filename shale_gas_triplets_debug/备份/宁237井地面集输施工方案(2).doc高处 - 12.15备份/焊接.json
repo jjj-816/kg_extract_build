@@ -1,0 +1,27 @@
+{
+  "entity": "焊接",
+  "raw": "[\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"REGULATES\", \"tail\": \"关键工序\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES\", \"tail\": \"旁站监督和检测\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"日报\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"砂轮机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电动扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"护目镜\", \"tail_type\": \"材料介质\"}\n]",
+  "triplets": [
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "砂轮机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "电动扳手",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "护目镜",
+      "tail_type": "材料介质"
+    }
+  ]
+}

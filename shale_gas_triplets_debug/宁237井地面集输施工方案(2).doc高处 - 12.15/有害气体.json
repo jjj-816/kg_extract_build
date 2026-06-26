@@ -1,0 +1,41 @@
+{
+  "entity": "有害气体",
+  "raw": "[\n  {\"head\": \"有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"可燃气体检测仪\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"气体检测仪\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"连续气体检测\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"气体检测仪\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"气体检测仪\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "可燃气体检测仪",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "气体检测仪",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "连续气体检测",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "气体检测仪",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "气体检测仪",
+      "tail_type": "控制措施"
+    }
+  ]
+}

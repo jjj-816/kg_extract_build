@@ -1,0 +1,13 @@
+{
+  "entity": "电缆桥架",
+  "raw": "[\n  {\"head\": \"电缆桥架\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"吊装高度\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电缆桥架\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"在吊装高度的电缆桥架已做好防护措施\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "电缆桥架",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "吊装高度",
+      "tail_type": "时空信息"
+    }
+  ]
+}

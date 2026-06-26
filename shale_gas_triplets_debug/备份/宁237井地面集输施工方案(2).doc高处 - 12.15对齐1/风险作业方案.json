@@ -1,0 +1,5 @@
+{
+  "entity": "风险作业方案",
+  "raw": "```json\n[\n  {\"head\": \"风险作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"风险矩阵\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"风险作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"风险分析\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"风险作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"安全技术交底和风险告知确认卡\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"风险作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"风险作业方案控制措施检查确认表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"风险作业方案\", \"head_type\": \"施工记录\", \"relation\": \"RECORDED_IN\", \"tail\": \"风险矩阵\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"风险作业方案\", \"head_type\": \"施工记录\", \"relation\": \"RECORDED_IN\", \"tail\": \"风险分析\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"风险作业方案\", \"head_type\": \"施工记录\", \"relation\": \"RECORDED_IN\", \"tail\": \"安全技术交底和风险告知确认卡\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"风险作业方案\", \"head_type\": \"施工记录\", \"relation\": \"RECORDED_IN\", \"tail\": \"风险作业方案控制措施检查确认表\", \"tail_type\": \"施工记录\"}\n]\n```",
+  "triplets": []
+}

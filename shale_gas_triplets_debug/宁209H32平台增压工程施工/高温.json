@@ -1,0 +1,13 @@
+{
+  "entity": "高温",
+  "raw": "[\n  {\"head\": \"高温\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"作业中身体远离灼热部位\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "高温",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "作业中身体远离灼热部位",
+      "tail_type": "控制措施"
+    }
+  ]
+}

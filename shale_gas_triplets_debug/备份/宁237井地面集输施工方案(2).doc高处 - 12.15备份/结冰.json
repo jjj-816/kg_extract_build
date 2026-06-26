@@ -1,0 +1,20 @@
+{
+  "entity": "结冰",
+  "raw": "[\n  {\"head\": \"结冰\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"清理道路积雪\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"结冰\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"加强道路巡查\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "结冰",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "清理道路积雪",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "结冰",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "加强道路巡查",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "施工单位",
+  "raw": "[\n  {\"head\": \"施工单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"作业场所\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"培训人\", \"tail_type\": \"未分类\"},\n  {\"head\": \"施工单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"签字\", \"tail_type\": \"未分类\"},\n  {\"head\": \"施工单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工准备与资源配置计划\", \"tail_type\": \"未分类\"},\n  {\"head\": \"施工单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"土建班组\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "施工单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "作业场所",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "签字",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "施工单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工准备与资源配置计划",
+      "tail_type": "未分类"
+    }
+  ]
+}

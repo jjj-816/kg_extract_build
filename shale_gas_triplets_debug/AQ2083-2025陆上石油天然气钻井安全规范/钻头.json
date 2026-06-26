@@ -1,0 +1,20 @@
+{
+  "entity": "钻头",
+  "raw": "[\n  {\"head\": \"钻头\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"钻头尺寸\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"钻头\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"油气层中和油气层顶部以上 300 m 井段内\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "钻头",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "钻头尺寸",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "钻头",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "油气层中和油气层顶部以上 300 m 井段内",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "entity": "邻井情况",
+  "raw": "[\n  {\"head\": \"邻井情况\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"注水\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"邻井情况\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"注气\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"邻井情况\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"注汽（注汽后焖井）\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"邻井情况\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"井口压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"邻井情况\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"有毒有害气体\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "邻井情况",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "注水",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "邻井情况",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "注气",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "邻井情况",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "注汽（注汽后焖井）",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "邻井情况",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "井口压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "邻井情况",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "有毒有害气体",
+      "tail_type": "施工参数"
+    }
+  ]
+}

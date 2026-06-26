@@ -1,0 +1,202 @@
+{
+  "entity": "检测",
+  "raw": "[\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"外观检查与尺寸检查\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"对电源导线定期进行检查\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"检查电缆线是否完好无破损\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业前应对用电设备进行检查和试运转\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"在施工前对所要使用的机械设备进行检查\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工车辆进行全面保养维护，检查更换冬季适用的机油、冷却液、玻璃水等\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"外观检查与尺寸检查\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"对电源导线定期进行检查\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"检查电缆线是否完好无破损\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"作业前应对用电设备进行检查和试运转\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"在施工前对所要使用的机械设备进行检查\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"施工车辆进行全面保养维护，检查更换冬季适用的机油、冷却液、玻璃水等\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"电源导线\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"电缆线\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"用电设备\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"机械设备\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"施工车辆\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电源导线\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电缆线\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"用电设备\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"机械设备\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"施工车辆\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"绝缘损坏\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"严重压痕\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"完好无破损\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"完好\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"性能良好\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"绝缘损坏\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"严重压痕\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"电缆线破损\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"用电设备故障\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"机械设备故障\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"施工车辆故障\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "外观检查与尺寸检查",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "对电源导线定期进行检查",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "检查电缆线是否完好无破损",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "作业前应对用电设备进行检查和试运转",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "在施工前对所要使用的机械设备进行检查",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "外观检查与尺寸检查",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "对电源导线定期进行检查",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "检查电缆线是否完好无破损",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "作业前应对用电设备进行检查和试运转",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "在施工前对所要使用的机械设备进行检查",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "电源导线",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "电缆线",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "用电设备",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "机械设备",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "施工车辆",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "电源导线",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "电缆线",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "用电设备",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "机械设备",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "施工车辆",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "绝缘损坏",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "严重压痕",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "完好无破损",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "完好",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "性能良好",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "绝缘损坏",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "严重压痕",
+      "tail_type": "风险事件"
+    }
+  ]
+}

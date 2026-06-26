@@ -1,0 +1,20 @@
+{
+  "entity": "扳手",
+  "raw": "[\n  {\"head\": \"扳手\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"工具袋\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"扳手\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"安全绳\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "扳手",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "工具袋",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "扳手",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "安全绳",
+      "tail_type": "时空信息"
+    }
+  ]
+}

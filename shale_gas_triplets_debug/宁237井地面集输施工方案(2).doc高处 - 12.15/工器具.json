@@ -1,0 +1,34 @@
+{
+  "entity": "工器具",
+  "raw": "[\n  {\"head\": \"工器具\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"工器具\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高空落物，造成人员砸伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"工器具\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业点铺设塑料布\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"工器具\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业点下方设置警戒线\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "工器具",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "工器具",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高空落物，造成人员砸伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "工器具",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业点铺设塑料布",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "工器具",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业点下方设置警戒线",
+      "tail_type": "时空信息"
+    }
+  ]
+}

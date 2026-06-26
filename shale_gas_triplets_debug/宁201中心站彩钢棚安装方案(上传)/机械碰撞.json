@@ -1,0 +1,13 @@
+{
+  "entity": "机械碰撞",
+  "raw": "[\n  {\"head\": \"机械碰撞\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"明确分工，统一指挥，避免交叉操作\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "机械碰撞",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "明确分工，统一指挥，避免交叉操作",
+      "tail_type": "控制措施"
+    }
+  ]
+}

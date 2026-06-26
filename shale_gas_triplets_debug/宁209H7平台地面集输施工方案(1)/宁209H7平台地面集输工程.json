@@ -1,0 +1,27 @@
+{
+  "entity": "宁209H7平台地面集输工程",
+  "raw": "[\n  {\"head\": \"宁209H7平台地面集输工程\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"《宁209H7平台地面集输工程施工图》\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"宁209H7平台地面集输工程\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"《起重机械安全规程》 GB 6067.1-2010\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"宁209H7平台地面集输工程\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"《页岩气地面工程设计规范》Q/SY1858-2015\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"宁209H7平台地面集输工程\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"第三章 施工准备与资源配置计划\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "宁209H7平台地面集输工程",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "《宁209H7平台地面集输工程施工图》",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "宁209H7平台地面集输工程",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "《起重机械安全规程》 GB 6067.1-2010",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "宁209H7平台地面集输工程",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "《页岩气地面工程设计规范》Q/SY1858-2015",
+      "tail_type": "施工记录"
+    }
+  ]
+}

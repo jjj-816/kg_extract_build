@@ -1,0 +1,62 @@
+{
+  "entity": "用电",
+  "raw": "[\n  {\"head\": \"用电\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"用电\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电动扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"用电\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"配电箱\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"检查和试运转\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"停验电并上锁挂牌\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"可靠接地\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"漏电保护装置灵敏可靠\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"经过培训合格的专人\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"按操作规程操作\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"用电\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"用电\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾爆炸风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"机械通风\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "用电",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "发电机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "用电",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "电动扳手",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "用电",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "配电箱",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "用电",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "检查和试运转",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "用电",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "漏电保护装置灵敏可靠",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "用电",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "按操作规程操作",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "用电",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电风险",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "用电",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾爆炸风险",
+      "tail_type": "风险事件"
+    }
+  ]
+}

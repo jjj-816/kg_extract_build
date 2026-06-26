@@ -1,0 +1,13 @@
+{
+  "entity": "解卡",
+  "raw": "[\n  {\"head\": \"解卡\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"下步作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "解卡",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "下步作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

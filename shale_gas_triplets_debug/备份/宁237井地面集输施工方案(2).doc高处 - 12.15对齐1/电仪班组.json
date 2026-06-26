@@ -1,0 +1,5 @@
+{
+  "entity": "电仪班组",
+  "raw": "[\n  {\"head\": \"电仪班组\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"用电设备操作\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"电仪班组\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"穿戴防静电劳保用品\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"电仪班组\", \"head_type\": \"责任主体\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"电仪班组\", \"head_type\": \"责任主体\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电动扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"电仪班组\", \"head_type\": \"责任主体\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"气体检测仪\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": []
+}

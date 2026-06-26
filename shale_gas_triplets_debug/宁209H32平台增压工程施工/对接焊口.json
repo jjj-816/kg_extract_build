@@ -1,0 +1,34 @@
+{
+  "entity": "对接焊口",
+  "raw": "[\n  {\"head\": \"对接焊口\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"1倍公称直径\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"对接焊口\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"150mm\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"对接焊口\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"工艺管线连接、预制焊接\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"对接焊口\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"管道试压\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "对接焊口",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "1倍公称直径",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "对接焊口",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "150mm",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "对接焊口",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "工艺管线连接、预制焊接",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "对接焊口",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "管道试压",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

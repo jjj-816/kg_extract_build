@@ -1,0 +1,55 @@
+{
+  "entity": "法兰",
+  "raw": "[\n  {\"head\": \"法兰\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"法兰拆除/安装\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"法兰\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"使用扳手等工具拆卸法兰与管线的连接螺栓\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"法兰\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"拆除法兰后，对管线接口进行清理，去除残留的密封垫片和杂物\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"法兰\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"检查法兰的外观是否完好，有无变形、裂纹等缺陷\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"法兰\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"将法兰缓慢安装到管线接口上\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"法兰\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"按照对角线顺序逐步紧固法兰与管线的连接螺栓\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"法兰\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"安装前应对法兰、法兰与管道的配合进行检查\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "法兰",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "法兰拆除/安装",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "法兰",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "使用扳手等工具拆卸法兰与管线的连接螺栓",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "法兰",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "拆除法兰后，对管线接口进行清理，去除残留的密封垫片和杂物",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "法兰",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "检查法兰的外观是否完好，有无变形、裂纹等缺陷",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "法兰",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "将法兰缓慢安装到管线接口上",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "法兰",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "按照对角线顺序逐步紧固法兰与管线的连接螺栓",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "法兰",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "安装前应对法兰、法兰与管道的配合进行检查",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "外挂电缆管柱",
+  "raw": "[\n  {\"head\": \"外挂电缆管柱\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"起下外挂电缆管柱\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"外挂电缆管柱\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"应备好电缆剪断工具\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"外挂电缆管柱\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"现场应配备电缆剪断工具\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "外挂电缆管柱",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "起下外挂电缆管柱",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "外挂电缆管柱",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "应备好电缆剪断工具",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "外挂电缆管柱",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "现场应配备电缆剪断工具",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "entity": "生产设备",
+  "raw": "[\n  {\"head\": \"生产设备\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"除垢设备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"生产设备\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"焊接设备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"生产设备\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"设备与管线\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"生产设备\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"主要设备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"生产设备\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"除垢设备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"生产设备\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"焊接机组\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"生产设备\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"土建机组\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "生产设备",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "除垢设备",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "生产设备",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "焊接设备",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "生产设备",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "设备与管线",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "生产设备",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "主要设备",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "生产设备",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "除垢设备",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "生产设备",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "焊接机组",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "生产设备",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "土建机组",
+      "tail_type": "施工对象"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "entity": "门板",
+  "raw": "[\n  {\"head\": \"门板\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井口区域\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": []
+}

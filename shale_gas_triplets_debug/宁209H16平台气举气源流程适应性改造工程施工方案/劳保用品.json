@@ -1,0 +1,62 @@
+{
+  "entity": "劳保用品",
+  "raw": "[\n  {\"head\": \"劳保用品\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"工器具碰伤，人员摔伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"人员触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"施工过程中造成物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"工器具伤人\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"工器具伤人\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "劳保用品",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "工器具碰伤，人员摔伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "劳保用品",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "劳保用品",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "劳保用品",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "劳保用品",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "人员触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "劳保用品",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "施工过程中造成物体打击",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "劳保用品",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "工器具伤人",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "劳保用品",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "工器具伤人",
+      "tail_type": "风险事件"
+    }
+  ]
+}

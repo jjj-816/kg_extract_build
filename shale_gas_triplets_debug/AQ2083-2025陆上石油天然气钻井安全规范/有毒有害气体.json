@@ -1,0 +1,41 @@
+{
+  "entity": "有毒有害气体",
+  "raw": "[\n  {\"head\": \"有毒有害气体\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"硫化氢\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"中毒反应\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"硫化氢腐蚀\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"含硫油气井\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高含硫油气井\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "有毒有害气体",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "硫化氢",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "中毒反应",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "硫化氢腐蚀",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "含硫油气井",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高含硫油气井",
+      "tail_type": "风险事件"
+    }
+  ]
+}

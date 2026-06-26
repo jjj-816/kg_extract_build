@@ -1,0 +1,55 @@
+{
+  "entity": "用电设备",
+  "raw": "[\n  {\"head\": \"用电设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"接地\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"用电设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"接地线和接地极\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"用电设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"检查和试运转\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"用电设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"操作规程\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"用电设备\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"人员触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"用电设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电流、电压及焊接速度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"用电设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"漏电保护装置\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "用电设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "接地",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "用电设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "接地线和接地极",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "用电设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "检查和试运转",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "用电设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "操作规程",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "用电设备",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "人员触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "用电设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "电流、电压及焊接速度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "用电设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "漏电保护装置",
+      "tail_type": "施工参数"
+    }
+  ]
+}

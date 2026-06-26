@@ -1,0 +1,20 @@
+{
+  "entity": "检查人",
+  "raw": "[\n  {\"head\": \"检查人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"验收人\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"检查人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场人员配置\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "检查人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "验收人",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "检查人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场人员配置",
+      "tail_type": "作业活动"
+    }
+  ]
+}

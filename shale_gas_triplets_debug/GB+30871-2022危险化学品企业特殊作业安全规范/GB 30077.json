@@ -1,0 +1,20 @@
+{
+  "entity": "GB 30077",
+  "raw": "[\n  {\"head\": \"GB 30077\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"应急设施\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"GB 30077\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"安全警示标志\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "GB 30077",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "应急设施",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "GB 30077",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "安全警示标志",
+      "tail_type": "设备工具"
+    }
+  ]
+}

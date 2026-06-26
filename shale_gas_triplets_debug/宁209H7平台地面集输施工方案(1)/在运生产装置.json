@@ -1,0 +1,20 @@
+{
+  "entity": "在运生产装置",
+  "raw": "[\n  {\"head\": \"在运生产装置\", \"head_type\": \"未分类\", \"relation\": \"OPERATES_ON\", \"tail\": \"在运生产装置及设施\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"在运生产装置\", \"head_type\": \"未分类\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "在运生产装置",
+      "head_type": "未分类",
+      "relation": "OPERATES_ON",
+      "tail": "在运生产装置及设施",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "在运生产装置",
+      "head_type": "未分类",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    }
+  ]
+}

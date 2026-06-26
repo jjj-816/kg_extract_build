@@ -1,0 +1,27 @@
+{
+  "entity": "《吊装票》",
+  "raw": "[\n  {\"head\": \"《吊装票》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"吊装质量小于10t的作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《吊装票》\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"风险分析\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"《吊装票》\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"确保措施可靠\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "《吊装票》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "吊装质量小于10t的作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《吊装票》",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "风险分析",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "《吊装票》",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "确保措施可靠",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "entity": "钻台",
+  "raw": "[\n  {\"head\": \"钻台\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"钻进本井所用钻机的钻台长度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"钻台\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"钻具止回阀或旋塞阀\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"钻台\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"抢接专用工具\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"钻台\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"钻具内防喷工具\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"钻台\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"钻台上下\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"钻台\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"机泵房周围\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"钻台\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"钻台上下\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"钻台\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"振动筛\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"钻台\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"钻井液循环罐\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "钻台",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "钻具止回阀或旋塞阀",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "钻台",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "抢接专用工具",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "钻台",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "钻具内防喷工具",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "钻台",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "钻台上下",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "钻台",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "机泵房周围",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "钻台",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "钻台上下",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "钻台",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "振动筛",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "钻台",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "钻井液循环罐",
+      "tail_type": "时空信息"
+    }
+  ]
+}

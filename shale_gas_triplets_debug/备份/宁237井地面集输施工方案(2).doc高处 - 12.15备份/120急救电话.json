@@ -1,0 +1,5 @@
+{
+  "entity": "120急救电话",
+  "raw": "[\n  {\"head\": \"120急救电话\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"拨打120急救电话\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"120急救电话\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"清晰说明事故地点\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"120急救电话\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"说明伤亡人数\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"120急救电话\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"说明伤情\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"120急救电话\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"说明联系方式\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"120急救电话\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"应急记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"120急救电话\", \"head_type\": \"控制措施\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"应急人员\", \"tail_type\": \"责任主体\"}\n]",
+  "triplets": []
+}

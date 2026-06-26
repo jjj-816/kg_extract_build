@@ -1,0 +1,48 @@
+{
+  "entity": "用电单位",
+  "raw": "[\n  {\"head\": \"用电单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"临时用电\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"用电单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"临时用电电源施工、安装\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"用电单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"设置保护开关\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"用电单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"向其他单位转供电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"用电单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"增加用电负荷\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"用电单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"变更用电地点和用途\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "用电单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "临时用电",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "用电单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "临时用电电源施工、安装",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "用电单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "设置保护开关",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "用电单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "向其他单位转供电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "用电单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "增加用电负荷",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "用电单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "变更用电地点和用途",
+      "tail_type": "风险事件"
+    }
+  ]
+}

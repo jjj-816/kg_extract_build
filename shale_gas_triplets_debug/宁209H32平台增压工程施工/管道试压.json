@@ -1,0 +1,97 @@
+{
+  "entity": "管道试压",
+  "raw": "[\n  {\"head\": \"管道试压\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"每小时升压不得超过1MPa\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管道试压\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压力分别升至试验压力的30%和60%时，各稳压30min\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管道试压\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"稳压不小于4h\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管道试压\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"升压至强度试验压力后，稳压24h\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管道试压\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压降△P≤1%试验压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管道试压\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"不大于0.1MPa\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管道试压\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"人员距离高压管线10米以上\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管道试压\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"试压所用的法兰、管件、仪表等进行检查和检验\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管道试压\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"压力表、高压管线等承压件在检验有效期内\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管道试压\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"管道试压\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"试压泵\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"管道试压\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"管道\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管道试压\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"刺漏\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "管道试压",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "每小时升压不得超过1MPa",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "管道试压",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "压力分别升至试验压力的30%和60%时，各稳压30min",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "管道试压",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "稳压不小于4h",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "管道试压",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "升压至强度试验压力后，稳压24h",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "管道试压",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "压降△P≤1%试验压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "管道试压",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "不大于0.1MPa",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "管道试压",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "人员距离高压管线10米以上",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "管道试压",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "试压所用的法兰、管件、仪表等进行检查和检验",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管道试压",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "压力表、高压管线等承压件在检验有效期内",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管道试压",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "扳手",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "管道试压",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "试压泵",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "管道试压",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "管道",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管道试压",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "刺漏",
+      "tail_type": "风险事件"
+    }
+  ]
+}

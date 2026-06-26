@@ -1,0 +1,13 @@
+{
+  "entity": "停注时间",
+  "raw": "[\n  {\"head\": \"停注时间\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"停注时间\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "停注时间",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "停注时间",
+      "tail_type": "施工参数"
+    }
+  ]
+}

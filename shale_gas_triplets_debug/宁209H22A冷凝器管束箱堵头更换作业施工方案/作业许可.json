@@ -1,0 +1,48 @@
+{
+  "entity": "作业许可",
+  "raw": "[\n  {\"head\": \"作业许可\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"入场施工作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业许可\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"危险作业票证\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业许可\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"用电\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业许可\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"动火\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业许可\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"焊割\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业许可\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"属地监督保存\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业许可\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"作业许可关闭\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "作业许可",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "入场施工作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业许可",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "用电",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业许可",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "动火",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业许可",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "焊割",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业许可",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "属地监督保存",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业许可",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "作业许可关闭",
+      "tail_type": "控制措施"
+    }
+  ]
+}

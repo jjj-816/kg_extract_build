@@ -1,0 +1,27 @@
+{
+  "entity": "周春雨",
+  "raw": "[\n  {\"head\": \"周春雨\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"道路巡查\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"周春雨\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"清理道路积雪与结冰\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"周春雨\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"坠落应急方案\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"周春雨\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"中暑应急方案\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"周春雨\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"应急救援器材\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"周春雨\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"冬季施工安全教育\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"周春雨\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"泄漏应急预案\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"周春雨\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"火灾应急预案\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"周春雨\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"设备故障应急预案\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "周春雨",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "道路巡查",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "周春雨",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "清理道路积雪与结冰",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "周春雨",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "冬季施工安全教育",
+      "tail_type": "作业活动"
+    }
+  ]
+}

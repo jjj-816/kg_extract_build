@@ -1,0 +1,97 @@
+{
+  "entity": "地层",
+  "raw": "[\n  {\"head\": \"地层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"最高地层孔隙压力当量密度值\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"地层孔隙压力的预测精度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"油气水层的预测产能\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"油气水层的埋藏深度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"地层油气中硫化氢的含量\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"地层坍塌压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"地层破裂压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"近井口段\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"地层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"最高地层压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"预计最大关井压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"钻遇油气层、硫化氢等地质预报\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"地层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"含硫化氢地层\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"地层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"含硫油气层\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "地层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "最高地层孔隙压力当量密度值",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "地层孔隙压力的预测精度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "油气水层的预测产能",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "油气水层的埋藏深度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "地层油气中硫化氢的含量",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "地层坍塌压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "地层破裂压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "近井口段",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "地层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "最高地层压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "预计最大关井压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "钻遇油气层、硫化氢等地质预报",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "地层",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "含硫化氢地层",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "地层",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "含硫油气层",
+      "tail_type": "施工对象"
+    }
+  ]
+}

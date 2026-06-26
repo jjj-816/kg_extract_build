@@ -1,0 +1,83 @@
+{
+  "entity": "停机断电",
+  "raw": "[\n  {\"head\": \"停机断电\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"上锁挂签\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"停机断电\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"氮气置换\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"停机断电\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"切割拆除降噪房两边开槽\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"停机断电\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"拆除管束堵头\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"停机断电\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"更换新气管束堵头\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"停机断电\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"设备组装 调整\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"停机断电\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"场地清理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"停机断电\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"试压验漏\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"停机断电\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"试运行\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"停机断电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"停验电\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"停机断电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"关停设备\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "停机断电",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "上锁挂签",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "停机断电",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "氮气置换",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "停机断电",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "切割拆除降噪房两边开槽",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "停机断电",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "拆除管束堵头",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "停机断电",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "更换新气管束堵头",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "停机断电",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "设备组装 调整",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "停机断电",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "场地清理",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "停机断电",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "试压验漏",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "停机断电",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "试运行",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "停机断电",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "停验电",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "停机断电",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "关停设备",
+      "tail_type": "作业活动"
+    }
+  ]
+}

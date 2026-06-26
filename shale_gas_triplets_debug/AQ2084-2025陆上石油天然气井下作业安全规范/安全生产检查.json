@@ -1,0 +1,76 @@
+{
+  "entity": "安全生产检查",
+  "raw": "[\n  {\"head\": \"安全生产检查\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"检查记录标签\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安全生产检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"安全防喷器半封闸板\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"安全生产检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"安全卡瓦\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"安全生产检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"固定卡瓦\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"安全生产检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"采油(气)树\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"安全生产检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"油管头\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"安全生产检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"回收管线\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"安全生产检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"放喷管线\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"安全生产检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"分离器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"安全生产检查\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"采油(气)井口装置\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "安全生产检查",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "检查记录标签",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "安全生产检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "安全防喷器半封闸板",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "安全生产检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "安全卡瓦",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "安全生产检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "固定卡瓦",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "安全生产检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "采油(气)树",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "安全生产检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "油管头",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "安全生产检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "回收管线",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "安全生产检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "放喷管线",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "安全生产检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "分离器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "安全生产检查",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "采油(气)井口装置",
+      "tail_type": "设备工具"
+    }
+  ]
+}

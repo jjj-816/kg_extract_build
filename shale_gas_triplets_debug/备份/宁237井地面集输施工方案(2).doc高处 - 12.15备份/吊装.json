@@ -1,0 +1,48 @@
+{
+  "entity": "吊装",
+  "raw": "[\n  {\"head\": \"吊装\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"人员离开吊装半径范围\", \"tail_type\": \"未分类\"},\n  {\"head\": \"吊装\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"小型工具拴挂保险绳\", \"tail_type\": \"未分类\"},\n  {\"head\": \"吊装\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"避免物料堆积在作业平台\", \"tail_type\": \"未分类\"},\n  {\"head\": \"吊装\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"佩戴安全帽\", \"tail_type\": \"未分类\"},\n  {\"head\": \"吊装\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"系全身式双钩安全带\", \"tail_type\": \"未分类\"},\n  {\"head\": \"吊装\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"人员坠落\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"吊装\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"正确佩戴安全带\", \"tail_type\": \"未分类\"},\n  {\"head\": \"吊装\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"正确佩戴劳保手套\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "吊装",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "避免物料堆积在作业平台",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "吊装",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "佩戴安全帽",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "吊装",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "系全身式双钩安全带",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "吊装",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "人员坠落",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "吊装",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "正确佩戴安全带",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "吊装",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "正确佩戴劳保手套",
+      "tail_type": "未分类"
+    }
+  ]
+}

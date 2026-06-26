@@ -1,0 +1,20 @@
+{
+  "entity": "检验仪器",
+  "raw": "[\n  {\"head\": \"检验仪器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"施工设备、机具及计量、测量和检验仪器准备情况\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"检验仪器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"进场验收\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "检验仪器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "施工设备、机具及计量、测量和检验仪器准备情况",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "检验仪器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "进场验收",
+      "tail_type": "施工参数"
+    }
+  ]
+}

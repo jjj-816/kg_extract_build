@@ -1,0 +1,13 @@
+{
+  "entity": "防火毯",
+  "raw": "[\n  {\"head\": \"防火毯\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾爆炸风险\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "防火毯",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾爆炸风险",
+      "tail_type": "风险事件"
+    }
+  ]
+}

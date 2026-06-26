@@ -1,0 +1,20 @@
+{
+  "entity": "进场验收",
+  "raw": "[\n  {\"head\": \"进场验收\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"验收人为甲方属地人员\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"进场验收\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"已完成图纸复核\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "进场验收",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "验收人为甲方属地人员",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "进场验收",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "已完成图纸复核",
+      "tail_type": "施工记录"
+    }
+  ]
+}

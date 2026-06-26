@@ -1,0 +1,13 @@
+{
+  "entity": "探头板",
+  "raw": "[\n  {\"head\": \"探头板\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"探头长度≤15cm\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "探头板",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "探头长度≤15cm",
+      "tail_type": "风险事件"
+    }
+  ]
+}

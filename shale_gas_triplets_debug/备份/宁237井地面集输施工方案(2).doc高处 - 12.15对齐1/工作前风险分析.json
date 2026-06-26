@@ -1,0 +1,139 @@
+{
+  "entity": "工作前风险分析",
+  "raw": "```json\n[\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"风险矩阵\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"风险分析\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"工作前安全分析表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"派工单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"风险作业方案控制措施检查确认表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"安全技术交底和风险告知确认卡\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"员工保命条款\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"动火作业前必须现场确认安全措施\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"加强冬季施工安全教育\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"C类风险作业只需要准入证\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"同时交井站一份以供井站按方案监督\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"告知施工作业现场存在的安全风险、危害因素以及管控措施\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"施工作业过程中的管控措施在安全交底进行明确\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"作业人员应按照风险告知内容，逐条对接确认\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"落实到位后方可作业\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"安全技术交底和风险告知内容\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"作业内容\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"机械伤害风险控制措施\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工作前风险分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"触电风险控制措施\", \"tail_type\": \"规范条款\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "风险矩阵",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "风险分析",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "工作前安全分析表",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "派工单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "风险作业方案控制措施检查确认表",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "安全技术交底和风险告知确认卡",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "员工保命条款",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "动火作业前必须现场确认安全措施",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "加强冬季施工安全教育",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "C类风险作业只需要准入证",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "同时交井站一份以供井站按方案监督",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "告知施工作业现场存在的安全风险、危害因素以及管控措施",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "施工作业过程中的管控措施在安全交底进行明确",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "作业人员应按照风险告知内容，逐条对接确认",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "落实到位后方可作业",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "安全技术交底和风险告知内容",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "作业内容",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "机械伤害风险控制措施",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "工作前风险分析",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "触电风险控制措施",
+      "tail_type": "规范条款"
+    }
+  ]
+}

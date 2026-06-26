@@ -1,0 +1,13 @@
+{
+  "entity": "撑杆",
+  "raw": "[\n  {\"head\": \"撑杆\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"吊物就位时\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "撑杆",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "吊物就位时",
+      "tail_type": "时空信息"
+    }
+  ]
+}

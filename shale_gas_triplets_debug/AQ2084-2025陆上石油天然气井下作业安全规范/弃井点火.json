@@ -1,0 +1,27 @@
+{
+  "entity": "弃井点火",
+  "raw": "[\n  {\"head\": \"弃井点火\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"人员生命受到严重威胁、撤离无望，且短时间内无法恢复井口控制\", \"tail_type\": \"未分类\"},\n  {\"head\": \"弃井点火\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"应急预案\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"弃井点火\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井喷失控\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"弃井点火\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"高含硫油气井\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "弃井点火",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "人员生命受到严重威胁、撤离无望，且短时间内无法恢复井口控制",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "弃井点火",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "应急预案",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "弃井点火",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井喷失控",
+      "tail_type": "风险事件"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "审批",
+  "raw": "[\n  {\"head\": \"审批\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动火作业审批\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"审批\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动火作业审批\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "审批",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "动火作业审批",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "审批",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "动火作业审批",
+      "tail_type": "未分类"
+    }
+  ]
+}

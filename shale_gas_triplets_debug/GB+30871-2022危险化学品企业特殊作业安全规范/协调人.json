@@ -1,0 +1,13 @@
+{
+  "entity": "协调人",
+  "raw": "[\n  {\"head\": \"协调人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"交叉作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "协调人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "交叉作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "人员砸伤",
+  "raw": "[\n  {\"head\": \"人员砸伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"高空作业佩戴全身式安全带\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员砸伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"安排人员保护事故现场\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员砸伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"报告者必须确保有人站在显眼的地方\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "人员砸伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "高空作业佩戴全身式安全带",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员砸伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "安排人员保护事故现场",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员砸伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "报告者必须确保有人站在显眼的地方",
+      "tail_type": "控制措施"
+    }
+  ]
+}

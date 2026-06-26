@@ -1,0 +1,48 @@
+{
+  "entity": "单井井控风险分级标准",
+  "raw": "[\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"井控风险级别\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"队伍能力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"工艺措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"装备配套\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"监督管理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"4.14\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"4.15\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"5.1.1\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "单井井控风险分级标准",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "队伍能力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "单井井控风险分级标准",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "装备配套",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "单井井控风险分级标准",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "监督管理",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "单井井控风险分级标准",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "4.14",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "单井井控风险分级标准",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "4.15",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "单井井控风险分级标准",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "5.1.1",
+      "tail_type": "规范条款"
+    }
+  ]
+}

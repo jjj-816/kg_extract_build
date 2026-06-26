@@ -1,0 +1,41 @@
+{
+  "entity": "机械设备",
+  "raw": "[\n  {\"head\": \"机械设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"完好\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"机械设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"安全防护措施齐全\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"机械设备\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"机械伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"机械设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"摆放平稳\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"机械设备\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"现场\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "机械设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "完好",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "机械设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "安全防护措施齐全",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "机械设备",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "机械伤害",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "机械设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "摆放平稳",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "机械设备",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "现场",
+      "tail_type": "时空信息"
+    }
+  ]
+}

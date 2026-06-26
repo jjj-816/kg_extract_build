@@ -1,0 +1,27 @@
+{
+  "entity": "防喷器组顶部",
+  "raw": "[\n  {\"head\": \"防喷器组顶部\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"地面\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"防喷器组顶部\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"3 m\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器组顶部\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"4 根直径不小于 15.9 mm 的钢丝绳\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "防喷器组顶部",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "地面",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "防喷器组顶部",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "3 m",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器组顶部",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "4 根直径不小于 15.9 mm 的钢丝绳",
+      "tail_type": "施工参数"
+    }
+  ]
+}

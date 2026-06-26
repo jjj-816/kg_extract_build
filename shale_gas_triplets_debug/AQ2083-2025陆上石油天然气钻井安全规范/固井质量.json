@@ -1,0 +1,20 @@
+{
+  "entity": "固井质量",
+  "raw": "[\n  {\"head\": \"固井质量\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"水泥返高\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"固井质量\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"邻井\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "固井质量",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "水泥返高",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "固井质量",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "邻井",
+      "tail_type": "时空信息"
+    }
+  ]
+}

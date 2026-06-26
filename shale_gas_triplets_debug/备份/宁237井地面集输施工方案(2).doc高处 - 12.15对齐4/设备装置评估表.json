@@ -1,0 +1,76 @@
+{
+  "entity": "设备装置评估表",
+  "raw": "[\n  {\"head\": \"设备装置评估表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"关键材料、设备\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"设备装置评估表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"用电设备\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"设备装置评估表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"机械设备\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"设备装置评估表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电镐、砂轮机\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"设备装置评估表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"施工设备、机具及计量、测量和检验仪器\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"设备装置评估表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"人员HSE教育\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"设备装置评估表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"特殊工种培训取证\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"设备装置评估表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"设备检修保养\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"设备装置评估表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"工器具准备\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"设备装置评估表\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"施工前\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "设备装置评估表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "关键材料、设备",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "设备装置评估表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "用电设备",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "设备装置评估表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "机械设备",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "设备装置评估表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "电镐、砂轮机",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "设备装置评估表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "施工设备、机具及计量、测量和检验仪器",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "设备装置评估表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "人员HSE教育",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "设备装置评估表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "特殊工种培训取证",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "设备装置评估表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "设备检修保养",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "设备装置评估表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "工器具准备",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "设备装置评估表",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "施工前",
+      "tail_type": "时空信息"
+    }
+  ]
+}

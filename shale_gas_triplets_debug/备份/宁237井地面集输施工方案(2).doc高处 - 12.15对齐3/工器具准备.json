@@ -1,0 +1,27 @@
+{
+  "entity": "工器具准备",
+  "raw": "[\n  {\"head\": \"工器具准备\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工设备、机具及计量、测量和检验仪器准备情况，人员HSE教育、特殊工种培训取证情况、设备检修保养情况、工器具准备情况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"未分类\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"常用工具（锄头、铲子、护目镜、美工刀、滚筒等）\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"未分类\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"砂轮机\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "工器具准备",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "工器具准备",
+      "head_type": "未分类",
+      "relation": "USES_EQUIPMENT",
+      "tail": "常用工具（锄头、铲子、护目镜、美工刀、滚筒等）",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "工器具准备",
+      "head_type": "未分类",
+      "relation": "USES_EQUIPMENT",
+      "tail": "砂轮机",
+      "tail_type": "设备工具"
+    }
+  ]
+}

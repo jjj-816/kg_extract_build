@@ -1,0 +1,13 @@
+{
+  "entity": "工作环形防喷器",
+  "raw": "[\n  {\"head\": \"工作环形防喷器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"试压值不超过额定工作压力的70%\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "工作环形防喷器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "试压值不超过额定工作压力的70%",
+      "tail_type": "施工参数"
+    }
+  ]
+}

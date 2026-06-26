@@ -1,0 +1,160 @@
+{
+  "entity": "电线",
+  "raw": "[\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"耐压等级不低于 500 V\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾爆炸危险场所\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高温、振动、腐蚀、积水及产生机械损伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"受限空间\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"进口处\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"火灾爆炸危险场所\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"高温、振动、腐蚀、积水及产生机械损伤等区域\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"建筑物、构筑物\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"管道、管架、电杆、机电设备\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"地下通信电(光)缆、局域网络电(光)缆、排水沟的盖板\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"管线、电缆桥架\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"架空线路\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"防爆场所\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"TN-S三相五线制\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"建筑物墙体根部\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"道路或其他易受机械损伤的区域\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"电缆敷设路径\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"现场临时用配电盘、箱\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业现场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"道路\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"暗埋设及地下电缆线路\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业场所\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "耐压等级不低于 500 V",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾爆炸危险场所",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高温、振动、腐蚀、积水及产生机械损伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "受限空间",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "进口处",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "火灾爆炸危险场所",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "高温、振动、腐蚀、积水及产生机械损伤等区域",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "建筑物、构筑物",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "管道、管架、电杆、机电设备",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "地下通信电(光)缆、局域网络电(光)缆、排水沟的盖板",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "管线、电缆桥架",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "架空线路",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "防爆场所",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "TN-S三相五线制",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "建筑物墙体根部",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "道路或其他易受机械损伤的区域",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "电缆敷设路径",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "现场临时用配电盘、箱",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业现场",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "道路",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "暗埋设及地下电缆线路",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业场所",
+      "tail_type": "时空信息"
+    }
+  ]
+}

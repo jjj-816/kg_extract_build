@@ -1,0 +1,13 @@
+{
+  "entity": "临时设施",
+  "raw": "[\n  {\"head\": \"临时设施\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"梯子、栏杆、平台、箅子板、盖板等设施\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "临时设施",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "梯子、栏杆、平台、箅子板、盖板等设施",
+      "tail_type": "施工对象"
+    }
+  ]
+}

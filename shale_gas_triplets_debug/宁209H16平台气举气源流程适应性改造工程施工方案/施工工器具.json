@@ -1,0 +1,13 @@
+{
+  "entity": "施工工器具",
+  "raw": "[\n  {\"head\": \"施工工器具\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"施工现场\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "施工工器具",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "施工现场",
+      "tail_type": "时空信息"
+    }
+  ]
+}

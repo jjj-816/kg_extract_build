@@ -1,0 +1,41 @@
+{
+  "entity": "螺栓",
+  "raw": "[\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"丝扣应完好、无变形或损坏\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井控装置承压部位\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"放喷管线\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"转弯处\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"出口处\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "丝扣应完好、无变形或损坏",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井控装置承压部位",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "放喷管线",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "转弯处",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "出口处",
+      "tail_type": "时空信息"
+    }
+  ]
+}

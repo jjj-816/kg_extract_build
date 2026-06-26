@@ -1,0 +1,5 @@
+{
+  "entity": "冬季工作服",
+  "raw": "[\n  {\"head\": \"冬季工作服\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"施工人员\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"冬季工作服\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"施工人员\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"冬季工作服\", \"head_type\": \"设备工具\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防冻风险\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": []
+}

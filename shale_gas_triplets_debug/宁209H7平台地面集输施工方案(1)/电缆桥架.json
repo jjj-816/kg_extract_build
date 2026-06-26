@@ -1,0 +1,27 @@
+{
+  "entity": "电缆桥架",
+  "raw": "[\n  {\"head\": \"电缆桥架\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"电缆桥架及电缆敷设及连接测试、自控接线\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"电缆桥架\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"摔伤、划伤、工器具伤害\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"电缆桥架\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"1、作业前进行安全技术交底\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "电缆桥架",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "电缆桥架及电缆敷设及连接测试、自控接线",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "电缆桥架",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "摔伤、划伤、工器具伤害",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "电缆桥架",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "1、作业前进行安全技术交底",
+      "tail_type": "施工记录"
+    }
+  ]
+}

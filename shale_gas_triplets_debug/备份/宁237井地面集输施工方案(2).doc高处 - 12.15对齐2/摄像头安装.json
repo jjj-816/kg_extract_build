@@ -1,0 +1,13 @@
+{
+  "entity": "摄像头安装",
+  "raw": "[\n  {\"head\": \"摄像头安装\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"摄像头立杆\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "摄像头安装",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "摄像头立杆",
+      "tail_type": "施工对象"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "entity": "本井场生产（集输）天然气",
+  "raw": "[\n  {\"head\": \"本井场生产（集输）天然气\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"易燃易爆特性\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"本井场生产（集输）天然气\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"配备气体检测仪\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"本井场生产（集输）天然气\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业前对作业区域进行气体检测\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"本井场生产（集输）天然气\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"做好动火点周边持续可燃气体检测\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"本井场生产（集输）天然气\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"连续气体检测\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "本井场生产（集输）天然气",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "易燃易爆特性",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "本井场生产（集输）天然气",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "配备气体检测仪",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "本井场生产（集输）天然气",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业前对作业区域进行气体检测",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "本井场生产（集输）天然气",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "做好动火点周边持续可燃气体检测",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "本井场生产（集输）天然气",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "连续气体检测",
+      "tail_type": "施工记录"
+    }
+  ]
+}

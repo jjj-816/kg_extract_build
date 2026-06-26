@@ -1,0 +1,20 @@
+{
+  "entity": "保险绳",
+  "raw": "[\n  {\"head\": \"保险绳\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"坠落伤人\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"保险绳\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业平台\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "保险绳",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "坠落伤人",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "保险绳",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业平台",
+      "tail_type": "时空信息"
+    }
+  ]
+}

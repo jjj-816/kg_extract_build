@@ -1,0 +1,13 @@
+{
+  "entity": "抢接装置",
+  "raw": "[\n  {\"head\": \"抢接装置\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"换装井口装置前\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "抢接装置",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "换装井口装置前",
+      "tail_type": "时空信息"
+    }
+  ]
+}

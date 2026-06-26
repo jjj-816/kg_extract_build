@@ -1,0 +1,5 @@
+{
+  "entity": "通道",
+  "raw": "[\n  {\"head\": \"通道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_OPERATION\", \"tail\": \"清理\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": []
+}

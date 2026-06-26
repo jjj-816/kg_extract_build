@@ -1,0 +1,27 @@
+{
+  "entity": "HSE目视化安全管理制度",
+  "raw": "[\n  {\"head\": \"HSE目视化安全管理制度\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"警示隔离区域\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"HSE目视化安全管理制度\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"警示标\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"HSE目视化安全管理制度\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"施工全过程安全\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "HSE目视化安全管理制度",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "警示隔离区域",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "HSE目视化安全管理制度",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "警示标",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "HSE目视化安全管理制度",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "施工全过程安全",
+      "tail_type": "控制措施"
+    }
+  ]
+}

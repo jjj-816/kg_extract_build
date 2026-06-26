@@ -1,0 +1,55 @@
+{
+  "entity": "应急处置要求",
+  "raw": "[\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"坠落、中暑等突发情况的应急方案\", \"tail_type\": \"未分类\"},\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"泄漏、火灾、设备故障等突发情况的应急预案\", \"tail_type\": \"未分类\"},\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"预先确定的逃生路线\", \"tail_type\": \"未分类\"},\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"员工应急施救前应做好自身安全防护\", \"tail_type\": \"未分类\"},\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"施工作业现场应急通道\", \"tail_type\": \"未分类\"},\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"安防消防器材设置情况\", \"tail_type\": \"未分类\"},\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"事故必须由有效的最迅速的方法汇报给施工负责人或者现场管理人员\", \"tail_type\": \"未分类\"},\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"现场要进行必要的救护\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "坠落、中暑等突发情况的应急方案",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "泄漏、火灾、设备故障等突发情况的应急预案",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "预先确定的逃生路线",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "员工应急施救前应做好自身安全防护",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "安防消防器材设置情况",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "事故必须由有效的最迅速的方法汇报给施工负责人或者现场管理人员",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "现场要进行必要的救护",
+      "tail_type": "未分类"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "entity": "替喷作业",
+  "raw": "[\n  {\"head\": \"替喷作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"7.10.7 替喷作业应注意井口压力变化和出口情况，如发现压力快速上升、出口排液增强、点火口火势变大，应控制回压或在安全范围内关放喷流程，起出连续油管\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"替喷作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"井口压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"替喷作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"出口情况\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"替喷作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"压力快速上升\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"替喷作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"出口排液增强\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"替喷作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"点火口火势变大\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"替喷作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"连续油管\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "替喷作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "压力快速上升",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "替喷作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "出口排液增强",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "替喷作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "点火口火势变大",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "替喷作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "连续油管",
+      "tail_type": "设备工具"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "entity": "风险作业方案控制措施检查确认表",
+  "raw": "[\n  {\"head\": \"风险作业方案控制措施检查确认表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"风险告知内容\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"风险作业方案控制措施检查确认表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"准入证\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"风险作业方案控制措施检查确认表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"工作前安全分析表\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"风险作业方案控制措施检查确认表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"派工单\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"风险作业方案控制措施检查确认表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"风险矩阵\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"风险作业方案控制措施检查确认表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"风险分析\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "风险作业方案控制措施检查确认表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "风险告知内容",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "风险作业方案控制措施检查确认表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "准入证",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "风险作业方案控制措施检查确认表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "工作前安全分析表",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "风险作业方案控制措施检查确认表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "派工单",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "风险作业方案控制措施检查确认表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "风险矩阵",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "风险作业方案控制措施检查确认表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "风险分析",
+      "tail_type": "施工参数"
+    }
+  ]
+}

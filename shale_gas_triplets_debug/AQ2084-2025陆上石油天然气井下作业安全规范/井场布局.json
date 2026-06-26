@@ -1,0 +1,76 @@
+{
+  "entity": "井场布局",
+  "raw": "[\n  {\"head\": \"井场布局\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"井身结构示意图\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井场布局\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"井身结构\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井场布局\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"人工井底\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井场布局\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"井眼轨迹\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井场布局\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"水泥返深\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井场布局\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"套管头结构\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井场布局\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"固井质量\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井场布局\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"井斜数据\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井场布局\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防火的安全要求\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井场布局\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"井场周围一定范围内居民住宅、学校、厂矿（包括开采地下资源的矿业单位）、国防设施、高压电线和水资源等情况\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"井场布局\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"本井与邻井地层连通、窜通、气(汽)窜干扰等情况及停注泄压要求\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "井场布局",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "井身结构示意图",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井场布局",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "井身结构",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井场布局",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "人工井底",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井场布局",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "井眼轨迹",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井场布局",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "水泥返深",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井场布局",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "套管头结构",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井场布局",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "固井质量",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井场布局",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "井斜数据",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井场布局",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "防火的安全要求",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井场布局",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "本井与邻井地层连通、窜通、气(汽)窜干扰等情况及停注泄压要求",
+      "tail_type": "施工记录"
+    }
+  ]
+}

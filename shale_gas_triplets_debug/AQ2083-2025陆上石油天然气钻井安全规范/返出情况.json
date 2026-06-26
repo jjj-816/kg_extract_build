@@ -1,0 +1,13 @@
+{
+  "entity": "返出情况",
+  "raw": "[\n  {\"head\": \"返出情况\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"出口钻井液\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "返出情况",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "出口钻井液",
+      "tail_type": "时空信息"
+    }
+  ]
+}

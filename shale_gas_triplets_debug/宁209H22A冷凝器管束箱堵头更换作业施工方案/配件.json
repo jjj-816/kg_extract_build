@@ -1,0 +1,13 @@
+{
+  "entity": "配件",
+  "raw": "[\n  {\"head\": \"配件\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"设备组装 调整\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "配件",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "设备组装 调整",
+      "tail_type": "时空信息"
+    }
+  ]
+}

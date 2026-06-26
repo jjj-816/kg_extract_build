@@ -1,0 +1,55 @@
+{
+  "entity": "设计要求",
+  "raw": "[\n  {\"head\": \"设计要求\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井控装置\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设计要求\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"液气分离器处理量\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设计要求\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"钻井液的密度及其他性能\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设计要求\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"液面检测装置\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设计要求\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"除硫剂\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设计要求\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"pH值\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设计要求\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井控技术措施\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "设计要求",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井控装置",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设计要求",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "液气分离器处理量",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设计要求",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "钻井液的密度及其他性能",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设计要求",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "液面检测装置",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设计要求",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "除硫剂",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设计要求",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "pH值",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设计要求",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井控技术措施",
+      "tail_type": "风险事件"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "管线",
+  "raw": "[\n  {\"head\": \"管线\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"站内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"管线\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"打开前\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "管线",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "站内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "管线",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "打开前",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

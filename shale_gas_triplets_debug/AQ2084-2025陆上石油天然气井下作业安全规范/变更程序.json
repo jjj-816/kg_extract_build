@@ -1,0 +1,20 @@
+{
+  "entity": "变更程序",
+  "raw": "[\n  {\"head\": \"变更程序\", \"head_type\": \"未分类\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"发包单位\", \"tail_type\": \"未分类\"},\n  {\"head\": \"变更程序\", \"head_type\": \"未分类\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"承包单位\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "发包单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "变更程序",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "承包单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "变更程序",
+      "tail_type": "未分类"
+    }
+  ]
+}

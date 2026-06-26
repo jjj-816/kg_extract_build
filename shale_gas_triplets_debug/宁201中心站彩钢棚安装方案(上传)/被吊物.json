@@ -1,0 +1,90 @@
+{
+  "entity": "被吊物",
+  "raw": "[\n  {\"head\": \"被吊物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"1吨左右\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"被吊物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"吊装前吊车及钢索检查到位\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"被吊物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"吊前做好试吊工作\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"被吊物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"被吊物两端应绑扎牵引绳\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"被吊物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"长度≥5米\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"被吊物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"彩钢棚主体\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"被吊物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"司索工按规范捆绑吊物\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"被吊物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"安全系数≥6\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"被吊物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"捆绑点避开锋利棱角（加设护角）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"被吊物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"吊物重心居中\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"被吊物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"确保吊装平衡\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"被吊物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"控制吊物摆动\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "被吊物",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "1吨左右",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "被吊物",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "吊装前吊车及钢索检查到位",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "被吊物",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "吊前做好试吊工作",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "被吊物",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "被吊物两端应绑扎牵引绳",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "被吊物",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "长度≥5米",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "被吊物",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "彩钢棚主体",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "被吊物",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "司索工按规范捆绑吊物",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "被吊物",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "安全系数≥6",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "被吊物",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "捆绑点避开锋利棱角（加设护角）",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "被吊物",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "吊物重心居中",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "被吊物",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "确保吊装平衡",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "被吊物",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "控制吊物摆动",
+      "tail_type": "施工记录"
+    }
+  ]
+}

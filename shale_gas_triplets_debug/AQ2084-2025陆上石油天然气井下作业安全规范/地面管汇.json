@@ -1,0 +1,13 @@
+{
+  "entity": "地面管汇",
+  "raw": "[\n  {\"head\": \"地面管汇\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"开关灵活、清洁完好\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "地面管汇",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "开关灵活、清洁完好",
+      "tail_type": "施工参数"
+    }
+  ]
+}

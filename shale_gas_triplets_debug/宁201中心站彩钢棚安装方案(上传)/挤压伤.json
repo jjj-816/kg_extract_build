@@ -1,0 +1,83 @@
+{
+  "entity": "挤压伤",
+  "raw": "[\n  {\"head\": \"挤压伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"设备检查\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"挤压伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"物料堆放\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"挤压伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"物料搬运\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"挤压伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"高处作业\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"挤压伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"起重作业\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"挤压伤\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工准备\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"挤压伤\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"彩钢板铺设\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"挤压伤\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"钢结构吊装配合安装\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"挤压伤\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"彩钢结构焊接\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"挤压伤\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"焊接完成安装彩钢棚\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"挤压伤\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"施工现场\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "挤压伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "设备检查",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "挤压伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "物料堆放",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "挤压伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "物料搬运",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "挤压伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "高处作业",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "挤压伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "起重作业",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "挤压伤",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "施工准备",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "挤压伤",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "彩钢板铺设",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "挤压伤",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "钢结构吊装配合安装",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "挤压伤",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "彩钢结构焊接",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "挤压伤",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "焊接完成安装彩钢棚",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "挤压伤",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "施工现场",
+      "tail_type": "时空信息"
+    }
+  ]
+}

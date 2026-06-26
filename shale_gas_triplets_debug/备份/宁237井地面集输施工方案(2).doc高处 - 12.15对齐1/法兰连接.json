@@ -1,0 +1,20 @@
+{
+  "entity": "法兰连接",
+  "raw": "[\n  {\"head\": \"法兰连接\", \"head_type\": \"作业活动\", \"relation\": \"REGULATES\", \"tail\": \"规范\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"法兰连接\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"管道\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"法兰连接\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "规范",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "法兰连接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "法兰连接",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "管道",
+      "tail_type": "施工对象"
+    }
+  ]
+}

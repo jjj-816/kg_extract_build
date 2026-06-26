@@ -1,0 +1,34 @@
+{
+  "entity": "打桩",
+  "raw": "[\n  {\"head\": \"打桩\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"挖土\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"打桩\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"钻探\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"打桩\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"坑探\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"打桩\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"地锚入土深度在 0.5 m 以上\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "打桩",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "挖土",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "打桩",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "钻探",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "打桩",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "坑探",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "打桩",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "地锚入土深度在 0.5 m 以上",
+      "tail_type": "施工参数"
+    }
+  ]
+}

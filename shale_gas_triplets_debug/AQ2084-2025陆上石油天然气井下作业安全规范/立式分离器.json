@@ -1,0 +1,13 @@
+{
+  "entity": "立式分离器",
+  "raw": "[\n  {\"head\": \"立式分离器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"直径不小于 $15.9\\\\mathrm{mm}$ 钢丝绳\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "立式分离器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "直径不小于 $15.9\\mathrm{mm}$ 钢丝绳",
+      "tail_type": "施工参数"
+    }
+  ]
+}

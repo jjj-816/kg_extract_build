@@ -1,0 +1,5 @@
+{
+  "entity": "验收人",
+  "raw": "[\n  {\"head\": \"验收人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"甲方属地人员\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": []
+}

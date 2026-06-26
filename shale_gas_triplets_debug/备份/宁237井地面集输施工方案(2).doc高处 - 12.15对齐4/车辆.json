@@ -1,0 +1,55 @@
+{
+  "entity": "车辆",
+  "raw": "[\n  {\"head\": \"车辆\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"车辆移动\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"车辆\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"冬季适用的机油\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"车辆\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"冷却液\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"车辆\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"玻璃水\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"车辆\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井站内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"车辆\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"场站内车辆移动路线\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"车辆\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"没有阻碍的路上或过口\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "车辆",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "车辆移动",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "车辆",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "冬季适用的机油",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "车辆",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "冷却液",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "车辆",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "玻璃水",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "车辆",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井站内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "车辆",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "场站内车辆移动路线",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "车辆",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "没有阻碍的路上或过口",
+      "tail_type": "时空信息"
+    }
+  ]
+}

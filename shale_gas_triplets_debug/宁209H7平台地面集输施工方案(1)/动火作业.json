@@ -1,0 +1,188 @@
+{
+  "entity": "动火作业",
+  "raw": "[\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管线预制、打磨、防雷接地扁铁焊接等动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"正确佩戴橡胶绝缘手套\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"使用完好合格电器设备设施\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"做好动火点周边持续可燃气体检测\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"发现可燃气体泄漏立即停止作业\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"设置防火挡板\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"清理动火范围内的所有可燃物\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"天然气泄漏引起的火灾爆炸\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"碰伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"机械伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"弧光伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火花飞溅\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"烫伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"车辆移动\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"气体中毒\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"冬季防冻\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动火作业前必须现场确认安全措施\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"办理危险作业票证\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"现场属地监督进行核查\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"携带至作业现场张贴主动接受监督\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"告知属地监督\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"由属地监督与井站人员按照施工作业方案做好协调配合工作\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"配置灭火器材\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"按要求配备灭火器\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管线预制、打磨、防雷接地扁铁焊接等动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "正确佩戴橡胶绝缘手套",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "使用完好合格电器设备设施",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "做好动火点周边持续可燃气体检测",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "发现可燃气体泄漏立即停止作业",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "设置防火挡板",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "清理动火范围内的所有可燃物",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "天然气泄漏引起的火灾爆炸",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "碰伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "机械伤害",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "弧光伤害",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火花飞溅",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "烫伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "车辆移动",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "气体中毒",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "冬季防冻",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "动火作业前必须现场确认安全措施",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "办理危险作业票证",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "现场属地监督进行核查",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "携带至作业现场张贴主动接受监督",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "告知属地监督",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "由属地监督与井站人员按照施工作业方案做好协调配合工作",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "配置灭火器材",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "按要求配备灭火器",
+      "tail_type": "未分类"
+    }
+  ]
+}

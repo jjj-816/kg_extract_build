@@ -1,0 +1,48 @@
+{
+  "entity": "作业活动",
+  "raw": "[\n  {\"head\": \"作业活动\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"起下作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业活动\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"换装井口作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业活动\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"其他作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业活动\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"带压作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业活动\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"放喷、测试作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业活动\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"施工作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "作业活动",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "起下作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业活动",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "换装井口作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业活动",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "其他作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业活动",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "带压作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业活动",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "放喷、测试作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业活动",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "施工作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

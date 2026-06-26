@@ -1,0 +1,48 @@
+{
+  "entity": "安全监护人",
+  "raw": "[\n  {\"head\": \"安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场作业相关人员\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"监护人全程监护\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"明确作业内容\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"明确作业风险\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"明确应急处置措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工人员不清楚作业内容导致误操作\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全监护人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全交底不清楚导致作业人员不清楚应急措施、作业风险内容\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场作业相关人员",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全技术交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "监护人全程监护",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "明确作业内容",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工人员不清楚作业内容导致误操作",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "安全监护人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全交底不清楚导致作业人员不清楚应急措施、作业风险内容",
+      "tail_type": "风险事件"
+    }
+  ]
+}

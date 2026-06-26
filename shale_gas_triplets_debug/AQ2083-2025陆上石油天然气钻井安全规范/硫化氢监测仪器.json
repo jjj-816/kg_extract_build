@@ -1,0 +1,27 @@
+{
+  "entity": "硫化氢监测仪器",
+  "raw": "[\n  {\"head\": \"硫化氢监测仪器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"含硫地区的钻井现场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"硫化氢监测仪器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"硫化氢监测仪器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"含硫油气井取心作业\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "硫化氢监测仪器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "含硫地区的钻井现场",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "硫化氢监测仪器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井场",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "硫化氢监测仪器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "含硫油气井取心作业",
+      "tail_type": "时空信息"
+    }
+  ]
+}

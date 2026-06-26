@@ -1,0 +1,34 @@
+{
+  "entity": "双阀门",
+  "raw": "[\n  {\"head\": \"双阀门\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"正常情况使用外侧阀门\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"双阀门\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"内侧阀门保持全开状态\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"双阀门\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"有两个总阀门时先用上部的阀门\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"双阀门\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"下部阀门保持全开状态\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "双阀门",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "正常情况使用外侧阀门",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "双阀门",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "内侧阀门保持全开状态",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "双阀门",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "有两个总阀门时先用上部的阀门",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "双阀门",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "下部阀门保持全开状态",
+      "tail_type": "施工参数"
+    }
+  ]
+}

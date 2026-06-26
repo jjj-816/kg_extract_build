@@ -1,0 +1,55 @@
+{
+  "entity": "属地监督",
+  "raw": "[\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"告知施工作业人员本井站应急要点\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"带领作业项目负责人/申请人指认准许作业的设备/系统或工作区域\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"进行核查\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"携带至作业现场张贴主动接受监督\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场管理制度和应急要点\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"主要风险和危害因素\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"工业动火、有限空间作业、高处作业、临时用电、吊装、脚手架等危险作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"入场人员、机具、设备等\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "告知施工作业人员本井站应急要点",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "带领作业项目负责人/申请人指认准许作业的设备/系统或工作区域",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "进行核查",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "携带至作业现场张贴主动接受监督",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场管理制度和应急要点",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "主要风险和危害因素",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "入场人员、机具、设备等",
+      "tail_type": "未分类"
+    }
+  ]
+}

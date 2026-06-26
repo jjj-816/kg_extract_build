@@ -1,0 +1,55 @@
+{
+  "entity": "平台",
+  "raw": "[\n  {\"head\": \"平台\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业现场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"平台\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"安全要求\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"平台\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"升降(吊装)口、坑、井、池、沟、洞等上面或附近\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"平台\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"易燃、易爆、易中毒、易灼伤的区域或转动设备附近\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"平台\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"无平台、无护栏的塔、釜、炉、罐等化工容器、设备及架空管道上\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"平台\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"塔、釜、炉、罐等设备内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"平台\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"邻近排放有毒、有害气体、粉尘的放空管线或烟囱及设备\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "平台",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "作业现场",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "平台",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "安全要求",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "平台",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "升降(吊装)口、坑、井、池、沟、洞等上面或附近",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "平台",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "易燃、易爆、易中毒、易灼伤的区域或转动设备附近",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "平台",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "无平台、无护栏的塔、釜、炉、罐等化工容器、设备及架空管道上",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "平台",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "塔、釜、炉、罐等设备内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "平台",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "邻近排放有毒、有害气体、粉尘的放空管线或烟囱及设备",
+      "tail_type": "时空信息"
+    }
+  ]
+}

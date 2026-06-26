@@ -1,0 +1,5 @@
+{
+  "entity": "吊装作业",
+  "raw": "[\n  {\"head\": \"吊装作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"人员离开吊装半径范围\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"吊装作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"采用机械通风\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": []
+}

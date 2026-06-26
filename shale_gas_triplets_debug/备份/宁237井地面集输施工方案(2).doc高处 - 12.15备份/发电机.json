@@ -1,0 +1,20 @@
+{
+  "entity": "发电机",
+  "raw": "[\n  {\"head\": \"发电机\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井口区域\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"发电机\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"配电箱\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"发电机\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"接地\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"发电机\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"发电机\", \"head_type\": \"设备工具\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"停验电\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"发电机\", \"head_type\": \"设备工具\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"上锁挂牌\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"发电机\", \"head_type\": \"设备工具\", \"relation\": \"REGULATES\", \"tail\": \"GB50183-2004\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"发电机\", \"head_type\": \"设备工具\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"电仪班组\", \"tail_type\": \"责任主体\"}\n]",
+  "triplets": [
+    {
+      "head": "发电机",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "接地",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "GB50183-2004",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "发电机",
+      "tail_type": "设备工具"
+    }
+  ]
+}

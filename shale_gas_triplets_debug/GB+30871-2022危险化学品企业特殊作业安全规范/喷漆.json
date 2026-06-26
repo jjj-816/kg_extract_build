@@ -1,0 +1,41 @@
+{
+  "entity": "喷漆",
+  "raw": "[\n  {\"head\": \"喷漆\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"可燃溶剂清洗\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"喷漆\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"可燃性粉尘清扫\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"喷漆\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"涂刷油漆\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"喷漆\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"涂刷涂料\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"喷漆\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"强制通风措施\", \"tail_type\": \"未分类\"},\n  {\"head\": \"喷漆\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动火点10m范围内\", \"tail_type\": \"未分类\"},\n  {\"head\": \"喷漆\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动火点上方\", \"tail_type\": \"未分类\"},\n  {\"head\": \"喷漆\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动火点下方\", \"tail_type\": \"未分类\"},\n  {\"head\": \"喷漆\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动火点30m内垂直空间\", \"tail_type\": \"未分类\"},\n  {\"head\": \"喷漆\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"15m内垂直空间\", \"tail_type\": \"未分类\"},\n  {\"head\": \"喷漆\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"10m范围内\", \"tail_type\": \"未分类\"},\n  {\"head\": \"喷漆\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动火点下方\", \"tail_type\": \"未分类\"},\n  {\"head\": \"喷漆\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"受限空间内\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "喷漆",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "可燃溶剂清洗",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "喷漆",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "可燃性粉尘清扫",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "喷漆",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "涂刷油漆",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "喷漆",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "动火点上方",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "喷漆",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "受限空间内",
+      "tail_type": "未分类"
+    }
+  ]
+}

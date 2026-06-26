@@ -1,0 +1,27 @@
+{
+  "entity": "固井作业",
+  "raw": "[\n  {\"head\": \"固井作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"井内压力平衡\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"固井作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井漏\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"固井作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"溢流\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "固井作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "井内压力平衡",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "固井作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井漏",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "固井作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "溢流",
+      "tail_type": "风险事件"
+    }
+  ]
+}

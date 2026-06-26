@@ -1,0 +1,13 @@
+{
+  "entity": "塞厚",
+  "raw": "[\n  {\"head\": \"塞厚\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"井筒现状\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "塞厚",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "井筒现状",
+      "tail_type": "施工记录"
+    }
+  ]
+}

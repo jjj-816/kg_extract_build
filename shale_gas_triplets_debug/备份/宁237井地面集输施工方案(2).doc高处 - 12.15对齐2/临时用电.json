@@ -1,0 +1,27 @@
+{
+  "entity": "临时用电",
+  "raw": "[\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"作业前应对用电设备进行检查和试运转\", \"tail_type\": \"未分类\"},\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电动扳手\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "作业前应对用电设备进行检查和试运转",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "发电机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "电动扳手",
+      "tail_type": "设备工具"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "基墩",
+  "raw": "[\n  {\"head\": \"基墩\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"转弯前后\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"基墩\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"放喷管线出口2m内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"基墩\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"分离器进出口管线\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "基墩",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "转弯前后",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "基墩",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "分离器进出口管线",
+      "tail_type": "时空信息"
+    }
+  ]
+}

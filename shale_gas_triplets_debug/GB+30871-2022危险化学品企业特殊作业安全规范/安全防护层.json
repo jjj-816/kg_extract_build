@@ -1,0 +1,20 @@
+{
+  "entity": "安全防护层",
+  "raw": "[\n  {\"head\": \"安全防护层\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"中间\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"安全防护层\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"坠落高度超过 24 m 的交叉作业\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "安全防护层",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "中间",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "安全防护层",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "坠落高度超过 24 m 的交叉作业",
+      "tail_type": "风险事件"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "《页岩气地面工程设计规范》Q/SY1858-2015",
+  "raw": "[\n  {\"head\": \"《页岩气地面工程设计规范》Q/SY1858-2015\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"第三章 施工准备与资源配置计划\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"《页岩气地面工程设计规范》Q/SY1858-2015\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"1. 施工安排\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"《页岩气地面工程设计规范》Q/SY1858-2015\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"1. 施工准备与资源配置计划\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "《页岩气地面工程设计规范》Q/SY1858-2015",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "第三章 施工准备与资源配置计划",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "《页岩气地面工程设计规范》Q/SY1858-2015",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "1. 施工安排",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "《页岩气地面工程设计规范》Q/SY1858-2015",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "1. 施工准备与资源配置计划",
+      "tail_type": "规范条款"
+    }
+  ]
+}

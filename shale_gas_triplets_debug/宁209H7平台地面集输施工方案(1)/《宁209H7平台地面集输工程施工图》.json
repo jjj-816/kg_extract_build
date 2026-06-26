@@ -1,0 +1,20 @@
+{
+  "entity": "《宁209H7平台地面集输工程施工图》",
+  "raw": "[\n  {\"head\": \"《宁209H7平台地面集输工程施工图》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"宁209H7平台地面集输施工\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《宁209H7平台地面集输工程施工图》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"页岩气地面工程设计规范\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"《宁209H7平台地面集输工程施工图》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"施工准备与资源配置计划\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "《宁209H7平台地面集输工程施工图》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "宁209H7平台地面集输施工",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《宁209H7平台地面集输工程施工图》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "施工准备与资源配置计划",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

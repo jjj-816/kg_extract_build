@@ -1,0 +1,41 @@
+{
+  "entity": "作业内容",
+  "raw": "[\n  {\"head\": \"作业内容\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"起重作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业内容\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业内容\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"起重伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"作业内容\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高处坠落\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"作业内容\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "作业内容",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "起重作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业内容",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "高处作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业内容",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "起重伤害",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "作业内容",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高处坠落",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "作业内容",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击",
+      "tail_type": "风险事件"
+    }
+  ]
+}

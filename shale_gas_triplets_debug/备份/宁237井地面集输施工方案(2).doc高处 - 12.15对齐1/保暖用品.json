@@ -1,0 +1,5 @@
+{
+  "entity": "保暖用品",
+  "raw": "[\n  {\"head\": \"保暖用品\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"冬季工作服\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"保暖用品\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"手套\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"保暖用品\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"安全帽\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": []
+}

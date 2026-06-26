@@ -1,0 +1,34 @@
+{
+  "entity": "井口装置",
+  "raw": "[\n  {\"head\": \"井口装置\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"不小于 $21\\\\mathrm{MPa}$\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井口装置\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"手动关井到位后管柱应处于居中位置\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井口装置\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"下施工管柱前，应在管\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井口装置\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"捞获大直径工具上提管柱时，应控制起钻速度，并有防上顶措施\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "井口装置",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "不小于 $21\\mathrm{MPa}$",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井口装置",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "手动关井到位后管柱应处于居中位置",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井口装置",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "下施工管柱前，应在管",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井口装置",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "捞获大直径工具上提管柱时，应控制起钻速度，并有防上顶措施",
+      "tail_type": "施工记录"
+    }
+  ]
+}

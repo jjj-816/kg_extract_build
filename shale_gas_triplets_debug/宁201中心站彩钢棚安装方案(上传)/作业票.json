@@ -1,0 +1,20 @@
+{
+  "entity": "作业票",
+  "raw": "[\n  {\"head\": \"作业票\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"开工前\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"作业票\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"作业完成后\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "作业票",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "开工前",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "作业票",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "作业完成后",
+      "tail_type": "时空信息"
+    }
+  ]
+}

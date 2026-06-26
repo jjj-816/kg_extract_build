@@ -1,0 +1,13 @@
+{
+  "entity": "测井时间",
+  "raw": "[\n  {\"head\": \"测井时间\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"不能满足油气上窜速度的安全条件\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "测井时间",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "不能满足油气上窜速度的安全条件",
+      "tail_type": "风险事件"
+    }
+  ]
+}

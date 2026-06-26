@@ -1,0 +1,13 @@
+{
+  "entity": "安全防护绳",
+  "raw": "[\n  {\"head\": \"安全防护绳\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高处坠落\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "安全防护绳",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高处坠落",
+      "tail_type": "风险事件"
+    }
+  ]
+}

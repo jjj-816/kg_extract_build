@@ -1,0 +1,13 @@
+{
+  "entity": "焊条",
+  "raw": "[\n  {\"head\": \"焊条\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"随意丢弃\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "焊条",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "随意丢弃",
+      "tail_type": "风险事件"
+    }
+  ]
+}

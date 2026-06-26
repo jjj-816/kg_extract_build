@@ -1,0 +1,5 @@
+{
+  "entity": "手套",
+  "raw": "```json\n[\n  {\"head\": \"手套\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"打磨\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"手套\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"切割\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"手套\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"手套\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"}\n]\n```",
+  "triplets": []
+}

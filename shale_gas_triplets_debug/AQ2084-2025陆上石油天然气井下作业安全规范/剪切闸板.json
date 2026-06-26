@@ -1,0 +1,13 @@
+{
+  "entity": "剪切闸板",
+  "raw": "[\n  {\"head\": \"剪切闸板\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"控制剪切闸板的三位四通阀应安装防误操作的限位装置\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"剪切闸板\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"气井和井口控制压力不小于 $21\\\\mathrm{MPa}$ 的油井\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "剪切闸板",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "控制剪切闸板的三位四通阀应安装防误操作的限位装置",
+      "tail_type": "风险事件"
+    }
+  ]
+}

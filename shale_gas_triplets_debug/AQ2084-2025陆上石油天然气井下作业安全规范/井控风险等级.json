@@ -1,0 +1,97 @@
+{
+  "entity": "井控风险等级",
+  "raw": "[\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"工程设计单位的资质要求\", \"tail_type\": \"未分类\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"设计人员相应的现场工作经验\", \"tail_type\": \"未分类\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"相关的专业资格要求\", \"tail_type\": \"未分类\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"井控风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"井控风险级别\", \"tail_type\": \"未分类\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"队伍能力\", \"tail_type\": \"未分类\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"工艺措施\", \"tail_type\": \"未分类\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"装备配套\", \"tail_type\": \"未分类\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"监督管理\", \"tail_type\": \"未分类\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"井喷的危害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"井控岗位职责\", \"tail_type\": \"未分类\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"井控制度\", \"tail_type\": \"未分类\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"井控基本概念和原理\", \"tail_type\": \"未分类\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"作业方式\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"风险控制重点\", \"tail_type\": \"未分类\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"邻井连通情况\", \"tail_type\": \"未分类\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"压窜风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"危险源\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"井控风险等级\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"风险消减措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "井控风险等级",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "工程设计单位的资质要求",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "井控风险等级",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "设计人员相应的现场工作经验",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "井控风险等级",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "相关的专业资格要求",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "井控风险等级",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "井控风险级别",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "井控风险等级",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "队伍能力",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "井控风险等级",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "工艺措施",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "井控风险等级",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "装备配套",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "井控风险等级",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "监督管理",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "井控风险等级",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "井控岗位职责",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "井控风险等级",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "井控制度",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "井控风险等级",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "井控基本概念和原理",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "井控风险等级",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "作业方式",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井控风险等级",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "邻井连通情况",
+      "tail_type": "未分类"
+    }
+  ]
+}

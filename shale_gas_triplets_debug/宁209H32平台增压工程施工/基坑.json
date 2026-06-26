@@ -1,0 +1,20 @@
+{
+  "entity": "基坑",
+  "raw": "[\n  {\"head\": \"基坑\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"软土或富水地层开挖时，边坡易滑坡、基坑易涌水，支护难度大\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"基坑\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"根据对施工现场踏勘调查\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "基坑",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "软土或富水地层开挖时，边坡易滑坡、基坑易涌水，支护难度大",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "基坑",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "根据对施工现场踏勘调查",
+      "tail_type": "施工记录"
+    }
+  ]
+}

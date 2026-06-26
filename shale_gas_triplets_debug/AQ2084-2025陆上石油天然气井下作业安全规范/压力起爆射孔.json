@@ -1,0 +1,55 @@
+{
+  "entity": "压力起爆射孔",
+  "raw": "[\n  {\"head\": \"压力起爆射孔\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"井口加压值\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"压力起爆射孔\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"套压\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"压力起爆射孔\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"最大允许关井套压\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"压力起爆射孔\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"预测井筒充满地层流体后的最高井口关井压力\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"压力起爆射孔\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"平衡/泄压管汇\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"压力起爆射孔\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压井和防喷管线\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"压力起爆射孔\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"闸板防喷器试压值\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"压力起爆射孔\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"闸板防喷器压力等级\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"压力起爆射孔\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"预测最高井口关井压力\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"压力起爆射孔\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"关井最高压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"压力起爆射孔\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"最大允许关井压力\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"压力起爆射孔\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"油管内液柱压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"压力起爆射孔\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"起爆压力\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"压力起爆射孔\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井喷\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"压力起爆射孔\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"敞喷\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "压力起爆射孔",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "井口加压值",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "压力起爆射孔",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "套压",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "压力起爆射孔",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "闸板防喷器压力等级",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "压力起爆射孔",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "关井最高压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "压力起爆射孔",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "油管内液柱压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "压力起爆射孔",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井喷",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "压力起爆射孔",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "敞喷",
+      "tail_type": "风险事件"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "人员安全防护",
+  "raw": "[\n  {\"head\": \"人员安全防护\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"c）现场作业的安全措施及应急响应程序\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "人员安全防护",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "c）现场作业的安全措施及应急响应程序",
+      "tail_type": "施工记录"
+    }
+  ]
+}

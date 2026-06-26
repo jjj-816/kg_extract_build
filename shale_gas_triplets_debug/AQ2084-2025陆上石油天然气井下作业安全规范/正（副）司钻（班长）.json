@@ -1,0 +1,13 @@
+{
+  "entity": "正（副）司钻（班长）",
+  "raw": "[\n  {\"head\": \"正（副）司钻（班长）\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"持井控培训合格证上岗\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "正（副）司钻（班长）",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "持井控培训合格证上岗",
+      "tail_type": "作业活动"
+    }
+  ]
+}

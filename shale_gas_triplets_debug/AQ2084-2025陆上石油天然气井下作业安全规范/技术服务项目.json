@@ -1,0 +1,20 @@
+{
+  "entity": "技术服务项目",
+  "raw": "[\n  {\"head\": \"技术服务项目\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"作业活动\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"技术服务项目\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"工程\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "技术服务项目",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "作业活动",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "技术服务项目",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "工程",
+      "tail_type": "作业活动"
+    }
+  ]
+}

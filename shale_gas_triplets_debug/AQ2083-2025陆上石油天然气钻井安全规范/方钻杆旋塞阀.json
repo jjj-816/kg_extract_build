@@ -1,0 +1,20 @@
+{
+  "entity": "方钻杆旋塞阀",
+  "raw": "[\n  {\"head\": \"方钻杆旋塞阀\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"钻台上\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"方钻杆旋塞阀\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"油气层作业\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "方钻杆旋塞阀",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "钻台上",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "方钻杆旋塞阀",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "油气层作业",
+      "tail_type": "风险事件"
+    }
+  ]
+}

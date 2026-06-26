@@ -1,0 +1,90 @@
+{
+  "entity": "分析点",
+  "raw": "[\n  {\"head\": \"分析点\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"可燃气体分析\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析点\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"可燃气体检测结果\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"分析点\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"作业地点\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"分析点\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"9.2.14\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"分析点\", \"head_type\": \"未分类\", \"relation\": \"HAS_STAGE\", \"tail\": \"作业实施时间\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"分析点\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"工作电压\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"分析点\", \"head_type\": \"未分类\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"电缆埋深要求大于0.7m\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"分析点\", \"head_type\": \"未分类\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"临时用电设施\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"分析点\", \"head_type\": \"未分类\", \"relation\": \"USES_MATERIAL\", \"tail\": \"临时用电线路\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"分析点\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"作业人员持有电工作业操作证\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"分析点\", \"head_type\": \"未分类\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"作业场所已进行气体检测且符合作业安全要求\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"分析点\", \"head_type\": \"未分类\", \"relation\": \"OCCURS_AT\", \"tail\": \"分析时间\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"分析点\", \"head_type\": \"未分类\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"分析人\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "分析点",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "可燃气体分析",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析点",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "可燃气体检测结果",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "分析点",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "作业地点",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "分析点",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "9.2.14",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "分析点",
+      "head_type": "未分类",
+      "relation": "HAS_STAGE",
+      "tail": "作业实施时间",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "分析点",
+      "head_type": "未分类",
+      "relation": "HAS_PARAMETER",
+      "tail": "工作电压",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "分析点",
+      "head_type": "未分类",
+      "relation": "HAS_THRESHOLD",
+      "tail": "电缆埋深要求大于0.7m",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "分析点",
+      "head_type": "未分类",
+      "relation": "USES_EQUIPMENT",
+      "tail": "临时用电设施",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "分析点",
+      "head_type": "未分类",
+      "relation": "USES_MATERIAL",
+      "tail": "临时用电线路",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "分析点",
+      "head_type": "未分类",
+      "relation": "TRIGGERS_RISK",
+      "tail": "作业场所已进行气体检测且符合作业安全要求",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "分析点",
+      "head_type": "未分类",
+      "relation": "OCCURS_AT",
+      "tail": "分析时间",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "分析人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "分析点",
+      "tail_type": "未分类"
+    }
+  ]
+}

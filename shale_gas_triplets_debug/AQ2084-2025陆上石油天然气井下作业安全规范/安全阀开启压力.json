@@ -1,0 +1,13 @@
+{
+  "entity": "安全阀开启压力",
+  "raw": "[\n  {\"head\": \"安全阀开启压力\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"试压\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "安全阀开启压力",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "试压",
+      "tail_type": "风险事件"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "entity": "器材准备",
+  "raw": "[\n  {\"head\": \"器材准备\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"井控装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"器材准备\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"内防喷工具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"器材准备\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防喷单根（或短节）\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"器材准备\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"配合接头\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"器材准备\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"待换井口装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"器材准备\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"垫环\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"器材准备\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"螺栓\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"器材准备\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"螺母\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"器材准备\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"抢接装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"器材准备\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防喷单根\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "器材准备",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "井控装置",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "器材准备",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "内防喷工具",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "器材准备",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防喷单根（或短节）",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "器材准备",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "配合接头",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "器材准备",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "待换井口装置",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "器材准备",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "垫环",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "器材准备",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "螺栓",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "器材准备",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "螺母",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "器材准备",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "抢接装置",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "器材准备",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防喷单根",
+      "tail_type": "设备工具"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "entity": "重庆石油川东钻探建筑安装工程有限公司",
+  "raw": "[\n  {\"head\": \"重庆石油川东钻探建筑安装工程有限公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"焊工与高空\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"重庆石油川东钻探建筑安装工程有限公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"焊工\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"重庆石油川东钻探建筑安装工程有限公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"登高\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"重庆石油川东钻探建筑安装工程有限公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"电工\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"重庆石油川东钻探建筑安装工程有限公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工人员配置\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"重庆石油川东钻探建筑安装工程有限公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全管理体系文件\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"重庆石油川东钻探建筑安装工程有限公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工组织设计\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"重庆石油川东钻探建筑安装工程有限公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"宁201中心站生活污水处理装置升级改造彩钢棚安装施工方案\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "重庆石油川东钻探建筑安装工程有限公司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "焊工与高空",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "重庆石油川东钻探建筑安装工程有限公司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "焊工",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "重庆石油川东钻探建筑安装工程有限公司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "登高",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "重庆石油川东钻探建筑安装工程有限公司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "电工",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "重庆石油川东钻探建筑安装工程有限公司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工人员配置",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "重庆石油川东钻探建筑安装工程有限公司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全管理体系文件",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "重庆石油川东钻探建筑安装工程有限公司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工组织设计",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "重庆石油川东钻探建筑安装工程有限公司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "宁201中心站生活污水处理装置升级改造彩钢棚安装施工方案",
+      "tail_type": "施工记录"
+    }
+  ]
+}

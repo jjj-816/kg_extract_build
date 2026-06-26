@@ -1,0 +1,13 @@
+{
+  "entity": "油嘴",
+  "raw": "[\n  {\"head\": \"油嘴\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"放喷\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "油嘴",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "放喷",
+      "tail_type": "风险事件"
+    }
+  ]
+}

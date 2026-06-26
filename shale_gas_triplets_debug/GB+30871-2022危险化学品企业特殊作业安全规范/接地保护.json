@@ -1,0 +1,20 @@
+{
+  "entity": "接地保护",
+  "raw": "[\n  {\"head\": \"接地保护\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"电焊机所处位置已考虑防火防爆要求,且已可靠接地\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"接地保护\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"现场临时用配电盘、箱配备有防雨措施,并可靠接地\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "接地保护",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "电焊机所处位置已考虑防火防爆要求,且已可靠接地",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "接地保护",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "现场临时用配电盘、箱配备有防雨措施,并可靠接地",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "entity": "全国安全生产标准化技术委员会石油天然气开采安全分技术委员会",
+  "raw": "[\n  {\"head\": \"全国安全生产标准化技术委员会石油天然气开采安全分技术委员会\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"陆上石油天然气井下作业安全管理要求\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"全国安全生产标准化技术委员会石油天然气开采安全分技术委员会\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"设计\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"全国安全生产标准化技术委员会石油天然气开采安全分技术委员会\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"井控装置\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"全国安全生产标准化技术委员会石油天然气开采安全分技术委员会\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"全国安全生产标准化技术委员会石油天然气开采安全分技术委员会\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"防火防爆措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"全国安全生产标准化技术委员会石油天然气开采安全分技术委员会\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"防硫化氢措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"全国安全生产标准化技术委员会石油天然气开采安全分技术委员会\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"溢流处置\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"全国安全生产标准化技术委员会石油天然气开采安全分技术委员会\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"井喷失控处置\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"全国安全生产标准化技术委员会石油天然气开采安全分技术委员会\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"采油(气)井口装置\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"全国安全生产标准化技术委员会石油天然气开采安全分技术委员会\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"工程\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"全国安全生产标准化技术委员会石油天然气开采安全分技术委员会\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"技术服务项目\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "全国安全生产标准化技术委员会石油天然气开采安全分技术委员会",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "陆上石油天然气井下作业安全管理要求",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "全国安全生产标准化技术委员会石油天然气开采安全分技术委员会",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "设计",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "全国安全生产标准化技术委员会石油天然气开采安全分技术委员会",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "井控装置",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "全国安全生产标准化技术委员会石油天然气开采安全分技术委员会",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "全国安全生产标准化技术委员会石油天然气开采安全分技术委员会",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "防火防爆措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "全国安全生产标准化技术委员会石油天然气开采安全分技术委员会",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "防硫化氢措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "全国安全生产标准化技术委员会石油天然气开采安全分技术委员会",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "溢流处置",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "全国安全生产标准化技术委员会石油天然气开采安全分技术委员会",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "井喷失控处置",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "全国安全生产标准化技术委员会石油天然气开采安全分技术委员会",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "采油(气)井口装置",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "全国安全生产标准化技术委员会石油天然气开采安全分技术委员会",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "工程",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "全国安全生产标准化技术委员会石油天然气开采安全分技术委员会",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "技术服务项目",
+      "tail_type": "作业活动"
+    }
+  ]
+}

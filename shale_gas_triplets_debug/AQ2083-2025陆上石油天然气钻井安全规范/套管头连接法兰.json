@@ -1,0 +1,20 @@
+{
+  "entity": "套管头连接法兰",
+  "raw": "[\n  {\"head\": \"套管头连接法兰\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"套管抗外挤强度的 80%\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"套管头连接法兰\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"额定工作压力\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "套管头连接法兰",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "套管抗外挤强度的 80%",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "套管头连接法兰",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "额定工作压力",
+      "tail_type": "施工参数"
+    }
+  ]
+}

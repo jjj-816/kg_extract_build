@@ -1,0 +1,13 @@
+{
+  "entity": "防烫手套",
+  "raw": "[\n  {\"head\": \"防烫手套\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"焊接现场\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "防烫手套",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "焊接现场",
+      "tail_type": "时空信息"
+    }
+  ]
+}

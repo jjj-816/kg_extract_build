@@ -1,0 +1,20 @@
+{
+  "entity": "强制通风设备",
+  "raw": "[\n  {\"head\": \"强制通风设备\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"设备出现异常\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"强制通风设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"机械通风\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "强制通风设备",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "设备出现异常",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "强制通风设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "机械通风",
+      "tail_type": "施工参数"
+    }
+  ]
+}

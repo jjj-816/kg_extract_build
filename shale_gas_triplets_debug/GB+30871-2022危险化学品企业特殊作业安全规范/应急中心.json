@@ -1,0 +1,13 @@
+{
+  "entity": "应急中心",
+  "raw": "[\n  {\"head\": \"应急中心\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"道路施工作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "应急中心",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "道路施工作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

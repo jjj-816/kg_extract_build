@@ -1,0 +1,27 @@
+{
+  "entity": "冷凝器管束箱堵头",
+  "raw": "[\n  {\"head\": \"冷凝器管束箱堵头\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"更换\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"冷凝器管束箱堵头\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"宁209H22A平台DTY560压缩机\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"冷凝器管束箱堵头\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"工作内容\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "冷凝器管束箱堵头",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "更换",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "冷凝器管束箱堵头",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "宁209H22A平台DTY560压缩机",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "冷凝器管束箱堵头",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "工作内容",
+      "tail_type": "施工记录"
+    }
+  ]
+}

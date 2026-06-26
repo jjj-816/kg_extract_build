@@ -1,0 +1,13 @@
+{
+  "entity": "高处坠落",
+  "raw": "[\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"穿戴好安全防护绳，持有效特种作业证书\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "穿戴好安全防护绳，持有效特种作业证书",
+      "tail_type": "控制措施"
+    }
+  ]
+}

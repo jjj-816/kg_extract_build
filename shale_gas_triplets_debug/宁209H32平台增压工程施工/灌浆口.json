@@ -1,0 +1,20 @@
+{
+  "entity": "灌浆口",
+  "raw": "[\n  {\"head\": \"灌浆口\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"灌浆\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"灌浆口\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"基础表面\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "灌浆口",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "灌浆",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "灌浆口",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "基础表面",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "爆炸",
+  "raw": "[\n  {\"head\": \"爆炸\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"MFZ/ABC-8型干粉灭火器\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"爆炸\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"气体检测仪\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"爆炸\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"1、火灾爆炸风险控制措施\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "爆炸",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "MFZ/ABC-8型干粉灭火器",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "爆炸",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "气体检测仪",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "爆炸",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "1、火灾爆炸风险控制措施",
+      "tail_type": "施工记录"
+    }
+  ]
+}

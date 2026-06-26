@@ -1,0 +1,13 @@
+{
+  "entity": "分析结果/%",
+  "raw": "[\n  {\"head\": \"分析结果/%\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"气体取样分析时间\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "分析结果/%",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "气体取样分析时间",
+      "tail_type": "施工记录"
+    }
+  ]
+}

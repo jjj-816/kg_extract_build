@@ -1,0 +1,41 @@
+{
+  "entity": "压力表",
+  "raw": "[\n  {\"head\": \"压力表\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"精度应不低于1.5级\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"压力表\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"量程为被测最大压力的1.5～2.0倍\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"压力表\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"管道两端\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"压力表\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"管道两端\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"压力表\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"在检验有效期内\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "压力表",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "精度应不低于1.5级",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "压力表",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "量程为被测最大压力的1.5～2.0倍",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "压力表",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "管道两端",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "压力表",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "管道两端",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "压力表",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "在检验有效期内",
+      "tail_type": "施工参数"
+    }
+  ]
+}

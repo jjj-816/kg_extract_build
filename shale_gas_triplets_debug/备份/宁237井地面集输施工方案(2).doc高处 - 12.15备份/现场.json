@@ -1,0 +1,13 @@
+{
+  "entity": "现场",
+  "raw": "[\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"现场人员配置\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "现场人员配置",
+      "tail_type": "施工记录"
+    }
+  ]
+}

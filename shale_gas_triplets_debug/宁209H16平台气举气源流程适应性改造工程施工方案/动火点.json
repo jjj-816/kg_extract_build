@@ -1,0 +1,34 @@
+{
+  "entity": "动火点",
+  "raw": "[\n  {\"head\": \"动火点\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"动火点周边\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"动火点\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"5m范围内\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"动火点\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"不低于1米\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"动火点\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"按要求配备灭火器\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "动火点",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "动火点周边",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "动火点",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "5m范围内",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "动火点",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "不低于1米",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "动火点",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "按要求配备灭火器",
+      "tail_type": "施工记录"
+    }
+  ]
+}

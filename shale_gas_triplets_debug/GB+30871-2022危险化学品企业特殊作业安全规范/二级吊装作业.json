@@ -1,0 +1,118 @@
+{
+  "entity": "二级吊装作业",
+  "raw": "[\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"编制吊装作业方案\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"OCCURS_AT\", \"tail\": \"吊装地点\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"吊装作业人\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"司索人\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"监护人\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"指挥人员\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"风险辨识结果\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"OCCURS_AT\", \"tail\": \"作业实施时间\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"安全措施\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"安全交底人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"接受交底人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业指挥意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"所在单位意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"审核部门意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"审批部门意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"二级吊装作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"完工验收签字\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "编制吊装作业方案",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "OCCURS_AT",
+      "tail": "吊装地点",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "吊装作业人",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "司索人",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "监护人",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "指挥人员",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "风险辨识结果",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "OCCURS_AT",
+      "tail": "作业实施时间",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "安全措施",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "安全交底人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "接受交底人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "作业指挥意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "所在单位意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "审核部门意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "审批部门意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "二级吊装作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "完工验收签字",
+      "tail_type": "施工记录"
+    }
+  ]
+}

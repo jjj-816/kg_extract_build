@@ -1,0 +1,13 @@
+{
+  "entity": "DL 409",
+  "raw": "[\n  {\"head\": \"DL 409\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"起重机械的安全距离\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "DL 409",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "起重机械的安全距离",
+      "tail_type": "施工参数"
+    }
+  ]
+}

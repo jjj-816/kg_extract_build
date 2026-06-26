@@ -1,0 +1,27 @@
+{
+  "entity": "作业前准备",
+  "raw": "[\n  {\"head\": \"作业前准备\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"工器具、材料、设备上下车、搬运过程中砸伤、车辆移动伤害\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业前准备\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"按要求穿戴防静电工作服、防穿刺鞋，根据现场实际情况，设置作业隔离警示带  车辆进入场站时应有专人指挥，明确信号标识，确保人员及时避让，控制速度速度\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业前准备\", \"head_type\": \"施工阶段\", \"relation\": \"PRECEDES\", \"tail\": \"开工条件确认\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"作业前准备\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"作业前应对用电设备进行检查和试运转\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "作业前准备",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "工器具、材料、设备上下车、搬运过程中砸伤、车辆移动伤害",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业前准备",
+      "head_type": "施工阶段",
+      "relation": "PRECEDES",
+      "tail": "开工条件确认",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "作业前准备",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "作业前应对用电设备进行检查和试运转",
+      "tail_type": "作业活动"
+    }
+  ]
+}

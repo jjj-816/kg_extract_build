@@ -1,0 +1,76 @@
+{
+  "entity": "管墩",
+  "raw": "[\n  {\"head\": \"管墩\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"管墩制作\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"管墩\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"法兰拆除/安装\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管墩\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"工艺管线连接、预制焊接\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管墩\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"管道试压\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管墩\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"压缩机基础灌浆\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管墩\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"管道防腐\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管墩\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"根据设计要求，确定管墩的位置，并用墨线弹出管墩的轮廓\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"管墩\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"从基础开始，按照放线位置，用砖块和砂浆砌筑管墩，注意保持砖层的水平和垂直度，可使用水平仪和靠尺随时检查\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"管墩\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"砖块和砂浆\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管墩\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"水平仪和靠尺\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"管墩\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"建渣清理，管墩制作 ，压缩机基础灌浆等动土作业\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "管墩",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "管墩制作",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "管墩",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "法兰拆除/安装",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管墩",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "工艺管线连接、预制焊接",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管墩",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "管道试压",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管墩",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "压缩机基础灌浆",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管墩",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "管道防腐",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管墩",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "根据设计要求，确定管墩的位置，并用墨线弹出管墩的轮廓",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "管墩",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "砖块和砂浆",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "管墩",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "水平仪和靠尺",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "管墩",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "建渣清理，管墩制作 ，压缩机基础灌浆等动土作业",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "屈文付",
+  "raw": "[\n  {\"head\": \"屈文付\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场作业过程管理及安全监护\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "屈文付",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场作业过程管理及安全监护",
+      "tail_type": "未分类"
+    }
+  ]
+}

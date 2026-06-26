@@ -1,0 +1,20 @@
+{
+  "entity": "作业过程实时检测",
+  "raw": "[\n  {\"head\": \"作业过程实时检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"2h 记录 1 次\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业过程实时检测\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"用电设备进行检查和试运转\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "作业过程实时检测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "2h 记录 1 次",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业过程实时检测",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "用电设备进行检查和试运转",
+      "tail_type": "作业活动"
+    }
+  ]
+}

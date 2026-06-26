@@ -1,0 +1,83 @@
+{
+  "entity": "可燃气体分析",
+  "raw": "[\n  {\"head\": \"可燃气体分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"GB 15322.3 可燃气体探测器 第3部分:工业及商业用途便携式可燃气体探测器\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"可燃气体分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"GB/T 50493—2019 石油化工可燃气体和有毒气体检测报警设计标准\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"可燃气体分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"管道、储罐、塔器等设备外壁上动火\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"可燃气体分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"动火点 10 m 范围内\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"可燃气体分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"气体分析\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"可燃气体分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"检测设备内气体含量\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"可燃气体分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"较大的设备内动火\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"可燃气体分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"上、中、下(左、中、右)各部位进行检测分析\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"可燃气体分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"每日动火前均应进行气体分析\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"可燃气体分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"设备及管道外环境动火\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"可燃气体分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"动火点 10 m 范围内\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"可燃气体分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"连续检测气体浓度\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"可燃气体分析\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"可燃气体、蒸气浓度要求应符合 5.3.2 的规定\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "可燃气体分析",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "管道、储罐、塔器等设备外壁上动火",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "可燃气体分析",
+      "head_type": "未分类",
+      "relation": "HAS_THRESHOLD",
+      "tail": "动火点 10 m 范围内",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "可燃气体分析",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "气体分析",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "可燃气体分析",
+      "head_type": "未分类",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "检测设备内气体含量",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "可燃气体分析",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "较大的设备内动火",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "可燃气体分析",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "上、中、下(左、中、右)各部位进行检测分析",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "可燃气体分析",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "每日动火前均应进行气体分析",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "可燃气体分析",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "设备及管道外环境动火",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "可燃气体分析",
+      "head_type": "未分类",
+      "relation": "HAS_THRESHOLD",
+      "tail": "动火点 10 m 范围内",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "可燃气体分析",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "连续检测气体浓度",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "可燃气体分析",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "可燃气体、蒸气浓度要求应符合 5.3.2 的规定",
+      "tail_type": "规范条款"
+    }
+  ]
+}

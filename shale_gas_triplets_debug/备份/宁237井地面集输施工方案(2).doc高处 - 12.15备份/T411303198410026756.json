@@ -1,0 +1,34 @@
+{
+  "entity": "T411303198410026756",
+  "raw": "[\n  {\"head\": \"T411303198410026756\", \"head_type\": \"未分类\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"高处\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"T411303198410026756\", \"head_type\": \"未分类\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"CN-TY-A26\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"T411303198410026756\", \"head_type\": \"未分类\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"CN-TY-A10\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"T411303198410026756\", \"head_type\": \"未分类\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"CN-TY-A06\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "T411303198410026756",
+      "head_type": "未分类",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "高处",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "T411303198410026756",
+      "head_type": "未分类",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "CN-TY-A26",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "T411303198410026756",
+      "head_type": "未分类",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "CN-TY-A10",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "T411303198410026756",
+      "head_type": "未分类",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "CN-TY-A06",
+      "tail_type": "风险事件"
+    }
+  ]
+}

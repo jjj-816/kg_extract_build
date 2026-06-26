@@ -1,0 +1,13 @@
+{
+  "entity": "无阻流量",
+  "raw": "[\n  {\"head\": \"无阻流量\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"油、气、水产量\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "无阻流量",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "油、气、水产量",
+      "tail_type": "施工参数"
+    }
+  ]
+}

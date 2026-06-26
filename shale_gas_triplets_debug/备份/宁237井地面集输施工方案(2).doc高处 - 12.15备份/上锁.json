@@ -1,0 +1,5 @@
+{
+  "entity": "上锁",
+  "raw": "[\n  {\"head\": \"上锁\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"停电\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"上锁\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"挂牌\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"上锁\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"授权\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": []
+}

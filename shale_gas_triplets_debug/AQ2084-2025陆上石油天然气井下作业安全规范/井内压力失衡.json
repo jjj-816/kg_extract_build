@@ -1,0 +1,20 @@
+{
+  "entity": "井内压力失衡",
+  "raw": "[\n  {\"head\": \"井内压力失衡\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"保持井内压力平衡\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"井内压力失衡\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"7.12.6 注塞作业过程中应保持井内压力平衡，防止井内压力失衡导致溢流\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井内压力失衡\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"注塞作业过程中\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "井内压力失衡",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "保持井内压力平衡",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "井内压力失衡",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "注塞作业过程中",
+      "tail_type": "时空信息"
+    }
+  ]
+}

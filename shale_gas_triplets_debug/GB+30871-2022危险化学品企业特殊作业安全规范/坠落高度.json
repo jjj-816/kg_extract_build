@@ -1,0 +1,27 @@
+{
+  "entity": "坠落高度",
+  "raw": "[\n  {\"head\": \"坠落高度\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"24 m\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"坠落高度\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"交叉作业\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"坠落高度\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"8.2.8\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "坠落高度",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "24 m",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "坠落高度",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "交叉作业",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "坠落高度",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "8.2.8",
+      "tail_type": "施工记录"
+    }
+  ]
+}

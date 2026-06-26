@@ -1,0 +1,13 @@
+{
+  "entity": "气泵气源",
+  "raw": "[\n  {\"head\": \"气泵气源\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"放出的天然气\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "气泵气源",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "放出的天然气",
+      "tail_type": "风险事件"
+    }
+  ]
+}

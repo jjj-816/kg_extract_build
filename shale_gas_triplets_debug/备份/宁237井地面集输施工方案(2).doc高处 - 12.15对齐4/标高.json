@@ -1,0 +1,13 @@
+{
+  "entity": "标高",
+  "raw": "[\n  {\"head\": \"标高\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高空坠落\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "标高",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高空坠落",
+      "tail_type": "风险事件"
+    }
+  ]
+}

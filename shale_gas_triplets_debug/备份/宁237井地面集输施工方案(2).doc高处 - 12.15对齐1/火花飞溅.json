@@ -1,0 +1,27 @@
+{
+  "entity": "火花飞溅",
+  "raw": "[\n  {\"head\": \"火花飞溅\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"灭火器\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"火花飞溅\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"杜绝施工人员穿戴化纤材料劳保用品\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"火花飞溅\", \"head_type\": \"风险事件\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"火花飞溅\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "火花飞溅",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "灭火器",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "火花飞溅",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "杜绝施工人员穿戴化纤材料劳保用品",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火花飞溅",
+      "tail_type": "风险事件"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "控制元件",
+  "raw": "[\n  {\"head\": \"控制元件\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"额定工作压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"控制元件\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"防误操作\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "控制元件",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "额定工作压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "控制元件",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "防误操作",
+      "tail_type": "风险事件"
+    }
+  ]
+}

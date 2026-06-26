@@ -1,0 +1,41 @@
+{
+  "entity": "一机一闸一保护",
+  "raw": "[\n  {\"head\": \"一机一闸一保护\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"安全管理人员\", \"tail_type\": \"未分类\"},\n  {\"head\": \"一机一闸一保护\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"灭火器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"一机一闸一保护\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"电动扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"一机一闸一保护\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"人员临边坠落\", \"tail_type\": \"环保对象\"},\n  {\"head\": \"一机一闸一保护\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"做好临边硬隔离防坠落措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"一机一闸一保护\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"安全警示标识\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "一机一闸一保护",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "灭火器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "一机一闸一保护",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "电动扳手",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "一机一闸一保护",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "人员临边坠落",
+      "tail_type": "环保对象"
+    },
+    {
+      "head": "一机一闸一保护",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "做好临边硬隔离防坠落措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "一机一闸一保护",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "安全警示标识",
+      "tail_type": "控制措施"
+    }
+  ]
+}

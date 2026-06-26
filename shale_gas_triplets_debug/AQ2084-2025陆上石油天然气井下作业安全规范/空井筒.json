@@ -1,0 +1,34 @@
+{
+  "entity": "空井筒",
+  "raw": "[\n  {\"head\": \"空井筒\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"起下管柱\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"空井筒\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"旋转作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"空井筒\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"起下大直径工具\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"空井筒\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"钢丝作业\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "空井筒",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "起下管柱",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "空井筒",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "旋转作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "空井筒",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "起下大直径工具",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "空井筒",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "钢丝作业",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

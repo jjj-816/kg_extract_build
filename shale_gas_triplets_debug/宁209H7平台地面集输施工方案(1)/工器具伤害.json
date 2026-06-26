@@ -1,0 +1,13 @@
+{
+  "entity": "工器具伤害",
+  "raw": "[\n  {\"head\": \"工器具伤害\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"作业前进行安全技术交底\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"工器具伤害\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"按要求穿戴防静电工作服、防穿刺鞋，根据现场实际情况，设置作业隔离警示带\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "工器具伤害",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "作业前进行安全技术交底",
+      "tail_type": "控制措施"
+    }
+  ]
+}

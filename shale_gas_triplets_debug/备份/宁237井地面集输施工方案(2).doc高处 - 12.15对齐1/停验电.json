@@ -1,0 +1,27 @@
+{
+  "entity": "停验电",
+  "raw": "[\n  {\"head\": \"停验电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"停电\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"停验电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"上锁\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"停验电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"挂牌\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"停验电\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"电气设备\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"停验电\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"用电设备检查\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"停验电\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"用电设备试运转\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"停验电\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"停验电\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"设备异常\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"停验电\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业许可证\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "停验电",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "电气设备",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "停验电",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电风险",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "停验电",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "作业许可证",
+      "tail_type": "施工记录"
+    }
+  ]
+}

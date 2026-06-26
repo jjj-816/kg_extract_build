@@ -1,0 +1,13 @@
+{
+  "entity": "营救人员",
+  "raw": "```json\n[\n  {\"head\": \"营救人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"救援人员伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"营救人员\", \"head_type\": \"责任主体\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"正压式空气呼吸器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"营救人员\", \"head_type\": \"责任主体\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"安全带\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"营救人员\", \"head_type\": \"责任主体\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"救生索\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"营救人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"事故现场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"营救人员\", \"head_type\": \"责任主体\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"自身安全防护\", \"tail_type\": \"控制措施\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "营救人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "救援人员伤害",
+      "tail_type": "风险事件"
+    }
+  ]
+}

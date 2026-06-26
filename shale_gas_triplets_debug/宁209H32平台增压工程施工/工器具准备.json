@@ -1,0 +1,83 @@
+{
+  "entity": "工器具准备",
+  "raw": "[\n  {\"head\": \"工器具准备\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"常用工具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"管钳\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"锄头\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"铲子\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电焊机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"内磨机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"套\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"2\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"人\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"台\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "工器具准备",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "常用工具",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "工器具准备",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "扳手",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "工器具准备",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "管钳",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "工器具准备",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "锄头",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "工器具准备",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "铲子",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "工器具准备",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "电焊机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "工器具准备",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "内磨机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "工器具准备",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "套",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "工器具准备",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "2",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "工器具准备",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "人",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "工器具准备",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "台",
+      "tail_type": "施工参数"
+    }
+  ]
+}

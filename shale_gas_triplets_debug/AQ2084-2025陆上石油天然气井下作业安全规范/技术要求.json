@@ -1,0 +1,13 @@
+{
+  "entity": "技术要求",
+  "raw": "[\n  {\"head\": \"技术要求\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井控装置安装、检维修、试压、现场服务\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "技术要求",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井控装置安装、检维修、试压、现场服务",
+      "tail_type": "风险事件"
+    }
+  ]
+}

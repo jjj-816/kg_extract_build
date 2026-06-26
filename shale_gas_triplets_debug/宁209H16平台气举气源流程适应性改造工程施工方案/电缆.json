@@ -1,0 +1,27 @@
+{
+  "entity": "电缆",
+  "raw": "[\n  {\"head\": \"电缆\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"管道、电缆\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"电缆\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"未探明地下电缆及管沟走向导致损坏埋地管线和电缆\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"电缆\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"在运管线、电缆、光纤等路径\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "电缆",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "管道、电缆",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "电缆",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "未探明地下电缆及管沟走向导致损坏埋地管线和电缆",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "电缆",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "在运管线、电缆、光纤等路径",
+      "tail_type": "施工参数"
+    }
+  ]
+}

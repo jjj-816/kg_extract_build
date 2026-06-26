@@ -1,0 +1,27 @@
+{
+  "entity": "GB 50194",
+  "raw": "[\n  {\"head\": \"GB 50194\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"临时用电设备和线路\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"GB 50194\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"电器元件\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"GB 50194\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"临时用电电源施工\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"GB 50194\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"接地\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "GB 50194",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "临时用电设备和线路",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "GB 50194",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "电器元件",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "GB 50194",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "临时用电电源施工",
+      "tail_type": "作业活动"
+    }
+  ]
+}

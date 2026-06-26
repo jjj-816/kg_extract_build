@@ -1,0 +1,13 @@
+{
+  "entity": "套管压力变送器",
+  "raw": "[\n  {\"head\": \"套管压力变送器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"节流管汇五通\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "套管压力变送器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "节流管汇五通",
+      "tail_type": "时空信息"
+    }
+  ]
+}

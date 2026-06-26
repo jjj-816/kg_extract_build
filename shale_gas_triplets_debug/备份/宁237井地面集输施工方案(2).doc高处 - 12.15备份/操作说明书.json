@@ -1,0 +1,55 @@
+{
+  "entity": "操作说明书",
+  "raw": "```json\n[\n  {\"head\": \"操作说明书\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"施工安排\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"操作说明书\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"组织机构\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"操作说明书\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"应急处置\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"操作说明书\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"现场人员配置\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"操作说明书\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"编制依据\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"操作说明书\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"工程概况\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"操作说明书\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"应急措施\", \"tail_type\": \"规范条款\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "操作说明书",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "施工安排",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "操作说明书",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "组织机构",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "操作说明书",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "应急处置",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "操作说明书",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "现场人员配置",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "操作说明书",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "编制依据",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "操作说明书",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "工程概况",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "操作说明书",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "应急措施",
+      "tail_type": "规范条款"
+    }
+  ]
+}

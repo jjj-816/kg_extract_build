@@ -1,0 +1,27 @@
+{
+  "entity": "观察点",
+  "raw": "[\n  {\"head\": \"观察点\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"定时取样\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"观察点\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"测定井场各处有毒有害气体含量\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"观察点\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"划分安全范围\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "观察点",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "定时取样",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "观察点",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "测定井场各处有毒有害气体含量",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "观察点",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "划分安全范围",
+      "tail_type": "施工记录"
+    }
+  ]
+}

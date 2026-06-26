@@ -1,0 +1,55 @@
+{
+  "entity": "层位",
+  "raw": "[\n  {\"head\": \"层位\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业层位原始和目前地层压力或地层压力系数\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"层位\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"预测最高井口关井压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"层位\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"井段\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"层位\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"厚度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"层位\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业层位最高地层压力或其当量密度值\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"层位\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业层位预测最高井口关井压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"层位\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业层位预测井口最高关井压力\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "层位",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业层位原始和目前地层压力或地层压力系数",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "层位",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "预测最高井口关井压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "层位",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "井段",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "层位",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "厚度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "层位",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业层位最高地层压力或其当量密度值",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "层位",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业层位预测最高井口关井压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "层位",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业层位预测井口最高关井压力",
+      "tail_type": "施工参数"
+    }
+  ]
+}

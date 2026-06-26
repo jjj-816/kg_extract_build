@@ -1,0 +1,5 @@
+{
+  "entity": "生活污水处理装置",
+  "raw": "[\n  {\"head\": \"生活污水处理装置\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"宁201中心站生活污水处理装置升级改造彩钢棚安装施工方案\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"生活污水处理装置\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"宁201生活污水处理装置升级改造彩钢棚安装施工\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"生活污水处理装置\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"201生活污水处理装置升级改造钢结构吊装配合焊接\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": []
+}

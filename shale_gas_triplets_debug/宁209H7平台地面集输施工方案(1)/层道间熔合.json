@@ -1,0 +1,48 @@
+{
+  "entity": "层道间熔合",
+  "raw": "[\n  {\"head\": \"层道间熔合\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"填充焊\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"层道间熔合\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"盖面焊\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"层道间熔合\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"根焊质量\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"层道间熔合\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"彻底清除每一层焊道上的焊渣和飞溅物\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"层道间熔合\", \"head_type\": \"未分类\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"夹渣\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"层道间熔合\", \"head_type\": \"未分类\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"未熔合\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "层道间熔合",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "填充焊",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "层道间熔合",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "盖面焊",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "层道间熔合",
+      "head_type": "未分类",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "根焊质量",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "层道间熔合",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "彻底清除每一层焊道上的焊渣和飞溅物",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "层道间熔合",
+      "head_type": "未分类",
+      "relation": "TRIGGERS_RISK",
+      "tail": "夹渣",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "层道间熔合",
+      "head_type": "未分类",
+      "relation": "TRIGGERS_RISK",
+      "tail": "未熔合",
+      "tail_type": "风险事件"
+    }
+  ]
+}

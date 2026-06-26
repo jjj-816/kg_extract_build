@@ -1,0 +1,13 @@
+{
+  "entity": "靠尺",
+  "raw": "[\n  {\"head\": \"靠尺\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"水平和垂直度\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "靠尺",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "水平和垂直度",
+      "tail_type": "施工参数"
+    }
+  ]
+}

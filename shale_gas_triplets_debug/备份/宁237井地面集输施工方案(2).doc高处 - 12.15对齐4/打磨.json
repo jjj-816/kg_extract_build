@@ -1,0 +1,139 @@
+{
+  "entity": "打磨",
+  "raw": "[\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"井口打磨\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"除锈\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"喷涂\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"摄像头立杆\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"摄像头安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"建渣清理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"高处作业\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"受限空间\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动火\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"角磨机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电源线\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"插座\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电镐\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"切割\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"焊接\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"橡胶绝缘手套\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"防护眼镜\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"打磨\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"防护面罩\", \"tail_type\": \"材料介质\"}\n]",
+  "triplets": [
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "井口打磨",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "除锈",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "喷涂",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "摄像头立杆",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "摄像头安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "建渣清理",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "高处作业",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "受限空间",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "动火",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "角磨机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "电源线",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "插座",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "电镐",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "切割",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "焊接",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "橡胶绝缘手套",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "防护眼镜",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "打磨",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "防护面罩",
+      "tail_type": "材料介质"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "entity": "通井循环",
+  "raw": "[\n  {\"head\": \"通井循环\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"测井时间长\", \"tail_type\": \"未分类\"},\n  {\"head\": \"通井循环\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"油气上窜速度的安全条件\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"通井循环\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"起钻前\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"通井循环\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"溢流压井后\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"通井循环\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"钻开油气层井漏堵漏后\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "通井循环",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "测井时间长",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "通井循环",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "油气上窜速度的安全条件",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "通井循环",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "起钻前",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "通井循环",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "溢流压井后",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "通井循环",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "钻开油气层井漏堵漏后",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

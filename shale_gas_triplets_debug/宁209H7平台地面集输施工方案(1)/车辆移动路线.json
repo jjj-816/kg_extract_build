@@ -1,0 +1,41 @@
+{
+  "entity": "车辆移动路线",
+  "raw": "[\n  {\"head\": \"车辆移动路线\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"提前踏勘现场\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"车辆移动路线\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"专人进行指挥\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"车辆移动路线\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"禁止无关人员靠近\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"车辆移动路线\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"确保道路安全畅通\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"车辆移动路线\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"在车轮后放置枕木\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "车辆移动路线",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "提前踏勘现场",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "车辆移动路线",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "专人进行指挥",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "车辆移动路线",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "禁止无关人员靠近",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "车辆移动路线",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "确保道路安全畅通",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "车辆移动路线",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "在车轮后放置枕木",
+      "tail_type": "作业活动"
+    }
+  ]
+}

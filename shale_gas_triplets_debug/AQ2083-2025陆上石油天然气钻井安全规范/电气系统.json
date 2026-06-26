@@ -1,0 +1,20 @@
+{
+  "entity": "电气系统",
+  "raw": "[\n  {\"head\": \"电气系统\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井口 $30\\\\mathrm{m}$ 以内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电气系统\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防爆要求\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "电气系统",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井口 $30\\mathrm{m}$ 以内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电气系统",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "防爆要求",
+      "tail_type": "施工参数"
+    }
+  ]
+}

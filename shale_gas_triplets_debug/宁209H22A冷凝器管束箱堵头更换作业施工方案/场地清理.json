@@ -1,0 +1,27 @@
+{
+  "entity": "场地清理",
+  "raw": "[\n  {\"head\": \"场地清理\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"氮气置换\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"场地清理\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"试压验漏\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"场地清理\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"试运行\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "场地清理",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "氮气置换",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "场地清理",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "试压验漏",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "场地清理",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "试运行",
+      "tail_type": "作业活动"
+    }
+  ]
+}

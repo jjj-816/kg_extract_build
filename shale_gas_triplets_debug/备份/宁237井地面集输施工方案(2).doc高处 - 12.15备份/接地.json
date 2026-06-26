@@ -1,0 +1,13 @@
+{
+  "entity": "接地",
+  "raw": "[\n  {\"head\": \"接地\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"接地\", \"head_type\": \"控制措施\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场人员\", \"tail_type\": \"责任主体\"}\n]",
+  "triplets": [
+    {
+      "head": "现场人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "接地",
+      "tail_type": "控制措施"
+    }
+  ]
+}

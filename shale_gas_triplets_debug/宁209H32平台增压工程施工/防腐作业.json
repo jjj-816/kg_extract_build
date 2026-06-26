@@ -1,0 +1,13 @@
+{
+  "entity": "防腐作业",
+  "raw": "[\n  {\"head\": \"防腐作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"施工人员佩戴好防护口罩\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "防腐作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "施工人员佩戴好防护口罩",
+      "tail_type": "未分类"
+    }
+  ]
+}

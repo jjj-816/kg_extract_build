@@ -1,0 +1,41 @@
+{
+  "entity": "堆土",
+  "raw": "[\n  {\"head\": \"堆土\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"放坡系数\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"堆土\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"规范堆土\", \"tail_type\": \"未分类\"},\n  {\"head\": \"堆土\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"场站动土作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"堆土\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"作业面放坡\", \"tail_type\": \"未分类\"},\n  {\"head\": \"堆土\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"有效支撑\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "堆土",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "放坡系数",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "堆土",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "规范堆土",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "堆土",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "场站动土作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "堆土",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "作业面放坡",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "堆土",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "有效支撑",
+      "tail_type": "未分类"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "entity": "射孔数据",
+  "raw": "[\n  {\"head\": \"射孔数据\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"射孔方式\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"射孔数据\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"层位\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"射孔数据\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"井段\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"射孔数据\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"工作液类型\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"射孔数据\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"待射层地层压力预测\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "射孔数据",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "射孔方式",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "射孔数据",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "层位",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "射孔数据",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "井段",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "射孔数据",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "工作液类型",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "射孔数据",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "待射层地层压力预测",
+      "tail_type": "施工参数"
+    }
+  ]
+}

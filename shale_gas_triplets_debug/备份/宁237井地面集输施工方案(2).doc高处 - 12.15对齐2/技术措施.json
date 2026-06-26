@@ -1,0 +1,48 @@
+{
+  "entity": "技术措施",
+  "raw": "[\n  {\"head\": \"技术措施\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"主要设备、材料和施工辅助材料需要量\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"技术措施\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"质量控制\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"技术措施\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"主要作业步骤\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"技术措施\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"工作内容\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"技术措施\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"安全技术交底和风险告知内容\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"技术措施\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "技术措施",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "主要设备、材料和施工辅助材料需要量",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "质量控制",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "主要作业步骤",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "工作内容",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "安全技术交底和风险告知内容",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "施工参数"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "entity": "监督驻井",
+  "raw": "[\n  {\"head\": \"监督驻井\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"三高油气井\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": []
+}

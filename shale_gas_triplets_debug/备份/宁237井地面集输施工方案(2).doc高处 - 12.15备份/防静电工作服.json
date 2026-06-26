@@ -1,0 +1,41 @@
+{
+  "entity": "防静电工作服",
+  "raw": "[\n  {\"head\": \"防静电工作服\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"防静电工作服\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防腐作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"防静电工作服\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"割除作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"防静电工作服\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"防静电工作服\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"切割打磨\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"防静电工作服\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"使用电镐\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "防腐作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防静电工作服",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "割除作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防静电工作服",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "高处作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防静电工作服",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "切割打磨",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防静电工作服",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "使用电镐",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防静电工作服",
+      "tail_type": "设备工具"
+    }
+  ]
+}

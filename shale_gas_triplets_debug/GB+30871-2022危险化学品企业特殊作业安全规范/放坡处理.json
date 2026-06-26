@@ -1,0 +1,27 @@
+{
+  "entity": "放坡处理",
+  "raw": "[\n  {\"head\": \"放坡处理\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"固壁支撑\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"放坡处理\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"作业方案图\", \"tail_type\": \"未分类\"},\n  {\"head\": \"放坡处理\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"围栏\", \"tail_type\": \"未分类\"},\n  {\"head\": \"放坡处理\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"警戒线\", \"tail_type\": \"未分类\"},\n  {\"head\": \"放坡处理\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"警告牌\", \"tail_type\": \"未分类\"},\n  {\"head\": \"放坡处理\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"夜间警示灯\", \"tail_type\": \"未分类\"},\n  {\"head\": \"放坡处理\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"个人防护装备\", \"tail_type\": \"未分类\"},\n  {\"head\": \"放坡处理\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"防水型灯\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"放坡处理\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"防爆型灯\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"放坡处理\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"坠落\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"放坡处理\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"受限空间作业\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "放坡处理",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "固壁支撑",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "放坡处理",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "坠落",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "放坡处理",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "受限空间作业",
+      "tail_type": "风险事件"
+    }
+  ]
+}

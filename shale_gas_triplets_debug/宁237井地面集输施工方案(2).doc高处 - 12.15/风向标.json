@@ -1,0 +1,13 @@
+{
+  "entity": "风向标",
+  "raw": "[\n  {\"head\": \"风向标\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"逃生通道、逃生门、风向标、灭火器和可燃气体检测仪位置\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "风向标",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "逃生通道、逃生门、风向标、灭火器和可燃气体检测仪位置",
+      "tail_type": "时空信息"
+    }
+  ]
+}

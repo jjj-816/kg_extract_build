@@ -1,0 +1,13 @@
+{
+  "entity": "口哨",
+  "raw": "[\n  {\"head\": \"口哨\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"联络方法\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "口哨",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "联络方法",
+      "tail_type": "施工参数"
+    }
+  ]
+}

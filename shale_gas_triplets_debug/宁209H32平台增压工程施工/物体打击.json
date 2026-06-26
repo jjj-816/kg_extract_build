@@ -1,0 +1,55 @@
+{
+  "entity": "物体打击",
+  "raw": "[\n  {\"head\": \"物体打击\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"正确穿戴劳保用品\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"物体打击\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"做好施工区域警戒线隔离\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"物体打击\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"正确使用工器具\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"物体打击\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"对施工范围拉好警戒带\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"物体打击\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"全程作业必须在监护人的监护下作业\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"物体打击\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"避免物体打击伤人\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"物体打击\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"碰伤、物体打击风险控制措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "物体打击",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "正确穿戴劳保用品",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "物体打击",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "做好施工区域警戒线隔离",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "物体打击",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "正确使用工器具",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "物体打击",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "对施工范围拉好警戒带",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "物体打击",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "全程作业必须在监护人的监护下作业",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "物体打击",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "避免物体打击伤人",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "物体打击",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "碰伤、物体打击风险控制措施",
+      "tail_type": "控制措施"
+    }
+  ]
+}

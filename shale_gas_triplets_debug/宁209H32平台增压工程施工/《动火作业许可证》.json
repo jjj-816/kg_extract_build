@@ -1,0 +1,27 @@
+{
+  "entity": "《动火作业许可证》",
+  "raw": "[\n  {\"head\": \"《动火作业许可证》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"动火范围\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《动火作业许可证》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"时间\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"《动火作业许可证》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"责任人\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "《动火作业许可证》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "动火范围",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《动火作业许可证》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "时间",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "《动火作业许可证》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "责任人",
+      "tail_type": "作业活动"
+    }
+  ]
+}

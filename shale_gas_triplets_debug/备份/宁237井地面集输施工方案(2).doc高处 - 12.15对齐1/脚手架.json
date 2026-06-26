@@ -1,0 +1,5 @@
+{
+  "entity": "脚手架",
+  "raw": "[\n  {\"head\": \"脚手架\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"四脚架\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"脚手架\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"全身式安全带\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": []
+}

@@ -1,0 +1,125 @@
+{
+  "entity": "高处坠落",
+  "raw": "[\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"安全隔离区\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"警戒标识\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"安全带高挂低用\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"临边硬隔离防坠落措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"安全警示标识\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"操作平台稳固性\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"安全技术交底\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"岗前体检\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"稳固搭设\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防滑措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防侧翻措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"保险绳\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"应急方案\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"应急救援器材\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"高处\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"临边\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"作业平台\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"高处坠落\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"井口\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "安全隔离区",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "警戒标识",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "安全带高挂低用",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "临边硬隔离防坠落措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "安全警示标识",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "操作平台稳固性",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "安全技术交底",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "岗前体检",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "稳固搭设",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "防侧翻措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "保险绳",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "应急方案",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "应急救援器材",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "高处",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "临边",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "作业平台",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "高处坠落",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "井口",
+      "tail_type": "时空信息"
+    }
+  ]
+}

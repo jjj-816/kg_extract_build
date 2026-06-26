@@ -1,0 +1,5 @@
+{
+  "entity": "美工刀",
+  "raw": "[\n  {\"head\": \"美工刀\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电工\", \"tail_type\": \"责任主体\"}\n]",
+  "triplets": []
+}

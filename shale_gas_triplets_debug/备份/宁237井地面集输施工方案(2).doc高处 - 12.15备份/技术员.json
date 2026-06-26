@@ -1,0 +1,5 @@
+{
+  "entity": "技术员",
+  "raw": "```json\n[\n  {\"head\": \"技术员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"电仪班组\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"技术员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"土建班组\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"技术员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全管理人员\", \"tail_type\": \"责任主体\"}\n]\n```",
+  "triplets": []
+}

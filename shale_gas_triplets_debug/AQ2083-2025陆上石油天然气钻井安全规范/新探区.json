@@ -1,0 +1,13 @@
+{
+  "entity": "新探区",
+  "raw": "[\n  {\"head\": \"新探区\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"含硫油气井\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "新探区",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "含硫油气井",
+      "tail_type": "时空信息"
+    }
+  ]
+}

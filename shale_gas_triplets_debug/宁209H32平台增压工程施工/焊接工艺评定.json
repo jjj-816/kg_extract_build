@@ -1,0 +1,55 @@
+{
+  "entity": "焊接工艺评定",
+  "raw": "[\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"坡口加工\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"工艺管线连接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"预制焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"对焊法兰与钢管配对焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"平焊法兰与钢管规格检查\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"焊工按规定穿戴焊工专用劳保\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"焊工\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"焊接工艺评定\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"特种人员证件号\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "焊接工艺评定",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "坡口加工",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "焊接工艺评定",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "工艺管线连接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "焊接工艺评定",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "预制焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "焊接工艺评定",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "对焊法兰与钢管配对焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "焊接工艺评定",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "焊工按规定穿戴焊工专用劳保",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "焊接工艺评定",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "焊工",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "焊接工艺评定",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "特种人员证件号",
+      "tail_type": "施工记录"
+    }
+  ]
+}

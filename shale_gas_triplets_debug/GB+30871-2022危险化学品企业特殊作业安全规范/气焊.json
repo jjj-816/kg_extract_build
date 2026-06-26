@@ -1,0 +1,62 @@
+{
+  "entity": "气焊",
+  "raw": "[\n  {\"head\": \"气焊\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"气割\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"气焊\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"气体分析\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"气焊\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"乙炔瓶应直立放置\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"气焊\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"在动火点 10 m 范围内进行气体分析\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"气焊\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"检测设备内气体含量\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"气焊\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"乙炔瓶\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"气焊\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"气焊、气割用具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"气焊\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"可燃气体\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"气焊\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"动火作业\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "气焊",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "气割",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "气焊",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "气体分析",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "气焊",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "乙炔瓶应直立放置",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "气焊",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "在动火点 10 m 范围内进行气体分析",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "气焊",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "检测设备内气体含量",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "气焊",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "乙炔瓶",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "气焊",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "可燃气体",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "气焊",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "动火作业",
+      "tail_type": "风险事件"
+    }
+  ]
+}

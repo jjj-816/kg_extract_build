@@ -1,0 +1,5 @@
+{
+  "entity": "带压油管(钻杆)输送射孔作业",
+  "raw": "[\n  {\"head\": \"带压油管(钻杆)输送射孔作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"套管内作业的应安装全封闸板防喷器\", \"tail_type\": \"未分类\"},\n  {\"head\": \"带压油管(钻杆)输送射孔作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"油管内作业的应安装主阀\", \"tail_type\": \"未分类\"},\n  {\"head\": \"带压油管(钻杆)输送射孔作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"射孔后起管柱前应按设计要求进行压井、安装井控装置\", \"tail_type\": \"未分类\"},\n  {\"head\": \"带压油管(钻杆)输送射孔作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"高压油气井、高产油气井放喷管线出口 $2 \\, m$ 内采取双地锚（基墩）固定\", \"tail_type\": \"未分类\"},\n  {\"head\": \"带压油管(钻杆)输送射孔作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"井下作业中使用钻井液液气分离器的，应按照钻井作业相关规定执行\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": []
+}

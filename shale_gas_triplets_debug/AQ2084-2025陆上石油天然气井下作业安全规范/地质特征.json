@@ -1,0 +1,62 @@
+{
+  "entity": "地质特征",
+  "raw": "[\n  {\"head\": \"地质特征\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"地层压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地质特征\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"有毒有害气体含量\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地质特征\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"浅层气\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地质特征\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"井别井型\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地质特征\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"井身结构\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地质特征\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"历史井喷情况\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地质特征\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"周边环境\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地质特征\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"工艺技术\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "地质特征",
+      "head_type": "未分类",
+      "relation": "HAS_PARAMETER",
+      "tail": "地层压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地质特征",
+      "head_type": "未分类",
+      "relation": "HAS_PARAMETER",
+      "tail": "有毒有害气体含量",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地质特征",
+      "head_type": "未分类",
+      "relation": "HAS_PARAMETER",
+      "tail": "浅层气",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地质特征",
+      "head_type": "未分类",
+      "relation": "HAS_PARAMETER",
+      "tail": "井别井型",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地质特征",
+      "head_type": "未分类",
+      "relation": "HAS_PARAMETER",
+      "tail": "井身结构",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地质特征",
+      "head_type": "未分类",
+      "relation": "HAS_PARAMETER",
+      "tail": "历史井喷情况",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地质特征",
+      "head_type": "未分类",
+      "relation": "HAS_PARAMETER",
+      "tail": "周边环境",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地质特征",
+      "head_type": "未分类",
+      "relation": "HAS_PARAMETER",
+      "tail": "工艺技术",
+      "tail_type": "施工参数"
+    }
+  ]
+}

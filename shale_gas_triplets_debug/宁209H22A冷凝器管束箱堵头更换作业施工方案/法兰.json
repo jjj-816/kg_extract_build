@@ -1,0 +1,13 @@
+{
+  "entity": "法兰",
+  "raw": "[\n  {\"head\": \"法兰\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"验漏\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "法兰",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "验漏",
+      "tail_type": "风险事件"
+    }
+  ]
+}

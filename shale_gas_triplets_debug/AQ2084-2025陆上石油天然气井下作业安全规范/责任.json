@@ -1,0 +1,27 @@
+{
+  "entity": "责任",
+  "raw": "[\n  {\"head\": \"责任\", \"head_type\": \"未分类\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"企业主体责任\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"责任\", \"head_type\": \"未分类\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全生产责任制\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"责任\", \"head_type\": \"未分类\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"设计的编制、审核、审批及变更程序\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "责任",
+      "head_type": "未分类",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "企业主体责任",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "责任",
+      "head_type": "未分类",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全生产责任制",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "责任",
+      "head_type": "未分类",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "设计的编制、审核、审批及变更程序",
+      "tail_type": "作业活动"
+    }
+  ]
+}

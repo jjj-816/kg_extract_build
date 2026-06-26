@@ -1,0 +1,13 @@
+{
+  "entity": "水的排放处理",
+  "raw": "[\n  {\"head\": \"水的排放处理\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"国家、地方环境保护\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "水的排放处理",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "国家、地方环境保护",
+      "tail_type": "时空信息"
+    }
+  ]
+}

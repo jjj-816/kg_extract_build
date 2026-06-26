@@ -1,0 +1,55 @@
+{
+  "entity": "井场",
+  "raw": "[\n  {\"head\": \"井场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"钻开含硫油气层前，应对井场的硫化氢防护措施进行检查\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"距井口 $30\\\\mathrm{m}$ 以内\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"井场钻井设备的布局应满足防火的安全要求\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"井场的明显处和有关设施、设备处应设置安全警示标志\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"井场动火作业应履行动火审批程序\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"井场应配备固定式或便携式气体检测仪\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"在井场应设置明显的硫化氢警示标志及风向标\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"井场周围应设置至少两处临时安全区，一处位于当地季节风的上风方向\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"设置观察点,定时取样,测定井场各处有毒有害气体含量,划分安全范围,根据监测情况决定是否扩大撤离范围\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "井场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "钻开含硫油气层前，应对井场的硫化氢防护措施进行检查",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井场",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "距井口 $30\\mathrm{m}$ 以内",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "井场钻井设备的布局应满足防火的安全要求",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "井场的明显处和有关设施、设备处应设置安全警示标志",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "井场动火作业应履行动火审批程序",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "井场应配备固定式或便携式气体检测仪",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "在井场应设置明显的硫化氢警示标志及风向标",
+      "tail_type": "施工记录"
+    }
+  ]
+}

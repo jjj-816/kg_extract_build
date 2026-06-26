@@ -1,0 +1,27 @@
+{
+  "entity": "换装井口作业",
+  "raw": "[\n  {\"head\": \"换装井口作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"换装井口装置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"换装井口作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"观察时间不少于一个换装井口作业周期\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"换装井口作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"用原密度压井液循环不少于1.5个循环周\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "换装井口作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "换装井口装置",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "换装井口作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "观察时间不少于一个换装井口作业周期",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "换装井口作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "用原密度压井液循环不少于1.5个循环周",
+      "tail_type": "施工记录"
+    }
+  ]
+}

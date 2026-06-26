@@ -1,0 +1,13 @@
+{
+  "entity": "历史井喷情况",
+  "raw": "[\n  {\"head\": \"历史井喷情况\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"制定单井井控风险分级标准\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "历史井喷情况",
+      "head_type": "未分类",
+      "relation": "HAS_PARAMETER",
+      "tail": "制定单井井控风险分级标准",
+      "tail_type": "施工参数"
+    }
+  ]
+}

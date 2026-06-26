@@ -1,0 +1,13 @@
+{
+  "entity": "索具",
+  "raw": "[\n  {\"head\": \"索具\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"重物捆绑、紧固、吊挂不牢，吊挂不平衡，索具打结，索具不齐，斜拉重物，棱角吊物与钢丝绳之间无衬垫\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"索具\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"不应用吊钩直接缠绕吊物及将不同种类或不同规格的索具混在一起使用\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"索具\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"吊物就位前,不应解开吊装索具\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "索具",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "吊物就位前,不应解开吊装索具",
+      "tail_type": "风险事件"
+    }
+  ]
+}

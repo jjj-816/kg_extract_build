@@ -1,0 +1,13 @@
+{
+  "entity": "盲板隔离",
+  "raw": "[\n  {\"head\": \"盲板隔离\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"采用盲板隔离、挂牌上锁（LOTO），严禁仅靠阀门关闭隔离\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "盲板隔离",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "采用盲板隔离、挂牌上锁（LOTO），严禁仅靠阀门关闭隔离",
+      "tail_type": "施工记录"
+    }
+  ]
+}

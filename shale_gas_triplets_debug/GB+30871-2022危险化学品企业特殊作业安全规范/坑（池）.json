@@ -1,0 +1,13 @@
+{
+  "entity": "坑（池）",
+  "raw": "[\n  {\"head\": \"坑（池）\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"地下室、窨井、坑（池）、管沟或其他封闭、半封闭场所\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "坑（池）",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "地下室、窨井、坑（池）、管沟或其他封闭、半封闭场所",
+      "tail_type": "时空信息"
+    }
+  ]
+}

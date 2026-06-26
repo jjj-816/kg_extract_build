@@ -1,0 +1,48 @@
+{
+  "entity": "漏电保护器",
+  "raw": "[\n  {\"head\": \"漏电保护器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"临时用电设施\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"漏电保护器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"移动工具\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"漏电保护器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"手持式电动工具\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"漏电保护器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"临时用电配电盘、箱\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"漏电保护器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"一机一闸一保护\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"漏电保护器\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"防漏电的安全措施\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "漏电保护器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "临时用电设施",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "漏电保护器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "移动工具",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "漏电保护器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "手持式电动工具",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "漏电保护器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "临时用电配电盘、箱",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "漏电保护器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "一机一闸一保护",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "漏电保护器",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "防漏电的安全措施",
+      "tail_type": "风险事件"
+    }
+  ]
+}

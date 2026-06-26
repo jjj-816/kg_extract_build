@@ -1,0 +1,13 @@
+{
+  "entity": "机泵房",
+  "raw": "[\n  {\"head\": \"机泵房\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"钻台(操作台)上下\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "机泵房",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "钻台(操作台)上下",
+      "tail_type": "时空信息"
+    }
+  ]
+}

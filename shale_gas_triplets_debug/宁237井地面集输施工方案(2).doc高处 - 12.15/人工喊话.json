@@ -1,0 +1,13 @@
+{
+  "entity": "人工喊话",
+  "raw": "[\n  {\"head\": \"人工喊话\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"联络方法\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "人工喊话",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "联络方法",
+      "tail_type": "作业活动"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "entity": "电气装置",
+  "raw": "[\n  {\"head\": \"电气装置\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"保护开关\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电气装置\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"漏电保护器\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电气装置\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电源开关\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电气装置\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"危险电压带电体\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"电气装置\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业设备\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电气装置\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"临时用电设施\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "电气装置",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "保护开关",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电气装置",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "漏电保护器",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电气装置",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "电源开关",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电气装置",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "危险电压带电体",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "电气装置",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业设备",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电气装置",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "临时用电设施",
+      "tail_type": "时空信息"
+    }
+  ]
+}

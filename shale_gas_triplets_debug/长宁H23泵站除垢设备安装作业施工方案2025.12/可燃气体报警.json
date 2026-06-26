@@ -1,0 +1,34 @@
+{
+  "entity": "可燃气体报警",
+  "raw": "[\n  {\"head\": \"可燃气体报警\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"立即停止作业\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"可燃气体报警\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"全程做好气体监测\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"可燃气体报警\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"2 小时记录一次\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"可燃气体报警\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"紧急叫停机械运转\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "可燃气体报警",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "立即停止作业",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "可燃气体报警",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "全程做好气体监测",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "可燃气体报警",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "2 小时记录一次",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "可燃气体报警",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "紧急叫停机械运转",
+      "tail_type": "控制措施"
+    }
+  ]
+}

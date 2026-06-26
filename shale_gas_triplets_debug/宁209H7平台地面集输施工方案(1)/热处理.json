@@ -1,0 +1,27 @@
+{
+  "entity": "热处理",
+  "raw": "[\n  {\"head\": \"热处理\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"焊后保温（后热）\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"热处理\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"焊后消除应力热处理（PWHT）\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"热处理\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高温烫伤\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "热处理",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "焊后保温（后热）",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "热处理",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "焊后消除应力热处理（PWHT）",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "热处理",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高温烫伤",
+      "tail_type": "风险事件"
+    }
+  ]
+}

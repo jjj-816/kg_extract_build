@@ -1,0 +1,34 @@
+{
+  "entity": "电缆测井",
+  "raw": "[\n  {\"head\": \"电缆测井\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"剪断电缆\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"电缆测井\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"起出井内电缆\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"电缆测井\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"穿心打捞测井电缆及仪器钻具组合\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"电缆测井\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"传输测井钻具组合\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "电缆测井",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "剪断电缆",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "电缆测井",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "起出井内电缆",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "电缆测井",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "穿心打捞测井电缆及仪器钻具组合",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "电缆测井",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "传输测井钻具组合",
+      "tail_type": "作业活动"
+    }
+  ]
+}

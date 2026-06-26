@@ -1,0 +1,41 @@
+{
+  "entity": "维护",
+  "raw": "[\n  {\"head\": \"维护\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"维护保养\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"维护\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"故障排除\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"维护\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"井控装置\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"维护\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"硫化氢检测仪器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"维护\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"防护器具\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "维护",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "维护保养",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "维护",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "故障排除",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "维护",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "井控装置",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "维护",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "硫化氢检测仪器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "维护",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "防护器具",
+      "tail_type": "设备工具"
+    }
+  ]
+}

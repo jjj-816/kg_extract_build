@@ -1,0 +1,20 @@
+{
+  "entity": "重点井",
+  "raw": "[\n  {\"head\": \"重点井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"三高油气井\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"重点井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"探井\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "重点井",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "三高油气井",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "重点井",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "探井",
+      "tail_type": "施工对象"
+    }
+  ]
+}

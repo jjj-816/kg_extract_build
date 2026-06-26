@@ -1,0 +1,13 @@
+{
+  "entity": "技术套管材质",
+  "raw": "[\n  {\"head\": \"技术套管材质\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"喷、漏、塌、卡\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "技术套管材质",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "喷、漏、塌、卡",
+      "tail_type": "风险事件"
+    }
+  ]
+}

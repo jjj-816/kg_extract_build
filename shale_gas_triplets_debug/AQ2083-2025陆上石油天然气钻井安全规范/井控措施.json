@@ -1,0 +1,41 @@
+{
+  "entity": "井控措施",
+  "raw": "[\n  {\"head\": \"井控措施\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"井控装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"井控措施\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"溢流处置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井控措施\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"井喷失控处置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井控措施\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"测井作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井控措施\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"固井作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "井控措施",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "井控装置",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "井控措施",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "溢流处置",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井控措施",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "井喷失控处置",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井控措施",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "测井作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井控措施",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "固井作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

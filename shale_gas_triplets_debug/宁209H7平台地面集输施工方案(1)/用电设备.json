@@ -1,0 +1,34 @@
+{
+  "entity": "用电设备",
+  "raw": "[\n  {\"head\": \"用电设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"检查和试运转\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"用电设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"按操作规程操作\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"用电设备\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"配电箱、发电机可靠接地\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"用电设备\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"配电箱漏电保护装置灵敏可靠\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "用电设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "检查和试运转",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "用电设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "按操作规程操作",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "用电设备",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "配电箱、发电机可靠接地",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "用电设备",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "配电箱漏电保护装置灵敏可靠",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "钻头尺寸",
+  "raw": "[\n  {\"head\": \"钻头尺寸\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"记录\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "钻头尺寸",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "记录",
+      "tail_type": "施工记录"
+    }
+  ]
+}

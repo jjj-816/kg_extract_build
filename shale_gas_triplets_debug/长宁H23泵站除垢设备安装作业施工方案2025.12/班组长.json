@@ -1,0 +1,13 @@
+{
+  "entity": "班组长",
+  "raw": "[\n  {\"head\": \"班组长\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"组织无关人员疏散\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "班组长",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "组织无关人员疏散",
+      "tail_type": "作业活动"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "易燃易爆物质",
+  "raw": "[\n  {\"head\": \"易燃易爆物质\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾爆炸\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "易燃易爆物质",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾爆炸",
+      "tail_type": "风险事件"
+    }
+  ]
+}

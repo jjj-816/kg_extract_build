@@ -1,0 +1,69 @@
+{
+  "entity": "临时用电",
+  "raw": "[\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"用电设备\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"用电设施的设置、防护及漏电保护符合规范要求\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"一机一闸一保护\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"接零、接地要符合用电管理规定要求\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"作业前应对用电设备进行检查和试运转\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"用电设备必须由经过培训合格的专人按操作规程操作\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电动扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"切割打磨、使用电镐\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"危险作业票证\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "用电设施的设置、防护及漏电保护符合规范要求",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "一机一闸一保护",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "接零、接地要符合用电管理规定要求",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "作业前应对用电设备进行检查和试运转",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "用电设备必须由经过培训合格的专人按操作规程操作",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "发电机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "电动扳手",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "切割打磨、使用电镐",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "危险作业票证",
+      "tail_type": "施工记录"
+    }
+  ]
+}

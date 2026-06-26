@@ -1,0 +1,41 @@
+{
+  "entity": "压力",
+  "raw": "[\n  {\"head\": \"压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"最大允许关井压力\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"预测最高井口关井压力\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"最大允许关井套压\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"压力\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"带压作业\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"压力\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"预测最高井口关井压力、最大允许关井压力\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "最大允许关井压力",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "预测最高井口关井压力",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "最大允许关井套压",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "压力",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "带压作业",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "压力",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "预测最高井口关井压力、最大允许关井压力",
+      "tail_type": "施工记录"
+    }
+  ]
+}

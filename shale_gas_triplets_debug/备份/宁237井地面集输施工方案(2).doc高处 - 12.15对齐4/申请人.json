@@ -1,0 +1,27 @@
+{
+  "entity": "申请人",
+  "raw": "[\n  {\"head\": \"申请人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场作业过程管理及安全监护\", \"tail_type\": \"未分类\"},\n  {\"head\": \"申请人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"确认现场作业相关人员\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"申请人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"指认准许作业的设备/系统或工作区域\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "申请人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场作业过程管理及安全监护",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "申请人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "确认现场作业相关人员",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "申请人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "指认准许作业的设备/系统或工作区域",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "entity": "岗位当班班长",
+  "raw": "[\n  {\"head\": \"岗位当班班长\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"动火前验票\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": []
+}

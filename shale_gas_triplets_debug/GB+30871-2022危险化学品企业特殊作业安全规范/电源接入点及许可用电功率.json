@@ -1,0 +1,62 @@
+{
+  "entity": "电源接入点及许可用电功率",
+  "raw": "[\n  {\"head\": \"电源接入点及许可用电功率\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"临时用电\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"电源接入点及许可用电功率\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"各类移动电源及外部自备电源\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"电源接入点及许可用电功率\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"动力和照明线路\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"电源接入点及许可用电功率\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"临时用电设备和线路\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"电源接入点及许可用电功率\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"临时用电设施\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"电源接入点及许可用电功率\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"漏电保护器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"电源接入点及许可用电功率\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"保护开关\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"电源接入点及许可用电功率\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"GB 50194\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"电源接入点及许可用电功率\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"供电电压等级和容量\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电源接入点及许可用电功率\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"接地\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "电源接入点及许可用电功率",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "临时用电",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "电源接入点及许可用电功率",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "各类移动电源及外部自备电源",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "电源接入点及许可用电功率",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "临时用电设施",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "电源接入点及许可用电功率",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "漏电保护器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "电源接入点及许可用电功率",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "保护开关",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "GB 50194",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "电源接入点及许可用电功率",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "电源接入点及许可用电功率",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "供电电压等级和容量",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电源接入点及许可用电功率",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "接地",
+      "tail_type": "施工参数"
+    }
+  ]
+}

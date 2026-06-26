@@ -1,0 +1,34 @@
+{
+  "entity": "第二章 工程概况",
+  "raw": "[\n  {\"head\": \"第二章 工程概况\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"1. 工程概况\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"第二章 工程概况\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"1. 施工安排\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"第二章 工程概况\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"4.2.2施工组织机构及技术措施\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"第二章 工程概况\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"1. 施工准备与资源配置计划\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "第二章 工程概况",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "1. 工程概况",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "第二章 工程概况",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "1. 施工安排",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "第二章 工程概况",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "4.2.2施工组织机构及技术措施",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "第二章 工程概况",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "1. 施工准备与资源配置计划",
+      "tail_type": "施工对象"
+    }
+  ]
+}

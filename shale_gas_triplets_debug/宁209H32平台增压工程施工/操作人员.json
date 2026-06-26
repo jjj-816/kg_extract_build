@@ -1,0 +1,5 @@
+{
+  "entity": "操作人员",
+  "raw": "[\n  {\"head\": \"操作人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"排放点\", \"tail_type\": \"未分类\"},\n  {\"head\": \"操作人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"陈明友\", \"tail_type\": \"未分类\"},\n  {\"head\": \"操作人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"电工\", \"tail_type\": \"未分类\"},\n  {\"head\": \"操作人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"蒲红良\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": []
+}

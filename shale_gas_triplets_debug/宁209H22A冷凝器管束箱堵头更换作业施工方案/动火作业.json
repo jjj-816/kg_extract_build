@@ -1,0 +1,41 @@
+{
+  "entity": "动火作业",
+  "raw": "[\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"机械伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"人员持有效特种作业证书\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动火作业前必须现场确认安全措施\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"灭火器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"特种作业操作证\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "机械伤害",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "人员持有效特种作业证书",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "动火作业前必须现场确认安全措施",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "灭火器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "特种作业操作证",
+      "tail_type": "未分类"
+    }
+  ]
+}

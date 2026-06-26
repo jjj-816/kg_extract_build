@@ -1,0 +1,41 @@
+{
+  "entity": "可燃",
+  "raw": "[\n  {\"head\": \"可燃\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"清理或封盖等措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"可燃\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"隔离措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"可燃\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防火隔绝措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"可燃\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"不应排放可燃气体\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"可燃\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"不应排放可燃液体\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "可燃",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "清理或封盖等措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "可燃",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "隔离措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "可燃",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "防火隔绝措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "可燃",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "不应排放可燃气体",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "可燃",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "不应排放可燃液体",
+      "tail_type": "控制措施"
+    }
+  ]
+}

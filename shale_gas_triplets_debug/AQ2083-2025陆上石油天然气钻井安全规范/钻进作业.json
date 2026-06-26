@@ -1,0 +1,20 @@
+{
+  "entity": "钻进作业",
+  "raw": "[\n  {\"head\": \"钻进作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"油气层\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"钻进作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"不应使用有线随钻仪\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "钻进作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "油气层",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "钻进作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "不应使用有线随钻仪",
+      "tail_type": "未分类"
+    }
+  ]
+}

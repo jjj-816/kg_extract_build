@@ -1,0 +1,13 @@
+{
+  "entity": "U型",
+  "raw": "[\n  {\"head\": \"U型\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"坡口形式\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "U型",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "坡口形式",
+      "tail_type": "施工对象"
+    }
+  ]
+}

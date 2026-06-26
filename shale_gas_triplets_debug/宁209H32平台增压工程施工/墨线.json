@@ -1,0 +1,13 @@
+{
+  "entity": "墨线",
+  "raw": "[\n  {\"head\": \"墨线\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"管墩的轮廓\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "墨线",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "管墩的轮廓",
+      "tail_type": "未分类"
+    }
+  ]
+}

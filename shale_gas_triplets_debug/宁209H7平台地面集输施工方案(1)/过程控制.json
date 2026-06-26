@@ -1,0 +1,34 @@
+{
+  "entity": "过程控制",
+  "raw": "[\n  {\"head\": \"过程控制\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"焊接过程控制\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"过程控制\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"控制措施与检查情况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"过程控制\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"监督检查情况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"过程控制\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"控制措施\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "过程控制",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "焊接过程控制",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "过程控制",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "控制措施与检查情况",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "过程控制",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "监督检查情况",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "过程控制",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "控制措施",
+      "tail_type": "施工参数"
+    }
+  ]
+}

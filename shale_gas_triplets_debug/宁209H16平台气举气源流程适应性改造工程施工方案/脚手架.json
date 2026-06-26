@@ -1,0 +1,13 @@
+{
+  "entity": "脚手架",
+  "raw": "[\n  {\"head\": \"脚手架\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"危险作业\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "脚手架",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "危险作业",
+      "tail_type": "风险事件"
+    }
+  ]
+}

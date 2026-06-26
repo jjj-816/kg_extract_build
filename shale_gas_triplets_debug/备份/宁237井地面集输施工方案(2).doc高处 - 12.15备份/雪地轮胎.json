@@ -1,0 +1,5 @@
+{
+  "entity": "雪地轮胎",
+  "raw": "[\n  {\"head\": \"雪地轮胎\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"车辆\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": []
+}

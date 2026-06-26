@@ -1,0 +1,13 @@
+{
+  "entity": "全身式安全带",
+  "raw": "[\n  {\"head\": \"全身式安全带\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"人员坠落\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "全身式安全带",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "人员坠落",
+      "tail_type": "风险事件"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "entity": "防护挡板",
+  "raw": "[\n  {\"head\": \"防护挡板\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"介质喷射伤人\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"防护挡板\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业点\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"防护挡板\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"动火点周边\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"防护挡板\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"不低于1米\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "防护挡板",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "介质喷射伤人",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "防护挡板",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业点",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "防护挡板",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "动火点周边",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "防护挡板",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "不低于1米",
+      "tail_type": "施工参数"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "耐压等级",
+  "raw": "[\n  {\"head\": \"耐压等级\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"500 V\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "耐压等级",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "500 V",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

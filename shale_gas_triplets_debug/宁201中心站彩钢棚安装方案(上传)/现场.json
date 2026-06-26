@@ -1,0 +1,153 @@
+{
+  "entity": "现场",
+  "raw": "[\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"现场负责人：闫加强（安全监护人） 电话15681767989\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"吊装作业半径大约在5米\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"起吊重量可达到17吨\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"本次被吊物品最重为1吨左右\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工时司索工和属地、项目负责人应在现场指挥监督到位\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"吊装前吊车及钢索检查到位\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"吊前做好试吊工作\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"被吊物两端应绑扎牵引绳\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业完成后属地与申请人对照作业票确认作业已完成有无遗漏\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"对现场进行安全检查确认现场无安全隐患进行签字并关闭票证\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"现场配置2具干粉灭火器（MFZ/ABC4型）\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"放置在动火点上风侧1.5-3米处\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业人员需熟练掌握灭火器使用方法\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"严禁在作业区吸烟、违规使用明火\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"现场禁止存放易燃易爆物品（如汽油、酒精等）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"如需使用需单独设置隔离存放区\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"吊装过程中，司索工、现场负责人全程监护\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"保持与吊车司机的有效沟通（手势、对讲机）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"严禁人员进入吊装半径范围内\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"吊物下方禁止站人或作业\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"遇突发情况（如设备异常、天气变化）立即停止吊装，采取应急措施\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "现场负责人：闫加强（安全监护人） 电话15681767989",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "吊装作业半径大约在5米",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "起吊重量可达到17吨",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "本次被吊物品最重为1吨左右",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "施工时司索工和属地、项目负责人应在现场指挥监督到位",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "吊装前吊车及钢索检查到位",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "吊前做好试吊工作",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "被吊物两端应绑扎牵引绳",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业完成后属地与申请人对照作业票确认作业已完成有无遗漏",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "对现场进行安全检查确认现场无安全隐患进行签字并关闭票证",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "现场配置2具干粉灭火器（MFZ/ABC4型）",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "放置在动火点上风侧1.5-3米处",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业人员需熟练掌握灭火器使用方法",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "严禁在作业区吸烟、违规使用明火",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "现场禁止存放易燃易爆物品（如汽油、酒精等）",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "如需使用需单独设置隔离存放区",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "吊装过程中，司索工、现场负责人全程监护",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "保持与吊车司机的有效沟通（手势、对讲机）",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "严禁人员进入吊装半径范围内",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "吊物下方禁止站人或作业",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "遇突发情况（如设备异常、天气变化）立即停止吊装，采取应急措施",
+      "tail_type": "施工记录"
+    }
+  ]
+}

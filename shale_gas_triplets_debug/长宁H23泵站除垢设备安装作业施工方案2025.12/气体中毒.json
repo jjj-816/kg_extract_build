@@ -1,0 +1,27 @@
+{
+  "entity": "气体中毒",
+  "raw": "[\n  {\"head\": \"气体中毒\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"粉尘、气体中毒风险控制措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"气体中毒\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"避免粉尘吸入、油漆中毒\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"气体中毒\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"6.粉尘、气体中毒应急救援程序\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "气体中毒",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "粉尘、气体中毒风险控制措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "气体中毒",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "避免粉尘吸入、油漆中毒",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "气体中毒",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "6.粉尘、气体中毒应急救援程序",
+      "tail_type": "施工记录"
+    }
+  ]
+}

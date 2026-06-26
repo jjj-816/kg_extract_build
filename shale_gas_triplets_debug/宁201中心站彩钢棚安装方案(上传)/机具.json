@@ -1,0 +1,41 @@
+{
+  "entity": "机具",
+  "raw": "[\n  {\"head\": \"机具\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"第三章\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"机具\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"台\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"机具\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"把\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"机具\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"1\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"机具\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"2\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "机具",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "第三章",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "机具",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "台",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "机具",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "把",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "机具",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "1",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "机具",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "2",
+      "tail_type": "施工参数"
+    }
+  ]
+}

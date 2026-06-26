@@ -1,0 +1,27 @@
+{
+  "entity": "摄像头安装",
+  "raw": "[\n  {\"head\": \"摄像头安装\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"摄像头立杆\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"摄像头安装\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"摄像头安装\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"建渣清理\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "摄像头安装",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "摄像头立杆",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "摄像头安装",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "摄像头安装",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "建渣清理",
+      "tail_type": "作业活动"
+    }
+  ]
+}

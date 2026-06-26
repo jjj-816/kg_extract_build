@@ -1,0 +1,41 @@
+{
+  "entity": "套管层序",
+  "raw": "[\n  {\"head\": \"套管层序\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"地层孔隙压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"套管层序\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"地层破裂压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"套管层序\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"岩性剖面\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"套管层序\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"保护油气层\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"套管层序\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"工程设计\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "套管层序",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "地层孔隙压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "套管层序",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "地层破裂压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "套管层序",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "岩性剖面",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "套管层序",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "保护油气层",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "套管层序",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "工程设计",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

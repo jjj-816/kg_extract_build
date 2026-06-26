@@ -1,0 +1,13 @@
+{
+  "entity": "专用工具",
+  "raw": "[\n  {\"head\": \"专用工具\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"钻台上\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"专用工具\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"钻井设备、仪器仪表、井控装置、防护设备等\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "专用工具",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "钻台上",
+      "tail_type": "时空信息"
+    }
+  ]
+}

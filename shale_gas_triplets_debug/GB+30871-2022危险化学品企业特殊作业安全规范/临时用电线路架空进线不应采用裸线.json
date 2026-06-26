@@ -1,0 +1,13 @@
+{
+  "entity": "临时用电线路架空进线不应采用裸线",
+  "raw": "[\n  {\"head\": \"临时用电线路架空进线不应采用裸线\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"临时用电线路架空进线不应采用裸线\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "临时用电线路架空进线不应采用裸线",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "临时用电线路架空进线不应采用裸线",
+      "tail_type": "施工记录"
+    }
+  ]
+}

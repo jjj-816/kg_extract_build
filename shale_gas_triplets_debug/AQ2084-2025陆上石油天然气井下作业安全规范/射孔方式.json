@@ -1,0 +1,27 @@
+{
+  "entity": "射孔方式",
+  "raw": "[\n  {\"head\": \"射孔方式\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"射孔数据\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"射孔方式\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"油管(钻杆)输送射孔作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"射孔方式\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"带压油管(钻杆)输送射孔作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "射孔方式",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "射孔数据",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "射孔方式",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "油管(钻杆)输送射孔作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "射孔方式",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "带压油管(钻杆)输送射孔作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

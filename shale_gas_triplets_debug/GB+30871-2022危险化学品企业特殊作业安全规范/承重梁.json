@@ -1,0 +1,13 @@
+{
+  "entity": "承重梁",
+  "raw": "[\n  {\"head\": \"承重梁\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"最大负荷\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"承重梁\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"承重不足\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "承重梁",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "最大负荷",
+      "tail_type": "施工参数"
+    }
+  ]
+}

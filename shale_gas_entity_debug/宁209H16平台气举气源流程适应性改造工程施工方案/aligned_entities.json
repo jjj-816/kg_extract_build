@@ -1,0 +1,2434 @@
+{
+  "file_name": "宁209H16平台气举气源流程适应性改造工程施工方案.md",
+  "entity_count": 253,
+  "alias_mapping_count": 327,
+  "entities": [
+    {
+      "name": "2025年12月16日",
+      "type": "时空信息",
+      "aliases": [
+        "2025年 12 月 16日",
+        "2025年12月16日"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "30KW",
+      "type": "设备工具",
+      "aliases": [
+        "30KW"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "8Kg",
+      "type": "设备工具",
+      "aliases": [
+        "8Kg"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "AG900-100A",
+      "type": "设备工具",
+      "aliases": [
+        "AG900-100A"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "A类票",
+      "type": "施工记录",
+      "aliases": [
+        "A类票"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "DN50",
+      "type": "设备工具",
+      "aliases": [
+        "DN50",
+        "DN50弯头",
+        "DN50无缝钢管",
+        "DN50球阀",
+        "DN50节流截止阀"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "DN80",
+      "type": "设备工具",
+      "aliases": [
+        "DN80",
+        "DN80弯头",
+        "DN80无缝钢管",
+        "DN80球阀",
+        "DN80等径三通",
+        "DN80闸阀"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "GB 30871-2022",
+      "type": "规范条款",
+      "aliases": [
+        "GB 30871-2022",
+        "《危险化学品企业特殊作业安全规范》GB 30871-2022",
+        "危险化学品企业特殊作业安全规范"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "GB/T14976-2012",
+      "type": "规范条款",
+      "aliases": [
+        "GB/T14976-2012"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "GB50183-2004",
+      "type": "规范条款",
+      "aliases": [
+        "GB50183-2004",
+        "《石油天然气工程设计防火规范》GB50183-2004",
+        "石油天然气工程设计防火规范"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "GB50349-2015",
+      "type": "规范条款",
+      "aliases": [
+        "GB50349-2015",
+        "《气田集输设计规范》GB50349-2015",
+        "气田集输设计规范"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "GB50540-2009",
+      "type": "规范条款",
+      "aliases": [
+        "GB50540-2009"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "HSE目视化安全管理制度",
+      "type": "规范条款",
+      "aliases": [
+        "HSE目视化安全管理制度",
+        "现场HSE管理制度"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "HSE管理",
+      "type": "未分类",
+      "aliases": [
+        "HSE管理"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "NB/T14006-2020",
+      "type": "规范条款",
+      "aliases": [
+        "NB/T14006-2020",
+        "《页岩气气田集输工程设计规范》NB/T14006-2020",
+        "页岩气气田集输工程设计规范"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "Q/SY1858-2015",
+      "type": "规范条款",
+      "aliases": [
+        "Q/SY1858-2015",
+        "《页岩气地面工程设计规范》Q/SY1858-2015",
+        "页岩气地面工程设计规范"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "U型",
+      "type": "规范条款",
+      "aliases": [
+        "U型"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "V型",
+      "type": "规范条款",
+      "aliases": [
+        "V型"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "WS-315",
+      "type": "设备工具",
+      "aliases": [
+        "WS-315"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "X-4",
+      "type": "设备工具",
+      "aliases": [
+        "X-4"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "《石油天然气站内工艺管道工程施工规范》",
+      "type": "规范条款",
+      "aliases": [
+        "《石油天然气站内工艺管道工程施工规范》",
+        "石油天然气站内工艺管道工程施工规范"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "一机一闸一保护",
+      "type": "未分类",
+      "aliases": [
+        "一机一闸一保护"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "三违",
+      "type": "风险事件",
+      "aliases": [
+        "三违"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "专用密封剂",
+      "type": "材料介质",
+      "aliases": [
+        "专用密封剂"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "专职监护人",
+      "type": "责任主体",
+      "aliases": [
+        "专职监护人",
+        "安全监护",
+        "安全监护人",
+        "申请人（安全监护）",
+        "监护人"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "个人防护",
+      "type": "控制措施",
+      "aliases": [
+        "个人防护"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "中心线",
+      "type": "施工参数",
+      "aliases": [
+        "中心线"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "临时用电",
+      "type": "作业活动",
+      "aliases": [
+        "临时用电",
+        "用电"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "主要作业步骤",
+      "type": "作业活动",
+      "aliases": [
+        "主要作业步骤"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "乙炔",
+      "type": "材料介质",
+      "aliases": [
+        "乙炔"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "井站",
+      "type": "施工对象",
+      "aliases": [
+        "井站"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "介质",
+      "type": "材料介质",
+      "aliases": [
+        "介质"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "付道彬",
+      "type": "责任主体",
+      "aliases": [
+        "付道彬"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "作业人员",
+      "type": "责任主体",
+      "aliases": [
+        "作业人员",
+        "入场施工作业人员",
+        "参与施工作业人员"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "作业内容",
+      "type": "作业活动",
+      "aliases": [
+        "作业内容"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "作业场所",
+      "type": "施工对象",
+      "aliases": [
+        "作业场所"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "作业环境",
+      "type": "施工对象",
+      "aliases": [
+        "作业环境"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "作业现场主要风险和危害因素",
+      "type": "风险事件",
+      "aliases": [
+        "作业现场主要风险和危害因素",
+        "作业风险"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "作业票证",
+      "type": "施工记录",
+      "aliases": [
+        "作业票证",
+        "危险作业票证"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "作业许可",
+      "type": "规范条款",
+      "aliases": [
+        "作业许可"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "作业许可制度",
+      "type": "未分类",
+      "aliases": [
+        "作业许可制度"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "作业许可证",
+      "type": "施工记录",
+      "aliases": [
+        "作业许可范围",
+        "作业许可证"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "全身式双钩安全带",
+      "type": "设备工具",
+      "aliases": [
+        "全身式双钩安全带"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "公示牌",
+      "type": "设备工具",
+      "aliases": [
+        "公示牌"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "准入证",
+      "type": "施工记录",
+      "aliases": [
+        "准入证"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "切割区域",
+      "type": "施工对象",
+      "aliases": [
+        "切割区域",
+        "切割面"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "动火作业",
+      "type": "作业活动",
+      "aliases": [
+        "动土作业",
+        "动火",
+        "动火作业",
+        "工业动火"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "动火点",
+      "type": "施工对象",
+      "aliases": [
+        "动火点"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "劳保用品",
+      "type": "材料介质",
+      "aliases": [
+        "劳保用品",
+        "防静电劳保用品"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "劳保穿戴",
+      "type": "未分类",
+      "aliases": [
+        "劳保穿戴"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "劳保鞋",
+      "type": "材料介质",
+      "aliases": [
+        "劳保鞋"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "危险作业",
+      "type": "风险事件",
+      "aliases": [
+        "危险作业",
+        "风险作业"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "发电机",
+      "type": "设备工具",
+      "aliases": [
+        "发电机"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "受限空间",
+      "type": "施工对象",
+      "aliases": [
+        "受限空间",
+        "有限空间"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "可燃气体",
+      "type": "材料介质",
+      "aliases": [
+        "可燃气体"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "可燃气体检测仪",
+      "type": "设备工具",
+      "aliases": [
+        "可燃气体检测仪",
+        "气体检测仪"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "吊装",
+      "type": "作业活动",
+      "aliases": [
+        "吊装"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "同轴度",
+      "type": "施工参数",
+      "aliases": [
+        "同轴度"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "名称",
+      "type": "设备工具",
+      "aliases": [
+        "名称"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "吹扫",
+      "type": "作业活动",
+      "aliases": [
+        "吹扫"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "周边物料",
+      "type": "施工对象",
+      "aliases": [
+        "周边物料"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "四川长宁天然气开发有限责任公司",
+      "type": "责任主体",
+      "aliases": [
+        "四川长宁天然气开发有限责任公司"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "围护",
+      "type": "设备工具",
+      "aliases": [
+        "围护"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "国家及长宁公司技术要求相关标准",
+      "type": "规范条款",
+      "aliases": [
+        "国家及长宁公司技术要求相关标准"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "地下管线",
+      "type": "施工对象",
+      "aliases": [
+        "地下管线"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "场站",
+      "type": "施工对象",
+      "aliases": [
+        "场站"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "场站工艺流程",
+      "type": "施工对象",
+      "aliases": [
+        "场站工艺流程"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "坡口角度",
+      "type": "施工参数",
+      "aliases": [
+        "坡口角度"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "垫片",
+      "type": "材料介质",
+      "aliases": [
+        "垫片"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "培训人",
+      "type": "责任主体",
+      "aliases": [
+        "培训人"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "培训及交底日期",
+      "type": "时空信息",
+      "aliases": [
+        "培训及交底日期"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "备件",
+      "type": "材料介质",
+      "aliases": [
+        "备件"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "多层多道焊",
+      "type": "作业活动",
+      "aliases": [
+        "多层多道焊"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "大口径",
+      "type": "施工参数",
+      "aliases": [
+        "大口径"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "天然气泄漏",
+      "type": "风险事件",
+      "aliases": [
+        "天然气泄漏",
+        "泄漏"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "夹渣",
+      "type": "风险事件",
+      "aliases": [
+        "夹渣"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "宁209H16平台",
+      "type": "施工对象",
+      "aliases": [
+        "宁209H16平台",
+        "宁209H16平台气举气源流程适应性改造工程"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "安全动员会",
+      "type": "未分类",
+      "aliases": [
+        "安全动员会"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "安全帽",
+      "type": "设备工具",
+      "aliases": [
+        "安全帽"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "安全技术交底",
+      "type": "未分类",
+      "aliases": [
+        "安全技术交底"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "安全技术交底和风险告知确认卡",
+      "type": "施工记录",
+      "aliases": [
+        "安全技术交底和风险告知确认卡"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "安全措施",
+      "type": "未分类",
+      "aliases": [
+        "安全措施"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "安全教育培训",
+      "type": "作业活动",
+      "aliases": [
+        "安全教育培训"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "安全监督",
+      "type": "作业活动",
+      "aliases": [
+        "安全监督"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "安全管理人员",
+      "type": "责任主体",
+      "aliases": [
+        "安全管理人员"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "安全集合点",
+      "type": "未分类",
+      "aliases": [
+        "安全集合点"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "安全风险",
+      "type": "风险事件",
+      "aliases": [
+        "安全隐患",
+        "安全风险",
+        "安全风险和危害因素"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "完好情况",
+      "type": "施工参数",
+      "aliases": [
+        "完好情况"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "射线",
+      "type": "作业活动",
+      "aliases": [
+        "射线"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "属地人员",
+      "type": "责任主体",
+      "aliases": [
+        "属地人员",
+        "属地人员/建设单位人员"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "属地监督",
+      "type": "责任主体",
+      "aliases": [
+        "井站属地监督",
+        "属地监督"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "工作前安全分析表",
+      "type": "施工记录",
+      "aliases": [
+        "工作前安全分析表"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "工器具",
+      "type": "设备工具",
+      "aliases": [
+        "工器具"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "工器具伤人",
+      "type": "风险事件",
+      "aliases": [
+        "工器具伤人"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "工程材料",
+      "type": "材料介质",
+      "aliases": [
+        "工程材料"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "工艺",
+      "type": "控制措施",
+      "aliases": [
+        "工艺"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "工艺流程切换",
+      "type": "作业活动",
+      "aliases": [
+        "工艺流程切换"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "工艺管线",
+      "type": "施工对象",
+      "aliases": [
+        "工艺管线"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "工艺管道切割",
+      "type": "作业活动",
+      "aliases": [
+        "工艺管道切割",
+        "管道切割"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "工艺管道焊接",
+      "type": "作业活动",
+      "aliases": [
+        "工艺管道焊接",
+        "管道焊接"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "工衣",
+      "type": "材料介质",
+      "aliases": [
+        "工衣"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "常用工具（锄头、铲子、扳手、管钳等）",
+      "type": "设备工具",
+      "aliases": [
+        "常用工具（锄头、铲子、扳手、管钳等）",
+        "扭矩扳手",
+        "扳手",
+        "管钳",
+        "铲子",
+        "锄头"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "应急处置措施",
+      "type": "控制措施",
+      "aliases": [
+        "应急处置措施",
+        "应急措施",
+        "应急要点"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "应急处置方案",
+      "type": "施工记录",
+      "aliases": [
+        "应急处置方案"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "应急指挥人",
+      "type": "责任主体",
+      "aliases": [
+        "应急指挥人",
+        "应急领导小组"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "异径三通",
+      "type": "设备工具",
+      "aliases": [
+        "异径三通"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "张利平",
+      "type": "责任主体",
+      "aliases": [
+        "张利平"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "弧光",
+      "type": "风险事件",
+      "aliases": [
+        "弧光"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "手机",
+      "type": "未分类",
+      "aliases": [
+        "手机"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "批准人",
+      "type": "责任主体",
+      "aliases": [
+        "批准人"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "技术工",
+      "type": "责任主体",
+      "aliases": [
+        "技术工"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "技术措施",
+      "type": "未分类",
+      "aliases": [
+        "技术措施"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "报警声音",
+      "type": "未分类",
+      "aliases": [
+        "报警声音"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "挂牌上锁",
+      "type": "控制措施",
+      "aliases": [
+        "挂牌上锁"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "接零、接地",
+      "type": "未分类",
+      "aliases": [
+        "接零、接地"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "控制措施",
+      "type": "控制措施",
+      "aliases": [
+        "控制措施"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "插座",
+      "type": "设备工具",
+      "aliases": [
+        "插座"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "支护设施",
+      "type": "施工对象",
+      "aliases": [
+        "支护设施"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "数量",
+      "type": "施工参数",
+      "aliases": [
+        "数量"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "文明施工",
+      "type": "未分类",
+      "aliases": [
+        "文明施工"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "施工作业入场安全培训记录",
+      "type": "施工记录",
+      "aliases": [
+        "施工作业入场安全培训记录"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "施工作业方案",
+      "type": "施工记录",
+      "aliases": [
+        "施工作业方案",
+        "施工作业方案及预案审批单"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "施工作业现场",
+      "type": "施工对象",
+      "aliases": [
+        "施工作业现场"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "施工单位",
+      "type": "责任主体",
+      "aliases": [
+        "施工单位"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "施工工器具",
+      "type": "设备工具",
+      "aliases": [
+        "施工工器具"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "施工现场踏勘调查",
+      "type": "未分类",
+      "aliases": [
+        "施工现场踏勘调查"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "无损检测",
+      "type": "作业活动",
+      "aliases": [
+        "无损检测"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "无票证作业",
+      "type": "风险事件",
+      "aliases": [
+        "无票证作业"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "时间",
+      "type": "时空信息",
+      "aliases": [
+        "入场时间",
+        "时间"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "易燃易爆",
+      "type": "未分类",
+      "aliases": [
+        "易燃易爆"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "易燃易爆物质",
+      "type": "材料介质",
+      "aliases": [
+        "易燃易爆物质"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "普工",
+      "type": "责任主体",
+      "aliases": [
+        "普工"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "有效证件",
+      "type": "规范条款",
+      "aliases": [
+        "有效证件"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "有限空间作业",
+      "type": "作业活动",
+      "aliases": [
+        "有限空间作业"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "未熔合",
+      "type": "风险事件",
+      "aliases": [
+        "未熔合"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "本井场",
+      "type": "施工对象",
+      "aliases": [
+        "本井场"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "材料",
+      "type": "材料介质",
+      "aliases": [
+        "材料"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "材质",
+      "type": "材料介质",
+      "aliases": [
+        "材质"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "杨明利",
+      "type": "责任主体",
+      "aliases": [
+        "杨明利"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "标高",
+      "type": "施工参数",
+      "aliases": [
+        "标高"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "橡胶绝缘手套",
+      "type": "设备工具",
+      "aliases": [
+        "橡胶绝缘手套"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "气体检测",
+      "type": "作业活动",
+      "aliases": [
+        "气体检测"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "气孔",
+      "type": "风险事件",
+      "aliases": [
+        "气孔"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "气瓶支架",
+      "type": "设备工具",
+      "aliases": [
+        "气瓶支架"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "氧乙炔割枪",
+      "type": "设备工具",
+      "aliases": [
+        "氧乙炔割枪"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "氧气",
+      "type": "材料介质",
+      "aliases": [
+        "氧气"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "氩气",
+      "type": "材料介质",
+      "aliases": [
+        "氩气"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "水平度",
+      "type": "施工参数",
+      "aliases": [
+        "水平度"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "江汉油田瑞腾达工程潜江有限公司",
+      "type": "责任主体",
+      "aliases": [
+        "江汉油田瑞腾达工程潜江有限公司"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "沟内杂物",
+      "type": "施工对象",
+      "aliases": [
+        "沟内杂物"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "法兰",
+      "type": "施工对象",
+      "aliases": [
+        "法兰"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "流体输送用不锈钢无缝钢管",
+      "type": "规范条款",
+      "aliases": [
+        "《流体输送用不锈钢无缝钢管》",
+        "流体输送用不锈钢无缝钢管"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "清理退场",
+      "type": "作业活动",
+      "aliases": [
+        "清理退场"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "游世强",
+      "type": "责任主体",
+      "aliases": [
+        "游世强"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "漏电保护",
+      "type": "未分类",
+      "aliases": [
+        "漏电保护"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "漏电保护装置",
+      "type": "设备工具",
+      "aliases": [
+        "漏电保护装置"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "火灾爆炸",
+      "type": "风险事件",
+      "aliases": [
+        "火灾爆炸"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "火花",
+      "type": "风险事件",
+      "aliases": [
+        "火花",
+        "火花飞溅"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "灭火器",
+      "type": "设备工具",
+      "aliases": [
+        "MFZ/ABC-8型干粉灭火器",
+        "灭火器"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "灼热部位",
+      "type": "施工对象",
+      "aliases": [
+        "灼热部位"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "烫伤",
+      "type": "风险事件",
+      "aliases": [
+        "烫伤"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "热变形",
+      "type": "风险事件",
+      "aliases": [
+        "热变形"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "焊割",
+      "type": "作业活动",
+      "aliases": [
+        "焊割"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "焊工",
+      "type": "责任主体",
+      "aliases": [
+        "焊工"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "焊工专用劳保",
+      "type": "设备工具",
+      "aliases": [
+        "焊工专用劳保"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "焊工证",
+      "type": "规范条款",
+      "aliases": [
+        "焊工证"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "焊接工艺卡",
+      "type": "规范条款",
+      "aliases": [
+        "焊接工艺卡"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "焊接规范",
+      "type": "规范条款",
+      "aliases": [
+        "焊接规范"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "焊接速度",
+      "type": "施工参数",
+      "aliases": [
+        "焊接速度"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "焊接面罩",
+      "type": "设备工具",
+      "aliases": [
+        "焊接面罩"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "焊机",
+      "type": "设备工具",
+      "aliases": [
+        "焊机"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "物体打击",
+      "type": "风险事件",
+      "aliases": [
+        "物体打击"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "特种作业人员",
+      "type": "责任主体",
+      "aliases": [
+        "特种作业人员"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "特种作业资质",
+      "type": "未分类",
+      "aliases": [
+        "特种作业资质"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "现场技术交底",
+      "type": "作业活动",
+      "aliases": [
+        "现场技术交底",
+        "首次现场安全技术交底"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "现场管理制度",
+      "type": "规范条款",
+      "aliases": [
+        "现场管理制度"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "生产指挥中心",
+      "type": "责任主体",
+      "aliases": [
+        "生产指挥中心"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "用电设备",
+      "type": "设备工具",
+      "aliases": [
+        "用电设备"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "用电设施",
+      "type": "设备工具",
+      "aliases": [
+        "用电设施"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "申请人",
+      "type": "责任主体",
+      "aliases": [
+        "申请人"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "电压",
+      "type": "施工参数",
+      "aliases": [
+        "电压"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "电工",
+      "type": "责任主体",
+      "aliases": [
+        "电工"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "电流",
+      "type": "施工参数",
+      "aliases": [
+        "电流"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "电源线",
+      "type": "设备工具",
+      "aliases": [
+        "电源线"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "电缆",
+      "type": "施工对象",
+      "aliases": [
+        "电缆"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "电镐",
+      "type": "设备工具",
+      "aliases": [
+        "电镐"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "盲板隔离",
+      "type": "控制措施",
+      "aliases": [
+        "盲板隔离"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "砂轮机",
+      "type": "设备工具",
+      "aliases": [
+        "砂轮机"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "碰伤",
+      "type": "风险事件",
+      "aliases": [
+        "碰伤"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "积水",
+      "type": "施工对象",
+      "aliases": [
+        "积水"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "管沟",
+      "type": "施工对象",
+      "aliases": [
+        "管沟"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "管沟回填",
+      "type": "作业活动",
+      "aliases": [
+        "管沟回填"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "管沟开挖",
+      "type": "作业活动",
+      "aliases": [
+        "管沟开挖"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "管线与设备打开作业",
+      "type": "作业活动",
+      "aliases": [
+        "管线与设备打开作业"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "管道",
+      "type": "施工对象",
+      "aliases": [
+        "厚壁管道",
+        "管道"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "管道安装",
+      "type": "作业活动",
+      "aliases": [
+        "管道安装"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "管道表面",
+      "type": "施工对象",
+      "aliases": [
+        "管道表面"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "综合评价",
+      "type": "审核状态",
+      "aliases": [
+        "综合评价"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "脚手架",
+      "type": "设备工具",
+      "aliases": [
+        "脚手架"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "螺栓",
+      "type": "设备工具",
+      "aliases": [
+        "螺栓"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "裂纹",
+      "type": "风险事件",
+      "aliases": [
+        "裂纹"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "规格型号",
+      "type": "设备工具",
+      "aliases": [
+        "规格型号"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "角度误差",
+      "type": "施工参数",
+      "aliases": [
+        "角度误差"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "角磨机",
+      "type": "设备工具",
+      "aliases": [
+        "角磨机"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "触电",
+      "type": "风险事件",
+      "aliases": [
+        "触电"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "警戒区",
+      "type": "未分类",
+      "aliases": [
+        "警戒区"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "警示带",
+      "type": "设备工具",
+      "aliases": [
+        "作业隔离警示带",
+        "警戒带",
+        "警戒线",
+        "警示带"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "警示标志",
+      "type": "施工对象",
+      "aliases": [
+        "警示标志"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "警示标识",
+      "type": "设备工具",
+      "aliases": [
+        "警示标",
+        "警示标识"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "警示隔离区域",
+      "type": "设备工具",
+      "aliases": [
+        "警示隔离区域"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "计划完成时间",
+      "type": "时空信息",
+      "aliases": [
+        "计划完成时间"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "计划开始时间",
+      "type": "时空信息",
+      "aliases": [
+        "计划开始时间"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "设备",
+      "type": "设备工具",
+      "aliases": [
+        "设备"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "设备安装",
+      "type": "作业活动",
+      "aliases": [
+        "设备安装"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "设备装置评估表",
+      "type": "施工记录",
+      "aliases": [
+        "工器具确认表",
+        "设备装置评估表",
+        "设备装置评估表（工器具确认表）"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "设计要求",
+      "type": "规范条款",
+      "aliases": [
+        "设计要求"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "试压",
+      "type": "作业活动",
+      "aliases": [
+        "试压"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "超声波",
+      "type": "作业活动",
+      "aliases": [
+        "超声波"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "车辆",
+      "type": "设备工具",
+      "aliases": [
+        "车辆"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "违约查处",
+      "type": "控制措施",
+      "aliases": [
+        "违约查处"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "逃生路线",
+      "type": "未分类",
+      "aliases": [
+        "逃生路线"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "逃生通道",
+      "type": "环保对象",
+      "aliases": [
+        "逃生通道",
+        "逃生门"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "逐级泄压",
+      "type": "控制措施",
+      "aliases": [
+        "逐级泄压"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "通风装置",
+      "type": "设备工具",
+      "aliases": [
+        "通风装置"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "邢文明",
+      "type": "责任主体",
+      "aliases": [
+        "邢文明"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "配电箱",
+      "type": "设备工具",
+      "aliases": [
+        "配电箱"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "酒后上岗",
+      "type": "风险事件",
+      "aliases": [
+        "酒后上岗"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "锁关阀门",
+      "type": "设备工具",
+      "aliases": [
+        "锁关阀门"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "锈蚀",
+      "type": "风险事件",
+      "aliases": [
+        "锈蚀"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "防护挡板",
+      "type": "设备工具",
+      "aliases": [
+        "防护挡板",
+        "阻燃挡板"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "防护眼镜",
+      "type": "设备工具",
+      "aliases": [
+        "防护眼镜"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "防护面罩",
+      "type": "设备工具",
+      "aliases": [
+        "手握式面罩",
+        "防护面罩"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "防火帽",
+      "type": "设备工具",
+      "aliases": [
+        "防火帽"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "防火手套",
+      "type": "设备工具",
+      "aliases": [
+        "防火手套"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "防火毯",
+      "type": "设备工具",
+      "aliases": [
+        "防火毯"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "防火隔离区",
+      "type": "施工对象",
+      "aliases": [
+        "防火隔离区"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "防烫手套",
+      "type": "设备工具",
+      "aliases": [
+        "防烫手套"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "防穿刺鞋",
+      "type": "设备工具",
+      "aliases": [
+        "防穿刺鞋"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "防静电工作服",
+      "type": "设备工具",
+      "aliases": [
+        "防静电工作服"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "阻燃围栏",
+      "type": "设备工具",
+      "aliases": [
+        "阻燃围栏",
+        "隔离护栏"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "附录A",
+      "type": "未分类",
+      "aliases": [
+        "附录A"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "隔离方案",
+      "type": "规范条款",
+      "aliases": [
+        "隔离方案"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "项目名称",
+      "type": "施工记录",
+      "aliases": [
+        "项目名称"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "项目负责人",
+      "type": "责任主体",
+      "aliases": [
+        "作业项目负责人",
+        "项目负责人"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "项目部应急管理办公室",
+      "type": "责任主体",
+      "aliases": [
+        "项目部应急管理办公室"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "风向标",
+      "type": "设备工具",
+      "aliases": [
+        "风向标"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "风险作业方案控制措施检查确认表",
+      "type": "施工记录",
+      "aliases": [
+        "风险作业方案控制措施检查确认表"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "风险和危害因素管控措施",
+      "type": "控制措施",
+      "aliases": [
+        "风险和危害因素管控措施"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "风险提示",
+      "type": "作业活动",
+      "aliases": [
+        "风险提示"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "验收人",
+      "type": "责任主体",
+      "aliases": [
+        "验收人"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "验收结果",
+      "type": "审核状态",
+      "aliases": [
+        "验收结果"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "高压气体伤人",
+      "type": "风险事件",
+      "aliases": [
+        "高压气体伤人"
+      ],
+      "source_type": "case"
+    },
+    {
+      "name": "高处作业",
+      "type": "作业活动",
+      "aliases": [
+        "高处作业"
+      ],
+      "source_type": "case"
+    }
+  ],
+  "alias_to_standard": {
+    "2025年 12 月 16日": "2025年12月16日",
+    "2025年12月16日": "2025年12月16日",
+    "DN50": "DN50",
+    "DN50弯头": "DN50",
+    "DN50无缝钢管": "DN50",
+    "DN50球阀": "DN50",
+    "DN50节流截止阀": "DN50",
+    "DN80": "DN80",
+    "DN80弯头": "DN80",
+    "DN80无缝钢管": "DN80",
+    "DN80球阀": "DN80",
+    "DN80等径三通": "DN80",
+    "DN80闸阀": "DN80",
+    "GB 30871-2022": "GB 30871-2022",
+    "《危险化学品企业特殊作业安全规范》GB 30871-2022": "GB 30871-2022",
+    "危险化学品企业特殊作业安全规范": "GB 30871-2022",
+    "GB50349-2015": "GB50349-2015",
+    "《气田集输设计规范》GB50349-2015": "GB50349-2015",
+    "气田集输设计规范": "GB50349-2015",
+    "GB50183-2004": "GB50183-2004",
+    "《石油天然气工程设计防火规范》GB50183-2004": "GB50183-2004",
+    "石油天然气工程设计防火规范": "GB50183-2004",
+    "Q/SY1858-2015": "Q/SY1858-2015",
+    "《页岩气地面工程设计规范》Q/SY1858-2015": "Q/SY1858-2015",
+    "页岩气地面工程设计规范": "Q/SY1858-2015",
+    "NB/T14006-2020": "NB/T14006-2020",
+    "《页岩气气田集输工程设计规范》NB/T14006-2020": "NB/T14006-2020",
+    "页岩气气田集输工程设计规范": "NB/T14006-2020",
+    "HSE目视化安全管理制度": "HSE目视化安全管理制度",
+    "现场HSE管理制度": "HSE目视化安全管理制度",
+    "MFZ/ABC-8型干粉灭火器": "灭火器",
+    "灭火器": "灭火器",
+    "《流体输送用不锈钢无缝钢管》": "流体输送用不锈钢无缝钢管",
+    "流体输送用不锈钢无缝钢管": "流体输送用不锈钢无缝钢管",
+    "《石油天然气站内工艺管道工程施工规范》": "《石油天然气站内工艺管道工程施工规范》",
+    "石油天然气站内工艺管道工程施工规范": "《石油天然气站内工艺管道工程施工规范》",
+    "专职监护人": "专职监护人",
+    "安全监护": "专职监护人",
+    "安全监护人": "专职监护人",
+    "申请人（安全监护）": "专职监护人",
+    "监护人": "专职监护人",
+    "作业人员": "作业人员",
+    "入场施工作业人员": "作业人员",
+    "参与施工作业人员": "作业人员",
+    "属地人员": "属地人员",
+    "属地人员/建设单位人员": "属地人员",
+    "应急指挥人": "应急指挥人",
+    "应急领导小组": "应急指挥人",
+    "临时用电": "临时用电",
+    "用电": "临时用电",
+    "井站属地监督": "属地监督",
+    "属地监督": "属地监督",
+    "作业现场主要风险和危害因素": "作业现场主要风险和危害因素",
+    "作业风险": "作业现场主要风险和危害因素",
+    "作业票证": "作业票证",
+    "危险作业票证": "作业票证",
+    "作业许可范围": "作业许可证",
+    "作业许可证": "作业许可证",
+    "作业隔离警示带": "警示带",
+    "警戒带": "警示带",
+    "警戒线": "警示带",
+    "警示带": "警示带",
+    "警示标": "警示标识",
+    "警示标识": "警示标识",
+    "作业项目负责人": "项目负责人",
+    "项目负责人": "项目负责人",
+    "入场时间": "时间",
+    "时间": "时间",
+    "切割区域": "切割区域",
+    "切割面": "切割区域",
+    "动土作业": "动火作业",
+    "动火": "动火作业",
+    "动火作业": "动火作业",
+    "工业动火": "动火作业",
+    "劳保用品": "劳保用品",
+    "防静电劳保用品": "劳保用品",
+    "危险作业": "危险作业",
+    "风险作业": "危险作业",
+    "安全隐患": "安全风险",
+    "安全风险": "安全风险",
+    "安全风险和危害因素": "安全风险",
+    "厚壁管道": "管道",
+    "管道": "管道",
+    "受限空间": "受限空间",
+    "有限空间": "受限空间",
+    "可燃气体检测仪": "可燃气体检测仪",
+    "气体检测仪": "可燃气体检测仪",
+    "天然气泄漏": "天然气泄漏",
+    "泄漏": "天然气泄漏",
+    "宁209H16平台": "宁209H16平台",
+    "宁209H16平台气举气源流程适应性改造工程": "宁209H16平台",
+    "工器具确认表": "设备装置评估表",
+    "设备装置评估表": "设备装置评估表",
+    "设备装置评估表（工器具确认表）": "设备装置评估表",
+    "工艺管道切割": "工艺管道切割",
+    "管道切割": "工艺管道切割",
+    "工艺管道焊接": "工艺管道焊接",
+    "管道焊接": "工艺管道焊接",
+    "常用工具（锄头、铲子、扳手、管钳等）": "常用工具（锄头、铲子、扳手、管钳等）",
+    "扭矩扳手": "常用工具（锄头、铲子、扳手、管钳等）",
+    "扳手": "常用工具（锄头、铲子、扳手、管钳等）",
+    "管钳": "常用工具（锄头、铲子、扳手、管钳等）",
+    "铲子": "常用工具（锄头、铲子、扳手、管钳等）",
+    "锄头": "常用工具（锄头、铲子、扳手、管钳等）",
+    "应急处置措施": "应急处置措施",
+    "应急措施": "应急处置措施",
+    "应急要点": "应急处置措施",
+    "手握式面罩": "防护面罩",
+    "防护面罩": "防护面罩",
+    "施工作业方案": "施工作业方案",
+    "施工作业方案及预案审批单": "施工作业方案",
+    "火花": "火花",
+    "火花飞溅": "火花",
+    "现场技术交底": "现场技术交底",
+    "首次现场安全技术交底": "现场技术交底",
+    "逃生通道": "逃生通道",
+    "逃生门": "逃生通道",
+    "防护挡板": "防护挡板",
+    "阻燃挡板": "防护挡板",
+    "阻燃围栏": "阻燃围栏",
+    "隔离护栏": "阻燃围栏",
+    "30KW": "30KW",
+    "8Kg": "8Kg",
+    "AG900-100A": "AG900-100A",
+    "A类票": "A类票",
+    "GB/T14976-2012": "GB/T14976-2012",
+    "GB50540-2009": "GB50540-2009",
+    "HSE管理": "HSE管理",
+    "U型": "U型",
+    "V型": "V型",
+    "WS-315": "WS-315",
+    "X-4": "X-4",
+    "一机一闸一保护": "一机一闸一保护",
+    "三违": "三违",
+    "专用密封剂": "专用密封剂",
+    "个人防护": "个人防护",
+    "中心线": "中心线",
+    "主要作业步骤": "主要作业步骤",
+    "乙炔": "乙炔",
+    "井站": "井站",
+    "介质": "介质",
+    "付道彬": "付道彬",
+    "作业内容": "作业内容",
+    "作业场所": "作业场所",
+    "作业环境": "作业环境",
+    "作业许可": "作业许可",
+    "作业许可制度": "作业许可制度",
+    "全身式双钩安全带": "全身式双钩安全带",
+    "公示牌": "公示牌",
+    "准入证": "准入证",
+    "动火点": "动火点",
+    "劳保穿戴": "劳保穿戴",
+    "劳保鞋": "劳保鞋",
+    "发电机": "发电机",
+    "可燃气体": "可燃气体",
+    "吊装": "吊装",
+    "同轴度": "同轴度",
+    "名称": "名称",
+    "吹扫": "吹扫",
+    "周边物料": "周边物料",
+    "四川长宁天然气开发有限责任公司": "四川长宁天然气开发有限责任公司",
+    "围护": "围护",
+    "国家及长宁公司技术要求相关标准": "国家及长宁公司技术要求相关标准",
+    "地下管线": "地下管线",
+    "场站": "场站",
+    "场站工艺流程": "场站工艺流程",
+    "坡口角度": "坡口角度",
+    "垫片": "垫片",
+    "培训人": "培训人",
+    "培训及交底日期": "培训及交底日期",
+    "备件": "备件",
+    "多层多道焊": "多层多道焊",
+    "大口径": "大口径",
+    "夹渣": "夹渣",
+    "安全动员会": "安全动员会",
+    "安全帽": "安全帽",
+    "安全技术交底": "安全技术交底",
+    "安全技术交底和风险告知确认卡": "安全技术交底和风险告知确认卡",
+    "安全措施": "安全措施",
+    "安全教育培训": "安全教育培训",
+    "安全监督": "安全监督",
+    "安全管理人员": "安全管理人员",
+    "安全集合点": "安全集合点",
+    "完好情况": "完好情况",
+    "射线": "射线",
+    "工作前安全分析表": "工作前安全分析表",
+    "工器具": "工器具",
+    "工器具伤人": "工器具伤人",
+    "工程材料": "工程材料",
+    "工艺": "工艺",
+    "工艺流程切换": "工艺流程切换",
+    "工艺管线": "工艺管线",
+    "工衣": "工衣",
+    "应急处置方案": "应急处置方案",
+    "异径三通": "异径三通",
+    "张利平": "张利平",
+    "弧光": "弧光",
+    "手机": "手机",
+    "批准人": "批准人",
+    "技术工": "技术工",
+    "技术措施": "技术措施",
+    "报警声音": "报警声音",
+    "挂牌上锁": "挂牌上锁",
+    "接零、接地": "接零、接地",
+    "控制措施": "控制措施",
+    "插座": "插座",
+    "支护设施": "支护设施",
+    "数量": "数量",
+    "文明施工": "文明施工",
+    "施工作业入场安全培训记录": "施工作业入场安全培训记录",
+    "施工作业现场": "施工作业现场",
+    "施工单位": "施工单位",
+    "施工工器具": "施工工器具",
+    "施工现场踏勘调查": "施工现场踏勘调查",
+    "无损检测": "无损检测",
+    "无票证作业": "无票证作业",
+    "易燃易爆": "易燃易爆",
+    "易燃易爆物质": "易燃易爆物质",
+    "普工": "普工",
+    "有效证件": "有效证件",
+    "有限空间作业": "有限空间作业",
+    "未熔合": "未熔合",
+    "本井场": "本井场",
+    "材料": "材料",
+    "材质": "材质",
+    "杨明利": "杨明利",
+    "标高": "标高",
+    "橡胶绝缘手套": "橡胶绝缘手套",
+    "气体检测": "气体检测",
+    "气孔": "气孔",
+    "气瓶支架": "气瓶支架",
+    "氧乙炔割枪": "氧乙炔割枪",
+    "氧气": "氧气",
+    "氩气": "氩气",
+    "水平度": "水平度",
+    "江汉油田瑞腾达工程潜江有限公司": "江汉油田瑞腾达工程潜江有限公司",
+    "沟内杂物": "沟内杂物",
+    "法兰": "法兰",
+    "清理退场": "清理退场",
+    "游世强": "游世强",
+    "漏电保护": "漏电保护",
+    "漏电保护装置": "漏电保护装置",
+    "火灾爆炸": "火灾爆炸",
+    "灼热部位": "灼热部位",
+    "烫伤": "烫伤",
+    "热变形": "热变形",
+    "焊割": "焊割",
+    "焊工": "焊工",
+    "焊工专用劳保": "焊工专用劳保",
+    "焊工证": "焊工证",
+    "焊接工艺卡": "焊接工艺卡",
+    "焊接规范": "焊接规范",
+    "焊接速度": "焊接速度",
+    "焊接面罩": "焊接面罩",
+    "焊机": "焊机",
+    "物体打击": "物体打击",
+    "特种作业人员": "特种作业人员",
+    "特种作业资质": "特种作业资质",
+    "现场管理制度": "现场管理制度",
+    "生产指挥中心": "生产指挥中心",
+    "用电设备": "用电设备",
+    "用电设施": "用电设施",
+    "申请人": "申请人",
+    "电压": "电压",
+    "电工": "电工",
+    "电流": "电流",
+    "电源线": "电源线",
+    "电缆": "电缆",
+    "电镐": "电镐",
+    "盲板隔离": "盲板隔离",
+    "砂轮机": "砂轮机",
+    "碰伤": "碰伤",
+    "积水": "积水",
+    "管沟": "管沟",
+    "管沟回填": "管沟回填",
+    "管沟开挖": "管沟开挖",
+    "管线与设备打开作业": "管线与设备打开作业",
+    "管道安装": "管道安装",
+    "管道表面": "管道表面",
+    "综合评价": "综合评价",
+    "脚手架": "脚手架",
+    "螺栓": "螺栓",
+    "裂纹": "裂纹",
+    "规格型号": "规格型号",
+    "角度误差": "角度误差",
+    "角磨机": "角磨机",
+    "触电": "触电",
+    "警戒区": "警戒区",
+    "警示标志": "警示标志",
+    "警示隔离区域": "警示隔离区域",
+    "计划完成时间": "计划完成时间",
+    "计划开始时间": "计划开始时间",
+    "设备": "设备",
+    "设备安装": "设备安装",
+    "设计要求": "设计要求",
+    "试压": "试压",
+    "超声波": "超声波",
+    "车辆": "车辆",
+    "违约查处": "违约查处",
+    "逃生路线": "逃生路线",
+    "逐级泄压": "逐级泄压",
+    "通风装置": "通风装置",
+    "邢文明": "邢文明",
+    "配电箱": "配电箱",
+    "酒后上岗": "酒后上岗",
+    "锁关阀门": "锁关阀门",
+    "锈蚀": "锈蚀",
+    "防护眼镜": "防护眼镜",
+    "防火帽": "防火帽",
+    "防火手套": "防火手套",
+    "防火毯": "防火毯",
+    "防火隔离区": "防火隔离区",
+    "防烫手套": "防烫手套",
+    "防穿刺鞋": "防穿刺鞋",
+    "防静电工作服": "防静电工作服",
+    "附录A": "附录A",
+    "隔离方案": "隔离方案",
+    "项目名称": "项目名称",
+    "项目部应急管理办公室": "项目部应急管理办公室",
+    "风向标": "风向标",
+    "风险作业方案控制措施检查确认表": "风险作业方案控制措施检查确认表",
+    "风险和危害因素管控措施": "风险和危害因素管控措施",
+    "风险提示": "风险提示",
+    "验收人": "验收人",
+    "验收结果": "验收结果",
+    "高压气体伤人": "高压气体伤人",
+    "高处作业": "高处作业"
+  }
+}

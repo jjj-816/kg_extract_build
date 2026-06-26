@@ -1,0 +1,90 @@
+{
+  "entity": "焊割",
+  "raw": "[\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"焊工：邢文明\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"焊工：张利平\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"| 14 | 常用工具（锄头、铲子、扳手、管钳等） | 套 | 1 | |\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"焊工：邢文明 特种人员证件号：512930199005081015\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"| 7 | 焊机 | 台 | 1 | |\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"| **工作内容：管沟开挖、管道切割、管道焊接、设备安装、吹扫、管沟回** |\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"焊接作业人员需持有效焊工证\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"角度误差≤±2°\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"管道\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"设备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"焊机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"常用工具（锄头、铲子、扳手、管钳等）\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"灭火器\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"角度误差≤±2°\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"弧光\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"焊割\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火花引燃周边物料\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "焊割",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "焊工：邢文明",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "焊割",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "焊工：张利平",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "焊割",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "焊接作业人员需持有效焊工证",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "焊割",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "角度误差≤±2°",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "焊割",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "管道",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "焊割",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "设备",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "焊割",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "焊机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "焊割",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "常用工具（锄头、铲子、扳手、管钳等）",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "焊割",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "灭火器",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "焊割",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "角度误差≤±2°",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "焊割",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "弧光",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "焊割",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火花引燃周边物料",
+      "tail_type": "风险事件"
+    }
+  ]
+}

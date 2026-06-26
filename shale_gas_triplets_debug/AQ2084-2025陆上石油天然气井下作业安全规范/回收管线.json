@@ -1,0 +1,48 @@
+{
+  "entity": "回收管线",
+  "raw": "[\n  {\"head\": \"回收管线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"回收罐\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"回收管线\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"固定牢固\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"回收管线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"安全链\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"回收管线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"其他保护措施\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"回收管线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"检查试压\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"回收管线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"集液池\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "回收管线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "回收罐",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "回收管线",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "固定牢固",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "回收管线",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "安全链",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "回收管线",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "其他保护措施",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "回收管线",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "检查试压",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "回收管线",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "集液池",
+      "tail_type": "时空信息"
+    }
+  ]
+}

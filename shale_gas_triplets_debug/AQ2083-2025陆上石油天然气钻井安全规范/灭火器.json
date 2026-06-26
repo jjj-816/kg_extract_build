@@ -1,0 +1,13 @@
+{
+  "entity": "灭火器",
+  "raw": "[\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"现场\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "灭火器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "现场",
+      "tail_type": "时空信息"
+    }
+  ]
+}

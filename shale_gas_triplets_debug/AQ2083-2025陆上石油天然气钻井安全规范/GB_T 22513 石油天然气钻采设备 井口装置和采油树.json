@@ -1,0 +1,34 @@
+{
+  "entity": "GB/T 22513 石油天然气钻采设备 井口装置和采油树",
+  "raw": "[\n  {\"head\": \"GB/T 22513 石油天然气钻采设备 井口装置和采油树\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"油气层施工作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"GB/T 22513 石油天然气钻采设备 井口装置和采油树\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"钻头在油气层中和油气层顶部以上 300 m 井段内起钻应控制速度\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"GB/T 22513 石油天然气钻采设备 井口装置和采油树\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"探井、气井、含硫油气井、气油比高的油井应配备钻井液液气分离器\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"GB/T 22513 石油天然气钻采设备 井口装置和采油树\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"三高油气井从最后一层技术套管固井后直至完井、原钻机试油的全过程，应安装剪切闸板防喷器\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"GB/T 22513 石油天然气钻采设备 井口装置和采油树\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"三高油气井和探井应安装使用标准套管头\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"GB/T 22513 石油天然气钻采设备 井口装置和采油树\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"陆上石油天然气(含页岩气)的钻井作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "GB/T 22513 石油天然气钻采设备 井口装置和采油树",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "油气层施工作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "GB/T 22513 石油天然气钻采设备 井口装置和采油树",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "探井、气井、含硫油气井、气油比高的油井应配备钻井液液气分离器",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "GB/T 22513 石油天然气钻采设备 井口装置和采油树",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "三高油气井和探井应安装使用标准套管头",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "GB/T 22513 石油天然气钻采设备 井口装置和采油树",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "陆上石油天然气(含页岩气)的钻井作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

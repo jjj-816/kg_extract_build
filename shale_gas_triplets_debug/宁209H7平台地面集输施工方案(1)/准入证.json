@@ -1,0 +1,41 @@
+{
+  "entity": "准入证",
+  "raw": "[\n  {\"head\": \"准入证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业许可证\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"准入证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"工作前安全分析表\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"准入证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"施工作业方案\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"准入证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"应急处置方案\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"准入证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"派工单\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "准入证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业许可证",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "准入证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "工作前安全分析表",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "准入证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "施工作业方案",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "准入证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "应急处置方案",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "准入证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "派工单",
+      "tail_type": "施工参数"
+    }
+  ]
+}

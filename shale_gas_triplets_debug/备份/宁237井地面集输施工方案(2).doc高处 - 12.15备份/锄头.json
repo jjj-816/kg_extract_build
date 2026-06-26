@@ -1,0 +1,5 @@
+{
+  "entity": "锄头",
+  "raw": "[\n  {\"head\": \"锄头\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"常用工具\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": []
+}

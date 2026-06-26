@@ -1,0 +1,146 @@
+{
+  "entity": "受限空间",
+  "raw": "[\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"进入受限空间前确认\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"气体检测合格\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"有害气体中毒、窒息\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"触电\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"悬挂气体检测仪\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"连续监测\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"高处作业\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"动火作业\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"天然气泄漏引起的火灾爆炸\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"碰伤\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"物体打击\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"机械伤害\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"弧光伤害\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"火花飞溅\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"烫伤\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"车辆移动\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"气体中毒\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"冬季防冻\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"高处坠落\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业脚手架搭建\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"气体检测\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "气体检测合格",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "有害气体中毒、窒息",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "触电",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "悬挂气体检测仪",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "连续监测",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "高处作业",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "动火作业",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "天然气泄漏引起的火灾爆炸",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "碰伤",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "物体打击",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "机械伤害",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "弧光伤害",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "火花飞溅",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "烫伤",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "车辆移动",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "气体中毒",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "冬季防冻",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "高处坠落",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业脚手架搭建",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "受限空间",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "气体检测",
+      "tail_type": "施工记录"
+    }
+  ]
+}

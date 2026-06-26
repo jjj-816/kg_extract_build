@@ -1,0 +1,27 @@
+{
+  "entity": "水产量",
+  "raw": "[\n  {\"head\": \"水产量\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"油、气、水产量\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"水产量\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"测试产量或无阻流量\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"水产量\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"产量变化\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "水产量",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "油、气、水产量",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "水产量",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "测试产量或无阻流量",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "水产量",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "产量变化",
+      "tail_type": "施工参数"
+    }
+  ]
+}

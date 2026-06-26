@@ -1,0 +1,48 @@
+{
+  "entity": "通道",
+  "raw": "[\n  {\"head\": \"通道\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"人员进出时，确认通道畅通\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"通道\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"搬运前，清理通道，无障碍\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"通道\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"明确施工作业现场应急通道\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"通道\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"告知安防消防器材设置情况\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"通道\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"告知施工作业人员本井站应急要点\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"通道\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"逃生通道\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "通道",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "人员进出时，确认通道畅通",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "通道",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "搬运前，清理通道，无障碍",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "通道",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "明确施工作业现场应急通道",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "通道",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "告知安防消防器材设置情况",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "通道",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "告知施工作业人员本井站应急要点",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "通道",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "逃生通道",
+      "tail_type": "作业活动"
+    }
+  ]
+}

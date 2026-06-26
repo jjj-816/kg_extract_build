@@ -1,0 +1,20 @@
+{
+  "entity": "居民",
+  "raw": "[\n  {\"head\": \"居民\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"井场周围一定范围内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"居民\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"当地\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "居民",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "井场周围一定范围内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "居民",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "当地",
+      "tail_type": "时空信息"
+    }
+  ]
+}

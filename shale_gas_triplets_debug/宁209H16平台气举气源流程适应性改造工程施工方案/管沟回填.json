@@ -1,0 +1,69 @@
+{
+  "entity": "管沟回填",
+  "raw": "[\n  {\"head\": \"管沟回填\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"清理退场\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟回填\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管沟开挖\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟回填\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管道切割\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟回填\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管道焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟回填\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"设备安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟回填\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"吹扫\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟回填\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"管道安装、试压合格\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"管沟回填\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"清理沟内杂物、积水\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管沟回填\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"移除支护设施\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "管沟回填",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "清理退场",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟回填",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管沟开挖",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟回填",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管道切割",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟回填",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管道焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟回填",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "设备安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟回填",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "吹扫",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟回填",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "管道安装、试压合格",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "管沟回填",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "清理沟内杂物、积水",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管沟回填",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "移除支护设施",
+      "tail_type": "作业活动"
+    }
+  ]
+}

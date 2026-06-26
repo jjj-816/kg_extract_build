@@ -1,0 +1,13 @@
+{
+  "entity": "失控井口",
+  "raw": "[\n  {\"head\": \"失控井口\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"# 11 井喷失控处置\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "失控井口",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "# 11 井喷失控处置",
+      "tail_type": "施工记录"
+    }
+  ]
+}

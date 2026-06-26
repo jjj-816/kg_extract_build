@@ -1,0 +1,20 @@
+{
+  "entity": "防火挡板",
+  "raw": "[\n  {\"head\": \"防火挡板\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾爆炸风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"防火挡板\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"动火范围\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "防火挡板",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾爆炸风险",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "防火挡板",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "动火范围",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "entity": "采油(气)井口装置",
+  "raw": "[\n  {\"head\": \"采油(气)井口装置\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"安装\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"采油(气)井口装置\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"抗硫化氢或二氧化碳的能力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"采油(气)井口装置\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"不应作为采油(气)井口装置使用\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"采油(气)井口装置\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防硫性能\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"采油(气)井口装置\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"检查采油(气)井口装置各部分的连接紧固情况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"采油(气)井口装置\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"石油天然气钻采设备 井口装置和采油树\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "采油(气)井口装置",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "安装",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "采油(气)井口装置",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "抗硫化氢或二氧化碳的能力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "采油(气)井口装置",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "不应作为采油(气)井口装置使用",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "采油(气)井口装置",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "防硫性能",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "采油(气)井口装置",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "检查采油(气)井口装置各部分的连接紧固情况",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "采油(气)井口装置",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "石油天然气钻采设备 井口装置和采油树",
+      "tail_type": "时空信息"
+    }
+  ]
+}

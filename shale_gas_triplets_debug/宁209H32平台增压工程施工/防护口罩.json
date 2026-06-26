@@ -1,0 +1,27 @@
+{
+  "entity": "防护口罩",
+  "raw": "[\n  {\"head\": \"防护口罩\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"粉尘、气体中毒\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"防护口罩\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"打磨除锈时\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"防护口罩\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"防腐作业时\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "防护口罩",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "粉尘、气体中毒",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "防护口罩",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "打磨除锈时",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "防护口罩",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "防腐作业时",
+      "tail_type": "时空信息"
+    }
+  ]
+}

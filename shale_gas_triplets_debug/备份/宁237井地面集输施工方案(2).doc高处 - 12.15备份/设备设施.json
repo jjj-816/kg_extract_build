@@ -1,0 +1,20 @@
+{
+  "entity": "设备设施",
+  "raw": "```json\n[\n  {\"head\": \"设备设施\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"发电机\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"设备设施\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"设备装置评估表\", \"tail_type\": \"施工记录\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "设备设施",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "发电机",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "设备设施",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "设备装置评估表",
+      "tail_type": "施工记录"
+    }
+  ]
+}

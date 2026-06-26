@@ -1,0 +1,20 @@
+{
+  "entity": "出入口",
+  "raw": "[\n  {\"head\": \"出入口\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"受限空间\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"出入口\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"受限空间出入口四周已设立警戒区\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"出入口\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"人员进出\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "出入口",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "受限空间出入口四周已设立警戒区",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "出入口",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "人员进出",
+      "tail_type": "施工对象"
+    }
+  ]
+}

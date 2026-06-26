@@ -1,0 +1,27 @@
+{
+  "entity": "录井作业",
+  "raw": "[\n  {\"head\": \"录井作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"含硫油气井\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"录井作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"新探区\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"录井作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"固定式硫化氢检测及声光报警系统\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"录井作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"便携式气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"录井作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"正压式空气呼吸器\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "录井作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "固定式硫化氢检测及声光报警系统",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "录井作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "便携式气体检测仪",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "录井作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "正压式空气呼吸器",
+      "tail_type": "设备工具"
+    }
+  ]
+}

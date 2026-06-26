@@ -1,0 +1,27 @@
+{
+  "entity": "地层流体性质",
+  "raw": "[\n  {\"head\": \"地层流体性质\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"产层的流体性质\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层流体性质\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"井型\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层流体性质\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"油气藏类型\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "地层流体性质",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "产层的流体性质",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层流体性质",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "井型",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层流体性质",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "油气藏类型",
+      "tail_type": "施工参数"
+    }
+  ]
+}

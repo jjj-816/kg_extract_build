@@ -1,0 +1,20 @@
+{
+  "entity": "QHSE管理制度",
+  "raw": "```json\n[\n  {\"head\": \"QHSE管理制度\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"安全管理人员\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"QHSE管理制度\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"监理单位\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"QHSE管理制度\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"项目负责人\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"QHSE管理制度\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"进场验收\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"QHSE管理制度\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"指认准许作业\", \"tail_type\": \"控制措施\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "QHSE管理制度",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "进场验收",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "QHSE管理制度",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "指认准许作业",
+      "tail_type": "控制措施"
+    }
+  ]
+}

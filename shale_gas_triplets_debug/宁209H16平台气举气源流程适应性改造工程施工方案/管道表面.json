@@ -1,0 +1,13 @@
+{
+  "entity": "管道表面",
+  "raw": "[\n  {\"head\": \"管道表面\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"管道切割前\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "管道表面",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "管道切割前",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

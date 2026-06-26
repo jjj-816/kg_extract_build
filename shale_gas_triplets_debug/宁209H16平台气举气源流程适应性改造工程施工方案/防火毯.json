@@ -1,0 +1,20 @@
+{
+  "entity": "防火毯",
+  "raw": "[\n  {\"head\": \"防火毯\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"焊接现场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"防火毯\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火花飞溅\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "防火毯",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "焊接现场",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "防火毯",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火花飞溅",
+      "tail_type": "风险事件"
+    }
+  ]
+}

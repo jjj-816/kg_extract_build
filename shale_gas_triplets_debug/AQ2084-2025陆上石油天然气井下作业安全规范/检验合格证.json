@@ -1,0 +1,13 @@
+{
+  "entity": "检验合格证",
+  "raw": "[\n  {\"head\": \"检验合格证\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"试压合格后\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "检验合格证",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "试压合格后",
+      "tail_type": "时空信息"
+    }
+  ]
+}

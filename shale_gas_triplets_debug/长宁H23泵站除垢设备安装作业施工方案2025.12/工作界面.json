@@ -1,0 +1,20 @@
+{
+  "entity": "工作界面",
+  "raw": "[\n  {\"head\": \"工作界面\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"交回工作界面\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工作界面\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"与属地交回工作界面\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "工作界面",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "交回工作界面",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "工作界面",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "与属地交回工作界面",
+      "tail_type": "施工记录"
+    }
+  ]
+}

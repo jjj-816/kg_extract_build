@@ -1,0 +1,5 @@
+{
+  "entity": "工具用具",
+  "raw": "```json\n[\n  {\"head\": \"工具用具\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防护眼镜\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工具用具\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防护面罩\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工具用具\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"工具袋\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工具用具\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电动扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工具用具\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"砂轮机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工具用具\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"灭火器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工具用具\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"鼓风机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工具用具\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"}\n]\n```",
+  "triplets": []
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "涌水",
+  "raw": "[\n  {\"head\": \"涌水\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"软土或富水地层开挖时\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "涌水",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "软土或富水地层开挖时",
+      "tail_type": "时空信息"
+    }
+  ]
+}

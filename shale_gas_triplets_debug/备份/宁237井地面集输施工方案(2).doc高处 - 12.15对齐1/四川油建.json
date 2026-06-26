@@ -1,0 +1,5 @@
+{
+  "entity": "四川油建",
+  "raw": "[\n  {\"head\": \"四川油建\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工安排\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"四川油建\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"电工\", \"tail_type\": \"责任主体\"}\n]",
+  "triplets": []
+}

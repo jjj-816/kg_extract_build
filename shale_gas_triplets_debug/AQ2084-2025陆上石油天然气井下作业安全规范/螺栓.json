@@ -1,0 +1,62 @@
+{
+  "entity": "螺栓",
+  "raw": "[\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"丝扣应完好、无变形或损坏\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"上紧全部连接螺栓\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"螺栓上全上紧\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"两端无欠扣\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井控装置\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"防喷器法兰\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"采油(气)井口装置\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井口装置\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "丝扣应完好、无变形或损坏",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "上紧全部连接螺栓",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "螺栓上全上紧",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "两端无欠扣",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井控装置",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "防喷器法兰",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "采油(气)井口装置",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井口装置",
+      "tail_type": "时空信息"
+    }
+  ]
+}

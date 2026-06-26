@@ -1,0 +1,13 @@
+{
+  "entity": "棱角吊物",
+  "raw": "[\n  {\"head\": \"棱角吊物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"棱角吊物已采取衬垫措施\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "棱角吊物",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "棱角吊物已采取衬垫措施",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "entity": "《页岩气田集输工程设计规范》",
+  "raw": "[\n  {\"head\": \"《页岩气田集输工程设计规范》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"施工准备与资源配置计划\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"《页岩气田集输工程设计规范》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"放线位置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《页岩气田集输工程设计规范》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"砖块和砂浆\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"《页岩气田集输工程设计规范》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"砖层的水平和垂直度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"《页岩气田集输工程设计规范》\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"水平仪和靠尺\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"《页岩气田集输工程设计规范》\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"随时检查\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "《页岩气田集输工程设计规范》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "施工准备与资源配置计划",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "《页岩气田集输工程设计规范》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "放线位置",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《页岩气田集输工程设计规范》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "砖块和砂浆",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "《页岩气田集输工程设计规范》",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "砖层的水平和垂直度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "《页岩气田集输工程设计规范》",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "水平仪和靠尺",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "《页岩气田集输工程设计规范》",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "随时检查",
+      "tail_type": "施工记录"
+    }
+  ]
+}

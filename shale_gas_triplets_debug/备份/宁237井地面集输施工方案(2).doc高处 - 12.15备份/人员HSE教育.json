@@ -1,0 +1,5 @@
+{
+  "entity": "人员HSE教育",
+  "raw": "[\n  {\"head\": \"人员HSE教育\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"人员HSE教育\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工方确认\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"人员HSE教育\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"特殊工种培训取证\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"人员HSE教育\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"冬季施工安全教育\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"人员HSE教育\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"应急要点\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"人员HSE教育\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"安全技能\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"人员HSE教育\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"应急知识\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": []
+}

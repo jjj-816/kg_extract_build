@@ -1,0 +1,20 @@
+{
+  "entity": "巡回检查制度",
+  "raw": "[\n  {\"head\": \"巡回检查制度\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"设备设施\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"巡回检查制度\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"危险源\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "巡回检查制度",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "设备设施",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "巡回检查制度",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "危险源",
+      "tail_type": "风险事件"
+    }
+  ]
+}

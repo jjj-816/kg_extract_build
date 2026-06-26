@@ -1,0 +1,13 @@
+{
+  "entity": "保险绳",
+  "raw": "[\n  {\"head\": \"保险绳\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"小型工具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"保险绳\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"保险绳\", \"head_type\": \"设备工具\", \"relation\": \"RECORDS_IN\", \"tail\": \"安全技术交底和风险告知确认卡\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保险绳\", \"head_type\": \"设备工具\", \"relation\": \"RECORDS_IN\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "高处作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "保险绳",
+      "tail_type": "设备工具"
+    }
+  ]
+}

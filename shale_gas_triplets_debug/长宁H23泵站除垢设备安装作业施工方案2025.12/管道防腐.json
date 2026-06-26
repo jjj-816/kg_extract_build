@@ -1,0 +1,20 @@
+{
+  "entity": "管道防腐",
+  "raw": "[\n  {\"head\": \"管道防腐\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"管线防腐喷漆\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管道防腐\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"管线防腐喷\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "管道防腐",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "管线防腐喷漆",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管道防腐",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "管线防腐喷",
+      "tail_type": "作业活动"
+    }
+  ]
+}

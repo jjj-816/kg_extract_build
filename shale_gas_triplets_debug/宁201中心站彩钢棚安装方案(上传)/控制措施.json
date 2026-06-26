@@ -1,0 +1,55 @@
+{
+  "entity": "控制措施",
+  "raw": "[\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"5.2风险控制措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"一、物体打击风险控制措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"二、火灾风险控制措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"三、高温灼伤/烫伤风险控制措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"四、触电风险控制措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"五、机械伤害风险控制措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"六、高处坠落风险控制措施\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "控制措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "5.2风险控制措施",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "控制措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "一、物体打击风险控制措施",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "控制措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "二、火灾风险控制措施",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "控制措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "三、高温灼伤/烫伤风险控制措施",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "控制措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "四、触电风险控制措施",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "控制措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "五、机械伤害风险控制措施",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "控制措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "六、高处坠落风险控制措施",
+      "tail_type": "施工记录"
+    }
+  ]
+}

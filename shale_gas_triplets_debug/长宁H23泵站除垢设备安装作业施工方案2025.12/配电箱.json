@@ -1,0 +1,27 @@
+{
+  "entity": "配电箱",
+  "raw": "[\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"宁 209H68 泵站\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"接地牢固、可靠\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"无关人员不得动作\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "配电箱",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "宁 209H68 泵站",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "配电箱",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "接地牢固、可靠",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "配电箱",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "无关人员不得动作",
+      "tail_type": "风险事件"
+    }
+  ]
+}

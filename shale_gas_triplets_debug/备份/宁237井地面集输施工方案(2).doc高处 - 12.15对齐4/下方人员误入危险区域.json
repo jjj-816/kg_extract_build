@@ -1,0 +1,27 @@
+{
+  "entity": "下方人员误入危险区域",
+  "raw": "[\n  {\"head\": \"下方人员误入危险区域\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"设置警戒标识\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"下方人员误入危险区域\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"设置警戒线\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"下方人员误入危险区域\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"做好临边硬隔离防坠落措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "下方人员误入危险区域",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "设置警戒标识",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "下方人员误入危险区域",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "设置警戒线",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "下方人员误入危险区域",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "做好临边硬隔离防坠落措施",
+      "tail_type": "控制措施"
+    }
+  ]
+}

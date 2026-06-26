@@ -1,0 +1,300 @@
+{
+  "entity": "保护措施",
+  "raw": "[\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业申请单位\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业单位\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"吊装地点\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"吊具名称\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"吊物内容\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"吊装作业人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"司索人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"监护人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"指挥人员\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"吊物质量(t)及作业级别\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"风险辨识结果\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业实施时间\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"安全措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"是否涉及\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"确认人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"安全交底人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"接受交底人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业指挥意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"所在单位意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"审核部门意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"审批部门意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"完工验收签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"申请单位\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业申请时间\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业地点\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业内容\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"监护人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业负责人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"关联的其他特殊作业及安全作业票编号\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业范围、内容、方式\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"风险辨识结果\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业实施时间\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"安全措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"是否涉及\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"确认人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"安全交底人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"接受交底人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业负责人意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"所在单位意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"有关水、电、汽、工艺、设备、消防、安全等部门会签意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"审批部门意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"保护措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"完工验收签字\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "作业申请单位",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "作业单位",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "吊装地点",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "吊具名称",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "吊物内容",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "吊装作业人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "司索人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "监护人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "指挥人员",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "吊物质量(t)及作业级别",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "风险辨识结果",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "作业实施时间",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "安全措施",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "是否涉及",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "确认人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "安全交底人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "接受交底人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "作业指挥意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "所在单位意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "审核部门意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "审批部门意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "完工验收签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "申请单位",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "作业申请时间",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "作业地点",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "作业内容",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "监护人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "作业负责人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "关联的其他特殊作业及安全作业票编号",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "作业范围、内容、方式",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "风险辨识结果",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "作业实施时间",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "安全措施",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "是否涉及",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "确认人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "安全交底人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "接受交底人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "作业负责人意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "所在单位意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "有关水、电、汽、工艺、设备、消防、安全等部门会签意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "审批部门意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "保护措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "完工验收签字",
+      "tail_type": "施工记录"
+    }
+  ]
+}

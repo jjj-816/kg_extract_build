@@ -1,0 +1,5 @@
+{
+  "entity": "起下电缆",
+  "raw": "[\n  {\"head\": \"起下电缆\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"电缆剪断工具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"起下电缆\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"电缆剪断工具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"起下电缆\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"专用剪断器\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": []
+}

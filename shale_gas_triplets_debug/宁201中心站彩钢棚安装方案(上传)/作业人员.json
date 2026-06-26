@@ -1,0 +1,188 @@
+{
+  "entity": "作业人员",
+  "raw": "[\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"避免意外伤害的发生\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"检查到场作业人员、材料、机具是否与方案一致\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"开展安全技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"陈小林： 焊工、登高 证件号T511528199311135638\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"组织作业人员、属地开展安全技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"组织作业人员、属地人员、申请人、相关方进行安全技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"签字确认作业票移交属地\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"采用警示带+警示标识双重隔离\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"设置专人全程监护\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"严禁非作业人员进入\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"隔离范围需覆盖吊装半径外延3米区域\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"正确佩戴安全帽（帽衬与帽壳间距2-4cm）\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"防冲击护目镜\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"高处作业人员额外系挂工具袋\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"所有小型工具（扳手、螺丝刀等）必须拴挂安全绳\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"配置2具干粉灭火器（MFZ/ABC4型）\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"放置在动火点上风侧1.5-3米处\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"确保完好有效\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"熟练掌握灭火器使用方法\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"设置防护挡板\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"避免弧光灼伤皮肤和眼睛\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"穿戴阻燃工作服\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"防护面罩\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"穿戴绝缘手套\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"绝缘鞋\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"严禁赤手操作电气设备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"额外采取绝缘隔离措施（如铺设绝缘垫）\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "避免意外伤害的发生",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "检查到场作业人员、材料、机具是否与方案一致",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "开展安全技术交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "组织作业人员、属地开展安全技术交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "组织作业人员、属地人员、申请人、相关方进行安全技术交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "签字确认作业票移交属地",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "采用警示带+警示标识双重隔离",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "设置专人全程监护",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "严禁非作业人员进入",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "隔离范围需覆盖吊装半径外延3米区域",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "正确佩戴安全帽（帽衬与帽壳间距2-4cm）",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "防冲击护目镜",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "高处作业人员额外系挂工具袋",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "所有小型工具（扳手、螺丝刀等）必须拴挂安全绳",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "配置2具干粉灭火器（MFZ/ABC4型）",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "放置在动火点上风侧1.5-3米处",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "确保完好有效",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "熟练掌握灭火器使用方法",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "设置防护挡板",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "避免弧光灼伤皮肤和眼睛",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "穿戴阻燃工作服",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "防护面罩",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "穿戴绝缘手套",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "绝缘鞋",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "严禁赤手操作电气设备",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "额外采取绝缘隔离措施（如铺设绝缘垫）",
+      "tail_type": "控制措施"
+    }
+  ]
+}

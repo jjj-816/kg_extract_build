@@ -1,0 +1,27 @@
+{
+  "entity": "井口泄漏",
+  "raw": "[\n  {\"head\": \"井口泄漏\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"关闭电缆防喷器半封闸板\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"井口泄漏\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"7.5.4.4\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井口泄漏\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"电缆在上提或下放过程中\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "井口泄漏",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "关闭电缆防喷器半封闸板",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "井口泄漏",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "7.5.4.4",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井口泄漏",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "电缆在上提或下放过程中",
+      "tail_type": "时空信息"
+    }
+  ]
+}

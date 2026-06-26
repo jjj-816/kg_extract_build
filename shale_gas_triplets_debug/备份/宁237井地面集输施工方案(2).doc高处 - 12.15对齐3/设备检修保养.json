@@ -1,0 +1,34 @@
+{
+  "entity": "设备检修保养",
+  "raw": "[\n  {\"head\": \"设备检修保养\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"设备装置评估表（工器具确认表）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"设备检修保养\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"电气设备检维修\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设备检修保养\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"停验电并上锁挂牌\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"设备检修保养\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"张贴目视化合格标志\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "设备检修保养",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "设备装置评估表（工器具确认表）",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "设备检修保养",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "电气设备检维修",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "设备检修保养",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "停验电并上锁挂牌",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "设备检修保养",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "张贴目视化合格标志",
+      "tail_type": "控制措施"
+    }
+  ]
+}

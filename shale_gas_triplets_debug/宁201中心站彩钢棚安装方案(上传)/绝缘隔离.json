@@ -1,0 +1,13 @@
+{
+  "entity": "绝缘隔离",
+  "raw": "[\n  {\"head\": \"绝缘隔离\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工人员配置\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "绝缘隔离",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "施工人员配置",
+      "tail_type": "施工记录"
+    }
+  ]
+}

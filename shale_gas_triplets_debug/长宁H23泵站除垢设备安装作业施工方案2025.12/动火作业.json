@@ -1,0 +1,55 @@
+{
+  "entity": "动火作业",
+  "raw": "[\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管线打开作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"爆炸\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动火周围 5 米范围内清除易燃易爆物品\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"烫伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"灼伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管线打开作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "爆炸",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "动火周围 5 米范围内清除易燃易爆物品",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "烫伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "灼伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击",
+      "tail_type": "风险事件"
+    }
+  ]
+}

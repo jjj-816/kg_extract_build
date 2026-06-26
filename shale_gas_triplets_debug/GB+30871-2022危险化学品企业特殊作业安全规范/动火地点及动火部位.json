@@ -1,0 +1,62 @@
+{
+  "entity": "动火地点及动火部位",
+  "raw": "[\n  {\"head\": \"动火地点及动火部位\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"火灾爆炸危险场所\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"动火地点及动火部位\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"非火灾爆炸危险场所划出的专门用于动火的区域\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"动火地点及动火部位\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"管廊\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"动火地点及动火部位\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"生产装置设备\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"动火地点及动火部位\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"管道\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"动火地点及动火部位\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"储罐\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"动火地点及动火部位\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"容器\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"动火地点及动火部位\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"重大危险源罐区防火堤内\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "动火地点及动火部位",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "火灾爆炸危险场所",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "动火地点及动火部位",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "非火灾爆炸危险场所划出的专门用于动火的区域",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "动火地点及动火部位",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "管廊",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "动火地点及动火部位",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "生产装置设备",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "动火地点及动火部位",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "管道",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "动火地点及动火部位",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "储罐",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "动火地点及动火部位",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "容器",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "动火地点及动火部位",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "重大危险源罐区防火堤内",
+      "tail_type": "时空信息"
+    }
+  ]
+}

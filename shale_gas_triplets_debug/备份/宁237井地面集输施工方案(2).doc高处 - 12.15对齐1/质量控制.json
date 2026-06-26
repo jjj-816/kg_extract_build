@@ -1,0 +1,48 @@
+{
+  "entity": "质量控制",
+  "raw": "[\n  {\"head\": \"质量控制\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"设备装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"质量控制\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"关键材料\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"质量控制\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"设备装置评估表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"质量控制\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"工器具确认表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"质量控制\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"控制措施与检查情况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"质量控制\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"监督检查情况\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "质量控制",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "设备装置",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "质量控制",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "关键材料",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "质量控制",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "设备装置评估表",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "质量控制",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "工器具确认表",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "质量控制",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "控制措施与检查情况",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "质量控制",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "监督检查情况",
+      "tail_type": "施工记录"
+    }
+  ]
+}

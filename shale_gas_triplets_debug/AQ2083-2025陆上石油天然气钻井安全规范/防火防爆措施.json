@@ -1,0 +1,27 @@
+{
+  "entity": "防火防爆措施",
+  "raw": "[\n  {\"head\": \"防火防爆措施\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"井场钻井设备的布局\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"防火防爆措施\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"井场动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"防火防爆措施\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"高含硫油气井失控井口点火\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "防火防爆措施",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "井场钻井设备的布局",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "防火防爆措施",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "井场动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "防火防爆措施",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "高含硫油气井失控井口点火",
+      "tail_type": "作业活动"
+    }
+  ]
+}

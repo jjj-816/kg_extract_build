@@ -1,0 +1,41 @@
+{
+  "entity": "首次气体检测",
+  "raw": "[\n  {\"head\": \"首次气体检测\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"连续气体检测\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"首次气体检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"气体检测记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"首次气体检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"气体检测合格\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"首次气体检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"30分钟\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"首次气体检测\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"首次气体检测\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"作业区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"首次气体检测\", \"head_type\": \"作业活动\", \"relation\": \"REGULATES\", \"tail\": \"《石油天然气工程设计防火规范》GB50183-2004\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "首次气体检测",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "连续气体检测",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "首次气体检测",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "气体检测合格",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "首次气体检测",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "气体检测仪",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "首次气体检测",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "作业区域",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "《石油天然气工程设计防火规范》GB50183-2004",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "首次气体检测",
+      "tail_type": "作业活动"
+    }
+  ]
+}

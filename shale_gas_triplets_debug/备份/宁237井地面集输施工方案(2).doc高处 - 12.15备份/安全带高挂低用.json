@@ -1,0 +1,13 @@
+{
+  "entity": "安全带高挂低用",
+  "raw": "[\n  {\"head\": \"安全带高挂低用\", \"head_type\": \"控制措施\", \"relation\": \"MITIGATED_BY\", \"tail\": \"人员坠落\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全带高挂低用\", \"head_type\": \"控制措施\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"双钩安全带\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"安全带高挂低用\", \"head_type\": \"控制措施\", \"relation\": \"OPERATES_ON\", \"tail\": \"作业平台\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "人员坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "安全带高挂低用",
+      "tail_type": "控制措施"
+    }
+  ]
+}

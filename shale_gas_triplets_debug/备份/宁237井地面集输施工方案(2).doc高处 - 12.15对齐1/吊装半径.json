@@ -1,0 +1,5 @@
+{
+  "entity": "吊装半径",
+  "raw": "[\n  {\"head\": \"吊装半径\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"吊装作业记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"吊装半径\", \"head_type\": \"施工对象\", \"relation\": \"REGULATES\", \"tail\": \"人员撤离\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"吊装半径\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业平台\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": []
+}

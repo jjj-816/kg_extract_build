@@ -1,0 +1,27 @@
+{
+  "entity": "气侵",
+  "raw": "[\n  {\"head\": \"气侵\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"及时排除\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"气侵\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"短程起下钻检查\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"气侵\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"灌满钻井液\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "气侵",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "及时排除",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "气侵",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "短程起下钻检查",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "气侵",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "灌满钻井液",
+      "tail_type": "控制措施"
+    }
+  ]
+}

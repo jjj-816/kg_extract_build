@@ -1,0 +1,13 @@
+{
+  "entity": "对口错边量",
+  "raw": "[\n  {\"head\": \"对口错边量\", \"head_type\": \"未分类\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"标准允许范围内\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "对口错边量",
+      "head_type": "未分类",
+      "relation": "HAS_THRESHOLD",
+      "tail": "标准允许范围内",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

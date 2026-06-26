@@ -1,0 +1,20 @@
+{
+  "entity": "作业许可范围",
+  "raw": "```json\n[\n  {\"head\": \"作业许可范围\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"入场施工作业安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"附录B\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"施工记录\", \"relation\": \"REQUIRES\", \"tail\": \"准入证\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"施工记录\", \"relation\": \"REQUIRES\", \"tail\": \"作业许可证\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"施工记录\", \"relation\": \"REQUIRES\", \"tail\": \"工作前安全分析表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"施工记录\", \"relation\": \"REQUIRES\", \"tail\": \"施工作业方案\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"施工记录\", \"relation\": \"REQUIRES\", \"tail\": \"应急处置方案\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"施工记录\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业票证\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"施工记录\", \"relation\": \"REQUIRES\", \"tail\": \"高处作业安全带\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"施工记录\", \"relation\": \"OPERATES_ON\", \"tail\": \"设备/系统\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"施工记录\", \"relation\": \"OPERATES_ON\", \"tail\": \"工作区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"施工记录\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"属地监督\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"作业许可范围\", \"head_type\": \"施工记录\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"作业项目负责人/申请人\", \"tail_type\": \"责任主体\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "作业许可范围",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业项目负责人/申请人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "作业许可范围",
+      "tail_type": "施工记录"
+    }
+  ]
+}

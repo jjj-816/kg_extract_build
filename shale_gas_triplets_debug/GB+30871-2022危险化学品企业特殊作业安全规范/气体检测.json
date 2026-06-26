@@ -1,0 +1,125 @@
+{
+  "entity": "气体检测",
+  "raw": "[\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"作业前30min内，对受限空间进行气体检测\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"作业中断时间超过60min时,应重新进行气体检测分析\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"气体取样分析时间\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"代表性气体\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"分析结果/%\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"分析人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"受限空间\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"可燃气体\", \"tail_type\": \"环保对象\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"有毒气体\", \"tail_type\": \"环保对象\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"氧气浓度\", \"tail_type\": \"环保对象\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"移动式气体检测报警仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"固定式可燃气体检测报警器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"移动式气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"2h记录1次\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"气体浓度超限报警\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"气体取样分析时间\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"代表性气体\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"分析结果/%\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"分析人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"动火点30m内垂直空间\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"动火点15m内垂直空间\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"气体检测\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"动火点10m范围内\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "气体取样分析时间",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "代表性气体",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "分析结果/%",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "分析人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "受限空间",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "可燃气体",
+      "tail_type": "环保对象"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "有毒气体",
+      "tail_type": "环保对象"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "氧气浓度",
+      "tail_type": "环保对象"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "移动式气体检测报警仪",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "固定式可燃气体检测报警器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "移动式气体检测仪",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "气体浓度超限报警",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "气体取样分析时间",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "代表性气体",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "分析结果/%",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "分析人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "气体检测",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "动火点30m内垂直空间",
+      "tail_type": "时空信息"
+    }
+  ]
+}

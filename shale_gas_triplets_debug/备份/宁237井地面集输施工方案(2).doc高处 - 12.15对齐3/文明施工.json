@@ -1,0 +1,34 @@
+{
+  "entity": "文明施工",
+  "raw": "[\n  {\"head\": \"文明施工\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工安排\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"文明施工\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工准备与资源配置计划\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"文明施工\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"工程概况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"文明施工\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工人员组织结构\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "文明施工",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工安排",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "文明施工",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工准备与资源配置计划",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "文明施工",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "工程概况",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "文明施工",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工人员组织结构",
+      "tail_type": "施工记录"
+    }
+  ]
+}

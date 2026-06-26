@@ -1,0 +1,13 @@
+{
+  "entity": "清扫作业",
+  "raw": "[\n  {\"head\": \"清扫作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"可燃性粉尘清扫作业\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "清扫作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "可燃性粉尘清扫作业",
+      "tail_type": "风险事件"
+    }
+  ]
+}

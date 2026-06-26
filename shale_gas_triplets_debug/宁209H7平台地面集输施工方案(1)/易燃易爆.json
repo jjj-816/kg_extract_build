@@ -1,0 +1,27 @@
+{
+  "entity": "易燃易爆",
+  "raw": "[\n  {\"head\": \"易燃易爆\", \"head_type\": \"未分类\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"危险物品\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"易燃易爆\", \"head_type\": \"未分类\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"天然气\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"易燃易爆\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"场站动火作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "易燃易爆",
+      "head_type": "未分类",
+      "relation": "TRIGGERS_RISK",
+      "tail": "危险物品",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "易燃易爆",
+      "head_type": "未分类",
+      "relation": "TRIGGERS_RISK",
+      "tail": "天然气",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "易燃易爆",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "场站动火作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

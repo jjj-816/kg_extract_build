@@ -1,0 +1,41 @@
+{
+  "entity": "防硫化氢措施",
+  "raw": "[\n  {\"head\": \"防硫化氢措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"硫化氢腐蚀及防腐措施\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"防硫化氢措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"硫化氢的来源、理化特性、中毒反应及中毒的现场救护\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"防硫化氢措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"硫化氢检测仪器及防护器具的使用、检查和维护\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"防硫化氢措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"硫化氢防护培训\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"防硫化氢措施\", \"head_type\": \"未分类\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"硫化氢监测仪器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"防硫化氢措施\", \"head_type\": \"未分类\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"正压式空气呼吸器\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "防硫化氢措施",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "硫化氢腐蚀及防腐措施",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "防硫化氢措施",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "硫化氢的来源、理化特性、中毒反应及中毒的现场救护",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "防硫化氢措施",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "硫化氢检测仪器及防护器具的使用、检查和维护",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "防硫化氢措施",
+      "head_type": "未分类",
+      "relation": "USES_EQUIPMENT",
+      "tail": "硫化氢监测仪器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "防硫化氢措施",
+      "head_type": "未分类",
+      "relation": "USES_EQUIPMENT",
+      "tail": "正压式空气呼吸器",
+      "tail_type": "设备工具"
+    }
+  ]
+}

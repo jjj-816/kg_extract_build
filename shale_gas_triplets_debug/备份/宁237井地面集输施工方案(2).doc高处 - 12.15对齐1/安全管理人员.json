@@ -1,0 +1,41 @@
+{
+  "entity": "安全管理人员",
+  "raw": "```json\n[\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"应急记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场作业过程管理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全监护\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"事故调查\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"应急要点告知\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场人员配置\", \"tail_type\": \"施工记录\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "应急记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场作业过程管理",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全监护",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "事故调查",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场人员配置",
+      "tail_type": "施工记录"
+    }
+  ]
+}

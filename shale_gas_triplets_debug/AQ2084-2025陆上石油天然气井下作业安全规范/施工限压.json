@@ -1,0 +1,41 @@
+{
+  "entity": "施工限压",
+  "raw": "[\n  {\"head\": \"施工限压\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"最高施工压力\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"施工限压\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"最大允许关井套压\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"施工限压\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"最大允许关井压力\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"施工限压\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"设计最高施工压力\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"施工限压\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"预测最高施工压力\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "施工限压",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "最高施工压力",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "施工限压",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "最大允许关井套压",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "施工限压",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "最大允许关井压力",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "施工限压",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "设计最高施工压力",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "施工限压",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "预测最高施工压力",
+      "tail_type": "风险事件"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "entity": "体积分数",
+  "raw": "[\n  {\"head\": \"体积分数\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"23.5%\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"体积分数\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"0.5%\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"体积分数\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"0.2%\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"体积分数\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"19.5%～21%\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"体积分数\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"19.5%~21%\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "体积分数",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "23.5%",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "体积分数",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "0.5%",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "体积分数",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "0.2%",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "体积分数",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "19.5%～21%",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "体积分数",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "19.5%~21%",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

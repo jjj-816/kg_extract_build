@@ -1,0 +1,27 @@
+{
+  "entity": "自喷",
+  "raw": "[\n  {\"head\": \"自喷\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"油管输送射孔\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"自喷\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"装好采油(气)树\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"自喷\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"关闭井控装置\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "自喷",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "油管输送射孔",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "自喷",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "装好采油(气)树",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "自喷",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "关闭井控装置",
+      "tail_type": "控制措施"
+    }
+  ]
+}

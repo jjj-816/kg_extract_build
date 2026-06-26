@@ -1,0 +1,13 @@
+{
+  "entity": "天然气测试产量",
+  "raw": "[\n  {\"head\": \"天然气测试产量\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"$100 \\\\times 10^{4} \\\\, m^{3}/d$\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "天然气测试产量",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "$100 \\times 10^{4} \\, m^{3}/d$",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

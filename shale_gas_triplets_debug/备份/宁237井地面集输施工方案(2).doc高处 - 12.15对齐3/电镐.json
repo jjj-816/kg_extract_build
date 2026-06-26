@@ -1,0 +1,27 @@
+{
+  "entity": "电镐",
+  "raw": "[\n  {\"head\": \"电镐\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"切割打磨\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"电镐\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"使用电镐\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"电镐\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"操作说明书\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "电镐",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "切割打磨",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "电镐",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "使用电镐",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "电镐",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "操作说明书",
+      "tail_type": "施工参数"
+    }
+  ]
+}

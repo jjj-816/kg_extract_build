@@ -1,0 +1,13 @@
+{
+  "entity": "设备/系统",
+  "raw": "[\n  {\"head\": \"设备/系统\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"工作区域\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "设备/系统",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "工作区域",
+      "tail_type": "时空信息"
+    }
+  ]
+}

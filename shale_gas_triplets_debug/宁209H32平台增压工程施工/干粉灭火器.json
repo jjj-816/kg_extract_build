@@ -1,0 +1,48 @@
+{
+  "entity": "干粉灭火器",
+  "raw": "[\n  {\"head\": \"干粉灭火器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"MFZ/ABC-8型\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"干粉灭火器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"2具以上\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"干粉灭火器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业区域内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"干粉灭火器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"足量\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"干粉灭火器\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾爆炸\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"干粉灭火器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"10\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "干粉灭火器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "MFZ/ABC-8型",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "干粉灭火器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "2具以上",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "干粉灭火器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业区域内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "干粉灭火器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "足量",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "干粉灭火器",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾爆炸",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "干粉灭火器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "10",
+      "tail_type": "施工参数"
+    }
+  ]
+}

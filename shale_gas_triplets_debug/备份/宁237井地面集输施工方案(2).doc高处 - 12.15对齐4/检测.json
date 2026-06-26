@@ -1,0 +1,62 @@
+{
+  "entity": "检测",
+  "raw": "[\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"气体检测合格\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"首次气体检测\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"连续气体检测\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"有害气体中毒\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"窒息\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"受限空间内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"作业区域\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "气体检测仪",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "气体检测合格",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "首次气体检测",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "连续气体检测",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "有害气体中毒",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "窒息",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "受限空间内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "作业区域",
+      "tail_type": "时空信息"
+    }
+  ]
+}

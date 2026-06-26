@@ -1,0 +1,20 @@
+{
+  "entity": "正式运行的电源",
+  "raw": "[\n  {\"head\": \"正式运行的电源\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"危险电压带电体\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"正式运行的电源\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业活动范围\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "正式运行的电源",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "危险电压带电体",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "正式运行的电源",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业活动范围",
+      "tail_type": "时空信息"
+    }
+  ]
+}

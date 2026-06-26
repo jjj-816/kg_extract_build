@@ -1,0 +1,48 @@
+{
+  "entity": "预热",
+  "raw": "[\n  {\"head\": \"预热\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"厚壁管或高强度钢、碳当量较高的钢材\", \"tail_type\": \"未分类\"},\n  {\"head\": \"预热\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"焊前预热至关重要\", \"tail_type\": \"未分类\"},\n  {\"head\": \"预热\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"降低焊接接头的冷却速度\", \"tail_type\": \"未分类\"},\n  {\"head\": \"预热\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"防止产生冷裂纹\", \"tail_type\": \"未分类\"},\n  {\"head\": \"预热\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"改善焊缝金属和热影响区的显微组织\", \"tail_type\": \"未分类\"},\n  {\"head\": \"预热\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高温烫伤\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "预热",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "厚壁管或高强度钢、碳当量较高的钢材",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "预热",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "焊前预热至关重要",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "预热",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "降低焊接接头的冷却速度",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "预热",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "防止产生冷裂纹",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "预热",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "改善焊缝金属和热影响区的显微组织",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "预热",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高温烫伤",
+      "tail_type": "风险事件"
+    }
+  ]
+}

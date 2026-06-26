@@ -1,0 +1,13 @@
+{
+  "entity": "违约查处",
+  "raw": "[\n  {\"head\": \"违约查处\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"相关安全风险\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "违约查处",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "相关安全风险",
+      "tail_type": "未分类"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "entity": "角磨机",
+  "raw": "[\n  {\"head\": \"角磨机\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防护眼镜\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"角磨机\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"劳保手套\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": []
+}

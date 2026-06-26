@@ -1,0 +1,55 @@
+{
+  "entity": "作业风险",
+  "raw": "[\n  {\"head\": \"作业风险\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"控制措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业风险\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"安全技术交底\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业风险\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"应急措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业风险\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"工艺\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业风险\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"设备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业风险\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"个人防护\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业风险\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"风险作业方案控制措施检查确认表\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "作业风险",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "控制措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业风险",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "安全技术交底",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业风险",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "应急措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业风险",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "工艺",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业风险",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "设备",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业风险",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "个人防护",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业风险",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "风险作业方案控制措施检查确认表",
+      "tail_type": "施工记录"
+    }
+  ]
+}

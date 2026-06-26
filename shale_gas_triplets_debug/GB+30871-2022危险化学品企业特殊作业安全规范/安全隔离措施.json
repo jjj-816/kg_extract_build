@@ -1,0 +1,13 @@
+{
+  "entity": "安全隔离措施",
+  "raw": "[\n  {\"head\": \"安全隔离措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"安全作业票\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "安全隔离措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "安全作业票",
+      "tail_type": "施工记录"
+    }
+  ]
+}

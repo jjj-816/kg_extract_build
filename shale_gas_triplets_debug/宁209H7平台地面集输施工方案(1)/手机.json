@@ -1,0 +1,27 @@
+{
+  "entity": "手机",
+  "raw": "[\n  {\"head\": \"手机\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"关闭\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"手机\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"关闭\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"手机\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"说清下列信息\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "手机",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "关闭",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "手机",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "关闭",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "手机",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "说清下列信息",
+      "tail_type": "作业活动"
+    }
+  ]
+}

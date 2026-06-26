@@ -1,0 +1,55 @@
+{
+  "entity": "作业活动",
+  "raw": "[\n  {\"head\": \"作业活动\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"钻井作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业活动\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"录井作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业活动\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"取心作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业活动\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"钻进作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业活动\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"固井作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业活动\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"测井作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业活动\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"危险源\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "作业活动",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "钻井作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业活动",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "录井作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业活动",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "取心作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业活动",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "钻进作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业活动",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "固井作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业活动",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "测井作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业活动",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "危险源",
+      "tail_type": "风险事件"
+    }
+  ]
+}

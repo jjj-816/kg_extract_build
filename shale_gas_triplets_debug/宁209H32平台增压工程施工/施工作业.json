@@ -1,0 +1,83 @@
+{
+  "entity": "施工作业",
+  "raw": "[\n  {\"head\": \"施工作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业方案及预案审批单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"动土作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"气体检测合格\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"施工作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"作业区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"施工作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"施工作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"粉尘、气体中毒\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"施工作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"粉尘、气体中毒\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"施工作业\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"施工现场\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "施工作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业方案及预案审批单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "施工作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "施工作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "动土作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "气体检测合格",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "施工作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "作业区域",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "施工作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "气体检测仪",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "施工作业",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "粉尘、气体中毒",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "施工作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "粉尘、气体中毒",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "施工作业",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "施工作业",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "施工现场",
+      "tail_type": "时空信息"
+    }
+  ]
+}

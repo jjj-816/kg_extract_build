@@ -1,0 +1,41 @@
+{
+  "entity": "电器元件",
+  "raw": "[\n  {\"head\": \"电器元件\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"国家相关产品标准\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电器元件\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业现场环境要求\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电器元件\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"临时用电设备和线路\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电器元件\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业设备\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"电器元件\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"需要检修的设备\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "电器元件",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "国家相关产品标准",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电器元件",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业现场环境要求",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电器元件",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "临时用电设备和线路",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电器元件",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业设备",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "电器元件",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "需要检修的设备",
+      "tail_type": "时空信息"
+    }
+  ]
+}

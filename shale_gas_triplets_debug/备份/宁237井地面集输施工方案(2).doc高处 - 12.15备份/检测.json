@@ -1,0 +1,20 @@
+{
+  "entity": "检测",
+  "raw": "```json\n[\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"气体检测人员连续监测\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"检测\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"气体检测仪\", \"tail_type\": \"设备工具\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "气体检测人员连续监测",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "检测",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "气体检测仪",
+      "tail_type": "设备工具"
+    }
+  ]
+}

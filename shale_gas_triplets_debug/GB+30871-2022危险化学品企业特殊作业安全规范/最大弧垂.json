@@ -1,0 +1,20 @@
+{
+  "entity": "最大弧垂",
+  "raw": "[\n  {\"head\": \"最大弧垂\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"2.5 m\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"最大弧垂\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"5 m\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "最大弧垂",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "2.5 m",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "最大弧垂",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "5 m",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "entity": "应急演练",
+  "raw": "[\n  {\"head\": \"应急演练\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"防喷演习\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"应急演练\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"应急处置程序\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"应急演练\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"人员培训\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"应急演练\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"现场作业的安全措施及应急响应程序\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "应急演练",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "防喷演习",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "应急演练",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "应急处置程序",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "应急演练",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "人员培训",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "应急演练",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "现场作业的安全措施及应急响应程序",
+      "tail_type": "作业活动"
+    }
+  ]
+}

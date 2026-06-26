@@ -1,0 +1,48 @@
+{
+  "entity": "应急所需的设备",
+  "raw": "[\n  {\"head\": \"应急所需的设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"配电箱、发电机可靠接地\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"应急所需的设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"配电箱漏电保护装置灵敏可靠\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"应急所需的设备\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"应急所需的设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"正确使用工器具、按规定穿戴劳保用品\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"应急所需的设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"施工人员佩戴好防护眼镜\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"应急所需的设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"登高携带的工具、物料需装入工具袋\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "应急所需的设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "配电箱、发电机可靠接地",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "应急所需的设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "配电箱漏电保护装置灵敏可靠",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "应急所需的设备",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "应急所需的设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "正确使用工器具、按规定穿戴劳保用品",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "应急所需的设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "施工人员佩戴好防护眼镜",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "应急所需的设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "登高携带的工具、物料需装入工具袋",
+      "tail_type": "施工参数"
+    }
+  ]
+}

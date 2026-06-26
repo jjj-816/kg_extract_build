@@ -1,0 +1,27 @@
+{
+  "entity": "编制",
+  "raw": "[\n  {\"head\": \"编制\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"4.9\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"编制\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"4.16\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"编制\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"5.1.2\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "编制",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "4.9",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "编制",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "4.16",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "编制",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "5.1.2",
+      "tail_type": "施工记录"
+    }
+  ]
+}

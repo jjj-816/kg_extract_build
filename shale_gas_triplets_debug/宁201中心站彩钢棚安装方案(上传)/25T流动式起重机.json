@@ -1,0 +1,20 @@
+{
+  "entity": "25T流动式起重机",
+  "raw": "[\n  {\"head\": \"25T流动式起重机\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业半径5米时，起重量≤17吨\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"25T流动式起重机\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"本次吊装货物最重≤1吨\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "25T流动式起重机",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业半径5米时，起重量≤17吨",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "25T流动式起重机",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "本次吊装货物最重≤1吨",
+      "tail_type": "施工参数"
+    }
+  ]
+}

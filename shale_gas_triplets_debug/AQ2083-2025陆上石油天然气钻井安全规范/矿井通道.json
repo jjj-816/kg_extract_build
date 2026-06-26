@@ -1,0 +1,13 @@
+{
+  "entity": "矿井通道",
+  "raw": "[\n  {\"head\": \"矿井通道\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"地下矿产采掘区\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "矿井通道",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "地下矿产采掘区",
+      "tail_type": "时空信息"
+    }
+  ]
+}

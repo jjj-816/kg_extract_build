@@ -1,0 +1,27 @@
+{
+  "entity": "接零",
+  "raw": "[\n  {\"head\": \"接零\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"漏电保护\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"接零\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"一机一闸一保护\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"接零\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"用电管理规定要求\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "接零",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "漏电保护",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "接零",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "一机一闸一保护",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "接零",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "用电管理规定要求",
+      "tail_type": "未分类"
+    }
+  ]
+}

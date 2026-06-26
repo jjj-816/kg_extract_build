@@ -1,0 +1,13 @@
+{
+  "entity": "绝缘套管",
+  "raw": "[\n  {\"head\": \"绝缘套管\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"绝缘层完整性\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "绝缘套管",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "绝缘层完整性",
+      "tail_type": "施工参数"
+    }
+  ]
+}

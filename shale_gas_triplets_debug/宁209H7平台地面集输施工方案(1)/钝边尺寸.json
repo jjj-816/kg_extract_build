@@ -1,0 +1,13 @@
+{
+  "entity": "钝边尺寸",
+  "raw": "[\n  {\"head\": \"钝边尺寸\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"坡口角度、钝边尺寸\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "钝边尺寸",
+      "head_type": "未分类",
+      "relation": "HAS_PARAMETER",
+      "tail": "坡口角度、钝边尺寸",
+      "tail_type": "施工参数"
+    }
+  ]
+}

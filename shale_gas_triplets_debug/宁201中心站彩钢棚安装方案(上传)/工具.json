@@ -1,0 +1,27 @@
+{
+  "entity": "工具",
+  "raw": "[\n  {\"head\": \"工具\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"干燥通风处\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"工具\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"损坏工具\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"工具\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"安全绳\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "工具",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "干燥通风处",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "工具",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "损坏工具",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "工具",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "安全绳",
+      "tail_type": "施工参数"
+    }
+  ]
+}

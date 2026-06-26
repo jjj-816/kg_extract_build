@@ -1,0 +1,13 @@
+{
+  "entity": "监理单位：重庆坤罡项目项目管理有限公司",
+  "raw": "[\n  {\"head\": \"监理单位：重庆坤罡项目项目管理有限公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场人员配置\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"监理单位：重庆坤罡项目项目管理有限公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "监理单位：重庆坤罡项目项目管理有限公司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场人员配置",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "entity": "试压验漏",
+  "raw": "[\n  {\"head\": \"试压验漏\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"试运行\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"试压验漏\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"氮气置换\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"试压验漏\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"设备组装 调整\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"试压验漏\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"法兰\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"试压验漏\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"接口处\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"试压验漏\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"喷壶\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"试压验漏\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"合适压力\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "试压验漏",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "试运行",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "试压验漏",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "氮气置换",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "试压验漏",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "设备组装 调整",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "试压验漏",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "法兰",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "试压验漏",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "接口处",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "试压验漏",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "喷壶",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "试压验漏",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "合适压力",
+      "tail_type": "施工参数"
+    }
+  ]
+}

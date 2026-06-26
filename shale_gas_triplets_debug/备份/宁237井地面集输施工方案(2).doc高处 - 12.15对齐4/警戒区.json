@@ -1,0 +1,13 @@
+{
+  "entity": "警戒区",
+  "raw": "[\n  {\"head\": \"警戒区\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "警戒区",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "施工记录"
+    }
+  ]
+}

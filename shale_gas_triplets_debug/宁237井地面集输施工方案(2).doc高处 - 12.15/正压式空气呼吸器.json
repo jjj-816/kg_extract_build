@@ -1,0 +1,13 @@
+{
+  "entity": "正压式空气呼吸器",
+  "raw": "[\n  {\"head\": \"正压式空气呼吸器\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"救援人员伤害\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "正压式空气呼吸器",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "救援人员伤害",
+      "tail_type": "风险事件"
+    }
+  ]
+}

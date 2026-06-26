@@ -1,0 +1,13 @@
+{
+  "entity": "吊装高度",
+  "raw": "[\n  {\"head\": \"吊装高度\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高处作业\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"吊装高度\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"在距坠落基准面 2 m 及 2 m 以上有可能坠落的高处进行的作业\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "吊装高度",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高处作业",
+      "tail_type": "风险事件"
+    }
+  ]
+}

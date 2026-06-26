@@ -1,0 +1,90 @@
+{
+  "entity": "工艺技术",
+  "raw": "[\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_STAGE\", \"tail\": \"施工作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"压井液或压井液材料准备\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"起下管柱、旋转作业、起下大直径工具、钢丝作业和空井筒时的具体井控技术措施\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"井控装置安装、检维修、试压、现场服务\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"井控装置的结构、工作原理、安装、调试、试压、使用、维护保养和故障排除\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"工程设计\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"4.14\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"10.3\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"压井作业应有施工方案，并进行技术交底\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"OPERATES_ON\", \"tail\": \"井控装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"USES_MATERIAL\", \"tail\": \"压井液\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"USES_MATERIAL\", \"tail\": \"压井液材料\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"井控装置配备与安装示意图\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"井控装置调试与试压方式\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "HAS_STAGE",
+      "tail": "施工作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "压井液或压井液材料准备",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "井控装置安装、检维修、试压、现场服务",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "工程设计",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "4.14",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "10.3",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "压井作业应有施工方案，并进行技术交底",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "OPERATES_ON",
+      "tail": "井控装置",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "USES_MATERIAL",
+      "tail": "压井液",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "USES_MATERIAL",
+      "tail": "压井液材料",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "井控装置配备与安装示意图",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "井控装置调试与试压方式",
+      "tail_type": "设备工具"
+    }
+  ]
+}

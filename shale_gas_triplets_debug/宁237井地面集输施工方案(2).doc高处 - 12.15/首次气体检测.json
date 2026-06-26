@@ -1,0 +1,48 @@
+{
+  "entity": "首次气体检测",
+  "raw": "[\n  {\"head\": \"首次气体检测\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"气体检测合格\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"首次气体检测\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"连续气体检测\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"首次气体检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"气体检测人员连续监测\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"首次气体检测\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"首次气体检测\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"作业前对作业区域进行气体检测\", \"tail_type\": \"未分类\"},\n  {\"head\": \"首次气体检测\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"进入受限空间作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "首次气体检测",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "气体检测合格",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "首次气体检测",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "连续气体检测",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "首次气体检测",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "气体检测人员连续监测",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "首次气体检测",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "气体检测仪",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "首次气体检测",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "作业前对作业区域进行气体检测",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "首次气体检测",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "进入受限空间作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

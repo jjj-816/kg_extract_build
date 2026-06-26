@@ -1,0 +1,13 @@
+{
+  "entity": "事故现场",
+  "raw": "[\n  {\"head\": \"事故现场\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"井站内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"事故现场\", \"head_type\": \"环保对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"应急记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"事故现场\", \"head_type\": \"环保对象\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"操作人员\", \"tail_type\": \"责任主体\"}\n]",
+  "triplets": [
+    {
+      "head": "事故现场",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "井站内",
+      "tail_type": "时空信息"
+    }
+  ]
+}

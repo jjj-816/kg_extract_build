@@ -1,0 +1,27 @@
+{
+  "entity": "设备设施",
+  "raw": "[\n  {\"head\": \"设备设施\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设备设施\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"完好合格\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"设备设施\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"宁209H7平台地面集输工程\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "设备设施",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设备设施",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "完好合格",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "设备设施",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "宁209H7平台地面集输工程",
+      "tail_type": "时空信息"
+    }
+  ]
+}

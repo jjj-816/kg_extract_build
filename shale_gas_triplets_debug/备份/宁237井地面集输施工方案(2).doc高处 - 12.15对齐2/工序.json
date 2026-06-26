@@ -1,0 +1,48 @@
+{
+  "entity": "工序",
+  "raw": "[\n  {\"head\": \"工序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"工作内容\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工序\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"作业场所\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"工序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工序\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"数量\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"工序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"备注\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "工序",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "工作内容",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "工序",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "作业场所",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "工序",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "工序",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "工序",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "数量",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "工序",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "备注",
+      "tail_type": "施工参数"
+    }
+  ]
+}

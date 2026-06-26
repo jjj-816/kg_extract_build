@@ -1,0 +1,13 @@
+{
+  "entity": "准入证",
+  "raw": "[\n  {\"head\": \"准入证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"入场施工作业\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "准入证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "入场施工作业",
+      "tail_type": "未分类"
+    }
+  ]
+}

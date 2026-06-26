@@ -1,0 +1,13 @@
+{
+  "entity": "高压伤人",
+  "raw": "[\n  {\"head\": \"高压伤人\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"高压伤人风险控制措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "高压伤人",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "高压伤人风险控制措施",
+      "tail_type": "控制措施"
+    }
+  ]
+}

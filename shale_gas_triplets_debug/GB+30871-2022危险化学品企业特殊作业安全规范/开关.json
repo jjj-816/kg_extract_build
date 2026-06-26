@@ -1,0 +1,279 @@
+{
+  "entity": "开关",
+  "raw": "[\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电源开关\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"断电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"电源开关处\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"漏电保护器\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"上级开关\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"保护开关\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"设备上\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"加锁\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"加挂安全警示牌\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电源开关\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"起重机械上\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"断开\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"开关上\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"断电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"加锁\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"挂安全警示标牌\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"保护开关\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"漏电保护器\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电源开关\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"受限空间内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"切断电源\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"加锁\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"悬挂“禁止合闸”标志牌\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电源开关\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"上级开关\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"断电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"加锁\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"挂安全警示标牌\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"漏电保护器\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电源开关\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"临时用电设施上\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"漏电保护器\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电源开关\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"防爆场所\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"临时电源\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"上级开关\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"断电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"加锁\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"挂安全警示标牌\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"漏电保护器\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电源开关\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"开关\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"临时用电设施上\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "电源开关",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "断电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "电源开关处",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "漏电保护器",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "上级开关",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "保护开关",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "设备上",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "加锁",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "加挂安全警示牌",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "电源开关",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "断开",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "开关上",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "断电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "加锁",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "挂安全警示标牌",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "保护开关",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "漏电保护器",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "电源开关",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "受限空间内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "切断电源",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "加锁",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "悬挂“禁止合闸”标志牌",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "电源开关",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "上级开关",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "断电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "加锁",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "挂安全警示标牌",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "漏电保护器",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "电源开关",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "漏电保护器",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "电源开关",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "防爆场所",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "临时电源",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "上级开关",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "断电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "加锁",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "挂安全警示标牌",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "漏电保护器",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "开关",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "电源开关",
+      "tail_type": "施工参数"
+    }
+  ]
+}

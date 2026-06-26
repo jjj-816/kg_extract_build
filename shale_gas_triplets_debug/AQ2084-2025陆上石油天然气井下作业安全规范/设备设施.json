@@ -1,0 +1,20 @@
+{
+  "entity": "设备设施",
+  "raw": "[\n  {\"head\": \"设备设施\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"危险源\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设备设施\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"隐患\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "设备设施",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "危险源",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设备设施",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "隐患",
+      "tail_type": "风险事件"
+    }
+  ]
+}

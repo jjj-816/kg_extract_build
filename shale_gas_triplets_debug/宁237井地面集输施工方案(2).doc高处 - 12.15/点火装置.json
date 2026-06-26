@@ -1,0 +1,13 @@
+{
+  "entity": "点火装置",
+  "raw": "[\n  {\"head\": \"点火装置\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"过口\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "点火装置",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "过口",
+      "tail_type": "时空信息"
+    }
+  ]
+}

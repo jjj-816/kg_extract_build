@@ -1,0 +1,27 @@
+{
+  "entity": "三违",
+  "raw": "[\n  {\"head\": \"三违\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"清理退场\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"三违\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"碰伤\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"三违\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"物体打击\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "三违",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "清理退场",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "三违",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "碰伤",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "三违",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "物体打击",
+      "tail_type": "控制措施"
+    }
+  ]
+}

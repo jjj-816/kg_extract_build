@@ -1,0 +1,34 @@
+{
+  "entity": "有效证件",
+  "raw": "[\n  {\"head\": \"有效证件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"项目负责人\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"有效证件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"申请人\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"有效证件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"安全监护人\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"有效证件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"特种作业人员\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "有效证件",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "项目负责人",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "有效证件",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "申请人",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "有效证件",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "安全监护人",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "有效证件",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "特种作业人员",
+      "tail_type": "作业活动"
+    }
+  ]
+}

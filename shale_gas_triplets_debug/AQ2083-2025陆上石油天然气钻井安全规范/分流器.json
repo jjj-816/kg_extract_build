@@ -1,0 +1,20 @@
+{
+  "entity": "分流器",
+  "raw": "[\n  {\"head\": \"分流器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"四通两翼\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"分流器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"至少安装一个阀门\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "分流器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "四通两翼",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "分流器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "至少安装一个阀门",
+      "tail_type": "施工参数"
+    }
+  ]
+}

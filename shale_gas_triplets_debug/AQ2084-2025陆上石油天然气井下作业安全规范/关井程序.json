@@ -1,0 +1,265 @@
+{
+  "entity": "关井程序",
+  "raw": "[\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"压井施工\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"复杂井控问题的处理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"应急处置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"溢流和井喷发生原因及溢流的及时发现\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"地层压力预测和监测\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"中途停止施工，井内无管柱时应关闭全封防喷器并手动锁紧\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"下施工管柱前，应在管\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"阀门应挂牌标明开关状态\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"根据施工井关井后情况，采取节流放喷或压井措施，直到溢流处理结束\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"井内有管柱时，应关闭安全半封防喷器，手动锁紧，关闭固定卡瓦或游动卡瓦，安装并关闭管柱旋塞阀\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"替喷作业应注意井口压力变化和出口情况，如发现压力快速上升、出口排液增强、点火口火势变大，应控制回压或在安全范围内关放喷流程，起出连续油管\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"放喷、测试过程中井口装置、测试流程和液气出口发生刺、漏应立即关井处置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"装有环形防喷器时，溢流关井应先关闭环形防喷器，后关闭闸板防喷器\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"全封防喷器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"安全半封防喷器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"固定卡瓦\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"游动卡瓦\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"管柱旋塞阀\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"环形防喷器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"闸板防喷器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"井口装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"测试流程\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"液气出口\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"连续油管\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"施工井\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"井内\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"管柱\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"关井后情况\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"井口压力变化\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"出口情况\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压力快速上升\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"出口排液增强\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"点火口火势变大\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"回压\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"安全范围\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"刺、漏\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井喷失控\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井喷\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"溢流\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"刺、漏\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"11 井喷失控处置\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"6.3.3.1 阀门应挂牌标明开关状态\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"7.10.7 替喷作业应注意井口压力变化和出口情况，如发现压力快速上升、出口排液增强、点火口火势变大，应控制回压或在安全范围内关放喷流程，起出连续油管\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"7.7.3 放喷、测试过程中井口装置、测试流程和液气出口发生刺、漏应立即关井处置\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"关井程序\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"6.3.1.8 装有环形防喷器时，溢流关井应先关闭环形防喷器，后关闭闸板防喷器\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "压井施工",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "复杂井控问题的处理",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "应急处置",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "溢流和井喷发生原因及溢流的及时发现",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "地层压力预测和监测",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "中途停止施工，井内无管柱时应关闭全封防喷器并手动锁紧",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "下施工管柱前，应在管",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "阀门应挂牌标明开关状态",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "全封防喷器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "安全半封防喷器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "固定卡瓦",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "游动卡瓦",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "管柱旋塞阀",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "环形防喷器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "闸板防喷器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "井口装置",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "测试流程",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "液气出口",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "连续油管",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "施工井",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "井内",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "管柱",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "关井后情况",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "井口压力变化",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "出口情况",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "压力快速上升",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "出口排液增强",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "点火口火势变大",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "回压",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "安全范围",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "刺、漏",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井喷失控",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井喷",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "溢流",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "刺、漏",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "11 井喷失控处置",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "关井程序",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "6.3.3.1 阀门应挂牌标明开关状态",
+      "tail_type": "施工记录"
+    }
+  ]
+}

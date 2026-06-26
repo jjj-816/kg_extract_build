@@ -1,0 +1,384 @@
+{
+  "entity": "有毒有害气体",
+  "raw": "[\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"清理或封盖等防护措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"采取有效的防范措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"连续检测气体浓度\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"不应安排涂刷油漆、涂料等其他可能产生有毒有害、可燃物质的作业活动\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"执行受限空间作业相关规定\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"气体分析\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"取样分析时间\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"分析部位\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"分析人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业实施时间\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"安全措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"确认人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"安全交底人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"接受交底人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业负责人意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"所在单位意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"完工验收签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"受限空间\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"生产装置区\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"罐区\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"埋设的易燃易爆、有毒有害介质管线\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"窨井\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"挖掘深度超过 1.2 m\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"作业现场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"受限空间出入口四周\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"加盲板隔离\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"落实盲板责任人\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"设备已经过置换、吹扫或蒸煮\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"打开进行自然通风\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"采用强制通风\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"佩戴隔绝式呼吸防护装备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"切断电源\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"加锁并悬挂“禁止合闸”标志牌\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"具备进人作业条件\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"未采用非防爆工具\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"手持电动工具符合作业安全要求\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"进出口通道畅通\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"无阻碍人员进出的障碍物\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"分析其中的可燃、有毒有害气体和氧气含量\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"停止扬尘\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"配备移动式可燃、有毒气体、氧气检测仪\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"佩戴必要的个体防护装备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"配备作业应急设施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"配备通信设备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"设立警戒区\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"办理相应安全作业票\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"配置移动式气体检测报警仪\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"2 h记录1次\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"立即停止作业、撤离人员、对现场进行处理\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"重新检测合格后方可恢复作业\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"不应采用直接通入氧气或富氧空气的方法补充氧\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"未采用水封或关闭阀门代替盲板\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"温度适宜人员作业\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"清楚受限空间内存在的危险因素\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"配备消防器材\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"配备救生绳\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"配备气防装备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"配备应急用冲洗水\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"编制人\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"符合 GB 15322.3 和 GB/T 50493—2019 中 5.2 的要求\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"有毒有害气体\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"存在有毒气体或空气中含氧量低于 19.5%（体积分数）的作业环境\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "清理或封盖等防护措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "采取有效的防范措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "连续检测气体浓度",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "执行受限空间作业相关规定",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "气体分析",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "取样分析时间",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "分析部位",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "分析人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "作业实施时间",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "安全措施",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "确认人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "安全交底人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "接受交底人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "作业负责人意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "所在单位意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "完工验收签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "受限空间",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "生产装置区",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "罐区",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "埋设的易燃易爆、有毒有害介质管线",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "窨井",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "挖掘深度超过 1.2 m",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "作业现场",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "受限空间出入口四周",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "加盲板隔离",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "落实盲板责任人",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "设备已经过置换、吹扫或蒸煮",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "打开进行自然通风",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "采用强制通风",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "佩戴隔绝式呼吸防护装备",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "切断电源",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "加锁并悬挂“禁止合闸”标志牌",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "具备进人作业条件",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "未采用非防爆工具",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "手持电动工具符合作业安全要求",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "进出口通道畅通",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "无阻碍人员进出的障碍物",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "分析其中的可燃、有毒有害气体和氧气含量",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "停止扬尘",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "佩戴必要的个体防护装备",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "配备作业应急设施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "配备通信设备",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "设立警戒区",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "办理相应安全作业票",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "配置移动式气体检测报警仪",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "2 h记录1次",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "立即停止作业、撤离人员、对现场进行处理",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "重新检测合格后方可恢复作业",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "不应采用直接通入氧气或富氧空气的方法补充氧",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "未采用水封或关闭阀门代替盲板",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "温度适宜人员作业",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "清楚受限空间内存在的危险因素",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "配备应急用冲洗水",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "有毒有害气体",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "编制人",
+      "tail_type": "控制措施"
+    }
+  ]
+}

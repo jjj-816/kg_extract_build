@@ -1,0 +1,48 @@
+{
+  "entity": "特级动火",
+  "raw": "[\n  {\"head\": \"特级动火\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"特级动火\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"全过程作业影像\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"特级动火\", \"head_type\": \"施工阶段\", \"relation\": \"PRECEDES\", \"tail\": \"一级动火\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"特级动火\", \"head_type\": \"施工阶段\", \"relation\": \"PRECEDES\", \"tail\": \"二级动火\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"特级动火\", \"head_type\": \"施工阶段\", \"relation\": \"OCCURS_AT\", \"tail\": \"火灾爆炸危险场所\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"特级动火\", \"head_type\": \"施工阶段\", \"relation\": \"OCCURS_AT\", \"tail\": \"重大危险源罐区防火堤内\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "特级动火",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "特级动火",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "全过程作业影像",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "特级动火",
+      "head_type": "施工阶段",
+      "relation": "PRECEDES",
+      "tail": "一级动火",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "特级动火",
+      "head_type": "施工阶段",
+      "relation": "PRECEDES",
+      "tail": "二级动火",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "特级动火",
+      "head_type": "施工阶段",
+      "relation": "OCCURS_AT",
+      "tail": "火灾爆炸危险场所",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "特级动火",
+      "head_type": "施工阶段",
+      "relation": "OCCURS_AT",
+      "tail": "重大危险源罐区防火堤内",
+      "tail_type": "时空信息"
+    }
+  ]
+}

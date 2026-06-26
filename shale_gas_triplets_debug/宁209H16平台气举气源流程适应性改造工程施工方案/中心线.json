@@ -1,0 +1,13 @@
+{
+  "entity": "中心线",
+  "raw": "[\n  {\"head\": \"中心线\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"设备定位精度\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "中心线",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "设备定位精度",
+      "tail_type": "施工记录"
+    }
+  ]
+}

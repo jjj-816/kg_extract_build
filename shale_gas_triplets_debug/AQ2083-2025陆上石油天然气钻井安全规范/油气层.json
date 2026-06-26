@@ -1,0 +1,111 @@
+{
+  "entity": "油气层",
+  "raw": "[\n  {\"head\": \"油气层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"钻开油气层前的准备与检查验收\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"油气层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"油气层施工作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"油气层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"钻开油气层的申报、审批\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油气层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"地层孔隙压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"油气层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"地层破裂压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"油气层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"岩性剖面\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"油气层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"三高油气井\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"油气层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"探井\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"油气层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"重点井监督制度\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"油气层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"加重钻井液\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"油气层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"加重材料\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"油气层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"除硫剂\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"油气层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"钻具止回阀\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"油气层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"方钻杆旋塞阀\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"油气层\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"顶驱旋塞阀\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "油气层",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "钻开油气层前的准备与检查验收",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "油气层",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "油气层施工作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "油气层",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "钻开油气层的申报、审批",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "油气层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "地层孔隙压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "油气层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "地层破裂压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "油气层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "岩性剖面",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "油气层",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "三高油气井",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "油气层",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "探井",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "油气层",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "重点井监督制度",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "油气层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "加重钻井液",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "油气层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "加重材料",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "油气层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "除硫剂",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "油气层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "钻具止回阀",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "油气层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "方钻杆旋塞阀",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "油气层",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "顶驱旋塞阀",
+      "tail_type": "施工参数"
+    }
+  ]
+}

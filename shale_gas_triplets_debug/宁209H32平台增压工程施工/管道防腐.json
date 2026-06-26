@@ -1,0 +1,55 @@
+{
+  "entity": "管道防腐",
+  "raw": "[\n  {\"head\": \"管道防腐\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"管墩制作\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管道防腐\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"建渣清理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管道防腐\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"粉尘、气体中毒\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"管道防腐\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"正确穿戴劳保用品\", \"tail_type\": \"未分类\"},\n  {\"head\": \"管道防腐\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"遵守相关要求\", \"tail_type\": \"未分类\"},\n  {\"head\": \"管道防腐\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"专人监护下进行施工作业\", \"tail_type\": \"未分类\"},\n  {\"head\": \"管道防腐\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"佩戴防护口罩\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "管道防腐",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "管墩制作",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管道防腐",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "建渣清理",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管道防腐",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "粉尘、气体中毒",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "管道防腐",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "正确穿戴劳保用品",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "管道防腐",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "遵守相关要求",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "管道防腐",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "专人监护下进行施工作业",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "管道防腐",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "佩戴防护口罩",
+      "tail_type": "未分类"
+    }
+  ]
+}

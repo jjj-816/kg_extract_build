@@ -1,0 +1,13 @@
+{
+  "entity": "工程名称",
+  "raw": "[\n  {\"head\": \"工程名称\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"宁209H7平台地面集输施工\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "工程名称",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "宁209H7平台地面集输施工",
+      "tail_type": "施工对象"
+    }
+  ]
+}

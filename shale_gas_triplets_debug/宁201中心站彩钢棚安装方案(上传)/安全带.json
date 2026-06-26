@@ -1,0 +1,27 @@
+{
+  "entity": "安全带",
+  "raw": "[\n  {\"head\": \"安全带\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"全身式\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全带\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"挂在临时构件或易碎部位\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全带\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"独立安全绳或牢固的钢结构\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "安全带",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "全身式",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全带",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "挂在临时构件或易碎部位",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "安全带",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "独立安全绳或牢固的钢结构",
+      "tail_type": "时空信息"
+    }
+  ]
+}

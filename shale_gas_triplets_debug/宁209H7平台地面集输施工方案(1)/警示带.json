@@ -1,0 +1,20 @@
+{
+  "entity": "警示带",
+  "raw": "[\n  {\"head\": \"警示带\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业区域\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"警示带\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"现场\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "警示带",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业区域",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "警示带",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "现场",
+      "tail_type": "时空信息"
+    }
+  ]
+}

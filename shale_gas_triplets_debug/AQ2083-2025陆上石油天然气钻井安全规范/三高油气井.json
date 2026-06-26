@@ -1,0 +1,41 @@
+{
+  "entity": "三高油气井",
+  "raw": "[\n  {\"head\": \"三高油气井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"最后一层技术套管固井后直至完井、原钻机试油的全过程\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"三高油气井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"剪切闸板防喷器\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"三高油气井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"标准套管头\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"三高油气井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"监督驻井或巡井\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"三高油气井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"含硫化氢等有毒有害气体层位、埋藏深度及含量\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "三高油气井",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "最后一层技术套管固井后直至完井、原钻机试油的全过程",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "三高油气井",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "剪切闸板防喷器",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "三高油气井",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "标准套管头",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "三高油气井",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "监督驻井或巡井",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "三高油气井",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "含硫化氢等有毒有害气体层位、埋藏深度及含量",
+      "tail_type": "施工参数"
+    }
+  ]
+}

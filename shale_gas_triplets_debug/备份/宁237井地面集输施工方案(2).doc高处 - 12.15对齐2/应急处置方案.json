@@ -1,0 +1,27 @@
+{
+  "entity": "应急处置方案",
+  "raw": "[\n  {\"head\": \"应急处置方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"坠落、中暑等突发情况的应急方案\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"应急处置方案\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"施工作业现场应急通道\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"应急处置方案\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"预先确定的逃生路线\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "应急处置方案",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "坠落、中暑等突发情况的应急方案",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "应急处置方案",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "施工作业现场应急通道",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "应急处置方案",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "预先确定的逃生路线",
+      "tail_type": "时空信息"
+    }
+  ]
+}

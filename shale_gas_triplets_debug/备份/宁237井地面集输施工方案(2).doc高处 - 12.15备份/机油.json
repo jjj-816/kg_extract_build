@@ -1,0 +1,5 @@
+{
+  "entity": "机油",
+  "raw": "[\n  {\"head\": \"机油\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": []
+}

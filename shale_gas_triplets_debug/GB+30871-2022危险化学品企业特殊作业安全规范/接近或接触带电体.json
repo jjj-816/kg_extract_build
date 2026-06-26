@@ -1,0 +1,20 @@
+{
+  "entity": "接近或接触带电体",
+  "raw": "[\n  {\"head\": \"接近或接触带电体\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"带电高处作业\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"接近或接触带电体\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"作业活动范围与危险电压带电体距离小于表 1 的规定\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "接近或接触带电体",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "带电高处作业",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "接近或接触带电体",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "作业活动范围与危险电压带电体距离小于表 1 的规定",
+      "tail_type": "时空信息"
+    }
+  ]
+}

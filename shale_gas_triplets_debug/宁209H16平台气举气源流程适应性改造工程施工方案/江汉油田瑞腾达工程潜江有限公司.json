@@ -1,0 +1,13 @@
+{
+  "entity": "江汉油田瑞腾达工程潜江有限公司",
+  "raw": "[\n  {\"head\": \"江汉油田瑞腾达工程潜江有限公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"宁209H16平台\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"江汉油田瑞腾达工程潜江有限公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"付道彬\", \"tail_type\": \"未分类\"},\n  {\"head\": \"江汉油田瑞腾达工程潜江有限公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"杨明利\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "江汉油田瑞腾达工程潜江有限公司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "宁209H16平台",
+      "tail_type": "作业活动"
+    }
+  ]
+}

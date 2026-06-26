@@ -1,0 +1,41 @@
+{
+  "entity": "工具",
+  "raw": "[\n  {\"head\": \"工具\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"主要设备及材料工具\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"工具\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"辅助交通工具\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"工具\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"不乱抛工具用具\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"工具\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"台\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"工具\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"1\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "工具",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "主要设备及材料工具",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "工具",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "辅助交通工具",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "工具",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "不乱抛工具用具",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "工具",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "台",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "工具",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "1",
+      "tail_type": "施工参数"
+    }
+  ]
+}

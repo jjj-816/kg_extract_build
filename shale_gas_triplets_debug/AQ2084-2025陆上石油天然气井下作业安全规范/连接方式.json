@@ -1,0 +1,13 @@
+{
+  "entity": "连接方式",
+  "raw": "[\n  {\"head\": \"连接方式\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"分离器\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "连接方式",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "分离器",
+      "tail_type": "施工对象"
+    }
+  ]
+}

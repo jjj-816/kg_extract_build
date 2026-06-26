@@ -1,0 +1,13 @@
+{
+  "entity": "井口",
+  "raw": "[\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"距高压线及其他永久性设施不小于 75 m\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"距民宅不小于 100 m\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"距铁路及高速公路不小于 200 m\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"距学校、医院、油库、人口密集及高危场所等不小于 500 m\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"油气井之间的井口中心间距不小于 2 m\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"高压油气井、高含硫油气井井口距其他井井口之间的距离大于钻进本井所用钻机的钻台长度, 且不小于 8 m\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"对区域探井及高含硫油气井周围 5000 m 范围内的居民住宅、学校、公路、铁路和厂矿等进行勘测\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"探井周围 3000 m 范围内的居民住宅、学校、公路、铁路和厂矿等进行勘测\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"在地下矿产采掘区钻井，地质设计中应标明采掘矿井井口位置及坑道的分布、走向、长度和离地表深度\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"剪切闸板防喷器的压力等级、通径应不小于与其配套的井口装置的压力等级和通径\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防喷管线、节流管汇及压井管汇的压力等级应不低于设计井口防喷器压力等级\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "井口",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "油气井之间的井口中心间距不小于 2 m",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "entity": "管线支撑安装",
+  "raw": "[\n  {\"head\": \"管线支撑安装\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"管线防腐喷\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管线支撑安装\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"管线\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管线支撑安装\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"设备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"管线支撑安装\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"支撑焊接安装\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "管线支撑安装",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "管线防腐喷",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管线支撑安装",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "管线",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管线支撑安装",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "设备",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "管线支撑安装",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "支撑焊接安装",
+      "tail_type": "作业活动"
+    }
+  ]
+}

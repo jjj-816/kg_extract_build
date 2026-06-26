@@ -1,0 +1,5 @@
+{
+  "entity": "门板",
+  "raw": "[\n  {\"head\": \"门板\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防喷器\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": []
+}

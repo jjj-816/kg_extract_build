@@ -1,0 +1,146 @@
+{
+  "entity": "人员",
+  "raw": "[\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"井口防腐\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"临边/洞口防护\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全带高挂低用\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"操作平台稳固性\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"防范阵风、雨雪等突发天气引发的坠落风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"作业人员的安全技术交底\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"岗前体检\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"划定安全隔离区\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"设置警戒标识\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"明确各工序作业时间窗口\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"防止上方落物\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"防止下方人员误入危险区域\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"全程规范使用双钩安全带\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"防滑鞋\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"设置警戒区\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"禁止无关人员进入\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"确保应急通道畅通\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工人员不清楚作业内容导致误操作\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"确认现场作业相关人员\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全交底不清楚导致作业人员不清楚应急措施、作业风险内容\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"向属地人员、作业人员、安全监护等全体人员明确作业内容\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"向属地人员、作业人员、安全监护等全体人员明确涉及风险作业\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"向属地人员、作业人员、安全监护等全体人员明确应急处置措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "井口防腐",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "临边/洞口防护",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全带高挂低用",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "操作平台稳固性",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "防范阵风、雨雪等突发天气引发的坠落风险",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "作业人员的安全技术交底",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "岗前体检",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "划定安全隔离区",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "设置警戒标识",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "明确各工序作业时间窗口",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "防止上方落物",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "全程规范使用双钩安全带",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "防滑鞋",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "设置警戒区",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "禁止无关人员进入",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "确保应急通道畅通",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工人员不清楚作业内容导致误操作",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "确认现场作业相关人员",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全交底不清楚导致作业人员不清楚应急措施、作业风险内容",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "向属地人员、作业人员、安全监护等全体人员明确作业内容",
+      "tail_type": "控制措施"
+    }
+  ]
+}

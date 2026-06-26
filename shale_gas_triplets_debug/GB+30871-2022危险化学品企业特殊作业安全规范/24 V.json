@@ -1,0 +1,5 @@
+{
+  "entity": "24 V",
+  "raw": "[\n  {\"head\": \"24 V\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"现场夜间有充足照明:A.36 V、24 V、12 V 防水型灯;B.36 V、24 V、12 V 防爆型灯\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": []
+}

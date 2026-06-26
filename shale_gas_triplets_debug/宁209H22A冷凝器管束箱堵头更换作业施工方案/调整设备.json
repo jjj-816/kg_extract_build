@@ -1,0 +1,13 @@
+{
+  "entity": "调整设备",
+  "raw": "[\n  {\"head\": \"调整设备\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"附录D：设备装置评估表（工器具确认表）\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "调整设备",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "附录D：设备装置评估表（工器具确认表）",
+      "tail_type": "施工记录"
+    }
+  ]
+}

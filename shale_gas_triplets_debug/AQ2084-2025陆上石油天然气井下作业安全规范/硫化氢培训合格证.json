@@ -1,0 +1,13 @@
+{
+  "entity": "硫化氢培训合格证",
+  "raw": "[\n  {\"head\": \"硫化氢培训合格证\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"硫化氢防护技术培训\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"硫化氢培训合格证\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"持证上岗\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"硫化氢培训合格证\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"9.1\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"硫化氢培训合格证\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"9\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"硫化氢培训合格证\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"6.1.7.2\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "硫化氢培训合格证",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "硫化氢防护技术培训",
+      "tail_type": "作业活动"
+    }
+  ]
+}

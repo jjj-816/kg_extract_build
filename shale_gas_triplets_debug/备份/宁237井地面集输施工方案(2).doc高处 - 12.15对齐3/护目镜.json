@@ -1,0 +1,13 @@
+{
+  "entity": "护目镜",
+  "raw": "[\n  {\"head\": \"护目镜\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"人员眼部粉尘伤害\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "护目镜",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "人员眼部粉尘伤害",
+      "tail_type": "风险事件"
+    }
+  ]
+}

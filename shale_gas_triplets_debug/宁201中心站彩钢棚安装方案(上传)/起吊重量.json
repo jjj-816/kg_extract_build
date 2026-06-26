@@ -1,0 +1,27 @@
+{
+  "entity": "起吊重量",
+  "raw": "[\n  {\"head\": \"起吊重量\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"≤17吨\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"起吊重量\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"吊装构件下方严禁站人或通行\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"起吊重量\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"25T吊车性能表\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "起吊重量",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "≤17吨",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "起吊重量",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "吊装构件下方严禁站人或通行",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "起吊重量",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "25T吊车性能表",
+      "tail_type": "施工记录"
+    }
+  ]
+}

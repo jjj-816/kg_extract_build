@@ -1,0 +1,13 @@
+{
+  "entity": "井口防喷器",
+  "raw": "[\n  {\"head\": \"井口防喷器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"设计井口防喷器压力等级\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "井口防喷器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "设计井口防喷器压力等级",
+      "tail_type": "施工参数"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "中暑",
+  "raw": "[\n  {\"head\": \"中暑\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"冬季防冻风险控制措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "中暑",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "冬季防冻风险控制措施",
+      "tail_type": "控制措施"
+    }
+  ]
+}

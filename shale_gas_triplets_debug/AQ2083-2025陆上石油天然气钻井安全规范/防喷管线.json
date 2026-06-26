@@ -1,0 +1,48 @@
+{
+  "entity": "防喷管线",
+  "raw": "[\n  {\"head\": \"防喷管线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压力等级不低于设计井口防喷器压力等级\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷管线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"通径应不小于78 mm\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷管线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"额定工作压力大于35 MPa\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷管线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"应采用钢制管线\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷管线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"转弯处应采用相同压力等级的角度不小于120°预制铸（锻）钢弯头或90°耐冲蚀弯头\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷管线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"应做额定工作压力试压\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷管线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"应按额定工作压力试压\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷管线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"应采取防冻措施\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "防喷管线",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "通径应不小于78 mm",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷管线",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "额定工作压力大于35 MPa",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷管线",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "应采用钢制管线",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷管线",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "应做额定工作压力试压",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷管线",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "应按额定工作压力试压",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷管线",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "应采取防冻措施",
+      "tail_type": "施工参数"
+    }
+  ]
+}

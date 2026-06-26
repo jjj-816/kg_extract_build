@@ -1,0 +1,69 @@
+{
+  "entity": "特殊作业",
+  "raw": "[\n  {\"head\": \"特殊作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"特殊作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"受限空间作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"特殊作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"盲板抽堵作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"特殊作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"特殊作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"吊装作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"特殊作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"临时用电作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"特殊作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"动土作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"特殊作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"断路作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"特殊作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"特种作业人员资格证书\", \"tail_type\": \"未分类\"},\n  {\"head\": \"特殊作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"特种设备作业人员资格证书\", \"tail_type\": \"未分类\"},\n  {\"head\": \"特殊作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"生产安全事故\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "特殊作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "特殊作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "受限空间作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "特殊作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "盲板抽堵作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "特殊作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "高处作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "特殊作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "吊装作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "特殊作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "临时用电作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "特殊作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "动土作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "特殊作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "断路作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "特殊作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "生产安全事故",
+      "tail_type": "风险事件"
+    }
+  ]
+}

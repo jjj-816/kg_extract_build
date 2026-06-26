@@ -1,0 +1,13 @@
+{
+  "entity": "主管领导",
+  "raw": "[\n  {\"head\": \"主管领导\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"特级动火作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "主管领导",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "特级动火作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

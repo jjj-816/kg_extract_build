@@ -1,0 +1,69 @@
+{
+  "entity": "单井井控风险分级标准",
+  "raw": "[\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"地质特征\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"地层压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"有毒有害气体含量\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"浅层气\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"井别井型\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"历史井喷情况\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"周边环境\", \"tail_type\": \"环保对象\"},\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"工艺技术\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"单井井控风险分级标准\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"井控风险分级\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "单井井控风险分级标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "地质特征",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "单井井控风险分级标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "地层压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "单井井控风险分级标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "有毒有害气体含量",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "单井井控风险分级标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "浅层气",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "单井井控风险分级标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "井别井型",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "单井井控风险分级标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "历史井喷情况",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "单井井控风险分级标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "周边环境",
+      "tail_type": "环保对象"
+    },
+    {
+      "head": "单井井控风险分级标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "工艺技术",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "单井井控风险分级标准",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "井控风险分级",
+      "tail_type": "作业活动"
+    }
+  ]
+}

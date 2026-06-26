@@ -1,0 +1,83 @@
+{
+  "entity": "起下大直径工具",
+  "raw": "[\n  {\"head\": \"起下大直径工具\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"起下管柱\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"起下大直径工具\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"旋转作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"起下大直径工具\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"钢丝作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"起下大直径工具\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"7.3.4 起下大直径工具时，应密切观察悬重及井口液面\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"起下大直径工具\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"管柱应处于居中位置\", \"tail_type\": \"未分类\"},\n  {\"head\": \"起下大直径工具\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"管柱\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"起下大直径工具\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"大直径工具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"起下大直径工具\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"悬重\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"起下大直径工具\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"井口液面\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"起下大直径工具\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"起钻速度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"起下大直径工具\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"防上顶措施\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "起下大直径工具",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "起下管柱",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "起下大直径工具",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "旋转作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "起下大直径工具",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "钢丝作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "起下大直径工具",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "7.3.4 起下大直径工具时，应密切观察悬重及井口液面",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "起下大直径工具",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "管柱应处于居中位置",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "起下大直径工具",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "管柱",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "起下大直径工具",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "大直径工具",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "起下大直径工具",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "悬重",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "起下大直径工具",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "井口液面",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "起下大直径工具",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "起钻速度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "起下大直径工具",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "防上顶措施",
+      "tail_type": "风险事件"
+    }
+  ]
+}

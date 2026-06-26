@@ -1,0 +1,62 @@
+{
+  "entity": "压缩机基础灌浆",
+  "raw": "[\n  {\"head\": \"压缩机基础灌浆\", \"head_type\": \"施工阶段\", \"relation\": \"PRECEDES\", \"tail\": \"管道防腐\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"压缩机基础灌浆\", \"head_type\": \"施工阶段\", \"relation\": \"PRECEDES\", \"tail\": \"管墩制作\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"压缩机基础灌浆\", \"head_type\": \"施工阶段\", \"relation\": \"PRECEDES\", \"tail\": \"建渣清理\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"压缩机基础灌浆\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"螺栓孔灌浆\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"压缩机基础灌浆\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"采用自重法或压力灌浆法施工\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"压缩机基础灌浆\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"螺栓孔部位需做专项密封处理\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"压缩机基础灌浆\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"配制好的浆料需在初凝时间内用完\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"压缩机基础灌浆\", \"head_type\": \"施工阶段\", \"relation\": \"OCCURS_AT\", \"tail\": \"物体打击、碰伤、摔伤\", \"tail_type\": \"风险项\"}\n]",
+  "triplets": [
+    {
+      "head": "压缩机基础灌浆",
+      "head_type": "施工阶段",
+      "relation": "PRECEDES",
+      "tail": "管道防腐",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "压缩机基础灌浆",
+      "head_type": "施工阶段",
+      "relation": "PRECEDES",
+      "tail": "管墩制作",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "压缩机基础灌浆",
+      "head_type": "施工阶段",
+      "relation": "PRECEDES",
+      "tail": "建渣清理",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "压缩机基础灌浆",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "螺栓孔灌浆",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "压缩机基础灌浆",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "采用自重法或压力灌浆法施工",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "压缩机基础灌浆",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "螺栓孔部位需做专项密封处理",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "压缩机基础灌浆",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "配制好的浆料需在初凝时间内用完",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "压缩机基础灌浆",
+      "head_type": "施工阶段",
+      "relation": "OCCURS_AT",
+      "tail": "物体打击、碰伤、摔伤",
+      "tail_type": "未分类"
+    }
+  ]
+}

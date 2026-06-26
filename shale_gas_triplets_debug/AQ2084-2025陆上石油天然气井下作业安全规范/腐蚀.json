@@ -1,0 +1,27 @@
+{
+  "entity": "腐蚀",
+  "raw": "[\n  {\"head\": \"腐蚀\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防腐措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"腐蚀\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"井筒现状\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"腐蚀\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"油层套管\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "腐蚀",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "防腐措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "腐蚀",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "井筒现状",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "腐蚀",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "油层套管",
+      "tail_type": "时空信息"
+    }
+  ]
+}

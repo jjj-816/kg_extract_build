@@ -1,0 +1,41 @@
+{
+  "entity": "水泥塞",
+  "raw": "[\n  {\"head\": \"水泥塞\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"塞厚\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"水泥塞\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"候凝\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"水泥塞\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"探水泥塞面\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"水泥塞\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"塞面深度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"水泥塞\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"试压\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "水泥塞",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "塞厚",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "水泥塞",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "候凝",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "水泥塞",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "探水泥塞面",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "水泥塞",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "塞面深度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "水泥塞",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "试压",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

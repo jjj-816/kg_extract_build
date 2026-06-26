@@ -1,0 +1,27 @@
+{
+  "entity": "异常情况",
+  "raw": "[\n  {\"head\": \"异常情况\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"采取安全有效措施进行应急处置\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"异常情况\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"未穿戴 6.6 规定个体防护装备的人员严禁入内救援\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"异常情况\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"采取相应措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "异常情况",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "采取安全有效措施进行应急处置",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "异常情况",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "未穿戴 6.6 规定个体防护装备的人员严禁入内救援",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "异常情况",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "采取相应措施",
+      "tail_type": "控制措施"
+    }
+  ]
+}

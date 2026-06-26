@@ -1,0 +1,20 @@
+{
+  "entity": "管工",
+  "raw": "[\n  {\"head\": \"管工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"管线打开作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"管工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"动火作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "管工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "管线打开作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "管工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "动火作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "标高",
+  "raw": "[\n  {\"head\": \"标高\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"高处\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"标高\", \"head_type\": \"施工参数\", \"relation\": \"HAS_RECORD\", \"tail\": \"高空坠落应急\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "标高",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "高处",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "水泥返深",
+  "raw": "[\n  {\"head\": \"水泥返深\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"钻完井数据\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "水泥返深",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "钻完井数据",
+      "tail_type": "施工记录"
+    }
+  ]
+}

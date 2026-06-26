@@ -1,0 +1,20 @@
+{
+  "entity": "试压",
+  "raw": "[\n  {\"head\": \"试压\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"管道安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"试压\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"回填\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "试压",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "管道安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "试压",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "回填",
+      "tail_type": "作业活动"
+    }
+  ]
+}

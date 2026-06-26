@@ -1,0 +1,34 @@
+{
+  "entity": "建筑物",
+  "raw": "[\n  {\"head\": \"建筑物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"构筑物\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"建筑物\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"墙体根部\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"建筑物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"审查核算\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"建筑物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"锚点\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "建筑物",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "构筑物",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "建筑物",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "墙体根部",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "建筑物",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "审查核算",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "建筑物",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "锚点",
+      "tail_type": "施工对象"
+    }
+  ]
+}

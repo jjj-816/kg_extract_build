@@ -1,0 +1,27 @@
+{
+  "entity": "连接部件",
+  "raw": "[\n  {\"head\": \"连接部件\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压力等级\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"连接部件\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"最小通径\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"连接部件\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"50.8 mm\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "连接部件",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "压力等级",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "连接部件",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "最小通径",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "连接部件",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "50.8 mm",
+      "tail_type": "施工参数"
+    }
+  ]
+}

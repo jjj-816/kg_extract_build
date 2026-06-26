@@ -1,0 +1,34 @@
+{
+  "entity": "打捞作业",
+  "raw": "[\n  {\"head\": \"打捞作业\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"起下作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"打捞作业\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"带压作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"打捞作业\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"换装井口作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"打捞作业\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"放喷、测试作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "打捞作业",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "起下作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "打捞作业",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "带压作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "打捞作业",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "换装井口作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "打捞作业",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "放喷、测试作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

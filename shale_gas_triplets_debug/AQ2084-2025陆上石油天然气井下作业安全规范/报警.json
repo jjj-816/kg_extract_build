@@ -1,0 +1,27 @@
+{
+  "entity": "报警",
+  "raw": "[\n  {\"head\": \"报警\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"气体检测\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"报警\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"排风扩散\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"报警\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"点火\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "报警",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "气体检测",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "报警",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "排风扩散",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "报警",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "点火",
+      "tail_type": "设备工具"
+    }
+  ]
+}

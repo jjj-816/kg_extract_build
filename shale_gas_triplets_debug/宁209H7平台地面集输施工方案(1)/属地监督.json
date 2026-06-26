@@ -1,0 +1,34 @@
+{
+  "entity": "属地监督",
+  "raw": "[\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"告知施工作业人员本井站应急要点\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"带领作业项目负责人/申请人指认准许作业的设备/系统或工作区域\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"设置监护人\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"监督检查\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "告知施工作业人员本井站应急要点",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "带领作业项目负责人/申请人指认准许作业的设备/系统或工作区域",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "设置监护人",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "监督检查",
+      "tail_type": "控制措施"
+    }
+  ]
+}

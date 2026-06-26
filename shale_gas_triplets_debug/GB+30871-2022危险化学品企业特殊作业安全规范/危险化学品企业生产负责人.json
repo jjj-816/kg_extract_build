@@ -1,0 +1,13 @@
+{
+  "entity": "危险化学品企业生产负责人",
+  "raw": "[\n  {\"head\": \"危险化学品企业生产负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"动火作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "危险化学品企业生产负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "动火作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "entity": "临时用电",
+  "raw": "[\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"低压电工\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"停验电并上锁挂牌\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"进行有效能量隔离并上锁挂牌\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"临时用电\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "低压电工",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "停验电并上锁挂牌",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "进行有效能量隔离并上锁挂牌",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "临时用电",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "发电机",
+      "tail_type": "设备工具"
+    }
+  ]
+}

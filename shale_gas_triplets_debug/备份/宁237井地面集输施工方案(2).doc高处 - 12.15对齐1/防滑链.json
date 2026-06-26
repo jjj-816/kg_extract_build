@@ -1,0 +1,13 @@
+{
+  "entity": "防滑链",
+  "raw": "[\n  {\"head\": \"防滑链\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "高处作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防滑链",
+      "tail_type": "设备工具"
+    }
+  ]
+}

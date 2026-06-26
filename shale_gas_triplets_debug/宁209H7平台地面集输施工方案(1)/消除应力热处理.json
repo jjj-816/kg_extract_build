@@ -1,0 +1,20 @@
+{
+  "entity": "消除应力热处理",
+  "raw": "[\n  {\"head\": \"消除应力热处理\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"焊后消除应力热处理（PWHT）\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"消除应力热处理\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"有严格韧性要求的管线\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"消除应力热处理\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高温烫伤\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "消除应力热处理",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "焊后消除应力热处理（PWHT）",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "消除应力热处理",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高温烫伤",
+      "tail_type": "风险事件"
+    }
+  ]
+}

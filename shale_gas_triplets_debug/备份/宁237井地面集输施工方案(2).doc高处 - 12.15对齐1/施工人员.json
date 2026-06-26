@@ -1,0 +1,41 @@
+{
+  "entity": "施工人员",
+  "raw": "```json\n[\n  {\"head\": \"施工人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"割除作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"方井打磨及防腐\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"摄像头立杆\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"摄像头安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"建渣清理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工人员\", \"head_type\": \"责任主体\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"劳保用品\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"施工人员\", \"head_type\": \"责任主体\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"工衣\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"施工人员\", \"head_type\": \"责任主体\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"劳保鞋\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"施工人员\", \"head_type\": \"责任主体\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"安全帽\", \"tail_type\": \"设备工具\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "施工人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "割除作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "方井打磨及防腐",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "摄像头立杆",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "摄像头安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "建渣清理",
+      "tail_type": "作业活动"
+    }
+  ]
+}

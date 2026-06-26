@@ -1,0 +1,20 @@
+{
+  "entity": "中毒",
+  "raw": "[\n  {\"head\": \"中毒\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"进入受限空间前，在受限空间内悬挂气体检测仪进行检测，确保气体检测合格（若涉及塔、罐类设备进入作业，需确保设备置换及隔离已完成）\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"中毒\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"正确佩戴防尘口罩\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"中毒\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"连续气体检测\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "中毒",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "正确佩戴防尘口罩",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "中毒",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "连续气体检测",
+      "tail_type": "控制措施"
+    }
+  ]
+}

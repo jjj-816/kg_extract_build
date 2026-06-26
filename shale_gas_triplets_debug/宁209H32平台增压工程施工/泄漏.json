@@ -1,0 +1,27 @@
+{
+  "entity": "泄漏",
+  "raw": "[\n  {\"head\": \"泄漏\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"预备2具以上MFZ/ABC-8型干粉灭火器及气体检测仪放置于作业区域内\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"泄漏\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"做好动火点周边持续可燃气体检测，发现可燃气体泄漏立即停止作业\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"泄漏\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"试压中如有泄漏，严禁带压修理\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"泄漏\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"《石油天然气工程设计防火规范》GB50183-2004\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "泄漏",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "做好动火点周边持续可燃气体检测，发现可燃气体泄漏立即停止作业",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "泄漏",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "试压中如有泄漏，严禁带压修理",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "泄漏",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "《石油天然气工程设计防火规范》GB50183-2004",
+      "tail_type": "施工记录"
+    }
+  ]
+}

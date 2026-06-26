@@ -1,0 +1,27 @@
+{
+  "entity": "顶丝",
+  "raw": "[\n  {\"head\": \"顶丝\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"全部退出主通径\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"顶丝\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"上紧备帽\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"顶丝\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"全部顶紧\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "顶丝",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "全部退出主通径",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "顶丝",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "上紧备帽",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "顶丝",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "全部顶紧",
+      "tail_type": "施工参数"
+    }
+  ]
+}

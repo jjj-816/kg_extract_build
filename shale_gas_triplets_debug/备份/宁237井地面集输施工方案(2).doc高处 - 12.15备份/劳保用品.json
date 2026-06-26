@@ -1,0 +1,20 @@
+{
+  "entity": "劳保用品",
+  "raw": "[\n  {\"head\": \"劳保用品\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"割除作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"防腐作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"防静电劳保用品\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"劳保用品\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"井站\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "割除作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "劳保用品",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "防腐作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "劳保用品",
+      "tail_type": "设备工具"
+    }
+  ]
+}

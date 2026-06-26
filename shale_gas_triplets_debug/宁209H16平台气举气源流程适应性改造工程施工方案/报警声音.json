@@ -1,0 +1,13 @@
+{
+  "entity": "报警声音",
+  "raw": "[\n  {\"head\": \"报警声音\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"应急要点\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "报警声音",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "应急要点",
+      "tail_type": "作业活动"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "天然气泄漏",
+  "raw": "[\n  {\"head\": \"天然气泄漏\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"气体检测\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"天然气泄漏\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"可燃气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"天然气泄漏\", \"head_type\": \"风险事件\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"气体中毒\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"天然气泄漏\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"气体检测记录\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "天然气泄漏",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "气体检测",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "道路",
+  "raw": "[\n  {\"head\": \"道路\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"加强道路巡查\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"道路\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"清理道路积雪与结冰\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"道路\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"确保道路安全畅通\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "道路",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "加强道路巡查",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "道路",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "清理道路积雪与结冰",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "道路",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "确保道路安全畅通",
+      "tail_type": "施工记录"
+    }
+  ]
+}

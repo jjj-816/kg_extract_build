@@ -1,0 +1,34 @@
+{
+  "entity": "焊接",
+  "raw": "[\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"REGULATES\", \"tail\": \"SY/T0452-2021\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES\", \"tail\": \"旁站监督和检测\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"砂轮机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电动扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "SY/T0452-2021",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "砂轮机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "电动扳手",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "发电机",
+      "tail_type": "设备工具"
+    }
+  ]
+}

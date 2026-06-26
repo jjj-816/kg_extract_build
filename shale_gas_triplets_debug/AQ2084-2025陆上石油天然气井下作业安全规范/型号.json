@@ -1,0 +1,13 @@
+{
+  "entity": "型号",
+  "raw": "[\n  {\"head\": \"型号\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"采油（气）树、油管头、四通等井口装置的规格、型号及井口是否存在泄漏等情况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"型号\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"内防喷工具规格、型号、数量\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "型号",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "内防喷工具规格、型号、数量",
+      "tail_type": "施工记录"
+    }
+  ]
+}

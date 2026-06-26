@@ -1,0 +1,13 @@
+{
+  "entity": "放空物料",
+  "raw": "[\n  {\"head\": \"放空物料\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"吊装作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "放空物料",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "吊装作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

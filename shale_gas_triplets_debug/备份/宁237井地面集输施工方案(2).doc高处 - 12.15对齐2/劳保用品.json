@@ -1,0 +1,13 @@
+{
+  "entity": "劳保用品",
+  "raw": "[\n  {\"head\": \"劳保用品\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "劳保用品",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击",
+      "tail_type": "风险事件"
+    }
+  ]
+}

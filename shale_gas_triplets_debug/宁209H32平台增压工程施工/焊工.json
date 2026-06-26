@@ -1,0 +1,27 @@
+{
+  "entity": "焊工",
+  "raw": "[\n  {\"head\": \"焊工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"焊工按规定穿戴焊工专用劳保\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"焊工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"工艺管线连接、预制焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"焊工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"坡口加工应符合本工程焊接工艺评定要求\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "焊工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "焊工按规定穿戴焊工专用劳保",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "焊工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "工艺管线连接、预制焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "焊工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "坡口加工应符合本工程焊接工艺评定要求",
+      "tail_type": "控制措施"
+    }
+  ]
+}

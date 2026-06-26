@@ -1,0 +1,5 @@
+{
+  "entity": "居民住宅",
+  "raw": "[\n  {\"head\": \"居民住宅\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"5000m\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"居民住宅\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"3000m\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"居民住宅\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"100m\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": []
+}

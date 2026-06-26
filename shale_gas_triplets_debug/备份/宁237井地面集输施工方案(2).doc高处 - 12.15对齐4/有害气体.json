@@ -1,0 +1,13 @@
+{
+  "entity": "有害气体",
+  "raw": "[\n  {\"head\": \"有害气体\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"有害气体中毒、窒息\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "有害气体",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "有害气体中毒、窒息",
+      "tail_type": "风险事件"
+    }
+  ]
+}

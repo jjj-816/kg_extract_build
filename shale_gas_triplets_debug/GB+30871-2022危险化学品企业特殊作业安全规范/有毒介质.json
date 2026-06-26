@@ -1,0 +1,34 @@
+{
+  "entity": "有毒介质",
+  "raw": "[\n  {\"head\": \"有毒介质\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"作业人员应按 GB 39800.1 的要求选用防护用具\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"有毒介质\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"作业人员应穿戴适合的个体防护装备\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"有毒介质\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"盛装过有毒、可燃物料的受限空间,所有与受限空间有联系的阀门、管线已加盲板隔离,并落实盲板责任人,未采用水封或关闭阀门代替盲板\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"有毒介质\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"盛装过有毒、可燃物料的受限空间,设备已经过置换、吹扫或蒸煮\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"有毒介质\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"设备通风孔已打开进行自然通风,温度适宜人员作业;必要时采用强制通风或佩戴隔绝式呼吸防护装备,不应采用直接通入氧气或富氧空气的方法补充氧\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"有毒介质\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"盛装过可燃有毒液体、气体的受限空间,已分析其中的可燃、有毒有害气体和氧气含量,且在安全范围内\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"有毒介质\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"作业人员已佩戴必要的个体防护装备,清楚受限空间内存在的危险因素\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"有毒介质\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"已配备作业应急设施:消防器材()、救生绳()、气防装备(),盛有腐蚀性介质的容器作业现场已配备应急用冲洗水\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"有毒介质\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"受限空间出入口四周已设立警戒区\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "有毒介质",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "作业人员应按 GB 39800.1 的要求选用防护用具",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "有毒介质",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "作业人员应穿戴适合的个体防护装备",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "有毒介质",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "盛装过有毒、可燃物料的受限空间,设备已经过置换、吹扫或蒸煮",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "有毒介质",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "受限空间出入口四周已设立警戒区",
+      "tail_type": "风险事件"
+    }
+  ]
+}

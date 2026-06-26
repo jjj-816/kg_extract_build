@@ -1,0 +1,5 @@
+{
+  "entity": "有效期",
+  "raw": "[\n  {\"head\": \"有效期\", \"head_type\": \"时空信息\", \"relation\": \"未分类\", \"tail\": \"7天\", \"tail_type\": \"未分类\"},\n  {\"head\": \"有效期\", \"head_type\": \"时空信息\", \"relation\": \"未分类\", \"tail\": \"8 h\", \"tail_type\": \"未分类\"},\n  {\"head\": \"有效期\", \"head_type\": \"时空信息\", \"relation\": \"未分类\", \"tail\": \"72 h\", \"tail_type\": \"未分类\"},\n  {\"head\": \"有效期\", \"head_type\": \"时空信息\", \"relation\": \"未分类\", \"tail\": \"24 h\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": []
+}

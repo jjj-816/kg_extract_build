@@ -1,0 +1,48 @@
+{
+  "entity": "方井打磨及防腐",
+  "raw": "[\n  {\"head\": \"方井打磨及防腐\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"受限\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"方井打磨及防腐\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高处\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"方井打磨及防腐\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"动火\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"方井打磨及防腐\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"砂轮机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"方井打磨及防腐\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"常用工具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"方井打磨及防腐\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动土作业必须确认作业面放坡及有效支撑\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "方井打磨及防腐",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "受限",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "方井打磨及防腐",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高处",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "方井打磨及防腐",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "动火",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "方井打磨及防腐",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "砂轮机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "方井打磨及防腐",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "常用工具",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "方井打磨及防腐",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "动土作业必须确认作业面放坡及有效支撑",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

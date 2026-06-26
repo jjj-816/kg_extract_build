@@ -1,0 +1,13 @@
+{
+  "entity": "防火的安全要求",
+  "raw": "[\n  {\"head\": \"防火的安全要求\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井喷失控后应防止井喷着火或事故后果扩大\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "防火的安全要求",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井喷失控后应防止井喷着火或事故后果扩大",
+      "tail_type": "风险事件"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "温度",
+  "raw": "[\n  {\"head\": \"温度\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"人员烫伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"温度\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"人员冻伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"温度\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"5°C\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"温度\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"12°C\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "温度",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "人员烫伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "温度",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "人员冻伤",
+      "tail_type": "风险事件"
+    }
+  ]
+}

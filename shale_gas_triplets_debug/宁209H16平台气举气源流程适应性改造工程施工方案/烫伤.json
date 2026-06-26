@@ -1,0 +1,20 @@
+{
+  "entity": "烫伤",
+  "raw": "[\n  {\"head\": \"烫伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"作业中身体远离灼热部位\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"烫伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"火花飞溅、烫伤、弧光风险控制措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "烫伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "作业中身体远离灼热部位",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "烫伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "火花飞溅、烫伤、弧光风险控制措施",
+      "tail_type": "控制措施"
+    }
+  ]
+}

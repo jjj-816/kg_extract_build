@@ -1,0 +1,13 @@
+{
+  "entity": "阻燃工作服",
+  "raw": "[\n  {\"head\": \"阻燃工作服\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"焊接作业\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "阻燃工作服",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "焊接作业",
+      "tail_type": "时空信息"
+    }
+  ]
+}

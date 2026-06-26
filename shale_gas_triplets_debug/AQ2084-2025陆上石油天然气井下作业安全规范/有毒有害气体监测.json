@@ -1,0 +1,41 @@
+{
+  "entity": "有毒有害气体监测",
+  "raw": "[\n  {\"head\": \"有毒有害气体监测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"定时取样\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"有毒有害气体监测\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"井场各处有毒有害气体含量\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"有毒有害气体监测\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"气体检测、报警、排风扩散、点火等处理装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"有毒有害气体监测\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"硫化氢检测仪器及防护器具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"有毒有害气体监测\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"硫化氢、一氧化碳、二氧化碳等有毒有害气体含量情况\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "有毒有害气体监测",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "定时取样",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "有毒有害气体监测",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "井场各处有毒有害气体含量",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "有毒有害气体监测",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "气体检测、报警、排风扩散、点火等处理装置",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "有毒有害气体监测",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "硫化氢检测仪器及防护器具",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "有毒有害气体监测",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "硫化氢、一氧化碳、二氧化碳等有毒有害气体含量情况",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

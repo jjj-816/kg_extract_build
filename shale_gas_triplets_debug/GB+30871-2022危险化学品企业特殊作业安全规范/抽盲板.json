@@ -1,0 +1,153 @@
+{
+  "entity": "抽盲板",
+  "raw": "[\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"在设备、管道上安装或拆卸盲板的作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"降低系统压力,作业点应为常压或微正压\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"作业人员应穿戴适合的个体防护装备\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"作业人员穿防静电工作服、工作鞋;作业时使用防爆灯具和防爆工具\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"距作业地点30m内无其他动火作业\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"已采取防止酸碱化学灼伤的措施\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"已采取防烫措施\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"已采取防冻伤措施\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"同一管道上未同时进行两处及两处以上的盲板抽堵作业\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"其他相关特殊作业已办理相应安全作业票\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"作业现场四周已设警戒区\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"管道\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"设备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防爆灯具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防爆工具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"个体防护装备\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"防静电工作服\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"工作鞋\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"吊物及起\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"起重臂吊钩或吊物下面有人\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"抽盲板\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"吊物上有人或浮置物\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "在设备、管道上安装或拆卸盲板的作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "降低系统压力,作业点应为常压或微正压",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "作业人员应穿戴适合的个体防护装备",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "作业人员穿防静电工作服、工作鞋;作业时使用防爆灯具和防爆工具",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "距作业地点30m内无其他动火作业",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "已采取防止酸碱化学灼伤的措施",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "已采取防烫措施",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "已采取防冻伤措施",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "同一管道上未同时进行两处及两处以上的盲板抽堵作业",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "其他相关特殊作业已办理相应安全作业票",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "作业现场四周已设警戒区",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "管道",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "设备",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防爆灯具",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防爆工具",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "个体防护装备",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "防静电工作服",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "工作鞋",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "吊物及起",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "起重臂吊钩或吊物下面有人",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "抽盲板",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "吊物上有人或浮置物",
+      "tail_type": "风险事件"
+    }
+  ]
+}

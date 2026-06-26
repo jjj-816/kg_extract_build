@@ -1,0 +1,5 @@
+{
+  "entity": "消防措施",
+  "raw": "[\n  {\"head\": \"消防措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"灭火器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"消防措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"应急预案\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"消防措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"应急通道\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"消防措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"安防消防器材\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"消防措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"应急处置要求\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"消防措施\", \"head_type\": \"控制措施\", \"relation\": \"REGULATES\", \"tail\": \"GB50183-2004\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"消防措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"应急处置\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": []
+}

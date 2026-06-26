@@ -1,0 +1,20 @@
+{
+  "entity": "氧气瓶",
+  "raw": "[\n  {\"head\": \"氧气瓶\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"与动火点间距不应小于 10 m\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"氧气瓶\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"与乙炔瓶间距不应小于 5 m\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"氧气瓶\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"氧含量不应超过 23.5%（体积分数）\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "氧气瓶",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "与动火点间距不应小于 10 m",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "氧气瓶",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "氧含量不应超过 23.5%（体积分数）",
+      "tail_type": "施工参数"
+    }
+  ]
+}

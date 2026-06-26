@@ -1,0 +1,20 @@
+{
+  "entity": "枕木",
+  "raw": "[\n  {\"head\": \"枕木\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"坍塌滑落\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"枕木\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"坍塌滑落\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "枕木",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "坍塌滑落",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "枕木",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "坍塌滑落",
+      "tail_type": "风险事件"
+    }
+  ]
+}

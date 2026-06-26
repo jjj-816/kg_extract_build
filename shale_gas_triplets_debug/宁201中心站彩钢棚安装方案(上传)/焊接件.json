@@ -1,0 +1,34 @@
+{
+  "entity": "焊接件",
+  "raw": "[\n  {\"head\": \"焊接件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"焊接作业时\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"焊接件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"耐温≥500℃\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊接件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"陈小林： 焊工、登高 证件号T511528199311135638\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"焊接件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"焊机\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"焊接件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"焊丝\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "焊接件",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "焊接作业时",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "焊接件",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "耐温≥500℃",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "焊接件",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "焊机",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "焊接件",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "焊丝",
+      "tail_type": "施工对象"
+    }
+  ]
+}

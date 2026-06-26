@@ -1,0 +1,13 @@
+{
+  "entity": "硫化氢",
+  "raw": "[\n  {\"head\": \"硫化氢\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"作业必须进行检测并正确佩戴空气呼吸器\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "硫化氢",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "作业必须进行检测并正确佩戴空气呼吸器",
+      "tail_type": "风险事件"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "指挥信号",
+  "raw": "[\n  {\"head\": \"指挥信号\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"联络信号\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"指挥信号\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"统一规定联络信号\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "指挥信号",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "联络信号",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "指挥信号",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "统一规定联络信号",
+      "tail_type": "施工参数"
+    }
+  ]
+}

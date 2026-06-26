@@ -1,0 +1,13 @@
+{
+  "entity": "机电设备",
+  "raw": "[\n  {\"head\": \"机电设备\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"不应利用管道、管架、电杆、机电设备等作吊装锚点\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "机电设备",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "不应利用管道、管架、电杆、机电设备等作吊装锚点",
+      "tail_type": "风险事件"
+    }
+  ]
+}

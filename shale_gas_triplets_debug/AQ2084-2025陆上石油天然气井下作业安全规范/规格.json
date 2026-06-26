@@ -1,0 +1,20 @@
+{
+  "entity": "规格",
+  "raw": "[\n  {\"head\": \"规格\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"井口装置情况，包括目前采油（气）树、油管头、四通等井口装置的规格、型号及井口是否存在泄漏等情况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"规格\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"内防喷工具规格、型号、数量\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"规格\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"尺寸、规格与电缆匹配\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "规格",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "内防喷工具规格、型号、数量",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "规格",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "尺寸、规格与电缆匹配",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

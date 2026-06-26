@@ -1,0 +1,13 @@
+{
+  "entity": "风险控制重点",
+  "raw": "[\n  {\"head\": \"风险控制重点\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"5.3.2\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "风险控制重点",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "5.3.2",
+      "tail_type": "施工记录"
+    }
+  ]
+}

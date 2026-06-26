@@ -1,0 +1,34 @@
+{
+  "entity": "平衡/泄压管汇",
+  "raw": "[\n  {\"head\": \"平衡/泄压管汇\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井控管汇(线)\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"平衡/泄压管汇\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"试压值\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"平衡/泄压管汇\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压力等级\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"平衡/泄压管汇\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井内压力失衡\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "平衡/泄压管汇",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井控管汇(线)",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "平衡/泄压管汇",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "试压值",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "平衡/泄压管汇",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "压力等级",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "平衡/泄压管汇",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井内压力失衡",
+      "tail_type": "风险事件"
+    }
+  ]
+}

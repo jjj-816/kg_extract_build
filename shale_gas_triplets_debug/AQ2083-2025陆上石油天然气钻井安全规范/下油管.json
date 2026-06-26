@@ -1,0 +1,48 @@
+{
+  "entity": "下油管",
+  "raw": "[\n  {\"head\": \"下油管\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"电测\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"下油管\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"下套管\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"下油管\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"中途测试\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"下油管\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"起钻\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"下油管\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"长时间停止循环\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"下油管\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"油管\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "下油管",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "电测",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "下油管",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "下套管",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "下油管",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "中途测试",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "下油管",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "起钻",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "下油管",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "长时间停止循环",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "下油管",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "油管",
+      "tail_type": "设备工具"
+    }
+  ]
+}

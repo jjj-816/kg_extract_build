@@ -1,0 +1,13 @@
+{
+  "entity": "岩性剖面",
+  "raw": "[\n  {\"head\": \"岩性剖面\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"工程设计\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "岩性剖面",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "工程设计",
+      "tail_type": "施工记录"
+    }
+  ]
+}

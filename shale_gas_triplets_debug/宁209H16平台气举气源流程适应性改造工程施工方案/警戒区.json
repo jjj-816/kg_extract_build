@@ -1,0 +1,27 @@
+{
+  "entity": "警戒区",
+  "raw": "[\n  {\"head\": \"警戒区\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"切割区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"警戒区\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"监护范围内\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"警戒区\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"作业区域\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "警戒区",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "切割区域",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "警戒区",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "监护范围内",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "警戒区",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "作业区域",
+      "tail_type": "施工对象"
+    }
+  ]
+}

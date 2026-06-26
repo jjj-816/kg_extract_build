@@ -1,0 +1,27 @@
+{
+  "entity": "安全风险",
+  "raw": "[\n  {\"head\": \"安全风险\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"员工应急施救前应做好自身安全防护\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全风险\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"接触危险传动、转动部位前必须关停设备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全风险\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"进入井站严禁携带易燃易爆等危险物品\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "安全风险",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "员工应急施救前应做好自身安全防护",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "安全风险",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "接触危险传动、转动部位前必须关停设备",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "安全风险",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "进入井站严禁携带易燃易爆等危险物品",
+      "tail_type": "控制措施"
+    }
+  ]
+}

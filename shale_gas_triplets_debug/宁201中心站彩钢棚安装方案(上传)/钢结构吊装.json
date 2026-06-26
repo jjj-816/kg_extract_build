@@ -1,0 +1,62 @@
+{
+  "entity": "钢结构吊装",
+  "raw": "[\n  {\"head\": \"钢结构吊装\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"起重作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"钢结构吊装\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"高处作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"钢结构吊装\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"起重伤害\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"钢结构吊装\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"高处坠落\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"钢结构吊装\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"物体打击\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"钢结构吊装\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业半径5米\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"钢结构吊装\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"吊臂18米\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"钢结构吊装\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"起吊重量17吨\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"钢结构吊装\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"被吊物品1吨\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"钢结构吊装\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"安全系数≥6\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"钢结构吊装\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"牵引绳长度≥5米\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "钢结构吊装",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "起重作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "钢结构吊装",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "高处作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "钢结构吊装",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "起重伤害",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "钢结构吊装",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "高处坠落",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "钢结构吊装",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "物体打击",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "钢结构吊装",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业半径5米",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "钢结构吊装",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "吊臂18米",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "钢结构吊装",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "安全系数≥6",
+      "tail_type": "施工参数"
+    }
+  ]
+}

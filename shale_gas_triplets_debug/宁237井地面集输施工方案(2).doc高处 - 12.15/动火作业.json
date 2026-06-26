@@ -1,0 +1,146 @@
+{
+  "entity": "动火作业",
+  "raw": "[\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"天然气泄漏引起的火灾爆炸\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"碰伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"机械伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"弧光伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火花飞溅\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"烫伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"车辆移动\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"气体中毒\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"冬季防冻\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高处坠落\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"现场确认安全措施\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"灭火器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"消防措施\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"方井打磨及防腐\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"爆炸\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"杜绝施工人员穿戴化纤材料劳保用品\", \"tail_type\": \"未分类\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"严格施工程序\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "天然气泄漏引起的火灾爆炸",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "碰伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "机械伤害",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "弧光伤害",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火花飞溅",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "烫伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "车辆移动",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "气体中毒",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "冬季防冻",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高处坠落",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "现场确认安全措施",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "灭火器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "消防措施",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "方井打磨及防腐",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "爆炸",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "杜绝施工人员穿戴化纤材料劳保用品",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "严格施工程序",
+      "tail_type": "未分类"
+    }
+  ]
+}

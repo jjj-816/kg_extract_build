@@ -1,0 +1,34 @@
+{
+  "entity": "高空作业",
+  "raw": "[\n  {\"head\": \"高空作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"高处\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"高空作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"高空作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业风险\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"高空作业\", \"head_type\": \"施工阶段\", \"relation\": \"OCCURS_AT\", \"tail\": \"计划作业时间\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "高空作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "高处",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "高空作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "高空作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "作业风险",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "高空作业",
+      "head_type": "施工阶段",
+      "relation": "OCCURS_AT",
+      "tail": "计划作业时间",
+      "tail_type": "时空信息"
+    }
+  ]
+}

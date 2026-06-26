@@ -1,0 +1,55 @@
+{
+  "entity": "防喷器",
+  "raw": "[\n  {\"head\": \"防喷器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"额定工作压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"70 MPa\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"18.5 MPa～21 MPa\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"10.5 MPa±0.7 MPa\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"8.5 MPa～10.5 MPa\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"0.65 MPa～1 MPa\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"钻井现场\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "防喷器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "额定工作压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "70 MPa",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "18.5 MPa～21 MPa",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "10.5 MPa±0.7 MPa",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "8.5 MPa～10.5 MPa",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "0.65 MPa～1 MPa",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "钻井现场",
+      "tail_type": "时空信息"
+    }
+  ]
+}

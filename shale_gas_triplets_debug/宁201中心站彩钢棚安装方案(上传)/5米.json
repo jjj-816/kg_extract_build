@@ -1,0 +1,34 @@
+{
+  "entity": "5米",
+  "raw": "[\n  {\"head\": \"5米\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"起重量≤17吨\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"5米\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"清理作业点5米范围内所有可燃物\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"5米\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"被吊物两端绑扎牵引绳（长度≥5米）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"5米\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"牵引绳Φ12\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "5米",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "起重量≤17吨",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "5米",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "清理作业点5米范围内所有可燃物",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "5米",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "被吊物两端绑扎牵引绳（长度≥5米）",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "5米",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "牵引绳Φ12",
+      "tail_type": "施工记录"
+    }
+  ]
+}

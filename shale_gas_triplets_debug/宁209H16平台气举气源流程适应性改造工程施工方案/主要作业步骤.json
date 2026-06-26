@@ -1,0 +1,62 @@
+{
+  "entity": "主要作业步骤",
+  "raw": "[\n  {\"head\": \"主要作业步骤\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管沟开挖\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"主要作业步骤\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管道切割\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"主要作业步骤\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管道焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"主要作业步骤\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"设备安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"主要作业步骤\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"吹扫\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"主要作业步骤\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管沟回\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"主要作业步骤\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"主要作业步骤\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"现场技术交底\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "主要作业步骤",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管沟开挖",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "主要作业步骤",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管道切割",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "主要作业步骤",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管道焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "主要作业步骤",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "设备安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "主要作业步骤",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "吹扫",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "主要作业步骤",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管沟回",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "主要作业步骤",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "主要作业步骤",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "现场技术交底",
+      "tail_type": "作业活动"
+    }
+  ]
+}

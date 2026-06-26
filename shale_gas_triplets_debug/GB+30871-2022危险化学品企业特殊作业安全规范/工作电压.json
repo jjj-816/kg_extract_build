@@ -1,0 +1,27 @@
+{
+  "entity": "工作电压",
+  "raw": "[\n  {\"head\": \"工作电压\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"安全电压\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"工作电压\", \"head_type\": \"未分类\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"2.5m\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"工作电压\", \"head_type\": \"未分类\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"5m\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"工作电压\", \"head_type\": \"未分类\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"0.7m\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "工作电压",
+      "head_type": "未分类",
+      "relation": "HAS_THRESHOLD",
+      "tail": "2.5m",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "工作电压",
+      "head_type": "未分类",
+      "relation": "HAS_THRESHOLD",
+      "tail": "5m",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "工作电压",
+      "head_type": "未分类",
+      "relation": "HAS_THRESHOLD",
+      "tail": "0.7m",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

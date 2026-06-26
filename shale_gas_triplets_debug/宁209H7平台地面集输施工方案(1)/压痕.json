@@ -1,0 +1,20 @@
+{
+  "entity": "压痕",
+  "raw": "[\n  {\"head\": \"压痕\", \"head_type\": \"未分类\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"压痕\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"对电源导线定期进行检查\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "压痕",
+      "head_type": "未分类",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "压痕",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "对电源导线定期进行检查",
+      "tail_type": "作业活动"
+    }
+  ]
+}

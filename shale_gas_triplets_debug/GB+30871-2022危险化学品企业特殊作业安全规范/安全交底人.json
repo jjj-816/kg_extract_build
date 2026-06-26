@@ -1,0 +1,62 @@
+{
+  "entity": "安全交底人",
+  "raw": "[\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"受限空间作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"盲板抽堵作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"吊装作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"临时用电作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"动土作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"断路作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"动火作业安全措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"受限空间作业安全措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"盲板抽堵作业安全措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"高处作业安全措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"吊装作业安全措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"临时用电作业安全措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"动土作业安全措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"断路作业安全措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"火灾爆炸风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"中毒窒息风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"高处坠落风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"物体打击风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"触电风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"坍塌风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全交底人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"车辆伤害风险\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "安全交底人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全交底人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "受限空间作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全交底人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "盲板抽堵作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全交底人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "高处作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全交底人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "吊装作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全交底人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "临时用电作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全交底人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "动土作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全交底人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "断路作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

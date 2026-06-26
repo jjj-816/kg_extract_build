@@ -1,0 +1,34 @@
+{
+  "entity": "对焊法兰",
+  "raw": "[\n  {\"head\": \"对焊法兰\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"焊工：蒲红良\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"对焊法兰\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工人员配置\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"对焊法兰\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"2人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"对焊法兰\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"法兰拆除/安装\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "对焊法兰",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "焊工：蒲红良",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "对焊法兰",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "施工人员配置",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "对焊法兰",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "2人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "对焊法兰",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "法兰拆除/安装",
+      "tail_type": "施工记录"
+    }
+  ]
+}

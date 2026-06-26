@@ -1,0 +1,13 @@
+{
+  "entity": "耐火管线",
+  "raw": "[\n  {\"head\": \"耐火管线\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"防火防爆措施\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "耐火管线",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "防火防爆措施",
+      "tail_type": "风险事件"
+    }
+  ]
+}

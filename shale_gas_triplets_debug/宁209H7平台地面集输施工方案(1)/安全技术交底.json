@@ -1,0 +1,62 @@
+{
+  "entity": "安全技术交底",
+  "raw": "[\n  {\"head\": \"安全技术交底\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"安全交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"作业许可范围及作业环境\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"作业风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"控制措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"应急措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"其他注意事项\", \"tail_type\": \"未分类\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"安全技术交底和风险告知确认卡\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安全技术交底\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"停电、挂牌、上锁制度\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "安全技术交底",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "安全交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全技术交底",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "作业许可范围及作业环境",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全技术交底",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "控制措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "安全技术交底",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "应急措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "安全技术交底",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "其他注意事项",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "安全技术交底",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "安全技术交底",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "安全技术交底和风险告知确认卡",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "安全技术交底",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "停电、挂牌、上锁制度",
+      "tail_type": "控制措施"
+    }
+  ]
+}

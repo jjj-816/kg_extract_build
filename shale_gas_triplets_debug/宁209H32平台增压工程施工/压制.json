@@ -1,0 +1,13 @@
+{
+  "entity": "压制",
+  "raw": "[\n  {\"head\": \"压制\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"弯管\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "压制",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "弯管",
+      "tail_type": "施工对象"
+    }
+  ]
+}

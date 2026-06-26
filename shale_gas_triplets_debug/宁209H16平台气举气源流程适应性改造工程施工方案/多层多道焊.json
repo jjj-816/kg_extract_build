@@ -1,0 +1,125 @@
+{
+  "entity": "多层多道焊",
+  "raw": "[\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"管道焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"坡口角度（如V型、U型）符合焊接规范\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"切割面平整无毛刺\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"持有效焊工证\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"管道\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"焊机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"焊接面罩\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防烫手套\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防火手套\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"灭火器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防火毯\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"通风装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"火花\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"弧光\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"引燃周边物料\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"切割区域\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"多层多道焊\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"焊接现场\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "管道焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "坡口角度（如V型、U型）符合焊接规范",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "切割面平整无毛刺",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "持有效焊工证",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "管道",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "焊机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "焊接面罩",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防烫手套",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防火手套",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "灭火器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防火毯",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "通风装置",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "火花",
+      "tail_type": "材料介质"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "弧光",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "引燃周边物料",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "切割区域",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "多层多道焊",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "焊接现场",
+      "tail_type": "时空信息"
+    }
+  ]
+}

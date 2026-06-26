@@ -1,0 +1,41 @@
+{
+  "entity": "起下钻",
+  "raw": "[\n  {\"head\": \"起下钻\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"起下钻作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"起下钻\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"短程起下钻检查油气侵和溢流\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"起下钻\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"短程起下钻后循环观察\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"起下钻\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"临时中止起下钻\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"起下钻\", \"head_type\": \"施工阶段\", \"relation\": \"PRECEDES\", \"tail\": \"测井作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "起下钻",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "起下钻作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "起下钻",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "短程起下钻检查油气侵和溢流",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "起下钻",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "短程起下钻后循环观察",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "起下钻",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "临时中止起下钻",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "起下钻",
+      "head_type": "施工阶段",
+      "relation": "PRECEDES",
+      "tail": "测井作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

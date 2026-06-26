@@ -1,0 +1,27 @@
+{
+  "entity": "连续监测",
+  "raw": "```json\n[\n  {\"head\": \"连续监测\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"连续监测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"设备装置评估表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"连续监测\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"监督检查情况\", \"tail_type\": \"施工记录\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "连续监测",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "气体检测仪",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "连续监测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "设备装置评估表",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "连续监测",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "监督检查情况",
+      "tail_type": "施工记录"
+    }
+  ]
+}

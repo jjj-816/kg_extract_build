@@ -1,0 +1,13 @@
+{
+  "entity": "塔器",
+  "raw": "[\n  {\"head\": \"塔器\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"10 m 范围内\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "塔器",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "10 m 范围内",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "高压",
+  "raw": "[\n  {\"head\": \"高压\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"旋转部件区域\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "高压",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "旋转部件区域",
+      "tail_type": "时空信息"
+    }
+  ]
+}

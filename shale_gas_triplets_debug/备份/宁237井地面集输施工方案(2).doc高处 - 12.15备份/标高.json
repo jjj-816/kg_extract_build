@@ -1,0 +1,5 @@
+{
+  "entity": "标高",
+  "raw": "[\n  {\"head\": \"标高\", \"head_type\": \"施工参数\", \"relation\": \"OCCURS_AT\", \"tail\": \"高处\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": []
+}

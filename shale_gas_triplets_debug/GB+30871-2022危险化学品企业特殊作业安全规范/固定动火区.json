@@ -1,0 +1,62 @@
+{
+  "entity": "固定动火区",
+  "raw": "[\n  {\"head\": \"固定动火区\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"5.5\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"固定动火区\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"实体防火墙\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"固定动火区\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"门窗外开\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"固定动火区\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"室外道路畅通\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"固定动火区\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"固定式可燃气体检测报警器\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"固定动火区\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"不应存放可燃物及其他杂物\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"固定动火区\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防火安全措施\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"固定动火区\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防火责任人\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "固定动火区",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "5.5",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "固定动火区",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "实体防火墙",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "固定动火区",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "门窗外开",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "固定动火区",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "室外道路畅通",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "固定动火区",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "固定式可燃气体检测报警器",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "固定动火区",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "不应存放可燃物及其他杂物",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "固定动火区",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "防火安全措施",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "固定动火区",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "防火责任人",
+      "tail_type": "施工参数"
+    }
+  ]
+}

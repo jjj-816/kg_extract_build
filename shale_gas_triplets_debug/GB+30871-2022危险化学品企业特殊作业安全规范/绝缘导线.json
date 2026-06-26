@@ -1,0 +1,13 @@
+{
+  "entity": "绝缘导线",
+  "raw": "[\n  {\"head\": \"绝缘导线\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"临时用电线路\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "绝缘导线",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "临时用电线路",
+      "tail_type": "风险事件"
+    }
+  ]
+}

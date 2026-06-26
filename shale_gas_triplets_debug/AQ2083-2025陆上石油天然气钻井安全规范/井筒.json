@@ -1,0 +1,97 @@
+{
+  "entity": "井筒",
+  "raw": "[\n  {\"head\": \"井筒\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"钻井\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"井筒\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"固井\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"井筒\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"液柱压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井筒\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"钻井液液面\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井筒\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"地下矿产采掘坑道\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"井筒\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"矿井通道\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"井筒\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"钻具\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"井筒\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"测井作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"井筒\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"井喷失控处置\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"井筒\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"井控管汇\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"井筒\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"固井作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"井筒\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"起下钻作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"井筒\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"溢流处置\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "井筒",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "钻井",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "井筒",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "固井",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "井筒",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "液柱压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井筒",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "钻井液液面",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井筒",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "地下矿产采掘坑道",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "井筒",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "矿井通道",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "井筒",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "钻具",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "井筒",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "测井作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "井筒",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "井喷失控处置",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "井筒",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "井控管汇",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "井筒",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "固井作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "井筒",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "起下钻作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "井筒",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "溢流处置",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

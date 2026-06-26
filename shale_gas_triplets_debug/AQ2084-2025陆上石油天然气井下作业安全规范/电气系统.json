@@ -1,0 +1,13 @@
+{
+  "entity": "电气系统",
+  "raw": "[\n  {\"head\": \"电气系统\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井场防爆区域内\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "电气系统",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井场防爆区域内",
+      "tail_type": "时空信息"
+    }
+  ]
+}

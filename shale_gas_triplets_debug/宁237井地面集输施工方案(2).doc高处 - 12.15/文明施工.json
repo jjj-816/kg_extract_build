@@ -1,0 +1,27 @@
+{
+  "entity": "文明施工",
+  "raw": "[\n  {\"head\": \"文明施工\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"严禁酒后上岗\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"文明施工\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"施工作业现场严禁嘻戏打闹\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"文明施工\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"不影响井站人员工作\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "文明施工",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "严禁酒后上岗",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "文明施工",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "施工作业现场严禁嘻戏打闹",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "文明施工",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "不影响井站人员工作",
+      "tail_type": "作业活动"
+    }
+  ]
+}

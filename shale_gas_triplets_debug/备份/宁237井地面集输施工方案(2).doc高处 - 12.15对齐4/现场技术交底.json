@@ -1,0 +1,76 @@
+{
+  "entity": "现场技术交底",
+  "raw": "[\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"安全技术交底\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"安全交底不清楚导致作业人员不清楚应急措施、作业风险内容\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"向属地人员、作业人员、安全监护等全体人员明确作业内容、涉及风险作业及应急处置措施\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"作业区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"高处与地面、下层作业\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"交叉作业\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"上方落物\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"下方人员误入危险区域\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"隔离护栏/围护/警戒带\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"警示标识\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"宁237井地面集输工程\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "安全技术交底",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "安全交底不清楚导致作业人员不清楚应急措施、作业风险内容",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "作业区域",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "高处与地面、下层作业",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "上方落物",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "下方人员误入危险区域",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "隔离护栏/围护/警戒带",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "警示标识",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "OCCURS_AT",
+      "tail": "宁237井地面集输工程",
+      "tail_type": "时空信息"
+    }
+  ]
+}

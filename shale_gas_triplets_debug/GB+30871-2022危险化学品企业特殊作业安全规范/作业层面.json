@@ -1,0 +1,13 @@
+{
+  "entity": "作业层面",
+  "raw": "[\n  {\"head\": \"作业层面\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"动土开挖前\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "作业层面",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "动土开挖前",
+      "tail_type": "时空信息"
+    }
+  ]
+}

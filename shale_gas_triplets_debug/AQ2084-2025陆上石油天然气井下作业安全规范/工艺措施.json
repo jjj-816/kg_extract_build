@@ -1,0 +1,34 @@
+{
+  "entity": "工艺措施",
+  "raw": "[\n  {\"head\": \"工艺措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"压井液或压井液材料准备\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工艺措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"换装井口作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工艺措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"诱喷、替喷作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工艺措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"起下管柱、旋转作业、起下大直径工具、钢丝作业和空井筒时的具体井控技术措施\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工艺措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"施工作业过程中溢流关井方法的确定\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "工艺措施",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "压井液或压井液材料准备",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "工艺措施",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "换装井口作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "工艺措施",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "诱喷、替喷作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "工艺措施",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "施工作业过程中溢流关井方法的确定",
+      "tail_type": "作业活动"
+    }
+  ]
+}

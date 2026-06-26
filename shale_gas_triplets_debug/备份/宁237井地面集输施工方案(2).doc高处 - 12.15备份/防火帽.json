@@ -1,0 +1,13 @@
+{
+  "entity": "防火帽",
+  "raw": "[\n  {\"head\": \"防火帽\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"车辆\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"防火帽\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾爆炸\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "防火帽",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾爆炸",
+      "tail_type": "风险事件"
+    }
+  ]
+}

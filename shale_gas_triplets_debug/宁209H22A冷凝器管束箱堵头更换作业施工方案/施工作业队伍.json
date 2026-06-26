@@ -1,0 +1,13 @@
+{
+  "entity": "施工作业队伍",
+  "raw": "[\n  {\"head\": \"施工作业队伍\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"无票证作业\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "施工作业队伍",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "无票证作业",
+      "tail_type": "风险事件"
+    }
+  ]
+}

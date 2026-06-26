@@ -1,0 +1,5 @@
+{
+  "entity": "附录C",
+  "raw": "[\n  {\"head\": \"附录C\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"风险作业目录编号\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": []
+}

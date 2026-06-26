@@ -1,0 +1,55 @@
+{
+  "entity": "焊接工艺",
+  "raw": "[\n  {\"head\": \"焊接工艺\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"《石油天然气金属管道焊接工艺评定》（SY/T0452-2021）\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"焊接工艺\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"焊接工艺规程（WPS）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"焊接工艺\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"工艺管线预制、焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"焊接工艺\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"防雷接地扁铁焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"焊接工艺\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"《钢制对焊管件 技术规范》（SY/T13401-2017）\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"焊接工艺\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"弧光\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊接工艺\", \"head_type\": \"未分类\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"高\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"焊接工艺\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"焊工按规定穿戴焊工专用劳保\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "焊接工艺",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "焊接工艺规程（WPS）",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "焊接工艺",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "工艺管线预制、焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "焊接工艺",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "防雷接地扁铁焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "焊接工艺",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "《钢制对焊管件 技术规范》（SY/T13401-2017）",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "焊接工艺",
+      "head_type": "未分类",
+      "relation": "HAS_PARAMETER",
+      "tail": "弧光",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "焊接工艺",
+      "head_type": "未分类",
+      "relation": "HAS_THRESHOLD",
+      "tail": "高",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "焊接工艺",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "焊工按规定穿戴焊工专用劳保",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "振动筛",
+  "raw": "[\n  {\"head\": \"振动筛\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"钻井液循环罐上的振动筛前的分配箱上\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"振动筛\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"井口、振动筛等气体易聚集位置\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"振动筛\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"钻台上下、振动筛、钻井液循环罐等气体易聚集的地方\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "振动筛",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "钻井液循环罐上的振动筛前的分配箱上",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "振动筛",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "井口、振动筛等气体易聚集位置",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "振动筛",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "钻台上下、振动筛、钻井液循环罐等气体易聚集的地方",
+      "tail_type": "时空信息"
+    }
+  ]
+}

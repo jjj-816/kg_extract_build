@@ -1,0 +1,13 @@
+{
+  "entity": "溢流量",
+  "raw": "[\n  {\"head\": \"溢流量\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"10.2 关井后应核实关井压力和溢流量\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "溢流量",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "10.2 关井后应核实关井压力和溢流量",
+      "tail_type": "施工记录"
+    }
+  ]
+}

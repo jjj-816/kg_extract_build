@@ -1,0 +1,13 @@
+{
+  "entity": "管口准备",
+  "raw": "[\n  {\"head\": \"管口准备\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"焊接\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "管口准备",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "焊接",
+      "tail_type": "作业活动"
+    }
+  ]
+}

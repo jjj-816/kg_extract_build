@@ -1,0 +1,13 @@
+{
+  "entity": "六级及以上大风",
+  "raw": "[\n  {\"head\": \"六级及以上大风\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"不应露天作业\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "六级及以上大风",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "不应露天作业",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "entity": "分析",
+  "raw": "[\n  {\"head\": \"分析\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"作业危害分析\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"风险分析\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"气体分析\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"采样分析\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"检测分析\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动火分析\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"分析\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"合格判定指标\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "分析",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "作业危害分析",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "风险分析",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "气体分析",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "采样分析",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "检测分析",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "动火分析",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "分析",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "合格判定指标",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

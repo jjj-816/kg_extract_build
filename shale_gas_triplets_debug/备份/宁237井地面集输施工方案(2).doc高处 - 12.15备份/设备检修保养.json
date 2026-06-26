@@ -1,0 +1,5 @@
+{
+  "entity": "设备检修保养",
+  "raw": "[\n  {\"head\": \"设备检修保养\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"设备装置评估表（工器具确认表）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"设备检修保养\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"电气设备检维修\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"设备检修保养\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"用电设备检查和试运转\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"设备检修保养\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"摄像头安装\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": []
+}

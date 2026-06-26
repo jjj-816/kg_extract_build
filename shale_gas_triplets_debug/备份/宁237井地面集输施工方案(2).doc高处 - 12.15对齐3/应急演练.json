@@ -1,0 +1,27 @@
+{
+  "entity": "应急演练",
+  "raw": "[\n  {\"head\": \"应急演练\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"应急演练\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"应急处置\", \"tail_type\": \"未分类\"},\n  {\"head\": \"应急演练\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"坠落、中暑等突发情况的应急方案\", \"tail_type\": \"未分类\"},\n  {\"head\": \"应急演练\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"应急救援器材\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "应急演练",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "应急演练",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "应急处置",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "应急演练",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "坠落、中暑等突发情况的应急方案",
+      "tail_type": "未分类"
+    }
+  ]
+}

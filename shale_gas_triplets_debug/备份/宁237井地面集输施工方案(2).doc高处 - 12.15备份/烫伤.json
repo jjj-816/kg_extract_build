@@ -1,0 +1,20 @@
+{
+  "entity": "烫伤",
+  "raw": "[\n  {\"head\": \"烫伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"灭火器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"烫伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"消防措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"烫伤\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"应急处置\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "烫伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "消防措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "烫伤",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "应急处置",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "安装位置",
+  "raw": "[\n  {\"head\": \"安装位置\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"分离器\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "安装位置",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "分离器",
+      "tail_type": "施工参数"
+    }
+  ]
+}

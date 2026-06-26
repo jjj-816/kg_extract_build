@@ -1,0 +1,27 @@
+{
+  "entity": "排气管",
+  "raw": "[\n  {\"head\": \"排气管\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"通径应不小于 50 mm\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"排气管\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"无破损并有防火装置\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"排气管\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井场\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "排气管",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "通径应不小于 50 mm",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "排气管",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "无破损并有防火装置",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "排气管",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井场",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "标牌编号",
+  "raw": "[\n  {\"head\": \"标牌编号\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"盲板位置图上的盲板编号\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "标牌编号",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "盲板位置图上的盲板编号",
+      "tail_type": "施工参数"
+    }
+  ]
+}

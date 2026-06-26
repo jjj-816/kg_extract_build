@@ -1,0 +1,27 @@
+{
+  "entity": "气焊(割)",
+  "raw": "[\n  {\"head\": \"气焊(割)\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"管道、储罐、塔器等设备外壁\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"气焊(割)\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"动火点\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"气焊(割)\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"10 m\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "气焊(割)",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "管道、储罐、塔器等设备外壁",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "气焊(割)",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "动火点",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "气焊(割)",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "10 m",
+      "tail_type": "施工参数"
+    }
+  ]
+}

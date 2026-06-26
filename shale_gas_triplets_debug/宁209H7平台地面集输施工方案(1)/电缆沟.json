@@ -1,0 +1,34 @@
+{
+  "entity": "电缆沟",
+  "raw": "[\n  {\"head\": \"电缆沟\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"电缆沟开挖及回填等土建作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"电缆沟\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"防雷接地沟开挖\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"电缆沟\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"防雷接地沟回填\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"电缆沟\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"损坏埋地管线和电缆\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"电缆沟\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"中\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电缆沟\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业前根据实际情况编制施工方案，标注在运管线、电缆、光纤等路径，并由相关方人员审核确认\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "电缆沟",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "电缆沟开挖及回填等土建作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "电缆沟",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "防雷接地沟开挖",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "电缆沟",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "损坏埋地管线和电缆",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "电缆沟",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "中",
+      "tail_type": "施工参数"
+    }
+  ]
+}

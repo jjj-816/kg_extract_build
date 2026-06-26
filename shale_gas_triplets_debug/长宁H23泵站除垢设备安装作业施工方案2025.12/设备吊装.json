@@ -1,0 +1,41 @@
+{
+  "entity": "设备吊装",
+  "raw": "[\n  {\"head\": \"设备吊装\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"牵引绳\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"设备吊装\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"设备两侧管线\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"设备吊装\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"设备管件\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"设备吊装\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"除垢设备\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"设备吊装\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"设备与管线\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "设备吊装",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "牵引绳",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "设备吊装",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "设备两侧管线",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "设备吊装",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "设备管件",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "设备吊装",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "除垢设备",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "设备吊装",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "设备与管线",
+      "tail_type": "施工对象"
+    }
+  ]
+}

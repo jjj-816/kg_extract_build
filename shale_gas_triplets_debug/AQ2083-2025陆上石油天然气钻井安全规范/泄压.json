@@ -1,0 +1,13 @@
+{
+  "entity": "泄压",
+  "raw": "[\n  {\"head\": \"泄压\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"停注\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "泄压",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "停注",
+      "tail_type": "作业活动"
+    }
+  ]
+}

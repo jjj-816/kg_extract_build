@@ -1,0 +1,41 @@
+{
+  "entity": "测量",
+  "raw": "[\n  {\"head\": \"测量\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"施工设备、机具及计量、测量和检验仪器准备情况\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"测量\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高空作业视线易受影响\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"测量\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"构件安装的标高、垂直度偏差难控制\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"测量\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"高精度测量仪器\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"测量\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"多次复核\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "测量",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "施工设备、机具及计量、测量和检验仪器准备情况",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "测量",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高空作业视线易受影响",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "测量",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "构件安装的标高、垂直度偏差难控制",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "测量",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "高精度测量仪器",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "测量",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "多次复核",
+      "tail_type": "施工参数"
+    }
+  ]
+}

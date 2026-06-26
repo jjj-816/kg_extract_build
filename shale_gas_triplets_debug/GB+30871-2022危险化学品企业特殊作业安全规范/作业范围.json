@@ -1,0 +1,34 @@
+{
+  "entity": "作业范围",
+  "raw": "[\n  {\"head\": \"作业范围\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业地点\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"作业范围\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"作业内容\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业范围\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"深度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业范围\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"面积\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "作业范围",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "作业地点",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "作业范围",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "作业内容",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业范围",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "深度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业范围",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "面积",
+      "tail_type": "施工参数"
+    }
+  ]
+}

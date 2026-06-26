@@ -1,0 +1,41 @@
+{
+  "entity": "现场处置方案",
+  "raw": "[\n  {\"head\": \"现场处置方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"c）现场作业的安全措施及应急响应程序\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"现场处置方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"h）应急处置程序等\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"现场处置方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"# 11 井喷失控处置\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"现场处置方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"# 陆上石油天然气井下作业安全规程\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"现场处置方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"# 陆上石油天然气井下作业安全规范\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "现场处置方案",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "c）现场作业的安全措施及应急响应程序",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "现场处置方案",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "h）应急处置程序等",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "现场处置方案",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "# 11 井喷失控处置",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "现场处置方案",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "# 陆上石油天然气井下作业安全规程",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "现场处置方案",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "# 陆上石油天然气井下作业安全规范",
+      "tail_type": "规范条款"
+    }
+  ]
+}

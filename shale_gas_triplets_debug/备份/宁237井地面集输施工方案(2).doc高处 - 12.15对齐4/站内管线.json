@@ -1,0 +1,13 @@
+{
+  "entity": "站内管线",
+  "raw": "[\n  {\"head\": \"站内管线\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"站内\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "站内管线",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "站内",
+      "tail_type": "时空信息"
+    }
+  ]
+}

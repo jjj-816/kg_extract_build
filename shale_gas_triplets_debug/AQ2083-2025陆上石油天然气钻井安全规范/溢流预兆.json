@@ -1,0 +1,27 @@
+{
+  "entity": "溢流预兆",
+  "raw": "[\n  {\"head\": \"溢流预兆\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"加强对溢流预兆及溢流显示的监测\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"溢流预兆\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"11 溢流处置\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"溢流预兆\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"e） 溢流监测\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "溢流预兆",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "加强对溢流预兆及溢流显示的监测",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "溢流预兆",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "11 溢流处置",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "溢流预兆",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "e） 溢流监测",
+      "tail_type": "时空信息"
+    }
+  ]
+}

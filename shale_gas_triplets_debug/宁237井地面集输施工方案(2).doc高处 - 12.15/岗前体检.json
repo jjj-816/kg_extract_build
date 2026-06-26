@@ -1,0 +1,41 @@
+{
+  "entity": "岗前体检",
+  "raw": "[\n  {\"head\": \"岗前体检\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"安全技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"岗前体检\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"临边/洞口防护\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"岗前体检\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"安全带高挂低用\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"岗前体检\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"操作平台稳固性\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"岗前体检\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"防范阵风、雨雪等突发天气\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"岗前体检\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"坠落风险\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "岗前体检",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "安全技术交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "岗前体检",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "临边/洞口防护",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "岗前体检",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "安全带高挂低用",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "岗前体检",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "操作平台稳固性",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "岗前体检",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "防范阵风、雨雪等突发天气",
+      "tail_type": "作业活动"
+    }
+  ]
+}

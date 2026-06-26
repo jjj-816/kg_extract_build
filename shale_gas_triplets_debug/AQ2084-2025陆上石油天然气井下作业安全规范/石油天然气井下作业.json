@@ -1,0 +1,62 @@
+{
+  "entity": "石油天然气井下作业",
+  "raw": "[\n  {\"head\": \"石油天然气井下作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"作业活动\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"石油天然气井下作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"工程\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"石油天然气井下作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"井控装置\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"石油天然气井下作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"施工作业\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"石油天然气井下作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"高产油气井\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"石油天然气井下作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"三高油气井\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"石油天然气井下作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"高压油气井\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"石油天然气井下作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"高含硫油气井\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "石油天然气井下作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "作业活动",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "石油天然气井下作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "工程",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "石油天然气井下作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "井控装置",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "石油天然气井下作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "施工作业",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "石油天然气井下作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "高产油气井",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "石油天然气井下作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "三高油气井",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "石油天然气井下作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "高压油气井",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "石油天然气井下作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "高含硫油气井",
+      "tail_type": "施工对象"
+    }
+  ]
+}

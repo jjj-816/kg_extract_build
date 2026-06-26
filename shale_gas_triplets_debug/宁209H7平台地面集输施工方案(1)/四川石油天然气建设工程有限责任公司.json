@@ -1,0 +1,13 @@
+{
+  "entity": "四川石油天然气建设工程有限责任公司",
+  "raw": "[\n  {\"head\": \"四川石油天然气建设工程有限责任公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"宁209H7平台地面集输施工方案\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"四川石油天然气建设工程有限责任公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"焊工：刘丛丛，特种人员证件号：T410326199108300038\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "四川石油天然气建设工程有限责任公司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "宁209H7平台地面集输施工方案",
+      "tail_type": "施工记录"
+    }
+  ]
+}

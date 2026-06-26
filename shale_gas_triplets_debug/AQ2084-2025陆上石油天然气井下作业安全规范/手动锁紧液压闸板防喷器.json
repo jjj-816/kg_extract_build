@@ -1,0 +1,34 @@
+{
+  "entity": "手动锁紧液压闸板防喷器",
+  "raw": "[\n  {\"head\": \"手动锁紧液压闸板防喷器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"手动操作工具\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"手动锁紧液压闸板防喷器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"手动锁紧操作装置或工具\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"手动锁紧液压闸板防喷器\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"长时间关井\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"手动锁紧液压闸板防喷器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井内有管柱时\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "手动锁紧液压闸板防喷器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "手动操作工具",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "手动锁紧液压闸板防喷器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "手动锁紧操作装置或工具",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "手动锁紧液压闸板防喷器",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "长时间关井",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "手动锁紧液压闸板防喷器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井内有管柱时",
+      "tail_type": "时空信息"
+    }
+  ]
+}

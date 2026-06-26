@@ -1,0 +1,41 @@
+{
+  "entity": "设备",
+  "raw": "[\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"砸伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"有害气体中毒、窒息\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"通道\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"设备设施上方\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "设备",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "砸伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设备",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "有害气体中毒、窒息",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设备",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设备",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "通道",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "设备",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "设备设施上方",
+      "tail_type": "时空信息"
+    }
+  ]
+}

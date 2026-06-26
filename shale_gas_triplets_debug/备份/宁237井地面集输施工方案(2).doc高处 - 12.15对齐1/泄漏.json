@@ -1,0 +1,20 @@
+{
+  "entity": "泄漏",
+  "raw": "[\n  {\"head\": \"泄漏\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"应急预案\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"泄漏\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"消防措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "泄漏",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "应急预案",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "泄漏",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "消防措施",
+      "tail_type": "控制措施"
+    }
+  ]
+}

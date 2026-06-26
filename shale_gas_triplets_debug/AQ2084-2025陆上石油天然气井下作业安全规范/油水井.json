@@ -1,0 +1,34 @@
+{
+  "entity": "油水井",
+  "raw": "[\n  {\"head\": \"油水井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"带压作业安全防喷器组\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油水井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"工作防喷器组\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油水井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"采油(气)井口装置\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油水井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"连续油管作业\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "油水井",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "带压作业安全防喷器组",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "油水井",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "工作防喷器组",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "油水井",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "采油(气)井口装置",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "油水井",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "连续油管作业",
+      "tail_type": "施工对象"
+    }
+  ]
+}

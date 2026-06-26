@@ -1,0 +1,20 @@
+{
+  "entity": "井控技术措施",
+  "raw": "[\n  {\"head\": \"井控技术措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"5.3.5.4 欠平衡等特殊工艺、工序施工\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井控技术措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"8.6.1 固井施工\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井控技术措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"7.2 应向钻井现场有关工作人员进行工程、地质、钻井液、井控装置和井控措施等方面的技术交底\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "井控技术措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "5.3.5.4 欠平衡等特殊工艺、工序施工",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井控技术措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "8.6.1 固井施工",
+      "tail_type": "施工记录"
+    }
+  ]
+}

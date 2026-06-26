@@ -1,0 +1,34 @@
+{
+  "entity": "应急处置措施",
+  "raw": "[\n  {\"head\": \"应急处置措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"应急处置措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"如遇无法处理的紧急情况，按预先确定的逃生路线疏散人员\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"应急处置措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"员工应急施救前应做好自身安全防护\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"应急处置措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"明确施工作业现场应急通道，应急处置要求，告知安防消防器材设置情况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"应急处置措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"事故必须由有效的最迅速的方法汇报给施工负责人或者现场管理人员，他们将报告应急领导小组，同时现场要进行必要的救护\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"应急处置措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"按要求配备灭火器\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "应急处置措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "应急处置措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "如遇无法处理的紧急情况，按预先确定的逃生路线疏散人员",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "应急处置措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "员工应急施救前应做好自身安全防护",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "应急处置措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "按要求配备灭火器",
+      "tail_type": "施工记录"
+    }
+  ]
+}

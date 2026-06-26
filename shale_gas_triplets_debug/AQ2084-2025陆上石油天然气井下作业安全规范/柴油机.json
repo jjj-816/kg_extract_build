@@ -1,0 +1,20 @@
+{
+  "entity": "柴油机",
+  "raw": "[\n  {\"head\": \"柴油机\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"排气管\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"柴油机\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防火装置\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "柴油机",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "排气管",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "柴油机",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "防火装置",
+      "tail_type": "施工参数"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "作业人员持有电工作业操作证",
+  "raw": "[\n  {\"head\": \"作业人员持有电工作业操作证\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"电工证号\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "作业人员持有电工作业操作证",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "电工证号",
+      "tail_type": "施工记录"
+    }
+  ]
+}

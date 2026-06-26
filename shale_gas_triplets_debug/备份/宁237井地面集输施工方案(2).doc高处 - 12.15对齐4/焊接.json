@@ -1,0 +1,83 @@
+{
+  "entity": "焊接",
+  "raw": "[\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"佩戴好防护面罩\", \"tail_type\": \"未分类\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"打磨\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"切割\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"《钢制对焊管件 技术规范》（SY/T13401-2017）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"《石油天然气金属管道焊接工艺评定》（SY/T0452-2021）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"管道\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"砂轮机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"护目镜\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防护面罩\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"受限\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高处\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"动火\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "佩戴好防护面罩",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "打磨",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "切割",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "《钢制对焊管件 技术规范》（SY/T13401-2017）",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "管道",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "砂轮机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "护目镜",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防护面罩",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "受限",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高处",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "动火",
+      "tail_type": "风险事件"
+    }
+  ]
+}

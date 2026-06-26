@@ -1,0 +1,27 @@
+{
+  "entity": "作业半径",
+  "raw": "[\n  {\"head\": \"作业半径\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"5米\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"作业半径\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"5米\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"作业半径\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"5米\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "作业半径",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "5米",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "作业半径",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "5米",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "作业半径",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "5米",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

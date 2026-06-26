@@ -1,0 +1,13 @@
+{
+  "entity": "火花飞溅",
+  "raw": "[\n  {\"head\": \"火花飞溅\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"消防措施（灭火器）到位\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "火花飞溅",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "消防措施（灭火器）到位",
+      "tail_type": "控制措施"
+    }
+  ]
+}

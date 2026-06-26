@@ -1,0 +1,34 @@
+{
+  "entity": "气体浓度超限报警",
+  "raw": "[\n  {\"head\": \"气体浓度超限报警\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"立即停止作业\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"气体浓度超限报警\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"撤离人员\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"气体浓度超限报警\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"对现场进行处理\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"气体浓度超限报警\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"重新检测合格后方可恢复作业\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "气体浓度超限报警",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "立即停止作业",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "气体浓度超限报警",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "撤离人员",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "气体浓度超限报警",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "对现场进行处理",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "气体浓度超限报警",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "重新检测合格后方可恢复作业",
+      "tail_type": "控制措施"
+    }
+  ]
+}

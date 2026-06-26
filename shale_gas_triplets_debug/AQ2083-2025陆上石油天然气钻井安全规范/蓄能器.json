@@ -1,0 +1,20 @@
+{
+  "entity": "蓄能器",
+  "raw": "[\n  {\"head\": \"蓄能器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"预充氮气\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"蓄能器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"18.5 MPa～21 MPa\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "蓄能器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "预充氮气",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "蓄能器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "18.5 MPa～21 MPa",
+      "tail_type": "施工参数"
+    }
+  ]
+}

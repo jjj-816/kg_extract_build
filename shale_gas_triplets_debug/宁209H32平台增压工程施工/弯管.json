@@ -1,0 +1,5 @@
+{
+  "entity": "弯管",
+  "raw": "[\n  {\"head\": \"弯管\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"管道对接焊缝距离弯管起点应大于100mm\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": []
+}

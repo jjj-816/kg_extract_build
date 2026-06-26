@@ -1,0 +1,76 @@
+{
+  "entity": "危险作业",
+  "raw": "[\n  {\"head\": \"危险作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"工业动火\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"危险作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"有限空间作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"危险作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"危险作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"临时用电\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"危险作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"吊装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"危险作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"脚手架\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"危险作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"危险作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"危险作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"安全技术交底和风险告知内容\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"危险作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"机械伤害风险控制措施\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "危险作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "工业动火",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "危险作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "有限空间作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "危险作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "高处作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "危险作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "临时用电",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "危险作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "吊装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "危险作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "脚手架",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "危险作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "危险作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "危险作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "安全技术交底和风险告知内容",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "危险作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "机械伤害风险控制措施",
+      "tail_type": "未分类"
+    }
+  ]
+}

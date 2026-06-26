@@ -1,0 +1,20 @@
+{
+  "entity": "地下隐蔽工程",
+  "raw": "[\n  {\"head\": \"地下隐蔽工程\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"涉及断路、动土作业时，应对作业现场的地下隐蔽工程进行交底\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"地下隐蔽工程\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业单位应了解地下隐蔽设施的分布情况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"地下隐蔽工程\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业临近地下隐蔽设施时，应使用适当工具人工挖掘\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"地下隐蔽工程\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"如暴露出电缆、管线以及不能辨认的物品时，应立即停止作业\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"地下隐蔽工程\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"报告动土审批单位，经采取保护措施后方可继续作业\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"地下隐蔽工程\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"使用推土机、压路机等施工机械进行填土或平整场地等可能对地下隐蔽设施产生影响的作业\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "地下隐蔽工程",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "涉及断路、动土作业时，应对作业现场的地下隐蔽工程进行交底",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "地下隐蔽工程",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业单位应了解地下隐蔽设施的分布情况",
+      "tail_type": "施工记录"
+    }
+  ]
+}

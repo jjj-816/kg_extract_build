@@ -1,0 +1,20 @@
+{
+  "entity": "正压式空气呼吸器",
+  "raw": "[\n  {\"head\": \"正压式空气呼吸器\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"超过 $30\\\\mathrm{mg / m^3}$ （20ppm）\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"正压式空气呼吸器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"含硫油气井或新探区录井作业\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"正压式空气呼吸器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"含硫地区的钻井现场\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "正压式空气呼吸器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "含硫油气井或新探区录井作业",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "正压式空气呼吸器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "含硫地区的钻井现场",
+      "tail_type": "时空信息"
+    }
+  ]
+}

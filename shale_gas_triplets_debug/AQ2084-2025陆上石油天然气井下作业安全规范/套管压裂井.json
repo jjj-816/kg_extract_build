@@ -1,0 +1,27 @@
+{
+  "entity": "套管压裂井",
+  "raw": "[\n  {\"head\": \"套管压裂井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"井筒试压值不低于预测最高施工压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"套管压裂井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"稳压时间不少于30 min\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"套管压裂井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压降不超过0.5 MPa\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"套管压裂井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"带压油管(钻杆)输送射孔作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"套管压裂井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"油管(钻杆)输送射孔作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"套管压裂井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"井控管汇(线)\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"套管压裂井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"井喷失控处置\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "套管压裂井",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "井筒试压值不低于预测最高施工压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "套管压裂井",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "稳压时间不少于30 min",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "套管压裂井",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "压降不超过0.5 MPa",
+      "tail_type": "施工参数"
+    }
+  ]
+}

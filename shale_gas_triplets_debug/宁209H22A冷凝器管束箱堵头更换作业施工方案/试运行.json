@@ -1,0 +1,13 @@
+{
+  "entity": "试运行",
+  "raw": "[\n  {\"head\": \"试运行\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"试压验漏\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "试运行",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "试压验漏",
+      "tail_type": "作业活动"
+    }
+  ]
+}

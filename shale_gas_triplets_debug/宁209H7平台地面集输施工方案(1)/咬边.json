@@ -1,0 +1,13 @@
+{
+  "entity": "咬边",
+  "raw": "[\n  {\"head\": \"咬边\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"外观检查\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "咬边",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "外观检查",
+      "tail_type": "施工记录"
+    }
+  ]
+}

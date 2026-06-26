@@ -1,0 +1,13 @@
+{
+  "entity": "机具",
+  "raw": "[\n  {\"head\": \"机具\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"现场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"机具\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"违反安全管控规定\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "机具",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "现场",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "辅助民工",
+  "raw": "[\n  {\"head\": \"辅助民工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"6人\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "辅助民工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "6人",
+      "tail_type": "未分类"
+    }
+  ]
+}

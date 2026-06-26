@@ -1,0 +1,13 @@
+{
+  "entity": "坡口角度",
+  "raw": "[\n  {\"head\": \"坡口角度\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"V型、U型\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "坡口角度",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "V型、U型",
+      "tail_type": "施工记录"
+    }
+  ]
+}

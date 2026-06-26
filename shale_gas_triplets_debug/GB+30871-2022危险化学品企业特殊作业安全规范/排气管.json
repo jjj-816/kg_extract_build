@@ -1,0 +1,13 @@
+{
+  "entity": "排气管",
+  "raw": "[\n  {\"head\": \"排气管\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"爆炸危险场所\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "排气管",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "爆炸危险场所",
+      "tail_type": "风险事件"
+    }
+  ]
+}

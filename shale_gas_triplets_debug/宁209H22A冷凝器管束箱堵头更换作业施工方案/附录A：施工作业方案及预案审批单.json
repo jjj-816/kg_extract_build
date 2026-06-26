@@ -1,0 +1,34 @@
+{
+  "entity": "附录A：施工作业方案及预案审批单",
+  "raw": "[\n  {\"head\": \"附录A：施工作业方案及预案审批单\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"施工准备与资源配置计划\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"附录A：施工作业方案及预案审批单\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"施工安排\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"附录A：施工作业方案及预案审批单\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"工程概况\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"附录A：施工作业方案及预案审批单\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"4.2.2施工组织机构及技术措施\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "附录A：施工作业方案及预案审批单",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "施工准备与资源配置计划",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "附录A：施工作业方案及预案审批单",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "施工安排",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "附录A：施工作业方案及预案审批单",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "工程概况",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "附录A：施工作业方案及预案审批单",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "4.2.2施工组织机构及技术措施",
+      "tail_type": "施工对象"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "窨井",
+  "raw": "[\n  {\"head\": \"窨井\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"动火点周围\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"窨井\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"距火灾爆炸危险场所的厂房、库房、罐区、设备、装置、排水沟、水封设施等\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"窨井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"挖出的泥土不应堵塞下水道和窨井\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"窨井\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"生产装置区、罐区等危险场所\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"窨井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"动火点周围及附近的孔洞、窨井、地沟、水封设施、污水井等已清除易燃物,并已采取覆盖、铺沙等手段进行隔离\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "窨井",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "动火点周围",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "窨井",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "挖出的泥土不应堵塞下水道和窨井",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "窨井",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "生产装置区、罐区等危险场所",
+      "tail_type": "时空信息"
+    }
+  ]
+}

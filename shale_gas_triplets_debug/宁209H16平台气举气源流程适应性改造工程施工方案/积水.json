@@ -1,0 +1,13 @@
+{
+  "entity": "积水",
+  "raw": "[\n  {\"head\": \"积水\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"沟内\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "积水",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "沟内",
+      "tail_type": "施工对象"
+    }
+  ]
+}

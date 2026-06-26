@@ -1,0 +1,13 @@
+{
+  "entity": "申请人",
+  "raw": "[\n  {\"head\": \"申请人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"开工条件确认\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"申请人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"确认现场作业相关人员（项目负责人、申请人、安全监护人、特种作业人员）与作业许可指定人员一致（核查有效证件）\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "申请人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "开工条件确认",
+      "tail_type": "作业活动"
+    }
+  ]
+}

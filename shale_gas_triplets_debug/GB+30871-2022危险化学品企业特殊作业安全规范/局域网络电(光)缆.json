@@ -1,0 +1,27 @@
+{
+  "entity": "局域网络电(光)缆",
+  "raw": "[\n  {\"head\": \"局域网络电(光)缆\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"地下\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"局域网络电(光)缆\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"沿墙面或地面\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"局域网络电(光)缆\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"埋地深度不应小于0.7m\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"局域网络电(光)缆\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火花损伤\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "局域网络电(光)缆",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "地下",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "局域网络电(光)缆",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "沿墙面或地面",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "局域网络电(光)缆",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火花损伤",
+      "tail_type": "风险事件"
+    }
+  ]
+}

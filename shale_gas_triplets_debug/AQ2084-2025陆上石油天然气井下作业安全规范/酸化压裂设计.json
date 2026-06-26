@@ -1,0 +1,48 @@
+{
+  "entity": "酸化压裂设计",
+  "raw": "[\n  {\"head\": \"酸化压裂设计\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"最高施工压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"酸化压裂设计\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"注入管柱\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"酸化压裂设计\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压裂井口\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"酸化压裂设计\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"高压管汇\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"酸化压裂设计\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"施工限压\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"酸化压裂设计\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"最大允许关井套压\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "酸化压裂设计",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "最高施工压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "酸化压裂设计",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "注入管柱",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "酸化压裂设计",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "压裂井口",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "酸化压裂设计",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "高压管汇",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "酸化压裂设计",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "施工限压",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "酸化压裂设计",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "最大允许关井套压",
+      "tail_type": "施工参数"
+    }
+  ]
+}

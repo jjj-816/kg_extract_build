@@ -1,0 +1,34 @@
+{
+  "entity": "救援人员",
+  "raw": "[\n  {\"head\": \"救援人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"佩戴正压式空气呼吸器\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"救援人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"明确监护人与救援人员联络方法\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"救援人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"佩戴安全带、救生索等便于救援\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"救援人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"做好自身安全防护\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "救援人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "佩戴正压式空气呼吸器",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "救援人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "明确监护人与救援人员联络方法",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "救援人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "佩戴安全带、救生索等便于救援",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "救援人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "做好自身安全防护",
+      "tail_type": "控制措施"
+    }
+  ]
+}

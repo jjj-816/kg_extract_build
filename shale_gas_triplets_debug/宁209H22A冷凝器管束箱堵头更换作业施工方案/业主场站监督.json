@@ -1,0 +1,20 @@
+{
+  "entity": "业主场站监督",
+  "raw": "[\n  {\"head\": \"业主场站监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"项目负责人\", \"tail_type\": \"未分类\"},\n  {\"head\": \"业主场站监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场安全监护人\", \"tail_type\": \"未分类\"},\n  {\"head\": \"业主场站监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工班组项目负责人\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "业主场站监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场安全监护人",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "业主场站监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工班组项目负责人",
+      "tail_type": "未分类"
+    }
+  ]
+}

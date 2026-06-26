@@ -1,0 +1,48 @@
+{
+  "entity": "作业审批人",
+  "raw": "[\n  {\"head\": \"作业审批人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"作业现场的安全协调与联系\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业审批人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"作业人员的行为和现场安全作业条件\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业审批人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"作业人员配备和使用的个体防护装备\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业审批人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"相关作业人员持有效资格证书上岗\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业审批人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"临时拆除或变动作业对象的安全防护设施\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业审批人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"吊装作业方案\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "作业审批人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "作业现场的安全协调与联系",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "作业审批人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "作业人员的行为和现场安全作业条件",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "作业审批人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "作业人员配备和使用的个体防护装备",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "作业审批人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "相关作业人员持有效资格证书上岗",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "作业审批人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "临时拆除或变动作业对象的安全防护设施",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "作业审批人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "吊装作业方案",
+      "tail_type": "施工记录"
+    }
+  ]
+}

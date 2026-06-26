@@ -1,0 +1,27 @@
+{
+  "entity": "施工内容",
+  "raw": "[\n  {\"head\": \"施工内容\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工内容\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"场站动土作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工内容\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业方案及预案审批单\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "施工内容",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工内容",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "场站动土作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工内容",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业方案及预案审批单",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "entity": "作业环境安全条件",
+  "raw": "[\n  {\"head\": \"作业环境安全条件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"作业要求\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业环境安全条件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"状况\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业环境安全条件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"绝缘手套\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"作业环境安全条件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"绝缘鞋\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"作业环境安全条件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"绝缘隔离措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业环境安全条件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"绝缘垫\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"作业环境安全条件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"安全技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业环境安全条件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"作业内容\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业环境安全条件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"作业风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"作业环境安全条件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"控制措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业环境安全条件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"健康、安全、环保管理\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"作业环境安全条件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"《石油化工建设工程施工安全技术标准》（GB/T50484-2019）\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"作业环境安全条件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"《建筑施工高处作业安全技术规范》（JGJ80-2016）\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"作业环境安全条件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"《建筑施工动火作业安全技术规范》（JGJ308-2014）\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "作业环境安全条件",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "作业要求",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业环境安全条件",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "状况",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业环境安全条件",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "绝缘隔离措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业环境安全条件",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "安全技术交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业环境安全条件",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "作业内容",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业环境安全条件",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "控制措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "《建筑施工高处作业安全技术规范》（JGJ80-2016）",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "作业环境安全条件",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "《建筑施工动火作业安全技术规范》（JGJ308-2014）",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "作业环境安全条件",
+      "tail_type": "未分类"
+    }
+  ]
+}

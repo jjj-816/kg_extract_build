@@ -1,0 +1,13 @@
+{
+  "entity": "帆布手套",
+  "raw": "[\n  {\"head\": \"帆布手套\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业人员正确佩戴劳动保护用品\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "帆布手套",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业人员正确佩戴劳动保护用品",
+      "tail_type": "时空信息"
+    }
+  ]
+}

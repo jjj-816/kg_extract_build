@@ -1,0 +1,41 @@
+{
+  "entity": "操作规程",
+  "raw": "[\n  {\"head\": \"操作规程\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"吊装作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"操作规程\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"定型起重机械\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"操作规程\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"履带吊车\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"操作规程\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"轮胎吊车\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"操作规程\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"桥式吊车\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "操作规程",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "吊装作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "操作规程",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "定型起重机械",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "操作规程",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "履带吊车",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "操作规程",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "轮胎吊车",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "操作规程",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "桥式吊车",
+      "tail_type": "设备工具"
+    }
+  ]
+}

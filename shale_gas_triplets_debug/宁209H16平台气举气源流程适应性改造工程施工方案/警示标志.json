@@ -1,0 +1,13 @@
+{
+  "entity": "警示标志",
+  "raw": "[\n  {\"head\": \"警示标志\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"警示带及警示标识\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "警示标志",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "警示带及警示标识",
+      "tail_type": "施工对象"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "entity": "范围",
+  "raw": "[\n  {\"head\": \"范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"居民住宅\", \"tail_type\": \"环保对象\"},\n  {\"head\": \"范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"学校\", \"tail_type\": \"环保对象\"},\n  {\"head\": \"范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"公路\", \"tail_type\": \"环保对象\"},\n  {\"head\": \"范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"铁路\", \"tail_type\": \"环保对象\"},\n  {\"head\": \"范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"厂矿\", \"tail_type\": \"环保对象\"},\n  {\"head\": \"范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"人口分布\", \"tail_type\": \"环保对象\"},\n  {\"head\": \"范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"井口 500 m 范围内居民\", \"tail_type\": \"环保对象\"},\n  {\"head\": \"范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"井场各处有毒有害气体含量\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"安全范围\", \"tail_type\": \"环保对象\"},\n  {\"head\": \"范围\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"撤离范围\", \"tail_type\": \"环保对象\"}\n]",
+  "triplets": [
+    {
+      "head": "范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "居民住宅",
+      "tail_type": "环保对象"
+    },
+    {
+      "head": "范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "学校",
+      "tail_type": "环保对象"
+    },
+    {
+      "head": "范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "公路",
+      "tail_type": "环保对象"
+    },
+    {
+      "head": "范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "铁路",
+      "tail_type": "环保对象"
+    },
+    {
+      "head": "范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "厂矿",
+      "tail_type": "环保对象"
+    },
+    {
+      "head": "范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "人口分布",
+      "tail_type": "环保对象"
+    },
+    {
+      "head": "范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "井口 500 m 范围内居民",
+      "tail_type": "环保对象"
+    },
+    {
+      "head": "范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "井场各处有毒有害气体含量",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "安全范围",
+      "tail_type": "环保对象"
+    },
+    {
+      "head": "范围",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "撤离范围",
+      "tail_type": "环保对象"
+    }
+  ]
+}

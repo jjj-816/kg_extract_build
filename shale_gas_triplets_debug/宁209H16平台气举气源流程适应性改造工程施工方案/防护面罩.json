@@ -1,0 +1,20 @@
+{
+  "entity": "防护面罩",
+  "raw": "[\n  {\"head\": \"防护面罩\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火花引燃周边物料\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"防护面罩\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"切割区域\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "防护面罩",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火花引燃周边物料",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "防护面罩",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "切割区域",
+      "tail_type": "时空信息"
+    }
+  ]
+}

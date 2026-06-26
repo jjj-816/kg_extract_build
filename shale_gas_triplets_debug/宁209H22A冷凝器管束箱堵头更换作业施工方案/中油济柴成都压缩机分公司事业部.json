@@ -1,0 +1,20 @@
+{
+  "entity": "中油济柴成都压缩机分公司事业部",
+  "raw": "[\n  {\"head\": \"中油济柴成都压缩机分公司事业部\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工方案\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"中油济柴成都压缩机分公司事业部\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场人员配置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"中油济柴成都压缩机分公司事业部\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"冯圣江：高处作业：证件号：T513029197308260894\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "中油济柴成都压缩机分公司事业部",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工方案",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "中油济柴成都压缩机分公司事业部",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场人员配置",
+      "tail_type": "作业活动"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "平台护栏",
+  "raw": "[\n  {\"head\": \"平台护栏\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"高度≥1.2m\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"平台护栏\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"高空作业平台\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "平台护栏",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "高度≥1.2m",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "平台护栏",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "高空作业平台",
+      "tail_type": "时空信息"
+    }
+  ]
+}

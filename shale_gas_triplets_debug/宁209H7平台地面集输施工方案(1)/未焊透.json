@@ -1,0 +1,34 @@
+{
+  "entity": "未焊透",
+  "raw": "[\n  {\"head\": \"未焊透\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防止烧穿或未焊透\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"未焊透\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"彻底清除每一层焊道上的焊渣和飞溅物\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"未焊透\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"RT和UT主要用于检测内部缺陷\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"未焊透\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"填充与盖面\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "未焊透",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "防止烧穿或未焊透",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "未焊透",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "彻底清除每一层焊道上的焊渣和飞溅物",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "未焊透",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "RT和UT主要用于检测内部缺陷",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "未焊透",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "填充与盖面",
+      "tail_type": "施工记录"
+    }
+  ]
+}

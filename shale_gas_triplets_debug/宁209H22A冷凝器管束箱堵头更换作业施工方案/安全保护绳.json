@@ -1,0 +1,20 @@
+{
+  "entity": "安全保护绳",
+  "raw": "[\n  {\"head\": \"安全保护绳\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高处坠落\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全保护绳\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"穿戴好\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "安全保护绳",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高处坠落",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "安全保护绳",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "穿戴好",
+      "tail_type": "施工参数"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "entity": "钻具",
+  "raw": "[\n  {\"head\": \"钻具\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"70 MPa 及以上压力等级\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"钻具\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"堵漏钻具组合\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"钻具\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"下尾管前的称重钻具组合\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"钻具\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"处理卡钻事故中的爆炸松扣打捞钻具组合\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"钻具\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"穿心打捞测井电缆及仪器钻具组合\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "钻具",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "70 MPa 及以上压力等级",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "钻具",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "堵漏钻具组合",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "钻具",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "下尾管前的称重钻具组合",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "钻具",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "处理卡钻事故中的爆炸松扣打捞钻具组合",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "钻具",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "穿心打捞测井电缆及仪器钻具组合",
+      "tail_type": "风险事件"
+    }
+  ]
+}

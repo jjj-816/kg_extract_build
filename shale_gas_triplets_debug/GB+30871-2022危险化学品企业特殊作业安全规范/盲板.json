@@ -1,0 +1,34 @@
+{
+  "entity": "盲板",
+  "raw": "[\n  {\"head\": \"盲板\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"设备、管道\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"盲板\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾爆炸危险场所\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"盲板\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"HG/T 21547\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"盲板\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"JB/T 2772\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "盲板",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "设备、管道",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "盲板",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾爆炸危险场所",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "盲板",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "HG/T 21547",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "盲板",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "JB/T 2772",
+      "tail_type": "施工参数"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "联络方法",
+  "raw": "[\n  {\"head\": \"联络方法\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"口哨，人工喊话等\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "联络方法",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "口哨，人工喊话等",
+      "tail_type": "施工记录"
+    }
+  ]
+}

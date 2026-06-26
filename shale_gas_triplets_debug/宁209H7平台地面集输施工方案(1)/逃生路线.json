@@ -1,0 +1,20 @@
+{
+  "entity": "逃生路线",
+  "raw": "[\n  {\"head\": \"逃生路线\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"通道畅通\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"逃生路线\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"清理通道\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "逃生路线",
+      "head_type": "未分类",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "通道畅通",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "逃生路线",
+      "head_type": "未分类",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "清理通道",
+      "tail_type": "作业活动"
+    }
+  ]
+}

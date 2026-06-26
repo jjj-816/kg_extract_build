@@ -1,0 +1,13 @@
+{
+  "entity": "传呼机",
+  "raw": "[\n  {\"head\": \"传呼机\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"非防爆通讯器材\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "传呼机",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "非防爆通讯器材",
+      "tail_type": "风险事件"
+    }
+  ]
+}

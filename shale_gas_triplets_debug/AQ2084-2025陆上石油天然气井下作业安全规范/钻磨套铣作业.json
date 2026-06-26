@@ -1,0 +1,48 @@
+{
+  "entity": "钻磨套铣作业",
+  "raw": "[\n  {\"head\": \"钻磨套铣作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"压井液\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"钻磨套铣作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"压井液材料准备\", \"tail_type\": \"未分类\"},\n  {\"head\": \"钻磨套铣作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"起下管柱\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"钻磨套铣作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"旋转作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"钻磨套铣作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"起下大直径工具\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"钻磨套铣作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"钢丝作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"钻磨套铣作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"空井筒\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "钻磨套铣作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "压井液材料准备",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "钻磨套铣作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "起下管柱",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "钻磨套铣作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "旋转作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "钻磨套铣作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "起下大直径工具",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "钻磨套铣作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "钢丝作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "钻磨套铣作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "空井筒",
+      "tail_type": "作业活动"
+    }
+  ]
+}

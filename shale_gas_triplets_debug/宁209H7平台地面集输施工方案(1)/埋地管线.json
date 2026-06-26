@@ -1,0 +1,27 @@
+{
+  "entity": "埋地管线",
+  "raw": "[\n  {\"head\": \"埋地管线\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"损坏埋地管线和电缆\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"埋地管线\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"电缆沟开挖及回填等土建作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"埋地管线\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"在运管线、电缆、光纤等路径\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "埋地管线",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "损坏埋地管线和电缆",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "埋地管线",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "电缆沟开挖及回填等土建作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "埋地管线",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "在运管线、电缆、光纤等路径",
+      "tail_type": "时空信息"
+    }
+  ]
+}

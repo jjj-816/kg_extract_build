@@ -1,0 +1,69 @@
+{
+  "entity": "用电管理规定",
+  "raw": "[\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"用电设施\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"漏电保护\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"接零\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"接地\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"一机一闸一保护\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"电气设备检维修\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"停电\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"挂牌\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"上锁\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"用电设备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"专人\", \"tail_type\": \"未分类\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"操作规程\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"配电箱\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"漏电保护装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"用电设备检查\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"用电管理规定\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"试运转\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "用电管理规定",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "漏电保护",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "一机一闸一保护",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "用电管理规定",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "用电管理规定",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "电气设备检维修",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "用电管理规定",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "专人",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "操作规程",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "用电管理规定",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "用电管理规定",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "发电机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "用电管理规定",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "配电箱",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "用电管理规定",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "漏电保护装置",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "用电管理规定",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "试运转",
+      "tail_type": "作业活动"
+    }
+  ]
+}

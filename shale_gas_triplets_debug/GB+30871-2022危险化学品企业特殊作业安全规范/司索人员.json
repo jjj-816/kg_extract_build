@@ -1,0 +1,125 @@
+{
+  "entity": "司索人员",
+  "raw": "[\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"不应起吊的情况\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"做相应处理\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"佩戴个体防护装备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"明确各自分工、坚守岗位\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"统一规定联络信号\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"吊物捆扎坚固\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"棱角吊物已采取衬垫措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"吊装绳索、揽风绳、拖拉绳等不应与带电线路接触\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"不应利用管道、管架、电杆、机电设备等作吊装锚点\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"吊装作业人员持有有效的法定资格证书\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"起吊物的质量(t)经确认\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"在吊装高度的管线、电缆桥架已做好防护措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"作业现场围栏、警戒线、警告牌、夜间警示灯已按要求设置\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"作业高度和转臂范围内无架空线路\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"在爆炸危险场所内的作业,机动车排气管已装阻火器\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"露天作业,环境风力满足作业安全要求\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"司索人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"其他相关特殊作业已办理相应安全作业票\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "不应起吊的情况",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "做相应处理",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "佩戴个体防护装备",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "明确各自分工、坚守岗位",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "统一规定联络信号",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "吊物捆扎坚固",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "棱角吊物已采取衬垫措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "吊装绳索、揽风绳、拖拉绳等不应与带电线路接触",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "不应利用管道、管架、电杆、机电设备等作吊装锚点",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "吊装作业人员持有有效的法定资格证书",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "起吊物的质量(t)经确认",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "在吊装高度的管线、电缆桥架已做好防护措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "作业现场围栏、警戒线、警告牌、夜间警示灯已按要求设置",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "作业高度和转臂范围内无架空线路",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "在爆炸危险场所内的作业,机动车排气管已装阻火器",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "露天作业,环境风力满足作业安全要求",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "司索人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "其他相关特殊作业已办理相应安全作业票",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "entity": "工序",
+  "raw": "[\n  {\"head\": \"工序\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工序\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"对中\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工序\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"风险矩阵\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工序\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"风险分析\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "工序",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "工序",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "对中",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "工序",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "风险矩阵",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "工序",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "风险分析",
+      "tail_type": "施工记录"
+    }
+  ]
+}

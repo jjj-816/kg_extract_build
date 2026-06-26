@@ -1,0 +1,34 @@
+{
+  "entity": "动火方式",
+  "raw": "[\n  {\"head\": \"动火方式\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"特级动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火方式\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"一级动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火方式\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"二级动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火方式\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"在非火灾爆炸危险场所划出的专门用于动火的区域\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火方式\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"在直接或间接产生明火的工艺设施以外的禁火区内从事可能产生火焰、火花或炽热表面的非常规作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "动火方式",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "特级动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火方式",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "一级动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火方式",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "二级动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火方式",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "在非火灾爆炸危险场所划出的专门用于动火的区域",
+      "tail_type": "作业活动"
+    }
+  ]
+}

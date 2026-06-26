@@ -1,0 +1,20 @@
+{
+  "entity": "焊渣",
+  "raw": "[\n  {\"head\": \"焊渣\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"夹渣\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"焊渣\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"未熔合\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "焊渣",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "夹渣",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "焊渣",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "未熔合",
+      "tail_type": "风险事件"
+    }
+  ]
+}

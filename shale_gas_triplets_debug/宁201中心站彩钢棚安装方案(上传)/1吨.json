@@ -1,0 +1,20 @@
+{
+  "entity": "1吨",
+  "raw": "[\n  {\"head\": \"1吨\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"起重量≤17吨\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"1吨\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"吊装安全\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"1吨\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"25T流动式起重机\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "1吨",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "起重量≤17吨",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "1吨",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "25T流动式起重机",
+      "tail_type": "施工记录"
+    }
+  ]
+}

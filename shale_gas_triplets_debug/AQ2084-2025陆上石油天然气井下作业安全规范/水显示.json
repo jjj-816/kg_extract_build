@@ -1,0 +1,13 @@
+{
+  "entity": "水显示",
+  "raw": "[\n  {\"head\": \"水显示\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"钻井油、气、水显示\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "水显示",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "钻井油、气、水显示",
+      "tail_type": "施工参数"
+    }
+  ]
+}

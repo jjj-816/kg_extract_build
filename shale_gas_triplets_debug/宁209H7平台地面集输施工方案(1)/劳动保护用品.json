@@ -1,0 +1,62 @@
+{
+  "entity": "劳动保护用品",
+  "raw": "[\n  {\"head\": \"劳动保护用品\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"劳动保护用品\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"低\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"劳动保护用品\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防静电\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"劳动保护用品\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"帆布手套\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"劳动保护用品\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防静电工作服\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"劳动保护用品\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防砸工鞋\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"劳动保护用品\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"安全帽\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"劳动保护用品\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防毒口罩\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "劳动保护用品",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体打击",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "劳动保护用品",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "低",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "劳动保护用品",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "防静电",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "劳动保护用品",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "帆布手套",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "劳动保护用品",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "防静电工作服",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "劳动保护用品",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "防砸工鞋",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "劳动保护用品",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "安全帽",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "劳动保护用品",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "防毒口罩",
+      "tail_type": "施工参数"
+    }
+  ]
+}

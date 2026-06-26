@@ -1,0 +1,13 @@
+{
+  "entity": "桥塞",
+  "raw": "[\n  {\"head\": \"桥塞\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"井筒现状\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "桥塞",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "井筒现状",
+      "tail_type": "时空信息"
+    }
+  ]
+}

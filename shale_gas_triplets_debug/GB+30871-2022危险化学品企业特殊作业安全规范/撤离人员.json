@@ -1,0 +1,5 @@
+{
+  "entity": "撤离人员",
+  "raw": "[\n  {\"head\": \"撤离人员\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工记录\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": []
+}

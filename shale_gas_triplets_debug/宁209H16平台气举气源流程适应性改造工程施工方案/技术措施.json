@@ -1,0 +1,97 @@
+{
+  "entity": "技术措施",
+  "raw": "[\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"召开技术措施和安全动员会\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"进行安全技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"安全措施到人\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"人人任务明确\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"协调配合有条不紊\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"工程概况\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"施工安排\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"编制依据\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"主要设备、材料和施工辅助材料需要量\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"技术准备\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"主要作业步骤\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"国家及长宁公司技术要求相关标准\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"施工现场踏勘调查\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "召开技术措施和安全动员会",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "进行安全技术交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "安全措施到人",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "人人任务明确",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "协调配合有条不紊",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "工程概况",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "施工安排",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "编制依据",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "主要设备、材料和施工辅助材料需要量",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "技术准备",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "主要作业步骤",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "国家及长宁公司技术要求相关标准",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "施工现场踏勘调查",
+      "tail_type": "规范条款"
+    }
+  ]
+}

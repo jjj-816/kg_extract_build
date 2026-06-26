@@ -1,0 +1,48 @@
+{
+  "entity": "防硫化氢措施",
+  "raw": "[\n  {\"head\": \"防硫化氢措施\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"钻开含硫油气层前\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"防硫化氢措施\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"防硫化氢安全技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"防硫化氢措施\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"硫化氢的来源、理化特性、中毒反应及中毒的现场救护\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"防硫化氢措施\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"硫化氢检测仪器及防护器具的使用、检测和维护\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"防硫化氢措施\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"井场的硫化氢防护措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"防硫化氢措施\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"硫化氢监测仪器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"防硫化氢措施\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"正压式空气呼吸器\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "防硫化氢措施",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "钻开含硫油气层前",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "防硫化氢措施",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "防硫化氢安全技术交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "防硫化氢措施",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "硫化氢的来源、理化特性、中毒反应及中毒的现场救护",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "防硫化氢措施",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "硫化氢检测仪器及防护器具的使用、检测和维护",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "防硫化氢措施",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "硫化氢监测仪器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "防硫化氢措施",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "正压式空气呼吸器",
+      "tail_type": "设备工具"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "暴风雪",
+  "raw": "[\n  {\"head\": \"暴风雪\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"应对作业安全设施进行检查\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "暴风雪",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "应对作业安全设施进行检查",
+      "tail_type": "控制措施"
+    }
+  ]
+}

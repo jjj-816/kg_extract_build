@@ -1,0 +1,69 @@
+{
+  "entity": "固壁支撑",
+  "raw": "[\n  {\"head\": \"固壁支撑\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"土壤性质\", \"tail_type\": \"未分类\"},\n  {\"head\": \"固壁支撑\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"湿度\", \"tail_type\": \"未分类\"},\n  {\"head\": \"固壁支撑\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"挖掘深度\", \"tail_type\": \"未分类\"},\n  {\"head\": \"固壁支撑\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"检查\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"固壁支撑\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"拆除固壁支撑\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"固壁支撑\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"已进行放坡处理和固壁支撑\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"固壁支撑\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"边坡有裂缝\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"固壁支撑\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"松疏\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"固壁支撑\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"支撑有折断\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"固壁支撑\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"走位\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "固壁支撑",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "土壤性质",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "固壁支撑",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "湿度",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "固壁支撑",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "检查",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "固壁支撑",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "拆除固壁支撑",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "固壁支撑",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "已进行放坡处理和固壁支撑",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "固壁支撑",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "边坡有裂缝",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "固壁支撑",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "松疏",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "固壁支撑",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "支撑有折断",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "固壁支撑",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "走位",
+      "tail_type": "风险事件"
+    }
+  ]
+}

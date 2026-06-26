@@ -1,0 +1,69 @@
+{
+  "entity": "应急处置要求",
+  "raw": "[\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"应急方案\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"应急救援器材\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"坠落\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"中暑\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"泄漏\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"设备故障\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"自身安全防护\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"应急处置要求\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "应急方案",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "应急救援器材",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "坠落",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "中暑",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "泄漏",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "设备故障",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "自身安全防护",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "应急处置要求",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "entity": "弯头",
+  "raw": "[\n  {\"head\": \"弯头\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"角度不小于 $120^{\\circ}$\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"弯头\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"90^{\\circ}\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"弯头\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"预制铸（锻）钢\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"弯头\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"耐冲蚀\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": []
+}

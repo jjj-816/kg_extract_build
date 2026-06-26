@@ -1,0 +1,27 @@
+{
+  "entity": "钻井液",
+  "raw": "[\n  {\"head\": \"钻井液\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井喷失控\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"钻井液\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井喷\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"钻井液\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"溢流\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "钻井液",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井喷失控",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "钻井液",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井喷",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "钻井液",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "溢流",
+      "tail_type": "风险事件"
+    }
+  ]
+}

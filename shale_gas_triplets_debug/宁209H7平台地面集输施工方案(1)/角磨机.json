@@ -1,0 +1,27 @@
+{
+  "entity": "角磨机",
+  "raw": "[\n  {\"head\": \"角磨机\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"角磨机\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"橡胶绝缘手套\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"角磨机\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"完好合格电器设备设施\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "角磨机",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "角磨机",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "橡胶绝缘手套",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "角磨机",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "完好合格电器设备设施",
+      "tail_type": "施工参数"
+    }
+  ]
+}

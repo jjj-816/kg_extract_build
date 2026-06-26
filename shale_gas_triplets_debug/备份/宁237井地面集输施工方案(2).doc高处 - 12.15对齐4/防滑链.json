@@ -1,0 +1,13 @@
+{
+  "entity": "防滑链",
+  "raw": "[\n  {\"head\": \"防滑链\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"坠落伤人\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "防滑链",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "坠落伤人",
+      "tail_type": "风险事件"
+    }
+  ]
+}

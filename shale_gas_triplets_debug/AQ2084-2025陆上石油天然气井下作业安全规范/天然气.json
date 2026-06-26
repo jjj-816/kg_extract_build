@@ -1,0 +1,5 @@
+{
+  "entity": "天然气",
+  "raw": "[\n  {\"head\": \"天然气\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"地层天然气中硫化氢含量大于或等于 $75 \\, mg/m^{3}$ (50 ppm) 的油气井\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"天然气\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"地层天然气中硫化氢含量大于或等于 $1500 \\, mg/m^{3}$ (1000 ppm) 的油气井\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"天然气\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"三高油气井\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"天然气\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高产油气井\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"天然气\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高含硫油气井\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": []
+}

@@ -1,0 +1,34 @@
+{
+  "entity": "固井水泥",
+  "raw": "[\n  {\"head\": \"固井水泥\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井漏\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"固井水泥\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"水泥浆稠化初凝失重\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"固井水泥\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井内压力失衡\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"固井水泥\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"溢流\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "固井水泥",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井漏",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "固井水泥",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "水泥浆稠化初凝失重",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "固井水泥",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井内压力失衡",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "固井水泥",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "溢流",
+      "tail_type": "风险事件"
+    }
+  ]
+}

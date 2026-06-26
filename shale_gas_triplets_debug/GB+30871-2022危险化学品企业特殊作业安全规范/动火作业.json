@@ -1,0 +1,139 @@
+{
+  "entity": "动火作业",
+  "raw": "[\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"受限空间作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"盲板抽堵作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"吊装作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"临时用电作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"动土作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"断路作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"特级动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"一级动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"二级动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"夜间动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"固定动火区\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"受限空间内作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"特级动火\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"在火灾爆炸危险场所处于运行状态下的生产装置设备、管道、储罐、容器等部位上进行的动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"存有易燃易爆介质的重大危险源罐区防火堤内的动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"特级动火作业应采集全过程作业影像\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"特级动火作业和受限空间内作业应连续检测气体浓度\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"事故多发\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"动火作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"重特大生产安全事故\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "受限空间作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "盲板抽堵作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "高处作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "吊装作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "临时用电作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "动土作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "断路作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "特级动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "一级动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "二级动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "夜间动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "固定动火区",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "受限空间内作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "特级动火",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "存有易燃易爆介质的重大危险源罐区防火堤内的动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "特级动火作业应采集全过程作业影像",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "特级动火作业和受限空间内作业应连续检测气体浓度",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "事故多发",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "动火作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "重特大生产安全事故",
+      "tail_type": "风险事件"
+    }
+  ]
+}

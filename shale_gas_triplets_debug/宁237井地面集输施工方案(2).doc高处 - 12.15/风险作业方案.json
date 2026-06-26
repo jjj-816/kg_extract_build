@@ -1,0 +1,5 @@
+{
+  "entity": "风险作业方案",
+  "raw": "[\n  {\"head\": \"风险作业方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"附录E：风险作业方案控制措施检查确认表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"风险作业方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"5.2风险控制措施\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"风险作业方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"安全技术交底和风险告知确认卡\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"风险作业方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"4、机械伤害风险控制措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": []
+}

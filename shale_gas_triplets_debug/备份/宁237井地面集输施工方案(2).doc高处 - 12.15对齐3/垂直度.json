@@ -1,0 +1,13 @@
+{
+  "entity": "垂直度",
+  "raw": "[\n  {\"head\": \"垂直度\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"偏差难控制\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "垂直度",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "偏差难控制",
+      "tail_type": "风险事件"
+    }
+  ]
+}

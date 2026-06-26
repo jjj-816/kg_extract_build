@@ -1,0 +1,5 @@
+{
+  "entity": "疏散",
+  "raw": "[\n  {\"head\": \"疏散\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"11.2 高含硫油气井井喷失控后，应协助当地政府做好居民的疏散工作\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": []
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "配电箱",
+  "raw": "[\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井站\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"电气设备检维修记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"停验电\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"上锁挂牌\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"漏电保护装置\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"灵敏可靠\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "配电箱",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "漏电保护装置",
+      "tail_type": "施工参数"
+    }
+  ]
+}

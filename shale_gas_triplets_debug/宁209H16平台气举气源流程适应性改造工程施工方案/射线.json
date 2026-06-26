@@ -1,0 +1,13 @@
+{
+  "entity": "射线",
+  "raw": "[\n  {\"head\": \"射线\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"无损检测\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "射线",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "无损检测",
+      "tail_type": "作业活动"
+    }
+  ]
+}

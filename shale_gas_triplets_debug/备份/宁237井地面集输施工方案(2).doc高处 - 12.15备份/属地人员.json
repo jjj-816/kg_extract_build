@@ -1,0 +1,13 @@
+{
+  "entity": "属地人员",
+  "raw": "```json\n[\n  {\"head\": \"属地人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"属地监督\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"属地人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "属地人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    }
+  ]
+}

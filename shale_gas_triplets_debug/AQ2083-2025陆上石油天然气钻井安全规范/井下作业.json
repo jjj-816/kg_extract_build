@@ -1,0 +1,27 @@
+{
+  "entity": "井下作业",
+  "raw": "[\n  {\"head\": \"井下作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"录井作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井下作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"固井作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井下作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"取心作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "井下作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "录井作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井下作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "固井作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井下作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "取心作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

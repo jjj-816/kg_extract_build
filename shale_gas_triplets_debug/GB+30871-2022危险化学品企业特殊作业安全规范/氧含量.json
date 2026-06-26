@@ -1,0 +1,62 @@
+{
+  "entity": "氧含量",
+  "raw": "[\n  {\"head\": \"氧含量\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"不应超过 23.5%（体积分数）\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"氧含量\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"19.5%～21%（体积分数）\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"氧含量\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"不应大于 23.5%（体积分数）\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"氧含量\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"低于 19.5%（体积分数）\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"氧含量\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"19.5%~21%(体积分数)\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"氧含量\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"缺氧或有毒的受限空间\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"氧含量\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"忌氧环境\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"氧含量\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"存在有毒气体或空气中含氧量低于 19.5%（体积分数）的作业环境\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"氧含量\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"气体分析\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "氧含量",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "不应超过 23.5%（体积分数）",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "氧含量",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "19.5%～21%（体积分数）",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "氧含量",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "不应大于 23.5%（体积分数）",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "氧含量",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "低于 19.5%（体积分数）",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "氧含量",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "19.5%~21%(体积分数)",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "氧含量",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "缺氧或有毒的受限空间",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "氧含量",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "忌氧环境",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "氧含量",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "气体分析",
+      "tail_type": "施工记录"
+    }
+  ]
+}

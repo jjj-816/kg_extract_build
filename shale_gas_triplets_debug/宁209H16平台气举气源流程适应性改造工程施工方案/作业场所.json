@@ -1,0 +1,27 @@
+{
+  "entity": "作业场所",
+  "raw": "[\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"宁209H16平台\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工方案\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "宁209H16平台",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "施工方案",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "动土审批单位",
+  "raw": "[\n  {\"head\": \"动土审批单位\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"报告动土审批单位\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "动土审批单位",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "报告动土审批单位",
+      "tail_type": "未分类"
+    }
+  ]
+}

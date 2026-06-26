@@ -1,0 +1,69 @@
+{
+  "entity": "工艺技术",
+  "raw": "[\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_STAGE\", \"tail\": \"固井作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"固井施工\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"压井作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"井控装置\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"钻井液设计\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"工程设计\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"固井设计\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"井控技术措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"井控风险分级标准\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"工艺技术\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"单井井控风险分级\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "HAS_STAGE",
+      "tail": "固井作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "固井施工",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "压井作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "井控装置",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "钻井液设计",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "工程设计",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "固井设计",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "井控风险分级标准",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "工艺技术",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "单井井控风险分级",
+      "tail_type": "施工参数"
+    }
+  ]
+}

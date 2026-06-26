@@ -1,0 +1,13 @@
+{
+  "entity": "名称",
+  "raw": "[\n  {\"head\": \"名称\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"宁209H16平台\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "名称",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "宁209H16平台",
+      "tail_type": "时空信息"
+    }
+  ]
+}

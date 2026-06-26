@@ -1,0 +1,20 @@
+{
+  "entity": "悬挂器",
+  "raw": "[\n  {\"head\": \"悬挂器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"油管头\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"悬挂器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"额定工作压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"悬挂器\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"顶丝未全部退出主通径\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "悬挂器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "油管头",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "悬挂器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "额定工作压力",
+      "tail_type": "施工参数"
+    }
+  ]
+}

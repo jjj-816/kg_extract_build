@@ -1,0 +1,13 @@
+{
+  "entity": "倒塌半径",
+  "raw": "[\n  {\"head\": \"倒塌半径\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"DL 409\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "倒塌半径",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "DL 409",
+      "tail_type": "施工记录"
+    }
+  ]
+}

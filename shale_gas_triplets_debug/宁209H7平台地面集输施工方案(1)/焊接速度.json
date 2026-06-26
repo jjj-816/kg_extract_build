@@ -1,0 +1,13 @@
+{
+  "entity": "焊接速度",
+  "raw": "[\n  {\"head\": \"焊接速度\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"焊接参数稳定性\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "焊接速度",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "焊接参数稳定性",
+      "tail_type": "施工记录"
+    }
+  ]
+}

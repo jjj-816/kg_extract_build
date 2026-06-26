@@ -1,0 +1,13 @@
+{
+  "entity": "警戒绳",
+  "raw": "[\n  {\"head\": \"警戒绳\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"施工作业周围\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "警戒绳",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "施工作业周围",
+      "tail_type": "时空信息"
+    }
+  ]
+}

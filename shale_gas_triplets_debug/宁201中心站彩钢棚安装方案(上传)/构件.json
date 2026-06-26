@@ -1,0 +1,76 @@
+{
+  "entity": "构件",
+  "raw": "[\n  {\"head\": \"构件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"吊装\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"构件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"检查捆绑牢固性\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"构件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"10-20cm\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"构件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"彩钢板、钢结构件\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"构件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"野蛮施工\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"构件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"抛掷物料或工具\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"构件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"2个以上\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"构件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"1.5倍\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"构件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"永久连接（焊接、螺栓紧固）\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"构件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"临时构件\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "构件",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "吊装",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "构件",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "检查捆绑牢固性",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "构件",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "10-20cm",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "构件",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "彩钢板、钢结构件",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "构件",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "野蛮施工",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "构件",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "抛掷物料或工具",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "构件",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "2个以上",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "构件",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "1.5倍",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "构件",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "永久连接（焊接、螺栓紧固）",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "构件",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "临时构件",
+      "tail_type": "施工对象"
+    }
+  ]
+}

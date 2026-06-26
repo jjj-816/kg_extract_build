@@ -1,0 +1,13 @@
+{
+  "entity": "逃生门",
+  "raw": "[\n  {\"head\": \"逃生门\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"逃生通道\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "逃生门",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "逃生通道",
+      "tail_type": "时空信息"
+    }
+  ]
+}

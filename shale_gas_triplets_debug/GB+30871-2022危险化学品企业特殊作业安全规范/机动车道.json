@@ -1,0 +1,13 @@
+{
+  "entity": "机动车道",
+  "raw": "[\n  {\"head\": \"机动车道\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"穿越机动车道不低于 5 m\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "机动车道",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "穿越机动车道不低于 5 m",
+      "tail_type": "时空信息"
+    }
+  ]
+}

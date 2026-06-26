@@ -1,0 +1,13 @@
+{
+  "entity": "GBZ/T 260",
+  "raw": "[\n  {\"head\": \"GBZ/T 260\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"职业禁忌证\", \"tail_type\": \"环保对象\"}\n]",
+  "triplets": [
+    {
+      "head": "GBZ/T 260",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "职业禁忌证",
+      "tail_type": "环保对象"
+    }
+  ]
+}

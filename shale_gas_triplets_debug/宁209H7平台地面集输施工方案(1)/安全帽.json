@@ -1,0 +1,27 @@
+{
+  "entity": "安全帽",
+  "raw": "[\n  {\"head\": \"安全帽\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业人员\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"安全帽\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"施工人员\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"安全帽\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"高处作业\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "安全帽",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业人员",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "安全帽",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "施工人员",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "安全帽",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "高处作业",
+      "tail_type": "时空信息"
+    }
+  ]
+}

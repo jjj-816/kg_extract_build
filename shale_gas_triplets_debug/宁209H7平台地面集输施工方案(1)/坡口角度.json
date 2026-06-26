@@ -1,0 +1,13 @@
+{
+  "entity": "坡口角度",
+  "raw": "[\n  {\"head\": \"坡口角度\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"钝边尺寸\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "坡口角度",
+      "head_type": "未分类",
+      "relation": "HAS_PARAMETER",
+      "tail": "钝边尺寸",
+      "tail_type": "施工参数"
+    }
+  ]
+}

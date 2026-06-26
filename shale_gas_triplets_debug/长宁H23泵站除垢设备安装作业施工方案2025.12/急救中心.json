@@ -1,0 +1,20 @@
+{
+  "entity": "急救中心",
+  "raw": "[\n  {\"head\": \"急救中心\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场负责人组织人员实施现场救护伤员\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"急救中心\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"积极抢救受伤和被困人员\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"急救中心\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"立即拨打 120 急救电话，电话中说明事故地点、性质、联系人电\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "急救中心",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场负责人组织人员实施现场救护伤员",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "急救中心",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "积极抢救受伤和被困人员",
+      "tail_type": "作业活动"
+    }
+  ]
+}

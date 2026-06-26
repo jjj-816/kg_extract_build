@@ -1,0 +1,20 @@
+{
+  "entity": "国防设施",
+  "raw": "[\n  {\"head\": \"国防设施\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"井场周围一定范围内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"国防设施\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"远离易燃易爆品区域、人员聚集区域、电力通信及\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "国防设施",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "井场周围一定范围内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "国防设施",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "远离易燃易爆品区域、人员聚集区域、电力通信及",
+      "tail_type": "时空信息"
+    }
+  ]
+}

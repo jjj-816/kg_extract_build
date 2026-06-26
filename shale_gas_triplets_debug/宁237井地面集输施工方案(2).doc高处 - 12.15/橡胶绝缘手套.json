@@ -1,0 +1,13 @@
+{
+  "entity": "橡胶绝缘手套",
+  "raw": "[\n  {\"head\": \"橡胶绝缘手套\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "橡胶绝缘手套",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    }
+  ]
+}

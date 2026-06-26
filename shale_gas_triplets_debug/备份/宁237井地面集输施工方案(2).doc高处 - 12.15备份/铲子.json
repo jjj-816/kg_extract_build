@@ -1,0 +1,20 @@
+{
+  "entity": "铲子",
+  "raw": "[\n  {\"head\": \"铲子\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"建渣清理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"铲子\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"清理退场\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"铲子\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"常用工具\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "建渣清理",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "铲子",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "清理退场",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "铲子",
+      "tail_type": "设备工具"
+    }
+  ]
+}

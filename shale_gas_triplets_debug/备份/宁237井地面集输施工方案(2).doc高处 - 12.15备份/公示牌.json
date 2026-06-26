@@ -1,0 +1,5 @@
+{
+  "entity": "公示牌",
+  "raw": "```json\n[\n  {\"head\": \"公示牌\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"应急处置\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"公示牌\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"现场人员配置\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"公示牌\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"组织机构\", \"tail_type\": \"施工记录\"}\n]\n```",
+  "triplets": []
+}

@@ -1,0 +1,34 @@
+{
+  "entity": "全封闸板",
+  "raw": "[\n  {\"head\": \"全封闸板\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"三位四通阀\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"全封闸板\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"控制阀\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"全封闸板\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"套管内作业\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"全封闸板\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"油管内作业\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "全封闸板",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "三位四通阀",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "全封闸板",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "控制阀",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "全封闸板",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "套管内作业",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "全封闸板",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "油管内作业",
+      "tail_type": "施工对象"
+    }
+  ]
+}

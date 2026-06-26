@@ -1,0 +1,20 @@
+{
+  "entity": "承重板",
+  "raw": "[\n  {\"head\": \"承重板\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"稳定牢固\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"承重板\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"不承重物处\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "承重板",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "稳定牢固",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "承重板",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "不承重物处",
+      "tail_type": "时空信息"
+    }
+  ]
+}

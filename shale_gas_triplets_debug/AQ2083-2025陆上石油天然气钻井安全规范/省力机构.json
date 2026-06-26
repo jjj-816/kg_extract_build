@@ -1,0 +1,13 @@
+{
+  "entity": "省力机构",
+  "raw": "[\n  {\"head\": \"省力机构\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"厂家规定值\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "省力机构",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "厂家规定值",
+      "tail_type": "施工参数"
+    }
+  ]
+}

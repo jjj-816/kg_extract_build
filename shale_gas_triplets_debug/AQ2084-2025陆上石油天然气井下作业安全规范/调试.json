@@ -1,0 +1,20 @@
+{
+  "entity": "调试",
+  "raw": "[\n  {\"head\": \"调试\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"试压\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"调试\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"井控装置\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "调试",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "试压",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "调试",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "井控装置",
+      "tail_type": "施工对象"
+    }
+  ]
+}

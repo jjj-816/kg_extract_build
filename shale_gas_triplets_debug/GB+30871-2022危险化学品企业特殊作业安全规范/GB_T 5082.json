@@ -1,0 +1,13 @@
+{
+  "entity": "GB/T 5082",
+  "raw": "[\n  {\"head\": \"GB/T 5082\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"联络信号\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "GB/T 5082",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "联络信号",
+      "tail_type": "作业活动"
+    }
+  ]
+}

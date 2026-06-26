@@ -1,0 +1,13 @@
+{
+  "entity": "警报",
+  "raw": "[\n  {\"head\": \"警报\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"应急处置\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "警报",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "应急处置",
+      "tail_type": "控制措施"
+    }
+  ]
+}

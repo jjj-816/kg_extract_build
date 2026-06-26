@@ -1,0 +1,27 @@
+{
+  "entity": "可燃气体",
+  "raw": "[\n  {\"head\": \"可燃气体\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾、爆炸\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"可燃气体\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"泄漏\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"可燃气体\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"盲测风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"可燃气体\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"叠加风险\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "可燃气体",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾、爆炸",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "可燃气体",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "泄漏",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "可燃气体",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "叠加风险",
+      "tail_type": "风险事件"
+    }
+  ]
+}

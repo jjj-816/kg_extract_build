@@ -1,0 +1,20 @@
+{
+  "entity": "故障",
+  "raw": "[\n  {\"head\": \"故障\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"排除故障\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"故障\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"故障\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"吊装过程中\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "故障",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "排除故障",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "故障",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "吊装过程中",
+      "tail_type": "时空信息"
+    }
+  ]
+}

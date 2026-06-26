@@ -1,0 +1,27 @@
+{
+  "entity": "焊后处理",
+  "raw": "[\n  {\"head\": \"焊后处理\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"焊后保温（后热）与热处理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"焊后处理\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"焊后处理与检验\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"焊后处理\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高温烫伤\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "焊后处理",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "焊后保温（后热）与热处理",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "焊后处理",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "焊后处理与检验",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "焊后处理",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高温烫伤",
+      "tail_type": "风险事件"
+    }
+  ]
+}

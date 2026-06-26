@@ -1,0 +1,13 @@
+{
+  "entity": "中途测试结论",
+  "raw": "[\n  {\"head\": \"中途测试结论\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"钻井液参数\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "中途测试结论",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "钻井液参数",
+      "tail_type": "施工参数"
+    }
+  ]
+}

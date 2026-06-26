@@ -1,0 +1,20 @@
+{
+  "entity": "放喷",
+  "raw": "[\n  {\"head\": \"放喷\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"7.7 放喷、测试作业 10\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"放喷\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"# 7.7 放喷、测试作业\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "放喷",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "7.7 放喷、测试作业 10",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "放喷",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "# 7.7 放喷、测试作业",
+      "tail_type": "施工记录"
+    }
+  ]
+}

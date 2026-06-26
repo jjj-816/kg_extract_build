@@ -1,0 +1,5 @@
+{
+  "entity": "过滤器",
+  "raw": "[\n  {\"head\": \"过滤器\", \"head_type\": \"设备工具\", \"relation\": \"MITIGATED_BY\", \"tail\": \"气体检测仪\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"过滤器\", \"head_type\": \"设备工具\", \"relation\": \"MITIGATED_BY\", \"tail\": \"连续气体检测\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": []
+}

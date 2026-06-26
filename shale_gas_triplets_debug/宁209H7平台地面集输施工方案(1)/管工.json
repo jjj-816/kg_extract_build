@@ -1,0 +1,13 @@
+{
+  "entity": "管工",
+  "raw": "[\n  {\"head\": \"管工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"防火花飞溅\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "管工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "防火花飞溅",
+      "tail_type": "风险事件"
+    }
+  ]
+}

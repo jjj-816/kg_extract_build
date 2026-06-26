@@ -1,0 +1,27 @@
+{
+  "entity": "管束堵头",
+  "raw": "[\n  {\"head\": \"管束堵头\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"宁209H22A平台\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"管束堵头\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"管线打开\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"管束堵头\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高处作业\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "管束堵头",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "宁209H22A平台",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "管束堵头",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "管线打开",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "管束堵头",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高处作业",
+      "tail_type": "风险事件"
+    }
+  ]
+}

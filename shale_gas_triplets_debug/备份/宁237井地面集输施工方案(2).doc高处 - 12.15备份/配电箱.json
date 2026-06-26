@@ -1,0 +1,13 @@
+{
+  "entity": "配电箱",
+  "raw": "[\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井站\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"RECORDED_IN\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"停验电\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"上锁挂牌\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"灭火器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"配电箱\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"漏电\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "配电箱",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "漏电",
+      "tail_type": "风险事件"
+    }
+  ]
+}

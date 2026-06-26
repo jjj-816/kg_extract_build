@@ -1,0 +1,20 @@
+{
+  "entity": "大工",
+  "raw": "```json\n[\n  {\"head\": \"大工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"土建班组\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"大工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"割除作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"大工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"劳保穿戴\", \"tail_type\": \"控制措施\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "大工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "割除作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "大工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "劳保穿戴",
+      "tail_type": "控制措施"
+    }
+  ]
+}

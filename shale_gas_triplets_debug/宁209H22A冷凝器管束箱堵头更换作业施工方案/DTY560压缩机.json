@@ -1,0 +1,27 @@
+{
+  "entity": "DTY560压缩机",
+  "raw": "[\n  {\"head\": \"DTY560压缩机\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"宁209H22A平台DTY560压缩机气管束更换堵头\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"DTY560压缩机\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"宁209H22A平台\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"DTY560压缩机\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"宁209H22A平台DTY560压缩机气管束更换堵头施工方案\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"DTY560压缩机\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"M245*155-H220*160-90\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"DTY560压缩机\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"DTY560 M245*155-H220*160-90操作维护手册\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "DTY560压缩机",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "宁209H22A平台DTY560压缩机气管束更换堵头",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "DTY560压缩机",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "宁209H22A平台",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "DTY560压缩机",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "宁209H22A平台DTY560压缩机气管束更换堵头施工方案",
+      "tail_type": "施工记录"
+    }
+  ]
+}

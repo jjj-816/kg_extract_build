@@ -1,0 +1,27 @@
+{
+  "entity": "警戒区",
+  "raw": "[\n  {\"head\": \"警戒区\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业区域\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"警戒区\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"隔离护栏/围护/警戒带\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"警戒区\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"警示标识\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "警戒区",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "作业区域",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "警戒区",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "隔离护栏/围护/警戒带",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "警戒区",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "警示标识",
+      "tail_type": "施工对象"
+    }
+  ]
+}

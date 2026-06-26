@@ -1,0 +1,27 @@
+{
+  "entity": "作业现场环境",
+  "raw": "[\n  {\"head\": \"作业现场环境\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业现场完成审批工作\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业现场环境\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"国家相关产品标准\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业现场环境\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"GB 50194\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "作业现场环境",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业现场完成审批工作",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业现场环境",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "国家相关产品标准",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业现场环境",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "GB 50194",
+      "tail_type": "施工参数"
+    }
+  ]
+}

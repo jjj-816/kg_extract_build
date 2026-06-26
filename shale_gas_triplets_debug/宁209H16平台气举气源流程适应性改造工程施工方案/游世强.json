@@ -1,0 +1,27 @@
+{
+  "entity": "游世强",
+  "raw": "[\n  {\"head\": \"游世强\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"动土作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"游世强\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"游世强\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"管线与设备打开作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "游世强",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "动土作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "游世强",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "游世强",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "管线与设备打开作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

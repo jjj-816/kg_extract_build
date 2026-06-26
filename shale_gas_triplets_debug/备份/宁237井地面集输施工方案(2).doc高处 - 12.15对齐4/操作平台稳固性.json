@@ -1,0 +1,5 @@
+{
+  "entity": "操作平台稳固性",
+  "raw": "[\n  {\"head\": \"操作平台稳固性\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工记录\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": []
+}

@@ -1,0 +1,34 @@
+{
+  "entity": "安全措施交底",
+  "raw": "[\n  {\"head\": \"安全措施交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"辨识\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全措施交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"开展作业危害分析\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全措施交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"制定相应的安全风险管控措施\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全措施交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"核查安全作业票中各项风险识别及管控措施落实情况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安全措施交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"核查安全作业票中各项安全措施已得到落实\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安全措施交底\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"安全作业票\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "安全措施交底",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "辨识",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全措施交底",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "开展作业危害分析",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全措施交底",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "制定相应的安全风险管控措施",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全措施交底",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "安全作业票",
+      "tail_type": "施工记录"
+    }
+  ]
+}

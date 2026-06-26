@@ -1,0 +1,13 @@
+{
+  "entity": "埋地敷设",
+  "raw": "[\n  {\"head\": \"埋地敷设\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"电缆线路\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "埋地敷设",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "电缆线路",
+      "tail_type": "施工对象"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "三高油气井",
+  "raw": "[\n  {\"head\": \"三高油气井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"应实行监督驻井或巡井工作制度\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"三高油气井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"加重压井液或能配置等量加重压井液的材料及处理剂\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"三高油气井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"起管柱完毕，等停期间应下入不少于作业层位以上井深三分之一的管柱\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"三高油气井\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压力等级不低于作业层位预测井口最高关井压力的专用防喷器组\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "三高油气井",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "应实行监督驻井或巡井工作制度",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "三高油气井",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "加重压井液或能配置等量加重压井液的材料及处理剂",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "三高油气井",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "压力等级不低于作业层位预测井口最高关井压力的专用防喷器组",
+      "tail_type": "施工参数"
+    }
+  ]
+}

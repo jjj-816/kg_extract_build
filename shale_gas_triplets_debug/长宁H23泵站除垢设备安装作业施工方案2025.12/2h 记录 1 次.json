@@ -1,0 +1,13 @@
+{
+  "entity": "2h 记录 1 次",
+  "raw": "[\n  {\"head\": \"2h 记录 1 次\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"2h\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "2h 记录 1 次",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "2h",
+      "tail_type": "时空信息"
+    }
+  ]
+}

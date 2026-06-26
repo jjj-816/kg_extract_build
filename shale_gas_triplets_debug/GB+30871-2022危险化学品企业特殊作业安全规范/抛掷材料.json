@@ -1,0 +1,13 @@
+{
+  "entity": "抛掷材料",
+  "raw": "[\n  {\"head\": \"抛掷材料\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"不应抛掷材料\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "抛掷材料",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "不应抛掷材料",
+      "tail_type": "风险事件"
+    }
+  ]
+}

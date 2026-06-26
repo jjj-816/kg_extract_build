@@ -1,0 +1,20 @@
+{
+  "entity": "安全集合点",
+  "raw": "[\n  {\"head\": \"安全集合点\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安全集合点\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"安全技术交底和风险告知确认卡\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "安全集合点",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "安全集合点",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "安全技术交底和风险告知确认卡",
+      "tail_type": "施工记录"
+    }
+  ]
+}

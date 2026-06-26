@@ -1,0 +1,5 @@
+{
+  "entity": "一机一闸一保护",
+  "raw": "[\n  {\"head\": \"一机一闸一保护\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"用电设施的设置、防护及漏电保护\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": []
+}

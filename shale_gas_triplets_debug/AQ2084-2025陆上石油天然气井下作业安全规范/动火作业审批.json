@@ -1,0 +1,55 @@
+{
+  "entity": "动火作业审批",
+  "raw": "[\n  {\"head\": \"动火作业审批\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"电焊\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业审批\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"气焊\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业审批\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"明火\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"动火作业审批\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"井场布局应满足防火的安全要求\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"动火作业审批\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"灭火器应悬挂检查记录标签\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"动火作业审批\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"应急预案内容应明确高含硫油气井失控井口点火的条件、点火决策人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"动火作业审批\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"现场作业的安全措施及应急响应程序\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"动火作业审批\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"井喷失控后应防止井喷着火或事故后果扩大，立即向上一级主管单位或有关部门汇报\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"动火作业审批\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"点火口应具备点火条件，远离易燃易爆品区域、人员聚集区域、电力通信及国防设施等\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"动火作业审批\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"（不能满足安全距离要求时，发包单位应组织安全评估、论证，经批准后实施）\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "动火作业审批",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "电焊",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业审批",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "气焊",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业审批",
+      "head_type": "未分类",
+      "relation": "REGULATES",
+      "tail": "明火",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "动火作业审批",
+      "head_type": "未分类",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "井场布局应满足防火的安全要求",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "动火作业审批",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "灭火器应悬挂检查记录标签",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "动火作业审批",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "应急预案内容应明确高含硫油气井失控井口点火的条件、点火决策人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "动火作业审批",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "现场作业的安全措施及应急响应程序",
+      "tail_type": "施工记录"
+    }
+  ]
+}

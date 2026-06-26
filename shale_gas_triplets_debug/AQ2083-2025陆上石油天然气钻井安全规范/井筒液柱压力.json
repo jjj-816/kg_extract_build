@@ -1,0 +1,27 @@
+{
+  "entity": "井筒液柱压力",
+  "raw": "[\n  {\"head\": \"井筒液柱压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"最高地层压力\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"井筒液柱压力\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井内压力失衡\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"井筒液柱压力\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"固井和候凝过程\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "井筒液柱压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "最高地层压力",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "井筒液柱压力",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井内压力失衡",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "井筒液柱压力",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "固井和候凝过程",
+      "tail_type": "施工记录"
+    }
+  ]
+}

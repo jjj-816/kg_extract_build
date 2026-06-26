@@ -1,0 +1,13 @@
+{
+  "entity": "采油(气)树阀门",
+  "raw": "[\n  {\"head\": \"采油(气)树阀门\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"泄压\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "采油(气)树阀门",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "泄压",
+      "tail_type": "风险事件"
+    }
+  ]
+}

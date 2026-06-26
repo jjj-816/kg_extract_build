@@ -1,0 +1,20 @@
+{
+  "entity": "作业环境",
+  "raw": "[\n  {\"head\": \"作业环境\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业许可范围及作业环境\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业环境\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"施工现场\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "作业环境",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业许可范围及作业环境",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业环境",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "施工现场",
+      "tail_type": "时空信息"
+    }
+  ]
+}

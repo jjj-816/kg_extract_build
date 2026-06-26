@@ -1,0 +1,90 @@
+{
+  "entity": "安全作业票编号",
+  "raw": "[\n  {\"head\": \"安全作业票编号\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"特级\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全作业票编号\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"一级\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全作业票编号\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"二级\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全作业票编号\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"年 月 日 时 分\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"安全作业票编号\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"自 年 月 日 时 分至 年 月 日 时 分止\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"安全作业票编号\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"动火作业\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全作业票编号\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"受限空间作业\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全作业票编号\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"盲板抽堵作业\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全作业票编号\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"高处作业\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全作业票编号\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"临时用电作业\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全作业票编号\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"动土作业\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全作业票编号\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"断路作业\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "安全作业票编号",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "特级",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全作业票编号",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "一级",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全作业票编号",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "二级",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全作业票编号",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "年 月 日 时 分",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "安全作业票编号",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "自 年 月 日 时 分至 年 月 日 时 分止",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "安全作业票编号",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "动火作业",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全作业票编号",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "受限空间作业",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全作业票编号",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "盲板抽堵作业",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全作业票编号",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "高处作业",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全作业票编号",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "临时用电作业",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全作业票编号",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "动土作业",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全作业票编号",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "断路作业",
+      "tail_type": "施工参数"
+    }
+  ]
+}

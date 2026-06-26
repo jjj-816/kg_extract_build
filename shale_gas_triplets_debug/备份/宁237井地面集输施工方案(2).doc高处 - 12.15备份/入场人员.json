@@ -1,0 +1,5 @@
+{
+  "entity": "入场人员",
+  "raw": "```json\n[\n  {\"head\": \"入场人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"项目负责人\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"入场人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工单位\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"入场人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"属地人员/建设单位人员\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"入场人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全管理人员\", \"tail_type\": \"责任主体\"}\n]\n```",
+  "triplets": []
+}

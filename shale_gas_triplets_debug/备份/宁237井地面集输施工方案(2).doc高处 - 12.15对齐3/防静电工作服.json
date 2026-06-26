@@ -1,0 +1,13 @@
+{
+  "entity": "防静电工作服",
+  "raw": "[\n  {\"head\": \"防静电工作服\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"砸伤\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "防静电工作服",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "砸伤",
+      "tail_type": "风险事件"
+    }
+  ]
+}

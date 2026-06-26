@@ -1,0 +1,20 @@
+{
+  "entity": "审核",
+  "raw": "[\n  {\"head\": \"审核\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"设计的编制\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"审核\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"审批\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "审核",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "设计的编制",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "审核",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "审批",
+      "tail_type": "作业活动"
+    }
+  ]
+}

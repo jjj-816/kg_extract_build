@@ -1,0 +1,48 @@
+{
+  "entity": "额定工作压力",
+  "raw": "[\n  {\"head\": \"额定工作压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"70 MPa\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"额定工作压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"35 MPa\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"额定工作压力\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"试压\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"额定工作压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"70%\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"额定工作压力\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"试压\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"额定工作压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"80%\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "额定工作压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "70 MPa",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "额定工作压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "35 MPa",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "额定工作压力",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "试压",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "额定工作压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "70%",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "额定工作压力",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "试压",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "额定工作压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "80%",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

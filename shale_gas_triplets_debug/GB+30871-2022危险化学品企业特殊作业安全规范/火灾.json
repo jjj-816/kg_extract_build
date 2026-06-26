@@ -1,0 +1,41 @@
+{
+  "entity": "火灾",
+  "raw": "[\n  {\"head\": \"火灾\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"将上述设备设施与生产系统彻底断开或隔离\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"火灾\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"不应以水封或仅关闭阀门代替盲板作为隔断措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"火灾\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"不应设置在火灾爆炸危险场所\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"火灾\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"火灾爆炸危险场所\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"火灾\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"非火灾爆炸危险场所划出的专门用于动火的区域\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"火灾\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"盛有或盛装过助燃或易燃易爆危险化学品的设备、管道等生产、储存设施\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "火灾",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "将上述设备设施与生产系统彻底断开或隔离",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "火灾",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "不应以水封或仅关闭阀门代替盲板作为隔断措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "火灾",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "不应设置在火灾爆炸危险场所",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "火灾",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "火灾爆炸危险场所",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "火灾",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "非火灾爆炸危险场所划出的专门用于动火的区域",
+      "tail_type": "时空信息"
+    }
+  ]
+}

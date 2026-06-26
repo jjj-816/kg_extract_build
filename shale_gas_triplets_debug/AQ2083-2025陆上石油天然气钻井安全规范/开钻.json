@@ -1,0 +1,41 @@
+{
+  "entity": "开钻",
+  "raw": "[\n  {\"head\": \"开钻\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"起下钻作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"开钻\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"测井作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"开钻\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"固井作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"开钻\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"井口装置及井控管汇安装、试压要求\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"开钻\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"安装示意图\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "开钻",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "起下钻作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "开钻",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "测井作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "开钻",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "固井作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "开钻",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "井口装置及井控管汇安装、试压要求",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "开钻",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "安装示意图",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "作业前准备",
+  "raw": "```json\n[\n  {\"head\": \"作业前准备\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"检查和试运转记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业前准备\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"高处作业检查表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业前准备\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"通风记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业前准备\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"用电设备检查\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业前准备\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"高处作业检查\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业前准备\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"通风准备\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业前准备\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"安全带\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"作业前准备\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"机械通风设备\", \"tail_type\": \"设备工具\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "作业前准备",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "安全带",
+      "tail_type": "设备工具"
+    }
+  ]
+}

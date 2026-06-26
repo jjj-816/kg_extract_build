@@ -1,0 +1,69 @@
+{
+  "entity": "灭火器",
+  "raw": "[\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"MFZ/ABC-8型\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"具\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"4\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"8Kg\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业区域内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"焊接现场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"切割区域\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"本井站\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"动火点5m范围内\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "灭火器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "MFZ/ABC-8型",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "灭火器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "具",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "灭火器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "4",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "灭火器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "8Kg",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "灭火器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业区域内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "灭火器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "焊接现场",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "灭火器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "切割区域",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "灭火器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "本井站",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "灭火器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "动火点5m范围内",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "危险传动、转动部位",
+  "raw": "[\n  {\"head\": \"危险传动、转动部位\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"碰伤、物体打击风险控制措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"危险传动、转动部位\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"机械伤害风险控制措施\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "危险传动、转动部位",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "碰伤、物体打击风险控制措施",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "危险传动、转动部位",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "机械伤害风险控制措施",
+      "tail_type": "施工记录"
+    }
+  ]
+}

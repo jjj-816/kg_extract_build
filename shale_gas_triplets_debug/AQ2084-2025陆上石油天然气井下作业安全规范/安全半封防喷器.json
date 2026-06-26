@@ -1,0 +1,55 @@
+{
+  "entity": "安全半封防喷器",
+  "raw": "[\n  {\"head\": \"安全半封防喷器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"半封闸板尺寸\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全半封防喷器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"夹持部位尺寸\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全半封防喷器\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"电缆在注脂控制头遇卡\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全半封防喷器\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"动密封失效\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全半封防喷器\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井口泄漏\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全半封防喷器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"闸板尺寸\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全半封防喷器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井口\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "安全半封防喷器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "半封闸板尺寸",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全半封防喷器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "夹持部位尺寸",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全半封防喷器",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "电缆在注脂控制头遇卡",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "安全半封防喷器",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "动密封失效",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "安全半封防喷器",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井口泄漏",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "安全半封防喷器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "闸板尺寸",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全半封防喷器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井口",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "entity": "工器具准备",
+  "raw": "[\n  {\"head\": \"工器具准备\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"施工记录\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"锄头\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"施工记录\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"铲子\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"施工记录\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"护目镜\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"施工记录\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"美工刀\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"施工记录\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"滚筒\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"施工记录\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"砂轮机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工器具准备\", \"head_type\": \"施工记录\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电镐\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": []
+}

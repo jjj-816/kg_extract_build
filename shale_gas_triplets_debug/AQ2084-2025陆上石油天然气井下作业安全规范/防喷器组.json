@@ -1,0 +1,76 @@
+{
+  "entity": "防喷器组",
+  "raw": "[\n  {\"head\": \"防喷器组\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"70 MPa 及以上压力等级\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器组\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"闸板防喷器额定工作压力应大于或等于环形防喷器额定工作压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器组\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"顶部距地面高度超过 3 m\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器组\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"4 根直径不小于 15.9 mm 的钢丝绳\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器组\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"距作业井口不少于25 m处\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"防喷器组\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压力等级应不小于预测最高关井压力、预测最高施工压力两者中最大值的1.1倍\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器组\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防喷器控制系统应单独配置\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器组\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"应能独立控制\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器组\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"井口控制压力不小于 $21\\\\mathrm{MPa}$\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器组\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"应配备剪切闸板\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"防喷器组\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"不应动用安全防喷器组\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "防喷器组",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "70 MPa 及以上压力等级",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器组",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "闸板防喷器额定工作压力应大于或等于环形防喷器额定工作压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器组",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "顶部距地面高度超过 3 m",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器组",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "4 根直径不小于 15.9 mm 的钢丝绳",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器组",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "距作业井口不少于25 m处",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "防喷器组",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "防喷器控制系统应单独配置",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器组",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "应能独立控制",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器组",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "井口控制压力不小于 $21\\mathrm{MPa}$",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器组",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "应配备剪切闸板",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "防喷器组",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "不应动用安全防喷器组",
+      "tail_type": "风险事件"
+    }
+  ]
+}

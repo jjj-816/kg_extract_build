@@ -1,0 +1,27 @@
+{
+  "entity": "带电高处作业",
+  "raw": "[\n  {\"head\": \"带电高处作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"悬空高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"带电高处作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"带电体\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"带电高处作业\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"危险电压\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "带电高处作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "悬空高处作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "带电高处作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "带电体",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "带电高处作业",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "危险电压",
+      "tail_type": "风险事件"
+    }
+  ]
+}

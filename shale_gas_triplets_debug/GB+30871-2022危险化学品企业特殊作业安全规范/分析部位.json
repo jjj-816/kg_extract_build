@@ -1,0 +1,27 @@
+{
+  "entity": "分析部位",
+  "raw": "[\n  {\"head\": \"分析部位\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"上、中、下(左、中、右)\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"分析部位\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"上、中、下\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"分析部位\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"左、中、右\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "分析部位",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "上、中、下(左、中、右)",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "分析部位",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "上、中、下",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "分析部位",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "左、中、右",
+      "tail_type": "时空信息"
+    }
+  ]
+}

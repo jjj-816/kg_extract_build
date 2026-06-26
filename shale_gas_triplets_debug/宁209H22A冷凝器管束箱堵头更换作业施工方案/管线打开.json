@@ -1,0 +1,34 @@
+{
+  "entity": "管线打开",
+  "raw": "[\n  {\"head\": \"管线打开\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"严格进行气体检测并做好记录\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"管线打开\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"保证能量有效隔离\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"管线打开\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"5.1.2拆除管束堵头并更换新堵头\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"管线打开\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"高处作业\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "管线打开",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "严格进行气体检测并做好记录",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "管线打开",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "保证能量有效隔离",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "管线打开",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "5.1.2拆除管束堵头并更换新堵头",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "管线打开",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "高处作业",
+      "tail_type": "时空信息"
+    }
+  ]
+}

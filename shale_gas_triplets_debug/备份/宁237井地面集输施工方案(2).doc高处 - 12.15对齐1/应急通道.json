@@ -1,0 +1,34 @@
+{
+  "entity": "应急通道",
+  "raw": "[\n  {\"head\": \"应急通道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"应急通道\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"井站\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"应急通道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"警戒区\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"应急通道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"现场人员配置\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"应急通道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"应急处置\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"应急通道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"高空坠落应急\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"应急通道\", \"head_type\": \"施工对象\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"属地监督\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "应急通道",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "应急通道",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "井站",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "应急通道",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "警戒区",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "应急通道",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "现场人员配置",
+      "tail_type": "施工记录"
+    }
+  ]
+}

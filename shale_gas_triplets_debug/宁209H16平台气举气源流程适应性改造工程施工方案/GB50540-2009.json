@@ -1,0 +1,27 @@
+{
+  "entity": "GB50540-2009",
+  "raw": "[\n  {\"head\": \"GB50540-2009\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"现场碰口\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"GB50540-2009\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"DN80\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"GB50540-2009\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"DN50\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "GB50540-2009",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "现场碰口",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "GB50540-2009",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "DN80",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "GB50540-2009",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "DN50",
+      "tail_type": "设备工具"
+    }
+  ]
+}

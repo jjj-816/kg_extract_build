@@ -1,0 +1,13 @@
+{
+  "entity": "岗前体检",
+  "raw": "[\n  {\"head\": \"岗前体检\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"安全技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"岗前体检\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"坠落风险\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "岗前体检",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "安全技术交底",
+      "tail_type": "作业活动"
+    }
+  ]
+}

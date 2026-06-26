@@ -1,0 +1,83 @@
+{
+  "entity": "焊接工艺卡",
+  "raw": "[\n  {\"head\": \"焊接工艺卡\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"电流\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊接工艺卡\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"电压\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊接工艺卡\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"焊接速度\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊接工艺卡\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"焊工证\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"焊接工艺卡\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"坡口\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊接工艺卡\", \"head_type\": \"规范条款\", \"relation\": \"SPECIFIES_THRESHOLD\", \"tail\": \"角度误差≤±2°\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"焊接工艺卡\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"灭火器\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"焊接工艺卡\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"防火毯\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"焊接工艺卡\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"通风装置\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"焊接工艺卡\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"焊接面罩\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"焊接工艺卡\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"防烫手套\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "焊接工艺卡",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "电流",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "焊接工艺卡",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "电压",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "焊接工艺卡",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "焊接速度",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "焊接工艺卡",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "焊工证",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "焊接工艺卡",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "坡口",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "焊接工艺卡",
+      "head_type": "规范条款",
+      "relation": "SPECIFIES_THRESHOLD",
+      "tail": "角度误差≤±2°",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "焊接工艺卡",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "灭火器",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "焊接工艺卡",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "防火毯",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "焊接工艺卡",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "通风装置",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "焊接工艺卡",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "焊接面罩",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "焊接工艺卡",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "防烫手套",
+      "tail_type": "控制措施"
+    }
+  ]
+}

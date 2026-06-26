@@ -1,0 +1,34 @@
+{
+  "entity": "井口",
+  "raw": "[\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"换装井口作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"预测最高井口关井压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"井喷后,无法用井口装置进行有效控制而出现敞喷的现象\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"井口压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井口\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"因地层流体侵入井内引起井口返出的液量比泵入量大，或停泵后井口液体自动外溢的现象\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "井口",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "换装井口作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "井口",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "预测最高井口关井压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井口",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "井喷后,无法用井口装置进行有效控制而出现敞喷的现象",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井口",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "井口压力",
+      "tail_type": "施工参数"
+    }
+  ]
+}

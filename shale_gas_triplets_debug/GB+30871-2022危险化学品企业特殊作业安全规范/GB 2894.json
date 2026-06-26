@@ -1,0 +1,13 @@
+{
+  "entity": "GB 2894",
+  "raw": "[\n  {\"head\": \"GB 2894\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"安全警示标志\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "GB 2894",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "安全警示标志",
+      "tail_type": "设备工具"
+    }
+  ]
+}

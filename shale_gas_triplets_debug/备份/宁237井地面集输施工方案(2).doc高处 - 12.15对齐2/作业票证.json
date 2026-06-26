@@ -1,0 +1,27 @@
+{
+  "entity": "作业票证",
+  "raw": "[\n  {\"head\": \"作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"人员临边坠落\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"中\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"做好临边硬隔离防坠落措施、安全警示标识\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "作业票证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "人员临边坠落",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业票证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "中",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业票证",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "做好临边硬隔离防坠落措施、安全警示标识",
+      "tail_type": "施工参数"
+    }
+  ]
+}

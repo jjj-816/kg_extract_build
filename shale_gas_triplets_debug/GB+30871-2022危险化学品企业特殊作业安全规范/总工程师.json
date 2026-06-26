@@ -1,0 +1,20 @@
+{
+  "entity": "总工程师",
+  "raw": "[\n  {\"head\": \"总工程师\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"IV级高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"总工程师\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"一级吊装作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "总工程师",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "IV级高处作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "总工程师",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "一级吊装作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

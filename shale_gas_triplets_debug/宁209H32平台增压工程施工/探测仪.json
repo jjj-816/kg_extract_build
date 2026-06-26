@@ -1,0 +1,13 @@
+{
+  "entity": "探测仪",
+  "raw": "[\n  {\"head\": \"探测仪\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"实地\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "探测仪",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "实地",
+      "tail_type": "时空信息"
+    }
+  ]
+}

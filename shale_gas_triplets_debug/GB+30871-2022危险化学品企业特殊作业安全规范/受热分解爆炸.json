@@ -1,0 +1,20 @@
+{
+  "entity": "受热分解爆炸",
+  "raw": "[\n  {\"head\": \"受热分解爆炸\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"不应进行动火作业\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"受热分解爆炸\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"清理或封盖等防护措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "受热分解爆炸",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "不应进行动火作业",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "受热分解爆炸",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "清理或封盖等防护措施",
+      "tail_type": "控制措施"
+    }
+  ]
+}

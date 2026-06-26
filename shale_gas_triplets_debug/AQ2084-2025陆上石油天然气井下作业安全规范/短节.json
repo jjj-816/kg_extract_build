@@ -1,0 +1,20 @@
+{
+  "entity": "短节",
+  "raw": "[\n  {\"head\": \"短节\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井口附近便于取用的位置\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"短节\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"无法全部进入井控装置组合\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "短节",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井口附近便于取用的位置",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "短节",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "无法全部进入井控装置组合",
+      "tail_type": "风险事件"
+    }
+  ]
+}

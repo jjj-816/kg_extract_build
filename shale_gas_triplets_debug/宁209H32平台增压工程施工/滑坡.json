@@ -1,0 +1,13 @@
+{
+  "entity": "滑坡",
+  "raw": "[\n  {\"head\": \"滑坡\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"软土或富水地层开挖时\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "滑坡",
+      "head_type": "风险事件",
+      "relation": "OCCURS_AT",
+      "tail": "软土或富水地层开挖时",
+      "tail_type": "时空信息"
+    }
+  ]
+}

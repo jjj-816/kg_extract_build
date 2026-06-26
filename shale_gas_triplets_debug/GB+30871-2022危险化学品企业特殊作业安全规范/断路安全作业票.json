@@ -1,0 +1,27 @@
+{
+  "entity": "断路安全作业票",
+  "raw": "[\n  {\"head\": \"断路安全作业票\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"断路涉及单位消防、安全管理部门\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"断路安全作业票\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"所在单位专业部门\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"断路安全作业票\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"作业单位负责人\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "断路安全作业票",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "断路涉及单位消防、安全管理部门",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "断路安全作业票",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "所在单位专业部门",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "断路安全作业票",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "作业单位负责人",
+      "tail_type": "时空信息"
+    }
+  ]
+}

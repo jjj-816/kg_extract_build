@@ -1,0 +1,76 @@
+{
+  "entity": "附录D：设备装置评估表（工器具确认表）",
+  "raw": "[\n  {\"head\": \"附录D：设备装置评估表（工器具确认表）\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"质量控制\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录D：设备装置评估表（工器具确认表）\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"关键材料、设备进场验收\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录D：设备装置评估表（工器具确认表）\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"目视化合格标志\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录D：设备装置评估表（工器具确认表）\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"施工设备、机具及计量、测量和检验仪器准备情况\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录D：设备装置评估表（工器具确认表）\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"人员HSE教育\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录D：设备装置评估表（工器具确认表）\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"特殊工种培训取证情况\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录D：设备装置评估表（工器具确认表）\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"设备检修保养情况\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录D：设备装置评估表（工器具确认表）\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"工器具准备情况\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录D：设备装置评估表（工器具确认表）\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"机械设备检查\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录D：设备装置评估表（工器具确认表）\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电镐、砂轮机操作\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录D：设备装置评估表（工器具确认表）\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"《起重机械安全规程》 GB 6067.1-2010\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录D：设备装置评估表（工器具确认表）\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"首次现场安全技术交底\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录D：设备装置评估表（工器具确认表）\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"工程材料及备件符合设计要求\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "附录D：设备装置评估表（工器具确认表）",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "质量控制",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "附录D：设备装置评估表（工器具确认表）",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "目视化合格标志",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "附录D：设备装置评估表（工器具确认表）",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "施工设备、机具及计量、测量和检验仪器准备情况",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "附录D：设备装置评估表（工器具确认表）",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "人员HSE教育",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "附录D：设备装置评估表（工器具确认表）",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "特殊工种培训取证情况",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "附录D：设备装置评估表（工器具确认表）",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "设备检修保养情况",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "附录D：设备装置评估表（工器具确认表）",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "工器具准备情况",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "附录D：设备装置评估表（工器具确认表）",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "《起重机械安全规程》 GB 6067.1-2010",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "附录D：设备装置评估表（工器具确认表）",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "首次现场安全技术交底",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "附录D：设备装置评估表（工器具确认表）",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "工程材料及备件符合设计要求",
+      "tail_type": "施工参数"
+    }
+  ]
+}

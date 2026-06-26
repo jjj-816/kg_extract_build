@@ -1,0 +1,27 @@
+{
+  "entity": "《供配电系统设计规范》（GB50052-2009）",
+  "raw": "[\n  {\"head\": \"《供配电系统设计规范》（GB50052-2009）\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"配电箱\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"《供配电系统设计规范》（GB50052-2009）\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"《供配电系统设计规范》（GB50052-2009）\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"电焊机\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "《供配电系统设计规范》（GB50052-2009）",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "配电箱",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "《供配电系统设计规范》（GB50052-2009）",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "发电机",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "《供配电系统设计规范》（GB50052-2009）",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "电焊机",
+      "tail_type": "设备工具"
+    }
+  ]
+}

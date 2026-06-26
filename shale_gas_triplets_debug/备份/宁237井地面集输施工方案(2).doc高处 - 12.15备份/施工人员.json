@@ -1,0 +1,41 @@
+{
+  "entity": "施工人员",
+  "raw": "[\n  {\"head\": \"施工人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工准备\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"方井打磨及防腐\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"摄像头立杆\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"摄像头安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"建渣清理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工人员\", \"head_type\": \"责任主体\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "施工人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工准备",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "方井打磨及防腐",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "摄像头立杆",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "摄像头安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "建渣清理",
+      "tail_type": "作业活动"
+    }
+  ]
+}

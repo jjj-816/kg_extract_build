@@ -1,0 +1,27 @@
+{
+  "entity": "密封垫环",
+  "raw": "[\n  {\"head\": \"密封垫环\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"法兰或卡箍连接\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"密封垫环\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"型式、尺寸及技术要求\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"密封垫环\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"法兰用密封垫环\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "密封垫环",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "法兰或卡箍连接",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "密封垫环",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "型式、尺寸及技术要求",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "密封垫环",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "法兰用密封垫环",
+      "tail_type": "时空信息"
+    }
+  ]
+}

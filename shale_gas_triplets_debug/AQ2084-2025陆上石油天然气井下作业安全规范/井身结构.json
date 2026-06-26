@@ -1,0 +1,83 @@
+{
+  "entity": "井身结构",
+  "raw": "[\n  {\"head\": \"井身结构\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"钻完井数据\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井身结构\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"钻井基础数据\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井身结构\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"井身结构示意图\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井身结构\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"井别\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井身结构\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"井型\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井身结构\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"开钻日期\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井身结构\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"完钻日期\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井身结构\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"完井日期\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井身结构\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"完钻井深\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井身结构\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"完井液体性质\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"井身结构\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"井斜数据\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "井身结构",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "钻完井数据",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井身结构",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "钻井基础数据",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井身结构",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "井身结构示意图",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井身结构",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "井别",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井身结构",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "井型",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井身结构",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "开钻日期",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井身结构",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "完钻日期",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井身结构",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "完井日期",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井身结构",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "完钻井深",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井身结构",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "完井液体性质",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "井身结构",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "井斜数据",
+      "tail_type": "施工参数"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "酒后上岗",
+  "raw": "[\n  {\"head\": \"酒后上岗\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"严禁酒后上岗\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "酒后上岗",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "严禁酒后上岗",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "entity": "劳保穿戴",
+  "raw": "```json\n[\n  {\"head\": \"劳保穿戴\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"工衣\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"劳保穿戴\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"劳保鞋\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"劳保穿戴\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"安全帽\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"劳保穿戴\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"防毒口罩\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"劳保穿戴\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"防静电劳保用品\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"劳保穿戴\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"安全带\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"劳保穿戴\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"冬季工作服\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"劳保穿戴\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"手套\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"劳保穿戴\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"保暖用品\", \"tail_type\": \"材料介质\"}\n]\n```",
+  "triplets": []
+}

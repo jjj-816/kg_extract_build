@@ -1,0 +1,20 @@
+{
+  "entity": "入场人员",
+  "raw": "[\n  {\"head\": \"入场人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"验收人\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"入场人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场管理\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "入场人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "验收人",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "入场人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场管理",
+      "tail_type": "作业活动"
+    }
+  ]
+}

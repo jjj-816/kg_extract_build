@@ -1,0 +1,20 @@
+{
+  "entity": "全身式双钩安全带",
+  "raw": "[\n  {\"head\": \"全身式双钩安全带\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"独立安全绳或牢固的钢结构上\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"全身式双钩安全带\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"挂在临时构件或易碎部位\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "全身式双钩安全带",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "独立安全绳或牢固的钢结构上",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "全身式双钩安全带",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "挂在临时构件或易碎部位",
+      "tail_type": "风险事件"
+    }
+  ]
+}

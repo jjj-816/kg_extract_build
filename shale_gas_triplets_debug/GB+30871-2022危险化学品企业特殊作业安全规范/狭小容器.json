@@ -1,0 +1,13 @@
+{
+  "entity": "狭小容器",
+  "raw": "[\n  {\"head\": \"狭小容器\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"12 V\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "狭小容器",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "12 V",
+      "tail_type": "施工参数"
+    }
+  ]
+}

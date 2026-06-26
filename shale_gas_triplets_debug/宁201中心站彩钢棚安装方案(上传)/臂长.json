@@ -1,0 +1,34 @@
+{
+  "entity": "臂长",
+  "raw": "[\n  {\"head\": \"臂长\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"作业半径5米时，起重量≤17吨\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"臂长\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"10.2\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"臂长\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"17.6\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"臂长\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"25\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "臂长",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "作业半径5米时，起重量≤17吨",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "臂长",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "10.2",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "臂长",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "17.6",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "臂长",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "25",
+      "tail_type": "施工记录"
+    }
+  ]
+}

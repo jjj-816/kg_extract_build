@@ -1,0 +1,41 @@
+{
+  "entity": "起下钻作业",
+  "raw": "[\n  {\"head\": \"起下钻作业\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"钻进作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"起下钻作业\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"取心作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"起下钻作业\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"录井作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"起下钻作业\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"测井作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"起下钻作业\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"固井作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "起下钻作业",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "钻进作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "起下钻作业",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "取心作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "起下钻作业",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "录井作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "起下钻作业",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "测井作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "起下钻作业",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "固井作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

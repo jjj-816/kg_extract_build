@@ -1,0 +1,13 @@
+{
+  "entity": "圆形平面",
+  "raw": "[\n  {\"head\": \"圆形平面\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"直径小于 500 mm\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "圆形平面",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "直径小于 500 mm",
+      "tail_type": "施工参数"
+    }
+  ]
+}

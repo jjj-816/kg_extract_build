@@ -1,0 +1,13 @@
+{
+  "entity": "无损检测",
+  "raw": "[\n  {\"head\": \"无损检测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"射线/超声波\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "无损检测",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "射线/超声波",
+      "tail_type": "作业活动"
+    }
+  ]
+}

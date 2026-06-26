@@ -1,0 +1,13 @@
+{
+  "entity": "作业票证",
+  "raw": "[\n  {\"head\": \"作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"计划作业时间\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"编制依据\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"属地监督签字\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"作业票证\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业人员签字\", \"tail_type\": \"责任主体\"}\n]",
+  "triplets": [
+    {
+      "head": "高处作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "作业票证",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "安全警示",
+  "raw": "[\n  {\"head\": \"安全警示\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"停电、挂牌、上锁制度\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全警示\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"现场确认安全措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全警示\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"安全技术交底和风险告知确认卡\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安全警示\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安全警示\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"确保道路安全畅通\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全警示\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"员工保命条款\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全警示\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"火灾爆炸风险控制措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "安全警示",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "安全技术交底和风险告知确认卡",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "安全警示",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    }
+  ]
+}

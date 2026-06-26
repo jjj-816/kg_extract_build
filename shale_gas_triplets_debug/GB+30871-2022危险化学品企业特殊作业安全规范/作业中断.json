@@ -1,0 +1,76 @@
+{
+  "entity": "作业中断",
+  "raw": "[\n  {\"head\": \"作业中断\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"特级、一级动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业中断\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"二级动火作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业中断\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"盲板抽堵作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业中断\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"断路作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业中断\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"吊装作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业中断\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"气体分析\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业中断\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"气体检测分析\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业中断\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"环境条件和安全措施进行确认\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业中断\", \"head_type\": \"施工阶段\", \"relation\": \"OCCURS_AT\", \"tail\": \"超过 30 min\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"作业中断\", \"head_type\": \"施工阶段\", \"relation\": \"OCCURS_AT\", \"tail\": \"超过 60 min\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "作业中断",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "特级、一级动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业中断",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "二级动火作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业中断",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "盲板抽堵作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业中断",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "断路作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业中断",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "吊装作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业中断",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "气体分析",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业中断",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "气体检测分析",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业中断",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "环境条件和安全措施进行确认",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业中断",
+      "head_type": "施工阶段",
+      "relation": "OCCURS_AT",
+      "tail": "超过 30 min",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "作业中断",
+      "head_type": "施工阶段",
+      "relation": "OCCURS_AT",
+      "tail": "超过 60 min",
+      "tail_type": "时空信息"
+    }
+  ]
+}

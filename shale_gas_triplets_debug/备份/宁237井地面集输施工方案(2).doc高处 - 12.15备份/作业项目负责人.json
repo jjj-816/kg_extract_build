@@ -1,0 +1,27 @@
+{
+  "entity": "作业项目负责人",
+  "raw": "```json\n[\n  {\"head\": \"作业项目负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"作业申请人\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"作业项目负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"指认准许作业的设备/系统或工作区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业项目负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"作业内容\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业项目负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"主要作业步骤\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业项目负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"作业场所\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业项目负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"项目名称\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业项目负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"项目负责人签字\", \"tail_type\": \"施工记录\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "作业项目负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "作业内容",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业项目负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "主要作业步骤",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业项目负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "项目负责人签字",
+      "tail_type": "施工记录"
+    }
+  ]
+}

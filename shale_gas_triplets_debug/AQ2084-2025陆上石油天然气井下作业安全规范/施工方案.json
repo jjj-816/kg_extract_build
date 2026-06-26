@@ -1,0 +1,27 @@
+{
+  "entity": "施工方案",
+  "raw": "[\n  {\"head\": \"施工方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"压井作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"施工作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"换装井口作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "施工方案",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "压井作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工方案",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "施工作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工方案",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "换装井口作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

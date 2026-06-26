@@ -1,0 +1,34 @@
+{
+  "entity": "口罩",
+  "raw": "[\n  {\"head\": \"口罩\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"受限空间\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"口罩\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"邻近排放有毒、有害气体、粉尘的放空管线或烟囱等场所\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"口罩\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防尘\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"口罩\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"粉尘\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "口罩",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "受限空间",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "口罩",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "邻近排放有毒、有害气体、粉尘的放空管线或烟囱等场所",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "口罩",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "防尘",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "口罩",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "粉尘",
+      "tail_type": "风险事件"
+    }
+  ]
+}

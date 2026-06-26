@@ -1,0 +1,13 @@
+{
+  "entity": "停机",
+  "raw": "[\n  {\"head\": \"停机\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"试压时人员距离高压管线10米以上，发现刺漏，立即停机整改\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "停机",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "试压时人员距离高压管线10米以上，发现刺漏，立即停机整改",
+      "tail_type": "施工记录"
+    }
+  ]
+}

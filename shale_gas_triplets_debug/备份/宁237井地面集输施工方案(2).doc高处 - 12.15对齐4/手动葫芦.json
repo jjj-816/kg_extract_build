@@ -1,0 +1,13 @@
+{
+  "entity": "手动葫芦",
+  "raw": "[\n  {\"head\": \"手动葫芦\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"个\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "手动葫芦",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "个",
+      "tail_type": "施工参数"
+    }
+  ]
+}

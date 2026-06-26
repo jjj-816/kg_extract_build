@@ -1,0 +1,20 @@
+{
+  "entity": "控压钻井",
+  "raw": "[\n  {\"head\": \"控压钻井\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"除欠平衡\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"控压钻井\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"压力敏感性窄密度窗口地层钻井\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "控压钻井",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "除欠平衡",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "控压钻井",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "压力敏感性窄密度窗口地层钻井",
+      "tail_type": "作业活动"
+    }
+  ]
+}

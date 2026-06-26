@@ -1,0 +1,13 @@
+{
+  "entity": "地下室",
+  "raw": "[\n  {\"head\": \"地下室\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"封闭、半封闭场所\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "地下室",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "封闭、半封闭场所",
+      "tail_type": "时空信息"
+    }
+  ]
+}

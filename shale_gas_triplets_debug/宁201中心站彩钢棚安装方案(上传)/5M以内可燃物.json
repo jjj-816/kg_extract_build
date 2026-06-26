@@ -1,0 +1,20 @@
+{
+  "entity": "5M以内可燃物",
+  "raw": "[\n  {\"head\": \"5M以内可燃物\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"清理作业点5米范围内所有可燃物\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"5M以内可燃物\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"无法清理的可燃物需用防火毯覆盖隔离\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "5M以内可燃物",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "清理作业点5米范围内所有可燃物",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "5M以内可燃物",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "无法清理的可燃物需用防火毯覆盖隔离",
+      "tail_type": "控制措施"
+    }
+  ]
+}

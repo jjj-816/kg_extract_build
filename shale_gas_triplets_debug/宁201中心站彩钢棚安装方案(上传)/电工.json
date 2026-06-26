@@ -1,0 +1,34 @@
+{
+  "entity": "电工",
+  "raw": "[\n  {\"head\": \"电工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"发电机、配电箱等设备专人操作和管理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"电工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"断电挂牌\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"电工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"每日作业前检查漏电保护器有效性\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"电工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"线缆铺设采用绝缘套管保护\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"电工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"定期检查绝缘层完整性\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "电工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "断电挂牌",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "电工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "每日作业前检查漏电保护器有效性",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "电工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "线缆铺设采用绝缘套管保护",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "电工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "定期检查绝缘层完整性",
+      "tail_type": "作业活动"
+    }
+  ]
+}

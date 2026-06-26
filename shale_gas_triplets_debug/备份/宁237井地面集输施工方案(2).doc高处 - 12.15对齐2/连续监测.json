@@ -1,0 +1,20 @@
+{
+  "entity": "连续监测",
+  "raw": "[\n  {\"head\": \"连续监测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"控制措施与检查情况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"连续监测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"监督检查情况\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "连续监测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "控制措施与检查情况",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "连续监测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "监督检查情况",
+      "tail_type": "施工记录"
+    }
+  ]
+}

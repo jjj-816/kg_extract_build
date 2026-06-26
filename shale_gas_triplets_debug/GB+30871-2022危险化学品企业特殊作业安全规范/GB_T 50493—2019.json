@@ -1,0 +1,41 @@
+{
+  "entity": "GB/T 50493—2019",
+  "raw": "[\n  {\"head\": \"GB/T 50493—2019\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"移动式可燃、有毒气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"GB/T 50493—2019\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"氧气检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"GB/T 50493—2019\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"作业时使用\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"GB/T 50493—2019\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"GB 15322.3\", \"tail_type\": \"未分类\"},\n  {\"head\": \"GB/T 50493—2019\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"5.2\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "GB/T 50493—2019",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "移动式可燃、有毒气体检测仪",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "GB/T 50493—2019",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "氧气检测仪",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "GB/T 50493—2019",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "作业时使用",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "GB/T 50493—2019",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "GB 15322.3",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "GB/T 50493—2019",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "5.2",
+      "tail_type": "未分类"
+    }
+  ]
+}

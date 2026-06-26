@@ -1,0 +1,27 @@
+{
+  "entity": "属地监督",
+  "raw": "[\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"告知施工作业人员本井站应急要点\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场属地监督进行核查\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"主动接受属地监督和甲方管理人员监督检查\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"培训人\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "告知施工作业人员本井站应急要点",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场属地监督进行核查",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "属地监督",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "主动接受属地监督和甲方管理人员监督检查",
+      "tail_type": "控制措施"
+    }
+  ]
+}

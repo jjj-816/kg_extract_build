@@ -1,0 +1,13 @@
+{
+  "entity": "电气管理部门",
+  "raw": "[\n  {\"head\": \"电气管理部门\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"临时用电安全作业票\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "电气管理部门",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "临时用电安全作业票",
+      "tail_type": "作业活动"
+    }
+  ]
+}

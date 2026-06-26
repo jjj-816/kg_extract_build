@@ -1,0 +1,13 @@
+{
+  "entity": "应急处置",
+  "raw": "[\n  {\"head\": \"应急处置\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"h）应急处置程序等\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "应急处置",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "h）应急处置程序等",
+      "tail_type": "施工记录"
+    }
+  ]
+}

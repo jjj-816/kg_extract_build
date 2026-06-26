@@ -1,0 +1,13 @@
+{
+  "entity": "磁粉",
+  "raw": "[\n  {\"head\": \"磁粉\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"焊缝\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "磁粉",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "焊缝",
+      "tail_type": "施工对象"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "法兰连接",
+  "raw": "[\n  {\"head\": \"法兰连接\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"焊接或法兰连接质量符合规范\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "法兰连接",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "焊接或法兰连接质量符合规范",
+      "tail_type": "施工记录"
+    }
+  ]
+}

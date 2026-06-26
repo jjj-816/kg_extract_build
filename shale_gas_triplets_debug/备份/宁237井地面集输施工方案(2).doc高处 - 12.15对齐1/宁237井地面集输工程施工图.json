@@ -1,0 +1,41 @@
+{
+  "entity": "宁237井地面集输工程施工图",
+  "raw": "```json\n[\n  {\"head\": \"宁237井地面集输工程施工图\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"页岩气地面工程设计规范\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"宁237井地面集输工程施工图\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"天然气压缩机安装工程施工技术规范\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"宁237井地面集输工程施工图\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"石油天然气工程设计防火规范\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"宁237井地面集输工程施工图\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"工业金属管道工程施工质量验收规范\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"宁237井地面集输工程施工图\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"石油天然气金属管道焊接工艺评定\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"宁237井地面集输工程施工图\", \"head_type\": \"规范条款\", \"relation\": \"HAS_STAGE\", \"tail\": \"施工安排\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"宁237井地面集输工程施工图\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"施工单位\", \"tail_type\": \"责任主体\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "宁237井地面集输工程施工图",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "页岩气地面工程设计规范",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "宁237井地面集输工程施工图",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "天然气压缩机安装工程施工技术规范",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "宁237井地面集输工程施工图",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "石油天然气工程设计防火规范",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "宁237井地面集输工程施工图",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "工业金属管道工程施工质量验收规范",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "宁237井地面集输工程施工图",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "石油天然气金属管道焊接工艺评定",
+      "tail_type": "规范条款"
+    }
+  ]
+}

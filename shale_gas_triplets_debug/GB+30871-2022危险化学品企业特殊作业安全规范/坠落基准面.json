@@ -1,0 +1,13 @@
+{
+  "entity": "坠落基准面",
+  "raw": "[\n  {\"head\": \"坠落基准面\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"距坠落基准面 2 m 及 2 m 以上\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "坠落基准面",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "距坠落基准面 2 m 及 2 m 以上",
+      "tail_type": "时空信息"
+    }
+  ]
+}

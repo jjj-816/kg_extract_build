@@ -1,0 +1,20 @@
+{
+  "entity": "四川石油天然气建设工程有限责任公司",
+  "raw": "[\n  {\"head\": \"四川石油天然气建设工程有限责任公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"宁237井地面集输工程\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"四川石油天然气建设工程有限责任公司\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"《宁237井地面集输工程施工图》\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "四川石油天然气建设工程有限责任公司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "宁237井地面集输工程",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "四川石油天然气建设工程有限责任公司",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "《宁237井地面集输工程施工图》",
+      "tail_type": "施工记录"
+    }
+  ]
+}

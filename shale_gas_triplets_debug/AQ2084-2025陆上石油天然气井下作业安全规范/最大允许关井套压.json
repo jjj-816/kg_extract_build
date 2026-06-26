@@ -1,0 +1,27 @@
+{
+  "entity": "最大允许关井套压",
+  "raw": "[\n  {\"head\": \"最大允许关井套压\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井口最高关井压力\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"最大允许关井套压\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"套压\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"最大允许关井套压\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"关井最高压力\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "最大允许关井套压",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "井口最高关井压力",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "最大允许关井套压",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "套压",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "最大允许关井套压",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "关井最高压力",
+      "tail_type": "风险事件"
+    }
+  ]
+}

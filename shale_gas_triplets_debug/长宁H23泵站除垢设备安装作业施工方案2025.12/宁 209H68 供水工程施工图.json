@@ -1,0 +1,20 @@
+{
+  "entity": "宁 209H68 供水工程施工图",
+  "raw": "[\n  {\"head\": \"宁 209H68 供水工程施工图\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"宁 209H68 泵站\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"宁 209H68 供水工程施工图\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"宁 209H68 泵站除垢设备安装作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "宁 209H68 供水工程施工图",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "宁 209H68 泵站",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "宁 209H68 供水工程施工图",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "宁 209H68 泵站除垢设备安装作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

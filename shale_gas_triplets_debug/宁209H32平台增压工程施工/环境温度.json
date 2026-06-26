@@ -1,0 +1,13 @@
+{
+  "entity": "环境温度",
+  "raw": "[\n  {\"head\": \"环境温度\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"防冻措施\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "环境温度",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "防冻措施",
+      "tail_type": "风险事件"
+    }
+  ]
+}

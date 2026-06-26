@@ -1,0 +1,5 @@
+{
+  "entity": "巡井工作制度",
+  "raw": "[\n  {\"head\": \"巡井工作制度\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"三高油气井\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": []
+}

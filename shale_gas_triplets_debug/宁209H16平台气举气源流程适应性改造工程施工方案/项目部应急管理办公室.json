@@ -1,0 +1,13 @@
+{
+  "entity": "项目部应急管理办公室",
+  "raw": "[\n  {\"head\": \"项目部应急管理办公室\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"所有事故情况\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "项目部应急管理办公室",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "所有事故情况",
+      "tail_type": "风险事件"
+    }
+  ]
+}

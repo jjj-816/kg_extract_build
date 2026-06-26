@@ -1,0 +1,13 @@
+{
+  "entity": "钢级",
+  "raw": "[\n  {\"head\": \"钢级\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"生产管柱的钢级\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "钢级",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "生产管柱的钢级",
+      "tail_type": "施工记录"
+    }
+  ]
+}

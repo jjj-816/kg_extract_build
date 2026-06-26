@@ -1,0 +1,13 @@
+{
+  "entity": "沟内杂物",
+  "raw": "[\n  {\"head\": \"沟内杂物\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"清理沟内杂物\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "沟内杂物",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "清理沟内杂物",
+      "tail_type": "施工记录"
+    }
+  ]
+}

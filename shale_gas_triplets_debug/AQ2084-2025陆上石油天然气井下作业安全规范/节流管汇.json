@@ -1,0 +1,55 @@
+{
+  "entity": "节流管汇",
+  "raw": "[\n  {\"head\": \"节流管汇\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井控管汇(线)\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"节流管汇\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"高压端\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"节流管汇\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压力等级\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"节流管汇\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"额定工作压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"节流管汇\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"试压值\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"节流管汇\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"最大允许关井套压值\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"节流管汇\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"溢流\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "节流管汇",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井控管汇(线)",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "节流管汇",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "高压端",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "节流管汇",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "压力等级",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "节流管汇",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "额定工作压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "节流管汇",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "试压值",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "节流管汇",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "最大允许关井套压值",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "节流管汇",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "溢流",
+      "tail_type": "风险事件"
+    }
+  ]
+}

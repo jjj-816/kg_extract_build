@@ -1,0 +1,62 @@
+{
+  "entity": "溢流处置",
+  "raw": "[\n  {\"head\": \"溢流处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"e） 溢流监测\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"溢流处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"f）施工作业过程中溢流关井方法的确定\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"溢流处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"节流放喷\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"溢流处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"压井\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"溢流处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"替喷\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"溢流处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"返出流体的性质和数量\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"溢流处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"排污管线应接入集液池或回收罐并固定牢靠\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"溢流处置\", \"head_type\": \"未分类\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"替喷过程中应记录返出流体的性质和数量\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "溢流处置",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "e） 溢流监测",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "溢流处置",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "f）施工作业过程中溢流关井方法的确定",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "溢流处置",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "节流放喷",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "溢流处置",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "压井",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "溢流处置",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "替喷",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "溢流处置",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "返出流体的性质和数量",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "溢流处置",
+      "head_type": "未分类",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "排污管线应接入集液池或回收罐并固定牢靠",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "溢流处置",
+      "head_type": "未分类",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "替喷过程中应记录返出流体的性质和数量",
+      "tail_type": "作业活动"
+    }
+  ]
+}

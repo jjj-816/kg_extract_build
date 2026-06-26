@@ -1,0 +1,48 @@
+{
+  "entity": "升压",
+  "raw": "[\n  {\"head\": \"升压\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"每小时升压不得超过1MPa\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"升压\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压力分别升至试验压力的30%和60%\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"升压\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"继续升压至强度试验压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"升压\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"升压至强度试验压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"升压\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"管线及法兰连接处刺漏，堵头飞出，管线弹起，造成人员伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"升压\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"管线及连接点发生刺漏造成人员伤害\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "升压",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "每小时升压不得超过1MPa",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "升压",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "压力分别升至试验压力的30%和60%",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "升压",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "继续升压至强度试验压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "升压",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "升压至强度试验压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "升压",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "管线及法兰连接处刺漏，堵头飞出，管线弹起，造成人员伤害",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "升压",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "管线及连接点发生刺漏造成人员伤害",
+      "tail_type": "风险事件"
+    }
+  ]
+}

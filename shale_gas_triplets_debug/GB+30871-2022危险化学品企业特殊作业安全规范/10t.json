@@ -1,0 +1,13 @@
+{
+  "entity": "10t",
+  "raw": "[\n  {\"head\": \"10t\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"可不办理《吊装票》\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "10t",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "可不办理《吊装票》",
+      "tail_type": "风险事件"
+    }
+  ]
+}

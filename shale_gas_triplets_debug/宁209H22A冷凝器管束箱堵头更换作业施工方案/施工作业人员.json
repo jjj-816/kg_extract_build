@@ -1,0 +1,160 @@
+{
+  "entity": "施工作业人员",
+  "raw": "[\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全教育培训\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"干预纠正\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"汇报\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"清楚并理解该作业现场主要风险和危害因素\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"掌握相应安全技能及应急知识\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"具有相应的施工作业资质\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"具有相应安全意识\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场管理制度\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"应急要点\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"逃生通道\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"逃生门\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"风向标\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"灭火器\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"可燃气体检测仪位置\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"报警声音\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"应急指挥人\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"三违行为\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全隐患\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"特种作业施工人员\", \"tail_type\": \"未分类\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工班组项目负责人\", \"tail_type\": \"未分类\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"周金明\", \"tail_type\": \"未分类\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"熔化焊接与切割作业\", \"tail_type\": \"未分类\"},\n  {\"head\": \"施工作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"T51102519770210039X\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全教育培训",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "干预纠正",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "汇报",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "清楚并理解该作业现场主要风险和危害因素",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "掌握相应安全技能及应急知识",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "具有相应的施工作业资质",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "具有相应安全意识",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场管理制度",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "应急要点",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "逃生通道",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "逃生门",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "风向标",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "灭火器",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "可燃气体检测仪位置",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "报警声音",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "应急指挥人",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全隐患",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "特种作业施工人员",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工班组项目负责人",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "周金明",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "熔化焊接与切割作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "T51102519770210039X",
+      "tail_type": "未分类"
+    }
+  ]
+}

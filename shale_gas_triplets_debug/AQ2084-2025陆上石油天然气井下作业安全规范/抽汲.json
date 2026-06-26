@@ -1,0 +1,13 @@
+{
+  "entity": "抽汲",
+  "raw": "[\n  {\"head\": \"抽汲\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"硫化氢的油气井\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "抽汲",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "硫化氢的油气井",
+      "tail_type": "风险事件"
+    }
+  ]
+}

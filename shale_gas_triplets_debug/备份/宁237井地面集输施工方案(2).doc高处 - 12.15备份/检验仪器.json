@@ -1,0 +1,5 @@
+{
+  "entity": "检验仪器",
+  "raw": "```json\n[\n  {\"head\": \"检验仪器\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"检验仪器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"设备装置评估表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"检验仪器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"}\n]\n```",
+  "triplets": []
+}

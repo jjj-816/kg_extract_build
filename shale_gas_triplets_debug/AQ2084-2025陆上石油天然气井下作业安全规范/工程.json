@@ -1,0 +1,48 @@
+{
+  "entity": "工程",
+  "raw": "[\n  {\"head\": \"工程\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"石油天然气井下作业\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"工程\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"压井作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"工程\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"井控风险等级\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"工程\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"企业甲级设计资质\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"工程\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工方案\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工程\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"技术交底\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "工程",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "石油天然气井下作业",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "工程",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "压井作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "工程",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "井控风险等级",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "工程",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "企业甲级设计资质",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "工程",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工方案",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "工程",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "技术交底",
+      "tail_type": "施工记录"
+    }
+  ]
+}

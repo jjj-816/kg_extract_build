@@ -1,0 +1,20 @@
+{
+  "entity": "井口防腐",
+  "raw": "[\n  {\"head\": \"井口防腐\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"方井打磨及防腐\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"井口防腐\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工安排\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井口防腐\", \"head_type\": \"施工对象\", \"relation\": \"RECORDED_IN\", \"tail\": \"宁237井地面集输工程施工图\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井口防腐\", \"head_type\": \"施工对象\", \"relation\": \"REGULATES\", \"tail\": \"《页岩气地面工程设计规范》Q/SY1858-2015\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"井口防腐\", \"head_type\": \"施工对象\", \"relation\": \"REGULATES\", \"tail\": \"《石油天然气工程设计防火规范》GB50183-2004\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "井口防腐",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "方井打磨及防腐",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "井口防腐",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "施工安排",
+      "tail_type": "施工记录"
+    }
+  ]
+}

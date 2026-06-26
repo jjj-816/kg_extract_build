@@ -1,0 +1,13 @@
+{
+  "entity": "周边物料",
+  "raw": "[\n  {\"head\": \"周边物料\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"切割区域\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "周边物料",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "切割区域",
+      "tail_type": "时空信息"
+    }
+  ]
+}

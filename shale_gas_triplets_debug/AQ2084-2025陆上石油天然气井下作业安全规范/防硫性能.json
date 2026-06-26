@@ -1,0 +1,20 @@
+{
+  "entity": "防硫性能",
+  "raw": "[\n  {\"head\": \"防硫性能\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"应满足要求\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"防硫性能\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"应具有抗硫化氢或二氧化碳的能力\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "防硫性能",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "应满足要求",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "防硫性能",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "应具有抗硫化氢或二氧化碳的能力",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

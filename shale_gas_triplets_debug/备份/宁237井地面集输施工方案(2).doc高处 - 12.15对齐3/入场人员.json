@@ -1,0 +1,27 @@
+{
+  "entity": "入场人员",
+  "raw": "[\n  {\"head\": \"入场人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"接受属地监督和甲方管理人员监督检查\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"入场人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"如有违反立即清退现场\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"入场人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"按照规定对承包方进行处罚\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "入场人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "接受属地监督和甲方管理人员监督检查",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "入场人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "如有违反立即清退现场",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "入场人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "按照规定对承包方进行处罚",
+      "tail_type": "风险事件"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "entity": "作业人员",
+  "raw": "[\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"岗前体检\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"全程规范使用双钩安全带\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"防滑鞋\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全带高挂低用\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"劳保穿戴齐全\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"佩戴正压式空气呼吸器\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"发现三违行为或安全隐患\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"及时干预纠正\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"向项目负责人或属地监督汇报\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"掌握相应安全技能及应急知识\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"具有相应安全意识\", \"tail_type\": \"未分类\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"具有相应的施工作业资质\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全技术交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "岗前体检",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "全程规范使用双钩安全带",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "防滑鞋",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全带高挂低用",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "劳保穿戴齐全",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "佩戴正压式空气呼吸器",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "及时干预纠正",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "向项目负责人或属地监督汇报",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "掌握相应安全技能及应急知识",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "具有相应安全意识",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "具有相应的施工作业资质",
+      "tail_type": "未分类"
+    }
+  ]
+}

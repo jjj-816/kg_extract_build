@@ -1,0 +1,13 @@
+{
+  "entity": "抽油杆简易防喷装置转换接头",
+  "raw": "[\n  {\"head\": \"抽油杆简易防喷装置转换接头\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井内抽油杆\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "抽油杆简易防喷装置转换接头",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井内抽油杆",
+      "tail_type": "时空信息"
+    }
+  ]
+}

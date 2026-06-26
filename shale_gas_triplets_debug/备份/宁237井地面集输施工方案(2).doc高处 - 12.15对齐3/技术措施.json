@@ -1,0 +1,13 @@
+{
+  "entity": "技术措施",
+  "raw": "[\n  {\"head\": \"技术措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"4.4.2施工组织机构及技术措施\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "技术措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "4.4.2施工组织机构及技术措施",
+      "tail_type": "施工记录"
+    }
+  ]
+}

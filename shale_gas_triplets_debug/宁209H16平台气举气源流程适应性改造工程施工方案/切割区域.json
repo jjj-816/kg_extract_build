@@ -1,0 +1,27 @@
+{
+  "entity": "切割区域",
+  "raw": "[\n  {\"head\": \"切割区域\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"警戒区\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"切割区域\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"配备灭火器\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"切割区域\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"操作人员穿戴防护面罩、防火手套\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "切割区域",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "警戒区",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "切割区域",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "配备灭火器",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "切割区域",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "操作人员穿戴防护面罩、防火手套",
+      "tail_type": "施工记录"
+    }
+  ]
+}

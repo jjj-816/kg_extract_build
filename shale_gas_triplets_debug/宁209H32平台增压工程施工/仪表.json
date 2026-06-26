@@ -1,0 +1,13 @@
+{
+  "entity": "仪表",
+  "raw": "[\n  {\"head\": \"仪表\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"管道试压前\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "仪表",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "管道试压前",
+      "tail_type": "时空信息"
+    }
+  ]
+}

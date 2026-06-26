@@ -1,0 +1,13 @@
+{
+  "entity": "压痕",
+  "raw": "[\n  {\"head\": \"压痕\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"绝缘损坏的和有严重压痕的禁止使用\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "压痕",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "绝缘损坏的和有严重压痕的禁止使用",
+      "tail_type": "控制措施"
+    }
+  ]
+}

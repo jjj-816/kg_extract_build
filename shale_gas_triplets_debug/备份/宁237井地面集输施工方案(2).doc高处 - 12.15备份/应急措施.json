@@ -1,0 +1,41 @@
+{
+  "entity": "应急措施",
+  "raw": "[\n  {\"head\": \"应急措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"应急预案\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"应急措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"应急方案\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"应急措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"应急救援器材\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"应急措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"应急通道\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"应急措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"安防消防器材\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"应急措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"应急记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"应急措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"自身安全防护\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"应急措施\", \"head_type\": \"控制措施\", \"relation\": \"MITIGATED_BY\", \"tail\": \"泄漏\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"应急措施\", \"head_type\": \"控制措施\", \"relation\": \"MITIGATED_BY\", \"tail\": \"火灾\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"应急措施\", \"head_type\": \"控制措施\", \"relation\": \"MITIGATED_BY\", \"tail\": \"设备故障\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"应急措施\", \"head_type\": \"控制措施\", \"relation\": \"MITIGATED_BY\", \"tail\": \"坠落\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"应急措施\", \"head_type\": \"控制措施\", \"relation\": \"MITIGATED_BY\", \"tail\": \"中暑\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "泄漏",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "应急措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "火灾",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "应急措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "设备故障",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "应急措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "坠落",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "应急措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "中暑",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "应急措施",
+      "tail_type": "控制措施"
+    }
+  ]
+}

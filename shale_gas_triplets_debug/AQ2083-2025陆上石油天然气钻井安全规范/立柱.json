@@ -1,0 +1,34 @@
+{
+  "entity": "立柱",
+  "raw": "[\n  {\"head\": \"立柱\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"溢流\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"立柱\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井口\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"立柱\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"地面前\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"立柱\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"10个\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "立柱",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "溢流",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "立柱",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井口",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "立柱",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "地面前",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "立柱",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "10个",
+      "tail_type": "施工参数"
+    }
+  ]
+}

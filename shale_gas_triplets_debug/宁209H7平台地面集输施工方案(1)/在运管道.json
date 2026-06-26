@@ -1,0 +1,27 @@
+{
+  "entity": "在运管道",
+  "raw": "[\n  {\"head\": \"在运管道\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"电缆沟、防雷接地沟开挖与回填等动土作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"在运管道\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"电缆沟、防雷接地沟开挖\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"在运管道\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"管道喷涂（不涉及在运管道及设备）\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "在运管道",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "电缆沟、防雷接地沟开挖与回填等动土作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "在运管道",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "电缆沟、防雷接地沟开挖",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "在运管道",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "管道喷涂（不涉及在运管道及设备）",
+      "tail_type": "作业活动"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "entity": "螺栓",
+  "raw": "[\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"法兰与管线的连接\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"对角线顺序\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"管线变形\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"合适的扳手和扭矩扳手\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"紧固力符合要求\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"螺栓孔部位\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"专项密封处理\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"螺栓\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"浆料灌满\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "法兰与管线的连接",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "对角线顺序",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "管线变形",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "合适的扳手和扭矩扳手",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "紧固力符合要求",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "螺栓孔部位",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "专项密封处理",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "螺栓",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "浆料灌满",
+      "tail_type": "施工参数"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "作业单位负责人",
+  "raw": "[\n  {\"head\": \"作业单位负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"受限空间安全作业票\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业单位负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"动土安全作业票\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业单位负责人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"断路安全作业票\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "作业单位负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "受限空间安全作业票",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业单位负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "动土安全作业票",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业单位负责人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "断路安全作业票",
+      "tail_type": "作业活动"
+    }
+  ]
+}

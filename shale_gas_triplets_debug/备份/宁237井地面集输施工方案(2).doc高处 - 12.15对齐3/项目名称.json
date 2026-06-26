@@ -1,0 +1,13 @@
+{
+  "entity": "项目名称",
+  "raw": "[\n  {\"head\": \"项目名称\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"宁237井地面集输施工\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "项目名称",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "宁237井地面集输施工",
+      "tail_type": "时空信息"
+    }
+  ]
+}

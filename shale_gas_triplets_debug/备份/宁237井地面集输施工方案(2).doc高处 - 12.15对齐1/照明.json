@@ -1,0 +1,5 @@
+{
+  "entity": "照明",
+  "raw": "[\n  {\"head\": \"照明\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"火灾爆炸风险控制措施\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"照明\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"弧光伤害、火花飞溅、烫伤风险控制措施\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"照明\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": []
+}

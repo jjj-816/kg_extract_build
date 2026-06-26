@@ -1,0 +1,13 @@
+{
+  "entity": "台风",
+  "raw": "[\n  {\"head\": \"台风\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"应对作业安全设施进行检查\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "台风",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "应对作业安全设施进行检查",
+      "tail_type": "控制措施"
+    }
+  ]
+}

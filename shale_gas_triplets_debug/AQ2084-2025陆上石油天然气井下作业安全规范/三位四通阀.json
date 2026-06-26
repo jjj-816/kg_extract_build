@@ -1,0 +1,20 @@
+{
+  "entity": "三位四通阀",
+  "raw": "[\n  {\"head\": \"三位四通阀\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防误操作的防护装置\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"三位四通阀\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防误操作的限位装置\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "三位四通阀",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "防误操作的防护装置",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "三位四通阀",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "防误操作的限位装置",
+      "tail_type": "施工参数"
+    }
+  ]
+}

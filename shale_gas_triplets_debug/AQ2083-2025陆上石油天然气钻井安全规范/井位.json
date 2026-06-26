@@ -1,0 +1,5 @@
+{
+  "entity": "井位",
+  "raw": "[\n  {\"head\": \"井位\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"5000m\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"井位\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"3000m\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"井位\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"500m\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": []
+}

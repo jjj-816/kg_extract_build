@@ -1,0 +1,27 @@
+{
+  "entity": "化纤材料劳保用品",
+  "raw": "[\n  {\"head\": \"化纤材料劳保用品\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"化纤材料劳保用品\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"爆炸\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"化纤材料劳保用品\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"烫伤\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "化纤材料劳保用品",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "化纤材料劳保用品",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "爆炸",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "化纤材料劳保用品",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "烫伤",
+      "tail_type": "风险事件"
+    }
+  ]
+}

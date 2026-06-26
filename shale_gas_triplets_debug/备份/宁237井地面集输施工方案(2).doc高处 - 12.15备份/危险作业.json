@@ -1,0 +1,13 @@
+{
+  "entity": "危险作业",
+  "raw": "[\n  {\"head\": \"危险作业\", \"head_type\": \"作业活动\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防毒口罩\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"危险作业\", \"head_type\": \"作业活动\", \"relation\": \"MITIGATED_BY\", \"tail\": \"火灾爆炸风险控制措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"危险作业\", \"head_type\": \"作业活动\", \"relation\": \"MITIGATED_BY\", \"tail\": \"碰伤、物体打击风险控制措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"危险作业\", \"head_type\": \"作业活动\", \"relation\": \"MITIGATED_BY\", \"tail\": \"机械伤害风险控制措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"危险作业\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "危险作业",
+      "head_type": "作业活动",
+      "relation": "RECORDED_IN",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    }
+  ]
+}

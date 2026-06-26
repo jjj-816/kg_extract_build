@@ -1,0 +1,5 @@
+{
+  "entity": "电缆线",
+  "raw": "[\n  {\"head\": \"电缆线\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"电动扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"电缆线\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"电缆线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"电缆线\", \"head_type\": \"设备工具\", \"relation\": \"RECORDED_IN\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": []
+}

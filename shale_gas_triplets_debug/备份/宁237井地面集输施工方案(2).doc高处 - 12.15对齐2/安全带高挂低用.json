@@ -1,0 +1,13 @@
+{
+  "entity": "安全带高挂低用",
+  "raw": "[\n  {\"head\": \"安全带高挂低用\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"高空作业佩戴全身式安全带，安全带高挂低用\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "安全带高挂低用",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "高空作业佩戴全身式安全带，安全带高挂低用",
+      "tail_type": "施工记录"
+    }
+  ]
+}

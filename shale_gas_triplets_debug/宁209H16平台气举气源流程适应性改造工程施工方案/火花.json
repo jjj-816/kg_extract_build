@@ -1,0 +1,34 @@
+{
+  "entity": "火花",
+  "raw": "[\n  {\"head\": \"火花\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"配备灭火器\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"火花\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"操作人员穿戴防护面罩、防火手套\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"火花\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"设置不低于1米的阻燃挡板\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"火花\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"设置防火隔离区，使用阻燃围栏圈闭\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"火花\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"火花飞溅风险控制措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "火花",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "配备灭火器",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "火花",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "操作人员穿戴防护面罩、防火手套",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "火花",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "设置不低于1米的阻燃挡板",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "火花",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "设置防火隔离区，使用阻燃围栏圈闭",
+      "tail_type": "控制措施"
+    }
+  ]
+}

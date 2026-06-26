@@ -1,0 +1,13 @@
+{
+  "entity": "电工",
+  "raw": "[\n  {\"head\": \"电工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"按要求穿戴防静电工作服、防穿刺鞋，根据现场实际情况，设置作业隔离警示带\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"电工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"工器具、材料、设备上下车、搬运过程中砸伤\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "电工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "工器具、材料、设备上下车、搬运过程中砸伤",
+      "tail_type": "风险事件"
+    }
+  ]
+}

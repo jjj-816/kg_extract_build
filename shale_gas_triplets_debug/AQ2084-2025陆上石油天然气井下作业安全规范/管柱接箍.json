@@ -1,0 +1,13 @@
+{
+  "entity": "管柱接箍",
+  "raw": "[\n  {\"head\": \"管柱接箍\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"变径位置\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "管柱接箍",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "变径位置",
+      "tail_type": "未分类"
+    }
+  ]
+}

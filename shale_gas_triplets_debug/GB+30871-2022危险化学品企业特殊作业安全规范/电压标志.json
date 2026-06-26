@@ -1,0 +1,13 @@
+{
+  "entity": "电压标志",
+  "raw": "[\n  {\"head\": \"电压标志\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"现场临时用电配电盘、箱\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "电压标志",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "现场临时用电配电盘、箱",
+      "tail_type": "时空信息"
+    }
+  ]
+}

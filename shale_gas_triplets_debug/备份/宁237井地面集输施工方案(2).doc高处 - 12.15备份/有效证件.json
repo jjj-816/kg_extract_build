@@ -1,0 +1,27 @@
+{
+  "entity": "有效证件",
+  "raw": "[\n  {\"head\": \"有效证件\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"有效证件\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"重要说明\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"有效证件\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"本人签名\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "有效证件",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "有效证件",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "重要说明",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "有效证件",
+      "head_type": "未分类",
+      "relation": "REQUIRES",
+      "tail": "本人签名",
+      "tail_type": "控制措施"
+    }
+  ]
+}

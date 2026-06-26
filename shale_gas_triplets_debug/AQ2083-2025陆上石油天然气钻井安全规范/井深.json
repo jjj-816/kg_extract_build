@@ -1,0 +1,13 @@
+{
+  "entity": "井深",
+  "raw": "[\n  {\"head\": \"井深\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"井深\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "井深",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "井深",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "entity": "120急救电话",
+  "raw": "[\n  {\"head\": \"120急救电话\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"事故地点\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"120急救电话\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"伤亡人数\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"120急救电话\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"伤情\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"120急救电话\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"联系方式\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "120急救电话",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "事故地点",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "120急救电话",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "伤亡人数",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "120急救电话",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "伤情",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "120急救电话",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "联系方式",
+      "tail_type": "风险事件"
+    }
+  ]
+}

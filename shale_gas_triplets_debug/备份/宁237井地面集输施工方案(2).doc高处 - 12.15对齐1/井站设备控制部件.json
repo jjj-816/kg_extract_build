@@ -1,0 +1,48 @@
+{
+  "entity": "井站设备控制部件",
+  "raw": "[\n  {\"head\": \"井站设备控制部件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"设备装置评估表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井站设备控制部件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井站设备控制部件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"质量控制\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井站设备控制部件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"发电机\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"井站设备控制部件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"气体检测仪\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"井站设备控制部件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"电动扳手\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"井站设备控制部件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"电仪班组\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"井站设备控制部件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"电工\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"井站设备控制部件\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"GB 6067.1-2010\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "井站设备控制部件",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "设备装置评估表",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井站设备控制部件",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井站设备控制部件",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "质量控制",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井站设备控制部件",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "发电机",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "井站设备控制部件",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "气体检测仪",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "井站设备控制部件",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "电动扳手",
+      "tail_type": "施工对象"
+    }
+  ]
+}

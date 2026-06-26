@@ -1,0 +1,13 @@
+{
+  "entity": "照明",
+  "raw": "[\n  {\"head\": \"照明\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"应急所需\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "照明",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "应急所需",
+      "tail_type": "时空信息"
+    }
+  ]
+}

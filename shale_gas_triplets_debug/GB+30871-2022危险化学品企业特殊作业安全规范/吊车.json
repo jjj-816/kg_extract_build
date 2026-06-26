@@ -1,0 +1,48 @@
+{
+  "entity": "吊车",
+  "raw": "[\n  {\"head\": \"吊车\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"轨道上\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"吊车\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"吊物及起\", \"tail_type\": \"未分类\"},\n  {\"head\": \"吊车\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"起重臂吊钩或吊物下面有人\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"吊车\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"吊物上有人或浮置物\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"吊车\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"额定起重吊装能力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"吊车\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"吊物接近或达到额定起重吊装能力\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "吊车",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "轨道上",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "吊车",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "吊物及起",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "吊车",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "起重臂吊钩或吊物下面有人",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "吊车",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "吊物上有人或浮置物",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "吊车",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "额定起重吊装能力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "吊车",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "吊物接近或达到额定起重吊装能力",
+      "tail_type": "风险事件"
+    }
+  ]
+}

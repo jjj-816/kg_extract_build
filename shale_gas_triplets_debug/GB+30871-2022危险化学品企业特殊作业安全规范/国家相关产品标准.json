@@ -1,0 +1,13 @@
+{
+  "entity": "国家相关产品标准",
+  "raw": "[\n  {\"head\": \"国家相关产品标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"电器元件\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "国家相关产品标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "电器元件",
+      "tail_type": "设备工具"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "entity": "施工方案",
+  "raw": "[\n  {\"head\": \"施工方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_STAGE\", \"tail\": \"施工准备与资源配置计划\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"施工方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"工程概况\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"施工方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"施工人员组织结构\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"施工方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_RECORD\", \"tail\": \"附录A：施工作业方案及预案审批单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"电缆沟、防雷接地沟开挖与回填等动土作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工方案\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"作业前根据实际情况编制施工方案\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工方案\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"标注在运管线、电缆、光纤等路径\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工方案\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"相关方人员审核确认\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "施工方案",
+      "head_type": "未分类",
+      "relation": "HAS_STAGE",
+      "tail": "施工准备与资源配置计划",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "施工方案",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "工程概况",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "施工方案",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "施工人员组织结构",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "施工方案",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "施工方案",
+      "head_type": "未分类",
+      "relation": "HAS_RECORD",
+      "tail": "附录A：施工作业方案及预案审批单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "施工方案",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "电缆沟、防雷接地沟开挖与回填等动土作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工方案",
+      "head_type": "未分类",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "作业前根据实际情况编制施工方案",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工方案",
+      "head_type": "未分类",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "标注在运管线、电缆、光纤等路径",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工方案",
+      "head_type": "未分类",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "相关方人员审核确认",
+      "tail_type": "作业活动"
+    }
+  ]
+}

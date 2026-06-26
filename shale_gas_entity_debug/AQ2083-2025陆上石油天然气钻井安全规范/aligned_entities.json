@@ -1,0 +1,2874 @@
+{
+  "file_name": "AQ2083-2025陆上石油天然气钻井安全规范.md",
+  "entity_count": 301,
+  "alias_mapping_count": 379,
+  "entities": [
+    {
+      "name": "2025-04-17",
+      "type": "时空信息",
+      "aliases": [
+        "2025-04-17"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "2025-10-18",
+      "type": "时空信息",
+      "aliases": [
+        "2025-10-18"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "GB/T 20972(所有部分) 石油天然气工业 油气开采中用于含硫化氢环境的材料",
+      "type": "规范条款",
+      "aliases": [
+        "GB/T 20972(所有部分) 石油天然气工业 油气开采中用于含硫化氢环境的材料"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "GB/T 22513 石油天然气钻采设备 井口装置和采油树",
+      "type": "规范条款",
+      "aliases": [
+        "GB/T 22513 石油天然气钻采设备 井口装置和采油树"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "pH值",
+      "type": "施工参数",
+      "aliases": [
+        "pH值"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "《标准化工作导则 第1部分:标准化文件的结构和起草规则》",
+      "type": "规范条款",
+      "aliases": [
+        "《标准化工作导则 第1部分:标准化文件的结构和起草规则》"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "三高油气井",
+      "type": "施工对象",
+      "aliases": [
+        "三高油气井",
+        "含硫油气井"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "下套管",
+      "type": "作业活动",
+      "aliases": [
+        "下套管"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "下油管",
+      "type": "作业活动",
+      "aliases": [
+        "下油管"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "专用工具",
+      "type": "设备工具",
+      "aliases": [
+        "专用工具"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "中途测试",
+      "type": "作业活动",
+      "aliases": [
+        "中途测试"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "临时安全区",
+      "type": "施工对象",
+      "aliases": [
+        "临时安全区",
+        "安全范围"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井下作业",
+      "type": "施工阶段",
+      "aliases": [
+        "井下作业"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井位",
+      "type": "施工对象",
+      "aliases": [
+        "井位",
+        "井口中心点"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井内液面",
+      "type": "施工参数",
+      "aliases": [
+        "井内液面",
+        "钻井液液面"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井内钻井液密度",
+      "type": "施工参数",
+      "aliases": [
+        "井内钻井液密度",
+        "密度",
+        "密度值"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井别井型",
+      "type": "施工对象",
+      "aliases": [
+        "井别井型"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井口",
+      "type": "施工对象",
+      "aliases": [
+        "井口",
+        "井架底座"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井口中心间距",
+      "type": "施工参数",
+      "aliases": [
+        "井口中心间距"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井口装置",
+      "type": "设备工具",
+      "aliases": [
+        "井口装置",
+        "井口防喷装置",
+        "井控装置"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井口防喷器",
+      "type": "设备工具",
+      "aliases": [
+        "井口防喷器",
+        "全封闸板防喷器",
+        "剪切闸板防喷器",
+        "半封闸板防喷器"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井喷",
+      "type": "风险事件",
+      "aliases": [
+        "井喷",
+        "井喷失控",
+        "井喷着火"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井喷失控处置",
+      "type": "规范条款",
+      "aliases": [
+        "井喷失控处置"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井喷应急预案",
+      "type": "施工记录",
+      "aliases": [
+        "井喷应急预案"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井场",
+      "type": "施工对象",
+      "aliases": [
+        "井场",
+        "坑道"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井控培训",
+      "type": "作业活动",
+      "aliases": [
+        "井控培训"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井控安全",
+      "type": "风险事件",
+      "aliases": [
+        "井控安全"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井控技术措施",
+      "type": "控制措施",
+      "aliases": [
+        "井控技术措施"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井控措施",
+      "type": "作业活动",
+      "aliases": [
+        "井控措施"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井控管汇",
+      "type": "设备工具",
+      "aliases": [
+        "井控管汇",
+        "压井管汇"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井控风险防控",
+      "type": "控制措施",
+      "aliases": [
+        "井控风险防控"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井段",
+      "type": "施工对象",
+      "aliases": [
+        "井段",
+        "复杂井段",
+        "开采段"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井深",
+      "type": "施工参数",
+      "aliases": [
+        "井深"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井漏",
+      "type": "风险事件",
+      "aliases": [
+        "井漏"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井漏堵漏",
+      "type": "作业活动",
+      "aliases": [
+        "井漏堵漏"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井眼",
+      "type": "施工对象",
+      "aliases": [
+        "井眼"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井筒",
+      "type": "施工对象",
+      "aliases": [
+        "井筒",
+        "井身结构"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "井筒液柱压力",
+      "type": "施工参数",
+      "aliases": [
+        "井内压力平衡",
+        "井筒液柱压力"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "人口密集",
+      "type": "环保对象",
+      "aliases": [
+        "人口密集"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "仪器仪表",
+      "type": "设备工具",
+      "aliases": [
+        "仪器仪表"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "低泵冲试验",
+      "type": "作业活动",
+      "aliases": [
+        "低泵冲试验"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "作业活动",
+      "type": "作业活动",
+      "aliases": [
+        "作业活动"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "使用",
+      "type": "规范条款",
+      "aliases": [
+        "使用"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "候凝",
+      "type": "施工阶段",
+      "aliases": [
+        "候凝"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "停注",
+      "type": "作业活动",
+      "aliases": [
+        "停注"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "全井段地层孔隙压力剖面",
+      "type": "施工参数",
+      "aliases": [
+        "全井段地层孔隙压力剖面"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "公路",
+      "type": "环保对象",
+      "aliases": [
+        "公路"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "关井",
+      "type": "作业活动",
+      "aliases": [
+        "关井"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "关井压力",
+      "type": "施工参数",
+      "aliases": [
+        "关井压力",
+        "关井套压",
+        "关井立压"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "其他要求",
+      "type": "规范条款",
+      "aliases": [
+        "其他要求"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "内防喷工具",
+      "type": "设备工具",
+      "aliases": [
+        "内防喷工具"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "分层动态压力数据",
+      "type": "施工参数",
+      "aliases": [
+        "分层动态压力数据"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "分流器",
+      "type": "设备工具",
+      "aliases": [
+        "分流器"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "前言",
+      "type": "规范条款",
+      "aliases": [
+        "前言"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "剪断电缆的工具",
+      "type": "设备工具",
+      "aliases": [
+        "剪断电缆的工具"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "加厚部位",
+      "type": "施工对象",
+      "aliases": [
+        "加厚部位"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "加重剂",
+      "type": "材料介质",
+      "aliases": [
+        "加重剂"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "加重材料",
+      "type": "材料介质",
+      "aliases": [
+        "加重材料"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "动火作业",
+      "type": "作业活动",
+      "aliases": [
+        "动火作业"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "医院",
+      "type": "环保对象",
+      "aliases": [
+        "医院"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "半封闸板",
+      "type": "设备工具",
+      "aliases": [
+        "半封闸板"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "单井井控风险分级标准",
+      "type": "规范条款",
+      "aliases": [
+        "单井井控风险分级标准"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "卡箍",
+      "type": "设备工具",
+      "aliases": [
+        "卡箍"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "危险源",
+      "type": "风险事件",
+      "aliases": [
+        "危险源"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "厂家规定值",
+      "type": "阈值约束",
+      "aliases": [
+        "厂家规定值"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "厂矿",
+      "type": "环保对象",
+      "aliases": [
+        "厂矿"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "历史井喷情况",
+      "type": "风险事件",
+      "aliases": [
+        "历史井喷情况"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "压井作业",
+      "type": "作业活动",
+      "aliases": [
+        "压井作业"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "原钻机试油",
+      "type": "施工阶段",
+      "aliases": [
+        "原钻机试油"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "发包单位",
+      "type": "责任主体",
+      "aliases": [
+        "发包单位"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "取心作业",
+      "type": "作业活动",
+      "aliases": [
+        "取心作业"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "取心工具",
+      "type": "设备工具",
+      "aliases": [
+        "取心工具"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "可燃气体",
+      "type": "材料介质",
+      "aliases": [
+        "可燃气体",
+        "地层天然气"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "司钻",
+      "type": "责任主体",
+      "aliases": [
+        "司钻"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "周边环境",
+      "type": "环保对象",
+      "aliases": [
+        "周边环境"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "固井作业",
+      "type": "作业活动",
+      "aliases": [
+        "固井作业"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "固井工艺",
+      "type": "施工阶段",
+      "aliases": [
+        "固井工艺",
+        "固井施工"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "固井水泥",
+      "type": "材料介质",
+      "aliases": [
+        "固井水泥",
+        "水泥浆"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "固井水泥返高",
+      "type": "施工参数",
+      "aliases": [
+        "固井水泥返高",
+        "水泥返高"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "固井设计水泥用量",
+      "type": "施工参数",
+      "aliases": [
+        "固井设计水泥用量"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "固井质量",
+      "type": "施工记录",
+      "aliases": [
+        "固井质量"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "地下矿产采掘区",
+      "type": "施工阶段",
+      "aliases": [
+        "地下矿产采掘区"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "地层",
+      "type": "施工对象",
+      "aliases": [
+        "压力敏感性窄密度窗口地层",
+        "含硫化氢地层",
+        "含硫油气层",
+        "地层"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "地层压力",
+      "type": "施工参数",
+      "aliases": [
+        "地层压力",
+        "地层孔隙压力",
+        "地层孔隙压力当量密度值"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "地层压力监测",
+      "type": "作业活动",
+      "aliases": [
+        "地层压力监测"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "地层坍塌压力剖面",
+      "type": "施工参数",
+      "aliases": [
+        "地层坍塌压力剖面"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "地层对比",
+      "type": "作业活动",
+      "aliases": [
+        "地层对比"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "地层流体",
+      "type": "材料介质",
+      "aliases": [
+        "地层流体"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "地层破裂压力",
+      "type": "施工参数",
+      "aliases": [
+        "地层破裂压力",
+        "地层破裂压力剖面"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "地质",
+      "type": "未分类",
+      "aliases": [
+        "地质"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "地质设计",
+      "type": "未分类",
+      "aliases": [
+        "地质设计"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "地质预报",
+      "type": "施工记录",
+      "aliases": [
+        "地质预报"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "堵漏材料",
+      "type": "材料介质",
+      "aliases": [
+        "堵漏材料"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "壁厚",
+      "type": "施工参数",
+      "aliases": [
+        "壁厚"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "声光报警系统",
+      "type": "设备工具",
+      "aliases": [
+        "声光报警系统"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "处理剂",
+      "type": "材料介质",
+      "aliases": [
+        "处理剂"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "复杂情况",
+      "type": "风险事件",
+      "aliases": [
+        "复杂情况"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "天然气测试产量",
+      "type": "施工参数",
+      "aliases": [
+        "天然气测试产量",
+        "油气测试产量当量"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "天然气溢流",
+      "type": "风险事件",
+      "aliases": [
+        "天然气溢流",
+        "溢流"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "天车",
+      "type": "设备工具",
+      "aliases": [
+        "天车"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "套管",
+      "type": "施工对象",
+      "aliases": [
+        "套管",
+        "技术套管",
+        "生产套管",
+        "表层套管"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "套管压力变送器",
+      "type": "设备工具",
+      "aliases": [
+        "套管压力变送器",
+        "套管压力表"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "套管头",
+      "type": "设备工具",
+      "aliases": [
+        "套管头"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "套管头连接法兰",
+      "type": "设备工具",
+      "aliases": [
+        "套管头连接法兰"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "套管层序",
+      "type": "施工对象",
+      "aliases": [
+        "套管层序"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "套管抗内压强度",
+      "type": "施工参数",
+      "aliases": [
+        "套管抗内压强度"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "套管抗外挤强度",
+      "type": "施工参数",
+      "aliases": [
+        "套管抗外挤强度"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "套管鞋",
+      "type": "施工对象",
+      "aliases": [
+        "套管鞋"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "学校",
+      "type": "环保对象",
+      "aliases": [
+        "学校"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "安全生产管理协议",
+      "type": "控制措施",
+      "aliases": [
+        "安全生产管理协议"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "安全警示标志",
+      "type": "设备工具",
+      "aliases": [
+        "安全警示标志"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "安装",
+      "type": "规范条款",
+      "aliases": [
+        "安装"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "完井",
+      "type": "施工阶段",
+      "aliases": [
+        "完井"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "实钻结果",
+      "type": "施工记录",
+      "aliases": [
+        "实钻结果"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "密封垫环",
+      "type": "设备工具",
+      "aliases": [
+        "密封垫环"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "尾管",
+      "type": "施工对象",
+      "aliases": [
+        "尾管"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "居民住宅",
+      "type": "环保对象",
+      "aliases": [
+        "居民住宅",
+        "民宅"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "岩心筒",
+      "type": "设备工具",
+      "aliases": [
+        "岩心筒"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "岩性剖面",
+      "type": "施工参数",
+      "aliases": [
+        "岩性剖面"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "巡回检查制度",
+      "type": "作业活动",
+      "aliases": [
+        "巡回检查制度"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "工程",
+      "type": "未分类",
+      "aliases": [
+        "工程"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "工程设计",
+      "type": "规范条款",
+      "aliases": [
+        "工程设计",
+        "设计"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "工艺技术",
+      "type": "未分类",
+      "aliases": [
+        "工艺技术"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "已钻井地层承压能力试验数据",
+      "type": "施工记录",
+      "aliases": [
+        "已钻井地层承压能力试验数据"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "常规钻井工艺",
+      "type": "施工阶段",
+      "aliases": [
+        "常规钻井工艺"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "应急处置程序",
+      "type": "控制措施",
+      "aliases": [
+        "应急处置程序",
+        "应急预案"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "应急演练",
+      "type": "作业活动",
+      "aliases": [
+        "应急演练"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "开发调整区",
+      "type": "施工阶段",
+      "aliases": [
+        "开发调整区"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "开钻",
+      "type": "施工阶段",
+      "aliases": [
+        "开钻"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "弯头",
+      "type": "设备工具",
+      "aliases": [
+        "弯头"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "强度",
+      "type": "施工参数",
+      "aliases": [
+        "强度"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "录井人员",
+      "type": "责任主体",
+      "aliases": [
+        "录井人员"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "录井作业",
+      "type": "作业活动",
+      "aliases": [
+        "录井作业"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "循环压力",
+      "type": "施工参数",
+      "aliases": [
+        "循环压力",
+        "汇流管压力"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "悬挂器",
+      "type": "设备工具",
+      "aliases": [
+        "悬挂器"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "截止阀",
+      "type": "设备工具",
+      "aliases": [
+        "截止阀"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "手动平板阀",
+      "type": "设备工具",
+      "aliases": [
+        "手动平板阀"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "扣型",
+      "type": "施工参数",
+      "aliases": [
+        "扣型"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "扶正器",
+      "type": "设备工具",
+      "aliases": [
+        "扶正器"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "承包单位",
+      "type": "责任主体",
+      "aliases": [
+        "承包单位"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "技术交底",
+      "type": "作业活动",
+      "aliases": [
+        "技术交底",
+        "防硫化氢安全技术交底"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "技术套管材质",
+      "type": "材料介质",
+      "aliases": [
+        "技术套管材质"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "技术服务项目",
+      "type": "未分类",
+      "aliases": [
+        "技术服务项目"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "抗(耐)震压力表",
+      "type": "设备工具",
+      "aliases": [
+        "抗(耐)震压力表"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "抗酸性气体腐蚀",
+      "type": "控制措施",
+      "aliases": [
+        "抗酸性气体腐蚀"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "振动筛",
+      "type": "施工对象",
+      "aliases": [
+        "振动筛"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "换向阀手柄",
+      "type": "设备工具",
+      "aliases": [
+        "换向阀手柄"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "排量",
+      "type": "施工参数",
+      "aliases": [
+        "排量",
+        "灌入量"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "探井",
+      "type": "施工对象",
+      "aliases": [
+        "区域探井",
+        "探井"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "控压钻井",
+      "type": "施工阶段",
+      "aliases": [
+        "控压钻井"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "放喷管线",
+      "type": "设备工具",
+      "aliases": [
+        "放喷管线"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "敞喷",
+      "type": "风险事件",
+      "aliases": [
+        "敞喷"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "新探区",
+      "type": "施工对象",
+      "aliases": [
+        "新探区"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "方钻杆旋塞阀",
+      "type": "设备工具",
+      "aliases": [
+        "方钻杆旋塞阀"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "易燃易爆物",
+      "type": "材料介质",
+      "aliases": [
+        "易燃易爆物"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "最大允许关井套压值",
+      "type": "阈值约束",
+      "aliases": [
+        "最大允许关井套压值"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "有毒有害气体",
+      "type": "材料介质",
+      "aliases": [
+        "含硫化氢等有毒有害气体",
+        "有毒有害气体"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "有毒有害气体含量",
+      "type": "施工参数",
+      "aliases": [
+        "有毒有害气体含量"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "有线随钻仪",
+      "type": "设备工具",
+      "aliases": [
+        "有线随钻仪"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "本构造邻井",
+      "type": "施工对象",
+      "aliases": [
+        "本构造邻井"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "术语和定义",
+      "type": "规范条款",
+      "aliases": [
+        "术语和定义"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "机泵房",
+      "type": "施工对象",
+      "aliases": [
+        "机泵房"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "栽丝法兰",
+      "type": "设备工具",
+      "aliases": [
+        "栽丝法兰"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "栽丝螺孔",
+      "type": "设备工具",
+      "aliases": [
+        "栽丝螺孔"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "欠平衡",
+      "type": "施工阶段",
+      "aliases": [
+        "欠平衡"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "正压式空气呼吸器",
+      "type": "设备工具",
+      "aliases": [
+        "正压式空气呼吸器"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "气井",
+      "type": "施工对象",
+      "aliases": [
+        "气井",
+        "气油比高的油井"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "气体检测仪",
+      "type": "设备工具",
+      "aliases": [
+        "便携式气体检测仪",
+        "气体检测仪"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "气侵",
+      "type": "风险事件",
+      "aliases": [
+        "气侵",
+        "油气侵"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "气源压力",
+      "type": "施工参数",
+      "aliases": [
+        "气源压力"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "氮气",
+      "type": "材料介质",
+      "aliases": [
+        "氮气"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "水泥浆稠化初凝失重",
+      "type": "施工参数",
+      "aliases": [
+        "水泥浆稠化初凝失重"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "永久性设施",
+      "type": "环保对象",
+      "aliases": [
+        "永久性设施"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "油库",
+      "type": "环保对象",
+      "aliases": [
+        "油库"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "油气上窜速度",
+      "type": "施工参数",
+      "aliases": [
+        "油气上窜速度"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "油气层",
+      "type": "施工对象",
+      "aliases": [
+        "油气层",
+        "油气层顶部",
+        "油气水层",
+        "注采层位",
+        "浅气层",
+        "浅部复杂层段",
+        "裂缝性碳酸盐岩地层",
+        "裸眼井段",
+        "设计井筒",
+        "近井口段"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "油气层施工作业",
+      "type": "规范条款",
+      "aliases": [
+        "油气层施工作业"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "油气显示",
+      "type": "风险事件",
+      "aliases": [
+        "油气显示"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "油气水显示",
+      "type": "施工对象",
+      "aliases": [
+        "油气水显示"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "油气生产",
+      "type": "施工阶段",
+      "aliases": [
+        "油气生产"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "泄压",
+      "type": "作业活动",
+      "aliases": [
+        "泄压"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "法兰",
+      "type": "设备工具",
+      "aliases": [
+        "法兰"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "注水、注气(汽)井",
+      "type": "施工对象",
+      "aliases": [
+        "注水、注气(汽)井",
+        "邻近注水、注气（汽）井"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "浅层气",
+      "type": "材料介质",
+      "aliases": [
+        "浅层气"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "测井",
+      "type": "施工阶段",
+      "aliases": [
+        "测井",
+        "测井作业"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "测井时间",
+      "type": "施工参数",
+      "aliases": [
+        "测井时间"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "消防器材",
+      "type": "设备工具",
+      "aliases": [
+        "消防器材"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "液动放喷阀",
+      "type": "设备工具",
+      "aliases": [
+        "液动放喷阀"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "液面变化",
+      "type": "施工参数",
+      "aliases": [
+        "液面变化"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "液面检测装置",
+      "type": "设备工具",
+      "aliases": [
+        "液面检测装置"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "溢流压井",
+      "type": "作业活动",
+      "aliases": [
+        "溢流压井"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "溢流处置",
+      "type": "规范条款",
+      "aliases": [
+        "溢流处置"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "溢流显示",
+      "type": "风险事件",
+      "aliases": [
+        "溢流显示"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "溢流监测",
+      "type": "作业活动",
+      "aliases": [
+        "溢流监测"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "溢流量",
+      "type": "施工参数",
+      "aliases": [
+        "溢流量"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "溢流预兆",
+      "type": "风险事件",
+      "aliases": [
+        "溢流预兆"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "灌入",
+      "type": "作业活动",
+      "aliases": [
+        "灌入"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "灌注装置",
+      "type": "设备工具",
+      "aliases": [
+        "灌注装置"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "灭火器",
+      "type": "设备工具",
+      "aliases": [
+        "灭火器"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "煤层气钻井作业",
+      "type": "未分类",
+      "aliases": [
+        "煤层气钻井作业"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "环境硫化氢浓度",
+      "type": "施工参数",
+      "aliases": [
+        "环境硫化氢浓度",
+        "硫化氢含量"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "环形防喷器控制压力",
+      "type": "施工参数",
+      "aliases": [
+        "环形防喷器控制压力"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "现场作业人员",
+      "type": "责任主体",
+      "aliases": [
+        "现场作业人员"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "生产套管材质",
+      "type": "材料介质",
+      "aliases": [
+        "生产套管材质"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "电气系统",
+      "type": "设备工具",
+      "aliases": [
+        "电气系统"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "电测",
+      "type": "作业活动",
+      "aliases": [
+        "电测"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "电缆",
+      "type": "设备工具",
+      "aliases": [
+        "电缆"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "电缆悬挂工具",
+      "type": "设备工具",
+      "aliases": [
+        "电缆悬挂工具"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "电缆测井",
+      "type": "施工阶段",
+      "aliases": [
+        "电缆测井"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "省力机构",
+      "type": "设备工具",
+      "aliases": [
+        "省力机构"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "石油天然气开采企业",
+      "type": "责任主体",
+      "aliases": [
+        "石油天然气开采企业"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "石油天然气钻井",
+      "type": "施工对象",
+      "aliases": [
+        "石油天然气钻井",
+        "钻井现场"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "矿井通道",
+      "type": "施工对象",
+      "aliases": [
+        "矿井通道"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "硫化氢",
+      "type": "材料介质",
+      "aliases": [
+        "硫化氢"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "硫化氢显示",
+      "type": "风险事件",
+      "aliases": [
+        "硫化氢显示"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "硫化氢监测仪器",
+      "type": "设备工具",
+      "aliases": [
+        "固定式硫化氢检测",
+        "硫化氢监测仪器"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "硫化氢警示标志",
+      "type": "设备工具",
+      "aliases": [
+        "硫化氢警示标志"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "硫化氢防护培训",
+      "type": "作业活动",
+      "aliases": [
+        "硫化氢防护培训"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "硫化氢防护措施",
+      "type": "控制措施",
+      "aliases": [
+        "硫化氢防护",
+        "硫化氢防护措施"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "碱度",
+      "type": "施工参数",
+      "aliases": [
+        "碱度"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "立柱",
+      "type": "设备工具",
+      "aliases": [
+        "立柱"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "立管压力变送器",
+      "type": "设备工具",
+      "aliases": [
+        "立管压力变送器"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "管串结构",
+      "type": "施工对象",
+      "aliases": [
+        "管串结构"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "管理要求",
+      "type": "规范条款",
+      "aliases": [
+        "管理要求"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "综合录井队",
+      "type": "责任主体",
+      "aliases": [
+        "综合录井队"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "节流控制箱",
+      "type": "设备工具",
+      "aliases": [
+        "节流控制箱"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "节流管汇",
+      "type": "设备工具",
+      "aliases": [
+        "液动节流阀",
+        "节流管汇"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "范围",
+      "type": "规范条款",
+      "aliases": [
+        "范围"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "蓄能器",
+      "type": "设备工具",
+      "aliases": [
+        "蓄能器"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "螺栓",
+      "type": "设备工具",
+      "aliases": [
+        "螺栓"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "观察点",
+      "type": "施工对象",
+      "aliases": [
+        "观察点"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "规范性引用文件",
+      "type": "规范条款",
+      "aliases": [
+        "规范性引用文件"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "计量罐",
+      "type": "施工对象",
+      "aliases": [
+        "计量罐"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "设备设施隐患",
+      "type": "风险事件",
+      "aliases": [
+        "设备设施隐患"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "设计要求",
+      "type": "阈值约束",
+      "aliases": [
+        "设计要求"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "试压",
+      "type": "作业活动",
+      "aliases": [
+        "试压"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "起下钻",
+      "type": "施工阶段",
+      "aliases": [
+        "起下钻"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "起下钻作业",
+      "type": "作业活动",
+      "aliases": [
+        "起下钻作业"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "转换接头",
+      "type": "设备工具",
+      "aliases": [
+        "转换接头"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "转盘",
+      "type": "设备工具",
+      "aliases": [
+        "转盘"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "返出",
+      "type": "作业活动",
+      "aliases": [
+        "返出"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "返出情况",
+      "type": "施工记录",
+      "aliases": [
+        "返出情况"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "进出口密度差",
+      "type": "施工参数",
+      "aliases": [
+        "进出口密度差"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "远程控制台",
+      "type": "设备工具",
+      "aliases": [
+        "远程控制台"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "通井循环",
+      "type": "作业活动",
+      "aliases": [
+        "通井循环"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "通用要求",
+      "type": "规范条款",
+      "aliases": [
+        "通用要求"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "采掘坑道",
+      "type": "施工对象",
+      "aliases": [
+        "采掘坑道"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "采掘矿井井口",
+      "type": "施工对象",
+      "aliases": [
+        "采掘矿井井口"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "重点井",
+      "type": "施工对象",
+      "aliases": [
+        "重点井"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钢丝绳",
+      "type": "设备工具",
+      "aliases": [
+        "钢丝绳"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钢级",
+      "type": "施工参数",
+      "aliases": [
+        "钢级"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻井井控实施细则",
+      "type": "规范条款",
+      "aliases": [
+        "钻井井控实施细则"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻井四通",
+      "type": "设备工具",
+      "aliases": [
+        "钻井四通",
+        "防喷单根"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻井液",
+      "type": "材料介质",
+      "aliases": [
+        "井内钻井液",
+        "加重钻井液",
+        "油基钻井液",
+        "钻井液"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻井液处理装置",
+      "type": "设备工具",
+      "aliases": [
+        "钻井液处理装置",
+        "钻井液液气分离器"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻井液循环罐",
+      "type": "施工对象",
+      "aliases": [
+        "钻井液循环罐"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻井液性能",
+      "type": "施工参数",
+      "aliases": [
+        "钻井液性能"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻井液类型",
+      "type": "材料介质",
+      "aliases": [
+        "钻井液类型"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻井设备",
+      "type": "设备工具",
+      "aliases": [
+        "钻井设备"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻井队",
+      "type": "责任主体",
+      "aliases": [
+        "钻井队"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻具",
+      "type": "设备工具",
+      "aliases": [
+        "钻具",
+        "钻具内防喷工具",
+        "钻具止回阀",
+        "钻具死卡"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻具底部",
+      "type": "施工对象",
+      "aliases": [
+        "钻具底部"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻台",
+      "type": "施工对象",
+      "aliases": [
+        "钻台",
+        "钻台上",
+        "钻台上下"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻头",
+      "type": "设备工具",
+      "aliases": [
+        "钻头"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻头尺寸",
+      "type": "施工参数",
+      "aliases": [
+        "钻头尺寸"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻开油气层",
+      "type": "施工阶段",
+      "aliases": [
+        "钻开油气层"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻开油气层前的准备与检查验收",
+      "type": "规范条款",
+      "aliases": [
+        "钻开油气层前的准备与检查验收"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻机",
+      "type": "设备工具",
+      "aliases": [
+        "钻机",
+        "钻机设备"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻杆",
+      "type": "设备工具",
+      "aliases": [
+        "钻杆"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻杆接头",
+      "type": "施工对象",
+      "aliases": [
+        "钻杆接头"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻进作业",
+      "type": "作业活动",
+      "aliases": [
+        "钻进作业"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻进工况",
+      "type": "施工阶段",
+      "aliases": [
+        "钻进工况"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "钻遇油气层",
+      "type": "施工阶段",
+      "aliases": [
+        "钻遇油气层"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "铁路",
+      "type": "环保对象",
+      "aliases": [
+        "铁路"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "铰链侧门",
+      "type": "设备工具",
+      "aliases": [
+        "铰链侧门"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "锁紧装置",
+      "type": "设备工具",
+      "aliases": [
+        "锁紧装置"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "闸板防喷器",
+      "type": "设备工具",
+      "aliases": [
+        "闸板防喷器"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "闸阀",
+      "type": "设备工具",
+      "aliases": [
+        "闸阀"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "防喷器",
+      "type": "设备工具",
+      "aliases": [
+        "环形防喷器",
+        "防喷器"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "防喷器控制装置",
+      "type": "设备工具",
+      "aliases": [
+        "防喷器控制装置"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "防喷演习",
+      "type": "作业活动",
+      "aliases": [
+        "防喷演习"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "防喷管线",
+      "type": "设备工具",
+      "aliases": [
+        "防喷管线"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "防护设备",
+      "type": "设备工具",
+      "aliases": [
+        "防护设备"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "防溢管",
+      "type": "设备工具",
+      "aliases": [
+        "防溢管"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "防火防爆措施",
+      "type": "规范条款",
+      "aliases": [
+        "防火防爆措施"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "防爆通风设备",
+      "type": "设备工具",
+      "aliases": [
+        "防爆通风装置",
+        "防爆通风设备"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "防硫化氢措施",
+      "type": "规范条款",
+      "aliases": [
+        "防硫化氢措施"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "附件",
+      "type": "设备工具",
+      "aliases": [
+        "附件"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "陆上石油天然气(含页岩气)的钻井作业",
+      "type": "施工阶段",
+      "aliases": [
+        "陆上石油天然气(含页岩气)的钻井作业"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "陆上石油天然气钻井安全规范",
+      "type": "规范条款",
+      "aliases": [
+        "陆上石油天然气钻井安全规范"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "除硫剂",
+      "type": "材料介质",
+      "aliases": [
+        "除硫剂"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "顶驱旋塞阀",
+      "type": "设备工具",
+      "aliases": [
+        "顶驱旋塞阀"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "额定工作压力",
+      "type": "施工参数",
+      "aliases": [
+        "额定工作压力"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "风向标",
+      "type": "设备工具",
+      "aliases": [
+        "风向标"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "风险消减控制措施",
+      "type": "控制措施",
+      "aliases": [
+        "风险消减控制措施"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "高产油气井",
+      "type": "施工对象",
+      "aliases": [
+        "高产油气井"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "高危场所",
+      "type": "环保对象",
+      "aliases": [
+        "高危场所"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "高压油气井",
+      "type": "施工对象",
+      "aliases": [
+        "高压油气井"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "高压线",
+      "type": "环保对象",
+      "aliases": [
+        "高压线"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "高含硫油气井",
+      "type": "施工对象",
+      "aliases": [
+        "高含硫油气井"
+      ],
+      "source_type": "spec"
+    },
+    {
+      "name": "高速公路",
+      "type": "环保对象",
+      "aliases": [
+        "高速公路"
+      ],
+      "source_type": "spec"
+    }
+  ],
+  "alias_to_standard": {
+    "三高油气井": "三高油气井",
+    "含硫油气井": "三高油气井",
+    "井位": "井位",
+    "井口中心点": "井位",
+    "井口": "井口",
+    "井架底座": "井口",
+    "井场": "井场",
+    "坑道": "井场",
+    "井段": "井段",
+    "复杂井段": "井段",
+    "开采段": "井段",
+    "井筒": "井筒",
+    "井身结构": "井筒",
+    "区域探井": "探井",
+    "探井": "探井",
+    "压力敏感性窄密度窗口地层": "地层",
+    "含硫化氢地层": "地层",
+    "含硫油气层": "地层",
+    "地层": "地层",
+    "气井": "气井",
+    "气油比高的油井": "气井",
+    "油气层": "油气层",
+    "油气层顶部": "油气层",
+    "油气水层": "油气层",
+    "注采层位": "油气层",
+    "浅气层": "油气层",
+    "浅部复杂层段": "油气层",
+    "裂缝性碳酸盐岩地层": "油气层",
+    "裸眼井段": "油气层",
+    "设计井筒": "油气层",
+    "近井口段": "油气层",
+    "石油天然气钻井": "石油天然气钻井",
+    "钻井现场": "石油天然气钻井",
+    "钻台": "钻台",
+    "钻台上": "钻台",
+    "钻台上下": "钻台",
+    "临时安全区": "临时安全区",
+    "安全范围": "临时安全区",
+    "固井工艺": "固井工艺",
+    "固井施工": "固井工艺",
+    "测井": "测井",
+    "测井作业": "测井",
+    "井内压力平衡": "井筒液柱压力",
+    "井筒液柱压力": "井筒液柱压力",
+    "关井压力": "关井压力",
+    "关井套压": "关井压力",
+    "关井立压": "关井压力",
+    "循环压力": "循环压力",
+    "汇流管压力": "循环压力",
+    "井内液面": "井内液面",
+    "钻井液液面": "井内液面",
+    "井内钻井液": "钻井液",
+    "加重钻井液": "钻井液",
+    "油基钻井液": "钻井液",
+    "钻井液": "钻井液",
+    "地层压力": "地层压力",
+    "地层孔隙压力": "地层压力",
+    "地层孔隙压力当量密度值": "地层压力",
+    "地层破裂压力": "地层破裂压力",
+    "地层破裂压力剖面": "地层破裂压力",
+    "井内钻井液密度": "井内钻井液密度",
+    "密度": "井内钻井液密度",
+    "密度值": "井内钻井液密度",
+    "井口装置": "井口装置",
+    "井口防喷装置": "井口装置",
+    "井控装置": "井口装置",
+    "井口防喷器": "井口防喷器",
+    "全封闸板防喷器": "井口防喷器",
+    "剪切闸板防喷器": "井口防喷器",
+    "半封闸板防喷器": "井口防喷器",
+    "井控管汇": "井控管汇",
+    "压井管汇": "井控管汇",
+    "液动节流阀": "节流管汇",
+    "节流管汇": "节流管汇",
+    "环形防喷器": "防喷器",
+    "防喷器": "防喷器",
+    "钻井四通": "钻井四通",
+    "防喷单根": "钻井四通",
+    "钻井液处理装置": "钻井液处理装置",
+    "钻井液液气分离器": "钻井液处理装置",
+    "钻具": "钻具",
+    "钻具内防喷工具": "钻具",
+    "钻具止回阀": "钻具",
+    "钻具死卡": "钻具",
+    "钻机": "钻机",
+    "钻机设备": "钻机",
+    "井喷": "井喷",
+    "井喷失控": "井喷",
+    "井喷着火": "井喷",
+    "便携式气体检测仪": "气体检测仪",
+    "气体检测仪": "气体检测仪",
+    "可燃气体": "可燃气体",
+    "地层天然气": "可燃气体",
+    "含硫化氢等有毒有害气体": "有毒有害气体",
+    "有毒有害气体": "有毒有害气体",
+    "固井水泥": "固井水泥",
+    "水泥浆": "固井水泥",
+    "固井水泥返高": "固井水泥返高",
+    "水泥返高": "固井水泥返高",
+    "固定式硫化氢检测": "硫化氢监测仪器",
+    "硫化氢监测仪器": "硫化氢监测仪器",
+    "天然气测试产量": "天然气测试产量",
+    "油气测试产量当量": "天然气测试产量",
+    "天然气溢流": "天然气溢流",
+    "溢流": "天然气溢流",
+    "套管": "套管",
+    "技术套管": "套管",
+    "生产套管": "套管",
+    "表层套管": "套管",
+    "套管压力变送器": "套管压力变送器",
+    "套管压力表": "套管压力变送器",
+    "居民住宅": "居民住宅",
+    "民宅": "居民住宅",
+    "工程设计": "工程设计",
+    "设计": "工程设计",
+    "应急处置程序": "应急处置程序",
+    "应急预案": "应急处置程序",
+    "技术交底": "技术交底",
+    "防硫化氢安全技术交底": "技术交底",
+    "排量": "排量",
+    "灌入量": "排量",
+    "气侵": "气侵",
+    "油气侵": "气侵",
+    "注水、注气(汽)井": "注水、注气(汽)井",
+    "邻近注水、注气（汽）井": "注水、注气(汽)井",
+    "环境硫化氢浓度": "环境硫化氢浓度",
+    "硫化氢含量": "环境硫化氢浓度",
+    "硫化氢防护": "硫化氢防护措施",
+    "硫化氢防护措施": "硫化氢防护措施",
+    "防爆通风装置": "防爆通风设备",
+    "防爆通风设备": "防爆通风设备",
+    "2025-04-17": "2025-04-17",
+    "2025-10-18": "2025-10-18",
+    "GB/T 20972(所有部分) 石油天然气工业 油气开采中用于含硫化氢环境的材料": "GB/T 20972(所有部分) 石油天然气工业 油气开采中用于含硫化氢环境的材料",
+    "GB/T 22513 石油天然气钻采设备 井口装置和采油树": "GB/T 22513 石油天然气钻采设备 井口装置和采油树",
+    "pH值": "pH值",
+    "《标准化工作导则 第1部分:标准化文件的结构和起草规则》": "《标准化工作导则 第1部分:标准化文件的结构和起草规则》",
+    "下套管": "下套管",
+    "下油管": "下油管",
+    "专用工具": "专用工具",
+    "中途测试": "中途测试",
+    "井下作业": "井下作业",
+    "井别井型": "井别井型",
+    "井口中心间距": "井口中心间距",
+    "井喷失控处置": "井喷失控处置",
+    "井喷应急预案": "井喷应急预案",
+    "井控培训": "井控培训",
+    "井控安全": "井控安全",
+    "井控技术措施": "井控技术措施",
+    "井控措施": "井控措施",
+    "井控风险防控": "井控风险防控",
+    "井深": "井深",
+    "井漏": "井漏",
+    "井漏堵漏": "井漏堵漏",
+    "井眼": "井眼",
+    "人口密集": "人口密集",
+    "仪器仪表": "仪器仪表",
+    "低泵冲试验": "低泵冲试验",
+    "作业活动": "作业活动",
+    "使用": "使用",
+    "候凝": "候凝",
+    "停注": "停注",
+    "全井段地层孔隙压力剖面": "全井段地层孔隙压力剖面",
+    "公路": "公路",
+    "关井": "关井",
+    "其他要求": "其他要求",
+    "内防喷工具": "内防喷工具",
+    "分层动态压力数据": "分层动态压力数据",
+    "分流器": "分流器",
+    "前言": "前言",
+    "剪断电缆的工具": "剪断电缆的工具",
+    "加厚部位": "加厚部位",
+    "加重剂": "加重剂",
+    "加重材料": "加重材料",
+    "动火作业": "动火作业",
+    "医院": "医院",
+    "半封闸板": "半封闸板",
+    "单井井控风险分级标准": "单井井控风险分级标准",
+    "卡箍": "卡箍",
+    "危险源": "危险源",
+    "厂家规定值": "厂家规定值",
+    "厂矿": "厂矿",
+    "历史井喷情况": "历史井喷情况",
+    "压井作业": "压井作业",
+    "原钻机试油": "原钻机试油",
+    "发包单位": "发包单位",
+    "取心作业": "取心作业",
+    "取心工具": "取心工具",
+    "司钻": "司钻",
+    "周边环境": "周边环境",
+    "固井作业": "固井作业",
+    "固井设计水泥用量": "固井设计水泥用量",
+    "固井质量": "固井质量",
+    "地下矿产采掘区": "地下矿产采掘区",
+    "地层压力监测": "地层压力监测",
+    "地层坍塌压力剖面": "地层坍塌压力剖面",
+    "地层对比": "地层对比",
+    "地层流体": "地层流体",
+    "地质": "地质",
+    "地质设计": "地质设计",
+    "地质预报": "地质预报",
+    "堵漏材料": "堵漏材料",
+    "壁厚": "壁厚",
+    "声光报警系统": "声光报警系统",
+    "处理剂": "处理剂",
+    "复杂情况": "复杂情况",
+    "天车": "天车",
+    "套管头": "套管头",
+    "套管头连接法兰": "套管头连接法兰",
+    "套管层序": "套管层序",
+    "套管抗内压强度": "套管抗内压强度",
+    "套管抗外挤强度": "套管抗外挤强度",
+    "套管鞋": "套管鞋",
+    "学校": "学校",
+    "安全生产管理协议": "安全生产管理协议",
+    "安全警示标志": "安全警示标志",
+    "安装": "安装",
+    "完井": "完井",
+    "实钻结果": "实钻结果",
+    "密封垫环": "密封垫环",
+    "尾管": "尾管",
+    "岩心筒": "岩心筒",
+    "岩性剖面": "岩性剖面",
+    "巡回检查制度": "巡回检查制度",
+    "工程": "工程",
+    "工艺技术": "工艺技术",
+    "已钻井地层承压能力试验数据": "已钻井地层承压能力试验数据",
+    "常规钻井工艺": "常规钻井工艺",
+    "应急演练": "应急演练",
+    "开发调整区": "开发调整区",
+    "开钻": "开钻",
+    "弯头": "弯头",
+    "强度": "强度",
+    "录井人员": "录井人员",
+    "录井作业": "录井作业",
+    "悬挂器": "悬挂器",
+    "截止阀": "截止阀",
+    "手动平板阀": "手动平板阀",
+    "扣型": "扣型",
+    "扶正器": "扶正器",
+    "承包单位": "承包单位",
+    "技术套管材质": "技术套管材质",
+    "技术服务项目": "技术服务项目",
+    "抗(耐)震压力表": "抗(耐)震压力表",
+    "抗酸性气体腐蚀": "抗酸性气体腐蚀",
+    "振动筛": "振动筛",
+    "换向阀手柄": "换向阀手柄",
+    "控压钻井": "控压钻井",
+    "放喷管线": "放喷管线",
+    "敞喷": "敞喷",
+    "新探区": "新探区",
+    "方钻杆旋塞阀": "方钻杆旋塞阀",
+    "易燃易爆物": "易燃易爆物",
+    "最大允许关井套压值": "最大允许关井套压值",
+    "有毒有害气体含量": "有毒有害气体含量",
+    "有线随钻仪": "有线随钻仪",
+    "本构造邻井": "本构造邻井",
+    "术语和定义": "术语和定义",
+    "机泵房": "机泵房",
+    "栽丝法兰": "栽丝法兰",
+    "栽丝螺孔": "栽丝螺孔",
+    "欠平衡": "欠平衡",
+    "正压式空气呼吸器": "正压式空气呼吸器",
+    "气源压力": "气源压力",
+    "氮气": "氮气",
+    "水泥浆稠化初凝失重": "水泥浆稠化初凝失重",
+    "永久性设施": "永久性设施",
+    "油库": "油库",
+    "油气上窜速度": "油气上窜速度",
+    "油气层施工作业": "油气层施工作业",
+    "油气显示": "油气显示",
+    "油气水显示": "油气水显示",
+    "油气生产": "油气生产",
+    "泄压": "泄压",
+    "法兰": "法兰",
+    "浅层气": "浅层气",
+    "测井时间": "测井时间",
+    "消防器材": "消防器材",
+    "液动放喷阀": "液动放喷阀",
+    "液面变化": "液面变化",
+    "液面检测装置": "液面检测装置",
+    "溢流压井": "溢流压井",
+    "溢流处置": "溢流处置",
+    "溢流显示": "溢流显示",
+    "溢流监测": "溢流监测",
+    "溢流量": "溢流量",
+    "溢流预兆": "溢流预兆",
+    "灌入": "灌入",
+    "灌注装置": "灌注装置",
+    "灭火器": "灭火器",
+    "煤层气钻井作业": "煤层气钻井作业",
+    "环形防喷器控制压力": "环形防喷器控制压力",
+    "现场作业人员": "现场作业人员",
+    "生产套管材质": "生产套管材质",
+    "电气系统": "电气系统",
+    "电测": "电测",
+    "电缆": "电缆",
+    "电缆悬挂工具": "电缆悬挂工具",
+    "电缆测井": "电缆测井",
+    "省力机构": "省力机构",
+    "石油天然气开采企业": "石油天然气开采企业",
+    "矿井通道": "矿井通道",
+    "硫化氢": "硫化氢",
+    "硫化氢显示": "硫化氢显示",
+    "硫化氢警示标志": "硫化氢警示标志",
+    "硫化氢防护培训": "硫化氢防护培训",
+    "碱度": "碱度",
+    "立柱": "立柱",
+    "立管压力变送器": "立管压力变送器",
+    "管串结构": "管串结构",
+    "管理要求": "管理要求",
+    "综合录井队": "综合录井队",
+    "节流控制箱": "节流控制箱",
+    "范围": "范围",
+    "蓄能器": "蓄能器",
+    "螺栓": "螺栓",
+    "观察点": "观察点",
+    "规范性引用文件": "规范性引用文件",
+    "计量罐": "计量罐",
+    "设备设施隐患": "设备设施隐患",
+    "设计要求": "设计要求",
+    "试压": "试压",
+    "起下钻": "起下钻",
+    "起下钻作业": "起下钻作业",
+    "转换接头": "转换接头",
+    "转盘": "转盘",
+    "返出": "返出",
+    "返出情况": "返出情况",
+    "进出口密度差": "进出口密度差",
+    "远程控制台": "远程控制台",
+    "通井循环": "通井循环",
+    "通用要求": "通用要求",
+    "采掘坑道": "采掘坑道",
+    "采掘矿井井口": "采掘矿井井口",
+    "重点井": "重点井",
+    "钢丝绳": "钢丝绳",
+    "钢级": "钢级",
+    "钻井井控实施细则": "钻井井控实施细则",
+    "钻井液循环罐": "钻井液循环罐",
+    "钻井液性能": "钻井液性能",
+    "钻井液类型": "钻井液类型",
+    "钻井设备": "钻井设备",
+    "钻井队": "钻井队",
+    "钻具底部": "钻具底部",
+    "钻头": "钻头",
+    "钻头尺寸": "钻头尺寸",
+    "钻开油气层": "钻开油气层",
+    "钻开油气层前的准备与检查验收": "钻开油气层前的准备与检查验收",
+    "钻杆": "钻杆",
+    "钻杆接头": "钻杆接头",
+    "钻进作业": "钻进作业",
+    "钻进工况": "钻进工况",
+    "钻遇油气层": "钻遇油气层",
+    "铁路": "铁路",
+    "铰链侧门": "铰链侧门",
+    "锁紧装置": "锁紧装置",
+    "闸板防喷器": "闸板防喷器",
+    "闸阀": "闸阀",
+    "防喷器控制装置": "防喷器控制装置",
+    "防喷演习": "防喷演习",
+    "防喷管线": "防喷管线",
+    "防护设备": "防护设备",
+    "防溢管": "防溢管",
+    "防火防爆措施": "防火防爆措施",
+    "防硫化氢措施": "防硫化氢措施",
+    "附件": "附件",
+    "陆上石油天然气(含页岩气)的钻井作业": "陆上石油天然气(含页岩气)的钻井作业",
+    "陆上石油天然气钻井安全规范": "陆上石油天然气钻井安全规范",
+    "除硫剂": "除硫剂",
+    "顶驱旋塞阀": "顶驱旋塞阀",
+    "额定工作压力": "额定工作压力",
+    "风向标": "风向标",
+    "风险消减控制措施": "风险消减控制措施",
+    "高产油气井": "高产油气井",
+    "高危场所": "高危场所",
+    "高压油气井": "高压油气井",
+    "高压线": "高压线",
+    "高含硫油气井": "高含硫油气井",
+    "高速公路": "高速公路"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "人员培训",
+  "raw": "[\n  {\"head\": \"人员培训\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"井控培训合格证\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"人员培训\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"应急演练\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"人员培训\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"现场处置方案\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "人员培训",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "井控培训合格证",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "人员培训",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "应急演练",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "人员培训",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "现场处置方案",
+      "tail_type": "作业活动"
+    }
+  ]
+}

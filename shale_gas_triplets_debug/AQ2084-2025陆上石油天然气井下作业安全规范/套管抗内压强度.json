@@ -1,0 +1,13 @@
+{
+  "entity": "套管抗内压强度",
+  "raw": "[\n  {\"head\": \"套管抗内压强度\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"最大施工压力应低于井口额定工作压力和套管抗内压强度的 80% 两者中的最小值\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"套管抗内压强度\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"各层套管钢级、壁厚、外径、抗内压和下深\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "套管抗内压强度",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "各层套管钢级、壁厚、外径、抗内压和下深",
+      "tail_type": "施工记录"
+    }
+  ]
+}

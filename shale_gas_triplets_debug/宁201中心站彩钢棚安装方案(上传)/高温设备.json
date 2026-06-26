@@ -1,0 +1,27 @@
+{
+  "entity": "高温设备",
+  "raw": "[\n  {\"head\": \"高温设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"≤40℃\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"高温设备\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"徒手触碰\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"高温设备\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"焊机、热管道\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "高温设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "≤40℃",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "高温设备",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "徒手触碰",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "高温设备",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "焊机、热管道",
+      "tail_type": "时空信息"
+    }
+  ]
+}

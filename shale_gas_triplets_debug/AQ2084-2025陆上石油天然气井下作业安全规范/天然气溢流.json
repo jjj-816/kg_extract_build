@@ -1,0 +1,27 @@
+{
+  "entity": "天然气溢流",
+  "raw": "[\n  {\"head\": \"天然气溢流\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"使用节流阀或油嘴控制放喷\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"天然气溢流\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"放出的天然气应点火燃烧或回收处理\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"天然气溢流\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"气井带压作业现场应配备气体燃烧装置\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "天然气溢流",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "使用节流阀或油嘴控制放喷",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "天然气溢流",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "放出的天然气应点火燃烧或回收处理",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "天然气溢流",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "气井带压作业现场应配备气体燃烧装置",
+      "tail_type": "控制措施"
+    }
+  ]
+}

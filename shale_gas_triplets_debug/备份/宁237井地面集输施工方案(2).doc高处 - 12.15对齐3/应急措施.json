@@ -1,0 +1,27 @@
+{
+  "entity": "应急措施",
+  "raw": "[\n  {\"head\": \"应急措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"应急措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"8.高空坠落应急\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"应急措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"应急预案\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "应急措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "应急措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "8.高空坠落应急",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "应急措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "应急预案",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "entity": "旋转部件",
+  "raw": "[\n  {\"head\": \"旋转部件\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"高压区域\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": []
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "带压作业操作台",
+  "raw": "[\n  {\"head\": \"带压作业操作台\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"逃生装置\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "带压作业操作台",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "逃生装置",
+      "tail_type": "施工参数"
+    }
+  ]
+}

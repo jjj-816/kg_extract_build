@@ -1,0 +1,20 @@
+{
+  "entity": "2025年12月20日",
+  "raw": "```json\n[\n  {\"head\": \"2025年12月20日\", \"head_type\": \"时空信息\", \"relation\": \"OCCURS_AT\", \"tail\": \"计划完成时间\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"2025年12月20日\", \"head_type\": \"时空信息\", \"relation\": \"OCCURS_AT\", \"tail\": \"签名\", \"tail_type\": \"施工记录\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "计划完成时间",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "2025年12月20日",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "签名",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "2025年12月20日",
+      "tail_type": "时空信息"
+    }
+  ]
+}

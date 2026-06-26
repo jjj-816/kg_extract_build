@@ -1,0 +1,20 @@
+{
+  "entity": "焊缝余高",
+  "raw": "[\n  {\"head\": \"焊缝余高\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"焊缝余高\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊缝余高\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"《钢制对焊管件 技术规范》（SY/T13401-2017）\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "焊缝余高",
+      "head_type": "未分类",
+      "relation": "HAS_PARAMETER",
+      "tail": "焊缝余高",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "《钢制对焊管件 技术规范》（SY/T13401-2017）",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "焊缝余高",
+      "tail_type": "未分类"
+    }
+  ]
+}

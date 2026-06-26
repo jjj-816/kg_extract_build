@@ -1,0 +1,62 @@
+{
+  "entity": "现场技术交底",
+  "raw": "[\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"工程材料及备件符合设计要求\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"作业区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"隔离护栏\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"围护\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"警戒带\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"警示标识\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"现场技术交底\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"现场人员配置\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "工程材料及备件符合设计要求",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "作业区域",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "隔离护栏",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "围护",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "警戒带",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "警示标识",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "现场技术交底",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "现场人员配置",
+      "tail_type": "施工记录"
+    }
+  ]
+}

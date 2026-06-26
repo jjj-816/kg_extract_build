@@ -1,0 +1,27 @@
+{
+  "entity": "井控事件",
+  "raw": "[\n  {\"head\": \"井控事件\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"5.2.6 提示本构造区域近年发生的井控事件\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"井控事件\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"分级管控措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"井控事件\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"单井井控风险分级标准\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "井控事件",
+      "head_type": "风险事件",
+      "relation": "RECORDED_IN",
+      "tail": "5.2.6 提示本构造区域近年发生的井控事件",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "井控事件",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "分级管控措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "井控事件",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "单井井控风险分级标准",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "道路",
+  "raw": "[\n  {\"head\": \"道路\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"巡查记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"道路\", \"head_type\": \"施工对象\", \"relation\": \"HAS_OPERATION\", \"tail\": \"清理积雪\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"道路\", \"head_type\": \"施工对象\", \"relation\": \"HAS_OPERATION\", \"tail\": \"清理结冰\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"道路\", \"head_type\": \"施工对象\", \"relation\": \"HAS_OPERATION\", \"tail\": \"清理通道\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"道路\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"井站内\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "道路",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "井站内",
+      "tail_type": "时空信息"
+    }
+  ]
+}

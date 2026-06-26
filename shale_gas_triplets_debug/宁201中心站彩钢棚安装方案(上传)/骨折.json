@@ -1,0 +1,13 @@
+{
+  "entity": "骨折",
+  "raw": "[\n  {\"head\": \"骨折\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"控制措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"骨折\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"骨折\", \"head_type\": \"风险事件\", \"relation\": \"OCCURS_AT\", \"tail\": \"时空信息\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "骨折",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "控制措施",
+      "tail_type": "控制措施"
+    }
+  ]
+}

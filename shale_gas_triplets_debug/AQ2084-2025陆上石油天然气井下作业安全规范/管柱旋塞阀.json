@@ -1,0 +1,20 @@
+{
+  "entity": "管柱旋塞阀",
+  "raw": "[\n  {\"head\": \"管柱旋塞阀\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"管柱旋塞阀\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"第一根管柱或方钻杆下\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "管柱旋塞阀",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "管柱旋塞阀",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "第一根管柱或方钻杆下",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "entity": "粉尘",
+  "raw": "[\n  {\"head\": \"粉尘\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"可燃、易爆性粉尘环境\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"粉尘\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"可燃性粉尘爆炸环境\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"粉尘\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"有粉尘产生的受限空间\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"粉尘\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"邻近排放有毒、有害气体、粉尘的放空管线或烟囱等场所\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"粉尘\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"动火点10m范围\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"粉尘\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"动火点30m内垂直空间\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"粉尘\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"动火点15m内垂直空间\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"粉尘\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"动火点10m范围内及动火点下方\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "粉尘",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "可燃、易爆性粉尘环境",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "粉尘",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "可燃性粉尘爆炸环境",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "粉尘",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "有粉尘产生的受限空间",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "粉尘",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "邻近排放有毒、有害气体、粉尘的放空管线或烟囱等场所",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "粉尘",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "动火点30m内垂直空间",
+      "tail_type": "时空信息"
+    }
+  ]
+}

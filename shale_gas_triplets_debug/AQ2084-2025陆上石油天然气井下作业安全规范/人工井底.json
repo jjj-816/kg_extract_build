@@ -1,0 +1,13 @@
+{
+  "entity": "人工井底",
+  "raw": "[\n  {\"head\": \"人工井底\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"井身结构\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "人工井底",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "井身结构",
+      "tail_type": "施工对象"
+    }
+  ]
+}

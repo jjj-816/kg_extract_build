@@ -1,0 +1,41 @@
+{
+  "entity": "焊机",
+  "raw": "[\n  {\"head\": \"焊机\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"干燥通风处\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"焊机\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"远离易燃物\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"焊机\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"隔热防护套\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊机\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"动火作业\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"焊机\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高处作业\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "焊机",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "干燥通风处",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "焊机",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "远离易燃物",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "焊机",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "隔热防护套",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "焊机",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "动火作业",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "焊机",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高处作业",
+      "tail_type": "风险事件"
+    }
+  ]
+}

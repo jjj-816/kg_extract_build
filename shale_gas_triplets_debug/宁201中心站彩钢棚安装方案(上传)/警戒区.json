@@ -1,0 +1,13 @@
+{
+  "entity": "警戒区",
+  "raw": "[\n  {\"head\": \"警戒区\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"宁201中心站\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "警戒区",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "宁201中心站",
+      "tail_type": "时空信息"
+    }
+  ]
+}

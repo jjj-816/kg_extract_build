@@ -1,0 +1,34 @@
+{
+  "entity": "土建班组",
+  "raw": "[\n  {\"head\": \"土建班组\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工安排\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"土建班组\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"《宁237井地面集输工程施工图》\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"土建班组\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"宁237井地面集输施工\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"土建班组\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场人员配置\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "土建班组",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工安排",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "土建班组",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "《宁237井地面集输工程施工图》",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "土建班组",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "宁237井地面集输施工",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "土建班组",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场人员配置",
+      "tail_type": "作业活动"
+    }
+  ]
+}

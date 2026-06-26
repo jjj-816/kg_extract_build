@@ -1,0 +1,13 @@
+{
+  "entity": "Q/SY1858-2015",
+  "raw": "[\n  {\"head\": \"Q/SY1858-2015\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"施工准备与资源配置计划\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "Q/SY1858-2015",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "施工准备与资源配置计划",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

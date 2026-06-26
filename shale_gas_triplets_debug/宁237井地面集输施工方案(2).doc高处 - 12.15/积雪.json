@@ -1,0 +1,13 @@
+{
+  "entity": "积雪",
+  "raw": "[\n  {\"head\": \"积雪\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"道路\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "积雪",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "道路",
+      "tail_type": "时空信息"
+    }
+  ]
+}

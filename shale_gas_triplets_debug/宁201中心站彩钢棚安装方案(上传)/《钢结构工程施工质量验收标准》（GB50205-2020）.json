@@ -1,0 +1,27 @@
+{
+  "entity": "《钢结构工程施工质量验收标准》（GB50205-2020）",
+  "raw": "[\n  {\"head\": \"《钢结构工程施工质量验收标准》（GB50205-2020）\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"钢结构吊装配合焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《钢结构工程施工质量验收标准》（GB50205-2020）\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"安装彩钢棚\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《钢结构工程施工质量验收标准》（GB50205-2020）\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"钢结构吊装配合安装\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "《钢结构工程施工质量验收标准》（GB50205-2020）",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "钢结构吊装配合焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《钢结构工程施工质量验收标准》（GB50205-2020）",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "安装彩钢棚",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "《钢结构工程施工质量验收标准》（GB50205-2020）",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "钢结构吊装配合安装",
+      "tail_type": "作业活动"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "8 h",
+  "raw": "[\n  {\"head\": \"8 h\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"特级、一级动火安全作业票有效期不应超过\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "8 h",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "特级、一级动火安全作业票有效期不应超过",
+      "tail_type": "风险事件"
+    }
+  ]
+}

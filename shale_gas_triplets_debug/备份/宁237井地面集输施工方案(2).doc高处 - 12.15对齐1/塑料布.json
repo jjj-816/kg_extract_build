@@ -1,0 +1,13 @@
+{
+  "entity": "塑料布",
+  "raw": "[\n  {\"head\": \"塑料布\", \"head_type\": \"材料介质\", \"relation\": \"USES_MATERIAL\", \"tail\": \"作业点铺设\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"塑料布\", \"head_type\": \"材料介质\", \"relation\": \"OPERATES_ON\", \"tail\": \"作业点\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"塑料布\", \"head_type\": \"材料介质\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防止人员进入\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "作业点铺设",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "塑料布",
+      "tail_type": "材料介质"
+    }
+  ]
+}

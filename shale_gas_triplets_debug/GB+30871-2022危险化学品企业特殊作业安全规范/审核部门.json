@@ -1,0 +1,83 @@
+{
+  "entity": "审核部门",
+  "raw": "[\n  {\"head\": \"审核部门\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全作业票\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"审核部门\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"动火安全作业票\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"审核部门\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"受限空间安全作业票\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"审核部门\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"盲板抽堵安全作业票\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"审核部门\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"高处安全作业票\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"审核部门\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"吊装安全作业票\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"审核部门\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"临时用电安全作业票\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"审核部门\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"动土安全作业票\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"审核部门\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"断路安全作业票\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"审核部门\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"审核部门\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"风险辨识结果\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "审核部门",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全作业票",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "审核部门",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "动火安全作业票",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "审核部门",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "受限空间安全作业票",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "审核部门",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "盲板抽堵安全作业票",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "审核部门",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "高处安全作业票",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "审核部门",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "吊装安全作业票",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "审核部门",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "临时用电安全作业票",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "审核部门",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "动土安全作业票",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "审核部门",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "断路安全作业票",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "审核部门",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "安全措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "审核部门",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "风险辨识结果",
+      "tail_type": "风险事件"
+    }
+  ]
+}

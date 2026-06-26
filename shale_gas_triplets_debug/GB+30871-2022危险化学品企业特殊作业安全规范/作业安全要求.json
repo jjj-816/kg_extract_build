@@ -1,0 +1,13 @@
+{
+  "entity": "作业安全要求",
+  "raw": "[\n  {\"head\": \"作业安全要求\", \"head_type\": \"阈值约束\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"重特大生产安全事故\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "作业安全要求",
+      "head_type": "阈值约束",
+      "relation": "TRIGGERS_RISK",
+      "tail": "重特大生产安全事故",
+      "tail_type": "风险事件"
+    }
+  ]
+}

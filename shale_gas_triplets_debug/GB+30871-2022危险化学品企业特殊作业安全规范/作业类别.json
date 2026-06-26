@@ -1,0 +1,20 @@
+{
+  "entity": "作业类别",
+  "raw": "[\n  {\"head\": \"作业类别\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"堵盲板\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业类别\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"抽盲板\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "作业类别",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "堵盲板",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业类别",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "抽盲板",
+      "tail_type": "作业活动"
+    }
+  ]
+}

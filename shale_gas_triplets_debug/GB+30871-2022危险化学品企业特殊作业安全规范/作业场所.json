@@ -1,0 +1,265 @@
+{
+  "entity": "作业场所",
+  "raw": "[\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业申请时间\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业地点\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业内容\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"电源接入点及许可用电功率\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"工作电压\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"用电设备名称及额定功率\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"监护人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"用电人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"电工证号\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业负责人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"关联的其他特殊作业及安全作业票编号\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"风险辨识结果\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"可燃气体分析\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"分析时间\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"分析点\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"可燃气体检测结果\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"分析人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业实施时间\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"安全措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"是否涉及\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"确认人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"安全交底人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"接受交底人\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业负责人意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"用电单位意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"配送电单位意见签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"完工验收签字\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"30 m\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"2.5m\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"5m\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"0.7m\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"动火作业\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"吊装作业\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"高处作业\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"现场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"作业场所\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业区域\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业申请时间",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业地点",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业内容",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "电源接入点及许可用电功率",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "工作电压",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "用电设备名称及额定功率",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "监护人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "用电人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "电工证号",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业负责人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "关联的其他特殊作业及安全作业票编号",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "风险辨识结果",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "可燃气体分析",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "分析时间",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "分析点",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "可燃气体检测结果",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "分析人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业实施时间",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "安全措施",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "是否涉及",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "确认人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "安全交底人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "接受交底人",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "作业负责人意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "用电单位意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "配送电单位意见签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "完工验收签字",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "30 m",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "2.5m",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "5m",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "0.7m",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "动火作业",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "吊装作业",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "高处作业",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "现场",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "作业场所",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "作业区域",
+      "tail_type": "时空信息"
+    }
+  ]
+}

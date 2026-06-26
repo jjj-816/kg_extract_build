@@ -1,0 +1,104 @@
+{
+  "entity": "地层压力预测",
+  "raw": "[\n  {\"head\": \"地层压力预测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"溢流和井喷发生原因及溢流的及时发现\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"地层压力预测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"关井程序和常用压井方法的原理及参数计算\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"地层压力预测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"压井施工和复杂井控问题的处理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"地层压力预测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"应急处置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"地层压力预测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"射孔数据\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"地层压力预测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"压力数据\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"地层压力预测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"预测最高井口关井压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层压力预测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"最大允许关井压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层压力预测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"预测井筒充满地层流体后的最高井口关井压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层压力预测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"试压值\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层压力预测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"稳压时间\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层压力预测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"压降\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层压力预测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"预测最高施工压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"地层压力预测\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"预测井口设备将承受的最大压力\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "地层压力预测",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "溢流和井喷发生原因及溢流的及时发现",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "地层压力预测",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "关井程序和常用压井方法的原理及参数计算",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "地层压力预测",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "压井施工和复杂井控问题的处理",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "地层压力预测",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "应急处置",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "地层压力预测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "射孔数据",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "地层压力预测",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "压力数据",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "地层压力预测",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "预测最高井口关井压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层压力预测",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "最大允许关井压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层压力预测",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "预测井筒充满地层流体后的最高井口关井压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层压力预测",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "试压值",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层压力预测",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "稳压时间",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层压力预测",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "压降",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层压力预测",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "预测最高施工压力",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "地层压力预测",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "预测井口设备将承受的最大压力",
+      "tail_type": "施工参数"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "隔热防护套",
+  "raw": "[\n  {\"head\": \"隔热防护套\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"焊机、热管道等高温设备\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "隔热防护套",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "焊机、热管道等高温设备",
+      "tail_type": "时空信息"
+    }
+  ]
+}

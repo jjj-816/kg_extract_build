@@ -1,0 +1,27 @@
+{
+  "entity": "漏电保护装置",
+  "raw": "[\n  {\"head\": \"漏电保护装置\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"灵敏可靠\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"漏电保护装置\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"人员触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"漏电保护装置\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"一机一闸一保护\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "漏电保护装置",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "灵敏可靠",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "漏电保护装置",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "人员触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "漏电保护装置",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "一机一闸一保护",
+      "tail_type": "施工参数"
+    }
+  ]
+}

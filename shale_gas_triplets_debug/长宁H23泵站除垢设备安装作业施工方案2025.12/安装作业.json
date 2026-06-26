@@ -1,0 +1,34 @@
+{
+  "entity": "安装作业",
+  "raw": "[\n  {\"head\": \"安装作业\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"除垢设备\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"安装作业\", \"head_type\": \"作业活动\", \"relation\": \"OCCURS_AT\", \"tail\": \"宁 209H68 泵站\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"安装作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业内容\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安装作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"第四章 施工安排\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安装作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"2.3 计划作业时间\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "安装作业",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "除垢设备",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "安装作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业内容",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "安装作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "第四章 施工安排",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "安装作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "2.3 计划作业时间",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "entity": "气体中毒",
+  "raw": "[\n  {\"head\": \"气体中毒\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"连续气体检测\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "气体中毒",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "连续气体检测",
+      "tail_type": "控制措施"
+    }
+  ]
+}

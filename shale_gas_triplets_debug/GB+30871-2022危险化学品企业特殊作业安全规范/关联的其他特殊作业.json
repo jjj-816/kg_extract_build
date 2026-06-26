@@ -1,0 +1,20 @@
+{
+  "entity": "关联的其他特殊作业",
+  "raw": "[\n  {\"head\": \"关联的其他特殊作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"动土作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"关联的其他特殊作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"高处作业\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "关联的其他特殊作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "动土作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "关联的其他特殊作业",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "高处作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

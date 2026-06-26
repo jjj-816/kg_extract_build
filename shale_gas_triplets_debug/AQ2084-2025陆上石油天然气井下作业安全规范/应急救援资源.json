@@ -1,0 +1,27 @@
+{
+  "entity": "应急救援资源",
+  "raw": "[\n  {\"head\": \"应急救援资源\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"作业内容\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"应急救援资源\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"环境条件\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"应急救援资源\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"设施类型\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"应急救援资源\", \"head_type\": \"未分类\", \"relation\": \"OPERATES_ON\", \"tail\": \"井喷应急预案\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"应急救援资源\", \"head_type\": \"未分类\", \"relation\": \"OPERATES_ON\", \"tail\": \"应急预案\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"应急救援资源\", \"head_type\": \"未分类\", \"relation\": \"OPERATES_ON\", \"tail\": \"应急响应程序\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"应急救援资源\", \"head_type\": \"未分类\", \"relation\": \"OPERATES_ON\", \"tail\": \"应急救援行动\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"应急救援资源\", \"head_type\": \"未分类\", \"relation\": \"OPERATES_ON\", \"tail\": \"居民的疏散工作\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "应急救援资源",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "作业内容",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "应急救援资源",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "环境条件",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "应急救援资源",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "设施类型",
+      "tail_type": "施工对象"
+    }
+  ]
+}

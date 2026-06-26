@@ -1,0 +1,13 @@
+{
+  "entity": "无票证作业",
+  "raw": "[\n  {\"head\": \"无票证作业\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"立即驱离施工作业队伍\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "无票证作业",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "立即驱离施工作业队伍",
+      "tail_type": "控制措施"
+    }
+  ]
+}

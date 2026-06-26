@@ -1,0 +1,13 @@
+{
+  "entity": "工艺",
+  "raw": "[\n  {\"head\": \"工艺\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"焊接工艺规程（WPS）\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "工艺",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "焊接工艺规程（WPS）",
+      "tail_type": "施工记录"
+    }
+  ]
+}

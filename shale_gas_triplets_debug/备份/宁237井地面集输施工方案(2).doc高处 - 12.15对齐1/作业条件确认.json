@@ -1,0 +1,111 @@
+{
+  "entity": "作业条件确认",
+  "raw": "```json\n[\n  {\"head\": \"作业条件确认\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业条件确认\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"作业条件确认\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"方井打磨及防腐\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业条件确认\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"摄像头立杆\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业条件确认\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"摄像头安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业条件确认\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"建渣清理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业条件确认\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"施工工器具\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"作业条件确认\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动火作业前必须现场确认安全措施\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业条件确认\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"动土作业必须确认作业面放坡及有效支撑\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业条件确认\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"作业前应对用电设备进行检查和试运转\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业条件确认\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"工作人员在割除作业时必须穿好劳保用品\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业条件确认\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"已制定好相关的施工方案，并按相关标准执行\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业条件确认\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"根据现场施工要求及标准准备好公示牌及施工工器具等\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业条件确认\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"现场人员配置\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业条件确认\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"应急处置\", \"tail_type\": \"作业活动\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "作业条件确认",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业条件确认",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "作业条件确认",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "方井打磨及防腐",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业条件确认",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "摄像头立杆",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业条件确认",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "摄像头安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业条件确认",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "建渣清理",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业条件确认",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "施工工器具",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "作业条件确认",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "动火作业前必须现场确认安全措施",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业条件确认",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "动土作业必须确认作业面放坡及有效支撑",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业条件确认",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "作业前应对用电设备进行检查和试运转",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业条件确认",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "工作人员在割除作业时必须穿好劳保用品",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业条件确认",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "已制定好相关的施工方案，并按相关标准执行",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业条件确认",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "根据现场施工要求及标准准备好公示牌及施工工器具等",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业条件确认",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "现场人员配置",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业条件确认",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "应急处置",
+      "tail_type": "作业活动"
+    }
+  ]
+}

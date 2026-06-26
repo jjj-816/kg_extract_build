@@ -1,0 +1,27 @@
+{
+  "entity": "井控培训",
+  "raw": "[\n  {\"head\": \"井控培训\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"人员培训\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井控培训\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"防喷演习\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"井控培训\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"井控培训合格证\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "井控培训",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "人员培训",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井控培训",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "防喷演习",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "井控培训",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "井控培训合格证",
+      "tail_type": "未分类"
+    }
+  ]
+}

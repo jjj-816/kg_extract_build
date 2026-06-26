@@ -1,0 +1,13 @@
+{
+  "entity": "进出口密度差",
+  "raw": "[\n  {\"head\": \"进出口密度差\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"$0.02\\\\mathrm{g / cm^3}$\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "进出口密度差",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "$0.02\\mathrm{g / cm^3}$",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

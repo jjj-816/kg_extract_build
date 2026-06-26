@@ -1,0 +1,34 @@
+{
+  "entity": "设备",
+  "raw": "[\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"预测最高关井压力、预测最高施工压力两者中最大值的1.1倍\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"预测最高关井压力、预测最高施工压力两者中最大值的1.1倍且不超过额定工作压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"危险源\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井场的明显处和有关设施、设备处\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"设备设施隐患\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "设备",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "预测最高关井压力、预测最高施工压力两者中最大值的1.1倍",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "设备",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "危险源",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设备",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "井场的明显处和有关设施、设备处",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "设备",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "设备设施隐患",
+      "tail_type": "风险事件"
+    }
+  ]
+}

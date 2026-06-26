@@ -1,0 +1,13 @@
+{
+  "entity": "预测产量",
+  "raw": "[\n  {\"head\": \"预测产量\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"分离器额定处理量\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "预测产量",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "分离器额定处理量",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

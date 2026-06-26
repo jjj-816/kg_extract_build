@@ -1,0 +1,41 @@
+{
+  "entity": "属地油气藏特点",
+  "raw": "[\n  {\"head\": \"属地油气藏特点\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"4.13 发包单位应结合属地油气藏特点以及井控管理实际情况，制定井下作业井控实施细则\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"属地油气藏特点\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"本文件适用于陆上石油天然气(含页岩气)井下作业\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"属地油气藏特点\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"c）打开油气层管理\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"属地油气藏特点\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"# 6.1.7 采油(气)井口装置\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"属地油气藏特点\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"# 陆上石油天然气井下作业安全规范\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"属地油气藏特点\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"符合高含硫油气井、高压油气井、高产油气井条件之一的油气井\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"属地油气藏特点\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"三高油气井 three high factors oil and gas well\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"属地油气藏特点\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"高产油气井 high-yield oil and gas well\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"属地油气藏特点\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"高含硫油气井 high sulfurous oil and gas well\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"属地油气藏特点\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"高压油气井 high-pressure oil and gas well\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "属地油气藏特点",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "本文件适用于陆上石油天然气(含页岩气)井下作业",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "属地油气藏特点",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "c）打开油气层管理",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "属地油气藏特点",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "# 6.1.7 采油(气)井口装置",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "属地油气藏特点",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "# 陆上石油天然气井下作业安全规范",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "属地油气藏特点",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "符合高含硫油气井、高压油气井、高产油气井条件之一的油气井",
+      "tail_type": "规范条款"
+    }
+  ]
+}

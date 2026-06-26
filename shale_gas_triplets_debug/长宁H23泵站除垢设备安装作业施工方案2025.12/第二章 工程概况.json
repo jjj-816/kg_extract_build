@@ -1,0 +1,20 @@
+{
+  "entity": "第二章 工程概况",
+  "raw": "[\n  {\"head\": \"第二章 工程概况\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"2.1 工程名称\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"第二章 工程概况\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"2.2 建设地点\", \"tail_type\": \"规范条款\"}\n]",
+  "triplets": [
+    {
+      "head": "第二章 工程概况",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "2.1 工程名称",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "第二章 工程概况",
+      "head_type": "规范条款",
+      "relation": "HAS_CLAUSE",
+      "tail": "2.2 建设地点",
+      "tail_type": "规范条款"
+    }
+  ]
+}

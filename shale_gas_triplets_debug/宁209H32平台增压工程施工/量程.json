@@ -1,0 +1,13 @@
+{
+  "entity": "量程",
+  "raw": "[\n  {\"head\": \"量程\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"被测最大压力的1.5～2.0倍\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "量程",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "被测最大压力的1.5～2.0倍",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

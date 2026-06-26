@@ -1,0 +1,20 @@
+{
+  "entity": "盲板安全作业票",
+  "raw": "[\n  {\"head\": \"盲板安全作业票\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"一块盲板的一项作业\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"盲板安全作业票\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"7.11\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "盲板安全作业票",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "一块盲板的一项作业",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "盲板安全作业票",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "7.11",
+      "tail_type": "时空信息"
+    }
+  ]
+}

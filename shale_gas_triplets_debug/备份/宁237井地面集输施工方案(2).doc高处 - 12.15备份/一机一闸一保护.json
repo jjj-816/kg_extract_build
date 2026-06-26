@@ -1,0 +1,41 @@
+{
+  "entity": "一机一闸一保护",
+  "raw": "[\n  {\"head\": \"一机一闸一保护\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"停电、挂牌、上锁制度\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"一机一闸一保护\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"电动扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"一机一闸一保护\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"灭火器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"一机一闸一保护\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"全身式安全带\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"一机一闸一保护\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"一机一闸一保护\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"电仪班组\", \"tail_type\": \"责任主体\"}\n]",
+  "triplets": [
+    {
+      "head": "一机一闸一保护",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "停电、挂牌、上锁制度",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "一机一闸一保护",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "电动扳手",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "一机一闸一保护",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "灭火器",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "一机一闸一保护",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "全身式安全带",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "一机一闸一保护",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "气体检测仪",
+      "tail_type": "设备工具"
+    }
+  ]
+}

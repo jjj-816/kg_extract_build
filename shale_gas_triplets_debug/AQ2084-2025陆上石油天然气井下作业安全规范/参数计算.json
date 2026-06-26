@@ -1,0 +1,20 @@
+{
+  "entity": "参数计算",
+  "raw": "[\n  {\"head\": \"参数计算\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"关井程序和常用压井方法的原理及参数计算\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"参数计算\", \"head_type\": \"未分类\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"参数\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "参数计算",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "关井程序和常用压井方法的原理及参数计算",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "参数计算",
+      "head_type": "未分类",
+      "relation": "HAS_PARAMETER",
+      "tail": "参数",
+      "tail_type": "施工参数"
+    }
+  ]
+}

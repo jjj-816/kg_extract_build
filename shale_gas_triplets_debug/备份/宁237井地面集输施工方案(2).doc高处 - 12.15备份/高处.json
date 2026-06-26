@@ -1,0 +1,13 @@
+{
+  "entity": "高处",
+  "raw": "[\n  {\"head\": \"高处\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"周春雨\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"高处\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"高空坠落应急\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "高处",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "高空坠落应急",
+      "tail_type": "控制措施"
+    }
+  ]
+}

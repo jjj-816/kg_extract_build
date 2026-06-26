@@ -1,0 +1,13 @@
+{
+  "entity": "剪断电缆的工具",
+  "raw": "[\n  {\"head\": \"剪断电缆的工具\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"电缆测井\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "剪断电缆的工具",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "电缆测井",
+      "tail_type": "时空信息"
+    }
+  ]
+}

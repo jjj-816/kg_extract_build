@@ -1,0 +1,27 @@
+{
+  "entity": "警戒区域",
+  "raw": "[\n  {\"head\": \"警戒区域\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业区域\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"警戒区域\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"禁止无关人员进入\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"警戒区域\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"确保应急通道畅通\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "警戒区域",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "作业区域",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "警戒区域",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "禁止无关人员进入",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "警戒区域",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "确保应急通道畅通",
+      "tail_type": "施工记录"
+    }
+  ]
+}

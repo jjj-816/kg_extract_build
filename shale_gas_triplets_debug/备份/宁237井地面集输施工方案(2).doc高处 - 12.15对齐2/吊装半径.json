@@ -1,0 +1,13 @@
+{
+  "entity": "吊装半径",
+  "raw": "[\n  {\"head\": \"吊装半径\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"吊装作业时\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "吊装半径",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "吊装作业时",
+      "tail_type": "时空信息"
+    }
+  ]
+}

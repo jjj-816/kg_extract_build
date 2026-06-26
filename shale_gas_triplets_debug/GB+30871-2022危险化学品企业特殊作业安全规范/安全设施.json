@@ -1,0 +1,62 @@
+{
+  "entity": "安全设施",
+  "raw": "[\n  {\"head\": \"安全设施\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业现场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"安全设施\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"吊装地点\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"安全设施\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"高处\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"安全设施\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"爆炸危险场所\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"安全设施\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"完好\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全设施\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"安全\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全设施\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"灵活好用\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"安全设施\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"风险\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "安全设施",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业现场",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "安全设施",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "吊装地点",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "安全设施",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "高处",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "安全设施",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "爆炸危险场所",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "安全设施",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "完好",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全设施",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "安全",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全设施",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "灵活好用",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "安全设施",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "风险",
+      "tail_type": "风险事件"
+    }
+  ]
+}

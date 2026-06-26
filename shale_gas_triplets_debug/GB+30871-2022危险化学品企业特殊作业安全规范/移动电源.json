@@ -1,0 +1,48 @@
+{
+  "entity": "移动电源",
+  "raw": "[\n  {\"head\": \"移动电源\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业设备上的电器电源\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"移动电源\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"临时用电设备和线路\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"移动电源\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"供电电压等级\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"移动电源\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"容量\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"移动电源\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"GB 50194\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"移动电源\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"良好的接地\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "移动电源",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业设备上的电器电源",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "移动电源",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "临时用电设备和线路",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "移动电源",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "供电电压等级",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "移动电源",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "容量",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "移动电源",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "GB 50194",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "移动电源",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "良好的接地",
+      "tail_type": "施工参数"
+    }
+  ]
+}

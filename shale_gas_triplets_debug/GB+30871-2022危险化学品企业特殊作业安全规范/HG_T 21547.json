@@ -1,0 +1,13 @@
+{
+  "entity": "HG/T 21547",
+  "raw": "[\n  {\"head\": \"HG/T 21547\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"管道用钢制插板、垫环、8字盲板系列\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "HG/T 21547",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "管道用钢制插板、垫环、8字盲板系列",
+      "tail_type": "设备工具"
+    }
+  ]
+}

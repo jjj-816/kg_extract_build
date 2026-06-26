@@ -1,0 +1,76 @@
+{
+  "entity": "试验压力",
+  "raw": "[\n  {\"head\": \"试验压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"1MPa\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"试验压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"30%\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"试验压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"60%\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"试验压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"4h\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"试验压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"24h\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"试验压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"1%试验压力\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"试验压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"0.1MPa\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"试验压力\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"管道强度试验\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"试验压力\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"严密性试验\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"试验压力\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"管道试压\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "试验压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "1MPa",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "试验压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "30%",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "试验压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "60%",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "试验压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "4h",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "试验压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "24h",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "试验压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "1%试验压力",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "试验压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "0.1MPa",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "试验压力",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "管道强度试验",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "试验压力",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "严密性试验",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "试验压力",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "管道试压",
+      "tail_type": "施工记录"
+    }
+  ]
+}

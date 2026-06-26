@@ -1,0 +1,41 @@
+{
+  "entity": "安全管理人员",
+  "raw": "[\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场作业过程管理及安全监护\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"属地监督和甲方管理人员监督检查\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"停电、挂牌、上锁制度\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"动火作业前必须现场确认安全措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"告知施工作业人员本井站应急要点\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场作业过程管理及安全监护",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "属地监督和甲方管理人员监督检查",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "停电、挂牌、上锁制度",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "动火作业前必须现场确认安全措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "告知施工作业人员本井站应急要点",
+      "tail_type": "作业活动"
+    }
+  ]
+}

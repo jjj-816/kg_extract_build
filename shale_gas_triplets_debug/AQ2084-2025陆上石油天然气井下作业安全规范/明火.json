@@ -1,0 +1,13 @@
+{
+  "entity": "明火",
+  "raw": "[\n  {\"head\": \"明火\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"不应在井场使用\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "明火",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "不应在井场使用",
+      "tail_type": "控制措施"
+    }
+  ]
+}

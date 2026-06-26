@@ -1,0 +1,13 @@
+{
+  "entity": "防穿刺鞋",
+  "raw": "[\n  {\"head\": \"防穿刺鞋\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防静电工作服\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "防穿刺鞋",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "防静电工作服",
+      "tail_type": "施工参数"
+    }
+  ]
+}

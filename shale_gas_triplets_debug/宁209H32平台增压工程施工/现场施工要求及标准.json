@@ -1,0 +1,139 @@
+{
+  "entity": "现场施工要求及标准",
+  "raw": "[\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"施工准备与资源配置计划\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"施工安排\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"动土作业施工重点\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"坡口加工\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"焊接工艺评定要求\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"作业前准备\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"开工条件确认\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"安全技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"法兰拆除/安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"工艺管线连接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"预制焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"管道试压\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"压缩机基础灌浆\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"管道防腐\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"管墩制作\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"建渣清理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"国家及长宁公司技术要求相关标准\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"施工组织机构\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"技术措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"现场施工要求及标准\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"工程概况\", \"tail_type\": \"施工阶段\"}\n]",
+  "triplets": [
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "施工准备与资源配置计划",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "施工安排",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "动土作业施工重点",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "坡口加工",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "焊接工艺评定要求",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "作业前准备",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "开工条件确认",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "安全技术交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "法兰拆除/安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "工艺管线连接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "预制焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "管道试压",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "压缩机基础灌浆",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "管道防腐",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "管墩制作",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "建渣清理",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "国家及长宁公司技术要求相关标准",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "施工组织机构",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "现场施工要求及标准",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "工程概况",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

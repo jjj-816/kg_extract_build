@@ -1,0 +1,55 @@
+{
+  "entity": "第二联",
+  "raw": "[\n  {\"head\": \"第二联\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"作业单位(动火人)\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"第二联\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"所在基层单位\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"第二联\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"作业单位负责人\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"第二联\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"作业单位实施人\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"第二联\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"吊装指挥\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"第二联\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"作业单位(作业时)配送电执行人(作业结束后注销)\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"第二联\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"所在单位专业部门\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "第二联",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "作业单位(动火人)",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "第二联",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "所在基层单位",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "第二联",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "作业单位负责人",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "第二联",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "作业单位实施人",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "第二联",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "吊装指挥",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "第二联",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "作业单位(作业时)配送电执行人(作业结束后注销)",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "第二联",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "所在单位专业部门",
+      "tail_type": "时空信息"
+    }
+  ]
+}

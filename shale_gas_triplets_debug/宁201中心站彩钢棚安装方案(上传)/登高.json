@@ -1,0 +1,5 @@
+{
+  "entity": "登高",
+  "raw": "[\n  {\"head\": \"登高\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"陈小林： 焊工、登高 证件号T511528199311135638\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"登高\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"陈孝闯： 焊工、登高 证件号T212533198010283810\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": []
+}

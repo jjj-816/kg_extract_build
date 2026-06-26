@@ -1,0 +1,27 @@
+{
+  "entity": "防腐作业",
+  "raw": "[\n  {\"head\": \"防腐作业\", \"head_type\": \"作业活动\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防毒口罩\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"防腐作业\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"防腐作业\", \"head_type\": \"作业活动\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"安全管理人员\", \"tail_type\": \"责任主体\"}\n]",
+  "triplets": [
+    {
+      "head": "防腐作业",
+      "head_type": "作业活动",
+      "relation": "USES_EQUIPMENT",
+      "tail": "防毒口罩",
+      "tail_type": "设备工具"
+    },
+    {
+      "head": "防腐作业",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "防腐作业",
+      "tail_type": "作业活动"
+    }
+  ]
+}

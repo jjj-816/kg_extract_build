@@ -1,0 +1,13 @@
+{
+  "entity": "结冰",
+  "raw": "[\n  {\"head\": \"结冰\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"坠落风险\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "结冰",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "坠落风险",
+      "tail_type": "风险事件"
+    }
+  ]
+}

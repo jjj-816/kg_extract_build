@@ -1,0 +1,13 @@
+{
+  "entity": "悬挂器",
+  "raw": "[\n  {\"head\": \"悬挂器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"悬挂器位置\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "悬挂器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "悬挂器位置",
+      "tail_type": "时空信息"
+    }
+  ]
+}

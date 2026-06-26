@@ -1,0 +1,13 @@
+{
+  "entity": "《工业金属管道工程施工质量验收规范》（GB 50184-2011）",
+  "raw": "[\n  {\"head\": \"《工业金属管道工程施工质量验收规范》（GB 50184-2011）\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"管道安装\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"《工业金属管道工程施工质量验收规范》（GB 50184-2011）\", \"head_type\": \"规范条款\", \"relation\": \"REQUIRES\", \"tail\": \"进场验收\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《工业金属管道工程施工质量验收规范》（GB 50184-2011）\", \"head_type\": \"规范条款\", \"relation\": \"HAS_RECORD\", \"tail\": \"设备装置评估表\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "《工业金属管道工程施工质量验收规范》（GB 50184-2011）",
+      "head_type": "规范条款",
+      "relation": "REQUIRES",
+      "tail": "进场验收",
+      "tail_type": "作业活动"
+    }
+  ]
+}

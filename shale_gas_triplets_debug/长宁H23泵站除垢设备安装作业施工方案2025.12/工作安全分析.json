@@ -1,0 +1,69 @@
+{
+  "entity": "工作安全分析",
+  "raw": "[\n  {\"head\": \"工作安全分析\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"物体打击\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"工作安全分析\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"烫伤\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"工作安全分析\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业前检查工器具是否符合安全要求\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"工作安全分析\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业人员必须佩戴好劳动保护用品\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"工作安全分析\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"安全条件检查确认，交回工作界面\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"工作安全分析\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"施工前对施工机组相关人员进行安全技术交底\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"工作安全分析\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"对焊接和土建机组进行安全技术交底\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"工作安全分析\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业人员正确穿戴劳保用品\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"工作安全分析\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"工作人员在割除作业时必须穿好劳保用品\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "工作安全分析",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "物体打击",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "工作安全分析",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "烫伤",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "工作安全分析",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业前检查工器具是否符合安全要求",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "工作安全分析",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业人员必须佩戴好劳动保护用品",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "工作安全分析",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "安全条件检查确认，交回工作界面",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "工作安全分析",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "施工前对施工机组相关人员进行安全技术交底",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "工作安全分析",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "对焊接和土建机组进行安全技术交底",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "工作安全分析",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业人员正确穿戴劳保用品",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "工作安全分析",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "工作人员在割除作业时必须穿好劳保用品",
+      "tail_type": "施工参数"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "entity": "喷涂",
+  "raw": "[\n  {\"head\": \"喷涂\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"喷涂\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"正确佩戴橡胶绝缘手套\", \"tail_type\": \"未分类\"},\n  {\"head\": \"喷涂\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"使用完好合格电器设备设施\", \"tail_type\": \"未分类\"},\n  {\"head\": \"喷涂\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"对电源导线定期进行检查\", \"tail_type\": \"未分类\"}\n]",
+  "triplets": [
+    {
+      "head": "喷涂",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "喷涂",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "正确佩戴橡胶绝缘手套",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "喷涂",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "使用完好合格电器设备设施",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "喷涂",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "对电源导线定期进行检查",
+      "tail_type": "未分类"
+    }
+  ]
+}

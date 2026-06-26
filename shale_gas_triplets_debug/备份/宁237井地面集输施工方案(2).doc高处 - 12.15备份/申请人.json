@@ -1,0 +1,13 @@
+{
+  "entity": "申请人",
+  "raw": "```json\n[\n  {\"head\": \"申请人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工安排\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"申请人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场人员配置\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"申请人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"应急处置\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"申请人\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"编制依据\", \"tail_type\": \"规范条款\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "申请人",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场人员配置",
+      "tail_type": "施工记录"
+    }
+  ]
+}

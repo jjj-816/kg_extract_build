@@ -1,0 +1,20 @@
+{
+  "entity": "低温",
+  "raw": "[\n  {\"head\": \"低温\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"受限空间\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"低温\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"异温高处作业\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "低温",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "受限空间",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "低温",
+      "head_type": "环保对象",
+      "relation": "LOCATED_IN",
+      "tail": "异温高处作业",
+      "tail_type": "时空信息"
+    }
+  ]
+}

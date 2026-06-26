@@ -1,0 +1,13 @@
+{
+  "entity": "设备装置评估表",
+  "raw": "[\n  {\"head\": \"设备装置评估表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"电动工具按照安全操作规程正确操作\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "设备装置评估表",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "电动工具按照安全操作规程正确操作",
+      "tail_type": "施工参数"
+    }
+  ]
+}

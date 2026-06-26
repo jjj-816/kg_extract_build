@@ -1,0 +1,111 @@
+{
+  "entity": "作业人员",
+  "raw": "[\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"持有效焊工证\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"佩戴焊接面罩、防烫手套等防护装备\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"正确使用工器具、按规定穿戴劳保用品\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"保持安全间距，做好监护\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"正确穿戴工衣、工鞋及安全帽\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"正确穿戴安全帽，戴帆布手套\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"正确穿戴安全帽，戴帆布手套、穿防滑鞋\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"正确使用工器具\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"不清楚作业内容导致误操作\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"不清楚应急措施、作业风险内容\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"造成物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"碰伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"划伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"摔伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"作业人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"工器具伤人\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "持有效焊工证",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "佩戴焊接面罩、防烫手套等防护装备",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "正确使用工器具、按规定穿戴劳保用品",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "保持安全间距，做好监护",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "正确穿戴工衣、工鞋及安全帽",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "正确穿戴安全帽，戴帆布手套",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "正确穿戴安全帽，戴帆布手套、穿防滑鞋",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "正确使用工器具",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "不清楚作业内容导致误操作",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "不清楚应急措施、作业风险内容",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "造成物体打击",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "碰伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "划伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "摔伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "作业人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "工器具伤人",
+      "tail_type": "风险事件"
+    }
+  ]
+}

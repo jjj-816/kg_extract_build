@@ -1,0 +1,69 @@
+{
+  "entity": "技术措施",
+  "raw": "[\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"召开技术措施和安全动员会\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"安全技术交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"风险告知\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"工程概况\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"施工安排\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"编制依据\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"主要设备、材料和施工辅助材料需要量\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"质量控制\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"技术措施\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"焊后处理与检验\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "召开技术措施和安全动员会",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "安全技术交底",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "风险告知",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "工程概况",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "施工安排",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "编制依据",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_SECTION",
+      "tail": "主要设备、材料和施工辅助材料需要量",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "质量控制",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "技术措施",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "焊后处理与检验",
+      "tail_type": "作业活动"
+    }
+  ]
+}

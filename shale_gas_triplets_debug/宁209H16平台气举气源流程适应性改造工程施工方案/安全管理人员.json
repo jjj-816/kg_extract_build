@@ -1,0 +1,48 @@
+{
+  "entity": "安全管理人员",
+  "raw": "[\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"现场作业过程管理及安全监护\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"专职监护人全程坚守现场\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"作业人员保持安全间距\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"属地监督应告知施工作业人员本井站应急要点\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"安全管理人员\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"动火作业前必须现场确认安全措施\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "现场作业过程管理及安全监护",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "专职监护人全程坚守现场",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "作业人员保持安全间距",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "属地监督应告知施工作业人员本井站应急要点",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "安全管理人员",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "动火作业前必须现场确认安全措施",
+      "tail_type": "控制措施"
+    }
+  ]
+}

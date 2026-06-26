@@ -1,0 +1,48 @@
+{
+  "entity": "油管加压引爆",
+  "raw": "[\n  {\"head\": \"油管加压引爆\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"油管内液柱压力低于起爆压力\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"油管加压引爆\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"油管(钻杆)输送射孔作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"油管加压引爆\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"带压油管(钻杆)输送射孔作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"油管加压引爆\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"油管\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油管加压引爆\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"高压油气井\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"油管加压引爆\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"高压油气井\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "油管加压引爆",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "油管内液柱压力低于起爆压力",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "油管加压引爆",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "油管(钻杆)输送射孔作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "油管加压引爆",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "带压油管(钻杆)输送射孔作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "油管加压引爆",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "油管",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "油管加压引爆",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "高压油气井",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "油管加压引爆",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "高压油气井",
+      "tail_type": "风险事件"
+    }
+  ]
+}

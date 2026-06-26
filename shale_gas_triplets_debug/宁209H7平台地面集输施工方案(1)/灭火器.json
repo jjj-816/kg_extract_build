@@ -1,0 +1,41 @@
+{
+  "entity": "灭火器",
+  "raw": "[\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"MFZ/ABC-8型干粉灭火器\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"4\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾爆炸风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业区域内\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"动火范围内\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "灭火器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "MFZ/ABC-8型干粉灭火器",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "灭火器",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "4",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "灭火器",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾爆炸风险",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "灭火器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业区域内",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "灭火器",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "动火范围内",
+      "tail_type": "时空信息"
+    }
+  ]
+}

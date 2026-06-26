@@ -1,0 +1,41 @@
+{
+  "entity": "控制措施",
+  "raw": "```json\n[\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"MITIGATED_BY\", \"tail\": \"车辆移动伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"MITIGATED_BY\", \"tail\": \"火灾爆炸风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"MITIGATED_BY\", \"tail\": \"触电风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"MITIGATED_BY\", \"tail\": \"机械伤害风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"监督检查情况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"安全交底\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"风险告知\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"停电\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"挂牌\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"控制措施\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"上锁\", \"tail_type\": \"作业活动\"}\n]\n```",
+  "triplets": [
+    {
+      "head": "车辆移动伤害",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "控制措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "火灾爆炸风险",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "控制措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "触电风险",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "控制措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "机械伤害风险",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "控制措施",
+      "tail_type": "控制措施"
+    },
+    {
+      "head": "控制措施",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "监督检查情况",
+      "tail_type": "施工记录"
+    }
+  ]
+}

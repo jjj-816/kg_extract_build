@@ -1,0 +1,5 @@
+{
+  "entity": "放喷管线",
+  "raw": "[\n  {\"head\": \"放喷管线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"放喷管线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"10 MPa\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"放喷管线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"燃烧池、点火口\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"放喷管线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"$10 \\, m \\sim 15 \\, m$\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"放喷管线\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"井喷失控\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": []
+}

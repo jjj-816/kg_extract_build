@@ -1,0 +1,13 @@
+{
+  "entity": "交通组织方案",
+  "raw": "[\n  {\"head\": \"交通组织方案\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业前,制定交通组织方案,并已通知相关部门或单位\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "交通组织方案",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "作业前,制定交通组织方案,并已通知相关部门或单位",
+      "tail_type": "施工记录"
+    }
+  ]
+}

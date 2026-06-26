@@ -1,0 +1,55 @@
+{
+  "entity": "设备调试",
+  "raw": "[\n  {\"head\": \"设备调试\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"设备检查\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设备调试\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"物料搬运\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设备调试\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"机械故障\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设备调试\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体坍塌\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设备调试\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"机械划伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设备调试\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"砸伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"设备调试\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"挤压伤\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "设备调试",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "设备检查",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "设备调试",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "物料搬运",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "设备调试",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "机械故障",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设备调试",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "物体坍塌",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设备调试",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "机械划伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设备调试",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "砸伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "设备调试",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "挤压伤",
+      "tail_type": "风险事件"
+    }
+  ]
+}

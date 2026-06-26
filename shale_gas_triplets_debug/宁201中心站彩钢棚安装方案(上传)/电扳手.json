@@ -1,0 +1,41 @@
+{
+  "entity": "电扳手",
+  "raw": "[\n  {\"head\": \"电扳手\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"把\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"电扳手\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"防护罩\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"电扳手\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"手柄\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"电扳手\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"开关\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"电扳手\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"传动部位\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "电扳手",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "把",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "电扳手",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "防护罩",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "电扳手",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "手柄",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "电扳手",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "开关",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "电扳手",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "传动部位",
+      "tail_type": "风险事件"
+    }
+  ]
+}

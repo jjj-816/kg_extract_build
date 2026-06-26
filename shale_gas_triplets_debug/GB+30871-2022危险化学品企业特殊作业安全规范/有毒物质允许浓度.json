@@ -1,0 +1,13 @@
+{
+  "entity": "有毒物质允许浓度",
+  "raw": "[\n  {\"head\": \"有毒物质允许浓度\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"GBZ 2.1\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "有毒物质允许浓度",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "GBZ 2.1",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "entity": "地层压力",
+  "raw": "[\n  {\"head\": \"地层压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"70 MPa\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"地层压力\", \"head_type\": \"施工参数\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"溢流和井喷\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"地层压力\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"地质特征、地层压力、有毒有害气体含量、浅层气、井别井型、历史井喷情况、周边环境、工艺技术\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"地层压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"最高地层压力或预计最大关井压力\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"地层压力\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"地层压力监测和实钻结果\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"地层压力\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"地层破裂压力试验\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"地层压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"近井口段最内层套管抗内压强度的 80% 和井口装置额定工作压力两者中的最小值\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"地层压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"最高地层孔隙压力当量密度值\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"地层压力\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"预测全井段地层孔隙压力剖面、地层坍塌压力剖面、地层破裂压力剖面\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"地层压力\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"地层孔隙压力、地层破裂压力、岩性剖面及保护油气层的需要\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "地层压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "70 MPa",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "地层压力",
+      "head_type": "施工参数",
+      "relation": "TRIGGERS_RISK",
+      "tail": "溢流和井喷",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "地层压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "最高地层压力或预计最大关井压力",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "地层压力",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "地层压力监测和实钻结果",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "地层压力",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "地层破裂压力试验",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "地层压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "最高地层孔隙压力当量密度值",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "地层压力",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "地层孔隙压力、地层破裂压力、岩性剖面及保护油气层的需要",
+      "tail_type": "施工记录"
+    }
+  ]
+}

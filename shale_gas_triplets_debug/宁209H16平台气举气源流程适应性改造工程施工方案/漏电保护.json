@@ -1,0 +1,76 @@
+{
+  "entity": "漏电保护",
+  "raw": "[\n  {\"head\": \"漏电保护\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"用电设施的设置、防护及漏电保护\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"漏电保护\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"电气设备检维修\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"漏电保护\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"现场配备漏电保护器\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"漏电保护\", \"head_type\": \"未分类\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"《危险化学品企业特殊作业安全规范》GB 30871-2022\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"漏电保护\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"触电风险控制措施\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"漏电保护\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"接零、接地\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"漏电保护\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"停验电并上锁挂牌\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"漏电保护\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"穿戴绝缘手套、绝缘鞋等个人防护用品\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"漏电保护\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"进入井站严禁携带易燃易爆等危险物品\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"漏电保护\", \"head_type\": \"未分类\", \"relation\": \"HAS_OPERATION\", \"tail\": \"一机一闸一保护\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "漏电保护",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "用电设施的设置、防护及漏电保护",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "漏电保护",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "电气设备检维修",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "漏电保护",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "现场配备漏电保护器",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "漏电保护",
+      "head_type": "未分类",
+      "relation": "HAS_CLAUSE",
+      "tail": "《危险化学品企业特殊作业安全规范》GB 30871-2022",
+      "tail_type": "规范条款"
+    },
+    {
+      "head": "漏电保护",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "触电风险控制措施",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "漏电保护",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "接零、接地",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "漏电保护",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "停验电并上锁挂牌",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "漏电保护",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "穿戴绝缘手套、绝缘鞋等个人防护用品",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "漏电保护",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "进入井站严禁携带易燃易爆等危险物品",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "漏电保护",
+      "head_type": "未分类",
+      "relation": "HAS_OPERATION",
+      "tail": "一机一闸一保护",
+      "tail_type": "作业活动"
+    }
+  ]
+}

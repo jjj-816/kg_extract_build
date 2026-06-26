@@ -1,0 +1,55 @@
+{
+  "entity": "化工容器",
+  "raw": "[\n  {\"head\": \"化工容器\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"高处作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"化工容器\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"塔、釜、炉、罐等\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"化工容器\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"12 V\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"化工容器\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"防爆灯具\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"化工容器\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"气体分析\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"化工容器\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"安全措施\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"化工容器\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"火灾爆炸危险场所\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "化工容器",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "高处作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "化工容器",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "塔、釜、炉、罐等",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "化工容器",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "12 V",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "化工容器",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "防爆灯具",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "化工容器",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "气体分析",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "化工容器",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "安全措施",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "化工容器",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "火灾爆炸危险场所",
+      "tail_type": "时空信息"
+    }
+  ]
+}

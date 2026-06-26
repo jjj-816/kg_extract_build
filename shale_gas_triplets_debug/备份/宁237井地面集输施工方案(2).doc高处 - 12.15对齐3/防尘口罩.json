@@ -1,0 +1,13 @@
+{
+  "entity": "防尘口罩",
+  "raw": "[\n  {\"head\": \"防尘口罩\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"人员呼吸道粉尘伤害\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "防尘口罩",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "人员呼吸道粉尘伤害",
+      "tail_type": "风险事件"
+    }
+  ]
+}

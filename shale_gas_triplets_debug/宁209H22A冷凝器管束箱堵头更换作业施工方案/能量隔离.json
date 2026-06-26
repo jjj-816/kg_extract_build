@@ -1,0 +1,48 @@
+{
+  "entity": "能量隔离",
+  "raw": "[\n  {\"head\": \"能量隔离\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"停机放空\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"能量隔离\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"上锁挂牌\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"能量隔离\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"停机断电\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"能量隔离\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"放空\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"能量隔离\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"管线打开前必须保证能量有效隔离\", \"tail_type\": \"未分类\"},\n  {\"head\": \"能量隔离\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"管线打开\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "能量隔离",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "停机放空",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "能量隔离",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "上锁挂牌",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "能量隔离",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "停机断电",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "能量隔离",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "放空",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "能量隔离",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "管线打开前必须保证能量有效隔离",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "能量隔离",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "管线打开",
+      "tail_type": "风险事件"
+    }
+  ]
+}

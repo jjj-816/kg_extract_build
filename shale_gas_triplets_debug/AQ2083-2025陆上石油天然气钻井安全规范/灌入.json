@@ -1,0 +1,27 @@
+{
+  "entity": "灌入",
+  "raw": "[\n  {\"head\": \"灌入\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"钻井液灌入量\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"灌入\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"井内\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"灌入\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"钻井液\", \"tail_type\": \"材料介质\"}\n]",
+  "triplets": [
+    {
+      "head": "灌入",
+      "head_type": "作业活动",
+      "relation": "HAS_RECORD",
+      "tail": "钻井液灌入量",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "灌入",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "井内",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "灌入",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "钻井液",
+      "tail_type": "材料介质"
+    }
+  ]
+}

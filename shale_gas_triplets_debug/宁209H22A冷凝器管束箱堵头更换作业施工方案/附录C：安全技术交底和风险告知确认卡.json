@@ -1,0 +1,13 @@
+{
+  "entity": "附录C：安全技术交底和风险告知确认卡",
+  "raw": "[\n  {\"head\": \"附录C：安全技术交底和风险告知确认卡\", \"head_type\": \"未分类\", \"relation\": \"RECORDED_IN\", \"tail\": \"附录E：风险作业方案控制措施检查确认表\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "附录C：安全技术交底和风险告知确认卡",
+      "head_type": "未分类",
+      "relation": "RECORDED_IN",
+      "tail": "附录E：风险作业方案控制措施检查确认表",
+      "tail_type": "施工记录"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "溢流处置",
+  "raw": "[\n  {\"head\": \"溢流处置\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"溢流监测\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"溢流处置\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"溢流压井后起钻前\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"溢流处置\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"发现溢流应立即关井处置\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"溢流处置\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"疑似溢流应关井检查\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"溢流处置\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"因地层流体侵入井内引起井口返出的钻井液量比泵入量大，或停泵后井口钻井液自动外溢的现象\", \"tail_type\": \"环保对象\"}\n]",
+  "triplets": [
+    {
+      "head": "溢流处置",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "溢流监测",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "溢流处置",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "溢流压井后起钻前",
+      "tail_type": "施工阶段"
+    }
+  ]
+}

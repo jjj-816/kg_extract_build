@@ -1,0 +1,20 @@
+{
+  "entity": "开工条件确认",
+  "raw": "[\n  {\"head\": \"开工条件确认\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工人员不清楚作业内容导致误操作\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"开工条件确认\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"确认现场作业相关人员（项目负责人、申请人、安全监护人、特种作业人员）与作业许可指定人员一致（核查有效证件）\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"开工条件确认\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"根据现场施工要求及标准准备好公示牌及施工工器具等\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "开工条件确认",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "施工人员不清楚作业内容导致误操作",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "开工条件确认",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "根据现场施工要求及标准准备好公示牌及施工工器具等",
+      "tail_type": "作业活动"
+    }
+  ]
+}

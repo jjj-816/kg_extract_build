@@ -1,0 +1,34 @@
+{
+  "entity": "油气藏评价资料",
+  "raw": "[\n  {\"head\": \"油气藏评价资料\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"钻井油、气、水显示\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"油气藏评价资料\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"测、录井解释\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"油气藏评价资料\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"中途测试结论\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"油气藏评价资料\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"钻井液参数\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "油气藏评价资料",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "钻井油、气、水显示",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "油气藏评价资料",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "测、录井解释",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "油气藏评价资料",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "中途测试结论",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "油气藏评价资料",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "钻井液参数",
+      "tail_type": "施工参数"
+    }
+  ]
+}

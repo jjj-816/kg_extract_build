@@ -1,0 +1,41 @@
+{
+  "entity": "填充焊",
+  "raw": "[\n  {\"head\": \"填充焊\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"盖面焊\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"填充焊\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"根焊质量\", \"tail_type\": \"未分类\"},\n  {\"head\": \"填充焊\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"层道间熔合\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"填充焊\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"清除焊渣\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"填充焊\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"清除飞溅物\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"填充焊\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"夹渣\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"填充焊\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"未熔合\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "填充焊",
+      "head_type": "作业活动",
+      "relation": "PRECEDES",
+      "tail": "盖面焊",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "填充焊",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "根焊质量",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "填充焊",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "层道间熔合",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "填充焊",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "夹渣",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "填充焊",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "未熔合",
+      "tail_type": "风险事件"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "作业面",
+  "raw": "[\n  {\"head\": \"作业面\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"放坡\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"作业面\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"有效支撑\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "作业面",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "放坡",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "作业面",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "有效支撑",
+      "tail_type": "施工参数"
+    }
+  ]
+}

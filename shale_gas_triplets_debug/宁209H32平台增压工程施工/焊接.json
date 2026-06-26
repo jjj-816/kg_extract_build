@@ -1,0 +1,41 @@
+{
+  "entity": "焊接",
+  "raw": "[\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"预制焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"管道开口不应在管道焊缝位置\", \"tail_type\": \"未分类\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"检查平焊法兰与钢管规格和圆滑过渡情况\", \"tail_type\": \"未分类\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"坡口加工应符合本工程焊接工艺评定要求\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"工艺管道所用钢管、管道附件及其他预制件等应符合《石油天然气站内工艺管道工程施工规范》GB50540-2009 2012年版第4.2节的规定\", \"tail_type\": \"未分类\"},\n  {\"head\": \"焊接\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"触电\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "HAS_SUB_OPERATION",
+      "tail": "预制焊接",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "管道开口不应在管道焊缝位置",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "REQUIRES_PRECONDITION",
+      "tail": "检查平焊法兰与钢管规格和圆滑过渡情况",
+      "tail_type": "未分类"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "HAS_PARAMETER",
+      "tail": "坡口加工应符合本工程焊接工艺评定要求",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "焊接",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "触电",
+      "tail_type": "风险事件"
+    }
+  ]
+}

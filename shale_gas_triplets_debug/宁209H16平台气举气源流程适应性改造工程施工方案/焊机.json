@@ -1,0 +1,41 @@
+{
+  "entity": "焊机",
+  "raw": "[\n  {\"head\": \"焊机\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"WS-315\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊机\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"完好\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊机\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"合格\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊机\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"2025.12.16\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊机\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"弧光\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "焊机",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "WS-315",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "焊机",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "完好",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "焊机",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "合格",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "焊机",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "2025.12.16",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "焊机",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "弧光",
+      "tail_type": "风险事件"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "entity": "施工全过程",
+  "raw": "[\n  {\"head\": \"施工全过程\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"作业条件确认\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工全过程\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"方井打磨及防腐\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工全过程\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"摄像头立杆\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工全过程\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"摄像头安装\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工全过程\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"建渣清理\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"施工全过程\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业方案及应急方案审批单\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工全过程\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"设计复核及设计现场技术交底\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工全过程\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工方案\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "施工全过程",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "作业条件确认",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工全过程",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "方井打磨及防腐",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工全过程",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "摄像头立杆",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工全过程",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "摄像头安装",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工全过程",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "建渣清理",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "施工全过程",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业方案及应急方案审批单",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "施工全过程",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "设计复核及设计现场技术交底",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "施工全过程",
+      "head_type": "施工阶段",
+      "relation": "HAS_RECORD",
+      "tail": "施工方案",
+      "tail_type": "施工记录"
+    }
+  ]
+}

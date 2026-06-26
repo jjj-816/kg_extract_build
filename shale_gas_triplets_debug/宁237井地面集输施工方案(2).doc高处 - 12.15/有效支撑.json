@@ -1,0 +1,13 @@
+{
+  "entity": "有效支撑",
+  "raw": "[\n  {\"head\": \"有效支撑\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"作业面放坡及有效支撑\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "有效支撑",
+      "head_type": "控制措施",
+      "relation": "RECORDED_IN",
+      "tail": "作业面放坡及有效支撑",
+      "tail_type": "施工记录"
+    }
+  ]
+}

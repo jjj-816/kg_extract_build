@@ -1,0 +1,13 @@
+{
+  "entity": "灾害事故",
+  "raw": "[\n  {\"head\": \"灾害事故\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"抢救\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "灾害事故",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "抢救",
+      "tail_type": "控制措施"
+    }
+  ]
+}

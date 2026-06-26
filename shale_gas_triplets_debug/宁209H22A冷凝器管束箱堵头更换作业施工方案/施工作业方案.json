@@ -1,0 +1,62 @@
+{
+  "entity": "施工作业方案",
+  "raw": "[\n  {\"head\": \"施工作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"入场施工作业\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"施工作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业许可范围\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"施工作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"用电、动火、焊割等作业\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"施工作业方案\", \"head_type\": \"施工记录\", \"relation\": \"OCCURS_AT\", \"tail\": \"项目现场\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"施工作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"施工安排\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"施工作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"施工准备与资源配置计划\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"施工作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"工程概况\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"施工作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"项目现场施工班组项目负责人\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "施工作业方案",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "入场施工作业",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "施工作业方案",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "作业许可范围",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "施工作业方案",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "用电、动火、焊割等作业",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "施工作业方案",
+      "head_type": "施工记录",
+      "relation": "OCCURS_AT",
+      "tail": "项目现场",
+      "tail_type": "时空信息"
+    },
+    {
+      "head": "施工作业方案",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "施工安排",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "施工作业方案",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "施工准备与资源配置计划",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "施工作业方案",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "工程概况",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "施工作业方案",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "项目现场施工班组项目负责人",
+      "tail_type": "施工参数"
+    }
+  ]
+}

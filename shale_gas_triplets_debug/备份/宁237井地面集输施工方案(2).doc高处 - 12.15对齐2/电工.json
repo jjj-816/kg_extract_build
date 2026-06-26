@@ -1,0 +1,13 @@
+{
+  "entity": "电工",
+  "raw": "[\n  {\"head\": \"电工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"电气设备检维修必须停验电并上锁挂牌\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "电工",
+      "head_type": "责任主体",
+      "relation": "RESPONSIBLE_FOR",
+      "tail": "电气设备检维修必须停验电并上锁挂牌",
+      "tail_type": "控制措施"
+    }
+  ]
+}

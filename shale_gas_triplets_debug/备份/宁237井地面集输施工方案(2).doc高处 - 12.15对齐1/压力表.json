@@ -1,0 +1,5 @@
+{
+  "entity": "压力表",
+  "raw": "[\n  {\"head\": \"压力表\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"高压区域\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"压力表\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"压力表\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"泵压\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"压力表\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"套压\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": []
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "油气层施工作业",
+  "raw": "[\n  {\"head\": \"油气层施工作业\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"钻井作业\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"油气层施工作业\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"下钻至主要油气层顶部前应灌满钻井液\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"油气层施工作业\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"井口装置和采油树\", \"tail_type\": \"设备工具\"}\n]",
+  "triplets": [
+    {
+      "head": "油气层施工作业",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "钻井作业",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "油气层施工作业",
+      "head_type": "规范条款",
+      "relation": "REGULATES",
+      "tail": "井口装置和采油树",
+      "tail_type": "设备工具"
+    }
+  ]
+}

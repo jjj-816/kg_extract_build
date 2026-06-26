@@ -1,0 +1,41 @@
+{
+  "entity": "焊缝金属",
+  "raw": "[\n  {\"head\": \"焊缝金属\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"热影响区\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"焊缝金属\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"焊接过程控制\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"焊缝金属\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"焊工：刘丛丛\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"焊缝金属\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"弧光\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"焊缝金属\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"高\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "焊缝金属",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "热影响区",
+      "tail_type": "施工对象"
+    },
+    {
+      "head": "焊缝金属",
+      "head_type": "施工对象",
+      "relation": "HAS_STAGE",
+      "tail": "焊接过程控制",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "焊缝金属",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "焊工：刘丛丛",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "焊缝金属",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "弧光",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "焊缝金属",
+      "head_type": "施工对象",
+      "relation": "HAS_PARAMETER",
+      "tail": "高",
+      "tail_type": "施工参数"
+    }
+  ]
+}

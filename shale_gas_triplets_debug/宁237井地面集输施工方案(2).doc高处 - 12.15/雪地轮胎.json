@@ -1,0 +1,13 @@
+{
+  "entity": "雪地轮胎",
+  "raw": "[\n  {\"head\": \"雪地轮胎\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"增强轮胎抓地力\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "雪地轮胎",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "增强轮胎抓地力",
+      "tail_type": "风险事件"
+    }
+  ]
+}

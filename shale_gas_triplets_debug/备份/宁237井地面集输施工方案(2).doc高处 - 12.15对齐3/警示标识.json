@@ -1,0 +1,20 @@
+{
+  "entity": "警示标识",
+  "raw": "[\n  {\"head\": \"警示标识\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"人员临边坠落\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"警示标识\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业区域\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "警示标识",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "人员临边坠落",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "警示标识",
+      "head_type": "设备工具",
+      "relation": "LOCATED_IN",
+      "tail": "作业区域",
+      "tail_type": "时空信息"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "操作平台",
+  "raw": "[\n  {\"head\": \"操作平台\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"全通径旋塞阀\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"操作平台\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"转换接头\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"操作平台\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"开关工具\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "操作平台",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "全通径旋塞阀",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "操作平台",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "转换接头",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "操作平台",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "开关工具",
+      "tail_type": "施工参数"
+    }
+  ]
+}

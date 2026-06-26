@@ -1,0 +1,34 @@
+{
+  "entity": "附录A：施工作业方案及预案审批单",
+  "raw": "[\n  {\"head\": \"附录A：施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"施工准备与资源配置计划\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录A：施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"施工安排\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录A：施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"入场施工作业应有准入证、作业许可证、工作前安全分析表和施工作业方案（或应急处置方案）\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录A：施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"公示牌及施工工器具等\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录A：施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"作业条件确认→方井打磨及防腐→摄像头立杆→摄像头安装→建渣清理\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"附录A：施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"施工组织机构及技术措施\", \"tail_type\": \"施工参数\"}\n]",
+  "triplets": [
+    {
+      "head": "附录A：施工作业方案及预案审批单",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "施工准备与资源配置计划",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "附录A：施工作业方案及预案审批单",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "施工安排",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "附录A：施工作业方案及预案审批单",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "公示牌及施工工器具等",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "附录A：施工作业方案及预案审批单",
+      "head_type": "施工记录",
+      "relation": "HAS_PARAMETER",
+      "tail": "施工组织机构及技术措施",
+      "tail_type": "施工参数"
+    }
+  ]
+}

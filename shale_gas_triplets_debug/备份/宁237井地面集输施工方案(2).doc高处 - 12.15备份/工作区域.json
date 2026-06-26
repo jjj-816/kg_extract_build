@@ -1,0 +1,20 @@
+{
+  "entity": "工作区域",
+  "raw": "[\n  {\"head\": \"工作区域\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工作区域\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"作业场所\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"工作区域\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"井口区域\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "工作区域",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "施工作业入场安全培训记录",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "工作区域",
+      "head_type": "施工对象",
+      "relation": "HAS_SECTION",
+      "tail": "作业场所",
+      "tail_type": "施工对象"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity": "气焊",
+  "raw": "[\n  {\"head\": \"气焊\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"未经动火作业审批\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"气焊\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"井场\", \"tail_type\": \"施工对象\"}\n]",
+  "triplets": [
+    {
+      "head": "气焊",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "未经动火作业审批",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "气焊",
+      "head_type": "作业活动",
+      "relation": "OPERATES_ON",
+      "tail": "井场",
+      "tail_type": "施工对象"
+    }
+  ]
+}

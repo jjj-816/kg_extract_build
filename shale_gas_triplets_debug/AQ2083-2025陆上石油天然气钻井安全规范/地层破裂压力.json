@@ -1,0 +1,41 @@
+{
+  "entity": "地层破裂压力",
+  "raw": "[\n  {\"head\": \"地层破裂压力\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"地质设计\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"地层破裂压力\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"工程设计\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"地层破裂压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"最高地层孔隙压力当量密度值\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"地层破裂压力\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"探井应做地层破裂压力试验\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"地层破裂压力\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"套管鞋下的地层破裂压力\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "地层破裂压力",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "地质设计",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "地层破裂压力",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "工程设计",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "地层破裂压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "最高地层孔隙压力当量密度值",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "地层破裂压力",
+      "head_type": "施工参数",
+      "relation": "RECORDED_IN",
+      "tail": "探井应做地层破裂压力试验",
+      "tail_type": "施工记录"
+    },
+    {
+      "head": "地层破裂压力",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "套管鞋下的地层破裂压力",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

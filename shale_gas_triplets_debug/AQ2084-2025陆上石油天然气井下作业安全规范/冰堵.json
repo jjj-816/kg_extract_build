@@ -1,0 +1,13 @@
+{
+  "entity": "冰堵",
+  "raw": "[\n  {\"head\": \"冰堵\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防冻、保温工作\", \"tail_type\": \"控制措施\"}\n]",
+  "triplets": [
+    {
+      "head": "冰堵",
+      "head_type": "风险事件",
+      "relation": "MITIGATED_BY",
+      "tail": "防冻、保温工作",
+      "tail_type": "控制措施"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "entity": "属地监督",
+  "raw": "```json\n[\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"作业项目负责人/申请人\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"指认准许作业的设备/系统\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"指认准许作业的工作区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"属地监督\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"培训人\", \"tail_type\": \"责任主体\"}\n]\n```",
+  "triplets": []
+}

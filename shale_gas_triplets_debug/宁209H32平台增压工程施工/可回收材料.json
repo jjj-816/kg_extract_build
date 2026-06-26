@@ -1,0 +1,13 @@
+{
+  "entity": "可回收材料",
+  "raw": "[\n  {\"head\": \"可回收材料\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"废弃材料\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "可回收材料",
+      "head_type": "材料介质",
+      "relation": "TRIGGERS_RISK",
+      "tail": "废弃材料",
+      "tail_type": "风险事件"
+    }
+  ]
+}

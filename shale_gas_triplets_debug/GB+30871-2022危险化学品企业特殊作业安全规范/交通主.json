@@ -1,0 +1,13 @@
+{
+  "entity": "交通主",
+  "raw": "[\n  {\"head\": \"交通主\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"生产区域内\", \"tail_type\": \"时空信息\"}\n]",
+  "triplets": [
+    {
+      "head": "交通主",
+      "head_type": "施工对象",
+      "relation": "LOCATED_IN",
+      "tail": "生产区域内",
+      "tail_type": "时空信息"
+    }
+  ]
+}

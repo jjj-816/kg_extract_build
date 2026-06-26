@@ -1,0 +1,20 @@
+{
+  "entity": "钢丝（绳）",
+  "raw": "[\n  {\"head\": \"钢丝（绳）\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"专用剪断器\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"钢丝（绳）\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"起下外挂电缆管柱\", \"tail_type\": \"风险事件\"}\n]",
+  "triplets": [
+    {
+      "head": "钢丝（绳）",
+      "head_type": "设备工具",
+      "relation": "HAS_PARAMETER",
+      "tail": "专用剪断器",
+      "tail_type": "施工参数"
+    },
+    {
+      "head": "钢丝（绳）",
+      "head_type": "设备工具",
+      "relation": "TRIGGERS_RISK",
+      "tail": "起下外挂电缆管柱",
+      "tail_type": "风险事件"
+    }
+  ]
+}

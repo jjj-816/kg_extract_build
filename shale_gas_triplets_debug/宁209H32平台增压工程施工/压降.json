@@ -1,0 +1,20 @@
+{
+  "entity": "压降",
+  "raw": "[\n  {\"head\": \"压降\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"△P≤1%试验压力\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"压降\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"不大于0.1MPa\", \"tail_type\": \"阈值约束\"}\n]",
+  "triplets": [
+    {
+      "head": "压降",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "△P≤1%试验压力",
+      "tail_type": "阈值约束"
+    },
+    {
+      "head": "压降",
+      "head_type": "施工参数",
+      "relation": "HAS_THRESHOLD",
+      "tail": "不大于0.1MPa",
+      "tail_type": "阈值约束"
+    }
+  ]
+}

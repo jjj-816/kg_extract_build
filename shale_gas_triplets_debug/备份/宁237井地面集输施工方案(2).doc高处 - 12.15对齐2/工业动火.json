@@ -1,0 +1,20 @@
+{
+  "entity": "工业动火",
+  "raw": "[\n  {\"head\": \"工业动火\", \"head_type\": \"作业活动\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾、爆炸、烫伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"工业动火\", \"head_type\": \"作业活动\", \"relation\": \"USES_MATERIAL\", \"tail\": \"化纤材料劳保用品\", \"tail_type\": \"材料介质\"}\n]",
+  "triplets": [
+    {
+      "head": "工业动火",
+      "head_type": "作业活动",
+      "relation": "TRIGGERS_RISK",
+      "tail": "火灾、爆炸、烫伤",
+      "tail_type": "风险事件"
+    },
+    {
+      "head": "工业动火",
+      "head_type": "作业活动",
+      "relation": "USES_MATERIAL",
+      "tail": "化纤材料劳保用品",
+      "tail_type": "材料介质"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "entity": "洗(压)井作业",
+  "raw": "[\n  {\"head\": \"洗(压)井作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"洗(压)井施工应安排专人观察压力和出口返液情况\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"洗(压)井作业\", \"head_type\": \"施工阶段\", \"relation\": \"PRECEDES\", \"tail\": \"换装井口作业\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"洗(压)井作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"施工作业过程中溢流关井方法的确定\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"洗(压)井作业\", \"head_type\": \"施工阶段\", \"relation\": \"HAS_OPERATION\", \"tail\": \"压井液或压井液材料准备\", \"tail_type\": \"作业活动\"}\n]",
+  "triplets": [
+    {
+      "head": "洗(压)井作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "洗(压)井施工应安排专人观察压力和出口返液情况",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "洗(压)井作业",
+      "head_type": "施工阶段",
+      "relation": "PRECEDES",
+      "tail": "换装井口作业",
+      "tail_type": "施工阶段"
+    },
+    {
+      "head": "洗(压)井作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "施工作业过程中溢流关井方法的确定",
+      "tail_type": "作业活动"
+    },
+    {
+      "head": "洗(压)井作业",
+      "head_type": "施工阶段",
+      "relation": "HAS_OPERATION",
+      "tail": "压井液或压井液材料准备",
+      "tail_type": "作业活动"
+    }
+  ]
+}

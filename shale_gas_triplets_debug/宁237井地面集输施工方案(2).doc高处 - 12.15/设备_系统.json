@@ -1,0 +1,13 @@
+{
+  "entity": "设备/系统",
+  "raw": "[\n  {\"head\": \"设备/系统\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"设备装置评估表（工器具确认表）\", \"tail_type\": \"施工记录\"}\n]",
+  "triplets": [
+    {
+      "head": "设备/系统",
+      "head_type": "施工对象",
+      "relation": "HAS_RECORD",
+      "tail": "设备装置评估表（工器具确认表）",
+      "tail_type": "施工记录"
+    }
+  ]
+}
