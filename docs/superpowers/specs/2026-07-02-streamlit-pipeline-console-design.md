@@ -1,286 +1,286 @@
-# Streamlit Pipeline Console Design
+# Streamlit 实体提取流水线控制台设计
 
-## 1. Goal
+## 1. 目标
 
-Integrate the entity-extraction pipeline into the existing Streamlit dashboard so the user starts only Streamlit, configures one experiment in the browser, runs or safely cancels it, and observes its progress and persisted outputs in real time.
+将实体提取流水线集成到现有 Streamlit 看板中。用户只需启动 Streamlit，即可在浏览器中配置一次实验、运行或安全停止流水线，并实时查看实验进度和持久化结果。
 
-The feature must:
+本功能必须满足：
 
-- accept a local document folder path and preview selectable `.md` and `.txt` files;
-- support Zhipu, DeepSeek, Ollama, Alibaba Model Studio/Qwen, ModelScope, Hugging Face, and a custom OpenAI-compatible endpoint;
-- read provider credentials from `.env` first and allow a session-only override;
-- never persist API keys in MySQL, experiment snapshots, logs, events, or error messages;
-- use the current Markdown-heading-aware chunking strategy with a configurable maximum length of `2000` by default;
-- run the pipeline inside the Streamlit process in a background thread;
-- show structured progress, counts, current work, errors, and final status;
-- support cooperative cancellation while preserving all data already written;
-- keep the existing experiment history and inspection pages.
+- 输入本机文档文件夹路径，并预览、选择其中的 `.md` 和 `.txt` 文件；
+- 支持智谱、DeepSeek、Ollama、阿里云百炼/Qwen、ModelScope、Hugging Face 和自定义 OpenAI 兼容接口；
+- 优先从 `.env` 读取各提供商凭据，并允许在当前会话中临时覆盖；
+- API Key 不得写入 MySQL、实验配置快照、日志、事件或错误信息；
+- 首版沿用当前 Markdown 标题感知切片策略，最大长度默认 `2000`，并允许调整；
+- 在 Streamlit 进程内通过后台线程运行流水线；
+- 实时展示结构化进度、计数、当前任务、错误和最终状态；
+- 支持协作式安全停止，并保留停止前已经写入的全部数据；
+- 保留现有实验历史和数据查看页面。
 
-## 2. Non-goals
+## 2. 非目标
 
-- Supporting multiple simultaneous experiments in one Streamlit process.
-- Adding alternative chunking strategies in the first version.
-- Uploading or copying source documents through the browser.
-- Persisting API keys from the UI.
-- Building a distributed job queue or a separate backend service.
-- Replacing MySQL, Milvus, SentenceTransformer, or the current extraction prompts.
+- 不支持同一 Streamlit 实例同时运行多个实验。
+- 首版不增加其他切片策略。
+- 不通过浏览器上传或复制源文档。
+- 不在界面中持久化 API Key。
+- 不引入分布式任务队列或单独的后端服务。
+- 不替换现有 MySQL、Milvus、SentenceTransformer、抽取提示词和核心算法。
 
-## 3. Chosen Architecture
+## 3. 总体架构
 
-The application will use a typed run configuration, a structured event callback, a cooperative cancellation token, and a process-local run registry.
+系统采用“强类型运行配置 + 结构化事件回调 + 协作式取消令牌 + 进程内运行注册表”的架构。
 
 ```text
-Streamlit configuration form
-          |
-          v
-  validate PipelineConfig
-          |
-          v
- Background PipelineWorker -----> CancellationToken
-          |
-          +---- run_pipeline(config, emit, token)
-          |               |
-          |               +---- MySQL experiment records
-          |               +---- Milvus segment vectors
-          |               +---- existing debug artifacts
-          |
-          v
- thread-safe PipelineEvent queue
-          |
-          v
- Streamlit status fragment (poll every second)
+Streamlit 参数表单
+        |
+        v
+校验 PipelineConfig
+        |
+        v
+后台 PipelineWorker ----------> CancellationToken
+        |
+        +---- run_pipeline(config, emit, token)
+        |              |
+        |              +---- MySQL 实验记录
+        |              +---- Milvus 切片向量
+        |              +---- 现有调试文件
+        |
+        v
+线程安全的 PipelineEvent 队列
+        |
+        v
+Streamlit 状态区（每秒轮询）
 ```
 
-Only one worker may be active at a time. The registry survives Streamlit script reruns and holds the worker thread, event queue, cancellation token, immutable sanitized configuration, and accumulated public status. It does not hold API keys after the worker finishes.
+同一时间只允许一个 worker 运行。运行注册表在 Streamlit 脚本重新执行时保持有效，保存 worker 线程、事件队列、取消令牌、脱敏后的不可变配置和累计的公开状态。worker 结束后，注册表不得继续持有 API Key。
 
-## 4. Component Boundaries
+## 4. 组件边界
 
-### 4.1 Run configuration
+### 4.1 运行配置
 
-Create a focused configuration module containing:
+新增独立的配置模块，包含：
 
-- `PipelineConfig`: immutable values for one experiment;
-- `LLMConfig`: provider id, display name, API key, base URL, and model;
-- `ChunkingConfig`: strategy id and maximum characters;
-- validation helpers;
-- a `sanitized_snapshot()` method that omits credentials.
+- `PipelineConfig`：一次实验的不可变配置；
+- `LLMConfig`：提供商标识、显示名称、API Key、Base URL 和模型名；
+- `ChunkingConfig`：策略标识和最大字符数；
+- 配置校验函数；
+- 排除凭据的 `sanitized_snapshot()` 方法。
 
-The pipeline will receive `PipelineConfig` explicitly. Existing environment-backed settings remain the source of defaults for CLI compatibility, MySQL, Milvus, schema paths, embedding model paths, and debug directories.
+流水线显式接收 `PipelineConfig`，不再直接依赖导入时确定的全局参数。现有环境变量配置继续作为命令行兼容模式、MySQL、Milvus、Schema 路径、Embedding 模型路径和调试目录的默认来源。
 
-### 4.2 Provider registry
+### 4.2 LLM 提供商注册表
 
-Create a provider registry with these stable ids:
+提供商注册表使用以下稳定标识：
 
-| Provider | Default base URL | Credential environment variable |
+| 提供商 | 默认 Base URL | 凭据环境变量 |
 |---|---|---|
-| `zhipu` | `https://open.bigmodel.cn/api/paas/v4/` | `ZAI_API_KEY`, then legacy `LLM_API_KEY` |
-| `deepseek` | `https://api.deepseek.com` | `DEEPSEEK_API_KEY`, then legacy `LLM_API_KEY` |
-| `ollama` | `http://localhost:11434/v1/` | no secret required; use internal placeholder |
+| `zhipu` | `https://open.bigmodel.cn/api/paas/v4/` | `ZAI_API_KEY`，其次兼容旧的 `LLM_API_KEY` |
+| `deepseek` | `https://api.deepseek.com` | `DEEPSEEK_API_KEY`，其次兼容旧的 `LLM_API_KEY` |
+| `ollama` | `http://localhost:11434/v1/` | 无需真实密钥，内部使用占位值 |
 | `qwen` | `https://dashscope.aliyuncs.com/compatible-mode/v1` | `DASHSCOPE_API_KEY` |
-| `modelscope` | editable deployment endpoint | `MODELSCOPE_API_TOKEN` |
+| `modelscope` | 用户可编辑的部署端点 | `MODELSCOPE_API_TOKEN` |
 | `huggingface` | `https://router.huggingface.co/v1` | `HF_TOKEN` |
-| `custom` | current `LLM_BASE_URL` value | `LLM_API_KEY` |
+| `custom` | 当前 `LLM_BASE_URL` | `LLM_API_KEY` |
 
-Provider selection fills the default base URL but never locks it. Model names remain editable because availability changes independently of the application. ModelScope uses a user-editable endpoint because online inference deployments can expose different URLs.
+选择提供商后自动填入默认 Base URL，但用户始终可以修改。模型名也始终允许编辑，因为可用模型会独立于本项目发生变化。ModelScope 在线推理服务的部署地址可能不同，因此其端点必须允许用户输入。
 
-All listed providers are called through the existing OpenAI Python client and its chat-completions interface. A clear compatibility error is shown when a selected endpoint does not implement that interface.
+所有提供商统一通过现有 OpenAI Python 客户端及 Chat Completions 接口调用。如果所选端点不兼容该接口，界面应显示明确的兼容性错误。
 
-### 4.3 Document discovery
+### 4.3 文档发现
 
-Document discovery is a pure function that:
+文档扫描实现为纯函数，行为如下：
 
-1. expands and resolves the entered local path;
-2. verifies that it is a readable directory;
-3. scans only its immediate children, matching current pipeline behavior;
-4. returns sorted `.md` and `.txt` file metadata;
-5. never creates a missing input directory.
+1. 展开并解析用户输入的本机路径；
+2. 验证路径是可读文件夹；
+3. 只扫描文件夹直接子文件，保持当前流水线行为；
+4. 返回按名称排序的 `.md` 和 `.txt` 文件元数据；
+5. 输入文件夹不存在时不得自动创建。
 
-The UI displays file name, extension, byte size, and selection state. The selected relative file names are copied into `PipelineConfig`; the worker revalidates them before reading to protect against stale UI state.
+界面显示文件名、扩展名、字节大小和选择状态。被选中的相对文件名写入 `PipelineConfig`；worker 在读取前再次校验文件，避免使用已经失效的界面状态。
 
-### 4.4 Chunking
+### 4.4 切片
 
-The existing Markdown-heading-aware algorithm remains the only strategy in this release. `LongDocLLMEntityExtractor` receives `max_chunk_size` from `ChunkingConfig` instead of setting `2000` internally.
+首版只保留现有 Markdown 标题感知算法。`LongDocLLMEntityExtractor` 从 `ChunkingConfig` 接收 `max_chunk_size`，不再在类内部固定为 `2000`。
 
-The UI labels the strategy as “Markdown 标题感知（当前默认）” and exposes maximum characters with:
+界面将策略显示为“Markdown 标题感知（当前默认）”，最大字符数参数范围为：
 
-- default: `2000`;
-- minimum: `200`;
-- maximum: `20000`;
-- step: `100`.
+- 默认值：`2000`；
+- 最小值：`200`；
+- 最大值：`20000`；
+- 步长：`100`。
 
-The selected value is stored in the sanitized experiment configuration snapshot and all produced chunks continue to be recorded in MySQL.
+所选长度写入脱敏后的实验配置快照，产生的全部切片继续保存到 MySQL。
 
-### 4.5 Pipeline events and cancellation
+### 4.5 流水线事件与取消
 
-`PipelineEvent` contains:
+`PipelineEvent` 包含：
 
-- timestamp;
-- level: `info`, `success`, `warning`, or `error`;
-- type;
-- pipeline stage;
-- human-readable message;
-- optional run id, document name, completed count, total count, and numeric metrics.
+- 时间戳；
+- 级别：`info`、`success`、`warning` 或 `error`；
+- 事件类型；
+- 流水线阶段；
+- 面向用户的消息；
+- 可选的 run id、文档名、完成数、总数和数值指标。
 
-Event types cover run start, document scan, document start/end, chunking, entity extraction, alignment, retrieval, triplet generation, persistence, cancellation, failure, and run completion.
+事件类型覆盖实验开始、文档扫描、文档开始/结束、切片、实体抽取、实体对齐、语义检索、三元组生成、数据持久化、取消、失败和实验完成。
 
-`CancellationToken` wraps a thread-safe event. The pipeline checks it:
+`CancellationToken` 封装线程安全事件。流水线在以下位置检查取消状态：
 
-- before each document;
-- before and after each extraction chunk request;
-- before each entity-alignment group request;
-- before each entity retrieval/triplet request;
-- before final correction and persistence boundaries.
+- 每篇文档开始前；
+- 每次切片抽取请求前后；
+- 每个实体对齐分组请求前；
+- 每次实体检索或三元组请求前；
+- 最终校正和持久化边界前。
 
-An in-flight HTTP request is not forcibly interrupted. Cancellation takes effect at the next safe boundary, prevents new LLM calls, closes storage clients, and sets the experiment and active document to `cancelled`.
+已经发出的 HTTP 请求不强制中断。取消操作在下一个安全边界生效，不再发起新的 LLM 请求，关闭存储客户端，并将实验和当前文档状态标记为 `cancelled`。
 
-### 4.6 Run registry
+### 4.6 运行注册表
 
-The process-local registry exposes:
+进程内运行注册表提供：
 
-- `start(config)`;
-- `request_cancel()`;
-- `snapshot()`;
-- `drain_events()`;
-- `is_running`.
+- `start(config)`；
+- `request_cancel()`；
+- `snapshot()`；
+- `drain_events()`；
+- `is_running`。
 
-`start` is protected by a lock and rejects a second active experiment. The worker catches all top-level exceptions, emits a terminal event, and always clears sensitive values and releases the active-run lock.
+`start` 使用锁保护，并拒绝启动第二个活动实验。worker 捕获所有顶层异常，发送终态事件，并始终清理敏感值和释放活动运行锁。
 
-The registry is created with Streamlit resource caching so normal script reruns do not lose the active thread. A full Streamlit process restart cannot resume the Python thread; persisted MySQL records remain available for diagnosis and are not claimed as resumable jobs.
+注册表通过 Streamlit 资源缓存创建，因此普通脚本重新执行不会丢失活动线程。若整个 Streamlit 进程重启，Python 线程无法恢复；MySQL 中已保存的数据仍可用于诊断，但本设计不把进程内线程描述为可恢复任务。
 
-## 5. Streamlit Information Architecture
+## 5. Streamlit 信息架构
 
-Add “运行实验” as the default navigation page and retain:
+新增“运行实验”并设为默认页面，同时保留：
 
-- 实验总览;
-- 实验批次;
-- 文档追踪;
-- LLM 调用;
-- 知识图谱.
+- 实验总览；
+- 实验批次；
+- 文档追踪；
+- LLM 调用；
+- 知识图谱。
 
-The run page uses the approved layout:
+运行页面使用已确认的“左侧配置、右侧监控”布局。
 
-### Left configuration column
+### 5.1 左侧配置区
 
-- experiment name;
-- local folder path;
-- scan/refresh action;
-- file preview and per-file selection;
-- provider selector;
-- model input;
-- editable base URL;
-- masked API key override and environment-configuration indicator;
-- current chunking strategy and maximum size;
-- expandable advanced settings for retrieval count, breakpoint filtering, and cache reuse;
-- start and stop controls.
+- 实验名称；
+- 本机文件夹路径；
+- 扫描/刷新按钮；
+- 文件预览和逐文件选择；
+- LLM 提供商选择；
+- 模型名输入；
+- 可编辑 Base URL；
+- 掩码显示的 API Key 临时覆盖框及环境变量配置状态；
+- 当前切片策略和最大长度；
+- 可展开的高级参数，包括检索数量、断点过滤和缓存复用；
+- 开始和停止按钮。
 
-MySQL and Milvus operational configuration remains environment-based. Existing read-only MySQL controls may remain on history pages, but credentials are not copied into experiment events.
+MySQL 和 Milvus 的运行配置继续由环境变量管理。历史页面可保留现有 MySQL 只读连接控件，但数据库凭据不得复制到实验事件中。
 
-### Right monitoring column
+### 5.2 右侧监控区
 
-- terminal status banner;
-- overall document progress;
-- current document and current stage;
-- metrics for processed documents, chunks, raw/aligned entities, LLM calls, and final triplets;
-- stage timeline;
-- bounded real-time event log showing the newest events first;
-- on completion, the run id and a direct action to inspect the persisted experiment.
+- 最终状态提示；
+- 文档总体进度；
+- 当前文档和当前阶段；
+- 已处理文档、切片、原始/对齐实体、LLM 调用和最终三元组指标；
+- 阶段时间线；
+- 有长度上限且最新事件优先的实时日志；
+- 完成后显示 run id，并提供查看本次持久化实验的入口。
 
-The monitoring fragment refreshes once per second only while a run is active. Static history pages do not continuously rerun.
+只有活动实验存在时，监控区域才每秒刷新。静态历史页面不得持续重新执行。
 
-## 6. Execution and Persistence Flow
+## 6. 执行和持久化流程
 
-1. The user enters a path and scans it.
-2. The UI previews eligible files and the user selects the experiment input.
-3. The user chooses provider, endpoint, model, and chunk size.
-4. Start performs local validation and verifies that MySQL and Milvus can initialize when enabled.
-5. The registry starts one background worker.
-6. The worker creates a MySQL experiment run using only the sanitized configuration.
-7. Each selected document runs through loading, chunking, entity extraction, entity alignment, retrieval, triplet generation, correction, and persistence.
-8. Each stage emits structured events and updates counters.
-9. Per-document failures are recorded and processing continues with the next selected document.
-10. The run ends as `completed`, `completed_with_errors`, `cancelled`, or `failed`.
-11. Storage clients close in `finally`, the API key is cleared from worker state, and the UI links to the persisted run.
+1. 用户输入本机路径并执行扫描。
+2. 界面预览符合条件的文件，用户选择本次实验输入。
+3. 用户选择提供商、端点、模型和切片长度。
+4. 点击开始后执行本地参数校验，并在启用 MySQL/Milvus 时验证其可初始化。
+5. 运行注册表创建一个后台 worker。
+6. worker 使用脱敏配置创建 MySQL 实验记录。
+7. 每个被选中的文档依次执行加载、切片、实体抽取、实体对齐、检索、三元组生成、校正和持久化。
+8. 每个阶段发送结构化事件并更新计数。
+9. 单篇文档失败时记录错误，并继续处理后续文档。
+10. 实验最终状态为 `completed`、`completed_with_errors`、`cancelled` 或 `failed`。
+11. `finally` 中关闭存储客户端、清理 worker 中的 API Key，并在界面提供实验查看入口。
 
-The existing command-line entry point remains functional by constructing `PipelineConfig` from environment-backed defaults and calling the same pipeline core.
+现有命令行入口继续可用：它从环境变量默认值构造 `PipelineConfig`，然后调用同一个流水线核心。
 
-## 7. Error Handling and Security
+## 7. 错误处理与安全
 
-### Validation errors
+### 7.1 参数校验错误
 
-Before starting, reject:
+启动前拒绝以下情况：
 
-- missing, unreadable, or non-directory input paths;
-- no eligible or no selected files;
-- selected files outside the resolved input directory;
-- missing provider credentials, except for Ollama;
-- blank model names or base URLs;
-- chunk sizes outside the supported range.
+- 输入路径不存在、不可读或不是文件夹；
+- 没有符合条件的文件，或没有选择任何文件；
+- 被选文件位于解析后的输入目录之外；
+- 缺少提供商凭据，Ollama 除外；
+- 模型名或 Base URL 为空；
+- 切片长度超出允许范围。
 
-### Runtime errors
+### 7.2 运行错误
 
-- Infrastructure initialization failures are fatal and produce a `failed` run when a run id exists.
-- A document failure marks that document `failed`, emits a sanitized message, and allows later documents to continue.
-- LLM request failures continue to use the existing recorder path so prompt and response metadata remain available when safe.
-- UI errors include the failed stage and a practical next action without exposing secrets.
+- 基础设施初始化失败属于致命错误；已经创建 run id 时，应将实验标记为 `failed`。
+- 单篇文档失败时将该文档标记为 `failed`，发送脱敏错误事件，并继续处理后续文档。
+- LLM 请求失败继续沿用现有 recorder 流程，在安全前提下保留提示词和响应元数据。
+- 界面错误信息必须说明失败阶段和可执行的下一步，但不得泄露凭据。
 
-### Secret handling
+### 7.3 密钥保护
 
-- Password inputs use Streamlit password fields.
-- Environment values are represented as “configured” rather than rendered.
-- `PipelineConfig.sanitized_snapshot()` maintains an explicit allowlist of persisted fields.
-- Event payloads do not accept arbitrary configuration dictionaries.
-- Exception rendering passes through a redactor for known credential values and common authorization-header patterns.
-- API keys are not written to MySQL, Milvus, debug JSON, logs, or the browser.
+- API Key 输入使用 Streamlit 密码框。
+- 环境变量只显示“已配置”，不回显具体值。
+- `PipelineConfig.sanitized_snapshot()` 使用允许字段白名单，而不是事后删除字段。
+- 事件载荷不接受任意配置字典。
+- 异常展示前使用脱敏器，处理已知凭据值和常见 Authorization Header 格式。
+- API Key 不得写入 MySQL、Milvus、调试 JSON、日志或浏览器页面。
 
-## 8. Testing Strategy
+## 8. 测试策略
 
-Use test-driven development for each behavior.
+每项行为均使用测试驱动开发。
 
-### Unit tests
+### 8.1 单元测试
 
-- provider defaults and environment fallback order;
-- Ollama placeholder behavior;
-- configuration validation;
-- secret redaction and sanitized snapshots;
-- document discovery, sorting, extension filtering, and path containment;
-- current chunking behavior at the default and a custom maximum size;
-- event construction and metric accumulation;
-- cancellation-token checks;
-- registry single-run locking and cleanup.
+- 提供商默认值和环境变量回退顺序；
+- Ollama 占位密钥行为；
+- 配置校验；
+- 密钥脱敏和安全配置快照；
+- 文档发现、排序、扩展名过滤和路径边界；
+- 默认长度与自定义长度下的现有切片行为；
+- 事件构造和指标累计；
+- 取消令牌检查；
+- 运行注册表的单任务锁和清理。
 
-### Pipeline tests
+### 8.2 流水线测试
 
-Use in-memory persistence, a null vector store, deterministic fake LLM clients, and temporary documents to verify:
+使用内存持久化、空向量存储、确定性的假 LLM 客户端和临时文档验证：
 
-- expected stage event order;
-- selected-file filtering;
-- completed and completed-with-errors status;
-- cancellation before a document and between LLM operations;
-- partial data remains available after cancellation;
-- no credential appears in snapshots or events.
+- 预期的阶段事件顺序；
+- 只处理用户选择的文件；
+- `completed` 和 `completed_with_errors` 状态；
+- 文档开始前和 LLM 操作之间的取消；
+- 取消后已产生的数据仍然可用；
+- 配置快照和事件中不存在凭据。
 
-### UI logic tests
+### 8.3 界面逻辑测试
 
-Keep scanning, provider resolution, form-to-config conversion, event reduction, and status presentation outside Streamlit widget code so they can be tested without a browser.
+文件扫描、提供商解析、表单转配置、事件归并和状态展示逻辑应与 Streamlit 控件代码分离，使其可以在不启动浏览器的情况下测试。
 
-### Verification
+### 8.4 验证
 
-- run the full test suite in `env_agent`;
-- compile the package;
-- run `git diff --check`;
-- start Streamlit headlessly and confirm the server reaches its ready state;
-- when a chat-capable Ollama model or online-provider credential is available, perform a manual local smoke run with one small document; otherwise report that live-provider verification was not run.
+- 在 `env_agent` 中运行完整测试套件；
+- 编译整个 Python 包；
+- 运行 `git diff --check`；
+- 以无界面方式启动 Streamlit，并确认服务进入就绪状态；
+- 若存在可聊天的 Ollama 模型或在线提供商凭据，使用一个小文档执行人工冒烟实验；否则明确报告未执行真实提供商验证。
 
-## 9. Acceptance Criteria
+## 9. 验收标准
 
-The feature is accepted when:
+满足以下条件后，本功能视为完成：
 
-1. `streamlit run kg_extract_build/dashboard.py` is the only application command required.
-2. A user can scan a local folder, preview eligible files, and select a subset.
-3. The approved providers appear with editable model and endpoint fields.
-4. Credentials load from `.env` or a session-only password input and never appear in persisted or displayed diagnostic data.
-5. The default heading-aware chunker produces the same output at size `2000` as before the change.
-6. Starting an experiment runs the existing pipeline and updates progress without starting a second command.
-7. Stop prevents subsequent work at the next safe boundary and persists `cancelled`.
-8. Existing experiment history and knowledge-graph pages continue to work.
-9. Automated tests, compilation, diff checks, and the Streamlit startup smoke test pass.
+1. 应用只需执行 `streamlit run kg_extract_build/dashboard.py`。
+2. 用户可以扫描本机文件夹、预览符合条件的文件并选择其中一部分。
+3. 已确认的提供商全部显示，并提供可编辑的模型名和端点。
+4. 凭据可来自 `.env` 或当前会话临时输入，且不会出现在持久化数据或诊断信息中。
+5. 最大长度为 `2000` 时，默认标题感知切片结果与修改前一致。
+6. 点击开始后运行现有流水线并实时更新进度，无需启动第二条命令。
+7. 点击停止后，流水线在下一个安全边界停止后续工作，并持久化 `cancelled` 状态。
+8. 现有实验历史和知识图谱页面继续正常工作。
+9. 自动化测试、编译检查、差异检查和 Streamlit 启动冒烟测试全部通过。
