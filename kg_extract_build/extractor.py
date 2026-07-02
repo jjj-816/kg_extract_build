@@ -11,12 +11,20 @@ NORMATIVE_ENTITY_TYPE = "规范条款"
 
 
 class LongDocLLMEntityExtractor:
-    def __init__(self, expert_entities, api_key, base_url, model_name, schema):
+    def __init__(
+        self,
+        expert_entities,
+        api_key,
+        base_url,
+        model_name,
+        schema,
+        max_chunk_size=2000,
+    ):
         self.expert_entities = expert_entities
         self.client = OpenAI(api_key=api_key, base_url=base_url)
         self.model = model_name
         self.schema = schema
-        self.max_chunk_size = 2000
+        self.max_chunk_size = int(max_chunk_size)
 
     def extract(self, full_text, recorder=None):
         print("=" * 50)
