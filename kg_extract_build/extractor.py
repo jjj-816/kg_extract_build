@@ -1,5 +1,6 @@
 import json
 import re
+import time
 
 from openai import OpenAI
 
@@ -17,16 +18,24 @@ class LongDocLLMEntityExtractor:
         self.schema = schema
         self.max_chunk_size = 2000
 
-    def extract(self, full_text):
+    def extract(self, full_text, recorder=None):
         print("=" * 50)
         print("[模块1] 长文档分块实体抽取")
         chunks = self._split_document(full_text)
         print(f"文档分块完成：共 {len(chunks)} 块")
+        if recorder is not None:
+            recorder.record_chunks("entity_extraction", chunks)
 
         all_entities = []
         for index, chunk in enumerate(chunks, start=1):
             print(f"  抽取第 {index} 块...")
-            all_entities.extend(self._extract_from_chunk(chunk))
+            all_entities.extend(
+                self._extract_from_chunk(
+                    chunk,
+                    recorder=recorder,
+                    chunk_index=index - 1,
+                )
+            )
 
         all_entities.extend(self._extract_normative_entities(full_text))
 
@@ -45,23 +54,24 @@ class LongDocLLMEntityExtractor:
 
     def _split_document(self, text):
         heading_re = re.compile(r"^(#{1,6})\s+(.*)", re.MULTILINE)
-        splits = [(m.start(), m.group(1), m.group(2)) for m in heading_re.finditer(text)]
-        if not splits:
+        headings = list(heading_re.finditer(text))
+        if not headings:
             return [text] if len(text) <= self.max_chunk_size else self._fixed_size_chunks(text)
 
+        segments = []
+        preamble = text[:headings[0].start()].strip()
+        if preamble:
+            segments.append(preamble)
+        for index, heading in enumerate(headings):
+            end = headings[index + 1].start() if index + 1 < len(headings) else len(text)
+            section = text[heading.start():end].strip()
+            if section:
+                segments.append(section)
+
         chunks = []
-        last_pos = 0
         current_chunk = ""
-        for start, level, title in splits:
-            segment = text[last_pos:start].strip()
-            last_pos = start
+        for segment in segments:
             current_chunk = self._append_segment(chunks, current_chunk, segment)
-
-            title_line = f"{level} {title}"
-            current_chunk = f"{current_chunk}\n{title_line}" if current_chunk else title_line
-
-        tail = text[last_pos:].strip()
-        current_chunk = self._append_segment(chunks, current_chunk, tail)
         if current_chunk:
             chunks.append(current_chunk.strip())
         return chunks
@@ -106,8 +116,8 @@ class LongDocLLMEntityExtractor:
             entities.append({"name": name, "type": self.schema.normalize_entity_type(NORMATIVE_ENTITY_TYPE)})
         return entities
 
-    def _extract_from_chunk(self, chunk):
-        prompt = f"""你是页岩气工程知识图谱实体抽取专家。
+    def _build_prompt(self, chunk):
+        return f"""你是页岩气工程知识图谱实体抽取专家。
 请只从给定文本中抽取真实出现的专业实体，并为每个实体标注实体类型。
 
 【实体类型schema】
@@ -127,6 +137,10 @@ class LongDocLLMEntityExtractor:
 文本：
 {chunk}
 """
+
+    def _extract_from_chunk(self, chunk, recorder=None, chunk_index=None):
+        prompt = self._build_prompt(chunk)
+        started = time.perf_counter()
         try:
             response = self.client.chat.completions.create(
                 model=self.model,
@@ -134,9 +148,35 @@ class LongDocLLMEntityExtractor:
                 temperature=0.1,
                 extra_body={"thinking": {"type": "disabled"}},
             )
-            return self._parse_entities(response.choices[0].message.content)
+            raw_response = response.choices[0].message.content
+            entities = self._parse_entities(raw_response)
+            if recorder is not None:
+                recorder.record_llm_call(
+                    stage="entity_extraction",
+                    prompt=prompt,
+                    raw_response=raw_response,
+                    parsed=entities,
+                    latency_ms=int((time.perf_counter() - started) * 1000),
+                    metadata={
+                        "chunk_type": "entity_extraction",
+                        "chunk_index": chunk_index,
+                    },
+                )
+            return entities
         except Exception as exc:
             print(f"实体抽取失败：{exc}")
+            if recorder is not None:
+                recorder.record_llm_call(
+                    stage="entity_extraction",
+                    prompt=prompt,
+                    latency_ms=int((time.perf_counter() - started) * 1000),
+                    success=False,
+                    error_message=str(exc),
+                    metadata={
+                        "chunk_type": "entity_extraction",
+                        "chunk_index": chunk_index,
+                    },
+                )
             return []
 
     def _parse_entities(self, raw_text):

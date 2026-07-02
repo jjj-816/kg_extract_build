@@ -23,9 +23,15 @@ class BreakpointManager:
 
 
 class DocumentLoader:
-    def __init__(self, folder_path, breakpoint_manager):
+    def __init__(
+        self,
+        folder_path,
+        breakpoint_manager,
+        respect_breakpoint=True,
+    ):
         self.folder_path = folder_path
         self.breakpoint_manager = breakpoint_manager
+        self.respect_breakpoint = respect_breakpoint
         self.folder_path.mkdir(parents=True, exist_ok=True)
 
     def load_all_unprocessed_docs(self):
@@ -33,7 +39,10 @@ class DocumentLoader:
         for file_name in os.listdir(self.folder_path):
             if not file_name.endswith((".txt", ".md")):
                 continue
-            if self.breakpoint_manager.is_processed(file_name):
+            if (
+                self.respect_breakpoint
+                and self.breakpoint_manager.is_processed(file_name)
+            ):
                 continue
             path = self.folder_path / file_name
             try:
@@ -42,4 +51,3 @@ class DocumentLoader:
             except Exception as exc:
                 print(f"读取失败 {file_name}：{exc}")
         return docs
-

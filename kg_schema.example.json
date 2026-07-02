@@ -1,0 +1,235 @@
+{
+  "entity_types": [
+    {
+      "name": "施工对象",
+      "description": "施工、监测或审核所针对的井筒、井场及相关部位。",
+      "examples": ["井", "井场", "井段", "层段", "井口", "套管"]
+    },
+    {
+      "name": "施工阶段",
+      "description": "页岩气施工过程中具有工艺顺序的阶段环节。",
+      "examples": ["钻井", "完井", "压裂", "返排", "试气"]
+    },
+    {
+      "name": "作业活动",
+      "description": "施工过程中实际执行的操作、工序或检查行为。",
+      "examples": ["试压", "泵注", "加砂", "射孔", "返排", "检查"]
+    },
+    {
+      "name": "设备工具",
+      "description": "施工过程中使用的设备、装置、仪器或工具。",
+      "examples": ["高压管汇", "压裂车", "防喷器", "混砂车"]
+    },
+    {
+      "name": "材料介质",
+      "description": "施工中使用、注入、返排或处理的材料和介质。",
+      "examples": ["压裂液", "支撑剂", "返排液", "暂堵剂"]
+    },
+    {
+      "name": "施工参数",
+      "description": "描述施工状态、工艺控制或监测结果的参数。",
+      "examples": ["泵压", "排量", "砂比", "液量", "套压"]
+    },
+    {
+      "name": "阈值约束",
+      "description": "对参数、作业或环保指标提出的限制性要求。",
+      "examples": ["设计上限", "允许范围", "最小要求"]
+    },
+    {
+      "name": "风险事件",
+      "description": "施工中可能发生或已经发生的异常、风险或事故。",
+      "examples": ["井喷", "泄漏", "超压", "砂堵", "污染"]
+    },
+    {
+      "name": "控制措施",
+      "description": "为预防、控制或处置风险而采取的措施。",
+      "examples": ["停泵", "泄压", "复检", "隔离", "整改"]
+    },
+    {
+      "name": "环保对象",
+      "description": "施工可能影响或需要保护的环境对象。",
+      "examples": ["废液池", "地下水", "土壤", "噪声", "排放物"]
+    },
+    {
+      "name": "规范条款",
+      "description": "审核所依据的标准、规范、章节或条款。",
+      "examples": ["标准", "章节", "条款", "子条款"]
+    },
+    {
+      "name": "施工记录",
+      "description": "记录实际施工过程、参数或检查结果的资料。",
+      "examples": ["日报", "试压记录", "泵注记录", "检查表"]
+    },
+    {
+      "name": "时空信息",
+      "description": "表示施工时间、阶段、位置或区域的信息。",
+      "examples": ["时间点", "施工前", "井口区域", "管汇区"]
+    },
+    {
+      "name": "责任主体",
+      "description": "参与施工、监督、检查或整改的单位和人员。",
+      "examples": ["施工单位", "监理单位", "安全员", "操作人员"]
+    },
+    {
+      "name": "审核状态",
+      "description": "对施工内容或记录形成的审核判断结果。",
+      "examples": ["合规", "不合规", "缺失", "异常", "待复核"]
+    }
+  ],
+  "relation_types": [
+    {
+      "name": "HAS_STAGE",
+      "cn_name": "包含施工阶段",
+      "description": "某施工对象包含或涉及某施工阶段",
+      "head_types": ["施工对象"],
+      "tail_types": ["施工阶段"]
+    },
+    {
+      "name": "HAS_OPERATION",
+      "cn_name": "包含作业活动",
+      "description": "某施工阶段包含某项作业活动",
+      "head_types": ["施工阶段"],
+      "tail_types": ["作业活动"]
+    },
+    {
+      "name": "HAS_SUB_OPERATION",
+      "cn_name": "包含子作业",
+      "description": "某项作业活动可进一步分解为子作业",
+      "head_types": ["作业活动"],
+      "tail_types": ["作业活动"]
+    },
+    {
+      "name": "HAS_SECTION",
+      "cn_name": "包含井段/层段",
+      "description": "井、井场等施工对象包含井段、层段等子对象",
+      "head_types": ["施工对象"],
+      "tail_types": ["施工对象"]
+    },
+    {
+      "name": "HAS_CLAUSE",
+      "cn_name": "包含条款",
+      "description": "标准、规范或章节包含下级条款",
+      "head_types": ["规范条款"],
+      "tail_types": ["规范条款"]
+    },
+    {
+      "name": "HAS_RECORD",
+      "cn_name": "包含记录",
+      "description": "某对象、阶段或作业对应某类施工记录",
+      "head_types": ["施工对象", "施工阶段", "作业活动"],
+      "tail_types": ["施工记录"]
+    },
+    {
+      "name": "PRECEDES",
+      "cn_name": "先于",
+      "description": "表示施工阶段或作业活动之间的先后顺序",
+      "head_types": ["施工阶段", "作业活动"],
+      "tail_types": ["施工阶段", "作业活动"]
+    },
+    {
+      "name": "REQUIRES_PRECONDITION",
+      "cn_name": "需要前置条件",
+      "description": "某作业开始前需要满足的前置条件",
+      "head_types": ["作业活动"],
+      "tail_types": ["作业活动", "阈值约束"]
+    },
+    {
+      "name": "OPERATES_ON",
+      "cn_name": "作用于",
+      "description": "某作业活动作用于某对象、设备或环保对象",
+      "head_types": ["作业活动"],
+      "tail_types": ["施工对象", "设备工具", "环保对象"]
+    },
+    {
+      "name": "USES_EQUIPMENT",
+      "cn_name": "使用设备",
+      "description": "某作业活动需要或使用某设备工具",
+      "head_types": ["作业活动"],
+      "tail_types": ["设备工具"]
+    },
+    {
+      "name": "USES_MATERIAL",
+      "cn_name": "使用材料",
+      "description": "某作业活动使用某材料或介质",
+      "head_types": ["作业活动"],
+      "tail_types": ["材料介质"]
+    },
+    {
+      "name": "HAS_PARAMETER",
+      "cn_name": "具有参数",
+      "description": "某作业、设备、对象或记录涉及某施工参数",
+      "head_types": ["作业活动", "设备工具", "施工对象", "施工记录"],
+      "tail_types": ["施工参数"]
+    },
+    {
+      "name": "HAS_THRESHOLD",
+      "cn_name": "具有阈值",
+      "description": "某施工参数具有对应的阈值或控制要求",
+      "head_types": ["施工参数"],
+      "tail_types": ["阈值约束"]
+    },
+    {
+      "name": "REGULATES",
+      "cn_name": "规范约束",
+      "description": "某规范条款对某对象或行为形成约束",
+      "head_types": ["规范条款"],
+      "tail_types": ["施工阶段", "作业活动", "设备工具", "施工参数", "环保对象"]
+    },
+    {
+      "name": "REQUIRES",
+      "cn_name": "要求",
+      "description": "某规范条款要求执行某作业、采取某措施、保留某记录或满足某约束",
+      "head_types": ["规范条款"],
+      "tail_types": ["作业活动", "控制措施", "施工记录", "阈值约束"]
+    },
+    {
+      "name": "SPECIFIES_THRESHOLD",
+      "cn_name": "规定阈值",
+      "description": "某规范条款规定具体阈值、范围或限制要求",
+      "head_types": ["规范条款"],
+      "tail_types": ["阈值约束"]
+    },
+    {
+      "name": "TRIGGERS_RISK",
+      "cn_name": "触发风险",
+      "description": "某作业、设备、材料、参数异常或约束条件可能引发风险",
+      "head_types": ["作业活动", "设备工具", "材料介质", "施工参数", "阈值约束"],
+      "tail_types": ["风险事件"]
+    },
+    {
+      "name": "MITIGATED_BY",
+      "cn_name": "由措施控制",
+      "description": "某风险事件可通过某控制措施进行预防、控制或处置",
+      "head_types": ["风险事件"],
+      "tail_types": ["控制措施"]
+    },
+    {
+      "name": "RECORDED_IN",
+      "cn_name": "记录于",
+      "description": "某作业、参数、风险或措施应记录在某类施工记录中",
+      "head_types": ["作业活动", "施工参数", "风险事件", "控制措施"],
+      "tail_types": ["施工记录"]
+    },
+    {
+      "name": "OCCURS_AT",
+      "cn_name": "发生于",
+      "description": "某阶段、作业、事件或记录发生在特定时间或空间位置",
+      "head_types": ["施工阶段", "作业活动", "风险事件", "施工记录"],
+      "tail_types": ["时空信息"]
+    },
+    {
+      "name": "LOCATED_IN",
+      "cn_name": "位于",
+      "description": "某对象、设备或环保对象位于某区域、位置或部位",
+      "head_types": ["施工对象", "设备工具", "环保对象"],
+      "tail_types": ["时空信息"]
+    },
+    {
+      "name": "RESPONSIBLE_FOR",
+      "cn_name": "负责",
+      "description": "某单位、岗位或人员负责某作业、记录、措施或风险处置",
+      "head_types": ["责任主体"],
+      "tail_types": ["作业活动", "施工记录", "控制措施", "风险事件"]
+    }
+  ]
+}

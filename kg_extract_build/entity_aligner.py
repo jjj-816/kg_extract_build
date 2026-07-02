@@ -1,5 +1,6 @@
 ﻿import json
 import re
+import time
 from difflib import SequenceMatcher
 
 import numpy as np
@@ -66,7 +67,7 @@ class EntityAligner:
         self._embedding_model = None
         self._embedding_model_load_failed = False
 
-    def align(self, entities, source_type="case"):
+    def align(self, entities, source_type="case", recorder=None):
         if not entities:
             return [], {}
 
@@ -82,7 +83,7 @@ class EntityAligner:
             if len(group) <= 1:
                 continue
 
-            decision = self._judge_group(group)
+            decision = self._judge_group(group, recorder=recorder)
             same_groups = decision.get("same_groups", [])
             for same_group in same_groups:
                 members = self._valid_members(same_group.get("members", []), group)
@@ -238,8 +239,9 @@ class EntityAligner:
                     split_groups.append(chunk)
         return split_groups
 
-    def _judge_group(self, group):
+    def _judge_group(self, group, recorder=None):
         prompt = self._build_prompt(group)
+        started = time.perf_counter()
         try:
             response = self.client.chat.completions.create(
                 model=self.model,
@@ -247,10 +249,41 @@ class EntityAligner:
                 temperature=0.1,
                 extra_body={"thinking": {"type": "disabled"}},
             )
-            return self._parse_decision(response.choices[0].message.content)
+            raw_response = response.choices[0].message.content
+            decision = self._parse_decision(raw_response)
+            if recorder is not None:
+                recorder.record_llm_call(
+                    stage="entity_alignment",
+                    prompt=prompt,
+                    raw_response=raw_response,
+                    parsed=decision,
+                    latency_ms=int((time.perf_counter() - started) * 1000),
+                    metadata={
+                        "candidate_entities": [
+                            entity["name"] for entity in group
+                        ]
+                    },
+                )
+            return decision
         except Exception as exc:
             print(f"[实体对齐] LLM判断失败，使用规则兜底：{exc}")
-            return self._fallback_decision(group)
+            decision = self._fallback_decision(group)
+            if recorder is not None:
+                recorder.record_llm_call(
+                    stage="entity_alignment",
+                    prompt=prompt,
+                    parsed=decision,
+                    latency_ms=int((time.perf_counter() - started) * 1000),
+                    success=False,
+                    error_message=str(exc),
+                    metadata={
+                        "candidate_entities": [
+                            entity["name"] for entity in group
+                        ],
+                        "fallback": "rule",
+                    },
+                )
+            return decision
 
     def _build_prompt(self, group):
         items = [
@@ -387,4 +420,3 @@ class EntityAligner:
             aliases = set(entity_map[name].get("aliases", [])) | set(entity.get("aliases", []))
             entity_map[name]["aliases"] = sorted(aliases)
         return sorted(entity_map.values(), key=lambda item: item["name"])
-

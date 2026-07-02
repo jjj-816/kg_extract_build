@@ -1,0 +1,8 @@
+numpy>=1.26
+openai>=1.30
+pandas>=2.0
+pymilvus>=2.6,<3
+pymysql>=1.1
+python-dotenv>=1.0
+sentence-transformers>=3.0
+streamlit>=1.40

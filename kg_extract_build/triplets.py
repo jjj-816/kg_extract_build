@@ -1,5 +1,6 @@
 import json
 import re
+import time
 
 from openai import OpenAI
 
@@ -7,30 +8,77 @@ from .settings import UNKNOWN_TYPE
 
 
 class TripletGenerator:
-    def __init__(self, api_key, base_url, model_name, doc_name, debug_dir, schema, known_entities=None):
+    def __init__(
+        self,
+        api_key,
+        base_url,
+        model_name,
+        doc_name,
+        debug_dir,
+        schema,
+        known_entities=None,
+        recorder=None,
+    ):
         self.client = OpenAI(api_key=api_key, base_url=base_url)
         self.model = model_name
         self.schema = schema
         self.known_entities = known_entities or {}
+        self.recorder = recorder
         self.debug_dir = debug_dir / self._clean_filename(doc_name.rsplit(".", 1)[0])
         self.debug_dir.mkdir(parents=True, exist_ok=True)
 
     def generate(self, entity, context):
         entity_name = entity["name"]
         entity_type = entity.get("type", UNKNOWN_TYPE)
+        prompt = self._build_prompt(entity_name, entity_type, context)
+        started = time.perf_counter()
         try:
             response = self.client.chat.completions.create(
                 model=self.model,
-                messages=[{"role": "user", "content": self._build_prompt(entity_name, entity_type, context)}],
+                messages=[{"role": "user", "content": prompt}],
                 temperature=0.1,
                 extra_body={"thinking": {"type": "disabled"}},
             )
             raw_result = response.choices[0].message.content.strip()
             triplets = self._parse_triplets(raw_result, entity_name, entity_type, context)
-            self._save_debug(entity_name, raw_result, triplets)
+            llm_call_id = None
+            if self.recorder is not None:
+                llm_call_id = self.recorder.record_llm_call(
+                    stage="triplet_extraction",
+                    prompt=prompt,
+                    raw_response=raw_result,
+                    parsed=triplets,
+                    latency_ms=int((time.perf_counter() - started) * 1000),
+                    entity_name=entity_name,
+                    metadata={"context": context, "entity_type": entity_type},
+                )
+                self.recorder.record_triplets(
+                    "raw",
+                    triplets,
+                    entity_name=entity_name,
+                    source_kind="model",
+                    source_llm_call_id=llm_call_id,
+                )
+            self._save_debug(
+                entity_name,
+                prompt,
+                raw_result,
+                triplets,
+                llm_call_id=llm_call_id,
+            )
             return triplets
         except Exception as exc:
             print(f"三元组抽取失败 {entity_name}：{exc}")
+            if self.recorder is not None:
+                self.recorder.record_llm_call(
+                    stage="triplet_extraction",
+                    prompt=prompt,
+                    latency_ms=int((time.perf_counter() - started) * 1000),
+                    success=False,
+                    error_message=str(exc),
+                    entity_name=entity_name,
+                    metadata={"context": context, "entity_type": entity_type},
+                )
             return []
 
     def load_saved_triplets(self, entity_name):
@@ -145,10 +193,28 @@ head_type="{entity_type}"
                 })
         return triplets
 
-    def _save_debug(self, entity_name, raw_text, triplets):
+    def _save_debug(
+        self,
+        entity_name,
+        prompt,
+        raw_text,
+        triplets,
+        llm_call_id=None,
+    ):
         save_path = self._debug_path(entity_name)
         with save_path.open("w", encoding="utf-8") as f:
-            json.dump({"entity": entity_name, "raw": raw_text, "triplets": triplets}, f, ensure_ascii=False, indent=2)
+            json.dump(
+                {
+                    "entity": entity_name,
+                    "prompt": prompt,
+                    "raw": raw_text,
+                    "triplets": triplets,
+                    "llm_call_id": llm_call_id,
+                },
+                f,
+                ensure_ascii=False,
+                indent=2,
+            )
 
     def _debug_path(self, entity_name):
         return self.debug_dir / f"{self._clean_filename(entity_name)}.json"
