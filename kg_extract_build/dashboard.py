@@ -158,9 +158,13 @@ def choose_run(config, key):
         )
         for item in runs
     }
+    run_ids = list(labels)
+    preferred = st.session_state.get("preferred_run_id")
+    default_index = run_ids.index(preferred) if preferred in run_ids else 0
     selected = st.selectbox(
         "实验批次",
-        options=list(labels),
+        options=run_ids,
+        index=default_index,
         format_func=lambda value: labels[value],
         key=key,
     )
@@ -506,26 +510,35 @@ def setup_help():
     )
 
 
-config = connection_config()
+from kg_extract_build.dashboard_run import render_run_page
+
+requested_page = st.session_state.pop("requested_navigation_page", None)
+if requested_page is not None:
+    st.session_state["navigation_page"] = requested_page
+
 page = st.sidebar.radio(
     "导航",
-    ["实验总览", "实验批次", "文档追踪", "LLM 调用", "知识图谱"],
+    ["运行实验", "实验总览", "实验批次", "文档追踪", "LLM 调用", "知识图谱"],
+    key="navigation_page",
 )
-st.sidebar.caption("所有页面均从 MySQL 实时读取，不依赖散落的 JSON 文件。")
 
-try:
-    with st.spinner("正在读取实验数据库…"):
-        if page == "实验总览":
-            overview_page(config)
-        elif page == "实验批次":
-            runs_page(config)
-        elif page == "文档追踪":
-            documents_page(config)
-        elif page == "LLM 调用":
-            llm_page(config)
-        else:
-            graph_page(config)
-except Exception as exc:
-    setup_help()
-    with st.expander("错误详情"):
-        st.code(str(exc), language="text")
+if page == "运行实验":
+    render_run_page()
+else:
+    config = connection_config()
+    try:
+        with st.spinner("正在读取实验数据库…"):
+            if page == "实验总览":
+                overview_page(config)
+            elif page == "实验批次":
+                runs_page(config)
+            elif page == "文档追踪":
+                documents_page(config)
+            elif page == "LLM 调用":
+                llm_page(config)
+            else:
+                graph_page(config)
+    except Exception as exc:
+        setup_help()
+        with st.expander("错误详情"):
+            st.code(str(exc), language="text")
