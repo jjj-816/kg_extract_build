@@ -275,6 +275,71 @@ class RunConfigTests(unittest.TestCase):
             self.assertFalse(snapshot["reuse_entity_cache"])
             self.assertFalse(snapshot["reuse_triplet_cache"])
 
+    def test_sanitized_snapshot_redacts_key_from_base_url(self):
+        with tempfile.TemporaryDirectory() as folder:
+            Path(folder, "document.md").write_text("content", encoding="utf-8")
+            config = self.make_config(
+                folder,
+                api_key="sk-leaked",
+                base_url="https://sk-leaked@api.deepseek.com/v1/",
+                model="sk-leaked-model",
+            )
+
+            snapshot = config.sanitized_snapshot()
+            serialized = json.dumps(snapshot, ensure_ascii=False)
+
+            self.assertNotIn("sk-leaked", serialized)
+            self.assertIn("***@api.deepseek.com", snapshot["llm"]["base_url"])
+            self.assertIn("***-model", snapshot["llm"]["model"])
+
+    def test_key_override_is_stripped_of_surrounding_whitespace(self):
+        self.assertEqual(
+            run_config.resolve_provider_api_key(
+                "deepseek",
+                override="  sk-abc  ",
+                environ={},
+            ),
+            "sk-abc",
+        )
+
+    def test_key_from_environment_is_stripped(self):
+        self.assertEqual(
+            run_config.resolve_provider_api_key(
+                "deepseek",
+                environ={"DEEPSEEK_API_KEY": "  sk-env  "},
+            ),
+            "sk-env",
+        )
+
+    def test_whitespace_only_override_falls_back_to_environment(self):
+        self.assertEqual(
+            run_config.resolve_provider_api_key(
+                "deepseek",
+                override="   ",
+                environ={"DEEPSEEK_API_KEY": "sk-env"},
+            ),
+            "sk-env",
+        )
+
+    def test_pipeline_config_uses_default_chunking_when_omitted(self):
+        with tempfile.TemporaryDirectory() as folder:
+            Path(folder, "document.md").write_text("content", encoding="utf-8")
+            config = run_config.PipelineConfig(
+                run_name="default-chunking",
+                document_folder=Path(folder),
+                selected_files=("document.md",),
+                llm=run_config.LLMConfig(
+                    provider_id="deepseek",
+                    api_key="secret",
+                    base_url="https://api.deepseek.com",
+                    model="deepseek-chat",
+                ),
+            )
+
+            self.assertEqual(config.chunking.strategy, "markdown_heading")
+            self.assertEqual(config.chunking.max_chars, 2000)
+            self.assertIsNone(config.validate())
+
     def test_online_provider_requires_api_key(self):
         with tempfile.TemporaryDirectory() as folder:
             Path(folder, "document.md").write_text("content", encoding="utf-8")

@@ -89,12 +89,12 @@ def resolve_provider_api_key(
     """Resolve an API key without persisting a UI-provided override."""
 
     preset = _provider(provider_id)
-    if override:
-        return override
+    if override.strip():
+        return override.strip()
 
     source = os.environ if environ is None else environ
     for key in preset.env_keys:
-        value = source.get(key, "")
+        value = source.get(key, "").strip()
         if value:
             return value
 
@@ -127,10 +127,11 @@ class LLMConfig:
     model: str
 
     def sanitized(self) -> dict[str, object]:
+        secret = (self.api_key,) if self.api_key else ()
         return {
             "provider_id": self.provider_id,
-            "base_url": self.base_url,
-            "model": self.model,
+            "base_url": redact_text(self.base_url, secrets=secret),
+            "model": redact_text(self.model, secrets=secret),
             "api_key_configured": bool(self.api_key),
         }
 
@@ -147,7 +148,7 @@ class PipelineConfig:
     document_folder: Path
     selected_files: tuple[str, ...]
     llm: LLMConfig
-    chunking: ChunkingConfig
+    chunking: ChunkingConfig = field(default_factory=ChunkingConfig)
     retrieve_sentence_num: int = 10
     respect_legacy_breakpoint: bool = False
     reuse_entity_cache: bool = False
