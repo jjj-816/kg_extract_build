@@ -436,12 +436,21 @@ class MySQLExperimentStore:
 
 
 class ExperimentRecorder:
-    def __init__(self, store, vector_store, run_id, document_id, model_name=""):
+    def __init__(
+        self,
+        store,
+        vector_store,
+        run_id,
+        document_id,
+        model_name="",
+        event_callback=None,
+    ):
         self.store = store
         self.vector_store = vector_store
         self.run_id = run_id
         self.document_id = document_id
         self.model_name = model_name
+        self.event_callback = event_callback
         self._chunk_ids = {}
 
     def record_chunks(self, chunk_type, chunks, embeddings=None):
@@ -508,7 +517,7 @@ class ExperimentRecorder:
         chunk_id = None
         if "chunk_type" in metadata and "chunk_index" in metadata:
             chunk_id = self.chunk_id(metadata["chunk_type"], metadata["chunk_index"])
-        return self.store.save_llm_call(
+        call_id = self.store.save_llm_call(
             run_id=self.run_id,
             document_id=self.document_id,
             chunk_id=chunk_id,
@@ -523,6 +532,9 @@ class ExperimentRecorder:
             success=success,
             error_message=error_message,
         )
+        if self.event_callback is not None:
+            self.event_callback({"stage": stage, "success": success})
+        return call_id
 
     def record_entities(self, stage, entities):
         records = []

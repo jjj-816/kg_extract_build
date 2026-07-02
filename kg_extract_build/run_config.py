@@ -200,3 +200,28 @@ class PipelineConfig:
             "reuse_entity_cache": self.reuse_entity_cache,
             "reuse_triplet_cache": self.reuse_triplet_cache,
         }
+
+    @classmethod
+    def from_settings(cls):
+        from . import settings
+
+        provider_id = os.environ.get("LLM_PROVIDER", "zhipu")
+        return cls(
+            run_name=settings.EXPERIMENT_RUN_NAME or "",
+            document_folder=settings.DOCUMENT_FOLDER,
+            selected_files=tuple(),
+            llm=LLMConfig(
+                provider_id=provider_id,
+                api_key=resolve_provider_api_key(provider_id),
+                base_url=os.environ.get(
+                    "LLM_BASE_URL",
+                    PROVIDERS[provider_id].default_base_url,
+                ),
+                model=settings.LLM_MODEL,
+            ),
+            chunking=ChunkingConfig(),
+            retrieve_sentence_num=settings.RETRIEVE_SENTENCE_NUM,
+            respect_legacy_breakpoint=settings.RESPECT_LEGACY_BREAKPOINT,
+            reuse_entity_cache=settings.REUSE_ENTITY_CACHE,
+            reuse_triplet_cache=settings.REUSE_TRIPLET_CACHE,
+        )

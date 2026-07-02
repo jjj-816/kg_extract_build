@@ -6,6 +6,7 @@ from difflib import SequenceMatcher
 import numpy as np
 from openai import OpenAI
 
+from .run_config import redact_text
 from .settings import UNKNOWN_TYPE, VECTOR_MODEL_PATH
 
 
@@ -66,8 +67,16 @@ class EntityAligner:
         self.max_group_size = max_group_size
         self._embedding_model = None
         self._embedding_model_load_failed = False
+        self._secret_values = (api_key,)
 
-    def align(self, entities, source_type="case", recorder=None):
+    def align(
+        self,
+        entities,
+        source_type="case",
+        recorder=None,
+        cancel_token=None,
+        progress_callback=None,
+    ):
         if not entities:
             return [], {}
 
@@ -79,11 +88,17 @@ class EntityAligner:
         consumed = set()
         aligned_entities = []
 
-        for group in candidate_groups:
+        for index, group in enumerate(candidate_groups, start=1):
+            if cancel_token is not None:
+                cancel_token.raise_if_cancelled()
             if len(group) <= 1:
                 continue
 
             decision = self._judge_group(group, recorder=recorder)
+            if cancel_token is not None:
+                cancel_token.raise_if_cancelled()
+            if progress_callback is not None:
+                progress_callback(index, len(candidate_groups))
             same_groups = decision.get("same_groups", [])
             for same_group in same_groups:
                 members = self._valid_members(same_group.get("members", []), group)
@@ -266,7 +281,8 @@ class EntityAligner:
                 )
             return decision
         except Exception as exc:
-            print(f"[实体对齐] LLM判断失败，使用规则兜底：{exc}")
+            safe_error = redact_text(str(exc), secrets=self._secret_values)
+            print(f"[实体对齐] LLM判断失败，使用规则兜底：{safe_error}")
             decision = self._fallback_decision(group)
             if recorder is not None:
                 recorder.record_llm_call(
@@ -275,7 +291,7 @@ class EntityAligner:
                     parsed=decision,
                     latency_ms=int((time.perf_counter() - started) * 1000),
                     success=False,
-                    error_message=str(exc),
+                    error_message=safe_error,
                     metadata={
                         "candidate_entities": [
                             entity["name"] for entity in group

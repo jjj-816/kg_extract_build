@@ -4,6 +4,7 @@ import time
 
 from openai import OpenAI
 
+from .run_config import redact_text
 from .settings import UNKNOWN_TYPE
 
 
@@ -25,8 +26,17 @@ class LongDocLLMEntityExtractor:
         self.model = model_name
         self.schema = schema
         self.max_chunk_size = int(max_chunk_size)
+        self._secret_values = (api_key,)
 
-    def extract(self, full_text, recorder=None):
+    def extract(
+        self,
+        full_text,
+        recorder=None,
+        cancel_token=None,
+        progress_callback=None,
+    ):
+        if cancel_token is not None:
+            cancel_token.raise_if_cancelled()
         print("=" * 50)
         print("[模块1] 长文档分块实体抽取")
         chunks = self._split_document(full_text)
@@ -36,6 +46,8 @@ class LongDocLLMEntityExtractor:
 
         all_entities = []
         for index, chunk in enumerate(chunks, start=1):
+            if cancel_token is not None:
+                cancel_token.raise_if_cancelled()
             print(f"  抽取第 {index} 块...")
             all_entities.extend(
                 self._extract_from_chunk(
@@ -44,6 +56,10 @@ class LongDocLLMEntityExtractor:
                     chunk_index=index - 1,
                 )
             )
+            if cancel_token is not None:
+                cancel_token.raise_if_cancelled()
+            if progress_callback is not None:
+                progress_callback(index, len(chunks))
 
         all_entities.extend(self._extract_normative_entities(full_text))
 
@@ -172,14 +188,15 @@ class LongDocLLMEntityExtractor:
                 )
             return entities
         except Exception as exc:
-            print(f"实体抽取失败：{exc}")
+            safe_error = redact_text(str(exc), secrets=self._secret_values)
+            print(f"实体抽取失败：{safe_error}")
             if recorder is not None:
                 recorder.record_llm_call(
                     stage="entity_extraction",
                     prompt=prompt,
                     latency_ms=int((time.perf_counter() - started) * 1000),
                     success=False,
-                    error_message=str(exc),
+                    error_message=safe_error,
                     metadata={
                         "chunk_type": "entity_extraction",
                         "chunk_index": chunk_index,

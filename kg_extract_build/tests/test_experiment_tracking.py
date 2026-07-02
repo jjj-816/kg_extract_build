@@ -80,6 +80,28 @@ class ExperimentRecorderTests(unittest.TestCase):
         self.assertEqual(store.retrieval_results[0]["chunk_id"], recorder.chunk_id("retrieval_sentence", 0))
         self.assertEqual(store.triplets[0]["head"], "井口")
 
+    def test_reports_each_persisted_llm_call_to_callback(self):
+        store = MemoryExperimentStore()
+        run_id = store.start_run("test", {}, {}, "")
+        document_id = store.start_document(
+            run_id, "doc.md", "case", "abc", "text"
+        )
+        callbacks = []
+        recorder = ExperimentRecorder(
+            store,
+            FakeVectorStore(),
+            run_id,
+            document_id,
+            model_name="model",
+            event_callback=callbacks.append,
+        )
+        recorder.record_llm_call(
+            stage="entity_extraction", prompt="prompt"
+        )
+        self.assertEqual(
+            callbacks, [{"stage": "entity_extraction", "success": True}]
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -4,6 +4,7 @@ import time
 
 from openai import OpenAI
 
+from .run_config import redact_text
 from .settings import UNKNOWN_TYPE
 
 
@@ -26,6 +27,7 @@ class TripletGenerator:
         self.recorder = recorder
         self.debug_dir = debug_dir / self._clean_filename(doc_name.rsplit(".", 1)[0])
         self.debug_dir.mkdir(parents=True, exist_ok=True)
+        self._secret_values = (api_key,)
 
     def generate(self, entity, context):
         entity_name = entity["name"]
@@ -68,14 +70,15 @@ class TripletGenerator:
             )
             return triplets
         except Exception as exc:
-            print(f"三元组抽取失败 {entity_name}：{exc}")
+            safe_error = redact_text(str(exc), secrets=self._secret_values)
+            print(f"三元组抽取失败 {entity_name}：{safe_error}")
             if self.recorder is not None:
                 self.recorder.record_llm_call(
                     stage="triplet_extraction",
                     prompt=prompt,
                     latency_ms=int((time.perf_counter() - started) * 1000),
                     success=False,
-                    error_message=str(exc),
+                    error_message=safe_error,
                     entity_name=entity_name,
                     metadata={"context": context, "entity_type": entity_type},
                 )
