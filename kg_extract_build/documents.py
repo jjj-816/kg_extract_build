@@ -74,6 +74,16 @@ class DocumentLoader:
             for name in self.selected_files:
                 if Path(name).name != name:
                     raise ValueError(f"只能选择当前目录中的文件名：{name}")
+                target = self.folder_path / name
+                if not target.is_file():
+                    raise ValueError(f"选定文件不存在或无法访问：{name}")
+                resolved = target.resolve()
+                if not str(resolved).startswith(
+                    str(self.folder_path)
+                ):
+                    raise ValueError(
+                        f"选定文件不在文档文件夹内：{name}"
+                    )
 
     def load_all_unprocessed_docs(self):
         docs = {}

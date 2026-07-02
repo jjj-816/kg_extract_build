@@ -132,5 +132,44 @@ class PipelineControlTests(unittest.TestCase):
         self.assertNotIn("ollama\"", snapshot_str)
 
 
+    def test_all_documents_failed_sets_failed_status(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "a.md").write_text("内容", encoding="utf-8")
+            config = PipelineConfig(
+                run_name="全失败测试",
+                document_folder=root,
+                selected_files=("a.md",),
+                llm=LLMConfig(
+                    "ollama",
+                    "ollama",
+                    "http://localhost:11434/v1/",
+                    "qwen3",
+                ),
+                chunking=ChunkingConfig(),
+            )
+            store = MemoryExperimentStore()
+            events = []
+            with (
+                patch("kg_extract_build.pipeline.KGSchema", return_value=Schema()),
+                patch("kg_extract_build.pipeline.build_experiment_store", return_value=store),
+                patch("kg_extract_build.pipeline.build_vector_store", return_value=NullVectorStore()),
+                patch("kg_extract_build.pipeline.current_code_commit", return_value="commit"),
+                patch("kg_extract_build.extractor.OpenAI"),
+                patch("kg_extract_build.entity_aligner.OpenAI"),
+                patch(
+                    "kg_extract_build.extractor.LongDocLLMEntityExtractor.extract",
+                    side_effect=RuntimeError("LLM unavailable"),
+                ),
+            ):
+                run_id = run_pipeline(config, events.append)
+
+        self.assertEqual(store.runs[run_id]["status"], "failed")
+        terminal = [
+            e for e in events if e.event_type in {"failed", "completed_with_errors", "completed"}
+        ]
+        self.assertEqual(terminal[0].event_type, "failed")
+
+
 if __name__ == "__main__":
     unittest.main()

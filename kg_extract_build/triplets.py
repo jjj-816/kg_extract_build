@@ -20,7 +20,7 @@ class TripletGenerator:
         known_entities=None,
         recorder=None,
     ):
-        self.client = OpenAI(api_key=api_key, base_url=base_url)
+        self.client = OpenAI(api_key=api_key, base_url=base_url, timeout=120.0)
         self.model = model_name
         self.schema = schema
         self.known_entities = known_entities or {}
@@ -39,7 +39,6 @@ class TripletGenerator:
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.1,
-                extra_body={"thinking": {"type": "disabled"}},
             )
             raw_result = response.choices[0].message.content.strip()
             triplets = self._parse_triplets(raw_result, entity_name, entity_type, context)

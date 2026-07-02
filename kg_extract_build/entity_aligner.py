@@ -59,7 +59,7 @@ class EntityAligner:
         semantic_threshold=0.82,
         max_group_size=20,
     ):
-        self.client = OpenAI(api_key=api_key, base_url=base_url)
+        self.client = OpenAI(api_key=api_key, base_url=base_url, timeout=120.0)
         self.model = model_name
         self.vector_model_path = vector_model_path
         self.edit_threshold = edit_threshold
@@ -262,7 +262,6 @@ class EntityAligner:
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.1,
-                extra_body={"thinking": {"type": "disabled"}},
             )
             raw_response = response.choices[0].message.content
             decision = self._parse_decision(raw_response)

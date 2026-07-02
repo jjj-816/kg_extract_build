@@ -54,5 +54,16 @@ class DocumentDiscoveryTests(unittest.TestCase):
                 DocumentLoader(root, manager, selected_files=("../outside.md",))
 
 
+    def test_loader_rejects_nonexistent_selected_file(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "a.md").write_text("甲", encoding="utf-8")
+            manager = BreakpointManager(root / "processed.json")
+            with self.assertRaisesRegex(ValueError, "不存在"):
+                DocumentLoader(
+                    root, manager, selected_files=("missing.md",)
+                )
+
+
 if __name__ == "__main__":
     unittest.main()

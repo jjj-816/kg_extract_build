@@ -38,7 +38,7 @@ class PipelineEvent:
     timestamp: str = field(
         default_factory=lambda: datetime.now(timezone.utc).isoformat()
     )
-    run_id: int | None = None
+    run_id: str | None = None
     document_name: str | None = None
     completed: int | None = None
     total: int | None = None

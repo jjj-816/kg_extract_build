@@ -322,6 +322,13 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                         ),
                     )
                     recorder.record_entities("aligned", entities)
+                    publish(
+                        "entities_aligned",
+                        "entity_alignment",
+                        f"获得 {len(entities)} 个对齐实体",
+                        document_name=file_name,
+                        metrics={"entities": len(entities)},
+                    )
                     if alias_to_standard:
                         print(f"实体对齐映射数：{len(alias_to_standard)}")
                     entity_debug_path = save_aligned_entities(
@@ -463,21 +470,33 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     total=len(docs),
                 )
                 print(f"处理失败：{safe_error}")
-        run_status = (
-            "completed_with_errors" if failed_documents else "completed"
-        )
+        if failed_documents and failed_documents == completed_documents:
+            run_status = "failed"
+        elif failed_documents:
+            run_status = "completed_with_errors"
+        else:
+            run_status = "completed"
         store.finish_run(run_id, run_status)
-        publish(
-            run_status,
-            "completed",
-            (
-                "实验完成，但部分文档失败"
-                if failed_documents
-                else "实验运行完成"
-            ),
-            level="warning" if failed_documents else "success",
-            run_id=run_id,
-        )
+        if run_status == "failed":
+            publish(
+                run_status,
+                "completed",
+                "所有文档处理均失败",
+                level="error",
+                run_id=run_id,
+            )
+        else:
+            publish(
+                run_status,
+                "completed",
+                (
+                    "实验完成，但部分文档失败"
+                    if failed_documents
+                    else "实验运行完成"
+                ),
+                level="warning" if failed_documents else "success",
+                run_id=run_id,
+            )
         return run_id
     except PipelineCancelled:
         if run_id is not None:
@@ -503,6 +522,12 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
         )
         return run_id
     finally:
-        vector_store.close()
-        store.close()
+        try:
+            vector_store.close()
+        except Exception as exc:
+            print(f"释放向量存储资源失败：{exc}")
+        try:
+            store.close()
+        except Exception as exc:
+            print(f"释放实验存储资源失败：{exc}")
         print("\n全部运行结束。")

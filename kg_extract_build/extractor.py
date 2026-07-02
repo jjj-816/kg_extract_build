@@ -22,7 +22,7 @@ class LongDocLLMEntityExtractor:
         max_chunk_size=2000,
     ):
         self.expert_entities = expert_entities
-        self.client = OpenAI(api_key=api_key, base_url=base_url)
+        self.client = OpenAI(api_key=api_key, base_url=base_url, timeout=120.0)
         self.model = model_name
         self.schema = schema
         self.max_chunk_size = int(max_chunk_size)
@@ -170,7 +170,6 @@ class LongDocLLMEntityExtractor:
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.1,
-                extra_body={"thinking": {"type": "disabled"}},
             )
             raw_response = response.choices[0].message.content
             entities = self._parse_entities(raw_response)

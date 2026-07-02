@@ -45,6 +45,7 @@ class RunConfigTests(unittest.TestCase):
         self,
         folder,
         *,
+        run_name="test-run",
         selected_files=("document.md",),
         provider_id="deepseek",
         api_key="secret-key",
@@ -53,7 +54,7 @@ class RunConfigTests(unittest.TestCase):
         max_chars=2000,
     ):
         return run_config.PipelineConfig(
-            run_name="test-run",
+            run_name=run_name,
             document_folder=Path(folder),
             selected_files=selected_files,
             llm=run_config.LLMConfig(
@@ -274,6 +275,19 @@ class RunConfigTests(unittest.TestCase):
             self.assertFalse(snapshot["respect_legacy_breakpoint"])
             self.assertFalse(snapshot["reuse_entity_cache"])
             self.assertFalse(snapshot["reuse_triplet_cache"])
+
+    def test_sanitized_snapshot_redacts_key_from_run_name_and_folder(self):
+        with tempfile.TemporaryDirectory() as folder:
+            Path(folder, "document.md").write_text("content", encoding="utf-8")
+            config = self.make_config(
+                folder,
+                run_name="实验-sk-leaked-密钥",
+                api_key="sk-leaked",
+            )
+            snapshot = config.sanitized_snapshot()
+            serialized = json.dumps(snapshot, ensure_ascii=False)
+            self.assertNotIn("sk-leaked", serialized)
+            self.assertIn("***", snapshot["run_name"])
 
     def test_sanitized_snapshot_redacts_key_from_base_url(self):
         with tempfile.TemporaryDirectory() as folder:

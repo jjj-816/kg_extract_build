@@ -189,9 +189,12 @@ class PipelineConfig:
                 raise ValueError(f"只支持 .md 或 .txt 文件：{name}")
 
     def sanitized_snapshot(self) -> dict[str, object]:
+        secret = (self.llm.api_key,) if self.llm.api_key else ()
         return {
-            "run_name": self.run_name,
-            "document_folder": str(self.document_folder),
+            "run_name": redact_text(self.run_name, secrets=secret),
+            "document_folder": redact_text(
+                str(self.document_folder), secrets=secret
+            ),
             "selected_files": list(self.selected_files),
             "llm": self.llm.sanitized(),
             "chunking": asdict(self.chunking),
