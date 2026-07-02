@@ -8,14 +8,19 @@
 
 | 文件 | 作用 |
 | --- | --- |
+| `run_config.py` | 模型提供商预设、运行配置、校验和脱敏快照 |
+| `runtime.py` | 流水线事件、取消令牌和单任务运行注册表 |
 | `pipeline.py` | 主流程入口，串联文档读取、实体抽取、实体对齐、上下文检索、三元组抽取与校验 |
-| `documents.py` | 文档加载与断点记录 |
-| `extractor.py` | 长文档分块实体抽取 |
+| `documents.py` | 文档加载、扫描发现与断点记录 |
+| `extractor.py` | 长文档分块实体抽取，支持可配置切片长度和取消 |
 | `entity_aligner.py` | 实体去重、候选聚合与 LLM 辅助对齐 |
 | `retriever.py` | 基于本地向量模型的实体上下文检索 |
 | `triplets.py` | 三元组生成、缓存读取与结果校验 |
 | `schema.py` | 图谱 schema 加载、渲染与类型/关系约束校验 |
 | `settings.py` | 路径、模型、LLM、断点与调试输出配置 |
+| `persistence.py` | MySQL 实验存储、内存存储和实验记录器 |
+| `dashboard.py` | Streamlit 可视化控制台（历史看板） |
+| `dashboard_run.py` | Streamlit 运行实验页面（配置 + 实时监控） |
 | `__init__.py` | Python 包标记文件 |
 
 ## 依赖
@@ -53,22 +58,34 @@ pip install neo4j
 LLM 配置可通过环境变量覆盖：
 
 ```bash
-set LLM_API_KEY=your_api_key
-set LLM_BASE_URL=https://open.bigmodel.cn/api/paas/v4/
+set LLM_PROVIDER=zhipu
+set ZAI_API_KEY=your_api_key
 set LLM_MODEL=glm-4.5-air
 ```
 
 PowerShell 示例：
 
 ```powershell
-$env:LLM_API_KEY="your_api_key"
-$env:LLM_BASE_URL="https://open.bigmodel.cn/api/paas/v4/"
+$env:LLM_PROVIDER="zhipu"
+$env:ZAI_API_KEY="your_api_key"
 $env:LLM_MODEL="glm-4.5-air"
 ```
 
+支持的 LLM 提供商：`zhipu`（智谱）、`deepseek`（DeepSeek）、`ollama`（本地）、`qwen`（阿里云百炼）、`modelscope`（魔搭）、`huggingface`、`custom`（自定义 OpenAI 兼容接口）。API Key 优先从 `.env` 读取，也可在 Streamlit 界面中临时覆盖。
+
 ## 运行方式
 
-在项目根目录执行：
+推荐使用 Streamlit 可视化控制台，单条命令完成实验：
+
+```powershell
+conda activate env_agent
+cd D:\ProgramData\PythonProject\NLPTest\AgentTest\github_kg_extract_build
+python -m streamlit run kg_extract_build/dashboard.py
+```
+
+在"运行实验"页面选择文档目录、文件、提供商、模型和切片长度，点击"开始运行"即可。进度、事件和指标实时显示，支持安全停止。
+
+命令行模式（兼容保留）：
 
 ```bash
 python -c "from kg_extract_build.pipeline import run_pipeline; run_pipeline()"
@@ -156,12 +173,10 @@ KG_REUSE_TRIPLET_CACHE=0
 
 这能保证每次实验完整记录真实调用过程。需要调试续跑时可显式打开对应开关，并在论文记录中注明缓存策略。
 
-### 5. 启动管理后台
-
-从项目根目录执行：
+### 5. 启动可视化控制台
 
 ```bash
 python -m streamlit run kg_extract_build/dashboard.py
 ```
 
-后台包含实验总览、实验批次、文档追踪、LLM 调用和知识图谱五个页面。MySQL 密码既可通过环境变量提供，也可只在后台侧边栏临时输入。
+控制台包含六个页面：运行实验（默认首页）、实验总览、实验批次、文档追踪、LLM 调用和知识图谱。API Key 和数据库密码既可通过 `.env` 提供，也可在侧边栏临时输入，不会持久化到数据库或日志中。
