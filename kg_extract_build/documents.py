@@ -1,5 +1,39 @@
 import json
 import os
+from dataclasses import dataclass
+from pathlib import Path
+
+
+@dataclass(frozen=True)
+class DiscoveredDocument:
+    name: str
+    extension: str
+    size_bytes: int
+
+
+def discover_documents(folder_path):
+    """Scan *direct* children of *folder_path* for .md / .txt files.
+
+    Raises ``ValueError`` when the folder does not exist or is not a
+    directory.  The caller is responsible for passing a valid path; this
+    function will never create a missing folder.
+    """
+    folder = Path(folder_path).expanduser().resolve()
+    if not folder.exists():
+        raise ValueError(f"文档文件夹不存在：{folder}")
+    if not folder.is_dir():
+        raise ValueError(f"文档路径不是文件夹：{folder}")
+    items = []
+    for path in folder.iterdir():
+        if path.is_file() and path.suffix.lower() in {".md", ".txt"}:
+            items.append(
+                DiscoveredDocument(
+                    name=path.name,
+                    extension=path.suffix.lower(),
+                    size_bytes=path.stat().st_size,
+                )
+            )
+    return sorted(items, key=lambda item: item.name.lower())
 
 
 class BreakpointManager:
@@ -28,16 +62,25 @@ class DocumentLoader:
         folder_path,
         breakpoint_manager,
         respect_breakpoint=True,
+        selected_files=None,
     ):
-        self.folder_path = folder_path
+        self.folder_path = Path(folder_path).expanduser().resolve()
         self.breakpoint_manager = breakpoint_manager
         self.respect_breakpoint = respect_breakpoint
-        self.folder_path.mkdir(parents=True, exist_ok=True)
+        self.selected_files = None if selected_files is None else set(selected_files)
+        if not self.folder_path.is_dir():
+            raise ValueError(f"文档文件夹无效：{self.folder_path}")
+        if self.selected_files is not None:
+            for name in self.selected_files:
+                if Path(name).name != name:
+                    raise ValueError(f"只能选择当前目录中的文件名：{name}")
 
     def load_all_unprocessed_docs(self):
         docs = {}
         for file_name in os.listdir(self.folder_path):
             if not file_name.endswith((".txt", ".md")):
+                continue
+            if self.selected_files is not None and file_name not in self.selected_files:
                 continue
             if (
                 self.respect_breakpoint
