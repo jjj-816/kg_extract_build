@@ -1,0 +1,104 @@
+from dataclasses import dataclass
+from typing import Iterable, Mapping, Sequence
+
+
+@dataclass(frozen=True)
+class RelationBatch:
+    entity_names: tuple[str, ...]
+    evidence: tuple[dict, ...]
+    entity_evidence_ids: dict[str, tuple[int, ...]]
+    context_chars: int
+
+
+def overlap_coefficient(left_ids: Iterable[int], right_ids: Iterable[int]) -> float:
+    left = set(left_ids)
+    right = set(right_ids)
+    denominator = min(len(left), len(right))
+    if denominator == 0:
+        return 0.0
+    return len(left & right) / denominator
+
+
+def _normalize_hits(hits: Sequence[Mapping]) -> dict[int, dict]:
+    normalized = {}
+    for hit in hits:
+        sentence_index = int(hit["sentence_index"])
+        current = normalized.get(sentence_index)
+        candidate = dict(hit)
+        if current is None or float(candidate.get("score", 0.0)) > float(
+            current.get("score", 0.0)
+        ):
+            normalized[sentence_index] = candidate
+    return normalized
+
+
+def _make_batch(
+    entity_names: Sequence[str],
+    normalized: Mapping[str, Mapping[int, dict]],
+) -> RelationBatch:
+    evidence_by_id = {}
+    entity_evidence_ids = {}
+    for entity_name in entity_names:
+        ids = tuple(sorted(normalized[entity_name]))
+        entity_evidence_ids[entity_name] = ids
+        for sentence_index in ids:
+            evidence_by_id.setdefault(
+                sentence_index,
+                dict(normalized[entity_name][sentence_index]),
+            )
+    evidence = tuple(
+        evidence_by_id[index] for index in sorted(evidence_by_id)
+    )
+    return RelationBatch(
+        entity_names=tuple(entity_names),
+        evidence=evidence,
+        entity_evidence_ids=entity_evidence_ids,
+        context_chars=sum(
+            len(str(item.get("sentence", ""))) for item in evidence
+        ),
+    )
+
+
+def build_relation_batches(
+    entity_evidence: Mapping[str, Sequence[Mapping]],
+    *,
+    max_entities: int,
+    min_overlap: float,
+    max_context_chars: int,
+) -> list[RelationBatch]:
+    if max_entities < 1:
+        raise ValueError("每批实体数必须至少为 1")
+    if not 0.0 <= min_overlap <= 1.0:
+        raise ValueError("上下文重叠阈值必须在 0 到 1 之间")
+    if max_context_chars < 1:
+        raise ValueError("批次上下文字符上限必须为正数")
+
+    normalized = {
+        entity_name: _normalize_hits(hits)
+        for entity_name, hits in entity_evidence.items()
+    }
+    remaining = list(normalized)
+    batches = []
+    while remaining:
+        seed = remaining.pop(0)
+        group = [seed]
+        for candidate in tuple(remaining):
+            if len(group) >= max_entities:
+                break
+            candidate_ids = normalized[candidate].keys()
+            if not all(
+                overlap_coefficient(
+                    candidate_ids,
+                    normalized[member].keys(),
+                )
+                >= min_overlap
+                for member in group
+            ):
+                continue
+            proposed = _make_batch([*group, candidate], normalized)
+            if proposed.context_chars > max_context_chars:
+                continue
+            group.append(candidate)
+            remaining.remove(candidate)
+        batches.append(_make_batch(group, normalized))
+    return batches
