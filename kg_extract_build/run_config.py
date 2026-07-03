@@ -167,7 +167,7 @@ class PipelineConfig:
         if not 200 <= self.chunking.max_chars <= 20_000:
             raise ValueError("切片字符数必须在 200 到 20000 之间")
 
-        folder = Path(self.document_folder)
+        folder = Path(self.document_folder).expanduser().resolve()
         if not folder.exists() or not folder.is_dir():
             raise ValueError(f"文档目录不存在或不是文件夹：{folder}")
 
@@ -185,6 +185,12 @@ class PipelineConfig:
             document = folder / name
             if not document.exists() or not document.is_file():
                 raise ValueError(f"选择的文件不存在：{name}")
+            try:
+                document.resolve().relative_to(folder)
+            except ValueError as exc:
+                raise ValueError(
+                    f"选择的文件不在文档目录内：{name}"
+                ) from exc
             if document.suffix.lower() not in {".md", ".txt"}:
                 raise ValueError(f"只支持 .md 或 .txt 文件：{name}")
 
@@ -195,7 +201,10 @@ class PipelineConfig:
             "document_folder": redact_text(
                 str(self.document_folder), secrets=secret
             ),
-            "selected_files": list(self.selected_files),
+            "selected_files": [
+                redact_text(name, secrets=secret)
+                for name in self.selected_files
+            ],
             "llm": self.llm.sanitized(),
             "chunking": asdict(self.chunking),
             "retrieve_sentence_num": self.retrieve_sentence_num,

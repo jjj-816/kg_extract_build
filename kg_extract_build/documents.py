@@ -78,17 +78,17 @@ class DocumentLoader:
                 if not target.is_file():
                     raise ValueError(f"选定文件不存在或无法访问：{name}")
                 resolved = target.resolve()
-                if not str(resolved).startswith(
-                    str(self.folder_path)
-                ):
+                try:
+                    resolved.relative_to(self.folder_path)
+                except ValueError as exc:
                     raise ValueError(
                         f"选定文件不在文档文件夹内：{name}"
-                    )
+                    ) from exc
 
     def load_all_unprocessed_docs(self):
         docs = {}
         for file_name in os.listdir(self.folder_path):
-            if not file_name.endswith((".txt", ".md")):
+            if Path(file_name).suffix.lower() not in {".txt", ".md"}:
                 continue
             if self.selected_files is not None and file_name not in self.selected_files:
                 continue
@@ -102,5 +102,7 @@ class DocumentLoader:
                 docs[file_name] = path.read_text(encoding="utf-8")
                 print(f"待处理文档：{file_name}")
             except Exception as exc:
-                print(f"读取失败 {file_name}：{exc}")
+                raise OSError(
+                    f"读取文档失败 {file_name}：{exc}"
+                ) from exc
         return docs

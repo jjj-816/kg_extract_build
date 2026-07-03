@@ -45,21 +45,25 @@ class LongDocLLMEntityExtractor:
             recorder.record_chunks("entity_extraction", chunks)
 
         all_entities = []
+        failed_chunks = 0
         for index, chunk in enumerate(chunks, start=1):
             if cancel_token is not None:
                 cancel_token.raise_if_cancelled()
             print(f"  抽取第 {index} 块...")
-            all_entities.extend(
-                self._extract_from_chunk(
-                    chunk,
-                    recorder=recorder,
-                    chunk_index=index - 1,
-                )
+            entities, failed = self._extract_chunk_result(
+                chunk,
+                recorder=recorder,
+                chunk_index=index - 1,
             )
+            all_entities.extend(entities)
+            failed_chunks += int(failed)
             if cancel_token is not None:
                 cancel_token.raise_if_cancelled()
             if progress_callback is not None:
                 progress_callback(index, len(chunks))
+
+        if chunks and failed_chunks == len(chunks):
+            raise RuntimeError("实体抽取阶段的 LLM 请求全部失败")
 
         all_entities.extend(self._extract_normative_entities(full_text))
 
@@ -163,6 +167,14 @@ class LongDocLLMEntityExtractor:
 """
 
     def _extract_from_chunk(self, chunk, recorder=None, chunk_index=None):
+        entities, _ = self._extract_chunk_result(
+            chunk,
+            recorder=recorder,
+            chunk_index=chunk_index,
+        )
+        return entities
+
+    def _extract_chunk_result(self, chunk, recorder=None, chunk_index=None):
         prompt = self._build_prompt(chunk)
         started = time.perf_counter()
         try:
@@ -185,7 +197,7 @@ class LongDocLLMEntityExtractor:
                         "chunk_index": chunk_index,
                     },
                 )
-            return entities
+            return entities, False
         except Exception as exc:
             safe_error = redact_text(str(exc), secrets=self._secret_values)
             print(f"实体抽取失败：{safe_error}")
@@ -201,7 +213,7 @@ class LongDocLLMEntityExtractor:
                         "chunk_index": chunk_index,
                     },
                 )
-            return []
+            return [], True
 
     def _parse_entities(self, raw_text):
         raw_text = raw_text.strip()

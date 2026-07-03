@@ -289,6 +289,23 @@ class RunConfigTests(unittest.TestCase):
             self.assertNotIn("sk-leaked", serialized)
             self.assertIn("***", snapshot["run_name"])
 
+    def test_sanitized_snapshot_redacts_key_from_selected_file_names(self):
+        with tempfile.TemporaryDirectory() as folder:
+            Path(folder, "report-sk-leaked.md").write_text(
+                "content", encoding="utf-8"
+            )
+            config = self.make_config(
+                folder,
+                selected_files=("report-sk-leaked.md",),
+                api_key="sk-leaked",
+            )
+
+            serialized = json.dumps(
+                config.sanitized_snapshot(), ensure_ascii=False
+            )
+
+            self.assertNotIn("sk-leaked", serialized)
+
     def test_sanitized_snapshot_redacts_key_from_base_url(self):
         with tempfile.TemporaryDirectory() as folder:
             Path(folder, "document.md").write_text("content", encoding="utf-8")
@@ -448,6 +465,26 @@ class RunConfigTests(unittest.TestCase):
             )
             with self.assertRaises(ValueError):
                 config.validate()
+
+    def test_validate_rejects_selected_file_resolving_outside_folder(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp, "docs")
+            outside = Path(tmp, "docs-escape")
+            root.mkdir()
+            outside.mkdir()
+            Path(root, "document.md").write_text("inside", encoding="utf-8")
+            escaped = Path(outside, "document.md").resolve()
+            real_resolve = Path.resolve
+
+            def fake_resolve(path, *args, **kwargs):
+                if path.parent == root and path.name == "document.md":
+                    return escaped
+                return real_resolve(path, *args, **kwargs)
+
+            config = self.make_config(root)
+            with patch.object(Path, "resolve", fake_resolve):
+                with self.assertRaisesRegex(ValueError, "文档目录"):
+                    config.validate()
 
 
 class RunConfigAvailabilityTests(unittest.TestCase):

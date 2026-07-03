@@ -193,10 +193,33 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
         VECTOR_MODEL_PATH,
     )
     corrector = TripletCorrector(schema)
-    store = build_experiment_store()
-    vector_store = build_vector_store()
+    store = None
+    vector_store = None
     run_id = None
     failed_documents = 0
+
+    try:
+        store = build_experiment_store()
+        vector_store = build_vector_store()
+    except Exception as exc:
+        safe_error = redact_text(str(exc), secrets=(config.llm.api_key,))
+        publish(
+            "failed",
+            "failed",
+            f"实验运行失败：{safe_error}",
+            level="error",
+        )
+        if vector_store is not None:
+            try:
+                vector_store.close()
+            except Exception as close_exc:
+                print(f"释放向量存储资源失败：{close_exc}")
+        if store is not None:
+            try:
+                store.close()
+            except Exception as close_exc:
+                print(f"释放实验存储资源失败：{close_exc}")
+        return None
 
     if MILVUS_ENABLED and not MYSQL_ENABLED:
         print("[实验存储] Milvus 依赖 MySQL chunk_id；请同时启用 KG_MYSQL_ENABLED。")
@@ -283,6 +306,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                             document_name=file_name,
                             completed=completed,
                             total=total,
+                            metrics={"chunks": 1},
                         ),
                     )
                     recorder.record_entities("raw", entities)
@@ -302,6 +326,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                             document_name=file_name,
                             completed=completed_documents,
                             total=len(docs),
+                            metrics={"documents": 1},
                         )
                         continue
 
@@ -322,13 +347,6 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                         ),
                     )
                     recorder.record_entities("aligned", entities)
-                    publish(
-                        "entities_aligned",
-                        "entity_alignment",
-                        f"获得 {len(entities)} 个对齐实体",
-                        document_name=file_name,
-                        metrics={"entities": len(entities)},
-                    )
                     if alias_to_standard:
                         print(f"实体对齐映射数：{len(alias_to_standard)}")
                     entity_debug_path = save_aligned_entities(
@@ -336,6 +354,13 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     )
                     print(f"实体对齐结果已保存至：{entity_debug_path}")
 
+                publish(
+                    "entities_aligned",
+                    "entity_alignment",
+                    f"获得 {len(entities)} 个对齐实体",
+                    document_name=file_name,
+                    metrics={"entities": len(entities)},
+                )
                 if not entities:
                     print("无有效对齐实体，跳过")
                     store.finish_document(document_id, "completed_empty")
@@ -348,6 +373,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                         document_name=file_name,
                         completed=completed_documents,
                         total=len(docs),
+                        metrics={"documents": 1},
                     )
                     continue
 
@@ -407,6 +433,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                         entity,
                         recorder=recorder,
                     )
+                    cancel_token.raise_if_cancelled()
                     publish(
                         "retrieval_completed",
                         "retrieval",
@@ -419,6 +446,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                         )
                         raw_triplets[entity["name"]] = []
                         continue
+                    cancel_token.raise_if_cancelled()
                     raw_triplets[entity["name"]] = generator.generate(
                         entity, context
                     )
@@ -468,8 +496,10 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     document_name=file_name,
                     completed=completed_documents,
                     total=len(docs),
+                    metrics={"documents": 1},
                 )
                 print(f"处理失败：{safe_error}")
+        cancel_token.raise_if_cancelled()
         if failed_documents and failed_documents == completed_documents:
             run_status = "failed"
         elif failed_documents:
