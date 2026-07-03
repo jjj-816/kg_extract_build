@@ -38,11 +38,12 @@
    - `EntityAligner` 结合规则、编辑距离、本地向量相似度和 LLM 完成别名对齐；
    - 保存原始实体与对齐结果。
 5. `CorpusRetriever` 将全文按中文标点和换行切成句子，并使用本地 SentenceTransformer 模型编码。
-6. 对每个标准实体及其别名检索上下文，优先使用原文直接命中的句子，再补充向量相似句。
-7. `TripletGenerator` 优先复用 `shale_gas_triplets_debug/<文档>/<实体>.json`；没有缓存时，根据 Schema 允许的关系和尾实体类型调用 LLM。
-8. 解析阶段检查头实体、关系、尾实体长度、原文证据和 Schema 类型约束；必要时尝试调换头尾方向。
-9. `TripletCorrector` 再次校验并去重。
-10. 文档处理成功后写入 `processed_docs.json`。
+6. 先对全部标准实体及其别名检索上下文，优先使用原文直接命中的句子，再补充向量相似句。
+7. `relation_batching.py` 按共同 `sentence_index` 计算重叠系数；候选必须与组内每个实体达到阈值，并受实体数和去重上下文长度双重限制。
+8. `TripletGenerator` 优先复用 `shale_gas_triplets_debug/<文档>/<实体>.json`；多实体批次共享一次 LLM 调用，无关实体继续单独调用。
+9. 解析阶段按 head 将批量结果分回实体，再检查关系、尾实体长度、实体专属原文证据和 Schema 类型约束；必要时尝试调换头尾方向。
+10. `TripletCorrector` 再次校验并去重。
+11. 文档处理成功后写入 `processed_docs.json`。
 
 简化数据流：
 
@@ -51,11 +52,24 @@
   -> 分块实体抽取
   -> 实体候选 [{name, type}]
   -> 实体对齐 [{name, type, aliases, source_type}]
-  -> 相关句检索
+  -> 全部实体相关句检索
+  -> 共享证据严格分组与上下文去重
+  -> 批量/单实体关系抽取
   -> 原始三元组
   -> Schema 校验
   -> (head, head_type, relation, tail, tail_type)
 ```
+
+关系抽取配置保存在 `PipelineConfig`：
+
+```python
+relation_strategy = "shared_context_batch"  # 或 single_entity
+relation_batch_max_entities = 3
+relation_batch_min_overlap = 0.4
+relation_batch_max_context_chars = 8000
+```
+
+批量模式不是固定凑满实体。没有共同证据或无法满足严格两两重叠的实体会形成单实体批次，并继续调用原有 `generate()`。多实体批次调用 `generate_batch()`；一条 `kg_llm_call` 可以作为同批多组原始三元组的 `source_llm_call_id`。
 
 ## 4. 核心数据结构
 

@@ -99,10 +99,33 @@ python -c "from kg_extract_build.pipeline import run_pipeline; run_pipeline()"
 2. 加载文档：从 `shale_gas_docs/guifan` 读取未处理的 `.txt` / `.md` 文件。
 3. 实体抽取：对长文档分块，调用 LLM 抽取专业实体。
 4. 实体对齐：结合规则、向量相似度和 LLM 判断，将别名对齐到标准实体。
-5. 上下文检索：为每个实体检索相关句子，作为三元组抽取上下文。
-6. 三元组抽取：按 schema 约束调用 LLM 生成关系三元组，并保存调试结果。
-7. 三元组校验：过滤非法关系和类型不匹配结果。
-8. 断点更新：文档处理完成后写入 `processed_docs.json`。
+5. 上下文检索：先为全部对齐实体检索相关句子，并保存句子编号、分数和匹配类型。
+6. 关系分组：默认按共同句子计算重叠系数，只合并共享证据的实体；组内证据按句子编号去重。
+7. 三元组抽取：多实体批次只调用一次 LLM；无关实体保持单实体抽取，并保存完整调试结果。
+8. 三元组校验：过滤非法关系和类型不匹配结果。
+9. 断点更新：文档处理完成后写入 `processed_docs.json`。
+
+### 关系抽取策略
+
+可视化页面的“高级参数”提供两种策略：
+
+- `共享上下文批量抽取`：默认方案。只有检索证据存在严格两两重叠的实体才会合并，每批默认最多 3 个实体；不相关实体仍单独处理。
+- `逐实体抽取`：保留修改前行为，用作论文效果和 Token 消耗对照基线。
+
+批量分组默认使用：
+
+```text
+overlap(A, B) = |sentence_ids(A) ∩ sentence_ids(B)|
+                / min(|sentence_ids(A)|, |sentence_ids(B)|)
+最小重叠系数 = 0.4
+最大实体数 = 3
+最大去重上下文字符数 = 8000
+```
+
+这些参数和策略会进入实验配置快照。一个批次只记录一次
+`kg_llm_call`，批次生成的多组实体三元组共享同一个
+`source_llm_call_id`；逐实体检索明细仍完整写入
+`kg_retrieval_result`。
 
 ## 维护备注
 
@@ -169,9 +192,13 @@ Milvus 只保存 `retrieval_sentence` 的向量。其主键直接使用 MySQL �
 KG_RESPECT_LEGACY_BREAKPOINT=0
 KG_REUSE_ENTITY_CACHE=0
 KG_REUSE_TRIPLET_CACHE=0
+KG_RELATION_STRATEGY=shared_context_batch
+KG_RELATION_BATCH_MAX_ENTITIES=3
+KG_RELATION_BATCH_MIN_OVERLAP=0.4
+KG_RELATION_BATCH_MAX_CONTEXT_CHARS=8000
 ```
 
-这能保证每次实验完整记录真实调用过程。需要调试续跑时可显式打开对应开关，并在论文记录中注明缓存策略。
+这能保证每次实验完整记录真实调用过程。需要调试续跑时可显式打开对应开关，并在论文记录中注明缓存策略。进行方法对照时，将 `KG_RELATION_STRATEGY` 改为 `single_entity` 即可恢复逐实体基线。
 
 ### 5. 启动可视化控制台
 
