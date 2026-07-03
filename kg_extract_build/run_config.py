@@ -56,7 +56,7 @@ PROVIDERS: dict[str, ProviderPreset] = {
     "modelscope": ProviderPreset(
         provider_id="modelscope",
         label="ModelScope / 魔搭",
-        default_base_url="",
+        default_base_url="https://api-inference.modelscope.cn/v1",
         env_keys=("MODELSCOPE_API_TOKEN",),
     ),
     "huggingface": ProviderPreset(

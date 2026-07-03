@@ -89,7 +89,7 @@ class RunConfigTests(unittest.TestCase):
                 True,
             ),
             "modelscope": (
-                "",
+                "https://api-inference.modelscope.cn/v1",
                 ("MODELSCOPE_API_TOKEN",),
                 True,
             ),
