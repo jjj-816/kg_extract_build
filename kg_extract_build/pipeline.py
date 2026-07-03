@@ -123,10 +123,18 @@ def retrieve_entity_evidence(retriever, entity, recorder=None):
                 current.get("score", 0.0)
             ):
                 evidence_by_id[sentence_index] = dict(hit)
-    return [
-        evidence_by_id[index]
-        for index in sorted(evidence_by_id)
-    ][:retriever.top_n]
+    ranked = sorted(
+        evidence_by_id.values(),
+        key=lambda hit: (
+            hit.get("match_type") != "direct",
+            -float(hit.get("score", 0.0)),
+            int(hit["sentence_index"]),
+        ),
+    )[:retriever.top_n]
+    return sorted(
+        ranked,
+        key=lambda hit: int(hit["sentence_index"]),
+    )
 
 
 def evidence_context(evidence, evidence_ids=None):

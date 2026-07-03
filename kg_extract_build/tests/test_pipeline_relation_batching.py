@@ -4,7 +4,7 @@ from pathlib import Path
 from unittest.mock import Mock, patch
 
 from kg_extract_build.persistence import MemoryExperimentStore
-from kg_extract_build.pipeline import run_pipeline
+from kg_extract_build.pipeline import retrieve_entity_evidence, run_pipeline
 from kg_extract_build.run_config import LLMConfig, PipelineConfig
 from kg_extract_build.vector_store import NullVectorStore
 
@@ -61,6 +61,42 @@ class TimelineRetriever:
 
 
 class PipelineRelationBatchingTests(unittest.TestCase):
+    def test_retrieval_keeps_direct_and_high_score_hits_before_source_order(self):
+        class Retriever:
+            top_n = 2
+
+            def retrieve_with_details(self, alias):
+                return [
+                    {
+                        "sentence_index": 1,
+                        "sentence": "低分语义证据",
+                        "score": 0.61,
+                        "match_type": "semantic",
+                    },
+                    {
+                        "sentence_index": 10,
+                        "sentence": "直接命中证据",
+                        "score": 1.0,
+                        "match_type": "direct",
+                    },
+                    {
+                        "sentence_index": 5,
+                        "sentence": "高分语义证据",
+                        "score": 0.95,
+                        "match_type": "semantic",
+                    },
+                ]
+
+        evidence = retrieve_entity_evidence(
+            Retriever(),
+            {"name": "井口", "aliases": ["井口"]},
+        )
+
+        self.assertEqual(
+            [item["sentence_index"] for item in evidence],
+            [5, 10],
+        )
+
     def test_pipeline_retrieves_all_entities_before_grouped_generation(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
