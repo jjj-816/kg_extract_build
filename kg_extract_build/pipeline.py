@@ -8,6 +8,7 @@ from .documents import BreakpointManager, DocumentLoader, discover_documents
 from .entity_aligner import EntityAligner
 from .extractor import LongDocLLMEntityExtractor
 from .persistence import ExperimentRecorder, build_experiment_store, content_hash
+from .relation_batching import build_relation_batches
 # from .neo4j_builder import ShaleGasNeo4jBuilder
 from .retriever import CorpusRetriever
 from .run_config import PipelineConfig, redact_text
@@ -109,16 +110,43 @@ def load_aligned_entities(file_name, debug_dir):
     return entities
 
 
-def retrieve_entity_context(retriever, entity, recorder=None):
-    contexts = []
+def retrieve_entity_evidence(retriever, entity, recorder=None):
+    evidence_by_id = {}
     for alias in entity.get("aliases", []) or [entity["name"]]:
         hits = retriever.retrieve_with_details(alias)
         if recorder is not None:
             recorder.record_retrieval(entity["name"], alias, hits)
-        if hits:
-            contexts.extend(hit["sentence"] for hit in hits)
-    lines = list(dict.fromkeys(contexts))
-    return "\n".join(lines[:retriever.top_n])
+        for hit in hits:
+            sentence_index = int(hit["sentence_index"])
+            current = evidence_by_id.get(sentence_index)
+            if current is None or float(hit.get("score", 0.0)) > float(
+                current.get("score", 0.0)
+            ):
+                evidence_by_id[sentence_index] = dict(hit)
+    return [
+        evidence_by_id[index]
+        for index in sorted(evidence_by_id)
+    ][:retriever.top_n]
+
+
+def evidence_context(evidence, evidence_ids=None):
+    allowed_ids = (
+        None if evidence_ids is None else set(evidence_ids)
+    )
+    return "\n".join(
+        str(hit["sentence"])
+        for hit in evidence
+        if (
+            allowed_ids is None
+            or int(hit["sentence_index"]) in allowed_ids
+        )
+    )
+
+
+def retrieve_entity_context(retriever, entity, recorder=None):
+    return evidence_context(
+        retrieve_entity_evidence(retriever, entity, recorder=recorder)
+    )
 
 
 def current_code_commit():
@@ -407,6 +435,8 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                 )
 
                 raw_triplets = {}
+                pending_entities = []
+                entity_evidence = {}
                 for entity in entities:
                     cancel_token.raise_if_cancelled()
                     saved_triplets = None
@@ -428,7 +458,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                         )
                         continue
 
-                    context = retrieve_entity_context(
+                    evidence = retrieve_entity_evidence(
                         retriever,
                         entity,
                         recorder=recorder,
@@ -440,16 +470,116 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                         f"已完成实体上下文检索：{entity['name']}",
                         document_name=file_name,
                     )
-                    if not context:
+                    if not evidence:
                         print(
                             f"跳过三元组抽取，缺乏可靠上下文：{entity['name']}"
                         )
                         raw_triplets[entity["name"]] = []
                         continue
-                    cancel_token.raise_if_cancelled()
-                    raw_triplets[entity["name"]] = generator.generate(
-                        entity, context
+                    pending_entities.append(entity)
+                    entity_evidence[entity["name"]] = evidence
+
+                relation_strategy = getattr(
+                    config,
+                    "relation_strategy",
+                    "shared_context_batch",
+                )
+                if relation_strategy == "single_entity":
+                    for entity in pending_entities:
+                        cancel_token.raise_if_cancelled()
+                        name = entity["name"]
+                        raw_triplets[name] = generator.generate(
+                            entity,
+                            evidence_context(entity_evidence[name]),
+                        )
+                else:
+                    entities_by_name = {
+                        entity["name"]: entity
+                        for entity in pending_entities
+                    }
+                    batches = build_relation_batches(
+                        entity_evidence,
+                        max_entities=getattr(
+                            config,
+                            "relation_batch_max_entities",
+                            3,
+                        ),
+                        min_overlap=getattr(
+                            config,
+                            "relation_batch_min_overlap",
+                            0.4,
+                        ),
+                        max_context_chars=getattr(
+                            config,
+                            "relation_batch_max_context_chars",
+                            8000,
+                        ),
                     )
+                    for batch_index, batch in enumerate(
+                        batches,
+                        start=1,
+                    ):
+                        cancel_token.raise_if_cancelled()
+                        batch_entities = [
+                            entities_by_name[name]
+                            for name in batch.entity_names
+                        ]
+                        publish(
+                            "relation_batch_started",
+                            "triplet_extraction",
+                            (
+                                f"开始关系抽取批次 {batch_index}/"
+                                f"{len(batches)}："
+                                f"{', '.join(batch.entity_names)}"
+                            ),
+                            document_name=file_name,
+                            completed=batch_index - 1,
+                            total=len(batches),
+                        )
+                        if len(batch.entity_names) == 1:
+                            name = batch.entity_names[0]
+                            raw_triplets[name] = generator.generate(
+                                batch_entities[0],
+                                evidence_context(
+                                    batch.evidence,
+                                    batch.entity_evidence_ids[name],
+                                ),
+                            )
+                        else:
+                            raw_triplets.update(
+                                generator.generate_batch(
+                                    entities=batch_entities,
+                                    evidence=batch.evidence,
+                                    entity_evidence_ids=(
+                                        batch.entity_evidence_ids
+                                    ),
+                                    batch_metadata={
+                                        "batch_index": batch_index,
+                                        "batch_total": len(batches),
+                                        "context_chars": (
+                                            batch.context_chars
+                                        ),
+                                        "min_overlap": getattr(
+                                            config,
+                                            "relation_batch_min_overlap",
+                                            0.4,
+                                        ),
+                                    },
+                                )
+                            )
+                        cancel_token.raise_if_cancelled()
+                        publish(
+                            "relation_batch_completed",
+                            "triplet_extraction",
+                            (
+                                f"完成关系抽取批次 {batch_index}/"
+                                f"{len(batches)}"
+                            ),
+                            document_name=file_name,
+                            completed=batch_index,
+                            total=len(batches),
+                            metrics={"relation_batches": 1},
+                        )
                 print("完成三元组生成")
 
                 cancel_token.raise_if_cancelled()

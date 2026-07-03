@@ -281,7 +281,14 @@ class PipelineControlTests(unittest.TestCase):
 
             def cancel_after_retrieval(*args, **kwargs):
                 token.cancel()
-                return "井口相关上下文"
+                return [
+                    {
+                        "sentence_index": 0,
+                        "sentence": "井口相关上下文",
+                        "score": 1.0,
+                        "match_type": "direct",
+                    }
+                ]
 
             with (
                 patch("kg_extract_build.pipeline.KGSchema", return_value=Schema()),
@@ -310,7 +317,7 @@ class PipelineControlTests(unittest.TestCase):
                     return_value=generator,
                 ),
                 patch(
-                    "kg_extract_build.pipeline.retrieve_entity_context",
+                    "kg_extract_build.pipeline.retrieve_entity_evidence",
                     side_effect=cancel_after_retrieval,
                 ),
                 patch("kg_extract_build.pipeline.save_raw_entities",
