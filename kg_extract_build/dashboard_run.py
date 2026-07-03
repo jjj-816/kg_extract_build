@@ -36,6 +36,15 @@ def chunking_notice(max_chars):
     )
 
 
+def relation_strategy_notice(strategy):
+    if strategy == "single_entity":
+        return "当前使用逐实体关系抽取基线：每个实体单独调用 LLM。"
+    return (
+        "当前使用共享上下文批量抽取：仅合并具有共同证据的实体，"
+        "无关实体仍单独处理。"
+    )
+
+
 def provider_form_defaults(provider_id):
     preset = PROVIDERS[provider_id]
     return {
@@ -246,6 +255,49 @@ def render_run_page():
                 value=10,
                 disabled=registry.is_running,
             )
+            relation_strategy = st.selectbox(
+                "关系抽取策略",
+                options=(
+                    "shared_context_batch",
+                    "single_entity",
+                ),
+                format_func=lambda value: (
+                    "共享上下文批量抽取（推荐）"
+                    if value == "shared_context_batch"
+                    else "逐实体抽取（论文基线）"
+                ),
+                disabled=registry.is_running,
+            )
+            st.caption(relation_strategy_notice(relation_strategy))
+            if relation_strategy == "shared_context_batch":
+                relation_batch_max_entities = st.number_input(
+                    "每个关系批次最多实体数",
+                    min_value=1,
+                    max_value=10,
+                    value=3,
+                    step=1,
+                    disabled=registry.is_running,
+                )
+                relation_batch_min_overlap = st.slider(
+                    "实体检索证据最小重叠系数",
+                    min_value=0.0,
+                    max_value=1.0,
+                    value=0.4,
+                    step=0.05,
+                    disabled=registry.is_running,
+                )
+                relation_batch_max_context_chars = st.number_input(
+                    "每个关系批次最大上下文字符数",
+                    min_value=1000,
+                    max_value=50000,
+                    value=8000,
+                    step=500,
+                    disabled=registry.is_running,
+                )
+            else:
+                relation_batch_max_entities = 3
+                relation_batch_min_overlap = 0.4
+                relation_batch_max_context_chars = 8000
             respect_breakpoint = st.checkbox(
                 "跳过断点记录中的已处理文件",
                 value=False,
@@ -300,6 +352,16 @@ def render_run_page():
                     respect_legacy_breakpoint=respect_breakpoint,
                     reuse_entity_cache=reuse_entity_cache,
                     reuse_triplet_cache=reuse_triplet_cache,
+                    relation_strategy=relation_strategy,
+                    relation_batch_max_entities=int(
+                        relation_batch_max_entities
+                    ),
+                    relation_batch_min_overlap=float(
+                        relation_batch_min_overlap
+                    ),
+                    relation_batch_max_context_chars=int(
+                        relation_batch_max_context_chars
+                    ),
                 )
                 config.validate()
                 registry.start(config)

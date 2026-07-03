@@ -153,6 +153,10 @@ class PipelineConfig:
     respect_legacy_breakpoint: bool = False
     reuse_entity_cache: bool = False
     reuse_triplet_cache: bool = False
+    relation_strategy: str = "shared_context_batch"
+    relation_batch_max_entities: int = 3
+    relation_batch_min_overlap: float = 0.4
+    relation_batch_max_context_chars: int = 8000
 
     def validate(self) -> None:
         preset = _provider(self.llm.provider_id)
@@ -166,6 +170,19 @@ class PipelineConfig:
             raise ValueError("至少选择一份文档")
         if not 200 <= self.chunking.max_chars <= 20_000:
             raise ValueError("切片字符数必须在 200 到 20000 之间")
+        if self.relation_strategy not in {
+            "single_entity",
+            "shared_context_batch",
+        }:
+            raise ValueError("关系抽取策略无效")
+        if not 1 <= self.relation_batch_max_entities <= 10:
+            raise ValueError("关系批次实体数必须在 1 到 10 之间")
+        if not 0.0 <= self.relation_batch_min_overlap <= 1.0:
+            raise ValueError("共享上下文重叠阈值必须在 0 到 1 之间")
+        if not 1000 <= self.relation_batch_max_context_chars <= 50_000:
+            raise ValueError(
+                "关系批次上下文字符数必须在 1000 到 50000 之间"
+            )
 
         folder = Path(self.document_folder).expanduser().resolve()
         if not folder.exists() or not folder.is_dir():
@@ -211,6 +228,14 @@ class PipelineConfig:
             "respect_legacy_breakpoint": self.respect_legacy_breakpoint,
             "reuse_entity_cache": self.reuse_entity_cache,
             "reuse_triplet_cache": self.reuse_triplet_cache,
+            "relation_batch": {
+                "strategy": self.relation_strategy,
+                "max_entities": self.relation_batch_max_entities,
+                "min_overlap": self.relation_batch_min_overlap,
+                "max_context_chars": (
+                    self.relation_batch_max_context_chars
+                ),
+            },
         }
 
     @classmethod
@@ -236,4 +261,26 @@ class PipelineConfig:
             respect_legacy_breakpoint=settings.RESPECT_LEGACY_BREAKPOINT,
             reuse_entity_cache=settings.REUSE_ENTITY_CACHE,
             reuse_triplet_cache=settings.REUSE_TRIPLET_CACHE,
+            relation_strategy=os.environ.get(
+                "KG_RELATION_STRATEGY",
+                "shared_context_batch",
+            ),
+            relation_batch_max_entities=int(
+                os.environ.get(
+                    "KG_RELATION_BATCH_MAX_ENTITIES",
+                    "3",
+                )
+            ),
+            relation_batch_min_overlap=float(
+                os.environ.get(
+                    "KG_RELATION_BATCH_MIN_OVERLAP",
+                    "0.4",
+                )
+            ),
+            relation_batch_max_context_chars=int(
+                os.environ.get(
+                    "KG_RELATION_BATCH_MAX_CONTEXT_CHARS",
+                    "8000",
+                )
+            ),
         )

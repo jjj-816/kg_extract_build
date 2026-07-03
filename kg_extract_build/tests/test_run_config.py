@@ -5,7 +5,7 @@ import sys
 import tempfile
 import types
 import unittest
-from dataclasses import FrozenInstanceError
+from dataclasses import FrozenInstanceError, replace
 from pathlib import Path
 from unittest.mock import Mock, patch
 
@@ -258,6 +258,52 @@ class RunConfigTests(unittest.TestCase):
 
         self.assertEqual(chunking.strategy, "markdown_heading")
         self.assertEqual(chunking.max_chars, 2000)
+
+    def test_relation_batch_defaults_are_effect_first(self):
+        with tempfile.TemporaryDirectory() as folder:
+            Path(folder, "document.md").write_text(
+                "content", encoding="utf-8"
+            )
+            config = self.make_config(folder)
+
+            self.assertEqual(
+                config.relation_strategy,
+                "shared_context_batch",
+            )
+            self.assertEqual(config.relation_batch_max_entities, 3)
+            self.assertEqual(config.relation_batch_min_overlap, 0.4)
+            self.assertEqual(
+                config.relation_batch_max_context_chars,
+                8000,
+            )
+
+    def test_relation_batch_parameters_are_validated_and_snapshotted(self):
+        with tempfile.TemporaryDirectory() as folder:
+            Path(folder, "document.md").write_text(
+                "content", encoding="utf-8"
+            )
+            config = self.make_config(folder)
+            snapshot = config.sanitized_snapshot()
+
+            self.assertEqual(
+                snapshot["relation_batch"],
+                {
+                    "strategy": "shared_context_batch",
+                    "max_entities": 3,
+                    "min_overlap": 0.4,
+                    "max_context_chars": 8000,
+                },
+            )
+            invalid_configs = (
+                replace(config, relation_strategy="missing"),
+                replace(config, relation_batch_max_entities=0),
+                replace(config, relation_batch_min_overlap=1.1),
+                replace(config, relation_batch_max_context_chars=999),
+            )
+            for invalid in invalid_configs:
+                with self.subTest(config=invalid):
+                    with self.assertRaises(ValueError):
+                        invalid.validate()
 
     def test_sanitized_snapshot_never_contains_api_key(self):
         with tempfile.TemporaryDirectory() as folder:

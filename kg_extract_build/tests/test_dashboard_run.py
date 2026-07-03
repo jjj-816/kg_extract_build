@@ -1,6 +1,10 @@
 import unittest
 
-from kg_extract_build.dashboard_run import chunking_notice, provider_form_defaults
+from kg_extract_build.dashboard_run import (
+    chunking_notice,
+    provider_form_defaults,
+    relation_strategy_notice,
+)
 
 
 class DashboardRunTests(unittest.TestCase):
@@ -20,6 +24,16 @@ class DashboardRunTests(unittest.TestCase):
         defaults = provider_form_defaults("deepseek")
         self.assertNotIn("api_key", defaults)
         self.assertEqual(defaults["base_url"], "https://api.deepseek.com")
+
+    def test_relation_strategy_notice_distinguishes_batch_and_baseline(self):
+        self.assertIn(
+            "共享上下文",
+            relation_strategy_notice("shared_context_batch"),
+        )
+        self.assertIn(
+            "基线",
+            relation_strategy_notice("single_entity"),
+        )
 
 
 if __name__ == "__main__":
