@@ -83,6 +83,171 @@ class TripletGenerator:
                 )
             return []
 
+    def generate_batch(
+        self,
+        entities,
+        evidence,
+        entity_evidence_ids,
+        batch_metadata=None,
+    ):
+        prompt = self._build_batch_prompt(
+            entities,
+            evidence,
+            entity_evidence_ids,
+        )
+        started = time.perf_counter()
+        entity_names = [entity["name"] for entity in entities]
+        metadata = {
+            "strategy": "shared_context_batch",
+            "batch_entities": entity_names,
+            "entity_evidence_ids": {
+                name: list(ids)
+                for name, ids in entity_evidence_ids.items()
+            },
+            **dict(batch_metadata or {}),
+        }
+        try:
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.1,
+            )
+            raw_result = response.choices[0].message.content.strip()
+            raw_items = self._parse_batch_array(raw_result)
+            evidence_by_id = {
+                int(item["sentence_index"]): str(item["sentence"])
+                for item in evidence
+            }
+            results = {}
+            for entity in entities:
+                entity_name = entity["name"]
+                entity_type = entity.get("type", UNKNOWN_TYPE)
+                context = "\n".join(
+                    evidence_by_id[index]
+                    for index in entity_evidence_ids[entity_name]
+                    if index in evidence_by_id
+                )
+                results[entity_name] = self._parse_triplets(
+                    json.dumps(raw_items, ensure_ascii=False),
+                    entity_name,
+                    entity_type,
+                    context,
+                )
+
+            llm_call_id = None
+            if self.recorder is not None:
+                llm_call_id = self.recorder.record_llm_call(
+                    stage="triplet_extraction_batch",
+                    prompt=prompt,
+                    raw_response=raw_result,
+                    parsed=results,
+                    latency_ms=int((time.perf_counter() - started) * 1000),
+                    metadata=metadata,
+                )
+                for entity_name, triplets in results.items():
+                    self.recorder.record_triplets(
+                        "raw",
+                        triplets,
+                        entity_name=entity_name,
+                        source_kind="model_batch",
+                        source_llm_call_id=llm_call_id,
+                    )
+
+            for entity_name, triplets in results.items():
+                self._save_debug(
+                    entity_name,
+                    prompt,
+                    raw_result,
+                    triplets,
+                    llm_call_id=llm_call_id,
+                    metadata=metadata,
+                )
+            return results
+        except Exception as exc:
+            safe_error = redact_text(
+                str(exc),
+                secrets=self._secret_values,
+            )
+            print(f"批量三元组抽取失败：{safe_error}")
+            if self.recorder is not None:
+                self.recorder.record_llm_call(
+                    stage="triplet_extraction_batch",
+                    prompt=prompt,
+                    latency_ms=int(
+                        (time.perf_counter() - started) * 1000
+                    ),
+                    success=False,
+                    error_message=safe_error,
+                    metadata=metadata,
+                )
+            raise RuntimeError(
+                f"批量三元组抽取失败：{safe_error}"
+            ) from exc
+
+    def _build_batch_prompt(
+        self,
+        entities,
+        evidence,
+        entity_evidence_ids,
+    ):
+        evidence_lines = [
+            f"[S{int(item['sentence_index'])}] {item['sentence']}"
+            for item in evidence
+        ]
+        target_blocks = []
+        for entity in entities:
+            entity_name = entity["name"]
+            entity_type = entity.get("type", UNKNOWN_TYPE)
+            evidence_labels = ", ".join(
+                f"S{index}"
+                for index in entity_evidence_ids[entity_name]
+            )
+            target_blocks.append(
+                "\n".join(
+                    [
+                        f"- head={entity_name}",
+                        f"  head_type={entity_type}",
+                        f"  evidence={evidence_labels}",
+                        "  allowed_relations:",
+                        self.schema.render_allowed_relation_schema(
+                            entity_type
+                        ),
+                        "  allowed_tail_types: "
+                        + self.schema.render_allowed_tail_types(
+                            entity_type
+                        ),
+                    ]
+                )
+            )
+        return f"""任务：基于指定证据，为多个目标实体抽取知识图谱三元组。
+
+【证据句】
+{chr(10).join(evidence_lines)}
+
+【目标实体】
+{chr(10).join(target_blocks)}
+
+约束：
+- head 必须是目标实体之一，禁止输出其他 head。
+- 每个 head 只能使用其 evidence 列出的证据句。
+- relation 和 tail_type 必须符合该 head 的允许范围。
+- tail 必须在该 head 的证据原文中出现，不能推断或改写。
+- 只输出一个 JSON 数组；没有关系的实体不需要输出记录。
+
+格式：
+[
+  {{"head": "目标实体", "head_type": "实体类型", "relation": "关系", "tail": "尾实体", "tail_type": "尾实体类型"}}
+]
+"""
+
+    def _parse_batch_array(self, raw_text):
+        match = re.search(r"\[[\s\S]*\]", raw_text)
+        payload = match.group(0) if match else raw_text
+        data = json.loads(payload)
+        if not isinstance(data, list):
+            raise ValueError("批量三元组响应必须是 JSON 数组")
+        return data
+
     def load_saved_triplets(self, entity_name):
         save_path = self._debug_path(entity_name)
         if not save_path.exists():
@@ -202,6 +367,7 @@ head_type="{entity_type}"
         raw_text,
         triplets,
         llm_call_id=None,
+        metadata=None,
     ):
         save_path = self._debug_path(entity_name)
         with save_path.open("w", encoding="utf-8") as f:
@@ -212,6 +378,7 @@ head_type="{entity_type}"
                     "raw": raw_text,
                     "triplets": triplets,
                     "llm_call_id": llm_call_id,
+                    "metadata": metadata or {},
                 },
                 f,
                 ensure_ascii=False,
