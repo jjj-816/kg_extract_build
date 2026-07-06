@@ -221,12 +221,16 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
         config.llm.model,
         schema,
         max_chunk_size=config.chunking.max_chars,
+        provider_id=config.llm.provider_id,
+        enable_thinking=config.llm.enable_thinking,
     )
     aligner = EntityAligner(
         config.llm.api_key,
         config.llm.base_url,
         config.llm.model,
         VECTOR_MODEL_PATH,
+        provider_id=config.llm.provider_id,
+        enable_thinking=config.llm.enable_thinking,
     )
     corrector = TripletCorrector(schema)
     store = None
@@ -440,6 +444,8 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     schema=schema,
                     known_entities=known_entities,
                     recorder=recorder,
+                    provider_id=config.llm.provider_id,
+                    enable_thinking=config.llm.enable_thinking,
                 )
 
                 raw_triplets = {}

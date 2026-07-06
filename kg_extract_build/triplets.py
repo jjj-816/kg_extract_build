@@ -4,6 +4,7 @@ import time
 
 from openai import OpenAI
 
+from .llm_thinking import build_thinking_options
 from .run_config import redact_text
 from .settings import UNKNOWN_TYPE
 
@@ -19,6 +20,8 @@ class TripletGenerator:
         schema,
         known_entities=None,
         recorder=None,
+        provider_id="custom",
+        enable_thinking=False,
     ):
         self.client = OpenAI(api_key=api_key, base_url=base_url, timeout=120.0)
         self.model = model_name
@@ -28,6 +31,10 @@ class TripletGenerator:
         self.debug_dir = debug_dir / self._clean_filename(doc_name.rsplit(".", 1)[0])
         self.debug_dir.mkdir(parents=True, exist_ok=True)
         self._secret_values = (api_key,)
+        self._thinking_options = build_thinking_options(
+            provider_id,
+            enable_thinking,
+        )
 
     def generate(self, entity, context):
         entity_name = entity["name"]
@@ -39,6 +46,7 @@ class TripletGenerator:
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.1,
+                **self._thinking_options,
             )
             raw_result = response.choices[0].message.content.strip()
             triplets = self._parse_triplets(raw_result, entity_name, entity_type, context)
@@ -111,6 +119,7 @@ class TripletGenerator:
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.1,
+                **self._thinking_options,
             )
             raw_result = response.choices[0].message.content.strip()
             raw_items = self._parse_batch_array(raw_result)

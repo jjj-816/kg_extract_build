@@ -5,6 +5,7 @@ from unittest.mock import Mock, patch
 
 from kg_extract_build.entity_aligner import EntityAligner
 from kg_extract_build.extractor import LongDocLLMEntityExtractor
+from kg_extract_build.llm_thinking import build_thinking_options
 from kg_extract_build.persistence import MemoryExperimentStore
 from kg_extract_build.pipeline import run_pipeline
 from kg_extract_build.run_config import ChunkingConfig, LLMConfig, PipelineConfig
@@ -32,6 +33,7 @@ class PipelineControlTests(unittest.TestCase):
         extractor.max_chunk_size = 2000
         extractor.expert_entities = []
         extractor.schema = Schema()
+        extractor._thinking_options = build_thinking_options("custom", False)
         with self.assertRaises(PipelineCancelled):
             extractor.extract("# 标题\n内容", cancel_token=token)
 
@@ -77,6 +79,7 @@ class PipelineControlTests(unittest.TestCase):
         extractor.model = "model"
         extractor.schema = Schema()
         extractor._secret_values = ("top-secret",)
+        extractor._thinking_options = build_thinking_options("custom", False)
         recorder = Recorder()
         extractor._extract_from_chunk("内容", recorder=recorder, chunk_index=0)
         self.assertNotIn("top-secret", recorder.error_message)
@@ -99,6 +102,7 @@ class PipelineControlTests(unittest.TestCase):
         extractor.max_chunk_size = 2000
         extractor.expert_entities = []
         extractor._secret_values = ()
+        extractor._thinking_options = build_thinking_options("custom", False)
 
         with self.assertRaisesRegex(RuntimeError, "全部失败"):
             extractor.extract("内容")
@@ -481,6 +485,83 @@ class PipelineControlTests(unittest.TestCase):
             event for event in events if event.event_type == "entities_aligned"
         )
         self.assertEqual(entity_event.metrics, {"entities": 1})
+
+
+    def test_pipeline_passes_provider_and_thinking_to_components(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "a.md").write_text("内容", encoding="utf-8")
+            config = PipelineConfig(
+                run_name="参数传递测试",
+                document_folder=root,
+                selected_files=("a.md",),
+                llm=LLMConfig(
+                    "qwen",
+                    "secret",
+                    "https://dashscope.aliyuncs.com/compatible-mode/v1",
+                    "qwen-plus",
+                    enable_thinking=True,
+                ),
+            )
+            extractor_cls = Mock(return_value=Mock())
+            aligner_cls = Mock()
+            generator_cls = Mock()
+            store = MemoryExperimentStore()
+            events = []
+            with (
+                patch("kg_extract_build.pipeline.KGSchema", return_value=Schema()),
+                patch(
+                    "kg_extract_build.pipeline.build_experiment_store",
+                    return_value=store,
+                ),
+                patch(
+                    "kg_extract_build.pipeline.build_vector_store",
+                    return_value=NullVectorStore(),
+                ),
+                patch(
+                    "kg_extract_build.pipeline.LongDocLLMEntityExtractor",
+                    extractor_cls,
+                ),
+                patch(
+                    "kg_extract_build.pipeline.EntityAligner",
+                    aligner_cls,
+                ),
+                patch(
+                    "kg_extract_build.pipeline.TripletGenerator",
+                    generator_cls,
+                ),
+                patch(
+                    "kg_extract_build.pipeline.CorpusRetriever",
+                    Mock(),
+                ),
+                patch(
+                    "kg_extract_build.pipeline.save_raw_entities",
+                    return_value=root / "raw.json",
+                ),
+                patch(
+                    "kg_extract_build.pipeline.save_aligned_entities",
+                    return_value=root / "aligned.json",
+                ),
+                patch(
+                    "kg_extract_build.pipeline.current_code_commit",
+                    return_value="commit",
+                ),
+            ):
+                run_pipeline(config, events.append)
+
+        extractor_cls.assert_called_once()
+        self.assertEqual(
+            extractor_cls.call_args.kwargs["provider_id"], "qwen"
+        )
+        self.assertTrue(
+            extractor_cls.call_args.kwargs["enable_thinking"]
+        )
+        self.assertEqual(
+            aligner_cls.call_args.kwargs["provider_id"], "qwen"
+        )
+        self.assertTrue(
+            aligner_cls.call_args.kwargs["enable_thinking"]
+        )
 
 
 if __name__ == "__main__":

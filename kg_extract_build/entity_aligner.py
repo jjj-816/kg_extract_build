@@ -6,6 +6,7 @@ from difflib import SequenceMatcher
 import numpy as np
 from openai import OpenAI
 
+from .llm_thinking import build_thinking_options
 from .run_config import redact_text
 from .settings import UNKNOWN_TYPE, VECTOR_MODEL_PATH
 
@@ -58,6 +59,8 @@ class EntityAligner:
         edit_threshold=0.72,
         semantic_threshold=0.82,
         max_group_size=20,
+        provider_id="custom",
+        enable_thinking=False,
     ):
         self.client = OpenAI(api_key=api_key, base_url=base_url, timeout=120.0)
         self.model = model_name
@@ -68,6 +71,10 @@ class EntityAligner:
         self._embedding_model = None
         self._embedding_model_load_failed = False
         self._secret_values = (api_key,)
+        self._thinking_options = build_thinking_options(
+            provider_id,
+            enable_thinking,
+        )
 
     def align(
         self,
@@ -262,6 +269,7 @@ class EntityAligner:
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.1,
+                **self._thinking_options,
             )
             raw_response = response.choices[0].message.content
             decision = self._parse_decision(raw_response)

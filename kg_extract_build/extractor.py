@@ -4,6 +4,7 @@ import time
 
 from openai import OpenAI
 
+from .llm_thinking import build_thinking_options
 from .run_config import redact_text
 from .settings import UNKNOWN_TYPE
 
@@ -20,6 +21,8 @@ class LongDocLLMEntityExtractor:
         model_name,
         schema,
         max_chunk_size=2000,
+        provider_id="custom",
+        enable_thinking=False,
     ):
         self.expert_entities = expert_entities
         self.client = OpenAI(api_key=api_key, base_url=base_url, timeout=120.0)
@@ -27,6 +30,10 @@ class LongDocLLMEntityExtractor:
         self.schema = schema
         self.max_chunk_size = int(max_chunk_size)
         self._secret_values = (api_key,)
+        self._thinking_options = build_thinking_options(
+            provider_id,
+            enable_thinking,
+        )
 
     def extract(
         self,
@@ -182,6 +189,7 @@ class LongDocLLMEntityExtractor:
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.1,
+                **self._thinking_options,
             )
             raw_response = response.choices[0].message.content
             entities = self._parse_entities(raw_response)

@@ -3,6 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from kg_extract_build.llm_thinking import build_thinking_options
 from kg_extract_build.triplets import TripletGenerator
 
 
@@ -68,6 +69,10 @@ def make_generator(tmp, completions):
     generator.recorder = Recorder()
     generator.debug_dir = Path(tmp)
     generator._secret_values = ("top-secret",)
+    generator._thinking_options = build_thinking_options(
+        "qwen",
+        False,
+    )
     return generator
 
 
