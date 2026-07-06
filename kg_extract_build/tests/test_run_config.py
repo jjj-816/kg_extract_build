@@ -7,6 +7,7 @@ import types
 import unittest
 from dataclasses import FrozenInstanceError, replace
 from pathlib import Path
+from unittest import mock
 from unittest.mock import Mock, patch
 
 
@@ -531,6 +532,58 @@ class RunConfigTests(unittest.TestCase):
             with patch.object(Path, "resolve", fake_resolve):
                 with self.assertRaisesRegex(ValueError, "文档目录"):
                     config.validate()
+
+
+    def test_llm_thinking_is_disabled_by_default_and_snapshotted(self):
+        llm = run_config.LLMConfig(
+            provider_id="deepseek",
+            api_key="secret",
+            base_url="https://api.deepseek.com",
+            model="deepseek-chat",
+        )
+        self.assertFalse(llm.enable_thinking)
+        self.assertFalse(llm.sanitized()["enable_thinking"])
+
+    def test_from_settings_reads_explicit_thinking_true(self):
+        with mock.patch.dict(
+            os.environ,
+            {
+                "LLM_PROVIDER": "ollama",
+                "LLM_ENABLE_THINKING": "YES",
+            },
+            clear=False,
+        ):
+            config = run_config.PipelineConfig.from_settings()
+        self.assertTrue(config.llm.enable_thinking)
+
+    def test_from_settings_defaults_thinking_to_false(self):
+        with mock.patch.dict(os.environ, {}, clear=False):
+            with mock.patch.dict(
+                os.environ, {"LLM_ENABLE_THINKING": ""}, clear=False
+            ):
+                config = run_config.PipelineConfig.from_settings()
+        self.assertFalse(config.llm.enable_thinking)
+
+    def test_thinking_only_model_requires_explicit_enable(self):
+        with tempfile.TemporaryDirectory() as folder:
+            Path(folder, "document.md").write_text(
+                "content", encoding="utf-8"
+            )
+            config = self.make_config(folder)
+            config = replace(
+                config,
+                llm=replace(
+                    config.llm,
+                    model="deepseek-reasoner",
+                    enable_thinking=False,
+                ),
+            )
+            with self.assertRaisesRegex(ValueError, "仅思考模型"):
+                config.validate()
+            replace(
+                config,
+                llm=replace(config.llm, enable_thinking=True),
+            ).validate()
 
 
 class RunConfigAvailabilityTests(unittest.TestCase):

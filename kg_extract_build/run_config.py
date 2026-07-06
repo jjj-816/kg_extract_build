@@ -74,6 +74,10 @@ PROVIDERS: dict[str, ProviderPreset] = {
 }
 
 
+def _env_flag(value: str) -> bool:
+    return str(value).strip().lower() in {"1", "true", "yes", "on"}
+
+
 def _provider(provider_id: str) -> ProviderPreset:
     try:
         return PROVIDERS[provider_id]
@@ -125,6 +129,7 @@ class LLMConfig:
     api_key: str = field(repr=False)
     base_url: str
     model: str
+    enable_thinking: bool = False
 
     def sanitized(self) -> dict[str, object]:
         secret = (self.api_key,) if self.api_key else ()
@@ -133,6 +138,7 @@ class LLMConfig:
             "base_url": redact_text(self.base_url, secrets=secret),
             "model": redact_text(self.model, secrets=secret),
             "api_key_configured": bool(self.api_key),
+            "enable_thinking": self.enable_thinking,
         }
 
 
@@ -166,6 +172,19 @@ class PipelineConfig:
             raise ValueError("Base URL 不能为空")
         if not self.llm.model.strip():
             raise ValueError("模型名称不能为空")
+        from .llm_thinking import is_thinking_only_model  # noqa: E402
+
+        if (
+            not self.llm.enable_thinking
+            and is_thinking_only_model(
+                self.llm.provider_id,
+                self.llm.model,
+            )
+        ):
+            raise ValueError(
+                "当前模型属于仅思考模型，无法保证关闭思考；"
+                "请更换模型或勾选'启用思考模式'"
+            )
         if not self.selected_files:
             raise ValueError("至少选择一份文档")
         if not 200 <= self.chunking.max_chars <= 20_000:
@@ -255,6 +274,9 @@ class PipelineConfig:
                     PROVIDERS[provider_id].default_base_url,
                 ),
                 model=settings.LLM_MODEL,
+                enable_thinking=_env_flag(
+                    os.environ.get("LLM_ENABLE_THINKING", "")
+                ),
             ),
             chunking=ChunkingConfig(),
             retrieve_sentence_num=settings.RETRIEVE_SENTENCE_NUM,
