@@ -55,7 +55,7 @@ class LLMThinkingOptionsTests(unittest.TestCase):
             "modelscope": {
                 "extra_body": {"enable_thinking": False}
             },
-            "ollama": {"extra_body": {"think": False}},
+            "ollama": {"reasoning_effort": "none"},
             "huggingface": {"reasoning_effort": "none"},
             "custom": {"reasoning_effort": "none"},
         }
@@ -78,7 +78,7 @@ class LLMThinkingOptionsTests(unittest.TestCase):
             "modelscope": {
                 "extra_body": {"enable_thinking": True}
             },
-            "ollama": {"extra_body": {"think": True}},
+            "ollama": {"reasoning_effort": "high"},
             "huggingface": {"reasoning_effort": "high"},
             "custom": {"reasoning_effort": "high"},
         }
@@ -116,7 +116,7 @@ _THINKING_STYLE = {
     "deepseek": "thinking_type",
     "qwen": "enable_thinking",
     "modelscope": "enable_thinking",
-    "ollama": "think",
+    "ollama": "reasoning_effort",
     "huggingface": "reasoning_effort",
     "custom": "reasoning_effort",
 }
@@ -133,8 +133,6 @@ def build_thinking_options(provider_id: str, enabled: bool) -> dict:
         return {"extra_body": {"thinking": {"type": mode}}}
     if style == "enable_thinking":
         return {"extra_body": {"enable_thinking": enabled}}
-    if style == "think":
-        return {"extra_body": {"think": enabled}}
     return {"reasoning_effort": "high" if enabled else "none"}
 ```
 

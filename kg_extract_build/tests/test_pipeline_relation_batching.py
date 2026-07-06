@@ -61,6 +61,16 @@ class TimelineRetriever:
 
 
 class PipelineRelationBatchingTests(unittest.TestCase):
+    def setUp(self):
+        self._breakpoint_dir = tempfile.TemporaryDirectory()
+        self.addCleanup(self._breakpoint_dir.cleanup)
+        self._breakpoint_patch = patch(
+            "kg_extract_build.pipeline.PROCESSED_RECORD",
+            Path(self._breakpoint_dir.name) / "processed_docs.json",
+        )
+        self._breakpoint_patch.start()
+        self.addCleanup(self._breakpoint_patch.stop)
+
     def test_retrieval_keeps_direct_and_high_score_hits_before_source_order(self):
         class Retriever:
             top_n = 2
@@ -145,12 +155,13 @@ class PipelineRelationBatchingTests(unittest.TestCase):
 
             generator.generate_batch.side_effect = generate_batch
             generator.generate.side_effect = generate
+            store = MemoryExperimentStore()
 
             with (
                 patch("kg_extract_build.pipeline.KGSchema", return_value=Schema()),
                 patch(
                     "kg_extract_build.pipeline.build_experiment_store",
-                    return_value=MemoryExperimentStore(),
+                    return_value=store,
                 ),
                 patch(
                     "kg_extract_build.pipeline.build_vector_store",
@@ -185,8 +196,9 @@ class PipelineRelationBatchingTests(unittest.TestCase):
                     return_value="commit",
                 ),
             ):
-                run_pipeline(config)
+                run_id = run_pipeline(config)
 
+        self.assertEqual(store.runs[run_id]["status"], "completed")
         first_generate = min(
             index
             for index, item in enumerate(timeline)

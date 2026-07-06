@@ -5,7 +5,7 @@ _THINKING_STYLE = {
     "deepseek": "thinking_type",
     "qwen": "enable_thinking",
     "modelscope": "enable_thinking",
-    "ollama": "think",
+    "ollama": "reasoning_effort",
     "huggingface": "reasoning_effort",
     "custom": "reasoning_effort",
 }
@@ -22,8 +22,6 @@ def build_thinking_options(provider_id: str, enabled: bool) -> dict:
         return {"extra_body": {"thinking": {"type": mode}}}
     if style == "enable_thinking":
         return {"extra_body": {"enable_thinking": enabled}}
-    if style == "think":
-        return {"extra_body": {"think": enabled}}
     return {"reasoning_effort": "high" if enabled else "none"}
 
 

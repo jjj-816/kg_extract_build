@@ -63,7 +63,7 @@ Streamlit 的 LLM 配置区域新增复选框：
 | DeepSeek | `extra_body={"thinking": {"type": "disabled"}}` | `extra_body={"thinking": {"type": "enabled"}}` |
 | Qwen / 阿里云百炼 | `extra_body={"enable_thinking": false}` | `extra_body={"enable_thinking": true}` |
 | ModelScope | `extra_body={"enable_thinking": false}` | `extra_body={"enable_thinking": true}` |
-| Ollama | `extra_body={"think": false}` | `extra_body={"think": true}` |
+| Ollama（OpenAI 兼容 `/v1`） | `reasoning_effort="none"` | `reasoning_effort="high"` |
 | Hugging Face | `reasoning_effort="none"` | `reasoning_effort="high"` |
 | 自定义 OpenAI 兼容接口 | `reasoning_effort="none"` | `reasoning_effort="high"` |
 
@@ -74,7 +74,9 @@ Streamlit 的 LLM 配置区域新增复选框：
 - DeepSeek：<https://api-docs.deepseek.com/zh-cn/guides/thinking_mode>
 - 智谱：<https://docs.bigmodel.cn/cn/guide/capabilities/thinking-mode>
 - 阿里云百炼：<https://help.aliyun.com/zh/model-studio/deep-thinking>
-- Ollama：<https://docs.ollama.com/capabilities/thinking>
+- Ollama：原生 `/api/chat` 使用 `think`；本项目使用的 OpenAI
+  兼容 `/v1/chat/completions` 必须使用 `reasoning_effort`，参见
+  <https://github.com/ollama/ollama/issues/14820>
 - Hugging Face：<https://huggingface.co/docs/inference-providers/tasks/chat-completion>
 
 ## 仅思考模型校验

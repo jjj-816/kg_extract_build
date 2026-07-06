@@ -26,6 +26,16 @@ class Schema:
 
 
 class PipelineControlTests(unittest.TestCase):
+    def setUp(self):
+        self._breakpoint_dir = tempfile.TemporaryDirectory()
+        self.addCleanup(self._breakpoint_dir.cleanup)
+        self._breakpoint_patch = patch(
+            "kg_extract_build.pipeline.PROCESSED_RECORD",
+            Path(self._breakpoint_dir.name) / "processed_docs.json",
+        )
+        self._breakpoint_patch.start()
+        self.addCleanup(self._breakpoint_patch.stop)
+
     def test_extractor_stops_before_first_chunk_request(self):
         token = CancellationToken()
         token.cancel()
@@ -488,6 +498,29 @@ class PipelineControlTests(unittest.TestCase):
 
 
     def test_pipeline_passes_provider_and_thinking_to_components(self):
+        class FakeRetriever:
+            sentences = ["井口安装于井场。"]
+            sent_embeddings = []
+            top_n = 10
+
+            def export_segments(self):
+                return [
+                    {
+                        "index": 0,
+                        "content": self.sentences[0],
+                    }
+                ]
+
+            def retrieve_with_details(self, query):
+                return [
+                    {
+                        "sentence_index": 0,
+                        "sentence": self.sentences[0],
+                        "score": 1.0,
+                        "match_type": "direct",
+                    }
+                ]
+
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / "a.md").write_text("内容", encoding="utf-8")
@@ -503,9 +536,17 @@ class PipelineControlTests(unittest.TestCase):
                     enable_thinking=True,
                 ),
             )
-            extractor_cls = Mock(return_value=Mock())
-            aligner_cls = Mock()
-            generator_cls = Mock()
+            entities = [{"name": "井口", "type": "设施"}]
+            extractor = Mock()
+            extractor.extract.return_value = entities
+            aligner = Mock()
+            aligner.align.return_value = (entities, {})
+            generator = Mock()
+            generator.generate.return_value = []
+            generator.debug_dir = root
+            extractor_cls = Mock(return_value=extractor)
+            aligner_cls = Mock(return_value=aligner)
+            generator_cls = Mock(return_value=generator)
             store = MemoryExperimentStore()
             events = []
             with (
@@ -532,7 +573,7 @@ class PipelineControlTests(unittest.TestCase):
                 ),
                 patch(
                     "kg_extract_build.pipeline.CorpusRetriever",
-                    Mock(),
+                    return_value=FakeRetriever(),
                 ),
                 patch(
                     "kg_extract_build.pipeline.save_raw_entities",
@@ -547,8 +588,9 @@ class PipelineControlTests(unittest.TestCase):
                     return_value="commit",
                 ),
             ):
-                run_pipeline(config, events.append)
+                run_id = run_pipeline(config, events.append)
 
+        self.assertEqual(store.runs[run_id]["status"], "completed")
         extractor_cls.assert_called_once()
         self.assertEqual(
             extractor_cls.call_args.kwargs["provider_id"], "qwen"
@@ -561,6 +603,13 @@ class PipelineControlTests(unittest.TestCase):
         )
         self.assertTrue(
             aligner_cls.call_args.kwargs["enable_thinking"]
+        )
+        generator_cls.assert_called_once()
+        self.assertEqual(
+            generator_cls.call_args.kwargs["provider_id"], "qwen"
+        )
+        self.assertTrue(
+            generator_cls.call_args.kwargs["enable_thinking"]
         )
 
 

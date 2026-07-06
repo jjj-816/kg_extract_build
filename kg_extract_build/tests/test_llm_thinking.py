@@ -16,7 +16,7 @@ class LLMThinkingOptionsTests(unittest.TestCase):
             "modelscope": {
                 "extra_body": {"enable_thinking": False}
             },
-            "ollama": {"extra_body": {"think": False}},
+            "ollama": {"reasoning_effort": "none"},
             "huggingface": {"reasoning_effort": "none"},
             "custom": {"reasoning_effort": "none"},
         }
@@ -39,7 +39,7 @@ class LLMThinkingOptionsTests(unittest.TestCase):
             "modelscope": {
                 "extra_body": {"enable_thinking": True}
             },
-            "ollama": {"extra_body": {"think": True}},
+            "ollama": {"reasoning_effort": "high"},
             "huggingface": {"reasoning_effort": "high"},
             "custom": {"reasoning_effort": "high"},
         }
