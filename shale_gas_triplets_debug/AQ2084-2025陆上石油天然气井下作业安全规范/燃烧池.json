@@ -1,5 +1,0 @@
-{
-  "entity": "燃烧池",
-  "raw": "[\n  {\"head\": \"燃烧池\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"井场\", \"tail_type\": \"施工对象\"}\n]",
-  "triplets": []
-}

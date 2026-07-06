@@ -1,5 +1,0 @@
-{
-  "entity": "坡度大于45°的斜坡",
-  "raw": "[\n  {\"head\": \"坡度大于45°的斜坡\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"I级高处作业\", \"tail_type\": \"施工阶段\"}\n]",
-  "triplets": []
-}

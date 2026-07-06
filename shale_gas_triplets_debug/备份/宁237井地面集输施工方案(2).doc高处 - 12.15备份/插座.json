@@ -1,5 +1,0 @@
-{
-  "entity": "插座",
-  "raw": "[\n  {\"head\": \"插座\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"}\n]",
-  "triplets": []
-}

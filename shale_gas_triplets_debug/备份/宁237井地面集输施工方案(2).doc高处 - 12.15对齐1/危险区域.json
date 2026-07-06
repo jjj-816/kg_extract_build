@@ -1,5 +1,0 @@
-{
-  "entity": "危险区域",
-  "raw": "[\n  {\"head\": \"危险区域\", \"head_type\": \"施工对象\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾爆炸\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"危险区域\", \"head_type\": \"施工对象\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"碰伤\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"危险区域\", \"head_type\": \"施工对象\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"物体打击\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"危险区域\", \"head_type\": \"施工对象\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"机械伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"危险区域\", \"head_type\": \"施工对象\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"车辆移动伤害\", \"tail_type\": \"风险事件\"}\n]",
-  "triplets": []
-}

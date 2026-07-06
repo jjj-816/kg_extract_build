@@ -1,5 +1,0 @@
-{
-  "entity": "工衣",
-  "raw": "[\n  {\"head\": \"工衣\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"劳保鞋\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工衣\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"安全帽\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工衣\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"劳保手套\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工衣\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防毒口罩\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工衣\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防护眼镜\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工衣\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防护面罩\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"工衣\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"冬季工作服\", \"tail_type\": \"设备工具\"}\n]",
-  "triplets": []
-}

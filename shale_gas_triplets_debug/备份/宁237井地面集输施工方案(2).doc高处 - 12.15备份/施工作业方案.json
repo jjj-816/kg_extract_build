@@ -1,5 +1,0 @@
-{
-  "entity": "施工作业方案",
-  "raw": "[\n  {\"head\": \"施工作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_STAGE\", \"tail\": \"施工准备\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"施工作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"3.1施工准备\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"施工作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"3.1.2施工人员组织结构\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"施工作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工安排\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"工程概况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工作业方案\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工准备与资源配置计划\", \"tail_type\": \"施工记录\"}\n]",
-  "triplets": []
-}

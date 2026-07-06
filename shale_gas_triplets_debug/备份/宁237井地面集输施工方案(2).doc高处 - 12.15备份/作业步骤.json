@@ -1,5 +1,0 @@
-{
-  "entity": "作业步骤",
-  "raw": "[\n  {\"head\": \"作业步骤\", \"head_type\": \"作业活动\", \"relation\": \"HAS_STAGE\", \"tail\": \"工程概况\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"作业步骤\", \"head_type\": \"作业活动\", \"relation\": \"HAS_STAGE\", \"tail\": \"高处\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"作业步骤\", \"head_type\": \"作业活动\", \"relation\": \"HAS_STAGE\", \"tail\": \"编制依据\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"作业步骤\", \"head_type\": \"作业活动\", \"relation\": \"HAS_STAGE\", \"tail\": \"组织机构\", \"tail_type\": \"施工阶段\"}\n]",
-  "triplets": []
-}

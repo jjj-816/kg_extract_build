@@ -1,5 +1,0 @@
-{
-  "entity": "关联的其他特殊作业及安全作业票编号",
-  "raw": "[\n  {\"head\": \"关联的其他特殊作业及安全作业票编号\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"动火作业票\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"关联的其他特殊作业及安全作业票编号\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"受限空间作业票\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"关联的其他特殊作业及安全作业票编号\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"盲板抽堵作业票\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"关联的其他特殊作业及安全作业票编号\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"高处作业票\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"关联的其他特殊作业及安全作业票编号\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"临时用电作业票\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"关联的其他特殊作业及安全作业票编号\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"动土作业票\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"关联的其他特殊作业及安全作业票编号\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES\", \"tail\": \"断路作业票\", \"tail_type\": \"施工记录\"}\n]",
-  "triplets": []
-}

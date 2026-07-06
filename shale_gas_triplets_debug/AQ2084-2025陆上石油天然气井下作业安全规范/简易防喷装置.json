@@ -1,5 +1,0 @@
-{
-  "entity": "简易防喷装置",
-  "raw": "[\n  {\"head\": \"简易防喷装置\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"旋塞阀\", \"tail_type\": \"未分类\"}\n]",
-  "triplets": []
-}

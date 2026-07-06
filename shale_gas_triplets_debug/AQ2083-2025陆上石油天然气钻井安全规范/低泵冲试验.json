@@ -1,5 +1,0 @@
-{
-  "entity": "低泵冲试验",
-  "raw": "[\n  {\"head\": \"低泵冲试验\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"排量\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"低泵冲试验\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"循环压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"低泵冲试验\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"井深\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"低泵冲试验\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"钻井液密度\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"低泵冲试验\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"钻头尺寸\", \"tail_type\": \"施工参数\"}\n]",
-  "triplets": []
-}

@@ -1,5 +1,0 @@
-{
-  "entity": "防喷演习",
-  "raw": "[\n  {\"head\": \"防喷演习\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"防喷器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"防喷演习\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"防喷器控制装置\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"防喷演习\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"内防喷工具\", \"tail_type\": \"设备工具\"}\n]",
-  "triplets": []
-}

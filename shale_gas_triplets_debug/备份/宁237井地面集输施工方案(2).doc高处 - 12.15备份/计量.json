@@ -1,5 +1,0 @@
-{
-  "entity": "计量",
-  "raw": "[\n  {\"head\": \"计量\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"计量\", \"head_type\": \"设备工具\", \"relation\": \"RECORDED_IN\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"}\n]",
-  "triplets": []
-}

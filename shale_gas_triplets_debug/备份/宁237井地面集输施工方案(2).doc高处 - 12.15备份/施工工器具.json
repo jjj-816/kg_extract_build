@@ -1,5 +1,0 @@
-{
-  "entity": "施工工器具",
-  "raw": "[\n  {\"head\": \"施工工器具\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电镐\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"施工工器具\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防护眼镜\", \"tail_type\": \"设备工具\"}\n]",
-  "triplets": []
-}

@@ -1,5 +1,0 @@
-{
-  "entity": "目视化合格标志",
-  "raw": "[\n  {\"head\": \"目视化合格标志\", \"head_type\": \"未分类\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"正确佩戴护目镜\", \"tail_type\": \"控制措施\"}\n]",
-  "triplets": []
-}

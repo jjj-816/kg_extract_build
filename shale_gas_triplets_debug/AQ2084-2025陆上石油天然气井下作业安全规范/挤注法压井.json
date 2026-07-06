@@ -1,5 +1,0 @@
-{
-  "entity": "挤注法压井",
-  "raw": "[\n  {\"head\": \"挤注法压井\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"压井液进出口密度差小于 $0.02\\mathrm{g / cm^3}$\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"挤注法压井\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"停泵油、套压均为0\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"挤注法压井\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"出口无外溢\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"挤注法压井\", \"head_type\": \"作业活动\", \"relation\": \"PRECEDES\", \"tail\": \"下步作业\", \"tail_type\": \"作业活动\"}\n]",
-  "triplets": []
-}

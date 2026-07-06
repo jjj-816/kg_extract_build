@@ -1,5 +1,0 @@
-{
-  "entity": "危险作业许可制度",
-  "raw": "[\n  {\"head\": \"危险作业许可制度\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"现场作业的安全措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"危险作业许可制度\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"应急响应程序\", \"tail_type\": \"控制措施\"}\n]",
-  "triplets": []
-}

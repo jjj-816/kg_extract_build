@@ -1,5 +1,0 @@
-{
-  "entity": "培训时间",
-  "raw": "[\n  {\"head\": \"培训时间\", \"head_type\": \"时空信息\", \"relation\": \"OCCURS_AT\", \"tail\": \"年 月 日\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"培训时间\", \"head_type\": \"时空信息\", \"relation\": \"OCCURS_AT\", \"tail\": \"培训及交底日期\", \"tail_type\": \"时空信息\"}\n]",
-  "triplets": []
-}

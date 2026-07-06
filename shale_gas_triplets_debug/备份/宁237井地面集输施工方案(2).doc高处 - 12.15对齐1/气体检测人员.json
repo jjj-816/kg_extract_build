@@ -1,5 +1,0 @@
-{
-  "entity": "气体检测人员",
-  "raw": "```json\n[\n  {\"head\": \"气体检测人员\", \"head_type\": \"责任主体\", \"relation\": \"OPERATES_ON\", \"tail\": \"气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"气体检测人员\", \"head_type\": \"责任主体\", \"relation\": \"OPERATES_ON\", \"tail\": \"作业区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"气体检测人员\", \"head_type\": \"责任主体\", \"relation\": \"RECORDS_IN\", \"tail\": \"气体检测记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"气体检测人员\", \"head_type\": \"责任主体\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"气体检测合格\", \"tail_type\": \"阈值约束\"},\n  {\"head\": \"气体检测人员\", \"head_type\": \"责任主体\", \"relation\": \"OPERATES_ON\", \"tail\": \"受限空间\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"气体检测人员\", \"head_type\": \"责任主体\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"窒息\", \"tail_type\": \"风险事件\"}\n]\n```",
-  "triplets": []
-}

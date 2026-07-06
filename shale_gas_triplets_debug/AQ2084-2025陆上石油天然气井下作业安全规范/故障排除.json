@@ -1,5 +1,0 @@
-{
-  "entity": "故障排除",
-  "raw": "[\n  {\"head\": \"故障排除\", \"head_type\": \"作业活动\", \"relation\": \"HAS_SUB_OPERATION\", \"tail\": \"井控装置\", \"tail_type\": \"施工对象\"}\n]",
-  "triplets": []
-}

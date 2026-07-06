@@ -1,5 +1,0 @@
-{
-  "entity": "套管头",
-  "raw": "[\n  {\"head\": \"套管头\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"套管头额定工作压力\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"套管头\", \"head_type\": \"设备工具\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"套管抗外挤强度 $80\\%$ 的最小值\", \"tail_type\": \"施工参数\"}\n]",
-  "triplets": []
-}

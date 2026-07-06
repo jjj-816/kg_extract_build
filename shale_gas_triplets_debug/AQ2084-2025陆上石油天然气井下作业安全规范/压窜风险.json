@@ -1,5 +1,0 @@
-{
-  "entity": "压窜风险",
-  "raw": "[\n  {\"head\": \"压窜风险\", \"head_type\": \"风险事件\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工前\", \"tail_type\": \"时空信息\"}\n]",
-  "triplets": []
-}

@@ -1,5 +1,0 @@
-{
-  "entity": "防火帽",
-  "raw": "[\n  {\"head\": \"防火帽\", \"head_type\": \"设备工具\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"车辆进入井站\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"防火帽\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"井站\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"防火帽\", \"head_type\": \"设备工具\", \"relation\": \"MITIGATED_BY\", \"tail\": \"火灾爆炸风险\", \"tail_type\": \"风险事件\"}\n]",
-  "triplets": []
-}

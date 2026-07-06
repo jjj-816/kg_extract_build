@@ -1,5 +1,0 @@
-{
-  "entity": "生产指挥中心",
-  "raw": "[\n  {\"head\": \"生产指挥中心\", \"head_type\": \"责任主体\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"生产指挥中心\", \"head_type\": \"责任主体\", \"relation\": \"REQUIRES\", \"tail\": \"安全风险违约查处\", \"tail_type\": \"控制措施\"}\n]",
-  "triplets": []
-}

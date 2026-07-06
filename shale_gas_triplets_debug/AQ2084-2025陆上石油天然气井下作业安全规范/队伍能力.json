@@ -1,5 +1,0 @@
-{
-  "entity": "队伍能力",
-  "raw": "[\n  {\"head\": \"队伍能力\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"分级管控措施\", \"tail_type\": \"控制措施\"}\n]",
-  "triplets": []
-}

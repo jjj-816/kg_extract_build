@@ -1,5 +1,0 @@
-{
-  "entity": "地下电力电缆",
-  "raw": "[\n  {\"head\": \"地下电力电缆\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"电缆埋地深度不应小于 $0.7 \\, m$\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"地下电力电缆\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"穿越道路时应加设防护套管\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"地下电力电缆\", \"head_type\": \"设备工具\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"在电缆敷设路径附近,当有产生明火的作业时,应采取防止火花损伤电缆的措施\", \"tail_type\": \"风险事件\"}\n]",
-  "triplets": []
-}

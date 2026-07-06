@@ -1,5 +1,0 @@
-{
-  "entity": "附录A",
-  "raw": "[\n  {\"head\": \"附录A\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"13、应急处置\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"附录A\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"现场人员配置\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"附录A\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"组织机构\", \"tail_type\": \"规范条款\"}\n]",
-  "triplets": []
-}

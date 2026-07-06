@@ -1,5 +1,0 @@
-{
-  "entity": "气体检测仪",
-  "raw": "[\n  {\"head\": \"气体检测仪\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"作业区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"气体检测仪\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"气体检测人员\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"气体检测仪\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"受限空间\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"气体检测仪\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"气体检测记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"气体检测仪\", \"head_type\": \"设备工具\", \"relation\": \"RECORDED_IN\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"}\n]",
-  "triplets": []
-}

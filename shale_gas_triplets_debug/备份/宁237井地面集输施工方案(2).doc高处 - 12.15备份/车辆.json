@@ -1,5 +1,0 @@
-{
-  "entity": "车辆",
-  "raw": "[\n  {\"head\": \"车辆\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"枕木\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"车辆\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"防火帽\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"车辆\", \"head_type\": \"设备工具\", \"relation\": \"USES_MATERIAL\", \"tail\": \"安全带\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"车辆\", \"head_type\": \"设备工具\", \"relation\": \"USES_MATERIAL\", \"tail\": \"机油\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"车辆\", \"head_type\": \"设备工具\", \"relation\": \"USES_MATERIAL\", \"tail\": \"冷却液\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"车辆\", \"head_type\": \"设备工具\", \"relation\": \"USES_MATERIAL\", \"tail\": \"玻璃水\", \"tail_type\": \"材料介质\"}\n]",
-  "triplets": []
-}

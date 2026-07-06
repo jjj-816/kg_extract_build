@@ -1,5 +1,0 @@
-{
-  "entity": "雪地轮胎",
-  "raw": "[\n  {\"head\": \"雪地轮胎\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"车辆\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"雪地轮胎\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"道路\", \"tail_type\": \"环保对象\"}\n]",
-  "triplets": []
-}

@@ -1,5 +1,0 @@
-{
-  "entity": "垂直度",
-  "raw": "[\n  {\"head\": \"垂直度\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"允许范围\", \"tail_type\": \"阈值约束\"}\n]",
-  "triplets": []
-}

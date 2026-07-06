@@ -1,5 +1,0 @@
-{
-  "entity": "学校",
-  "raw": "[\n  {\"head\": \"学校\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"距学校、医院、油库、人口密集及高危场所等不小于 $500 \\, m$\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"学校\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"对区域探井及高含硫油气井周围 $5000\\mathrm{m}$ 、探井周围 $3000\\mathrm{m}$ 范围内的居民住宅、学校、公路、铁路和厂矿等进行勘测\", \"tail_type\": \"时空信息\"}\n]",
-  "triplets": []
-}

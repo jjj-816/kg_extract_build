@@ -1,5 +1,0 @@
-{
-  "entity": "停车",
-  "raw": "[\n  {\"head\": \"停车\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"必要时停车,放空物料，置换后再进行吊装作业\", \"tail_type\": \"施工记录\"}\n]",
-  "triplets": []
-}

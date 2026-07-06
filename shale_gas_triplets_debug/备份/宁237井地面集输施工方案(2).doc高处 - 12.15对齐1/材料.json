@@ -1,5 +1,0 @@
-{
-  "entity": "材料",
-  "raw": "[\n  {\"head\": \"材料\", \"head_type\": \"材料介质\", \"relation\": \"USES_MATERIAL\", \"tail\": \"化纤材料\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"材料\", \"head_type\": \"材料介质\", \"relation\": \"USES_MATERIAL\", \"tail\": \"劳保用品\", \"tail_type\": \"材料介质\"}\n]",
-  "triplets": []
-}

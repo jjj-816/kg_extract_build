@@ -1,5 +1,0 @@
-{
-  "entity": "井场",
-  "raw": "[\n  {\"head\": \"井场\", \"head_type\": \"施工对象\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"监理单位\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"井场\", \"head_type\": \"施工对象\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工单位\", \"tail_type\": \"责任主体\"}\n]",
-  "triplets": []
-}

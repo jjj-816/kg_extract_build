@@ -1,5 +1,0 @@
-{
-  "entity": "参观者",
-  "raw": "[\n  {\"head\": \"参观者\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"人员疏散\", \"tail_type\": \"控制措施\"}\n]",
-  "triplets": []
-}

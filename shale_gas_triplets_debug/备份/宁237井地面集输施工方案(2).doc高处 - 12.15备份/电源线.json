@@ -1,5 +1,0 @@
-{
-  "entity": "电源线",
-  "raw": "[\n  {\"head\": \"电源线\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"检查电缆线是否完好无破损\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"电源线\", \"head_type\": \"设备工具\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"停验电并上锁挂牌\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"电源线\", \"head_type\": \"设备工具\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"用电设备进行检查和试运转\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"电源线\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"配电箱\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"电源线\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"电源线\", \"head_type\": \"设备工具\", \"relation\": \"REQUIRES\", \"tail\": \"由经过培训合格的专人按操作规程操作\", \"tail_type\": \"控制措施\"}\n]",
-  "triplets": []
-}

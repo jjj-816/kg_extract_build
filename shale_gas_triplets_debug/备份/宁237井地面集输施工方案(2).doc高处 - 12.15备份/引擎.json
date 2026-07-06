@@ -1,5 +1,0 @@
-{
-  "entity": "引擎",
-  "raw": "[\n  {\"head\": \"引擎\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"车辆\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"引擎\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"钥匙\", \"tail_type\": \"设备工具\"}\n]",
-  "triplets": []
-}

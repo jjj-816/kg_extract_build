@@ -1,5 +1,0 @@
-{
-  "entity": "受限空间",
-  "raw": "[\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_STAGE\", \"tail\": \"特级动火作业和受限空间内作业应连续检测气体浓度\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_SECTION\", \"tail\": \"忌氧环境下受限空间内的作业安全要求\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"受限空间内作业个人防护用具的佩戴要求及对监护人的特殊要求\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"HAS_PARAMETER\", \"tail\": \"$1.2 \\, m$\", \"tail_type\": \"施工参数\"},\n  {\"head\": \"受限空间\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"危险化学品企业\", \"tail_type\": \"时空信息\"}\n]",
-  "triplets": []
-}

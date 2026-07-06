@@ -1,5 +1,0 @@
-{
-  "entity": "流动度",
-  "raw": "[\n  {\"head\": \"流动度\", \"head_type\": \"施工参数\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工记录\", \"tail_type\": \"施工记录\"}\n]",
-  "triplets": []
-}

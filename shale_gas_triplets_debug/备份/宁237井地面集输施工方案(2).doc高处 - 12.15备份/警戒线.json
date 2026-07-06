@@ -1,5 +1,0 @@
-{
-  "entity": "警戒线",
-  "raw": "[\n  {\"head\": \"警戒线\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"警示标识\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"警戒线\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业区域\", \"tail_type\": \"施工对象\"}\n]",
-  "triplets": []
-}

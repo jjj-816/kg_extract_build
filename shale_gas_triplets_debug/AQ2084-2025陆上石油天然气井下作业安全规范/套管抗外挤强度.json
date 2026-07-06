@@ -1,5 +1,0 @@
-{
-  "entity": "套管抗外挤强度",
-  "raw": "[\n  {\"head\": \"套管抗外挤强度\", \"head_type\": \"施工参数\", \"relation\": \"HAS_THRESHOLD\", \"tail\": \"套管头额定工作压力、套管抗外挤强度 $80\\%$ 的最小值\", \"tail_type\": \"阈值约束\"}\n]",
-  "triplets": []
-}

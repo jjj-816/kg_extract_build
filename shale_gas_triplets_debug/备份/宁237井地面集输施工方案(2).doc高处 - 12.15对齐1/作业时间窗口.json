@@ -1,5 +1,0 @@
-{
-  "entity": "作业时间窗口",
-  "raw": "[\n  {\"head\": \"作业时间窗口\", \"head_type\": \"时空信息\", \"relation\": \"OCCURS_AT\", \"tail\": \"作业前\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"作业时间窗口\", \"head_type\": \"时空信息\", \"relation\": \"OCCURS_AT\", \"tail\": \"实际入场日期\", \"tail_type\": \"时空信息\"},\n  {\"head\": \"作业时间窗口\", \"head_type\": \"时空信息\", \"relation\": \"OCCURS_AT\", \"tail\": \"时间\", \"tail_type\": \"时空信息\"}\n]",
-  "triplets": []
-}

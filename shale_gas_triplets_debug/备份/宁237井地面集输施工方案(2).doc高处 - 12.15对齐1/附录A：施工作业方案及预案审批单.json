@@ -1,5 +1,0 @@
-{
-  "entity": "附录A：施工作业方案及预案审批单",
-  "raw": "```json\n[\n  {\"head\": \"附录A：施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"附录A：施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"工程概况\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"附录A：施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"施工安排\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"附录A：施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"施工准备与资源配置计划\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"附录A：施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"施工人员组织结构\", \"tail_type\": \"规范条款\"}\n]\n```",
-  "triplets": []
-}

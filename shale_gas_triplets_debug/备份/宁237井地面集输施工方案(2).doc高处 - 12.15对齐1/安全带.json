@@ -1,5 +1,0 @@
-{
-  "entity": "安全带",
-  "raw": "[\n  {\"head\": \"安全带\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"人员坠落\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全带\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"全身式安全带\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"安全带\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"全身式双钩安全带\", \"tail_type\": \"设备工具\"}\n]",
-  "triplets": []
-}

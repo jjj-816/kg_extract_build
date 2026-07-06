@@ -1,5 +1,0 @@
-{
-  "entity": "附录B",
-  "raw": "[\n  {\"head\": \"附录B\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"1\", \"tail_type\": \"施工记录\"}\n]",
-  "triplets": []
-}

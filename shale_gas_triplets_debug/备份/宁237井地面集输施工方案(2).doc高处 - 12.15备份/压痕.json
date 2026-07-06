@@ -1,5 +1,0 @@
-{
-  "entity": "压痕",
-  "raw": "[\n  {\"head\": \"压痕\", \"head_type\": \"未分类\", \"relation\": \"RECORDED_IN\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"}\n]",
-  "triplets": []
-}

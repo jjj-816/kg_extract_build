@@ -1,5 +1,0 @@
-{
-  "entity": "成都压缩机公司质安部",
-  "raw": "[\n  {\"head\": \"成都压缩机公司质安部\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"宁209H22A平台DTY560压缩机冷凝器管束箱堵头进行更换\", \"tail_type\": \"作业活动\"}\n]",
-  "triplets": []
-}

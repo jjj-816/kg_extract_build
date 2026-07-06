@@ -1,5 +1,0 @@
-{
-  "entity": "应急所需的设备",
-  "raw": "[\n  {\"head\": \"应急所需的设备\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"应急救援器材\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"应急所需的设备\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"安防消防器材\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"应急所需的设备\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"正压式空气呼吸器\", \"tail_type\": \"设备工具\"}\n]",
-  "triplets": []
-}

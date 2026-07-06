@@ -1,5 +1,0 @@
-{
-  "entity": "《DTY560 M245\\*155-H220\\*160-90操作维护手册》",
-  "raw": "[\n  {\"head\": \"《DTY560 M245*155-H220*160-90操作维护手册》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"宁209H22A平台DTY560压缩机冷凝器管束箱堵头更换\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《DTY560 M245*155-H220*160-90操作维护手册》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"宁209H22A平台\", \"tail_type\": \"施工阶段\"},\n  {\"head\": \"《DTY560 M245*155-H220*160-90操作维护手册》\", \"head_type\": \"规范条款\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"宁209H22A平台DTY560压缩机气管束更换堵头施工方案\", \"tail_type\": \"规范条款\"}\n]",
-  "triplets": []
-}

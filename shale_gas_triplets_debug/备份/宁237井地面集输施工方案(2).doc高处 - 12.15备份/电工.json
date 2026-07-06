@@ -1,5 +1,0 @@
-{
-  "entity": "电工",
-  "raw": "```json\n[\n  {\"head\": \"电工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"用电设备检查\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"电工\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"用电设备操作\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"电工\", \"head_type\": \"责任主体\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电动扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"电工\", \"head_type\": \"责任主体\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"}\n]\n```",
-  "triplets": []
-}

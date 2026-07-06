@@ -1,5 +1,0 @@
-{
-  "entity": "安全警示标识",
-  "raw": "[\n  {\"head\": \"安全警示标识\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"安全警示标识\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"高压和旋转部件区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"安全警示标识\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"临边坠落\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"安全警示标识\", \"head_type\": \"设备工具\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"}\n]",
-  "triplets": []
-}

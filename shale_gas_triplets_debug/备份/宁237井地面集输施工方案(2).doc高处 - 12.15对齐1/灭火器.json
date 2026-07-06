@@ -1,5 +1,0 @@
-{
-  "entity": "灭火器",
-  "raw": "[\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"MITIGATED_BY\", \"tail\": \"火灾爆炸风险\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"REQUIRES\", \"tail\": \"按要求配备\", \"tail_type\": \"控制措施\"}\n]",
-  "triplets": []
-}

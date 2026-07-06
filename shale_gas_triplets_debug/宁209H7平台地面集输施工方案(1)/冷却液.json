@@ -1,5 +1,0 @@
-{
-  "entity": "冷却液",
-  "raw": "[\n  {\"head\": \"冷却液\", \"head_type\": \"材料介质\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"车辆关键部件性能不良\", \"tail_type\": \"风险事件\"}\n]",
-  "triplets": []
-}

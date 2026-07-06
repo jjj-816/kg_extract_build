@@ -1,5 +1,0 @@
-{
-  "entity": "防毒口罩",
-  "raw": "[\n  {\"head\": \"防毒口罩\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"人员呼吸道\", \"tail_type\": \"环保对象\"},\n  {\"head\": \"防毒口罩\", \"head_type\": \"设备工具\", \"relation\": \"MITIGATED_BY\", \"tail\": \"人员呼吸道粉尘伤害\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"防毒口罩\", \"head_type\": \"设备工具\", \"relation\": \"MITIGATED_BY\", \"tail\": \"有害中毒\", \"tail_type\": \"风险事件\"}\n]",
-  "triplets": []
-}

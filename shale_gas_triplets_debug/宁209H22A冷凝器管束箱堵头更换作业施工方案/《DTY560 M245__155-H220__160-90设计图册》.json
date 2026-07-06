@@ -1,5 +1,0 @@
-{
-  "entity": "《DTY560 M245\\*155-H220\\*160-90设计图册》",
-  "raw": "[\n  {\"head\": \"《DTY560 M245*155-H220*160-90设计图册》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"宁209H22A平台DTY560压缩机气管束更换堵头\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"《DTY560 M245*155-H220*160-90设计图册》\", \"head_type\": \"规范条款\", \"relation\": \"REGULATES\", \"tail\": \"宁209H22A平台\", \"tail_type\": \"施工阶段\"}\n]",
-  "triplets": []
-}

@@ -1,5 +1,0 @@
-{
-  "entity": "防静电劳保用品",
-  "raw": "[\n  {\"head\": \"防静电劳保用品\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电仪班组\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"防静电劳保用品\", \"head_type\": \"材料介质\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"}\n]",
-  "triplets": []
-}

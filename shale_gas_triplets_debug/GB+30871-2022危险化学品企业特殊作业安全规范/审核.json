@@ -1,5 +1,0 @@
-{
-  "entity": "审核",
-  "raw": "[\n  {\"head\": \"审核\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"作业活动\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"审核\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"施工记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"审核\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"控制措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"审核\", \"head_type\": \"责任主体\", \"relation\": \"RESPONSIBLE_FOR\", \"tail\": \"风险事件\", \"tail_type\": \"风险事件\"}\n]",
-  "triplets": []
-}

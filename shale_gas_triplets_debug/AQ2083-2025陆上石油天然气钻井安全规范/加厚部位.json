@@ -1,5 +1,0 @@
-{
-  "entity": "加厚部位",
-  "raw": "[\n  {\"head\": \"加厚部位\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"钻杆接头\", \"tail_type\": \"施工对象\"}\n]",
-  "triplets": []
-}

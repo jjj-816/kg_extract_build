@@ -1,5 +1,0 @@
-{
-  "entity": "防滑鞋",
-  "raw": "[\n  {\"head\": \"防滑鞋\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"安全防护难点作业人员\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"防滑鞋\", \"head_type\": \"设备工具\", \"relation\": \"OPERATES_ON\", \"tail\": \"登高载体\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"防滑鞋\", \"head_type\": \"设备工具\", \"relation\": \"MITIGATED_BY\", \"tail\": \"防滑、防侧翻措施\", \"tail_type\": \"控制措施\"}\n]",
-  "triplets": []
-}

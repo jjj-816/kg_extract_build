@@ -1,5 +1,0 @@
-{
-  "entity": "灭火器",
-  "raw": "[\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"火灾爆炸风险控制措施\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"应急处置\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"灭火器\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"弧光伤害、火花飞溅、烫伤风险控制措施\", \"tail_type\": \"控制措施\"}\n]",
-  "triplets": []
-}

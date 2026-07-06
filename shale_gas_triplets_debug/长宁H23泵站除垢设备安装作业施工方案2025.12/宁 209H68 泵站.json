@@ -1,5 +1,0 @@
-{
-  "entity": "宁 209H68 泵站",
-  "raw": "[\n  {\"head\": \"宁 209H68 泵站\", \"head_type\": \"施工对象\", \"relation\": \"HAS_RECORD\", \"tail\": \"《宁 209H68 供水工程施工图》项目号：SCKH-DD200014\", \"tail_type\": \"施工记录\"}\n]",
-  "triplets": []
-}

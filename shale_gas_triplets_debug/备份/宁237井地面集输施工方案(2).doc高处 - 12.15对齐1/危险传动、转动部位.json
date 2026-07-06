@@ -1,5 +1,0 @@
-{
-  "entity": "危险传动、转动部位",
-  "raw": "[\n  {\"head\": \"危险传动、转动部位\", \"head_type\": \"施工对象\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"关停设备\", \"tail_type\": \"控制措施\"}\n]",
-  "triplets": []
-}

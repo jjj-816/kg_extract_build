@@ -1,5 +1,0 @@
-{
-  "entity": "置换",
-  "raw": "[\n  {\"head\": \"置换\", \"head_type\": \"作业活动\", \"relation\": \"HAS_RECORD\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"置换\", \"head_type\": \"作业活动\", \"relation\": \"RECORDED_IN\", \"tail\": \"检查表\", \"tail_type\": \"施工记录\"}\n]",
-  "triplets": []
-}

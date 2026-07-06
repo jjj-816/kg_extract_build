@@ -1,5 +1,0 @@
-{
-  "entity": "旁站监督",
-  "raw": "[\n  {\"head\": \"旁站监督\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"关键工序\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"旁站监督\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"焊接\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"旁站监督\", \"head_type\": \"作业活动\", \"relation\": \"OPERATES_ON\", \"tail\": \"对中\", \"tail_type\": \"作业活动\"}\n]",
-  "triplets": []
-}

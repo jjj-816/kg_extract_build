@@ -1,5 +1,0 @@
-{
-  "entity": "升降(吊装)口",
-  "raw": "[\n  {\"head\": \"升降(吊装)口\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"高处作业\", \"tail_type\": \"施工阶段\"}\n]",
-  "triplets": []
-}

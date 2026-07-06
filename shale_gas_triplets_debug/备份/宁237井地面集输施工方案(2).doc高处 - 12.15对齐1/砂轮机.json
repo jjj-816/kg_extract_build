@@ -1,5 +1,0 @@
-{
-  "entity": "砂轮机",
-  "raw": "[\n  {\"head\": \"砂轮机\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"发电机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"砂轮机\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"电动扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"砂轮机\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"鼓风机\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"砂轮机\", \"head_type\": \"设备工具\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"气体检测仪\", \"tail_type\": \"设备工具\"}\n]",
-  "triplets": []
-}

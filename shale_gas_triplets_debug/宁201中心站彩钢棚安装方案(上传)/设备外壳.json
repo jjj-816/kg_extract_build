@@ -1,5 +1,0 @@
-{
-  "entity": "设备外壳",
-  "raw": "[\n  {\"head\": \"设备外壳\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"接触高温物件\", \"tail_type\": \"施工阶段\"}\n]",
-  "triplets": []
-}

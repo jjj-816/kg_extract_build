@@ -1,5 +1,0 @@
-{
-  "entity": "应急要点",
-  "raw": "[\n  {\"head\": \"应急要点\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工记录\", \"tail_type\": \"施工记录\"}\n]",
-  "triplets": []
-}

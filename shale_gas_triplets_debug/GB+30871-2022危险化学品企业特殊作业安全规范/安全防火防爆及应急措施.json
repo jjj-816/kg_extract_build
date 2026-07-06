@@ -1,5 +1,0 @@
-{
-  "entity": "安全防火防爆及应急措施",
-  "raw": "[\n  {\"head\": \"安全防火防爆及应急措施\", \"head_type\": \"控制措施\", \"relation\": \"RECORDED_IN\", \"tail\": \"施工记录\", \"tail_type\": \"施工记录\"}\n]",
-  "triplets": []
-}

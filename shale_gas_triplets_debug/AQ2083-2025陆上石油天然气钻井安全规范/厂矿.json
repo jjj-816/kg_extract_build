@@ -1,5 +1,0 @@
-{
-  "entity": "厂矿",
-  "raw": "[\n  {\"head\": \"厂矿\", \"head_type\": \"环保对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"井口中心点周围5000m\", \"tail_type\": \"时空信息\"}\n]",
-  "triplets": []
-}

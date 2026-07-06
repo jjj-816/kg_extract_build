@@ -1,5 +1,0 @@
-{
-  "entity": "工器具确认表",
-  "raw": "[\n  {\"head\": \"工器具确认表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"设备装置评估表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工器具确认表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"质量控制\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工器具确认表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"上述设备装置均评估合格\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工器具确认表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"工器具确认表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"作业前应对用电设备进行检查和试运转\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工器具确认表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"对关键工序（如焊接、对中）进行旁站监督和检测\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"工器具确认表\", \"head_type\": \"施工记录\", \"relation\": \"HAS_CLAUSE\", \"tail\": \"工程概况\", \"tail_type\": \"规范条款\"}\n]",
-  "triplets": []
-}

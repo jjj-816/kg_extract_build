@@ -1,5 +1,0 @@
-{
-  "entity": "设备",
-  "raw": "```json\n[\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"设备装置评估表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"电动扳手\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"HAS_RECORD\", \"tail\": \"摄像头安装\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"用电设备检查\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"REGULATES\", \"tail\": \"电动扳手\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"设备\", \"head_type\": \"设备工具\", \"relation\": \"REGULATES\", \"tail\": \"摄像头安装\", \"tail_type\": \"设备工具\"}\n]\n```",
-  "triplets": []
-}

@@ -1,5 +1,0 @@
-{
-  "entity": "警戒区",
-  "raw": "```json\n[\n  {\"head\": \"警戒区\", \"head_type\": \"控制措施\", \"relation\": \"OPERATES_ON\", \"tail\": \"作业区域\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"警戒区\", \"head_type\": \"控制措施\", \"relation\": \"RECORDS_IN\", \"tail\": \"施工作业入场安全培训记录\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"警戒区\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"禁止无关人员进入\", \"tail_type\": \"控制措施\"},\n  {\"head\": \"警戒区\", \"head_type\": \"控制措施\", \"relation\": \"REQUIRES\", \"tail\": \"确保应急通道畅通\", \"tail_type\": \"控制措施\"}\n]\n```",
-  "triplets": []
-}

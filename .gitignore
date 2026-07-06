@@ -5,3 +5,6 @@ venv/
 .env
 models/
 processed_docs.json
+/shale_gas_docs/
+/shale_gas_entity_debug/
+/shale_gas_triplets_debug/

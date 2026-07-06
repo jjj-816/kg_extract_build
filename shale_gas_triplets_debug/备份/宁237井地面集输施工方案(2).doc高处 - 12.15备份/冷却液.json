@@ -1,5 +1,0 @@
-{
-  "entity": "冷却液",
-  "raw": "[\n  {\"head\": \"冷却液\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"灭火器\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"冷却液\", \"head_type\": \"材料介质\", \"relation\": \"USES_EQUIPMENT\", \"tail\": \"气体检测仪\", \"tail_type\": \"设备工具\"}\n]",
-  "triplets": []
-}

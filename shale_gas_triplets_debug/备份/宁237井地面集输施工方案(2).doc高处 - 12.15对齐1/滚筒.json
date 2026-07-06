@@ -1,5 +1,0 @@
-{
-  "entity": "滚筒",
-  "raw": "[\n  {\"head\": \"滚筒\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井口区域\", \"tail_type\": \"时空信息\"}\n]",
-  "triplets": []
-}

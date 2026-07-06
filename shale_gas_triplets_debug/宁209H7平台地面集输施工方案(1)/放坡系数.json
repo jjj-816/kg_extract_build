@@ -1,5 +1,0 @@
-{
-  "entity": "放坡系数",
-  "raw": "[\n  {\"head\": \"放坡系数\", \"head_type\": \"未分类\", \"relation\": \"REGULATES\", \"tail\": \"坍塌\", \"tail_type\": \"风险事件\"}\n]",
-  "triplets": []
-}

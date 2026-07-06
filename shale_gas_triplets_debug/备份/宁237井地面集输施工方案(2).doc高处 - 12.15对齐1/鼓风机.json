@@ -1,5 +1,0 @@
-{
-  "entity": "鼓风机",
-  "raw": "[\n  {\"head\": \"鼓风机\", \"head_type\": \"设备工具\", \"relation\": \"LOCATED_IN\", \"tail\": \"井场\", \"tail_type\": \"施工对象\"}\n]",
-  "triplets": []
-}

@@ -1,5 +1,0 @@
-{
-  "entity": "可燃气体泄漏",
-  "raw": "[\n  {\"head\": \"可燃气体泄漏\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"气体检测仪\", \"tail_type\": \"设备工具\"},\n  {\"head\": \"可燃气体泄漏\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"气体检测\", \"tail_type\": \"作业活动\"},\n  {\"head\": \"可燃气体泄漏\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"气体检测人员\", \"tail_type\": \"责任主体\"},\n  {\"head\": \"可燃气体泄漏\", \"head_type\": \"风险事件\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"气体中毒\", \"tail_type\": \"风险事件\"},\n  {\"head\": \"可燃气体泄漏\", \"head_type\": \"风险事件\", \"relation\": \"TRIGGERS_RISK\", \"tail\": \"火灾爆炸\", \"tail_type\": \"风险事件\"}\n]",
-  "triplets": []
-}

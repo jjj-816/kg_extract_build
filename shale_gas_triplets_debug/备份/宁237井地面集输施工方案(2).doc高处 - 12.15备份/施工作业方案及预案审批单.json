@@ -1,5 +1,0 @@
-{
-  "entity": "施工作业方案及预案审批单",
-  "raw": "```json\n[\n  {\"head\": \"施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工准备与资源配置计划\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"工程概况\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"施工人员组织结构\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"入场施工作业准入证\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"作业许可证\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"工作前安全分析表\", \"tail_type\": \"施工记录\"},\n  {\"head\": \"施工作业方案及预案审批单\", \"head_type\": \"施工记录\", \"relation\": \"HAS_RECORD\", \"tail\": \"应急处置方案\", \"tail_type\": \"施工记录\"}\n]\n```",
-  "triplets": []
-}

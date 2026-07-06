@@ -1,5 +1,0 @@
-{
-  "entity": "方案",
-  "raw": "[\n  {\"head\": \"方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"第三章\", \"tail_type\": \"规范条款\"},\n  {\"head\": \"方案\", \"head_type\": \"未分类\", \"relation\": \"HAS_SECTION\", \"tail\": \"第五章\", \"tail_type\": \"规范条款\"}\n]",
-  "triplets": []
-}

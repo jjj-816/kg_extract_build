@@ -1,5 +1,0 @@
-{
-  "entity": "工作区域",
-  "raw": "[\n  {\"head\": \"工作区域\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业场所\", \"tail_type\": \"施工对象\"},\n  {\"head\": \"工作区域\", \"head_type\": \"施工对象\", \"relation\": \"LOCATED_IN\", \"tail\": \"作业区域\", \"tail_type\": \"施工对象\"}\n]",
-  "triplets": []
-}

@@ -1,5 +1,0 @@
-{
-  "entity": "金属光泽",
-  "raw": "[\n  {\"head\": \"金属光泽\", \"head_type\": \"未分类\", \"relation\": \"HAS_STAGE\", \"tail\": \"管口内外表面清理\", \"tail_type\": \"施工阶段\"}\n]",
-  "triplets": []
-}

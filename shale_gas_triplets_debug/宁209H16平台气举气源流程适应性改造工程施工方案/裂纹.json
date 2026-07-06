@@ -1,5 +1,0 @@
-{
-  "entity": "裂纹",
-  "raw": "[\n  {\"head\": \"裂纹\", \"head_type\": \"风险事件\", \"relation\": \"MITIGATED_BY\", \"tail\": \"焊接质量把控\", \"tail_type\": \"控制措施\"}\n]",
-  "triplets": []
-}

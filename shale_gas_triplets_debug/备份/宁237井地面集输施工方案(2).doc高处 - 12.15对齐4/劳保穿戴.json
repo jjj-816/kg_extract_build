@@ -1,5 +1,0 @@
-{
-  "entity": "劳保穿戴",
-  "raw": "[\n  {\"head\": \"劳保穿戴\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"劳保用品\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"劳保穿戴\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"工衣\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"劳保穿戴\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"劳保鞋\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"劳保穿戴\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"安全帽\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"劳保穿戴\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"防静电劳保用品\", \"tail_type\": \"材料介质\"},\n  {\"head\": \"劳保穿戴\", \"head_type\": \"作业活动\", \"relation\": \"REQUIRES_PRECONDITION\", \"tail\": \"防毒口罩\", \"tail_type\": \"材料介质\"}\n]",
-  "triplets": []
-}
