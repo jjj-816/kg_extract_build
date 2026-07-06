@@ -113,13 +113,6 @@
       "tail_types": ["规范条款"]
     },
     {
-      "name": "HAS_RECORD",
-      "cn_name": "包含记录",
-      "description": "某对象、阶段或作业对应某类施工记录",
-      "head_types": ["施工对象", "施工阶段", "作业活动"],
-      "tail_types": ["施工记录"]
-    },
-    {
       "name": "PRECEDES",
       "cn_name": "先于",
       "description": "表示施工阶段或作业活动之间的先后顺序",
@@ -136,9 +129,9 @@
     {
       "name": "OPERATES_ON",
       "cn_name": "作用于",
-      "description": "某作业活动作用于某对象、设备或环保对象",
+      "description": "某作业活动作用于某施工对象或环保对象；使用设备统一由 USES_EQUIPMENT 表示",
       "head_types": ["作业活动"],
-      "tail_types": ["施工对象", "设备工具", "环保对象"]
+      "tail_types": ["施工对象", "环保对象"]
     },
     {
       "name": "USES_EQUIPMENT",
@@ -206,8 +199,8 @@
     {
       "name": "RECORDED_IN",
       "cn_name": "记录于",
-      "description": "某作业、参数、风险或措施应记录在某类施工记录中",
-      "head_types": ["作业活动", "施工参数", "风险事件", "控制措施"],
+      "description": "某施工对象、阶段、作业、参数、风险或措施记录在某类施工记录中",
+      "head_types": ["施工对象", "施工阶段", "作业活动", "施工参数", "风险事件", "控制措施"],
       "tail_types": ["施工记录"]
     },
     {
