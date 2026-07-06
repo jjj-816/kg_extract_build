@@ -23,6 +23,19 @@ class ProviderDocsTests(unittest.TestCase):
             text,
         )
 
+    def test_env_example_documents_thinking_default(self):
+        text = Path("kg_extract_build/.env.example").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("LLM_ENABLE_THINKING=0", text)
+
+    def test_readme_explains_ui_thinking_switch(self):
+        text = Path("kg_extract_build/README.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("启用思考模式", text)
+        self.assertIn("默认关闭", text)
+
 
 if __name__ == "__main__":
     unittest.main()

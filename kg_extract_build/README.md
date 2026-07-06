@@ -73,6 +73,14 @@ $env:LLM_MODEL="glm-4.5-air"
 
 支持的 LLM 提供商：`zhipu`（智谱）、`deepseek`（DeepSeek）、`ollama`（本地）、`qwen`（阿里云百炼）、`modelscope`（魔搭）、`huggingface`、`custom`（自定义 OpenAI 兼容接口）。API Key 优先从 `.env` 读取，也可在 Streamlit 界面中临时覆盖。
 
+### LLM 思考模式
+
+为减少不必要的推理延迟和 Token 消耗，知识图谱构建的所有 LLM 请求**默认关闭思考模式**。Streamlit 界面首次打开时"启用思考模式"复选框不勾选。
+
+- **界面操作**：勾选"启用思考模式"复选框后，所有知识图谱 LLM 阶段（实体抽取、实体对齐、三元组生成）将向对应提供商发送开启参数。开启会增加响应延迟与推理 Token。
+- **仅思考模型限制**：部分模型（如 `deepseek-reasoner`、`QwQ-32B`、包含 `thinking` 或 `reasoner` 标记的模型）属于仅思考模型，无法在关闭思考模式时正常响应。若未勾选复选框而选择了此类模型，流水线将在启动前报错，提示用户更换模型或勾选"启用思考模式"。
+- **命令行方式**：设置环境变量 `LLM_ENABLE_THINKING=1`（或 `YES`/`true`/`on`）可在命令行启动时开启思考模式，默认为关闭（`0`）。
+
 ## 运行方式
 
 推荐使用 Streamlit 可视化控制台，单条命令完成实验：
