@@ -1,9 +1,11 @@
 import unittest
 
 from kg_extract_build.dashboard_run import (
+    build_llm_config,
     chunking_notice,
     provider_form_defaults,
     relation_strategy_notice,
+    thinking_mode_notice,
 )
 
 
@@ -34,6 +36,21 @@ class DashboardRunTests(unittest.TestCase):
             "基线",
             relation_strategy_notice("single_entity"),
         )
+
+    def test_thinking_notice_explains_default_cost_behavior(self):
+        message = thinking_mode_notice(False)
+        self.assertIn("默认关闭", message)
+        self.assertIn("Token", message)
+
+    def test_dashboard_llm_config_forwards_thinking_choice(self):
+        config = build_llm_config(
+            provider_id="qwen",
+            api_key="secret",
+            base_url="https://example.test/v1",
+            model="qwen-plus",
+            enable_thinking=True,
+        )
+        self.assertTrue(config.enable_thinking)
 
 
 if __name__ == "__main__":

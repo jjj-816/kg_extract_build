@@ -45,6 +45,31 @@ def relation_strategy_notice(strategy):
     )
 
 
+def thinking_mode_notice(enabled):
+    if enabled:
+        return (
+            "已启用思考模式：可能提升复杂任务效果，"
+            "但会增加响应时间和推理 Token 消耗。"
+        )
+    return "默认关闭思考模式，以减少响应时间和推理 Token 消耗。"
+
+
+def build_llm_config(
+    provider_id,
+    api_key,
+    base_url,
+    model,
+    enable_thinking=False,
+):
+    return LLMConfig(
+        provider_id=provider_id,
+        api_key=api_key,
+        base_url=base_url,
+        model=model,
+        enable_thinking=bool(enable_thinking),
+    )
+
+
 def provider_form_defaults(provider_id):
     preset = PROVIDERS[provider_id]
     return {
@@ -236,6 +261,13 @@ def render_run_page():
         if preset["environment_configured"]:
             st.caption("已从对应环境变量读取凭据；临时输入将优先使用。")
 
+        enable_thinking = st.checkbox(
+            "启用思考模式",
+            value=False,
+            disabled=registry.is_running,
+        )
+        st.caption(thinking_mode_notice(enable_thinking))
+
         max_chars = st.number_input(
             "切片最大长度（字符）",
             min_value=200,
@@ -341,11 +373,12 @@ def render_run_page():
                     run_name=run_name.strip(),
                     document_folder=Path(folder_text),
                     selected_files=tuple(selected_files),
-                    llm=LLMConfig(
-                        provider_id,
-                        api_key,
-                        base_url.strip(),
-                        model.strip(),
+                    llm=build_llm_config(
+                        provider_id=provider_id,
+                        api_key=api_key,
+                        base_url=base_url.strip(),
+                        model=model.strip(),
+                        enable_thinking=enable_thinking,
                     ),
                     chunking=ChunkingConfig(max_chars=int(max_chars)),
                     retrieve_sentence_num=int(retrieve_count),
