@@ -313,3 +313,29 @@ def evaluate_documents(
         missing_gold_documents=missing_gold,
         extra_gold_documents=extra_gold,
     )
+
+
+def build_preview(
+    model_documents: set[str],
+    gold: GoldAnnotations,
+    model_triplet_count: int,
+    existing_evaluations: list[dict],
+) -> dict[str, object]:
+    gold_documents = set(gold.documents)
+    matched = sorted(model_documents & gold_documents)
+    missing_gold = sorted(model_documents - gold_documents)
+    extra_gold = sorted(gold_documents - model_documents)
+    return {
+        "model_document_count": len(model_documents),
+        "gold_document_count": len(gold_documents),
+        "matched_document_count": len(matched),
+        "matched_documents": matched,
+        "missing_gold_documents": missing_gold,
+        "extra_gold_documents": extra_gold,
+        "gold_triplet_count": gold.triplet_count,
+        "model_triplet_count": model_triplet_count,
+        "parse_error_count": len(gold.errors),
+        "parse_errors": gold.errors,
+        "existing_evaluation_count": len(existing_evaluations),
+        "existing_evaluations": existing_evaluations,
+    }

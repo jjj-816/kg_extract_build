@@ -124,3 +124,32 @@ class EvaluationMetricTests(unittest.TestCase):
         self.assertAlmostEqual(result.overall["triplet_recall"].value, 1.0)
         self.assertAlmostEqual(result.overall["evidence_coverage"].value, 0.5)
         self.assertAlmostEqual(result.overall["hallucination_rate"].value, 0.5)
+
+from kg_extract_build.evaluation import GoldAnnotations, build_preview
+
+
+class EvaluationPreviewTests(unittest.TestCase):
+    def test_preview_reports_matching_and_existing_evaluations(self):
+        gold = GoldAnnotations(
+            root=Path("D:/gold"),
+            documents={
+                "文档A": [("A", "T", "R", "B", "T")],
+                "文档C": [("C", "T", "R", "D", "T")],
+            },
+            errors=[{"path": "bad.json", "error": "broken"}],
+        )
+        preview = build_preview(
+            model_documents={"文档A", "文档B"},
+            gold=gold,
+            model_triplet_count=3,
+            existing_evaluations=[{"evaluation_id": "e1"}],
+        )
+        self.assertEqual(preview["model_document_count"], 2)
+        self.assertEqual(preview["gold_document_count"], 2)
+        self.assertEqual(preview["matched_document_count"], 1)
+        self.assertEqual(preview["missing_gold_documents"], ["文档B"])
+        self.assertEqual(preview["extra_gold_documents"], ["文档C"])
+        self.assertEqual(preview["gold_triplet_count"], 2)
+        self.assertEqual(preview["model_triplet_count"], 3)
+        self.assertEqual(preview["parse_error_count"], 1)
+        self.assertEqual(preview["existing_evaluation_count"], 1)
