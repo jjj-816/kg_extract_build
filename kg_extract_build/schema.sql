@@ -140,3 +140,32 @@ CREATE TABLE IF NOT EXISTS kg_triplet (
     CONSTRAINT fk_kg_triplet_llm FOREIGN KEY (source_llm_call_id)
         REFERENCES kg_llm_call(llm_call_id) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS kg_evaluation_run (
+    evaluation_id CHAR(36) PRIMARY KEY,
+    run_id CHAR(36) NOT NULL,
+    gold_path VARCHAR(1024) NOT NULL,
+    gold_hash CHAR(64) NOT NULL,
+    metric_config_json JSON NULL,
+    summary_json JSON NULL,
+    created_at DATETIME(6) NOT NULL,
+    INDEX idx_kg_eval_run_gold (run_id, gold_hash),
+    CONSTRAINT fk_kg_eval_run FOREIGN KEY (run_id)
+        REFERENCES kg_experiment_run(run_id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS kg_evaluation_metric (
+    metric_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    evaluation_id CHAR(36) NOT NULL,
+    scope_type VARCHAR(32) NOT NULL,
+    scope_name VARCHAR(512) NOT NULL,
+    metric_name VARCHAR(128) NOT NULL,
+    metric_value DOUBLE NOT NULL,
+    numerator DOUBLE NULL,
+    denominator DOUBLE NULL,
+    details_json JSON NULL,
+    created_at DATETIME(6) NOT NULL,
+    INDEX idx_kg_eval_metric_scope (evaluation_id, scope_type, metric_name),
+    CONSTRAINT fk_kg_eval_metric_run FOREIGN KEY (evaluation_id)
+        REFERENCES kg_evaluation_run(evaluation_id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
