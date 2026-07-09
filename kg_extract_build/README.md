@@ -215,3 +215,23 @@ python -m streamlit run kg_extract_build/dashboard.py
 ```
 
 控制台包含六个页面：运行实验（默认首页）、实验总览、实验批次、文档追踪、LLM 调用和知识图谱。API Key 和数据库密码既可通过 `.env` 提供，也可在侧边栏临时输入，不会持久化到数据库或日志中。
+
+## 实验评估
+
+评估模块用于把历史实验输出和人工标注三元组进行对比。使用前需要先启用并初始化 MySQL，确保历史实验已经写入 `kg_experiment_run`、`kg_document` 和 `kg_triplet`。
+
+人工标注文件夹推荐结构：
+
+```text
+gold_annotations/
+  文档名/
+    实体名.json
+```
+
+每个 JSON 文件可以是当前 debug 文件格式：
+
+```json
+{"entity": "实体名", "triplets": [{"head": "A", "head_type": "类型", "relation": "REL", "tail": "B", "tail_type": "类型"}]}
+```
+
+也可以直接是三元组数组。进入 Streamlit 后打开“实验评估”，选择历史实验，输入标注文件夹路径，预览匹配情况后点击“计算指标”。保存后结果会写入 `kg_evaluation_run` 和 `kg_evaluation_metric`。
