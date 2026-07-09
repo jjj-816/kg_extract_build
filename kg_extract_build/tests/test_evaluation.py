@@ -91,3 +91,36 @@ class EvaluationGoldLoadingTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+from kg_extract_build.evaluation import compute_prf, evaluate_documents
+
+
+class EvaluationMetricTests(unittest.TestCase):
+    def test_compute_prf_uses_strict_set_matching(self):
+        score = compute_prf({("A",), ("B",)}, {("A",), ("C",)})
+        self.assertEqual(score.true_positive, 1)
+        self.assertEqual(score.false_positive, 1)
+        self.assertEqual(score.false_negative, 1)
+        self.assertAlmostEqual(score.precision, 0.5)
+        self.assertAlmostEqual(score.recall, 0.5)
+        self.assertAlmostEqual(score.f1, 0.5)
+
+    def test_evaluate_documents_computes_core_metrics(self):
+        model = {
+            "文档A": [
+                ("A", "类型1", "REL", "B", "类型2"),
+                ("A", "类型1", "REL", "C", "类型2"),
+            ]
+        }
+        gold = {"文档A": [("A", "类型1", "REL", "B", "类型2")]}
+        result = evaluate_documents(
+            model=model,
+            gold=gold,
+            documents={"文档A": "A 和 B 是原文实体。"},
+            evidence={"文档A": {model["文档A"][0]: ["A 和 B 是原文实体。"]}},
+            schema=None,
+        )
+        self.assertAlmostEqual(result.overall["triplet_precision"].value, 0.5)
+        self.assertAlmostEqual(result.overall["triplet_recall"].value, 1.0)
+        self.assertAlmostEqual(result.overall["evidence_coverage"].value, 0.5)
+        self.assertAlmostEqual(result.overall["hallucination_rate"].value, 0.5)
