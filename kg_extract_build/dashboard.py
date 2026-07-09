@@ -510,7 +510,16 @@ def setup_help():
     )
 
 
+from kg_extract_build.dashboard_evaluation import render_evaluation_page
 from kg_extract_build.dashboard_run import render_run_page
+
+RUN_PAGE = "运行实验"
+EVALUATION_PAGE = "实验评估"
+OVERVIEW_PAGE = "实验总览"
+RUNS_PAGE = "实验批次"
+DOCUMENTS_PAGE = "文档追踪"
+LLM_PAGE = "LLM 调用"
+GRAPH_PAGE = "知识图谱"
 
 requested_page = st.session_state.pop("requested_navigation_page", None)
 if requested_page is not None:
@@ -518,23 +527,33 @@ if requested_page is not None:
 
 page = st.sidebar.radio(
     "导航",
-    ["运行实验", "实验总览", "实验批次", "文档追踪", "LLM 调用", "知识图谱"],
+    [
+        RUN_PAGE,
+        EVALUATION_PAGE,
+        OVERVIEW_PAGE,
+        RUNS_PAGE,
+        DOCUMENTS_PAGE,
+        LLM_PAGE,
+        GRAPH_PAGE,
+    ],
     key="navigation_page",
 )
 
-if page == "运行实验":
+if page == RUN_PAGE:
     render_run_page()
+elif page == EVALUATION_PAGE:
+    render_evaluation_page()
 else:
     config = connection_config()
     try:
         with st.spinner("正在读取实验数据库…"):
-            if page == "实验总览":
+            if page == OVERVIEW_PAGE:
                 overview_page(config)
-            elif page == "实验批次":
+            elif page == RUNS_PAGE:
                 runs_page(config)
-            elif page == "文档追踪":
+            elif page == DOCUMENTS_PAGE:
                 documents_page(config)
-            elif page == "LLM 调用":
+            elif page == LLM_PAGE:
                 llm_page(config)
             else:
                 graph_page(config)
