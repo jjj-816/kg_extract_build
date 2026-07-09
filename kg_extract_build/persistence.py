@@ -30,6 +30,7 @@ def env_bool(name, default=False):
 class NullExperimentStore:
     enabled = False
 
+
     def initialize_schema(self):
         return None
 
@@ -63,6 +64,18 @@ class NullExperimentStore:
     def save_triplets(self, records):
         return None
 
+    def list_experiment_runs(self, limit=100):
+        return []
+
+    def load_evaluation_input(self, run_id):
+        return {"documents": {}, "triplets": {}, "evidence": {}}
+
+    def list_evaluations(self, run_id, gold_hash=None):
+        return []
+
+    def save_evaluation(self, run_id, gold_path, gold_hash, metric_config, result):
+        return None
+
     def close(self):
         return None
 
@@ -80,6 +93,8 @@ class MemoryExperimentStore(NullExperimentStore):
         self.entities = []
         self.retrieval_results = []
         self.triplets = []
+        self.evaluation_runs = []
+        self.evaluation_metrics = []
         self._document_id = 0
         self._chunk_id = 0
         self._llm_call_id = 0
@@ -93,6 +108,7 @@ class MemoryExperimentStore(NullExperimentStore):
             "config_snapshot": config_snapshot,
             "schema_snapshot": schema_snapshot,
             "code_commit": code_commit,
+            "started_at": utc_now(),
         }
         return run_id
 
@@ -150,6 +166,114 @@ class MemoryExperimentStore(NullExperimentStore):
 
     def save_triplets(self, records):
         self.triplets.extend(records)
+
+    def list_experiment_runs(self, limit=100):
+        rows = list(self.runs.values())
+        rows.sort(key=lambda row: row.get("started_at") or datetime.min, reverse=True)
+        return rows[:limit]
+
+    def load_evaluation_input(self, run_id):
+        documents = {}
+        document_keys = {}
+        for document_id, doc in self.documents.items():
+            if doc["run_id"] != run_id:
+                continue
+            doc_key = Path(doc["file_name"]).stem
+            document_keys[document_id] = doc_key
+            documents[doc_key] = {
+                "document_id": document_id,
+                "file_name": doc["file_name"],
+                "content": doc["content"],
+            }
+
+        triplets = {}
+        triplet_by_doc = {}
+        for row in self.triplets:
+            if row["run_id"] != run_id or row["stage"] != "final":
+                continue
+            doc_key = document_keys.get(row["document_id"])
+            if not doc_key:
+                continue
+            item = (
+                row["head"],
+                row["head_type"],
+                row["relation"],
+                row["tail"],
+                row["tail_type"],
+            )
+            triplets.setdefault(doc_key, []).append(item)
+            triplet_by_doc.setdefault(doc_key, []).append(item)
+
+        evidence = {doc_key: {} for doc_key in triplet_by_doc}
+        for row in self.retrieval_results:
+            if row["run_id"] != run_id:
+                continue
+            doc_key = document_keys.get(row["document_id"])
+            if not doc_key:
+                continue
+            entity_name = row.get("entity_name")
+            for triplet in triplet_by_doc.get(doc_key, []):
+                if entity_name in {triplet[0], triplet[3]}:
+                    evidence.setdefault(doc_key, {}).setdefault(triplet, []).append(
+                        row.get("sentence", "")
+                    )
+        return {"documents": documents, "triplets": triplets, "evidence": evidence}
+
+    def list_evaluations(self, run_id, gold_hash=None):
+        rows = [row for row in self.evaluation_runs if row["run_id"] == run_id]
+        if gold_hash is not None:
+            rows = [row for row in rows if row["gold_hash"] == gold_hash]
+        return list(rows)
+
+    def save_evaluation(self, run_id, gold_path, gold_hash, metric_config, result):
+        evaluation_id = str(uuid.uuid4())
+        triplet_f1 = result.overall.get("triplet_f1")
+        summary = {
+            "matched_documents": result.matched_documents,
+            "missing_gold_documents": result.missing_gold_documents,
+            "extra_gold_documents": result.extra_gold_documents,
+            "overall": {name: metric.value for name, metric in result.overall.items()},
+        }
+        self.evaluation_runs.append(
+            {
+                "evaluation_id": evaluation_id,
+                "run_id": run_id,
+                "gold_path": gold_path,
+                "gold_hash": gold_hash,
+                "metric_config_json": metric_config,
+                "summary_json": summary,
+                "triplet_f1": None if triplet_f1 is None else triplet_f1.value,
+                "created_at": utc_now(),
+            }
+        )
+        for name, metric in result.overall.items():
+            self.evaluation_metrics.append(
+                {
+                    "evaluation_id": evaluation_id,
+                    "scope_type": "overall",
+                    "scope_name": "all",
+                    "metric_name": name,
+                    "metric_value": metric.value,
+                    "numerator": metric.numerator,
+                    "denominator": metric.denominator,
+                    "details_json": metric.details,
+                }
+            )
+        for doc_name, metrics in result.by_document.items():
+            for name, metric in metrics.items():
+                self.evaluation_metrics.append(
+                    {
+                        "evaluation_id": evaluation_id,
+                        "scope_type": "document",
+                        "scope_name": doc_name,
+                        "metric_name": name,
+                        "metric_value": metric.value,
+                        "numerator": metric.numerator,
+                        "denominator": metric.denominator,
+                        "details_json": metric.details,
+                    }
+                )
+        return evaluation_id
 
 
 class MySQLExperimentStore:
@@ -215,6 +339,13 @@ class MySQLExperimentStore:
         except Exception:
             connection.rollback()
             raise
+
+    def _read(self, sql, params=None):
+        connection = self._connection()
+        with connection.cursor() as cursor:
+            cursor.execute(sql, params or ())
+            columns = [item[0] for item in cursor.description]
+            return [dict(zip(columns, row)) for row in cursor.fetchall()]
 
     def initialize_schema(self):
         if not self.auto_initialize:
@@ -429,6 +560,178 @@ class MySQLExperimentStore:
         ]
         self._write(sql, params, many=True)
 
+    def list_experiment_runs(self, limit=100):
+        return self._read(
+            """
+            SELECT run_id, run_name, status, started_at, finished_at,
+                   config_snapshot
+            FROM kg_experiment_run
+            ORDER BY started_at DESC
+            LIMIT %s
+            """,
+            (int(limit),),
+        )
+
+    def load_evaluation_input(self, run_id):
+        documents_raw = self._read(
+            """
+            SELECT document_id, file_name, content
+            FROM kg_document
+            WHERE run_id=%s
+            """,
+            (run_id,),
+        )
+        documents = {}
+        document_keys = {}
+        for doc in documents_raw:
+            doc_key = Path(doc["file_name"]).stem
+            document_keys[doc["document_id"]] = doc_key
+            documents[doc_key] = {
+                "document_id": doc["document_id"],
+                "file_name": doc["file_name"],
+                "content": doc["content"],
+            }
+
+        triplet_rows = self._read(
+            """
+            SELECT document_id, head, head_type, relation_name, tail, tail_type
+            FROM kg_triplet
+            WHERE run_id=%s AND stage='final'
+            """,
+            (run_id,),
+        )
+        triplets = {}
+        triplet_by_doc = {}
+        for row in triplet_rows:
+            doc_key = document_keys.get(row["document_id"])
+            if not doc_key:
+                continue
+            item = (
+                row["head"],
+                row["head_type"],
+                row["relation_name"],
+                row["tail"],
+                row["tail_type"],
+            )
+            triplets.setdefault(doc_key, []).append(item)
+            triplet_by_doc.setdefault(doc_key, []).append(item)
+
+        retrieval_rows = self._read(
+            """
+            SELECT document_id, entity_name, sentence
+            FROM kg_retrieval_result
+            WHERE run_id=%s
+            """,
+            (run_id,),
+        )
+        evidence = {doc_key: {} for doc_key in triplet_by_doc}
+        for row in retrieval_rows:
+            doc_key = document_keys.get(row["document_id"])
+            if not doc_key:
+                continue
+            entity_name = row.get("entity_name")
+            for triplet in triplet_by_doc.get(doc_key, []):
+                if entity_name in {triplet[0], triplet[3]}:
+                    evidence.setdefault(doc_key, {}).setdefault(triplet, []).append(
+                        row.get("sentence", "")
+                    )
+        return {"documents": documents, "triplets": triplets, "evidence": evidence}
+
+    def list_evaluations(self, run_id, gold_hash=None):
+        params = [run_id]
+        where = "WHERE run_id=%s"
+        if gold_hash is not None:
+            where += " AND gold_hash=%s"
+            params.append(gold_hash)
+        rows = self._read(
+            f"""
+            SELECT evaluation_id, run_id, gold_path, gold_hash,
+                   metric_config_json, summary_json, created_at
+            FROM kg_evaluation_run
+            {where}
+            ORDER BY created_at DESC
+            """,
+            tuple(params),
+        )
+        for row in rows:
+            summary = row.get("summary_json") or {}
+            if isinstance(summary, str):
+                try:
+                    summary = json.loads(summary)
+                except json.JSONDecodeError:
+                    summary = {}
+            row["triplet_f1"] = (summary.get("overall") or {}).get("triplet_f1")
+        return rows
+
+    def save_evaluation(self, run_id, gold_path, gold_hash, metric_config, result):
+        evaluation_id = str(uuid.uuid4())
+        summary = {
+            "matched_documents": result.matched_documents,
+            "missing_gold_documents": result.missing_gold_documents,
+            "extra_gold_documents": result.extra_gold_documents,
+            "overall": {name: metric.value for name, metric in result.overall.items()},
+        }
+        self._write(
+            """
+            INSERT INTO kg_evaluation_run
+                (evaluation_id, run_id, gold_path, gold_hash,
+                 metric_config_json, summary_json, created_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
+            """,
+            (
+                evaluation_id,
+                run_id,
+                gold_path,
+                gold_hash,
+                json_text(metric_config),
+                json_text(summary),
+                utc_now(),
+            ),
+        )
+        rows = []
+        for name, metric in result.overall.items():
+            rows.append(
+                (
+                    evaluation_id,
+                    "overall",
+                    "all",
+                    name,
+                    metric.value,
+                    metric.numerator,
+                    metric.denominator,
+                    json_text(metric.details),
+                    utc_now(),
+                )
+            )
+        for doc_name, metrics in result.by_document.items():
+            for name, metric in metrics.items():
+                rows.append(
+                    (
+                        evaluation_id,
+                        "document",
+                        doc_name,
+                        name,
+                        metric.value,
+                        metric.numerator,
+                        metric.denominator,
+                        json_text(metric.details),
+                        utc_now(),
+                    )
+                )
+        if rows:
+            self._write(
+                """
+                INSERT INTO kg_evaluation_metric
+                    (evaluation_id, scope_type, scope_name, metric_name,
+                     metric_value, numerator, denominator, details_json,
+                     created_at)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                """,
+                rows,
+                many=True,
+            )
+        return evaluation_id
+
     def close(self):
         if self._connection_instance is not None:
             self._connection_instance.close()
@@ -626,3 +929,8 @@ def build_experiment_store():
     store = MySQLExperimentStore.from_env()
     store.initialize_schema()
     return store
+
+
+
+
+

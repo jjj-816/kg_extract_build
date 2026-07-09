@@ -105,3 +105,31 @@ class ExperimentRecorderTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class EvaluationPersistenceTests(unittest.TestCase):
+    def test_memory_store_saves_and_lists_evaluations(self):
+        from kg_extract_build.evaluation import EvaluationResult, MetricValue
+
+        store = MemoryExperimentStore()
+        run_id = store.start_run("评估测试", {}, {}, "")
+        result = EvaluationResult(
+            overall={"triplet_f1": MetricValue("triplet_f1", 0.75)},
+            by_document={},
+            matched_documents=["doc"],
+            missing_gold_documents=[],
+            extra_gold_documents=[],
+        )
+
+        evaluation_id = store.save_evaluation(
+            run_id=run_id,
+            gold_path="D:/gold",
+            gold_hash="a" * 64,
+            metric_config={"matching": "strict"},
+            result=result,
+        )
+        rows = store.list_evaluations(run_id, gold_hash="a" * 64)
+
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["evaluation_id"], evaluation_id)
+        self.assertEqual(rows[0]["triplet_f1"], 0.75)
