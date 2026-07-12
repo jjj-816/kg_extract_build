@@ -145,7 +145,10 @@ def render_evaluation_page() -> None:
         st.info("检测到该实验和当前标注内容已经评估过，可查看已有结果，也可以重新计算并保存为新记录。")
         st.dataframe(existing, use_container_width=True)
 
-    if st.button("计算指标", type="primary"):
+    if preview["calculation_blocked"]:
+        st.error("Gold parsing or document matching is incomplete; metric calculation is disabled.")
+
+    if st.button("计算指标", type="primary", disabled=preview["calculation_blocked"]):
         documents_text = {
             name: item["content"]
             for name, item in evaluation_input["documents"].items()

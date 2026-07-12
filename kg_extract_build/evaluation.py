@@ -24,8 +24,11 @@ class GoldAnnotations:
 
 def normalize_triplet(item: Mapping[str, object], schema=None) -> TripletKey | None:
     values = {
-        field: str(item.get(field, "")).strip()
-        for field in TRIPLET_FIELDS
+        "head": str(item.get("head_name") or item.get("head", "")).strip(),
+        "head_type": str(item.get("head_type", "")).strip(),
+        "relation": str(item.get("relation", "")).strip(),
+        "tail": str(item.get("tail_name") or item.get("tail", "")).strip(),
+        "tail_type": str(item.get("tail_type", "")).strip(),
     }
     if not values["head"] or not values["relation"] or not values["tail"]:
         return None
@@ -44,38 +47,50 @@ def normalize_triplet(item: Mapping[str, object], schema=None) -> TripletKey | N
     )
 
 
-def _extract_triplet_items(payload: object) -> list[Mapping[str, object]]:
+def _extract_triplet_items(payload: object) -> tuple[list[Mapping[str, object]], str | None]:
     if isinstance(payload, list):
-        return [item for item in payload if isinstance(item, Mapping)]
+        return [item for item in payload if isinstance(item, Mapping)], None
+    if not isinstance(payload, Mapping):
+        return [], "?? JSON ??????????"
+    if "triplets" not in payload:
+        return [], "?? JSON ???? triplets ??"
+    triplets = payload["triplets"]
+    if not isinstance(triplets, list):
+        return [], "?? JSON ? triplets ???????"
+    return [item for item in triplets if isinstance(item, Mapping)], None
+
+
+def _document_name(payload: object, file_path: Path) -> str:
     if isinstance(payload, Mapping):
-        triplets = payload.get("triplets", [])
-        if isinstance(triplets, list):
-            return [item for item in triplets if isinstance(item, Mapping)]
-    return []
+        document = payload.get("document")
+        if isinstance(document, Mapping):
+            title = str(document.get("title", "")).strip()
+            if title:
+                return title
+    return file_path.parent.name
 
 
 def load_gold_annotations(root: Path, schema=None) -> GoldAnnotations:
     root = Path(root).expanduser().resolve()
     documents: dict[str, list[TripletKey]] = {}
     errors: list[dict[str, str]] = []
-    if not root.exists() or not root.is_dir():
-        return GoldAnnotations(
-            root=root,
-            errors=[{"path": str(root), "error": "标注文件夹不存在"}],
-        )
-
-    for file_path in sorted(root.rglob("*.json")):
+    if not root.exists():
+        return GoldAnnotations(root=root, errors=[{"path": str(root), "error": "???????"}])
+    file_paths = [root] if root.is_file() else sorted(root.rglob("*.json"))
+    for file_path in file_paths:
+        if file_path.suffix.lower() != ".json":
+            continue
         try:
             payload = json.loads(file_path.read_text(encoding="utf-8"))
         except Exception as exc:
             errors.append({"path": str(file_path), "error": str(exc)})
             continue
-        doc_name = file_path.parent.name
-        triplets = [
-            triplet
-            for item in _extract_triplet_items(payload)
-            if (triplet := normalize_triplet(item, schema=schema)) is not None
-        ]
+        items, parse_error = _extract_triplet_items(payload)
+        if parse_error:
+            errors.append({"path": str(file_path), "error": parse_error})
+            continue
+        doc_name = _document_name(payload, file_path)
+        triplets = [triplet for item in items if (triplet := normalize_triplet(item, schema=schema)) is not None]
         if triplets:
             documents.setdefault(doc_name, []).extend(triplets)
     return GoldAnnotations(root=root, documents=documents, errors=errors)
@@ -84,8 +99,13 @@ def load_gold_annotations(root: Path, schema=None) -> GoldAnnotations:
 def compute_gold_hash(root: Path) -> str:
     root = Path(root).expanduser().resolve()
     digest = hashlib.sha256()
-    if not root.exists() or not root.is_dir():
+    if not root.exists():
         digest.update(str(root).encode("utf-8"))
+        return digest.hexdigest()
+    if root.is_file():
+        digest.update(root.name.encode("utf-8"))
+        digest.update(b"\0")
+        digest.update(root.read_bytes())
         return digest.hexdigest()
     for file_path in sorted(root.rglob("*.json")):
         relative = file_path.relative_to(root).as_posix()
@@ -336,6 +356,7 @@ def build_preview(
         "model_triplet_count": model_triplet_count,
         "parse_error_count": len(gold.errors),
         "parse_errors": gold.errors,
+        "calculation_blocked": bool(gold.errors or not matched or missing_gold),
         "existing_evaluation_count": len(existing_evaluations),
         "existing_evaluations": existing_evaluations,
     }

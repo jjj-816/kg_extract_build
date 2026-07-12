@@ -14,6 +14,25 @@ from kg_extract_build.evaluation import compute_gold_hash, load_gold_annotations
 
 
 class EvaluationGoldLoadingTests(unittest.TestCase):
+    def test_loads_adjudicated_document_file_with_title_and_chinese_name_fields(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            file_path = Path(tmp) / "adjudicated_gold.json"
+            payload = {"document": {"title": "??H3????????"}, "triplets": [{"head_name": "??????", "head_type": "????", "relation": "HAS_STAGE", "tail_name": "????", "tail_type": "????"}]}
+            file_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+            annotations = load_gold_annotations(file_path)
+        self.assertEqual(set(annotations.documents), {"??H3????????"})
+        self.assertEqual(annotations.triplet_count, 1)
+        self.assertEqual(annotations.errors, [])
+
+    def test_records_error_when_object_gold_omits_triplets(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); doc = root / "document_a"; doc.mkdir()
+            (doc / "incomplete.json").write_text(json.dumps({"document": {"title": "document_a"}}), encoding="utf-8")
+            annotations = load_gold_annotations(root)
+        self.assertEqual(annotations.documents, {})
+        self.assertEqual(len(annotations.errors), 1)
+        self.assertIn("triplets", annotations.errors[0]["error"])
+
     def test_loads_debug_object_and_array_files(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -152,4 +171,5 @@ class EvaluationPreviewTests(unittest.TestCase):
         self.assertEqual(preview["gold_triplet_count"], 2)
         self.assertEqual(preview["model_triplet_count"], 3)
         self.assertEqual(preview["parse_error_count"], 1)
+        self.assertTrue(preview["calculation_blocked"])
         self.assertEqual(preview["existing_evaluation_count"], 1)
