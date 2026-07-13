@@ -12,6 +12,7 @@ if str(PACKAGE_PARENT) not in sys.path:
 sys.modules.setdefault("openai", types.SimpleNamespace(OpenAI=object))
 
 from kg_extract_build.preprocess import is_valid_entity_candidate, preprocess_document
+from kg_extract_build.settings import UNKNOWN_TYPE
 from kg_extract_build.triplets import TripletCorrector, TripletGenerator
 from kg_extract_build.extractor import LongDocLLMEntityExtractor
 
@@ -86,6 +87,12 @@ class TripletParsingGuardTests(unittest.TestCase):
 
 class TripletNoiseGuardTests(unittest.TestCase):
     class Schema:
+        def normalize_entity_type(self, value):
+            return value
+
+        def is_final_entity_type_allowed(self, value):
+            return bool(value) and value != UNKNOWN_TYPE
+
         def is_relation_allowed(self, relation, head_type, tail_type):
             return True
 

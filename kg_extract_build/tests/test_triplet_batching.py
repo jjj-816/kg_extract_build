@@ -4,10 +4,14 @@ import unittest
 from pathlib import Path
 
 from kg_extract_build.llm_thinking import build_thinking_options
+from kg_extract_build.settings import UNKNOWN_TYPE
 from kg_extract_build.triplets import TripletGenerator
 
 
 class Schema:
+    def render_entity_schema(self):
+        return "facility, parameter"
+
     def render_allowed_relation_schema(self, head_type):
         return "- 安装于 -> 设施"
 
@@ -18,10 +22,15 @@ class Schema:
         return relation
 
     def normalize_entity_type(self, entity_type):
+        if not entity_type or entity_type in {UNKNOWN_TYPE, "invalid"}:
+            return UNKNOWN_TYPE
         return entity_type
 
+    def is_final_entity_type_allowed(self, entity_type):
+        return self.normalize_entity_type(entity_type) != UNKNOWN_TYPE
+
     def is_relation_allowed(self, relation, head_type=None, tail_type=None):
-        return relation == "安装于"
+        return bool(relation)
 
 
 class Recorder:
@@ -77,6 +86,106 @@ def make_generator(tmp, completions):
 
 
 class TripletBatchingTests(unittest.TestCase):
+    def test_unknown_tail_type_is_completed_once_then_accepted(self):
+        completions = Completions(
+            json.dumps({"head_type": "facility", "tail_type": "parameter"})
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            generator = make_generator(tmp, completions)
+            rows = generator._parse_triplets(
+                json.dumps([
+                    {
+                        "head": "pump",
+                        "relation": "installed_at",
+                        "tail": "pressure",
+                        "tail_type": UNKNOWN_TYPE,
+                    }
+                ]),
+                "pump",
+                "facility",
+                "pump installed_at pressure",
+            )
+
+        self.assertEqual(rows, [{
+            "head": "pump",
+            "head_type": "facility",
+            "relation": "installed_at",
+            "tail": "pressure",
+            "tail_type": "parameter",
+        }])
+        self.assertEqual(generator.type_completion_call_count, 1)
+        self.assertEqual(completions.calls[0]["temperature"], 0.0)
+        self.assertEqual(generator.recorder.llm_calls[0]["stage"], "triplet_type_completion")
+
+    def test_unknown_type_retry_still_unknown_is_rejected(self):
+        completions = Completions(
+            json.dumps({"head_type": UNKNOWN_TYPE, "tail_type": UNKNOWN_TYPE})
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            generator = make_generator(tmp, completions)
+            rows = generator._parse_triplets(
+                '[{"head":"pump","relation":"installed_at","tail":"pressure","tail_type":"%s"}]' % UNKNOWN_TYPE,
+                "pump",
+                "facility",
+                "pump installed_at pressure",
+            )
+
+        self.assertEqual(rows, [])
+        self.assertEqual(generator.type_completion_call_count, 1)
+
+    def test_fully_typed_triplet_does_not_make_type_completion_call(self):
+        completions = Completions()
+        with tempfile.TemporaryDirectory() as tmp:
+            generator = make_generator(tmp, completions)
+            rows = generator._parse_triplets(
+                '[{"head":"pump","relation":"installed_at","tail":"pressure","tail_type":"parameter"}]',
+                "pump",
+                "facility",
+                "pump installed_at pressure",
+            )
+
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(generator.type_completion_call_count, 0)
+        self.assertEqual(completions.calls, [])
+
+    def test_missing_invalid_or_out_of_schema_types_are_rejected_after_one_retry(self):
+        for tail_type in ("", "invalid", UNKNOWN_TYPE):
+            with self.subTest(tail_type=tail_type):
+                completions = Completions("not json")
+                with tempfile.TemporaryDirectory() as tmp:
+                    generator = make_generator(tmp, completions)
+                    rows = generator._parse_triplets(
+                        json.dumps([{
+                            "head": "pump",
+                            "relation": "installed_at",
+                            "tail": "pressure",
+                            "tail_type": tail_type,
+                        }]),
+                        "pump",
+                        "facility",
+                        "pump installed_at pressure",
+                    )
+
+                self.assertEqual(rows, [])
+                self.assertEqual(generator.type_completion_call_count, 1)
+                self.assertEqual(len(completions.calls), 1)
+
+    def test_type_completion_parse_exception_is_rejected_after_one_retry(self):
+        completions = Completions(error=RuntimeError("completion failed"))
+        with tempfile.TemporaryDirectory() as tmp:
+            generator = make_generator(tmp, completions)
+            rows = generator._parse_triplets(
+                '[{"head":"pump","relation":"installed_at","tail":"pressure","tail_type":"%s"}]' % UNKNOWN_TYPE,
+                "pump",
+                "facility",
+                "pump installed_at pressure",
+            )
+
+        self.assertEqual(rows, [])
+        self.assertEqual(generator.type_completion_call_count, 1)
+        self.assertEqual(generator.recorder.llm_calls[0]["stage"], "triplet_type_completion")
+        self.assertFalse(generator.recorder.llm_calls[0]["success"])
+
     def test_generate_batch_uses_one_request_and_splits_results_by_entity(self):
         response = json.dumps(
             [

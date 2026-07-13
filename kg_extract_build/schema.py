@@ -118,6 +118,10 @@ class KGSchema:
             return entity_type
         return entity_type if entity_type in self.entity_type_names else UNKNOWN_TYPE
 
+    def is_final_entity_type_allowed(self, entity_type):
+        normalized = self.normalize_entity_type(entity_type)
+        return bool(normalized) and normalized != UNKNOWN_TYPE
+
     def normalize_relation(self, relation):
         if not self.relation_type_names:
             return relation

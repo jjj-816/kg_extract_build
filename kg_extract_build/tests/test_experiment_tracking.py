@@ -102,6 +102,58 @@ class ExperimentRecorderTests(unittest.TestCase):
             callbacks, [{"stage": "entity_extraction", "success": True}]
         )
 
+    def test_memory_store_deletes_only_selected_run_and_children(self):
+        store = MemoryExperimentStore()
+        deleted_run_id = store.start_run("delete", {}, {}, "")
+        retained_run_id = store.start_run("retain", {}, {}, "")
+        deleted_document_id = store.start_document(
+            deleted_run_id, "delete.md", "case", "deleted", "delete text"
+        )
+        retained_document_id = store.start_document(
+            retained_run_id, "retain.md", "case", "retained", "retain text"
+        )
+        store.save_chunks(
+            deleted_run_id,
+            deleted_document_id,
+            "retrieval_sentence",
+            [{"index": 0, "content": "delete"}],
+        )
+        store.save_chunks(
+            retained_run_id,
+            retained_document_id,
+            "retrieval_sentence",
+            [{"index": 0, "content": "retain"}],
+        )
+
+        self.assertTrue(store.delete_run(deleted_run_id))
+        self.assertNotIn(deleted_run_id, store.runs)
+        self.assertNotIn(deleted_document_id, store.documents)
+        self.assertFalse(any(row["run_id"] == deleted_run_id for row in store.chunks))
+        self.assertIn(retained_run_id, store.runs)
+        self.assertIn(retained_document_id, store.documents)
+        self.assertTrue(any(row["run_id"] == retained_run_id for row in store.chunks))
+        self.assertFalse(store.delete_run(deleted_run_id))
+
+    def test_memory_store_deletes_evaluation_metrics_for_selected_run(self):
+        store = MemoryExperimentStore()
+        deleted_run_id = store.start_run("delete", {}, {}, "")
+        retained_run_id = store.start_run("retain", {}, {}, "")
+        store.evaluation_runs = [
+            {"evaluation_id": "delete-evaluation", "run_id": deleted_run_id},
+            {"evaluation_id": "retain-evaluation", "run_id": retained_run_id},
+        ]
+        store.evaluation_metrics = [
+            {"evaluation_id": "delete-evaluation"},
+            {"evaluation_id": "retain-evaluation"},
+        ]
+
+        store.delete_run(deleted_run_id)
+
+        self.assertEqual(
+            store.evaluation_metrics,
+            [{"evaluation_id": "retain-evaluation"}],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

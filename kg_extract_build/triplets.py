@@ -36,6 +36,7 @@ class TripletGenerator:
             provider_id,
             enable_thinking,
         )
+        self.type_completion_call_count = 0
 
     def generate(self, entity, context):
         entity_name = entity["name"]
@@ -306,6 +307,8 @@ head_type="{entity_type}"
 """
 
     def _parse_triplets(self, raw_text, entity_name, entity_type, context):
+        if not hasattr(self, "type_completion_call_count"):
+            self.type_completion_call_count = 0
         try:
             match = re.search(r"\[[\s\S]*\]", raw_text)
             payload = match.group(0) if match else raw_text
@@ -320,6 +323,7 @@ head_type="{entity_type}"
             head = str(item.get("head", "")).strip()
             relation = self.schema.normalize_relation(str(item.get("relation", "")).strip())
             tail = str(item.get("tail", "")).strip()
+            head_type = self.schema.normalize_entity_type(entity_type)
             tail_type = self.schema.normalize_entity_type(str(item.get("tail_type", "")).strip())
 
             if head in self.known_entities:
@@ -334,26 +338,137 @@ head_type="{entity_type}"
             if tail not in context and tail not in self.known_entities:
                 continue
             if tail in self.known_entities and tail_type == UNKNOWN_TYPE:
-                tail_type = self.known_entities[tail].get("type", UNKNOWN_TYPE)
-            if self.schema.is_relation_allowed(relation, entity_type, tail_type):
+                tail_type = self.schema.normalize_entity_type(
+                    self.known_entities[tail].get("type", UNKNOWN_TYPE)
+                )
+
+            candidate = {
+                "head": head,
+                "head_type": head_type,
+                "relation": relation,
+                "tail": tail,
+                "tail_type": tail_type,
+            }
+            if (
+                not self._is_final_entity_type_allowed(head_type)
+                or not self._is_final_entity_type_allowed(tail_type)
+            ):
+                candidate = self.complete_unknown_types(candidate, context)
+                if candidate is None:
+                    continue
+                head_type = candidate["head_type"]
+                tail_type = candidate["tail_type"]
+
+            if (
+                not self._is_final_entity_type_allowed(head_type)
+                or not self._is_final_entity_type_allowed(tail_type)
+            ):
+                continue
+
+            if self.schema.is_relation_allowed(relation, head_type, tail_type):
                 valid_triplets.append({
                     "head": head,
-                    "head_type": entity_type,
+                    "head_type": head_type,
                     "relation": relation,
                     "tail": tail,
                     "tail_type": tail_type,
                 })
                 continue
 
-            if self.schema.is_relation_allowed(relation, tail_type, entity_type):
+            if self.schema.is_relation_allowed(relation, tail_type, head_type):
                 valid_triplets.append({
                     "head": tail,
                     "head_type": tail_type,
                     "relation": relation,
                     "tail": head,
-                    "tail_type": entity_type,
+                    "tail_type": head_type,
                 })
         return valid_triplets
+
+    def _is_final_entity_type_allowed(self, entity_type):
+        validator = getattr(self.schema, "is_final_entity_type_allowed", None)
+        if validator is not None:
+            return validator(entity_type)
+        return bool(entity_type) and entity_type != UNKNOWN_TYPE
+
+    def complete_unknown_types(self, triplet, context):
+        prompt = self._build_type_completion_prompt(triplet, context)
+        started = time.perf_counter()
+        raw_result = None
+        parsed = None
+        error_message = None
+        try:
+            self.type_completion_call_count = (
+                getattr(self, "type_completion_call_count", 0) + 1
+            )
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.0,
+                **self._thinking_options,
+            )
+            raw_result = response.choices[0].message.content.strip()
+            result = json.loads(raw_result)
+            if not isinstance(result, dict) or set(result) != {
+                "head_type", "tail_type",
+            }:
+                raise ValueError("type completion must be a JSON object with head_type and tail_type")
+            head_type = self.schema.normalize_entity_type(result["head_type"])
+            tail_type = self.schema.normalize_entity_type(result["tail_type"])
+            parsed = {"head_type": head_type, "tail_type": tail_type}
+            if (
+                not self._is_final_entity_type_allowed(head_type)
+                or not self._is_final_entity_type_allowed(tail_type)
+            ):
+                raise ValueError("type completion returned an unknown or invalid entity type")
+            if not self.schema.is_relation_allowed(
+                triplet["relation"], head_type, tail_type
+            ):
+                raise ValueError("type completion violates the relation schema")
+            return {
+                **triplet,
+                "head_type": head_type,
+                "tail_type": tail_type,
+            }
+        except Exception as exc:
+            error_message = redact_text(str(exc), secrets=self._secret_values)
+            return None
+        finally:
+            if self.recorder is not None:
+                self.recorder.record_llm_call(
+                    stage="triplet_type_completion",
+                    prompt=prompt,
+                    raw_response=raw_result,
+                    parsed=parsed,
+                    latency_ms=int((time.perf_counter() - started) * 1000),
+                    success=error_message is None,
+                    error_message=error_message,
+                    entity_name=triplet["head"],
+                    metadata={
+                        "context": context,
+                        "triplet": dict(triplet),
+                    },
+                )
+
+    def _build_type_completion_prompt(self, triplet, context):
+        return f'''Task: assign final schema entity types to this existing triplet.
+
+Keep head, relation, and tail exactly unchanged. Do not create, rename, split, or merge entities.
+Use the evidence only to choose types. Return one JSON object and nothing else, exactly:
+{{"head_type":"Schema entity type","tail_type":"Schema entity type"}}
+
+head={triplet["head"]}
+relation={triplet["relation"]}
+tail={triplet["tail"]}
+current_head_type={triplet["head_type"]}
+current_tail_type={triplet["tail_type"]}
+
+Schema entity types:
+{self.schema.render_entity_schema()}
+
+Evidence:
+{context}
+'''
 
     def _parse_line_triplets(self, raw_text, entity_type):
         triplets = []
@@ -415,14 +530,26 @@ class TripletCorrector:
         for entity_name, triplets in raw_triplet_map.items():
             for triplet in triplets:
                 head = triplet.get("head", "").strip()
-                head_type = triplet.get("head_type", UNKNOWN_TYPE).strip()
+                head_type = self.schema.normalize_entity_type(
+                    triplet.get("head_type", UNKNOWN_TYPE).strip()
+                )
                 relation = triplet.get("relation", "").strip()
                 tail = triplet.get("tail", "").strip()
-                tail_type = triplet.get("tail_type", UNKNOWN_TYPE).strip()
+                tail_type = self.schema.normalize_entity_type(
+                    triplet.get("tail_type", UNKNOWN_TYPE).strip()
+                )
                 if (
                     is_valid_entity_candidate(head)
                     and (head == entity_name or tail == entity_name)
+                    and self._is_final_entity_type_allowed(head_type)
+                    and self._is_final_entity_type_allowed(tail_type)
                     and self.schema.is_relation_allowed(relation, head_type, tail_type)
                 ):
                     valid_triplets.append((head, head_type, relation, tail, tail_type))
         return list(set(valid_triplets))
+
+    def _is_final_entity_type_allowed(self, entity_type):
+        validator = getattr(self.schema, "is_final_entity_type_allowed", None)
+        if validator is not None:
+            return validator(entity_type)
+        return bool(entity_type) and entity_type != UNKNOWN_TYPE

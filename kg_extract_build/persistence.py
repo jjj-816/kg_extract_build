@@ -27,7 +27,18 @@ def env_bool(name, default=False):
     return value.strip().lower() in {"1", "true", "yes", "on"}
 
 
-class NullExperimentStore:
+class BaseExperimentStore:
+    def delete_run(self, run_id):
+        return False
+
+    def get_deletion_state(self, run_id):
+        return None
+
+    def mark_vectors_deleted_sql_pending(self, run_id):
+        return False
+
+
+class NullExperimentStore(BaseExperimentStore):
     enabled = False
 
 
@@ -105,6 +116,7 @@ class MemoryExperimentStore(NullExperimentStore):
             "run_id": run_id,
             "run_name": run_name,
             "status": "running",
+            "deletion_state": "active",
             "config_snapshot": config_snapshot,
             "schema_snapshot": schema_snapshot,
             "code_commit": code_commit,
@@ -114,6 +126,52 @@ class MemoryExperimentStore(NullExperimentStore):
 
     def finish_run(self, run_id, status, error_message=None):
         self.runs[run_id].update(status=status, error_message=error_message)
+
+    def delete_run(self, run_id):
+        if run_id not in self.runs:
+            return False
+        document_ids = {
+            document_id
+            for document_id, document in self.documents.items()
+            if document["run_id"] == run_id
+        }
+        evaluation_ids = {
+            evaluation["evaluation_id"]
+            for evaluation in self.evaluation_runs
+            if evaluation["run_id"] == run_id
+        }
+        self.runs.pop(run_id)
+        self.documents = {
+            document_id: document
+            for document_id, document in self.documents.items()
+            if document_id not in document_ids
+        }
+        self.chunks = [row for row in self.chunks if row["run_id"] != run_id]
+        self.llm_calls = [row for row in self.llm_calls if row["run_id"] != run_id]
+        self.entities = [row for row in self.entities if row["run_id"] != run_id]
+        self.retrieval_results = [
+            row for row in self.retrieval_results if row["run_id"] != run_id
+        ]
+        self.triplets = [row for row in self.triplets if row["run_id"] != run_id]
+        self.evaluation_runs = [
+            row for row in self.evaluation_runs if row["run_id"] != run_id
+        ]
+        self.evaluation_metrics = [
+            row
+            for row in self.evaluation_metrics
+            if row["evaluation_id"] not in evaluation_ids
+        ]
+        return True
+
+    def get_deletion_state(self, run_id):
+        run = self.runs.get(run_id)
+        return run and run.get("deletion_state", "active")
+
+    def mark_vectors_deleted_sql_pending(self, run_id):
+        if self.get_deletion_state(run_id) != "active":
+            return False
+        self.runs[run_id]["deletion_state"] = "vectors_deleted_sql_pending"
+        return True
 
     def start_document(self, run_id, file_name, source_type, document_hash, content):
         self._document_id += 1
@@ -276,7 +334,7 @@ class MemoryExperimentStore(NullExperimentStore):
         return evaluation_id
 
 
-class MySQLExperimentStore:
+class MySQLExperimentStore(BaseExperimentStore):
     enabled = True
 
     def __init__(
@@ -325,7 +383,7 @@ class MySQLExperimentStore:
             self._connection_instance.ping(reconnect=True)
         return self._connection_instance
 
-    def _write(self, sql, params=None, many=False):
+    def _write(self, sql, params=None, many=False, return_rowcount=False):
         connection = self._connection()
         try:
             with connection.cursor() as cursor:
@@ -334,8 +392,9 @@ class MySQLExperimentStore:
                 else:
                     cursor.execute(sql, params or ())
                 lastrowid = cursor.lastrowid
+                rowcount = cursor.rowcount
             connection.commit()
-            return lastrowid
+            return rowcount if return_rowcount else lastrowid
         except Exception:
             connection.rollback()
             raise
@@ -359,6 +418,19 @@ class MySQLExperimentStore:
                     statement = statement.strip()
                     if statement:
                         cursor.execute(statement)
+                cursor.execute(
+                    """
+                    SELECT COUNT(*) FROM information_schema.columns
+                    WHERE table_schema=DATABASE()
+                      AND table_name='kg_experiment_run'
+                      AND column_name='deletion_state'
+                    """
+                )
+                if cursor.fetchone()[0] == 0:
+                    cursor.execute(
+                        "ALTER TABLE kg_experiment_run ADD COLUMN deletion_state "
+                        "VARCHAR(32) NOT NULL DEFAULT 'active'"
+                    )
             connection.commit()
         except Exception:
             connection.rollback()
@@ -393,6 +465,30 @@ class MySQLExperimentStore:
             """,
             (status, error_message, utc_now(), run_id),
         )
+
+    def delete_run(self, run_id):
+        return self._write(
+            "DELETE FROM kg_experiment_run WHERE run_id=%s",
+            (run_id,),
+            return_rowcount=True,
+        ) > 0
+
+    def get_deletion_state(self, run_id):
+        rows = self._read(
+            "SELECT deletion_state FROM kg_experiment_run WHERE run_id=%s", (run_id,)
+        )
+        return rows[0]["deletion_state"] if rows else None
+
+    def mark_vectors_deleted_sql_pending(self, run_id):
+        return self._write(
+            """
+            UPDATE kg_experiment_run
+            SET deletion_state='vectors_deleted_sql_pending'
+            WHERE run_id=%s AND deletion_state='active'
+            """,
+            (run_id,),
+            return_rowcount=True,
+        ) > 0
 
     def start_document(self, run_id, file_name, source_type, document_hash, content):
         return self._write(
@@ -929,8 +1025,5 @@ def build_experiment_store():
     store = MySQLExperimentStore.from_env()
     store.initialize_schema()
     return store
-
-
-
 
 

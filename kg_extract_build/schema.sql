@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS kg_experiment_run (
     run_id CHAR(36) PRIMARY KEY,
     run_name VARCHAR(255) NOT NULL,
     status VARCHAR(32) NOT NULL,
+    deletion_state VARCHAR(32) NOT NULL DEFAULT 'active',
     code_commit VARCHAR(64) NULL,
     config_snapshot JSON NULL,
     schema_snapshot JSON NULL,
