@@ -5,6 +5,7 @@ import time
 from openai import OpenAI
 
 from .llm_thinking import build_thinking_options
+from .preprocess import is_valid_entity_candidate
 from .run_config import redact_text
 from .settings import UNKNOWN_TYPE
 
@@ -324,6 +325,8 @@ head_type="{entity_type}"
             if head in self.known_entities:
                 head = self.known_entities[head].get("name", head)
 
+            if not is_valid_entity_candidate(head):
+                continue
             if head != entity_name or not relation or not tail:
                 continue
             if len(tail) > 30:
@@ -417,7 +420,8 @@ class TripletCorrector:
                 tail = triplet.get("tail", "").strip()
                 tail_type = triplet.get("tail_type", UNKNOWN_TYPE).strip()
                 if (
-                    (head == entity_name or tail == entity_name)
+                    is_valid_entity_candidate(head)
+                    and (head == entity_name or tail == entity_name)
                     and self.schema.is_relation_allowed(relation, head_type, tail_type)
                 ):
                     valid_triplets.append((head, head_type, relation, tail, tail_type))

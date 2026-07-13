@@ -5,6 +5,7 @@ import time
 from openai import OpenAI
 
 from .llm_thinking import build_thinking_options
+from .preprocess import is_valid_entity_candidate
 from .run_config import redact_text
 from .settings import UNKNOWN_TYPE
 
@@ -260,4 +261,9 @@ class LongDocLLMEntityExtractor:
             "实体类型", "关系类型", "分类", "章节", "标题",
             "1.", "2.", "3.", "4.", "5.", "6.", "7.", "8.", "9.",
         ]
-        return [entity for entity in entities if not any(key in entity["name"] for key in invalid_keywords)]
+        return [
+            entity
+            for entity in entities
+            if is_valid_entity_candidate(entity["name"])
+            and not any(key in entity["name"] for key in invalid_keywords)
+        ]

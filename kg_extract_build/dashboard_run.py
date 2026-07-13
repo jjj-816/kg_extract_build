@@ -97,6 +97,8 @@ def get_run_registry():
 # ---------------------------------------------------------------------------
 
 
+PIPELINE_STAGE_LABELS = [('document', '文档'), ('preprocessing', '预处理'), ('chunking', '切片'), ('entity_extraction', '实体抽取'), ('entity_alignment', '实体对齐'), ('retrieval', '语义检索'), ('triplet_extraction', '三元组生成'), ('triplet_correction', '校正'), ('completed', '完成')]
+
 def render_monitor_body(registry):
     events = registry.drain_events()
     state = reduce_events(
@@ -121,16 +123,7 @@ def render_monitor_body(registry):
     st.write(f"当前阶段：{state.get('stage', '等待开始')}")
     st.write(f"当前文档：{state.get('document_name') or '—'}")
 
-    stage_labels = [
-        ("document", "文档"),
-        ("chunking", "切片"),
-        ("entity_extraction", "实体抽取"),
-        ("entity_alignment", "实体对齐"),
-        ("retrieval", "语义检索"),
-        ("triplet_extraction", "三元组生成"),
-        ("triplet_correction", "校正"),
-        ("completed", "完成"),
-    ]
+    stage_labels = PIPELINE_STAGE_LABELS
     seen_stages = set(state.get("seen_stages", []))
     st.caption(
         " → ".join(

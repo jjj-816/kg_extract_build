@@ -1,6 +1,7 @@
 import unittest
 
 from kg_extract_build.dashboard_run import (
+    PIPELINE_STAGE_LABELS,
     build_llm_config,
     chunking_notice,
     provider_form_defaults,
@@ -10,6 +11,10 @@ from kg_extract_build.dashboard_run import (
 
 
 class DashboardRunTests(unittest.TestCase):
+    def test_pipeline_stages_include_preprocessing_before_chunking(self):
+        stages = [stage for stage, _label in PIPELINE_STAGE_LABELS]
+        assert stages.index("preprocessing") < stages.index("chunking")
+
     def test_default_chunking_notice_is_explicit(self):
         level, message = chunking_notice(2000)
         self.assertEqual(level, "info")
