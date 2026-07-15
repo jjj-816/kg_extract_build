@@ -82,6 +82,11 @@ def provider_form_defaults(provider_id):
     }
 
 
+def default_run_name(now=None):
+    now = now or datetime.now()
+    return now.strftime("kg-run-%Y%m%d-%H%M%S")
+
+
 # ---------------------------------------------------------------------------
 # Run registry – survives Streamlit reruns
 # ---------------------------------------------------------------------------
@@ -186,9 +191,11 @@ def render_run_page():
 
     # -- left: configuration ------------------------------------------------
     with config_col:
+        if "experiment_run_name" not in st.session_state:
+            st.session_state["experiment_run_name"] = default_run_name()
         run_name = st.text_input(
             "实验名称",
-            value=datetime.now().strftime("kg-run-%Y%m%d-%H%M%S"),
+            key="experiment_run_name",
             disabled=registry.is_running,
         )
         folder_text = st.text_input(
