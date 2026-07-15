@@ -238,6 +238,7 @@ class TripletBatchingTests(unittest.TestCase):
             prompt = completions.calls[0]["messages"][0]["content"]
             self.assertEqual(prompt.count("[S1]"), 1)
             self.assertEqual(prompt.count("[S2]"), 1)
+            self.assertIn("evidence_sentence_ids", prompt)
             self.assertEqual(len(completions.calls), 1)
             self.assertEqual(result["井口"][0]["tail"], "井场")
             self.assertEqual(result["防喷器"][0]["tail"], "井口")

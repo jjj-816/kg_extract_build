@@ -236,6 +236,7 @@ class TripletGenerator:
                         + self.schema.render_allowed_tail_types(
                             entity_type
                         ),
+                        "  required_output_field: evidence_sentence_ids, for example [1]",
                     ]
                 )
             )
@@ -246,6 +247,11 @@ class TripletGenerator:
 
 【目标实体】
 {chr(10).join(target_blocks)}
+
+Required JSON output format:
+[
+  {{"head":"target head","head_type":"type","relation":"relation","tail":"tail","tail_type":"type","evidence_sentence_ids":[1]}}
+]
 
 约束：
 - head 必须是目标实体之一，禁止输出其他 head。
@@ -300,6 +306,9 @@ head_type="{entity_type}"
 {allowed_tail_types}
 
 - Every output item must include evidence_sentence_ids, a non-empty list of S-number integers that directly contain its tail.
+
+Required JSON item example:
+{{"head":"{entity_name}","head_type":"{entity_type}","relation":"relation","tail":"tail","tail_type":"type","evidence_sentence_ids":[1]}}
 
 约束：
 - head 和 head_type 必须固定为上面的值。
