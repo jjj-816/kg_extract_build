@@ -113,6 +113,7 @@ class TripletGenerator:
             entity_evidence_ids,
         )
         started = time.perf_counter()
+        raw_result = None
         entity_names = [entity["name"] for entity in entities]
         metadata = {
             "strategy": "shared_context_batch",
@@ -193,6 +194,7 @@ class TripletGenerator:
                 self.recorder.record_llm_call(
                     stage="triplet_extraction_batch",
                     prompt=prompt,
+                    raw_response=raw_result,
                     latency_ms=int(
                         (time.perf_counter() - started) * 1000
                     ),
@@ -264,15 +266,30 @@ Required JSON output format:
 [
   {{"head": "目标实体", "head_type": "实体类型", "relation": "关系", "tail": "尾实体", "tail_type": "尾实体类型"}}
 ]
+
+Final output schema (use this exact six-field structure; it overrides the illustrative format above):
+[
+  {{"head":"target head","head_type":"type","relation":"relation","tail":"tail","tail_type":"type","evidence_sentence_ids":[142]}}
+]
+evidence_sentence_ids is mandatory and must be an integer array such as [142], never [S142].
 """
 
     def _parse_batch_array(self, raw_text):
+        raw_text = self._normalize_evidence_id_syntax(raw_text)
         match = re.search(r"\[[\s\S]*\]", raw_text)
         payload = match.group(0) if match else raw_text
         data = json.loads(payload)
         if not isinstance(data, list):
             raise ValueError("批量三元组响应必须是 JSON 数组")
         return data
+
+    @staticmethod
+    def _normalize_evidence_id_syntax(raw_text):
+        return re.sub(
+            r"(?<=[\[,])\s*S(\d+)(?=\s*[,\]])",
+            r"\1",
+            raw_text,
+        )
 
     def load_saved_triplets(self, entity_name):
         save_path = self._debug_path(entity_name)
@@ -332,6 +349,7 @@ Required JSON item example:
     ):
         if not hasattr(self, "type_completion_call_count"):
             self.type_completion_call_count = 0
+        raw_text = self._normalize_evidence_id_syntax(raw_text)
         try:
             match = re.search(r"\[[\s\S]*\]", raw_text)
             payload = match.group(0) if match else raw_text

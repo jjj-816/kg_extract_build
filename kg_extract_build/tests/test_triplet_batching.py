@@ -86,6 +86,14 @@ def make_generator(tmp, completions):
 
 
 class TripletBatchingTests(unittest.TestCase):
+    def test_batch_parser_accepts_sentence_prefix_in_evidence_ids(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            generator = make_generator(tmp, Completions())
+            rows = generator._parse_batch_array(
+                '[{"head":"pump","evidence_sentence_ids":[S12, S13]}]'
+            )
+        self.assertEqual(rows[0]["evidence_sentence_ids"], [12, 13])
+
     def test_unknown_tail_type_is_completed_once_then_accepted(self):
         completions = Completions(
             json.dumps({"head_type": "facility", "tail_type": "parameter"})
