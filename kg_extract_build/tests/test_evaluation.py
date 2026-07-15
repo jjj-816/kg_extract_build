@@ -142,10 +142,10 @@ class EvaluationMetricTests(unittest.TestCase):
         self.assertAlmostEqual(result.overall["triplet_precision"].value, 0.5)
         self.assertAlmostEqual(result.overall["triplet_recall"].value, 1.0)
         self.assertAlmostEqual(
-            result.overall["retrieval_evidence_coverage"].value, 0.5
+            result.overall["selected_evidence_coverage"].value, 0.5
         )
         self.assertAlmostEqual(
-            result.overall["retrieval_tail_absence_rate"].value, 0.5
+            result.overall["selected_evidence_tail_absence_rate"].value, 0.5
         )
 
     def test_retrieval_evidence_does_not_fall_back_to_document_text(self):
@@ -159,10 +159,10 @@ class EvaluationMetricTests(unittest.TestCase):
         )
 
         self.assertAlmostEqual(
-            result.overall["retrieval_evidence_coverage"].value, 0.0
+            result.overall["selected_evidence_coverage"].value, 0.0
         )
         self.assertAlmostEqual(
-            result.overall["retrieval_tail_absence_rate"].value, 1.0
+            result.overall["selected_evidence_tail_absence_rate"].value, 1.0
         )
 
 from kg_extract_build.evaluation import GoldAnnotations, build_preview

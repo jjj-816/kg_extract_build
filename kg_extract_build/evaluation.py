@@ -305,13 +305,13 @@ def evaluate_documents(
         covered_total += covered
         total_for_coverage += total
         unsupported_all.extend(unsupported)
-    overall["retrieval_evidence_coverage"] = _rate_metric(
-        "retrieval_evidence_coverage",
+    overall["selected_evidence_coverage"] = _rate_metric(
+        "selected_evidence_coverage",
         covered_total,
         total_for_coverage,
     )
-    overall["retrieval_tail_absence_rate"] = _rate_metric(
-        "retrieval_tail_absence_rate",
+    overall["selected_evidence_tail_absence_rate"] = _rate_metric(
+        "selected_evidence_tail_absence_rate",
         len(unsupported_all),
         total_for_coverage,
         {"unsupported": unsupported_all[:20]},

@@ -135,6 +135,7 @@ class ExperimentRecorderTests(unittest.TestCase):
             },
         ])
 
+        store.save_triplet_evidence(1, [1])
         evidence = store.load_evaluation_input(run_id)["evidence"]
         triplet = ("A", "类型1", "REL", "B", "类型2")
         self.assertEqual(evidence["doc"][triplet], ["A 的检索句"])

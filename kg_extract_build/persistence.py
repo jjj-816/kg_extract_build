@@ -294,18 +294,23 @@ class MemoryExperimentStore(NullExperimentStore):
             triplet_by_doc.setdefault(doc_key, []).append(item)
 
         evidence = {doc_key: {} for doc_key in triplet_by_doc}
-        for row in self.retrieval_results:
-            if row["run_id"] != run_id:
+        retrieval_by_id = {row.get("retrieval_id"): row for row in self.retrieval_results}
+        triplet_by_id = {row.get("triplet_id"): row for row in self.triplets}
+        for link in self.triplet_evidence:
+            triplet_row = triplet_by_id.get(link["triplet_id"])
+            retrieval_row = retrieval_by_id.get(link["retrieval_id"])
+            if triplet_row is None or retrieval_row is None:
                 continue
-            doc_key = document_keys.get(row["document_id"])
+            doc_key = document_keys.get(triplet_row["document_id"])
             if not doc_key:
                 continue
-            entity_name = row.get("entity_name")
-            for triplet in triplet_by_doc.get(doc_key, []):
-                if entity_name == triplet[0]:
-                    evidence.setdefault(doc_key, {}).setdefault(triplet, []).append(
-                        row.get("sentence", "")
-                    )
+            triplet = (
+                triplet_row["head"], triplet_row["head_type"],
+                triplet_row["relation"], triplet_row["tail"], triplet_row["tail_type"],
+            )
+            evidence.setdefault(doc_key, {}).setdefault(triplet, []).append(
+                retrieval_row.get("sentence", "")
+            )
         return {"documents": documents, "triplets": triplets, "evidence": evidence}
 
     def list_evaluations(self, run_id, gold_hash=None):
@@ -766,9 +771,13 @@ class MySQLExperimentStore(BaseExperimentStore):
 
         retrieval_rows = self._read(
             """
-            SELECT document_id, entity_name, sentence
-            FROM kg_retrieval_result
-            WHERE run_id=%s
+            SELECT t.document_id, t.head, t.head_type, t.relation_name,
+                   t.tail, t.tail_type, rr.sentence
+            FROM kg_triplet t
+            JOIN kg_triplet_evidence te ON te.triplet_id=t.triplet_id
+            JOIN kg_retrieval_result rr ON rr.retrieval_id=te.retrieval_id
+            WHERE t.run_id=%s AND t.stage='final'
+            ORDER BY t.triplet_id, te.evidence_order
             """,
             (run_id,),
         )
@@ -777,12 +786,13 @@ class MySQLExperimentStore(BaseExperimentStore):
             doc_key = document_keys.get(row["document_id"])
             if not doc_key:
                 continue
-            entity_name = row.get("entity_name")
-            for triplet in triplet_by_doc.get(doc_key, []):
-                if entity_name == triplet[0]:
-                    evidence.setdefault(doc_key, {}).setdefault(triplet, []).append(
-                        row.get("sentence", "")
-                    )
+            triplet = (
+                row["head"], row["head_type"], row["relation_name"],
+                row["tail"], row["tail_type"],
+            )
+            evidence.setdefault(doc_key, {}).setdefault(triplet, []).append(
+                row.get("sentence", "")
+            )
         return {"documents": documents, "triplets": triplets, "evidence": evidence}
 
     def list_evaluations(self, run_id, gold_hash=None):
