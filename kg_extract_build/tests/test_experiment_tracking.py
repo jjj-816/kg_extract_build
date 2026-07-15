@@ -139,6 +139,25 @@ class ExperimentRecorderTests(unittest.TestCase):
         triplet = ("A", "类型1", "REL", "B", "类型2")
         self.assertEqual(evidence["doc"][triplet], ["A 的检索句"])
 
+    def test_final_triplet_links_selected_retrieval_sentence(self):
+        store = MemoryExperimentStore()
+        run_id = store.start_run("test", {}, {}, "")
+        document_id = store.start_document(run_id, "doc.md", "case", "abc", "text")
+        recorder = ExperimentRecorder(store, None, run_id, document_id)
+        recorder.record_chunks(
+            "retrieval_sentence", [{"index": 4, "content": "A REL B"}]
+        )
+        recorder.record_retrieval(
+            "A", "A", [{"sentence_index": 4, "sentence": "A REL B", "score": 1.0, "match_type": "direct"}]
+        )
+        recorder.record_triplets("final", [{
+            "head": "A", "head_type": "T", "relation": "REL", "tail": "B",
+            "tail_type": "T", "evidence_sentence_ids": [4],
+        }])
+
+        self.assertEqual(len(store.triplet_evidence), 1)
+        self.assertEqual(store.triplet_evidence[0]["evidence_order"], 1)
+
     def test_memory_store_deletes_only_selected_run_and_children(self):
         store = MemoryExperimentStore()
         deleted_run_id = store.start_run("delete", {}, {}, "")

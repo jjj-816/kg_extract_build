@@ -38,10 +38,14 @@ class TripletGenerator:
         )
         self.type_completion_call_count = 0
 
-    def generate(self, entity, context):
+    def generate(self, entity, evidence):
         entity_name = entity["name"]
         entity_type = entity.get("type", UNKNOWN_TYPE)
-        prompt = self._build_prompt(entity_name, entity_type, context)
+        evidence_by_id = {
+            int(item["sentence_index"]): str(item["sentence"])
+            for item in evidence
+        }
+        prompt = self._build_prompt(entity_name, entity_type, evidence_by_id)
         started = time.perf_counter()
         try:
             response = self.client.chat.completions.create(
@@ -51,7 +55,10 @@ class TripletGenerator:
                 **self._thinking_options,
             )
             raw_result = response.choices[0].message.content.strip()
-            triplets = self._parse_triplets(raw_result, entity_name, entity_type, context)
+            triplets = self._parse_triplets(
+                raw_result, entity_name, entity_type,
+                "\n".join(evidence_by_id.values()), set(evidence_by_id), evidence_by_id,
+            )
             llm_call_id = None
             if self.recorder is not None:
                 llm_call_id = self.recorder.record_llm_call(
@@ -61,7 +68,7 @@ class TripletGenerator:
                     parsed=triplets,
                     latency_ms=int((time.perf_counter() - started) * 1000),
                     entity_name=entity_name,
-                    metadata={"context": context, "entity_type": entity_type},
+                    metadata={"evidence_ids": sorted(evidence_by_id), "entity_type": entity_type},
                 )
                 self.recorder.record_triplets(
                     "raw",
@@ -89,7 +96,7 @@ class TripletGenerator:
                     success=False,
                     error_message=safe_error,
                     entity_name=entity_name,
-                    metadata={"context": context, "entity_type": entity_type},
+                    metadata={"evidence_ids": sorted(evidence_by_id), "entity_type": entity_type},
                 )
             return []
 
@@ -143,6 +150,8 @@ class TripletGenerator:
                     entity_name,
                     entity_type,
                     context,
+                    set(entity_evidence_ids[entity_name]),
+                    evidence_by_id,
                 )
 
             llm_call_id = None
@@ -276,7 +285,7 @@ class TripletGenerator:
             return None
         return triplets
 
-    def _build_prompt(self, entity_name, entity_type, context):
+    def _build_prompt(self, entity_name, entity_type, evidence_by_id):
         allowed_relations = self.schema.render_allowed_relation_schema(entity_type)
         allowed_tail_types = self.schema.render_allowed_tail_types(entity_type)
         return f"""任务：从上下文抽取以指定 head 为中心的知识图谱三元组。
@@ -289,6 +298,8 @@ head_type="{entity_type}"
 
 可选 tail_type：
 {allowed_tail_types}
+
+- Every output item must include evidence_sentence_ids, a non-empty list of S-number integers that directly contain its tail.
 
 约束：
 - head 和 head_type 必须固定为上面的值。
@@ -303,10 +314,13 @@ head_type="{entity_type}"
 ]
 
 上下文：
-{context}
+{chr(10).join(f'[S{index}] {sentence}' for index, sentence in evidence_by_id.items())}
 """
 
-    def _parse_triplets(self, raw_text, entity_name, entity_type, context):
+    def _parse_triplets(
+        self, raw_text, entity_name, entity_type, context,
+        allowed_evidence_ids=None, evidence_by_id=None,
+    ):
         if not hasattr(self, "type_completion_call_count"):
             self.type_completion_call_count = 0
         try:
@@ -335,6 +349,23 @@ head_type="{entity_type}"
                 continue
             if len(tail) > 30:
                 continue
+            evidence_ids = item.get("evidence_sentence_ids", [])
+            if allowed_evidence_ids is not None:
+                if not isinstance(evidence_ids, list) or not evidence_ids:
+                    continue
+                try:
+                    evidence_ids = [int(value) for value in evidence_ids]
+                except (TypeError, ValueError):
+                    continue
+                if not set(evidence_ids).issubset(allowed_evidence_ids):
+                    continue
+                selected_text = "\n".join(
+                    evidence_by_id[index]
+                    for index in evidence_ids
+                    if index in evidence_by_id
+                )
+                if tail not in selected_text:
+                    continue
             if tail not in context and tail not in self.known_entities:
                 continue
             if tail in self.known_entities and tail_type == UNKNOWN_TYPE:
@@ -348,7 +379,10 @@ head_type="{entity_type}"
                 "relation": relation,
                 "tail": tail,
                 "tail_type": tail_type,
+                "evidence_sentence_ids": evidence_ids,
             }
+            if allowed_evidence_ids is None:
+                candidate.pop("evidence_sentence_ids")
             if (
                 not self._is_final_entity_type_allowed(head_type)
                 or not self._is_final_entity_type_allowed(tail_type)
@@ -372,6 +406,7 @@ head_type="{entity_type}"
                     "relation": relation,
                     "tail": tail,
                     "tail_type": tail_type,
+                    **({"evidence_sentence_ids": evidence_ids} if allowed_evidence_ids is not None else {}),
                 })
                 continue
 
@@ -382,6 +417,7 @@ head_type="{entity_type}"
                     "relation": relation,
                     "tail": head,
                     "tail_type": head_type,
+                    **({"evidence_sentence_ids": evidence_ids} if allowed_evidence_ids is not None else {}),
                 })
         return valid_triplets
 
@@ -545,8 +581,22 @@ class TripletCorrector:
                     and self._is_final_entity_type_allowed(tail_type)
                     and self.schema.is_relation_allowed(relation, head_type, tail_type)
                 ):
-                    valid_triplets.append((head, head_type, relation, tail, tail_type))
-        return list(set(valid_triplets))
+                    valid_triplets.append({
+                        "head": head,
+                        "head_type": head_type,
+                        "relation": relation,
+                        "tail": tail,
+                        "tail_type": tail_type,
+                        "evidence_sentence_ids": triplet.get("evidence_sentence_ids", []),
+                    })
+        deduplicated = {}
+        for triplet in valid_triplets:
+            key = (
+                triplet["head"], triplet["head_type"], triplet["relation"],
+                triplet["tail"], triplet["tail_type"],
+            )
+            deduplicated.setdefault(key, triplet)
+        return list(deduplicated.values())
 
     def _is_final_entity_type_allowed(self, entity_type):
         validator = getattr(self.schema, "is_final_entity_type_allowed", None)

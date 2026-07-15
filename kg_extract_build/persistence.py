@@ -75,6 +75,12 @@ class NullExperimentStore(BaseExperimentStore):
     def save_triplets(self, records):
         return None
 
+    def find_retrieval_id(self, run_id, document_id, entity_name, sentence_index):
+        return None
+
+    def save_triplet_evidence(self, triplet_id, retrieval_ids):
+        return None
+
     def list_experiment_runs(self, limit=100):
         return []
 
@@ -104,11 +110,14 @@ class MemoryExperimentStore(NullExperimentStore):
         self.entities = []
         self.retrieval_results = []
         self.triplets = []
+        self.triplet_evidence = []
         self.evaluation_runs = []
         self.evaluation_metrics = []
         self._document_id = 0
         self._chunk_id = 0
         self._llm_call_id = 0
+        self._retrieval_id = 0
+        self._triplet_id = 0
 
     def start_run(self, run_name, config_snapshot, schema_snapshot, code_commit):
         run_id = str(uuid.uuid4())
@@ -220,10 +229,32 @@ class MemoryExperimentStore(NullExperimentStore):
         self.entities.extend(records)
 
     def save_retrieval_results(self, records):
-        self.retrieval_results.extend(records)
+        for record in records:
+            self._retrieval_id += 1
+            record["retrieval_id"] = self._retrieval_id
+            self.retrieval_results.append(record)
 
     def save_triplets(self, records):
-        self.triplets.extend(records)
+        ids = []
+        for record in records:
+            self._triplet_id += 1
+            record["triplet_id"] = self._triplet_id
+            self.triplets.append(record)
+            ids.append(self._triplet_id)
+        return ids
+
+    def find_retrieval_id(self, run_id, document_id, entity_name, sentence_index):
+        for row in self.retrieval_results:
+            if (row["run_id"], row["document_id"], row["entity_name"]) != (run_id, document_id, entity_name):
+                continue
+            chunk = next((item for item in self.chunks if item["chunk_id"] == row.get("chunk_id")), None)
+            if chunk and chunk.get("chunk_index", chunk.get("index")) == sentence_index:
+                return row["retrieval_id"]
+        return None
+
+    def save_triplet_evidence(self, triplet_id, retrieval_ids):
+        for order, retrieval_id in enumerate(retrieval_ids, start=1):
+            self.triplet_evidence.append({"triplet_id": triplet_id, "retrieval_id": retrieval_id, "evidence_order": order})
 
     def list_experiment_runs(self, limit=100):
         rows = list(self.runs.values())
@@ -627,7 +658,7 @@ class MySQLExperimentStore(BaseExperimentStore):
 
     def save_triplets(self, records):
         if not records:
-            return
+            return []
         sql = """
             INSERT INTO kg_triplet
                 (run_id, document_id, source_llm_call_id, stage, source_kind,
@@ -635,8 +666,9 @@ class MySQLExperimentStore(BaseExperimentStore):
                  is_valid, validation_reason, created_at)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
-        params = [
-            (
+        ids = []
+        for item in records:
+            ids.append(self._write(sql, (
                 item["run_id"],
                 item["document_id"],
                 item.get("source_llm_call_id"),
@@ -651,10 +683,30 @@ class MySQLExperimentStore(BaseExperimentStore):
                 1 if item.get("is_valid", True) else 0,
                 item.get("validation_reason"),
                 utc_now(),
-            )
-            for item in records
-        ]
-        self._write(sql, params, many=True)
+            )))
+        return ids
+
+    def find_retrieval_id(self, run_id, document_id, entity_name, sentence_index):
+        rows = self._read(
+            """
+            SELECT rr.retrieval_id FROM kg_retrieval_result rr
+            JOIN kg_document_chunk chunk ON chunk.chunk_id=rr.chunk_id
+            WHERE rr.run_id=%s AND rr.document_id=%s AND rr.entity_name=%s
+              AND chunk.chunk_index=%s
+            ORDER BY rr.hit_rank, rr.retrieval_id LIMIT 1
+            """,
+            (run_id, document_id, entity_name, sentence_index),
+        )
+        return rows[0]["retrieval_id"] if rows else None
+
+    def save_triplet_evidence(self, triplet_id, retrieval_ids):
+        if not retrieval_ids:
+            return
+        self._write(
+            "INSERT INTO kg_triplet_evidence (triplet_id, retrieval_id, evidence_order) VALUES (%s, %s, %s)",
+            [(triplet_id, retrieval_id, index) for index, retrieval_id in enumerate(retrieval_ids, start=1)],
+            many=True,
+        )
 
     def list_experiment_runs(self, limit=100):
         return self._read(
@@ -1014,9 +1066,24 @@ class ExperimentRecorder:
                     "tail_type": item.get("tail_type") or "未分类",
                     "is_valid": stage == "final" or item.get("is_valid", True),
                     "validation_reason": item.get("validation_reason"),
+                    "evidence_sentence_ids": item.get("evidence_sentence_ids", []),
                 }
             )
-        self.store.save_triplets(records)
+        triplet_ids = self.store.save_triplets(records) or []
+        if stage != "final":
+            return
+        for record, triplet_id in zip(records, triplet_ids):
+            retrieval_ids = []
+            for sentence_index in record.get("evidence_sentence_ids", []):
+                retrieval_id = self.store.find_retrieval_id(
+                    self.run_id, self.document_id, record["head"], int(sentence_index)
+                )
+                if retrieval_id is None:
+                    raise ValueError(
+                        f"selected evidence S{sentence_index} is not a retrieval result for {record['head']}"
+                    )
+                retrieval_ids.append(retrieval_id)
+            self.store.save_triplet_evidence(triplet_id, retrieval_ids)
 
 
 def build_experiment_store():
@@ -1025,4 +1092,3 @@ def build_experiment_store():
     store = MySQLExperimentStore.from_env()
     store.initialize_schema()
     return store
-

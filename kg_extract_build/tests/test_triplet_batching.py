@@ -206,6 +206,10 @@ class TripletBatchingTests(unittest.TestCase):
             ],
             ensure_ascii=False,
         )
+        response = response.replace(
+            '"tail_type": "\u8bbe\u65bd"}',
+            '"tail_type": "\u8bbe\u65bd", "evidence_sentence_ids": [1]}',
+        )
         completions = Completions(response)
         with tempfile.TemporaryDirectory() as tmp:
             generator = make_generator(tmp, completions)

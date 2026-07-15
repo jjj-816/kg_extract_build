@@ -155,6 +155,19 @@ CREATE TABLE IF NOT EXISTS kg_evaluation_run (
         REFERENCES kg_experiment_run(run_id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+CREATE TABLE IF NOT EXISTS kg_triplet_evidence (
+    triplet_id BIGINT UNSIGNED NOT NULL,
+    retrieval_id BIGINT UNSIGNED NOT NULL,
+    evidence_order INT UNSIGNED NOT NULL,
+    source VARCHAR(32) NOT NULL DEFAULT 'model_selected',
+    PRIMARY KEY (triplet_id, retrieval_id),
+    INDEX idx_kg_triplet_evidence_retrieval (retrieval_id),
+    CONSTRAINT fk_kg_triplet_evidence_triplet FOREIGN KEY (triplet_id)
+        REFERENCES kg_triplet(triplet_id) ON DELETE CASCADE,
+    CONSTRAINT fk_kg_triplet_evidence_retrieval FOREIGN KEY (retrieval_id)
+        REFERENCES kg_retrieval_result(retrieval_id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 CREATE TABLE IF NOT EXISTS kg_evaluation_metric (
     metric_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     evaluation_id CHAR(36) NOT NULL,

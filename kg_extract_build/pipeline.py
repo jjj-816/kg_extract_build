@@ -523,7 +523,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                         name = entity["name"]
                         raw_triplets[name] = generator.generate(
                             entity,
-                            evidence_context(entity_evidence[name]),
+                            entity_evidence[name],
                         )
                 else:
                     entities_by_name = {
@@ -573,10 +573,11 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                             name = batch.entity_names[0]
                             raw_triplets[name] = generator.generate(
                                 batch_entities[0],
-                                evidence_context(
-                                    batch.evidence,
-                                    batch.entity_evidence_ids[name],
-                                ),
+                                [
+                                    hit for hit in batch.evidence
+                                    if int(hit["sentence_index"])
+                                    in batch.entity_evidence_ids[name]
+                                ],
                             )
                         else:
                             raw_triplets.update(
