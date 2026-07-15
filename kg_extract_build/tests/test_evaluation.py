@@ -165,6 +165,23 @@ class EvaluationMetricTests(unittest.TestCase):
             result.overall["selected_evidence_tail_absence_rate"].value, 1.0
         )
 
+    def test_canonical_triplet_uses_gold_aliases_and_ids(self):
+        model_triplet = ("井口装置", "设备设施", "USES", "电缆线", "施工对象")
+        result = evaluate_documents(
+            model={"文档A": [model_triplet]},
+            gold={"文档A": [("井口装置", "设备设施", "USES", "电缆", "施工对象")]},
+            documents={"文档A": ""}, evidence={"文档A": {}},
+            canonical_entities={"文档A": [
+                {"canonical_id": "EQ001", "canonical_name": "井口装置", "entity_type": "设备设施", "names": ["井口装置"]},
+                {"canonical_id": "OBJ003", "canonical_name": "电缆", "entity_type": "施工对象", "names": ["电缆", "电缆线"]},
+            ]},
+            canonical_gold_triplets={"文档A": [("EQ001", "USES", "OBJ003")]},
+        )
+        self.assertAlmostEqual(result.overall["triplet_f1"].value, 0.0)
+        self.assertAlmostEqual(result.overall["canonical_triplet_f1"].value, 1.0)
+        self.assertAlmostEqual(result.overall["canonical_entity_mapping_rate"].value, 1.0)
+        self.assertEqual(len(result.entity_alignments), 2)
+
 from kg_extract_build.evaluation import GoldAnnotations, build_preview
 
 

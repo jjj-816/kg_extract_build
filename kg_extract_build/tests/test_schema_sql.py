@@ -32,8 +32,10 @@ class SchemaSqlTests(unittest.TestCase):
                 "kg_entity",
                 "kg_retrieval_result",
                 "kg_triplet",
+                "kg_triplet_evidence",
                 "kg_evaluation_run",
                 "kg_evaluation_metric",
+                "kg_evaluation_entity_alignment",
             },
         )
 
@@ -41,6 +43,7 @@ class SchemaSqlTests(unittest.TestCase):
         schema_sql = self._schema_sql()
         self.assertIn("CREATE TABLE IF NOT EXISTS kg_evaluation_run", schema_sql)
         self.assertIn("CREATE TABLE IF NOT EXISTS kg_evaluation_metric", schema_sql)
+        self.assertIn("CREATE TABLE IF NOT EXISTS kg_evaluation_entity_alignment", schema_sql)
         self.assertIn("gold_hash CHAR(64) NOT NULL", schema_sql)
         self.assertIn("INDEX idx_kg_eval_run_gold (run_id, gold_hash)", schema_sql)
         self.assertIn("CONSTRAINT fk_kg_eval_run FOREIGN KEY (run_id)", schema_sql)

@@ -33,11 +33,12 @@ def _metric_value(overall: dict, name: str) -> float:
 
 
 def _render_metric_cards(overall: dict) -> None:
-    cols = st.columns(6)
+    cols = st.columns(7)
     names = [
         "entity_f1",
         "relation_f1",
         "triplet_f1",
+        "canonical_triplet_f1",
         "invalid_relation_rate",
         "selected_evidence_tail_absence_rate",
         "selected_evidence_coverage",
@@ -46,6 +47,7 @@ def _render_metric_cards(overall: dict) -> None:
         "Entity F1",
         "Relation F1",
         "Triplet F1",
+        "规范化 Triplet F1（主指标）",
         "非法关系率",
         "疑似无支持率",
         "证据覆盖率",
@@ -159,6 +161,8 @@ def render_evaluation_page() -> None:
             documents=documents_text,
             evidence=evaluation_input.get("evidence", {}),
             schema=schema,
+            canonical_entities=gold.canonical_entities,
+            canonical_gold_triplets=gold.canonical_triplets,
         )
         st.session_state["evaluation_result"] = result
         st.session_state["evaluation_gold_hash"] = gold_hash
@@ -176,6 +180,10 @@ def render_evaluation_page() -> None:
     if document_rows:
         st.subheader("按文档指标")
         st.dataframe(document_rows, use_container_width=True)
+    if result.entity_alignments:
+        st.subheader("预测实体规范化对齐明细")
+        st.caption("仅唯一匹配的 Gold canonical ID 可进入规范化三元组主指标。")
+        st.dataframe(result.entity_alignments, use_container_width=True)
 
     if st.button("保存评估结果"):
         evaluation_id = store.save_evaluation(
@@ -183,7 +191,7 @@ def render_evaluation_page() -> None:
             gold_path=st.session_state["evaluation_gold_path"],
             gold_hash=st.session_state["evaluation_gold_hash"],
             metric_config={
-                "matching": "strict",
+                "matching": ["strict", "canonical_id"],
                 "gold_hash": st.session_state["evaluation_gold_hash"],
             },
             result=result,

@@ -93,6 +93,9 @@ class NullExperimentStore(BaseExperimentStore):
     def save_evaluation(self, run_id, gold_path, gold_hash, metric_config, result):
         return None
 
+    def save_evaluation_entity_alignments(self, evaluation_id, alignments):
+        return None
+
     def close(self):
         return None
 
@@ -113,6 +116,7 @@ class MemoryExperimentStore(NullExperimentStore):
         self.triplet_evidence = []
         self.evaluation_runs = []
         self.evaluation_metrics = []
+        self.evaluation_entity_alignments = []
         self._document_id = 0
         self._chunk_id = 0
         self._llm_call_id = 0
@@ -168,6 +172,11 @@ class MemoryExperimentStore(NullExperimentStore):
         self.evaluation_metrics = [
             row
             for row in self.evaluation_metrics
+            if row["evaluation_id"] not in evaluation_ids
+        ]
+        self.evaluation_entity_alignments = [
+            row
+            for row in self.evaluation_entity_alignments
             if row["evaluation_id"] not in evaluation_ids
         ]
         return True
@@ -367,7 +376,15 @@ class MemoryExperimentStore(NullExperimentStore):
                         "details_json": metric.details,
                     }
                 )
+        self.save_evaluation_entity_alignments(evaluation_id, result.entity_alignments)
         return evaluation_id
+
+    def save_evaluation_entity_alignments(self, evaluation_id, alignments):
+        for item in alignments:
+            self.evaluation_entity_alignments.append({
+                "evaluation_id": evaluation_id,
+                **item,
+            })
 
 
 class MySQLExperimentStore(BaseExperimentStore):
@@ -888,7 +905,37 @@ class MySQLExperimentStore(BaseExperimentStore):
                 rows,
                 many=True,
             )
+        self.save_evaluation_entity_alignments(evaluation_id, result.entity_alignments)
         return evaluation_id
+
+    def save_evaluation_entity_alignments(self, evaluation_id, alignments):
+        if not alignments:
+            return
+        self._write(
+            """
+            INSERT INTO kg_evaluation_entity_alignment
+                (evaluation_id, document_name, entity_name, entity_type,
+                 canonical_id, canonical_name, canonical_type, match_status,
+                 candidate_count, created_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            [
+                (
+                    evaluation_id,
+                    item["document"],
+                    item["entity_name"],
+                    item["entity_type"],
+                    item.get("canonical_id"),
+                    item.get("canonical_name"),
+                    item.get("canonical_type"),
+                    item["match_status"],
+                    item["candidate_count"],
+                    utc_now(),
+                )
+                for item in alignments
+            ],
+            many=True,
+        )
 
     def close(self):
         if self._connection_instance is not None:

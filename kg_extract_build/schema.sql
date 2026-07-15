@@ -183,3 +183,20 @@ CREATE TABLE IF NOT EXISTS kg_evaluation_metric (
     CONSTRAINT fk_kg_eval_metric_run FOREIGN KEY (evaluation_id)
         REFERENCES kg_evaluation_run(evaluation_id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS kg_evaluation_entity_alignment (
+    alignment_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    evaluation_id CHAR(36) NOT NULL,
+    document_name VARCHAR(512) NOT NULL,
+    entity_name VARCHAR(512) NOT NULL,
+    entity_type VARCHAR(255) NOT NULL,
+    canonical_id VARCHAR(255) NULL,
+    canonical_name VARCHAR(512) NULL,
+    canonical_type VARCHAR(255) NULL,
+    match_status VARCHAR(64) NOT NULL,
+    candidate_count INT UNSIGNED NOT NULL DEFAULT 0,
+    created_at DATETIME(6) NOT NULL,
+    INDEX idx_kg_eval_alignment_eval (evaluation_id, match_status),
+    CONSTRAINT fk_kg_eval_alignment_run FOREIGN KEY (evaluation_id)
+        REFERENCES kg_evaluation_run(evaluation_id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

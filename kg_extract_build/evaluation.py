@@ -2,12 +2,15 @@
 
 import hashlib
 import json
+import re
+import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Mapping
 
 
 TripletKey = tuple[str, str, str, str, str]
+CanonicalTripletKey = tuple[str, str, str]
 TRIPLET_FIELDS = ("head", "head_type", "relation", "tail", "tail_type")
 
 
@@ -15,6 +18,8 @@ TRIPLET_FIELDS = ("head", "head_type", "relation", "tail", "tail_type")
 class GoldAnnotations:
     root: Path
     documents: dict[str, list[TripletKey]] = field(default_factory=dict)
+    canonical_entities: dict[str, list[dict[str, object]]] = field(default_factory=dict)
+    canonical_triplets: dict[str, list[CanonicalTripletKey]] = field(default_factory=dict)
     errors: list[dict[str, str]] = field(default_factory=list)
 
     @property
@@ -70,9 +75,70 @@ def _document_name(payload: object, file_path: Path) -> str:
     return file_path.parent.name
 
 
+def _normalization_key(value: object) -> str:
+    """Stable lexical key for canonical-name, alias, and mention lookup."""
+    value = unicodedata.normalize("NFKC", str(value or "")).casefold()
+    return re.sub(r"\s+", "", value)
+
+
+def _extract_canonical_entities(payload: object, schema=None) -> list[dict[str, object]]:
+    if not isinstance(payload, Mapping):
+        return []
+    entities = payload.get("canonical_entities", [])
+    mentions = payload.get("entity_mentions", [])
+    if not isinstance(entities, list):
+        return []
+    mentions_by_id: dict[str, list[str]] = {}
+    if isinstance(mentions, list):
+        for mention in mentions:
+            if not isinstance(mention, Mapping):
+                continue
+            entity_id = str(mention.get("canonical_id", "")).strip()
+            text = str(mention.get("mention", "")).strip()
+            if entity_id and text:
+                mentions_by_id.setdefault(entity_id, []).append(text)
+    result = []
+    for entity in entities:
+        if not isinstance(entity, Mapping):
+            continue
+        entity_id = str(entity.get("entity_id", "")).strip()
+        canonical_name = str(entity.get("canonical_name", "")).strip()
+        entity_type = str(entity.get("type", "")).strip()
+        if schema is not None:
+            entity_type = schema.normalize_entity_type(entity_type)
+        if not entity_id or not canonical_name:
+            continue
+        aliases = entity.get("aliases", [])
+        aliases = aliases if isinstance(aliases, list) else []
+        names = [canonical_name, *aliases, *mentions_by_id.get(entity_id, [])]
+        result.append({
+            "canonical_id": entity_id,
+            "canonical_name": canonical_name,
+            "entity_type": entity_type,
+            "names": [str(name).strip() for name in names if str(name).strip()],
+        })
+    return result
+
+
+def _extract_canonical_triplets(payload: object, schema=None) -> list[CanonicalTripletKey]:
+    items, _ = _extract_triplet_items(payload)
+    result = []
+    for item in items:
+        head_id = str(item.get("head_id", "")).strip()
+        tail_id = str(item.get("tail_id", "")).strip()
+        relation = str(item.get("relation", "")).strip()
+        if schema is not None:
+            relation = schema.normalize_relation(relation)
+        if head_id and relation and tail_id:
+            result.append((head_id, relation, tail_id))
+    return result
+
+
 def load_gold_annotations(root: Path, schema=None) -> GoldAnnotations:
     root = Path(root).expanduser().resolve()
     documents: dict[str, list[TripletKey]] = {}
+    canonical_entities: dict[str, list[dict[str, object]]] = {}
+    canonical_triplets: dict[str, list[CanonicalTripletKey]] = {}
     errors: list[dict[str, str]] = []
     if not root.exists():
         return GoldAnnotations(root=root, errors=[{"path": str(root), "error": "???????"}])
@@ -93,7 +159,19 @@ def load_gold_annotations(root: Path, schema=None) -> GoldAnnotations:
         triplets = [triplet for item in items if (triplet := normalize_triplet(item, schema=schema)) is not None]
         if triplets:
             documents.setdefault(doc_name, []).extend(triplets)
-    return GoldAnnotations(root=root, documents=documents, errors=errors)
+        canonical = _extract_canonical_entities(payload, schema=schema)
+        if canonical:
+            canonical_entities.setdefault(doc_name, []).extend(canonical)
+        normalized_triplets = _extract_canonical_triplets(payload, schema=schema)
+        if normalized_triplets:
+            canonical_triplets.setdefault(doc_name, []).extend(normalized_triplets)
+    return GoldAnnotations(
+        root=root,
+        documents=documents,
+        canonical_entities=canonical_entities,
+        canonical_triplets=canonical_triplets,
+        errors=errors,
+    )
 
 
 def compute_gold_hash(root: Path) -> str:
@@ -145,6 +223,7 @@ class EvaluationResult:
     matched_documents: list[str]
     missing_gold_documents: list[str]
     extra_gold_documents: list[str]
+    entity_alignments: list[dict[str, object]] = field(default_factory=list)
 
 
 def compute_prf(model_items: set[tuple], gold_items: set[tuple]) -> ScoreBreakdown:
@@ -257,12 +336,81 @@ def _rate_metric(
     )
 
 
+def _canonical_lookup(canonical_entities: list[dict[str, object]]) -> dict[str, list[dict[str, object]]]:
+    lookup: dict[str, list[dict[str, object]]] = {}
+    for entity in canonical_entities:
+        for name in entity.get("names", []):
+            key = _normalization_key(name)
+            if key:
+                lookup.setdefault(key, []).append(entity)
+    return lookup
+
+
+def _align_entity(
+    name: str,
+    entity_type: str,
+    lookup: dict[str, list[dict[str, object]]],
+    document: str,
+) -> dict[str, object]:
+    candidates = lookup.get(_normalization_key(name), [])
+    same_type = [item for item in candidates if item.get("entity_type") == entity_type]
+    if len(same_type) == 1:
+        candidate = same_type[0]
+        status = "matched_type"
+    elif len(candidates) == 1:
+        candidate = candidates[0]
+        status = "matched_name_type_mismatch"
+    elif candidates:
+        candidate = None
+        status = "ambiguous"
+    else:
+        candidate = None
+        status = "unmapped"
+    return {
+        "document": document,
+        "entity_name": name,
+        "entity_type": entity_type,
+        "canonical_id": None if candidate is None else candidate["canonical_id"],
+        "canonical_name": None if candidate is None else candidate["canonical_name"],
+        "canonical_type": None if candidate is None else candidate["entity_type"],
+        "match_status": status,
+        "candidate_count": len(candidates),
+    }
+
+
+def _canonical_triplet_score(
+    model_triplets: list[TripletKey],
+    gold_triplets: list[CanonicalTripletKey],
+    canonical_entities: list[dict[str, object]],
+    document: str,
+) -> tuple[ScoreBreakdown, list[dict[str, object]]]:
+    lookup = _canonical_lookup(canonical_entities)
+    alignments: dict[tuple[str, str], dict[str, object]] = {}
+
+    def align(name: str, entity_type: str) -> dict[str, object]:
+        key = (name, entity_type)
+        if key not in alignments:
+            alignments[key] = _align_entity(name, entity_type, lookup, document)
+        return alignments[key]
+
+    predicted: set[CanonicalTripletKey] = set()
+    for head, head_type, relation, tail, tail_type in model_triplets:
+        head_alignment = align(head, head_type)
+        tail_alignment = align(tail, tail_type)
+        if head_alignment["canonical_id"] and tail_alignment["canonical_id"]:
+            predicted.add((head_alignment["canonical_id"], relation, tail_alignment["canonical_id"]))
+
+    return compute_prf(predicted, set(gold_triplets)), list(alignments.values())
+
+
 def evaluate_documents(
     model: dict[str, list[TripletKey]],
     gold: dict[str, list[TripletKey]],
     documents: dict[str, str],
     evidence: dict[str, dict[TripletKey, list[str]]],
     schema=None,
+    canonical_entities: dict[str, list[dict[str, object]]] | None = None,
+    canonical_gold_triplets: dict[str, list[CanonicalTripletKey]] | None = None,
 ) -> EvaluationResult:
     model_docs = set(model)
     gold_docs = set(gold)
@@ -285,6 +433,29 @@ def evaluate_documents(
     overall.update(_metric_group("entity", compute_prf(set(_entities(model_all)), set(_entities(gold_all)))))
     overall.update(_metric_group("relation", compute_prf(set(_relations(model_all)), set(_relations(gold_all)))))
     overall.update(_metric_group("triplet", compute_prf(set(model_all), set(gold_all))))
+
+    canonical_entities = canonical_entities or {}
+    canonical_gold_triplets = canonical_gold_triplets or {}
+    canonical_model: set[CanonicalTripletKey] = set()
+    canonical_gold: set[CanonicalTripletKey] = set()
+    entity_alignments: list[dict[str, object]] = []
+    for doc in matched:
+        score, doc_alignments = _canonical_triplet_score(
+            model.get(doc, []), canonical_gold_triplets.get(doc, []), canonical_entities.get(doc, []), doc,
+        )
+        canonical_model.update(score.tp_items)
+        canonical_model.update(score.fp_items)
+        canonical_gold.update(score.tp_items)
+        canonical_gold.update(score.fn_items)
+        entity_alignments.extend(doc_alignments)
+    overall.update(_metric_group(
+        "canonical_triplet", compute_prf(canonical_model, canonical_gold),
+    ))
+    mapped_count = sum(1 for item in entity_alignments if item["canonical_id"])
+    overall["canonical_entity_mapping_rate"] = _rate_metric(
+        "canonical_entity_mapping_rate", mapped_count, len(entity_alignments),
+        {"unmapped": [item for item in entity_alignments if not item["canonical_id"]][:20]},
+    )
 
     invalid_total, invalid_items = _invalid_count(model_all, schema)
     overall["invalid_relation_rate"] = _rate_metric(
@@ -323,6 +494,10 @@ def evaluate_documents(
             "triplet",
             compute_prf(set(model.get(doc, [])), set(gold.get(doc, []))),
         )
+        score, _ = _canonical_triplet_score(
+            model.get(doc, []), canonical_gold_triplets.get(doc, []), canonical_entities.get(doc, []), doc,
+        )
+        by_document[doc].update(_metric_group("canonical_triplet", score))
 
     return EvaluationResult(
         overall=overall,
@@ -330,6 +505,7 @@ def evaluate_documents(
         matched_documents=matched,
         missing_gold_documents=missing_gold,
         extra_gold_documents=extra_gold,
+        entity_alignments=entity_alignments,
     )
 
 
