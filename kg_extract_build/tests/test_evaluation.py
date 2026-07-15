@@ -173,7 +173,7 @@ class EvaluationMetricTests(unittest.TestCase):
             documents={"文档A": ""}, evidence={"文档A": {}},
             canonical_entities={"文档A": [
                 {"canonical_id": "EQ001", "canonical_name": "井口装置", "entity_type": "设备设施", "names": ["井口装置"]},
-                {"canonical_id": "OBJ003", "canonical_name": "电缆", "entity_type": "施工对象", "names": ["电缆", "电缆线"]},
+                {"canonical_id": "OBJ003", "canonical_name": "电缆", "entity_type": "施工对象", "names": ["电缆", "电缆线", "电缆线"]},
             ]},
             canonical_gold_triplets={"文档A": [("EQ001", "USES", "OBJ003")]},
         )
@@ -181,6 +181,19 @@ class EvaluationMetricTests(unittest.TestCase):
         self.assertAlmostEqual(result.overall["canonical_triplet_f1"].value, 1.0)
         self.assertAlmostEqual(result.overall["canonical_entity_mapping_rate"].value, 1.0)
         self.assertEqual(len(result.entity_alignments), 2)
+
+    def test_evaluation_matches_unique_preprocessing_name_variants(self):
+        triplet = ("A", "类型1", "REL", "B", "类型2")
+        result = evaluate_documents(
+            model={"长宁H3_待评估": [triplet]},
+            gold={"长宁H3_预处理": [triplet]},
+            documents={"长宁H3_待评估": ""},
+            evidence={"长宁H3_待评估": {triplet: ["B"]}},
+        )
+        self.assertEqual(result.matched_documents, ["长宁H3_待评估"])
+        self.assertEqual(result.missing_gold_documents, [])
+        self.assertEqual(result.extra_gold_documents, [])
+        self.assertAlmostEqual(result.overall["triplet_f1"].value, 1.0)
 
 from kg_extract_build.evaluation import GoldAnnotations, build_preview
 

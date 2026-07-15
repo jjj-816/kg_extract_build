@@ -109,6 +109,7 @@ def render_evaluation_page() -> None:
     model_triplets = evaluation_input["triplets"]
     model_documents = set(evaluation_input["documents"].keys())
     existing = store.list_evaluations(run_id, gold_hash=gold_hash)
+    evaluation_signature = (run_id, gold_hash)
     preview = build_preview(
         model_documents=model_documents,
         gold=gold,
@@ -168,8 +169,13 @@ def render_evaluation_page() -> None:
         st.session_state["evaluation_gold_hash"] = gold_hash
         st.session_state["evaluation_gold_path"] = str(gold_path)
         st.session_state["evaluation_run_id"] = run_id
+        st.session_state["evaluation_signature"] = evaluation_signature
 
     result = st.session_state.get("evaluation_result")
+    if result is not None and st.session_state.get("evaluation_signature") != evaluation_signature:
+        st.session_state.pop("evaluation_result", None)
+        result = None
+        st.info("实验或 Gold 已变更，请重新计算指标后再保存。")
     if result is None:
         return
 

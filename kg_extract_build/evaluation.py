@@ -81,6 +81,32 @@ def _normalization_key(value: object) -> str:
     return re.sub(r"\s+", "", value)
 
 
+def _document_match_pairs(
+    model_documents: set[str], gold_documents: set[str],
+) -> list[tuple[str, str]]:
+    """Match exact document names first, then unique preprocessing-name variants."""
+    pairs = [(name, name) for name in sorted(model_documents & gold_documents)]
+    used_model = {model for model, _gold in pairs}
+    used_gold = {gold for _model, gold in pairs}
+
+    def key(name: str) -> str:
+        value = _normalization_key(name)
+        return re.sub(r"[_-]*(?:\u5f85\u8bc4\u4f30|\u9884\u5904\u7406)$", "", value)
+
+    model_by_key: dict[str, list[str]] = {}
+    gold_by_key: dict[str, list[str]] = {}
+    for name in model_documents - used_model:
+        model_by_key.setdefault(key(name), []).append(name)
+    for name in gold_documents - used_gold:
+        gold_by_key.setdefault(key(name), []).append(name)
+    for normalized in sorted(model_by_key.keys() & gold_by_key.keys()):
+        models = model_by_key[normalized]
+        golds = gold_by_key[normalized]
+        if len(models) == len(golds) == 1:
+            pairs.append((models[0], golds[0]))
+    return sorted(pairs)
+
+
 def _extract_canonical_entities(payload: object, schema=None) -> list[dict[str, object]]:
     if not isinstance(payload, Mapping):
         return []
@@ -341,7 +367,10 @@ def _canonical_lookup(canonical_entities: list[dict[str, object]]) -> dict[str, 
     for entity in canonical_entities:
         for name in entity.get("names", []):
             key = _normalization_key(name)
-            if key:
+            if key and all(
+                candidate["canonical_id"] != entity["canonical_id"]
+                for candidate in lookup.get(key, [])
+            ):
                 lookup.setdefault(key, []).append(entity)
     return lookup
 
@@ -414,19 +443,22 @@ def evaluate_documents(
 ) -> EvaluationResult:
     model_docs = set(model)
     gold_docs = set(gold)
-    matched = sorted(model_docs & gold_docs)
-    missing_gold = sorted(model_docs - gold_docs)
-    extra_gold = sorted(gold_docs - model_docs)
+    pairs = _document_match_pairs(model_docs, gold_docs)
+    matched = [model_doc for model_doc, _gold_doc in pairs]
+    matched_model_docs = set(matched)
+    matched_gold_docs = {gold_doc for _model_doc, gold_doc in pairs}
+    missing_gold = sorted(model_docs - matched_model_docs)
+    extra_gold = sorted(gold_docs - matched_gold_docs)
 
     model_all = [
         triplet
-        for doc in matched
-        for triplet in model.get(doc, [])
+        for model_doc, _gold_doc in pairs
+        for triplet in model.get(model_doc, [])
     ]
     gold_all = [
         triplet
-        for doc in matched
-        for triplet in gold.get(doc, [])
+        for _model_doc, gold_doc in pairs
+        for triplet in gold.get(gold_doc, [])
     ]
 
     overall: dict[str, MetricValue] = {}
@@ -439,9 +471,9 @@ def evaluate_documents(
     canonical_model: set[CanonicalTripletKey] = set()
     canonical_gold: set[CanonicalTripletKey] = set()
     entity_alignments: list[dict[str, object]] = []
-    for doc in matched:
+    for model_doc, gold_doc in pairs:
         score, doc_alignments = _canonical_triplet_score(
-            model.get(doc, []), canonical_gold_triplets.get(doc, []), canonical_entities.get(doc, []), doc,
+            model.get(model_doc, []), canonical_gold_triplets.get(gold_doc, []), canonical_entities.get(gold_doc, []), model_doc,
         )
         canonical_model.update(score.tp_items)
         canonical_model.update(score.fp_items)
@@ -468,10 +500,10 @@ def evaluate_documents(
     covered_total = 0
     total_for_coverage = 0
     unsupported_all: list[TripletKey] = []
-    for doc in matched:
+    for model_doc, _gold_doc in pairs:
         covered, total, unsupported = _coverage_counts(
-            model.get(doc, []),
-            evidence.get(doc, {}),
+            model.get(model_doc, []),
+            evidence.get(model_doc, {}),
         )
         covered_total += covered
         total_for_coverage += total
@@ -489,15 +521,15 @@ def evaluate_documents(
     )
 
     by_document: dict[str, dict[str, MetricValue]] = {}
-    for doc in matched:
-        by_document[doc] = _metric_group(
+    for model_doc, gold_doc in pairs:
+        by_document[model_doc] = _metric_group(
             "triplet",
-            compute_prf(set(model.get(doc, [])), set(gold.get(doc, []))),
+            compute_prf(set(model.get(model_doc, [])), set(gold.get(gold_doc, []))),
         )
         score, _ = _canonical_triplet_score(
-            model.get(doc, []), canonical_gold_triplets.get(doc, []), canonical_entities.get(doc, []), doc,
+            model.get(model_doc, []), canonical_gold_triplets.get(gold_doc, []), canonical_entities.get(gold_doc, []), model_doc,
         )
-        by_document[doc].update(_metric_group("canonical_triplet", score))
+        by_document[model_doc].update(_metric_group("canonical_triplet", score))
 
     return EvaluationResult(
         overall=overall,
@@ -516,9 +548,10 @@ def build_preview(
     existing_evaluations: list[dict],
 ) -> dict[str, object]:
     gold_documents = set(gold.documents)
-    matched = sorted(model_documents & gold_documents)
-    missing_gold = sorted(model_documents - gold_documents)
-    extra_gold = sorted(gold_documents - model_documents)
+    pairs = _document_match_pairs(model_documents, gold_documents)
+    matched = [model_doc for model_doc, _gold_doc in pairs]
+    missing_gold = sorted(model_documents - set(matched))
+    extra_gold = sorted(gold_documents - {gold_doc for _model_doc, gold_doc in pairs})
     return {
         "model_document_count": len(model_documents),
         "gold_document_count": len(gold_documents),
