@@ -217,7 +217,6 @@ def _metric_group(prefix: str, score: ScoreBreakdown) -> dict[str, MetricValue]:
 
 def _coverage_counts(
     triplets: list[TripletKey],
-    document_text: str,
     evidence_map: dict[TripletKey, list[str]],
 ) -> tuple[int, int, list[TripletKey]]:
     covered = 0
@@ -225,7 +224,7 @@ def _coverage_counts(
     for triplet in triplets:
         tail = triplet[3]
         evidence_text = "\n".join(evidence_map.get(triplet, []))
-        if tail and (tail in evidence_text or tail in document_text):
+        if tail and tail in evidence_text:
             covered += 1
         else:
             unsupported.append(triplet)
@@ -301,19 +300,18 @@ def evaluate_documents(
     for doc in matched:
         covered, total, unsupported = _coverage_counts(
             model.get(doc, []),
-            documents.get(doc, ""),
             evidence.get(doc, {}),
         )
         covered_total += covered
         total_for_coverage += total
         unsupported_all.extend(unsupported)
-    overall["evidence_coverage"] = _rate_metric(
-        "evidence_coverage",
+    overall["retrieval_evidence_coverage"] = _rate_metric(
+        "retrieval_evidence_coverage",
         covered_total,
         total_for_coverage,
     )
-    overall["hallucination_rate"] = _rate_metric(
-        "hallucination_rate",
+    overall["retrieval_tail_absence_rate"] = _rate_metric(
+        "retrieval_tail_absence_rate",
         len(unsupported_all),
         total_for_coverage,
         {"unsupported": unsupported_all[:20]},

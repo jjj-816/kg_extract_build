@@ -39,8 +39,8 @@ def _render_metric_cards(overall: dict) -> None:
         "relation_f1",
         "triplet_f1",
         "invalid_relation_rate",
-        "hallucination_rate",
-        "evidence_coverage",
+        "retrieval_tail_absence_rate",
+        "retrieval_evidence_coverage",
     ]
     labels = [
         "Entity F1",

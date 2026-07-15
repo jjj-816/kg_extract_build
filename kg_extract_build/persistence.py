@@ -271,7 +271,7 @@ class MemoryExperimentStore(NullExperimentStore):
                 continue
             entity_name = row.get("entity_name")
             for triplet in triplet_by_doc.get(doc_key, []):
-                if entity_name in {triplet[0], triplet[3]}:
+                if entity_name == triplet[0]:
                     evidence.setdefault(doc_key, {}).setdefault(triplet, []).append(
                         row.get("sentence", "")
                     )
@@ -727,7 +727,7 @@ class MySQLExperimentStore(BaseExperimentStore):
                 continue
             entity_name = row.get("entity_name")
             for triplet in triplet_by_doc.get(doc_key, []):
-                if entity_name in {triplet[0], triplet[3]}:
+                if entity_name == triplet[0]:
                     evidence.setdefault(doc_key, {}).setdefault(triplet, []).append(
                         row.get("sentence", "")
                     )
@@ -1025,5 +1025,4 @@ def build_experiment_store():
     store = MySQLExperimentStore.from_env()
     store.initialize_schema()
     return store
-
 

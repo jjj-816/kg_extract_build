@@ -102,6 +102,43 @@ class ExperimentRecorderTests(unittest.TestCase):
             callbacks, [{"stage": "entity_extraction", "success": True}]
         )
 
+    def test_evaluation_input_only_attaches_retrieval_for_triplet_head(self):
+        store = MemoryExperimentStore()
+        run_id = store.start_run("test", {}, {}, "")
+        document_id = store.start_document(run_id, "doc.md", "case", "abc", "A B")
+        store.save_triplets([
+            {
+                "run_id": run_id,
+                "document_id": document_id,
+                "stage": "final",
+                "head": "A",
+                "head_type": "类型1",
+                "relation": "REL",
+                "tail": "B",
+                "tail_type": "类型2",
+            }
+        ])
+        store.save_retrieval_results([
+            {
+                "run_id": run_id,
+                "document_id": document_id,
+                "entity_name": "A",
+                "query_alias": "A",
+                "sentence": "A 的检索句",
+            },
+            {
+                "run_id": run_id,
+                "document_id": document_id,
+                "entity_name": "B",
+                "query_alias": "B",
+                "sentence": "B 的检索句",
+            },
+        ])
+
+        evidence = store.load_evaluation_input(run_id)["evidence"]
+        triplet = ("A", "类型1", "REL", "B", "类型2")
+        self.assertEqual(evidence["doc"][triplet], ["A 的检索句"])
+
     def test_memory_store_deletes_only_selected_run_and_children(self):
         store = MemoryExperimentStore()
         deleted_run_id = store.start_run("delete", {}, {}, "")

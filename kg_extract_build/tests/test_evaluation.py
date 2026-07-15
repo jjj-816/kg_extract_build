@@ -141,8 +141,29 @@ class EvaluationMetricTests(unittest.TestCase):
         )
         self.assertAlmostEqual(result.overall["triplet_precision"].value, 0.5)
         self.assertAlmostEqual(result.overall["triplet_recall"].value, 1.0)
-        self.assertAlmostEqual(result.overall["evidence_coverage"].value, 0.5)
-        self.assertAlmostEqual(result.overall["hallucination_rate"].value, 0.5)
+        self.assertAlmostEqual(
+            result.overall["retrieval_evidence_coverage"].value, 0.5
+        )
+        self.assertAlmostEqual(
+            result.overall["retrieval_tail_absence_rate"].value, 0.5
+        )
+
+    def test_retrieval_evidence_does_not_fall_back_to_document_text(self):
+        triplet = ("A", "类型1", "REL", "B", "类型2")
+        result = evaluate_documents(
+            model={"文档A": [triplet]},
+            gold={"文档A": [triplet]},
+            documents={"文档A": "A 和 B 同时出现在全文。"},
+            evidence={"文档A": {triplet: ["A 的另一条检索句。"]}},
+            schema=None,
+        )
+
+        self.assertAlmostEqual(
+            result.overall["retrieval_evidence_coverage"].value, 0.0
+        )
+        self.assertAlmostEqual(
+            result.overall["retrieval_tail_absence_rate"].value, 1.0
+        )
 
 from kg_extract_build.evaluation import GoldAnnotations, build_preview
 
