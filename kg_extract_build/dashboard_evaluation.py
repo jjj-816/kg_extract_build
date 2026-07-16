@@ -57,15 +57,19 @@ def _render_metric_cards(overall: dict) -> None:
 
 
 def _render_nonempty_head_cards(overall: dict) -> None:
-    cols = st.columns(4)
+    cols = st.columns(6)
     names = [
         "nonempty_head_entity_rate",
+        "nonempty_head_entity_f1",
+        "nonempty_head_canonical_entity_f1",
         "nonempty_head_triplet_f1",
         "nonempty_head_canonical_triplet_f1",
         "empty_head_entity_rate",
     ]
     labels = [
         "非空头实体占比",
+        "非空头实体严格 Entity F1",
+        "非空头实体规范化 Entity F1",
         "非空头实体严格 Triplet F1",
         "非空头实体规范化 Triplet F1",
         "空三元组头实体占比",

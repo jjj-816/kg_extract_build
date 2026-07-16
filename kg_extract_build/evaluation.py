@@ -475,8 +475,12 @@ def evaluate_documents(
     entity_alignments: list[dict[str, object]] = []
     conditional_model: set[TripletKey] = set()
     conditional_gold: set[TripletKey] = set()
+    conditional_head_entities: set[tuple[str, str]] = set()
+    conditional_gold_head_entities: set[tuple[str, str]] = set()
     conditional_canonical_model: set[CanonicalTripletKey] = set()
     conditional_canonical_gold: set[CanonicalTripletKey] = set()
+    conditional_canonical_head_entities: set[str] = set()
+    conditional_canonical_gold_head_entities: set[str] = set()
     aligned_head_total = 0
     nonempty_head_total = 0
     output_head_total = 0
@@ -508,6 +512,11 @@ def evaluate_documents(
             triplet for triplet in gold.get(gold_doc, [])
             if (triplet[0], triplet[1]) in nonempty_heads
         )
+        conditional_head_entities.update(nonempty_heads)
+        conditional_gold_head_entities.update(
+            (head, head_type)
+            for head, head_type, _relation, _tail, _tail_type in gold.get(gold_doc, [])
+        )
         score, doc_alignments = _canonical_triplet_score(
             model.get(model_doc, []), canonical_gold_triplets.get(gold_doc, []), canonical_entities.get(gold_doc, []), model_doc,
         )
@@ -532,6 +541,10 @@ def evaluate_documents(
             item for item in doc_canonical_gold
             if item[0] in canonical_nonempty_heads
         )
+        conditional_canonical_head_entities.update(canonical_nonempty_heads)
+        conditional_canonical_gold_head_entities.update(
+            item[0] for item in canonical_gold_triplets.get(gold_doc, [])
+        )
     overall.update(_metric_group(
         "canonical_triplet", compute_prf(canonical_model, canonical_gold),
     ))
@@ -555,8 +568,19 @@ def evaluate_documents(
         "nonempty_head_triplet", compute_prf(conditional_model, conditional_gold),
     ))
     overall.update(_metric_group(
+        "nonempty_head_entity",
+        compute_prf(conditional_head_entities, conditional_gold_head_entities),
+    ))
+    overall.update(_metric_group(
         "nonempty_head_canonical_triplet",
         compute_prf(conditional_canonical_model, conditional_canonical_gold),
+    ))
+    overall.update(_metric_group(
+        "nonempty_head_canonical_entity",
+        compute_prf(
+            {(item,) for item in conditional_canonical_head_entities},
+            {(item,) for item in conditional_canonical_gold_head_entities},
+        ),
     ))
 
     invalid_total, invalid_items = _invalid_count(model_all, schema)

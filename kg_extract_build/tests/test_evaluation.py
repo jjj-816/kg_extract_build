@@ -206,6 +206,9 @@ class EvaluationMetricTests(unittest.TestCase):
         )
         self.assertAlmostEqual(result.overall["nonempty_head_entity_rate"].value, 0.5)
         self.assertAlmostEqual(result.overall["empty_head_entity_rate"].value, 0.5)
+        self.assertAlmostEqual(result.overall["nonempty_head_entity_precision"].value, 1.0)
+        self.assertAlmostEqual(result.overall["nonempty_head_entity_recall"].value, 0.5)
+        self.assertAlmostEqual(result.overall["nonempty_head_entity_f1"].value, 2 / 3)
         self.assertAlmostEqual(result.overall["nonempty_head_triplet_f1"].value, 1.0)
 
 from kg_extract_build.evaluation import GoldAnnotations, build_preview
