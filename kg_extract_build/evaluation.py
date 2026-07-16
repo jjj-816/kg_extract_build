@@ -440,6 +440,7 @@ def evaluate_documents(
     schema=None,
     canonical_entities: dict[str, list[dict[str, object]]] | None = None,
     canonical_gold_triplets: dict[str, list[CanonicalTripletKey]] | None = None,
+    head_entities: dict[str, list[tuple[str, str]]] | None = None,
 ) -> EvaluationResult:
     model_docs = set(model)
     gold_docs = set(gold)
@@ -468,10 +469,45 @@ def evaluate_documents(
 
     canonical_entities = canonical_entities or {}
     canonical_gold_triplets = canonical_gold_triplets or {}
+    head_entities = head_entities or {}
     canonical_model: set[CanonicalTripletKey] = set()
     canonical_gold: set[CanonicalTripletKey] = set()
     entity_alignments: list[dict[str, object]] = []
+    conditional_model: set[TripletKey] = set()
+    conditional_gold: set[TripletKey] = set()
+    conditional_canonical_model: set[CanonicalTripletKey] = set()
+    conditional_canonical_gold: set[CanonicalTripletKey] = set()
+    aligned_head_total = 0
+    nonempty_head_total = 0
+    output_head_total = 0
+    output_head_outside_aligned: list[tuple[str, str, str]] = []
+    empty_head_samples: list[tuple[str, str, str]] = []
     for model_doc, gold_doc in pairs:
+        aligned_heads = set(head_entities.get(model_doc, []))
+        output_heads = {
+            (head, head_type)
+            for head, head_type, _relation, _tail, _tail_type in model.get(model_doc, [])
+        }
+        nonempty_heads = aligned_heads & output_heads
+        aligned_head_total += len(aligned_heads)
+        nonempty_head_total += len(nonempty_heads)
+        output_head_total += len(output_heads)
+        output_head_outside_aligned.extend(
+            (model_doc, name, entity_type)
+            for name, entity_type in sorted(output_heads - aligned_heads)
+        )
+        empty_head_samples.extend(
+            (model_doc, name, entity_type)
+            for name, entity_type in sorted(aligned_heads - nonempty_heads)
+        )
+        conditional_model.update(
+            triplet for triplet in model.get(model_doc, [])
+            if (triplet[0], triplet[1]) in nonempty_heads
+        )
+        conditional_gold.update(
+            triplet for triplet in gold.get(gold_doc, [])
+            if (triplet[0], triplet[1]) in nonempty_heads
+        )
         score, doc_alignments = _canonical_triplet_score(
             model.get(model_doc, []), canonical_gold_triplets.get(gold_doc, []), canonical_entities.get(gold_doc, []), model_doc,
         )
@@ -480,6 +516,22 @@ def evaluate_documents(
         canonical_gold.update(score.tp_items)
         canonical_gold.update(score.fn_items)
         entity_alignments.extend(doc_alignments)
+        canonical_nonempty_heads = {
+            item["canonical_id"]
+            for item in doc_alignments
+            if (item["entity_name"], item["entity_type"]) in nonempty_heads
+            and item["canonical_id"]
+        }
+        doc_canonical_model = set(score.tp_items) | set(score.fp_items)
+        doc_canonical_gold = set(score.tp_items) | set(score.fn_items)
+        conditional_canonical_model.update(
+            item for item in doc_canonical_model
+            if item[0] in canonical_nonempty_heads
+        )
+        conditional_canonical_gold.update(
+            item for item in doc_canonical_gold
+            if item[0] in canonical_nonempty_heads
+        )
     overall.update(_metric_group(
         "canonical_triplet", compute_prf(canonical_model, canonical_gold),
     ))
@@ -488,6 +540,24 @@ def evaluate_documents(
         "canonical_entity_mapping_rate", mapped_count, len(entity_alignments),
         {"unmapped": [item for item in entity_alignments if not item["canonical_id"]][:20]},
     )
+    overall["nonempty_head_entity_rate"] = _rate_metric(
+        "nonempty_head_entity_rate", nonempty_head_total, aligned_head_total,
+        {"empty_head_samples": empty_head_samples[:20]},
+    )
+    overall["empty_head_entity_rate"] = _rate_metric(
+        "empty_head_entity_rate", aligned_head_total - nonempty_head_total, aligned_head_total,
+    )
+    overall["output_head_outside_aligned_rate"] = _rate_metric(
+        "output_head_outside_aligned_rate", len(output_head_outside_aligned), output_head_total,
+        {"outside_aligned_samples": output_head_outside_aligned[:20]},
+    )
+    overall.update(_metric_group(
+        "nonempty_head_triplet", compute_prf(conditional_model, conditional_gold),
+    ))
+    overall.update(_metric_group(
+        "nonempty_head_canonical_triplet",
+        compute_prf(conditional_canonical_model, conditional_canonical_gold),
+    ))
 
     invalid_total, invalid_items = _invalid_count(model_all, schema)
     overall["invalid_relation_rate"] = _rate_metric(

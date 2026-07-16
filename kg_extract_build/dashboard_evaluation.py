@@ -56,6 +56,24 @@ def _render_metric_cards(overall: dict) -> None:
         col.metric(label, f"{_metric_value(overall, name):.3f}")
 
 
+def _render_nonempty_head_cards(overall: dict) -> None:
+    cols = st.columns(4)
+    names = [
+        "nonempty_head_entity_rate",
+        "nonempty_head_triplet_f1",
+        "nonempty_head_canonical_triplet_f1",
+        "empty_head_entity_rate",
+    ]
+    labels = [
+        "非空头实体占比",
+        "非空头实体严格 Triplet F1",
+        "非空头实体规范化 Triplet F1",
+        "空三元组头实体占比",
+    ]
+    for col, name, label in zip(cols, names, labels):
+        col.metric(label, f"{_metric_value(overall, name):.3f}")
+
+
 def _summary_rows(overall: dict) -> list[dict[str, object]]:
     return [
         {
@@ -164,6 +182,7 @@ def render_evaluation_page() -> None:
             schema=schema,
             canonical_entities=gold.canonical_entities,
             canonical_gold_triplets=gold.canonical_triplets,
+            head_entities=evaluation_input.get("head_entities", {}),
         )
         st.session_state["evaluation_result"] = result
         st.session_state["evaluation_gold_hash"] = gold_hash
@@ -181,6 +200,9 @@ def render_evaluation_page() -> None:
 
     st.subheader("评估结果")
     _render_metric_cards(result.overall)
+    st.subheader("非空头实体条件下的三元组抽取质量")
+    st.caption("仅评价实体对齐后、最终产出至少一条三元组的头实体；全量指标仍保留在上方。")
+    _render_nonempty_head_cards(result.overall)
     st.dataframe(_summary_rows(result.overall), use_container_width=True)
     document_rows = _document_rows(result.by_document)
     if document_rows:

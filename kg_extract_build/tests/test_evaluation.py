@@ -195,6 +195,19 @@ class EvaluationMetricTests(unittest.TestCase):
         self.assertEqual(result.extra_gold_documents, [])
         self.assertAlmostEqual(result.overall["triplet_f1"].value, 1.0)
 
+    def test_nonempty_head_metrics_condition_on_aligned_heads_with_output(self):
+        triplet = ("A", "类型1", "REL", "B", "类型2")
+        missing_head_triplet = ("C", "类型1", "REL", "D", "类型2")
+        result = evaluate_documents(
+            model={"文档A": [triplet]},
+            gold={"文档A": [triplet, missing_head_triplet]},
+            documents={"文档A": ""}, evidence={"文档A": {}},
+            head_entities={"文档A": [("A", "类型1"), ("C", "类型1")]},
+        )
+        self.assertAlmostEqual(result.overall["nonempty_head_entity_rate"].value, 0.5)
+        self.assertAlmostEqual(result.overall["empty_head_entity_rate"].value, 0.5)
+        self.assertAlmostEqual(result.overall["nonempty_head_triplet_f1"].value, 1.0)
+
 from kg_extract_build.evaluation import GoldAnnotations, build_preview
 
 

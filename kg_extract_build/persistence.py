@@ -85,7 +85,7 @@ class NullExperimentStore(BaseExperimentStore):
         return []
 
     def load_evaluation_input(self, run_id):
-        return {"documents": {}, "triplets": {}, "evidence": {}}
+        return {"documents": {}, "triplets": {}, "evidence": {}, "head_entities": {}}
 
     def list_evaluations(self, run_id, gold_hash=None):
         return []
@@ -320,7 +320,21 @@ class MemoryExperimentStore(NullExperimentStore):
             evidence.setdefault(doc_key, {}).setdefault(triplet, []).append(
                 retrieval_row.get("sentence", "")
             )
-        return {"documents": documents, "triplets": triplets, "evidence": evidence}
+        head_entities = {}
+        for row in self.entities:
+            if row["run_id"] != run_id or row.get("stage") != "aligned":
+                continue
+            doc_key = document_keys.get(row["document_id"])
+            if doc_key:
+                head_entities.setdefault(doc_key, []).append(
+                    (row["entity_name"], row["entity_type"])
+                )
+        return {
+            "documents": documents,
+            "triplets": triplets,
+            "evidence": evidence,
+            "head_entities": head_entities,
+        }
 
     def list_evaluations(self, run_id, gold_hash=None):
         rows = [row for row in self.evaluation_runs if row["run_id"] == run_id]
@@ -810,7 +824,27 @@ class MySQLExperimentStore(BaseExperimentStore):
             evidence.setdefault(doc_key, {}).setdefault(triplet, []).append(
                 row.get("sentence", "")
             )
-        return {"documents": documents, "triplets": triplets, "evidence": evidence}
+        entity_rows = self._read(
+            """
+            SELECT document_id, entity_name, entity_type
+            FROM kg_entity
+            WHERE run_id=%s AND stage='aligned'
+            """,
+            (run_id,),
+        )
+        head_entities = {}
+        for row in entity_rows:
+            doc_key = document_keys.get(row["document_id"])
+            if doc_key:
+                head_entities.setdefault(doc_key, []).append(
+                    (row["entity_name"], row["entity_type"])
+                )
+        return {
+            "documents": documents,
+            "triplets": triplets,
+            "evidence": evidence,
+            "head_entities": head_entities,
+        }
 
     def list_evaluations(self, run_id, gold_hash=None):
         params = [run_id]
