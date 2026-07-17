@@ -286,8 +286,8 @@ class RunConfigTests(unittest.TestCase):
             config = self.make_config(folder)
             snapshot = config.sanitized_snapshot()
 
-            self.assertEqual(
-                snapshot["relation_batch"],
+        self.assertEqual(
+            snapshot["relation_batch"],
                 {
                     "strategy": "shared_context_batch",
                     "max_entities": 3,
@@ -295,16 +295,16 @@ class RunConfigTests(unittest.TestCase):
                     "max_context_chars": 8000,
                 },
             )
-            invalid_configs = (
-                replace(config, relation_strategy="missing"),
-                replace(config, relation_batch_max_entities=0),
-                replace(config, relation_batch_min_overlap=1.1),
-                replace(config, relation_batch_max_context_chars=999),
-            )
-            for invalid in invalid_configs:
-                with self.subTest(config=invalid):
-                    with self.assertRaises(ValueError):
-                        invalid.validate()
+        invalid_configs = (
+            replace(config, relation_strategy="missing"),
+            replace(config, relation_batch_max_entities=0),
+            replace(config, relation_batch_min_overlap=1.1),
+            replace(config, relation_batch_max_context_chars=999),
+        )
+        for invalid in invalid_configs:
+            with self.subTest(config=invalid):
+                with self.assertRaises(ValueError):
+                    invalid.validate()
 
     def test_sanitized_snapshot_never_contains_api_key(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -379,6 +379,15 @@ class RunConfigTests(unittest.TestCase):
             ),
             "sk-abc",
         )
+
+    def test_method_profile_is_saved_with_reproducibility_fields(self):
+        with tempfile.TemporaryDirectory() as folder:
+            Path(folder, "document.md").write_text("content", encoding="utf-8")
+            snapshot = self.make_config(folder).sanitized_snapshot()
+        self.assertEqual(snapshot["method_id"], "R6")
+        self.assertEqual(snapshot["prompt_version"], "relation-batch-v1")
+        self.assertTrue(snapshot["enable_schema_validation"])
+        self.assertEqual(snapshot["llm"]["temperature"], 0.1)
 
     def test_key_from_environment_is_stripped(self):
         self.assertEqual(

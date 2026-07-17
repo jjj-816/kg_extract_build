@@ -23,6 +23,8 @@ class TripletGenerator:
         recorder=None,
         provider_id="custom",
         enable_thinking=False,
+        temperature=0.1,
+        prompt_version="relation-batch-v1",
     ):
         self.client = OpenAI(api_key=api_key, base_url=base_url, timeout=120.0)
         self.model = model_name
@@ -36,6 +38,8 @@ class TripletGenerator:
             provider_id,
             enable_thinking,
         )
+        self.temperature = float(temperature)
+        self.prompt_version = str(prompt_version)
         self.type_completion_call_count = 0
 
     def generate(self, entity, evidence):
@@ -51,7 +55,7 @@ class TripletGenerator:
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
-                temperature=0.1,
+                temperature=self.temperature,
                 **self._thinking_options,
             )
             raw_result = response.choices[0].message.content.strip()
@@ -68,7 +72,7 @@ class TripletGenerator:
                     parsed=triplets,
                     latency_ms=int((time.perf_counter() - started) * 1000),
                     entity_name=entity_name,
-                    metadata={"evidence_ids": sorted(evidence_by_id), "entity_type": entity_type},
+                    metadata={"evidence_ids": sorted(evidence_by_id), "entity_type": entity_type, "prompt_version": self.prompt_version},
                 )
                 self.recorder.record_triplets(
                     "raw",
@@ -96,7 +100,7 @@ class TripletGenerator:
                     success=False,
                     error_message=safe_error,
                     entity_name=entity_name,
-                    metadata={"evidence_ids": sorted(evidence_by_id), "entity_type": entity_type},
+                    metadata={"evidence_ids": sorted(evidence_by_id), "entity_type": entity_type, "prompt_version": self.prompt_version},
                 )
             return []
 
@@ -117,6 +121,7 @@ class TripletGenerator:
         entity_names = [entity["name"] for entity in entities]
         metadata = {
             "strategy": "shared_context_batch",
+            "prompt_version": self.prompt_version,
             "batch_entities": entity_names,
             "entity_evidence_ids": {
                 name: list(ids)
@@ -128,7 +133,7 @@ class TripletGenerator:
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
-                temperature=0.1,
+                temperature=self.temperature,
                 **self._thinking_options,
             )
             raw_result = response.choices[0].message.content.strip()
@@ -206,6 +211,48 @@ class TripletGenerator:
                 f"批量三元组抽取失败：{safe_error}"
             ) from exc
 
+    def generate_direct(self, document_text):
+        """Extract document-level triples for the R2 LLM-Direct baseline."""
+        prompt = self._build_direct_prompt(document_text)
+        started = time.perf_counter()
+        raw_result = None
+        try:
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=self.temperature,
+                **self._thinking_options,
+            )
+            raw_result = response.choices[0].message.content.strip()
+            triplets = self._parse_direct_triplets(raw_result)
+            llm_call_id = None
+            if self.recorder is not None:
+                llm_call_id = self.recorder.record_llm_call(
+                    stage="triplet_extraction_direct",
+                    prompt=prompt,
+                    raw_response=raw_result,
+                    parsed=triplets,
+                    latency_ms=int((time.perf_counter() - started) * 1000),
+                    metadata={"strategy": "llm_direct", "prompt_version": self.prompt_version},
+                )
+                self.recorder.record_triplets(
+                    "raw", triplets, entity_name="__document__",
+                    source_kind="model_direct", source_llm_call_id=llm_call_id,
+                )
+            self._save_debug("__document__", prompt, raw_result, triplets, llm_call_id=llm_call_id)
+            return triplets
+        except Exception as exc:
+            safe_error = redact_text(str(exc), secrets=self._secret_values)
+            if self.recorder is not None:
+                self.recorder.record_llm_call(
+                    stage="triplet_extraction_direct", prompt=prompt,
+                    raw_response=raw_result,
+                    latency_ms=int((time.perf_counter() - started) * 1000),
+                    success=False, error_message=safe_error,
+                    metadata={"strategy": "llm_direct", "prompt_version": self.prompt_version},
+                )
+            raise RuntimeError(f"直接三元组抽取失败：{safe_error}") from exc
+
     def _build_batch_prompt(
         self,
         entities,
@@ -276,6 +323,51 @@ Final output schema (use this exact six-field structure):
 ]
 evidence_sentence_ids is mandatory and must be an integer array such as [142], never [S142].
 """
+
+    def _build_direct_prompt(self, document_text):
+        return f"""任务：直接从下列施工文档抽取知识图谱三元组。
+
+实体类型：
+{self.schema.render_entity_schema()}
+
+关系类型：
+{self.schema.render_relation_schema()}
+
+仅输出 JSON 数组，不要解释。每项必须恰好包含 head、head_type、relation、tail、tail_type。
+head 和 tail 必须是文档中实际出现的短实体；不要输出完整句子；不要重复三元组。
+
+格式：
+[
+  {{"head":"实体","head_type":"实体类型","relation":"关系","tail":"实体","tail_type":"实体类型"}}
+]
+
+文档：
+{document_text}
+"""
+
+    def _parse_direct_triplets(self, raw_text):
+        items = self._parse_batch_array(raw_text)
+        triplets = []
+        seen = set()
+        for item in items:
+            head = str(item.get("head", "")).strip()
+            tail = str(item.get("tail", "")).strip()
+            relation = self.schema.normalize_relation(str(item.get("relation", "")).strip())
+            head_type = self.schema.normalize_entity_type(str(item.get("head_type", "")).strip())
+            tail_type = self.schema.normalize_entity_type(str(item.get("tail_type", "")).strip())
+            if not head or not tail or not relation:
+                continue
+            if not is_valid_entity_candidate(head) or not is_valid_entity_candidate(tail):
+                continue
+            key = (head, head_type, relation, tail, tail_type)
+            if key in seen:
+                continue
+            seen.add(key)
+            triplets.append({
+                "head": head, "head_type": head_type, "relation": relation,
+                "tail": tail, "tail_type": tail_type,
+            })
+        return triplets
 
     def _parse_batch_array(self, raw_text):
         raw_text = self._normalize_evidence_id_syntax(raw_text)

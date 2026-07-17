@@ -9,6 +9,7 @@ import streamlit as st
 
 from kg_extract_build.documents import discover_documents
 from kg_extract_build.pipeline import run_pipeline
+from kg_extract_build.method_profiles import METHOD_PROFILES, get_method_profile
 from kg_extract_build.run_config import (
     ChunkingConfig,
     LLMConfig,
@@ -60,6 +61,7 @@ def build_llm_config(
     base_url,
     model,
     enable_thinking=False,
+    temperature=0.1,
 ):
     return LLMConfig(
         provider_id=provider_id,
@@ -67,6 +69,7 @@ def build_llm_config(
         base_url=base_url,
         model=model,
         enable_thinking=bool(enable_thinking),
+        temperature=float(temperature),
     )
 
 
@@ -268,6 +271,20 @@ def render_run_page():
         )
         st.caption(thinking_mode_notice(enable_thinking))
 
+        method_id = st.selectbox(
+            "实验方法 Profile",
+            options=tuple(METHOD_PROFILES),
+            format_func=lambda value: METHOD_PROFILES[value].label,
+            disabled=registry.is_running,
+            help="Profile 固定方法模块组合和提示词版本；请勿用高级参数代替消融设置。",
+        )
+        method_profile = get_method_profile(method_id)
+        st.info(method_profile.description)
+        st.caption(
+            f"Prompt：{method_profile.prompt_version}；"
+            f"后置模式校验：{'开启' if method_profile.enable_schema_validation else '关闭'}"
+        )
+
         max_chars = st.number_input(
             "切片最大长度（字符）",
             min_value=200,
@@ -280,28 +297,27 @@ def render_run_page():
         getattr(st, notice_level)(notice_text)
 
         with st.expander("高级参数"):
-            retrieve_count = st.number_input(
-                "每个实体检索句数",
-                min_value=1,
-                max_value=100,
-                value=10,
+            temperature = st.number_input(
+                "LLM 温度",
+                min_value=0.0,
+                max_value=2.0,
+                value=0.1,
+                step=0.05,
                 disabled=registry.is_running,
             )
-            relation_strategy = st.selectbox(
-                "关系抽取策略",
-                options=(
-                    "shared_context_batch",
-                    "single_entity",
-                ),
-                format_func=lambda value: (
-                    "共享上下文批量抽取（推荐）"
-                    if value == "shared_context_batch"
-                    else "逐实体抽取（论文基线）"
-                ),
-                disabled=registry.is_running,
-            )
-            st.caption(relation_strategy_notice(relation_strategy))
-            if relation_strategy == "shared_context_batch":
+            if method_profile.enable_retrieval:
+                retrieve_count = st.number_input(
+                    "每个实体检索句数（Top-K）",
+                    min_value=1,
+                    max_value=100,
+                    value=10,
+                    disabled=registry.is_running,
+                )
+            else:
+                retrieve_count = 0
+                st.caption("R2 不使用实体检索；Top-K 不适用。")
+            relation_strategy = method_profile.relation_strategy
+            if relation_strategy in {"fixed_batch", "shared_context_batch"}:
                 relation_batch_max_entities = st.number_input(
                     "每个关系批次最多实体数",
                     min_value=1,
@@ -310,14 +326,18 @@ def render_run_page():
                     step=1,
                     disabled=registry.is_running,
                 )
-                relation_batch_min_overlap = st.slider(
-                    "实体检索证据最小重叠系数",
-                    min_value=0.0,
-                    max_value=1.0,
-                    value=0.4,
-                    step=0.05,
-                    disabled=registry.is_running,
-                )
+                if relation_strategy == "shared_context_batch":
+                    relation_batch_min_overlap = st.slider(
+                        "实体检索证据最小重叠系数",
+                        min_value=0.0,
+                        max_value=1.0,
+                        value=0.4,
+                        step=0.05,
+                        disabled=registry.is_running,
+                    )
+                else:
+                    relation_batch_min_overlap = 0.0
+                    st.caption("R4 按实体出现顺序固定分批，不使用证据重叠阈值。")
                 relation_batch_max_context_chars = st.number_input(
                     "每个关系批次最大上下文字符数",
                     min_value=1000,
@@ -379,12 +399,14 @@ def render_run_page():
                         base_url=base_url.strip(),
                         model=model.strip(),
                         enable_thinking=enable_thinking,
+                        temperature=float(temperature),
                     ),
                     chunking=ChunkingConfig(max_chars=int(max_chars)),
                     retrieve_sentence_num=int(retrieve_count),
                     respect_legacy_breakpoint=respect_breakpoint,
                     reuse_entity_cache=reuse_entity_cache,
                     reuse_triplet_cache=reuse_triplet_cache,
+                    method_id=method_id,
                     relation_strategy=relation_strategy,
                     relation_batch_max_entities=int(
                         relation_batch_max_entities

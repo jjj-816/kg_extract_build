@@ -9,10 +9,11 @@ from .entity_aligner import EntityAligner
 from .extractor import LongDocLLMEntityExtractor
 from .persistence import ExperimentRecorder, build_experiment_store, content_hash
 from .preprocess import preprocess_document
-from .relation_batching import build_relation_batches
+from .relation_batching import build_fixed_relation_batches, build_relation_batches
 # from .neo4j_builder import ShaleGasNeo4jBuilder
 from .retriever import CorpusRetriever
 from .run_config import PipelineConfig, redact_text
+from .method_profiles import get_method_profile
 from .runtime import CancellationToken, PipelineCancelled, PipelineEvent
 from .schema import KGSchema
 from .settings import (
@@ -199,6 +200,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
             selected_files=tuple(item.name for item in discovered),
         )
     config.validate()
+    method_profile = get_method_profile(config.method_id)
     cancel_token = cancel_token or CancellationToken()
 
     def publish(event_type, stage, message, **kwargs):
@@ -345,6 +347,37 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
             )
 
             try:
+                if method_profile.relation_strategy == "llm_direct":
+                    generator = TripletGenerator(
+                        config.llm.api_key, config.llm.base_url, config.llm.model,
+                        doc_name=file_name, debug_dir=DEBUG_DIR, schema=schema,
+                        recorder=recorder, provider_id=config.llm.provider_id,
+                        enable_thinking=config.llm.enable_thinking,
+                        temperature=config.llm.temperature,
+                        prompt_version=method_profile.prompt_version,
+                    )
+                    raw_direct_triplets = generator.generate_direct(extraction_content)
+                    recorder.record_triplets(
+                        "final", raw_direct_triplets,
+                        source_kind="model_direct",
+                    )
+                    publish(
+                        "triplets_completed", "triplet_extraction",
+                        f"获得 {len(raw_direct_triplets)} 个最终三元组",
+                        document_name=file_name,
+                        metrics={"triplets": len(raw_direct_triplets)},
+                    )
+                    store.finish_document(document_id, "completed")
+                    breakpoint_manager.mark_processed(file_name)
+                    completed_documents += 1
+                    publish(
+                        "document_completed", "document",
+                        f"文档处理完成：{file_name}",
+                        document_name=file_name, completed=completed_documents,
+                        total=len(docs), metrics={"documents": 1},
+                    )
+                    continue
+
                 entities = None
                 if config.reuse_entity_cache:
                     entities = load_aligned_entities(file_name, ENTITY_DEBUG_DIR)
@@ -465,6 +498,8 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     recorder=recorder,
                     provider_id=config.llm.provider_id,
                     enable_thinking=config.llm.enable_thinking,
+                    temperature=config.llm.temperature,
+                    prompt_version=method_profile.prompt_version,
                 )
 
                 raw_triplets = {}
@@ -530,24 +565,20 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                         entity["name"]: entity
                         for entity in pending_entities
                     }
-                    batches = build_relation_batches(
-                        entity_evidence,
-                        max_entities=getattr(
-                            config,
-                            "relation_batch_max_entities",
-                            3,
-                        ),
-                        min_overlap=getattr(
-                            config,
-                            "relation_batch_min_overlap",
-                            0.4,
-                        ),
-                        max_context_chars=getattr(
-                            config,
-                            "relation_batch_max_context_chars",
-                            8000,
-                        ),
-                    )
+                    batch_options = {
+                        "max_entities": config.relation_batch_max_entities,
+                        "max_context_chars": config.relation_batch_max_context_chars,
+                    }
+                    if relation_strategy == "fixed_batch":
+                        batches = build_fixed_relation_batches(
+                            entity_evidence, **batch_options,
+                        )
+                    else:
+                        batches = build_relation_batches(
+                            entity_evidence,
+                            min_overlap=config.relation_batch_min_overlap,
+                            **batch_options,
+                        )
                     for batch_index, batch in enumerate(
                         batches,
                         start=1,
@@ -598,6 +629,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                                             "relation_batch_min_overlap",
                                             0.4,
                                         ),
+                                        "strategy": relation_strategy,
                                     },
                                 )
                             )
@@ -617,12 +649,25 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                 print("完成三元组生成")
 
                 cancel_token.raise_if_cancelled()
-                clean_triplets = corrector.correct(raw_triplets)
-                recorder.record_triplets("final", clean_triplets)
+                if method_profile.enable_schema_validation:
+                    clean_triplets = corrector.correct(raw_triplets)
+                    final_source_kind = "schema_corrected"
+                    final_stage = "triplet_correction"
+                else:
+                    clean_triplets = [
+                        triplet
+                        for triplets in raw_triplets.values()
+                        for triplet in triplets
+                    ]
+                    final_source_kind = "model_unvalidated"
+                    final_stage = "triplet_extraction"
+                recorder.record_triplets(
+                    "final", clean_triplets, source_kind=final_source_kind,
+                )
                 print(f"有效三元组总数：{len(clean_triplets)}")
                 publish(
                     "triplets_completed",
-                    "triplet_correction",
+                    final_stage,
                     f"获得 {len(clean_triplets)} 个最终三元组",
                     document_name=file_name,
                     metrics={"triplets": len(clean_triplets)},

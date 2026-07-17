@@ -102,3 +102,41 @@ def build_relation_batches(
             remaining.remove(candidate)
         batches.append(_make_batch(group, normalized))
     return batches
+
+
+def build_fixed_relation_batches(
+    entity_evidence: Mapping[str, Sequence[Mapping]],
+    *,
+    max_entities: int,
+    max_context_chars: int,
+) -> list[RelationBatch]:
+    """Build sequential fixed-size batches without evidence-overlap grouping.
+
+    Context is still deduplicated by sentence id inside each batch so the same
+    sentence is not repeated in a single LLM prompt.
+    """
+    if max_entities < 1:
+        raise ValueError("每批实体数必须至少为 1")
+    if max_context_chars < 1:
+        raise ValueError("批次上下文字符上限必须为正数")
+
+    normalized = {
+        entity_name: _normalize_hits(hits)
+        for entity_name, hits in entity_evidence.items()
+    }
+    names = list(normalized)
+    batches = []
+    index = 0
+    while index < len(names):
+        group = []
+        while index < len(names) and len(group) < max_entities:
+            candidate = names[index]
+            proposed = _make_batch([*group, candidate], normalized)
+            # Preserve input order and never use overlap to select members.
+            # A single oversized entity is retained rather than discarded.
+            if group and proposed.context_chars > max_context_chars:
+                break
+            group.append(candidate)
+            index += 1
+        batches.append(_make_batch(group, normalized))
+    return batches

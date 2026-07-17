@@ -130,6 +130,7 @@ class LLMConfig:
     base_url: str
     model: str
     enable_thinking: bool = False
+    temperature: float = 0.1
 
     def sanitized(self) -> dict[str, object]:
         secret = (self.api_key,) if self.api_key else ()
@@ -139,6 +140,7 @@ class LLMConfig:
             "model": redact_text(self.model, secrets=secret),
             "api_key_configured": bool(self.api_key),
             "enable_thinking": self.enable_thinking,
+            "temperature": self.temperature,
         }
 
 
@@ -159,12 +161,16 @@ class PipelineConfig:
     respect_legacy_breakpoint: bool = False
     reuse_entity_cache: bool = False
     reuse_triplet_cache: bool = False
+    method_id: str = "R6"
     relation_strategy: str = "shared_context_batch"
     relation_batch_max_entities: int = 3
     relation_batch_min_overlap: float = 0.4
     relation_batch_max_context_chars: int = 8000
 
     def validate(self) -> None:
+        from .method_profiles import get_method_profile
+
+        profile = get_method_profile(self.method_id)
         preset = _provider(self.llm.provider_id)
         if preset.requires_api_key and not self.llm.api_key.strip():
             raise ValueError(f"{preset.label} 必须配置 API Key")
@@ -172,6 +178,8 @@ class PipelineConfig:
             raise ValueError("Base URL 不能为空")
         if not self.llm.model.strip():
             raise ValueError("模型名称不能为空")
+        if not 0.0 <= self.llm.temperature <= 2.0:
+            raise ValueError("温度必须在 0 到 2 之间")
         from .llm_thinking import is_thinking_only_model  # noqa: E402
 
         if (
@@ -190,10 +198,14 @@ class PipelineConfig:
         if not 200 <= self.chunking.max_chars <= 20_000:
             raise ValueError("切片字符数必须在 200 到 20000 之间")
         if self.relation_strategy not in {
+            "llm_direct",
             "single_entity",
+            "fixed_batch",
             "shared_context_batch",
         }:
             raise ValueError("关系抽取策略无效")
+        if self.relation_strategy != profile.relation_strategy:
+            raise ValueError("关系抽取策略必须由实验方法 Profile 固定")
         if not 1 <= self.relation_batch_max_entities <= 10:
             raise ValueError("关系批次实体数必须在 1 到 10 之间")
         if not 0.0 <= self.relation_batch_min_overlap <= 1.0:
@@ -231,6 +243,9 @@ class PipelineConfig:
                 raise ValueError(f"只支持 .md 或 .txt 文件：{name}")
 
     def sanitized_snapshot(self) -> dict[str, object]:
+        from .method_profiles import get_method_profile
+
+        profile = get_method_profile(self.method_id)
         secret = (self.llm.api_key,) if self.llm.api_key else ()
         return {
             "run_name": redact_text(self.run_name, secrets=secret),
@@ -247,6 +262,10 @@ class PipelineConfig:
             "respect_legacy_breakpoint": self.respect_legacy_breakpoint,
             "reuse_entity_cache": self.reuse_entity_cache,
             "reuse_triplet_cache": self.reuse_triplet_cache,
+            "method_id": profile.method_id,
+            "prompt_version": profile.prompt_version,
+            "enable_schema_validation": profile.enable_schema_validation,
+            "method": profile.snapshot(),
             "relation_batch": {
                 "strategy": self.relation_strategy,
                 "max_entities": self.relation_batch_max_entities,
@@ -260,6 +279,7 @@ class PipelineConfig:
     @classmethod
     def from_settings(cls):
         from . import settings
+        from .method_profiles import get_method_profile
 
         provider_id = os.environ.get("LLM_PROVIDER", "zhipu")
         return cls(
@@ -283,9 +303,10 @@ class PipelineConfig:
             respect_legacy_breakpoint=settings.RESPECT_LEGACY_BREAKPOINT,
             reuse_entity_cache=settings.REUSE_ENTITY_CACHE,
             reuse_triplet_cache=settings.REUSE_TRIPLET_CACHE,
+            method_id=os.environ.get("KG_METHOD_ID", "R6"),
             relation_strategy=os.environ.get(
                 "KG_RELATION_STRATEGY",
-                "shared_context_batch",
+                get_method_profile(os.environ.get("KG_METHOD_ID", "R6")).relation_strategy,
             ),
             relation_batch_max_entities=int(
                 os.environ.get(
