@@ -2,6 +2,7 @@ import hashlib
 import json
 import os
 import uuid
+from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -91,6 +92,9 @@ class NullExperimentStore(BaseExperimentStore):
         return []
     def load_evaluation_report(self, evaluation_id):
         return {"metrics": [], "alignments": []}
+
+    def load_blind_review_records(self, run_id):
+        return []
 
 
     def save_evaluation(self, run_id, gold_path, gold_hash, metric_config, result):
@@ -356,6 +360,39 @@ class MemoryExperimentStore(NullExperimentStore):
                 if row["evaluation_id"] == evaluation_id
             ],
         }
+
+    def load_blind_review_records(self, run_id):
+        retrieval_by_id = {
+            row.get("retrieval_id"): row for row in self.retrieval_results
+        }
+        chunk_by_id = {row.get("chunk_id"): row for row in self.chunks}
+        evidence_by_triplet = defaultdict(list)
+        for link in self.triplet_evidence:
+            evidence_by_triplet[link["triplet_id"]].append(link)
+        documents = self.documents
+        records = []
+        for triplet in self.triplets:
+            if triplet["run_id"] != run_id or triplet.get("stage") != "final":
+                continue
+            document = documents.get(triplet["document_id"], {})
+            links = evidence_by_triplet.get(triplet.get("triplet_id"), [None])
+            for link in links:
+                retrieval = retrieval_by_id.get(
+                    None if link is None else link["retrieval_id"], {}
+                )
+                chunk = chunk_by_id.get(retrieval.get("chunk_id"), {})
+                records.append({
+                    "triplet_id": triplet["triplet_id"],
+                    "file_name": document.get("file_name", "DOC"),
+                    "head": triplet["head"],
+                    "head_type": triplet["head_type"],
+                    "relation_name": triplet["relation"],
+                    "tail": triplet["tail"],
+                    "tail_type": triplet["tail_type"],
+                    "evidence_sentence": retrieval.get("sentence"),
+                    "evidence_context": chunk.get("content"),
+                })
+        return records
 
     def save_evaluation(self, run_id, gold_path, gold_hash, metric_config, result):
         evaluation_id = str(uuid.uuid4())
@@ -911,6 +948,24 @@ class MySQLExperimentStore(BaseExperimentStore):
             (evaluation_id,),
         )
         return {"metrics": metrics, "alignments": alignments}
+
+    def load_blind_review_records(self, run_id):
+        return self._read(
+            """
+            SELECT t.triplet_id, d.file_name, t.head, t.head_type,
+                   t.relation_name, t.tail, t.tail_type,
+                   rr.sentence AS evidence_sentence,
+                   chunk.content AS evidence_context
+            FROM kg_triplet t
+            JOIN kg_document d ON d.document_id=t.document_id
+            LEFT JOIN kg_triplet_evidence te ON te.triplet_id=t.triplet_id
+            LEFT JOIN kg_retrieval_result rr ON rr.retrieval_id=te.retrieval_id
+            LEFT JOIN kg_document_chunk chunk ON chunk.chunk_id=rr.chunk_id
+            WHERE t.run_id=%s AND t.stage='final'
+            ORDER BY d.file_name, t.triplet_id, te.evidence_order
+            """,
+            (run_id,),
+        )
 
     def save_evaluation(self, run_id, gold_path, gold_hash, metric_config, result):
         evaluation_id = str(uuid.uuid4())

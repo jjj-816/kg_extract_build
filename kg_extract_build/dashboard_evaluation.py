@@ -6,6 +6,7 @@ from pathlib import Path
 
 import streamlit as st
 
+from .blind_review import build_blind_review_package
 from .evaluation import (
     build_preview,
     compute_gold_hash,
@@ -174,6 +175,21 @@ def render_evaluation_page() -> None:
 
     selected = st.selectbox("选择历史实验", runs, format_func=format_run_label)
     run_id = selected["run_id"]
+    blind_records = store.load_blind_review_records(run_id)
+    if blind_records:
+        blind_package, blind_sample_count = build_blind_review_package(blind_records)
+        st.download_button(
+            "下载单实验盲审证据包 ZIP",
+            data=blind_package,
+            file_name="blind-review-evidence-package.zip",
+            mime="application/zip",
+            help=(
+                f"共 {blind_sample_count} 条匿名三元组样本；包内不包含实验、模型、"
+                "Gold 或内部数据库标识。"
+            ),
+        )
+    else:
+        st.info("当前实验没有可导出的 final 三元组盲审样本。")
     gold_path_text = st.text_input("人工标注文件夹路径", value="")
     if not gold_path_text.strip():
         st.info("请输入人工标注文件夹路径后预览匹配情况。")
