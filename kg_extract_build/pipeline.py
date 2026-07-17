@@ -3,6 +3,7 @@ import os
 import subprocess
 from dataclasses import replace
 from datetime import datetime
+from pathlib import Path
 
 from .documents import BreakpointManager, DocumentLoader, discover_documents
 from .entity_aligner import EntityAligner
@@ -63,6 +64,11 @@ def get_entity_debug_dir(file_name, debug_dir):
     save_dir = debug_dir / doc_stem
     save_dir.mkdir(parents=True, exist_ok=True)
     return save_dir
+
+
+def get_run_debug_dir(debug_dir, run_id):
+    """Keep debug artifacts and optional caches isolated per experiment run."""
+    return Path(debug_dir) / str(run_id)
 
 
 def save_raw_entities(file_name, entities, debug_dir):
@@ -281,6 +287,8 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
             current_code_commit(),
         )
         print(f"[实验存储] run_id={run_id}")
+        entity_run_debug_dir = get_run_debug_dir(ENTITY_DEBUG_DIR, run_id)
+        triplet_run_debug_dir = get_run_debug_dir(DEBUG_DIR, run_id)
 
         docs = doc_loader.load_all_unprocessed_docs()
         if not docs:
@@ -350,7 +358,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                 if method_profile.relation_strategy == "llm_direct":
                     generator = TripletGenerator(
                         config.llm.api_key, config.llm.base_url, config.llm.model,
-                        doc_name=file_name, debug_dir=DEBUG_DIR, schema=schema,
+                        doc_name=file_name, debug_dir=triplet_run_debug_dir, schema=schema,
                         recorder=recorder, provider_id=config.llm.provider_id,
                         enable_thinking=config.llm.enable_thinking,
                         temperature=config.llm.temperature,
@@ -410,7 +418,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
 
                 entities = None
                 if config.reuse_entity_cache:
-                    entities = load_aligned_entities(file_name, ENTITY_DEBUG_DIR)
+                    entities = load_aligned_entities(file_name, entity_run_debug_dir)
                 if entities is not None:
                     for entity in entities:
                         entity.setdefault("source_type", source_type)
@@ -433,7 +441,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     )
                     recorder.record_entities("raw", entities)
                     raw_entity_debug_path = save_raw_entities(
-                        file_name, entities, ENTITY_DEBUG_DIR
+                        file_name, entities, entity_run_debug_dir
                     )
                     print(f"原始实体抽取结果已保存至：{raw_entity_debug_path}")
                     if not entities:
@@ -472,7 +480,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     if alias_to_standard:
                         print(f"实体对齐映射数：{len(alias_to_standard)}")
                     entity_debug_path = save_aligned_entities(
-                        file_name, entities, alias_to_standard, ENTITY_DEBUG_DIR
+                        file_name, entities, alias_to_standard, entity_run_debug_dir
                     )
                     print(f"实体对齐结果已保存至：{entity_debug_path}")
 
@@ -522,7 +530,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     config.llm.base_url,
                     config.llm.model,
                     doc_name=file_name,
-                    debug_dir=DEBUG_DIR,
+                    debug_dir=triplet_run_debug_dir,
                     schema=schema,
                     known_entities=known_entities,
                     recorder=recorder,
