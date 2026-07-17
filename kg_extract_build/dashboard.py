@@ -417,7 +417,7 @@ def documents_page(config):
     with tabs[1]:
         chunk_type = st.selectbox(
             "切片类型",
-            ["entity_extraction", "retrieval_sentence"],
+            ["entity_extraction", "direct_extraction", "retrieval_sentence"],
         )
         rows = query(
             config,

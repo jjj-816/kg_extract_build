@@ -211,8 +211,8 @@ class TripletGenerator:
                 f"批量三元组抽取失败：{safe_error}"
             ) from exc
 
-    def generate_direct(self, document_text):
-        """Extract document-level triples for the R2 LLM-Direct baseline."""
+    def generate_direct(self, document_text, chunk_index=None):
+        """Extract triples from one direct-extraction document chunk for R2."""
         prompt = self._build_direct_prompt(document_text)
         started = time.perf_counter()
         raw_result = None
@@ -233,13 +233,22 @@ class TripletGenerator:
                     raw_response=raw_result,
                     parsed=triplets,
                     latency_ms=int((time.perf_counter() - started) * 1000),
-                    metadata={"strategy": "llm_direct", "prompt_version": self._prompt_version()},
+                    metadata={
+                        "strategy": "llm_direct",
+                        "prompt_version": self._prompt_version(),
+                        "chunk_type": "direct_extraction",
+                        "chunk_index": chunk_index,
+                    },
                 )
                 self.recorder.record_triplets(
                     "raw", triplets, entity_name="__document__",
                     source_kind="model_direct", source_llm_call_id=llm_call_id,
                 )
-            self._save_debug("__document__", prompt, raw_result, triplets, llm_call_id=llm_call_id)
+            debug_name = (
+                "__document__" if chunk_index is None
+                else f"__direct_chunk_{chunk_index:04d}"
+            )
+            self._save_debug(debug_name, prompt, raw_result, triplets, llm_call_id=llm_call_id)
             return triplets
         except Exception as exc:
             safe_error = redact_text(str(exc), secrets=self._secret_values)
@@ -249,7 +258,12 @@ class TripletGenerator:
                     raw_response=raw_result,
                     latency_ms=int((time.perf_counter() - started) * 1000),
                     success=False, error_message=safe_error,
-                    metadata={"strategy": "llm_direct", "prompt_version": self._prompt_version()},
+                    metadata={
+                        "strategy": "llm_direct",
+                        "prompt_version": self._prompt_version(),
+                        "chunk_type": "direct_extraction",
+                        "chunk_index": chunk_index,
+                    },
                 )
             raise RuntimeError(f"直接三元组抽取失败：{safe_error}") from exc
 
@@ -333,7 +347,7 @@ evidence_sentence_ids is mandatory and must be an integer array such as [142], n
         return float(getattr(self, "temperature", 0.1))
 
     def _build_direct_prompt(self, document_text):
-        return f"""任务：直接从下列施工文档抽取知识图谱三元组。
+        return f"""任务：直接从下列施工文档切片抽取知识图谱三元组。
 
 实体类型：
 {self.schema.render_entity_schema()}

@@ -356,7 +356,37 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                         temperature=config.llm.temperature,
                         prompt_version=method_profile.prompt_version,
                     )
-                    raw_direct_triplets = generator.generate_direct(extraction_content)
+                    direct_chunks = extractor._split_document(extraction_content)
+                    recorder.record_chunks("direct_extraction", direct_chunks)
+                    publish(
+                        "chunks_created", "chunking",
+                        f"已保存 {len(direct_chunks)} 个直接抽取切片",
+                        document_name=file_name,
+                        metrics={"chunks": len(direct_chunks)},
+                    )
+                    raw_direct_triplets = []
+                    for chunk_index, direct_chunk in enumerate(direct_chunks):
+                        cancel_token.raise_if_cancelled()
+                        raw_direct_triplets.extend(
+                            generator.generate_direct(
+                                direct_chunk, chunk_index=chunk_index,
+                            )
+                        )
+                        publish(
+                            "chunk_progress", "triplet_extraction",
+                            f"直接三元组抽取切片 {chunk_index + 1}/{len(direct_chunks)}",
+                            document_name=file_name,
+                            completed=chunk_index + 1, total=len(direct_chunks),
+                        )
+                    direct_unique = {}
+                    for triplet in raw_direct_triplets:
+                        key = (
+                            triplet.get("head"), triplet.get("head_type"),
+                            triplet.get("relation"), triplet.get("tail"),
+                            triplet.get("tail_type"),
+                        )
+                        direct_unique.setdefault(key, triplet)
+                    raw_direct_triplets = list(direct_unique.values())
                     recorder.record_triplets(
                         "final", raw_direct_triplets,
                         source_kind="model_direct",

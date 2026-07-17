@@ -24,7 +24,7 @@ METHOD_PROFILES: dict[str, MethodProfile] = {
     "R2": MethodProfile(
         method_id="R2",
         label="R2 · LLM-Direct",
-        description="直接基于整篇预处理文档抽取三元组；不进行实体对齐、检索或后置模式校验。",
+        description="按切片直接抽取三元组；不进行实体对齐、检索或后置模式校验。",
         prompt_version="direct-v1",
         relation_strategy="llm_direct",
         enable_entity_alignment=False,
@@ -79,4 +79,3 @@ def get_method_profile(method_id: str) -> MethodProfile:
         return METHOD_PROFILES[method_id]
     except KeyError as exc:
         raise ValueError(f"未知实验方法 Profile：{method_id}") from exc
-
