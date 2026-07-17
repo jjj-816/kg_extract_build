@@ -112,6 +112,12 @@ def _extract_canonical_entities(payload: object, schema=None) -> list[dict[str, 
         return []
     entities = payload.get("canonical_entities", [])
     mentions = payload.get("entity_mentions", [])
+    document_entity_rows = False
+    if not isinstance(entities, list):
+        entities = []
+    if not entities:
+        entities = payload.get("entities", [])
+        document_entity_rows = True
     if not isinstance(entities, list):
         return []
     mentions_by_id: dict[str, list[str]] = {}
@@ -123,11 +129,11 @@ def _extract_canonical_entities(payload: object, schema=None) -> list[dict[str, 
             text = str(mention.get("mention", "")).strip()
             if entity_id and text:
                 mentions_by_id.setdefault(entity_id, []).append(text)
-    result = []
+    result_by_id: dict[str, dict[str, object]] = {}
     for entity in entities:
         if not isinstance(entity, Mapping):
             continue
-        entity_id = str(entity.get("entity_id", "")).strip()
+        entity_id = str(entity.get("canonical_id" if document_entity_rows else "entity_id", "")).strip()
         canonical_name = str(entity.get("canonical_name", "")).strip()
         entity_type = str(entity.get("type", "")).strip()
         if schema is not None:
@@ -137,13 +143,38 @@ def _extract_canonical_entities(payload: object, schema=None) -> list[dict[str, 
         aliases = entity.get("aliases", [])
         aliases = aliases if isinstance(aliases, list) else []
         names = [canonical_name, *aliases, *mentions_by_id.get(entity_id, [])]
-        result.append({
-            "canonical_id": entity_id,
-            "canonical_name": canonical_name,
-            "entity_type": entity_type,
-            "names": [str(name).strip() for name in names if str(name).strip()],
-        })
-    return result
+        if document_entity_rows:
+            names.append(entity.get("mention", ""))
+        normalized_names = [str(name).strip() for name in names if str(name).strip()]
+        existing = result_by_id.get(entity_id)
+        if existing is None:
+            result_by_id[entity_id] = {
+                "canonical_id": entity_id,
+                "canonical_name": canonical_name,
+                "entity_type": entity_type,
+                "names": normalized_names,
+            }
+        else:
+            existing["names"] = list(dict.fromkeys([*existing["names"], *normalized_names]))
+    return list(result_by_id.values())
+
+
+def _normalize_id_referenced_triplet(
+    item: Mapping[str, object],
+    entities_by_id: Mapping[str, Mapping[str, object]],
+    schema=None,
+) -> TripletKey | None:
+    head = entities_by_id.get(str(item.get("head_id", "")).strip())
+    tail = entities_by_id.get(str(item.get("tail_id", "")).strip())
+    if head is None or tail is None:
+        return None
+    return normalize_triplet({
+        "head_name": head["canonical_name"],
+        "head_type": head["entity_type"],
+        "relation": item.get("relation", ""),
+        "tail_name": tail["canonical_name"],
+        "tail_type": tail["entity_type"],
+    }, schema=schema)
 
 
 def _extract_canonical_triplets(payload: object, schema=None) -> list[CanonicalTripletKey]:
@@ -181,11 +212,18 @@ def load_gold_annotations(root: Path, schema=None) -> GoldAnnotations:
         if parse_error:
             errors.append({"path": str(file_path), "error": parse_error})
             continue
+        canonical = _extract_canonical_entities(payload, schema=schema)
         doc_name = _document_name(payload, file_path)
-        triplets = [triplet for item in items if (triplet := normalize_triplet(item, schema=schema)) is not None]
+        entities_by_id = {str(entity["canonical_id"]): entity for entity in canonical}
+        triplets = []
+        for item in items:
+            triplet = normalize_triplet(item, schema=schema)
+            if triplet is None and (item.get("head_id") or item.get("tail_id")):
+                triplet = _normalize_id_referenced_triplet(item, entities_by_id, schema=schema)
+            if triplet is not None:
+                triplets.append(triplet)
         if triplets:
             documents.setdefault(doc_name, []).extend(triplets)
-        canonical = _extract_canonical_entities(payload, schema=schema)
         if canonical:
             canonical_entities.setdefault(doc_name, []).extend(canonical)
         normalized_triplets = _extract_canonical_triplets(payload, schema=schema)

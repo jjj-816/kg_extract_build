@@ -94,6 +94,24 @@ class TripletBatchingTests(unittest.TestCase):
             )
         self.assertEqual(rows[0]["evidence_sentence_ids"], [12, 13])
 
+    def test_batch_parser_recovers_complete_unique_items_before_truncated_tail(self):
+        raw_response = """[
+{"head":"pump","relation":"HAS_PARAMETER","tail":"pressure","tail_type":"parameter","evidence_sentence_ids":[1]},
+{"head":"pump","relation":"RESPONSIBLE_FOR","tail":"inspection","tail_type":"control","evidence_sentence_ids":[2]},
+{"head":"pump","relation":"HAS_PARAMETER","tail":"pressure","tail_type":"parameter","evidence_sentence_ids":[1]},
+{"head":"pump","relation":"HAS_PARAMETER","tail":"unfinished"""
+        with tempfile.TemporaryDirectory() as tmp:
+            generator = make_generator(tmp, Completions())
+            rows = generator._parse_batch_array(raw_response)
+
+        self.assertEqual(
+            [(item["head"], item["relation"], item["tail"]) for item in rows],
+            [
+                ("pump", "HAS_PARAMETER", "pressure"),
+                ("pump", "RESPONSIBLE_FOR", "inspection"),
+            ],
+        )
+
     def test_unknown_tail_type_is_completed_once_then_accepted(self):
         completions = Completions(
             json.dumps({"head_type": "facility", "tail_type": "parameter"})
@@ -247,6 +265,8 @@ class TripletBatchingTests(unittest.TestCase):
             self.assertEqual(prompt.count("[S1]"), 1)
             self.assertEqual(prompt.count("[S2]"), 1)
             self.assertIn("evidence_sentence_ids", prompt)
+            self.assertIn("Each (head, relation, tail) may appear at most once", prompt)
+            self.assertIn("At most 5 triplets per head", prompt)
             self.assertEqual(len(completions.calls), 1)
             self.assertEqual(result["井口"][0]["tail"], "井场")
             self.assertEqual(result["防喷器"][0]["tail"], "井口")

@@ -14,6 +14,27 @@ from kg_extract_build.evaluation import compute_gold_hash, load_gold_annotations
 
 
 class EvaluationGoldLoadingTests(unittest.TestCase):
+    def test_loads_id_referenced_document_gold_using_entities_table(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            file_path = Path(tmp) / "document_gold.json"
+            payload = {
+                "document": {"document_id": "CNH25A-001", "title": "长宁H25A平台地面集输工程施工"},
+                "sentences": [{"sentence_id": "S001", "text": "长宁H25A平台地面集输工程施工包括土建施工。"}],
+                "entities": [
+                    {"mention": "长宁H25A平台地面集输工程", "sentence_id": "S001", "canonical_id": "E001", "canonical_name": "长宁H25A平台地面集输工程", "type": "施工对象"},
+                    {"mention": "土建施工", "sentence_id": "S001", "canonical_id": "E002", "canonical_name": "土建施工", "type": "施工阶段"},
+                ],
+                "triplets": [{"triplet_id": "T001", "head_id": "E001", "relation": "HAS_STAGE", "tail_id": "E002", "evidence_sentence_ids": ["S001"]}],
+            }
+            file_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+            annotations = load_gold_annotations(file_path)
+
+        expected = ("长宁H25A平台地面集输工程", "施工对象", "HAS_STAGE", "土建施工", "施工阶段")
+        self.assertEqual(annotations.documents, {"长宁H25A平台地面集输工程施工": [expected]})
+        self.assertEqual(annotations.canonical_triplets, {"长宁H25A平台地面集输工程施工": [("E001", "HAS_STAGE", "E002")]})
+        self.assertEqual(len(annotations.canonical_entities["长宁H25A平台地面集输工程施工"]), 2)
+        self.assertEqual(annotations.errors, [])
+
     def test_loads_adjudicated_document_file_with_title_and_chinese_name_fields(self):
         with tempfile.TemporaryDirectory() as tmp:
             file_path = Path(tmp) / "adjudicated_gold.json"

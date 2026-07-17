@@ -267,7 +267,10 @@ Required JSON output format:
   {{"head": "目标实体", "head_type": "实体类型", "relation": "关系", "tail": "尾实体", "tail_type": "尾实体类型"}}
 ]
 
-Final output schema (use this exact six-field structure; it overrides the illustrative format above):
+Each (head, relation, tail) may appear at most once. Never repeat an item.
+At most 5 triplets per head. If no new valid item remains, end the JSON array immediately.
+
+Final output schema (use this exact six-field structure):
 [
   {{"head":"target head","head_type":"type","relation":"relation","tail":"tail","tail_type":"type","evidence_sentence_ids":[142]}}
 ]
@@ -278,10 +281,53 @@ evidence_sentence_ids is mandatory and must be an integer array such as [142], n
         raw_text = self._normalize_evidence_id_syntax(raw_text)
         match = re.search(r"\[[\s\S]*\]", raw_text)
         payload = match.group(0) if match else raw_text
-        data = json.loads(payload)
+        try:
+            data = json.loads(payload)
+        except json.JSONDecodeError:
+            data = self._recover_complete_batch_items(payload)
         if not isinstance(data, list):
             raise ValueError("批量三元组响应必须是 JSON 数组")
-        return data
+        return self._deduplicate_batch_items(data)
+
+    @staticmethod
+    def _recover_complete_batch_items(payload):
+        decoder = json.JSONDecoder()
+        items = []
+        index = payload.find("[") + 1
+        length = len(payload)
+        while index < length:
+            while index < length and payload[index].isspace():
+                index += 1
+            if index >= length or payload[index] == "]":
+                break
+            if payload[index] == ",":
+                index += 1
+                continue
+            try:
+                item, index = decoder.raw_decode(payload, index)
+            except json.JSONDecodeError:
+                if items:
+                    break
+                raise
+            if isinstance(item, dict):
+                items.append(item)
+        if not items:
+            raise ValueError("批量三元组响应不包含可恢复的完整对象")
+        return items
+
+    @staticmethod
+    def _deduplicate_batch_items(items):
+        unique_items = []
+        seen = set()
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            signature = json.dumps(item, ensure_ascii=False, sort_keys=True)
+            if signature in seen:
+                continue
+            seen.add(signature)
+            unique_items.append(item)
+        return unique_items
 
     @staticmethod
     def _normalize_evidence_id_syntax(raw_text):

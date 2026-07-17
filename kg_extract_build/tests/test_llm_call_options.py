@@ -163,7 +163,7 @@ class LLMCallOptionsTests(unittest.TestCase):
             generator.client = _fake_client(completions)
             generator.generate(
                 {"name": "井口", "type": "设施"},
-                "井口安装于井场。",
+                [{"sentence_index": 1, "sentence": "井口安装于井场。"}],
             )
         self.assertEqual(
             completions.calls[0]["extra_body"],
