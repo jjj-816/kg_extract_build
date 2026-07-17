@@ -89,6 +89,9 @@ class NullExperimentStore(BaseExperimentStore):
 
     def list_evaluations(self, run_id, gold_hash=None):
         return []
+    def load_evaluation_report(self, evaluation_id):
+        return {"metrics": [], "alignments": []}
+
 
     def save_evaluation(self, run_id, gold_path, gold_hash, metric_config, result):
         return None
@@ -341,6 +344,18 @@ class MemoryExperimentStore(NullExperimentStore):
         if gold_hash is not None:
             rows = [row for row in rows if row["gold_hash"] == gold_hash]
         return list(rows)
+
+    def load_evaluation_report(self, evaluation_id):
+        return {
+            "metrics": [
+                row for row in self.evaluation_metrics
+                if row["evaluation_id"] == evaluation_id
+            ],
+            "alignments": [
+                row for row in self.evaluation_entity_alignments
+                if row["evaluation_id"] == evaluation_id
+            ],
+        }
 
     def save_evaluation(self, run_id, gold_path, gold_hash, metric_config, result):
         evaluation_id = str(uuid.uuid4())
@@ -861,6 +876,7 @@ class MySQLExperimentStore(BaseExperimentStore):
             ORDER BY created_at DESC
             """,
             tuple(params),
+
         )
         for row in rows:
             summary = row.get("summary_json") or {}
@@ -871,6 +887,30 @@ class MySQLExperimentStore(BaseExperimentStore):
                     summary = {}
             row["triplet_f1"] = (summary.get("overall") or {}).get("triplet_f1")
         return rows
+
+    def load_evaluation_report(self, evaluation_id):
+        metrics = self._read(
+            """
+            SELECT scope_type, scope_name, metric_name, metric_value,
+                   numerator, denominator
+            FROM kg_evaluation_metric
+            WHERE evaluation_id=%s
+            ORDER BY scope_type, scope_name, metric_id
+            """,
+            (evaluation_id,),
+        )
+        alignments = self._read(
+            """
+            SELECT document_name AS document, entity_name, entity_type,
+                   canonical_id, canonical_name, canonical_type,
+                   match_status, candidate_count
+            FROM kg_evaluation_entity_alignment
+            WHERE evaluation_id=%s
+            ORDER BY document_name, entity_name, entity_type
+            """,
+            (evaluation_id,),
+        )
+        return {"metrics": metrics, "alignments": alignments}
 
     def save_evaluation(self, run_id, gold_path, gold_hash, metric_config, result):
         evaluation_id = str(uuid.uuid4())

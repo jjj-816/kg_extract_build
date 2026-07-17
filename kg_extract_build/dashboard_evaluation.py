@@ -1,4 +1,6 @@
 from __future__ import annotations
+import csv
+import io
 
 from pathlib import Path
 
@@ -98,6 +100,21 @@ def _document_rows(by_document: dict) -> list[dict[str, object]]:
         rows.append(row)
     return rows
 
+def _csv_bytes(rows: list[dict[str, object]]) -> bytes:
+    if not rows:
+        return b""
+    fields = list(rows[0])
+    for row in rows[1:]:
+        for field in row:
+            if field not in fields:
+                fields.append(field)
+    buffer = io.StringIO(newline="")
+    writer = csv.DictWriter(buffer, fieldnames=fields, extrasaction="ignore")
+    writer.writeheader()
+    writer.writerows(rows)
+    return buffer.getvalue().encode("utf-8-sig")
+
+
 
 def render_evaluation_page() -> None:
     st.title("实验评估")
@@ -168,7 +185,30 @@ def render_evaluation_page() -> None:
         st.dataframe(preview["parse_errors"], use_container_width=True)
     if existing:
         st.info("检测到该实验和当前标注内容已经评估过，可查看已有结果，也可以重新计算并保存为新记录。")
-        st.dataframe(existing, use_container_width=True)
+        saved_evaluation = st.selectbox(
+            "\u67e5\u770b\u5df2\u4fdd\u5b58\u7684\u8bc4\u4f30\u7ed3\u679c", existing, key="saved_evaluation",
+            format_func=lambda row: f"{row.get('created_at')} | {str(row.get('evaluation_id', ''))[:8]}",
+        )
+        saved_report = store.load_evaluation_report(saved_evaluation["evaluation_id"])
+        overall_rows = [
+            {
+                "metric": row["metric_name"],
+                "value": row["metric_value"],
+                "numerator": row.get("numerator"),
+                "denominator": row.get("denominator"),
+            }
+            for row in saved_report["metrics"]
+            if row["scope_type"] == "overall"
+        ]
+        st.subheader("\u5df2\u4fdd\u5b58\u7684\u8bc4\u4f30\u6307\u6807")
+        st.dataframe(overall_rows, use_container_width=True, hide_index=True)
+        st.download_button(
+            "\u5bfc\u51fa\u5df2\u4fdd\u5b58\u8bc4\u4f30\u6307\u6807 CSV",
+            data=_csv_bytes(overall_rows),
+            file_name=f"evaluation-metrics-{saved_evaluation['evaluation_id']}.csv",
+            mime="text/csv",
+        )
+
 
     if preview["calculation_blocked"]:
         st.error("Gold parsing or document matching is incomplete; metric calculation is disabled.")
