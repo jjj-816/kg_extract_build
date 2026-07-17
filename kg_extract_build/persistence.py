@@ -96,6 +96,12 @@ class NullExperimentStore(BaseExperimentStore):
     def load_blind_review_records(self, run_id):
         return []
 
+    def load_experiment_export(self, run_id):
+        return {"run": {}, "documents": [], "chunks": [], "entities": [],
+                "retrieval_results": [], "llm_calls": [], "raw_triplets": [],
+                "final_triplets": [], "triplet_evidence": [], "evaluations": [],
+                "evaluation_metrics": [], "evaluation_alignments": []}
+
 
     def save_evaluation(self, run_id, gold_path, gold_hash, metric_config, result):
         return None
@@ -393,6 +399,30 @@ class MemoryExperimentStore(NullExperimentStore):
                     "evidence_context": chunk.get("content"),
                 })
         return records
+
+    def load_experiment_export(self, run_id):
+        document_ids = {
+            document_id for document_id, row in self.documents.items()
+            if row["run_id"] == run_id
+        }
+        triplets = [row for row in self.triplets if row["run_id"] == run_id]
+        triplet_ids = {row.get("triplet_id") for row in triplets}
+        evaluation_rows = [row for row in self.evaluation_runs if row["run_id"] == run_id]
+        evaluation_ids = {row["evaluation_id"] for row in evaluation_rows}
+        return {
+            "run": dict(self.runs.get(run_id, {})),
+            "documents": [dict(row) for row in self.documents.values() if row["run_id"] == run_id],
+            "chunks": [dict(row) for row in self.chunks if row["run_id"] == run_id],
+            "entities": [dict(row) for row in self.entities if row["run_id"] == run_id],
+            "retrieval_results": [dict(row) for row in self.retrieval_results if row["run_id"] == run_id],
+            "llm_calls": [dict(row) for row in self.llm_calls if row["run_id"] == run_id],
+            "raw_triplets": [dict(row) for row in triplets if row.get("stage") == "raw"],
+            "final_triplets": [dict(row) for row in triplets if row.get("stage") == "final"],
+            "triplet_evidence": [dict(row) for row in self.triplet_evidence if row["triplet_id"] in triplet_ids],
+            "evaluations": [dict(row) for row in evaluation_rows],
+            "evaluation_metrics": [dict(row) for row in self.evaluation_metrics if row["evaluation_id"] in evaluation_ids],
+            "evaluation_alignments": [dict(row) for row in self.evaluation_entity_alignments if row["evaluation_id"] in evaluation_ids],
+        }
 
     def save_evaluation(self, run_id, gold_path, gold_hash, metric_config, result):
         evaluation_id = str(uuid.uuid4())
@@ -966,6 +996,37 @@ class MySQLExperimentStore(BaseExperimentStore):
             """,
             (run_id,),
         )
+
+    def load_experiment_export(self, run_id):
+        run_rows = self._read(
+            """SELECT run_id, run_name, status, deletion_state, code_commit,
+                      config_snapshot, schema_snapshot, error_message, started_at, finished_at
+               FROM kg_experiment_run WHERE run_id=%s""",
+            (run_id,),
+        )
+        export = {"run": run_rows[0] if run_rows else {}}
+        queries = {
+            "documents": "SELECT * FROM kg_document WHERE run_id=%s ORDER BY document_id",
+            "chunks": "SELECT * FROM kg_document_chunk WHERE run_id=%s ORDER BY document_id, chunk_type, chunk_index",
+            "entities": "SELECT * FROM kg_entity WHERE run_id=%s ORDER BY document_id, stage, entity_id",
+            "retrieval_results": "SELECT * FROM kg_retrieval_result WHERE run_id=%s ORDER BY document_id, entity_name, hit_rank, retrieval_id",
+            "llm_calls": "SELECT * FROM kg_llm_call WHERE run_id=%s ORDER BY llm_call_id",
+            "raw_triplets": "SELECT * FROM kg_triplet WHERE run_id=%s AND stage='raw' ORDER BY triplet_id",
+            "final_triplets": "SELECT * FROM kg_triplet WHERE run_id=%s AND stage='final' ORDER BY triplet_id",
+            "triplet_evidence": """SELECT te.triplet_id, te.retrieval_id, te.evidence_order, te.source
+                                    FROM kg_triplet_evidence te JOIN kg_triplet t ON t.triplet_id=te.triplet_id
+                                    WHERE t.run_id=%s ORDER BY te.triplet_id, te.evidence_order""",
+            "evaluations": "SELECT * FROM kg_evaluation_run WHERE run_id=%s ORDER BY created_at, evaluation_id",
+            "evaluation_metrics": """SELECT em.* FROM kg_evaluation_metric em
+                                      JOIN kg_evaluation_run er ON er.evaluation_id=em.evaluation_id
+                                      WHERE er.run_id=%s ORDER BY em.evaluation_id, em.scope_type, em.scope_name, em.metric_id""",
+            "evaluation_alignments": """SELECT ea.* FROM kg_evaluation_entity_alignment ea
+                                        JOIN kg_evaluation_run er ON er.evaluation_id=ea.evaluation_id
+                                        WHERE er.run_id=%s ORDER BY ea.evaluation_id, ea.document_name, ea.entity_name""",
+        }
+        for key, sql in queries.items():
+            export[key] = self._read(sql, (run_id,))
+        return export
 
     def save_evaluation(self, run_id, gold_path, gold_hash, metric_config, result):
         evaluation_id = str(uuid.uuid4())

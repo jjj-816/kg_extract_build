@@ -7,6 +7,7 @@ from pathlib import Path
 import streamlit as st
 
 from .blind_review import build_blind_review_package
+from .experiment_export import build_experiment_package
 from .evaluation import (
     build_preview,
     compute_gold_hash,
@@ -175,6 +176,19 @@ def render_evaluation_page() -> None:
 
     selected = st.selectbox("选择历史实验", runs, format_func=format_run_label)
     run_id = selected["run_id"]
+    export_package, export_counts = build_experiment_package(
+        store.load_experiment_export(run_id)
+    )
+    st.download_button(
+        "下载单实验完整数据包 ZIP",
+        data=export_package,
+        file_name=f"experiment-data-{str(run_id)[:8]}.zip",
+        mime="application/zip",
+        help=(
+            "含运行配置、文档、实体、检索、LLM 调用、原始/最终三元组、"
+            f"证据关联和评估结果；最终三元组 {export_counts['final_triplets']} 条。"
+        ),
+    )
     blind_records = store.load_blind_review_records(run_id)
     if blind_records:
         blind_package, blind_sample_count = build_blind_review_package(blind_records)

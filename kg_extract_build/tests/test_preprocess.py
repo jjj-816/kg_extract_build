@@ -105,7 +105,17 @@ class TripletNoiseGuardTests(unittest.TestCase):
             }
         )
 
-        self.assertEqual(result, [("????", "????", "HAS_THRESHOLD", "10cm", "????")])
+        self.assertEqual(
+            result,
+            [{
+                "head": "????",
+                "head_type": "????",
+                "relation": "HAS_THRESHOLD",
+                "tail": "10cm",
+                "tail_type": "????",
+                "evidence_sentence_ids": [],
+            }],
+        )
 
 
 if __name__ == "__main__":

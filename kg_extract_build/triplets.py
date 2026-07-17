@@ -55,7 +55,7 @@ class TripletGenerator:
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
-                temperature=self.temperature,
+                temperature=self._temperature(),
                 **self._thinking_options,
             )
             raw_result = response.choices[0].message.content.strip()
@@ -72,7 +72,7 @@ class TripletGenerator:
                     parsed=triplets,
                     latency_ms=int((time.perf_counter() - started) * 1000),
                     entity_name=entity_name,
-                    metadata={"evidence_ids": sorted(evidence_by_id), "entity_type": entity_type, "prompt_version": self.prompt_version},
+                    metadata={"evidence_ids": sorted(evidence_by_id), "entity_type": entity_type, "prompt_version": self._prompt_version()},
                 )
                 self.recorder.record_triplets(
                     "raw",
@@ -100,7 +100,7 @@ class TripletGenerator:
                     success=False,
                     error_message=safe_error,
                     entity_name=entity_name,
-                    metadata={"evidence_ids": sorted(evidence_by_id), "entity_type": entity_type, "prompt_version": self.prompt_version},
+                    metadata={"evidence_ids": sorted(evidence_by_id), "entity_type": entity_type, "prompt_version": self._prompt_version()},
                 )
             return []
 
@@ -121,7 +121,7 @@ class TripletGenerator:
         entity_names = [entity["name"] for entity in entities]
         metadata = {
             "strategy": "shared_context_batch",
-            "prompt_version": self.prompt_version,
+            "prompt_version": self._prompt_version(),
             "batch_entities": entity_names,
             "entity_evidence_ids": {
                 name: list(ids)
@@ -133,7 +133,7 @@ class TripletGenerator:
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
-                temperature=self.temperature,
+                temperature=self._temperature(),
                 **self._thinking_options,
             )
             raw_result = response.choices[0].message.content.strip()
@@ -220,7 +220,7 @@ class TripletGenerator:
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
-                temperature=self.temperature,
+                temperature=self._temperature(),
                 **self._thinking_options,
             )
             raw_result = response.choices[0].message.content.strip()
@@ -233,7 +233,7 @@ class TripletGenerator:
                     raw_response=raw_result,
                     parsed=triplets,
                     latency_ms=int((time.perf_counter() - started) * 1000),
-                    metadata={"strategy": "llm_direct", "prompt_version": self.prompt_version},
+                    metadata={"strategy": "llm_direct", "prompt_version": self._prompt_version()},
                 )
                 self.recorder.record_triplets(
                     "raw", triplets, entity_name="__document__",
@@ -249,7 +249,7 @@ class TripletGenerator:
                     raw_response=raw_result,
                     latency_ms=int((time.perf_counter() - started) * 1000),
                     success=False, error_message=safe_error,
-                    metadata={"strategy": "llm_direct", "prompt_version": self.prompt_version},
+                    metadata={"strategy": "llm_direct", "prompt_version": self._prompt_version()},
                 )
             raise RuntimeError(f"直接三元组抽取失败：{safe_error}") from exc
 
@@ -323,6 +323,14 @@ Final output schema (use this exact six-field structure):
 ]
 evidence_sentence_ids is mandatory and must be an integer array such as [142], never [S142].
 """
+
+    def _prompt_version(self):
+        # Keeps lightweight test doubles created with __new__ compatible.
+        return getattr(self, "prompt_version", "relation-batch-v1")
+
+    def _temperature(self):
+        # Keeps lightweight test doubles created with __new__ compatible.
+        return float(getattr(self, "temperature", 0.1))
 
     def _build_direct_prompt(self, document_text):
         return f"""任务：直接从下列施工文档抽取知识图谱三元组。
