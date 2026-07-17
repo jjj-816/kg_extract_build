@@ -1,15 +1,27 @@
 import unittest
+from datetime import datetime
 
 from kg_extract_build.dashboard_run import (
+    PIPELINE_STAGE_LABELS,
     build_llm_config,
     chunking_notice,
     provider_form_defaults,
     relation_strategy_notice,
     thinking_mode_notice,
+    default_run_name,
 )
 
 
 class DashboardRunTests(unittest.TestCase):
+    def test_default_run_name_uses_supplied_timestamp(self):
+        self.assertEqual(
+            default_run_name(datetime(2026, 7, 15, 16, 30, 5)),
+            "kg-run-20260715-163005",
+        )
+    def test_pipeline_stages_include_preprocessing_before_chunking(self):
+        stages = [stage for stage, _label in PIPELINE_STAGE_LABELS]
+        assert stages.index("preprocessing") < stages.index("chunking")
+
     def test_default_chunking_notice_is_explicit(self):
         level, message = chunking_notice(2000)
         self.assertEqual(level, "info")

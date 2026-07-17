@@ -82,6 +82,11 @@ def provider_form_defaults(provider_id):
     }
 
 
+def default_run_name(now=None):
+    now = now or datetime.now()
+    return now.strftime("kg-run-%Y%m%d-%H%M%S")
+
+
 # ---------------------------------------------------------------------------
 # Run registry – survives Streamlit reruns
 # ---------------------------------------------------------------------------
@@ -96,6 +101,8 @@ def get_run_registry():
 # Monitor body – pure event-to-UI rendering
 # ---------------------------------------------------------------------------
 
+
+PIPELINE_STAGE_LABELS = [('document', '文档'), ('preprocessing', '预处理'), ('chunking', '切片'), ('entity_extraction', '实体抽取'), ('entity_alignment', '实体对齐'), ('retrieval', '语义检索'), ('triplet_extraction', '三元组生成'), ('triplet_correction', '校正'), ('completed', '完成')]
 
 def render_monitor_body(registry):
     events = registry.drain_events()
@@ -121,16 +128,7 @@ def render_monitor_body(registry):
     st.write(f"当前阶段：{state.get('stage', '等待开始')}")
     st.write(f"当前文档：{state.get('document_name') or '—'}")
 
-    stage_labels = [
-        ("document", "文档"),
-        ("chunking", "切片"),
-        ("entity_extraction", "实体抽取"),
-        ("entity_alignment", "实体对齐"),
-        ("retrieval", "语义检索"),
-        ("triplet_extraction", "三元组生成"),
-        ("triplet_correction", "校正"),
-        ("completed", "完成"),
-    ]
+    stage_labels = PIPELINE_STAGE_LABELS
     seen_stages = set(state.get("seen_stages", []))
     st.caption(
         " → ".join(
@@ -193,9 +191,11 @@ def render_run_page():
 
     # -- left: configuration ------------------------------------------------
     with config_col:
+        if "experiment_run_name" not in st.session_state:
+            st.session_state["experiment_run_name"] = default_run_name()
         run_name = st.text_input(
             "实验名称",
-            value=datetime.now().strftime("kg-run-%Y%m%d-%H%M%S"),
+            key="experiment_run_name",
             disabled=registry.is_running,
         )
         folder_text = st.text_input(

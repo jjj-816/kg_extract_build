@@ -5,6 +5,7 @@ import time
 from openai import OpenAI
 
 from .llm_thinking import build_thinking_options
+from .preprocess import is_valid_entity_candidate
 from .run_config import redact_text
 from .settings import UNKNOWN_TYPE
 
@@ -35,11 +36,16 @@ class TripletGenerator:
             provider_id,
             enable_thinking,
         )
+        self.type_completion_call_count = 0
 
-    def generate(self, entity, context):
+    def generate(self, entity, evidence):
         entity_name = entity["name"]
         entity_type = entity.get("type", UNKNOWN_TYPE)
-        prompt = self._build_prompt(entity_name, entity_type, context)
+        evidence_by_id = {
+            int(item["sentence_index"]): str(item["sentence"])
+            for item in evidence
+        }
+        prompt = self._build_prompt(entity_name, entity_type, evidence_by_id)
         started = time.perf_counter()
         try:
             response = self.client.chat.completions.create(
@@ -49,7 +55,10 @@ class TripletGenerator:
                 **self._thinking_options,
             )
             raw_result = response.choices[0].message.content.strip()
-            triplets = self._parse_triplets(raw_result, entity_name, entity_type, context)
+            triplets = self._parse_triplets(
+                raw_result, entity_name, entity_type,
+                "\n".join(evidence_by_id.values()), set(evidence_by_id), evidence_by_id,
+            )
             llm_call_id = None
             if self.recorder is not None:
                 llm_call_id = self.recorder.record_llm_call(
@@ -59,7 +68,7 @@ class TripletGenerator:
                     parsed=triplets,
                     latency_ms=int((time.perf_counter() - started) * 1000),
                     entity_name=entity_name,
-                    metadata={"context": context, "entity_type": entity_type},
+                    metadata={"evidence_ids": sorted(evidence_by_id), "entity_type": entity_type},
                 )
                 self.recorder.record_triplets(
                     "raw",
@@ -87,7 +96,7 @@ class TripletGenerator:
                     success=False,
                     error_message=safe_error,
                     entity_name=entity_name,
-                    metadata={"context": context, "entity_type": entity_type},
+                    metadata={"evidence_ids": sorted(evidence_by_id), "entity_type": entity_type},
                 )
             return []
 
@@ -104,6 +113,7 @@ class TripletGenerator:
             entity_evidence_ids,
         )
         started = time.perf_counter()
+        raw_result = None
         entity_names = [entity["name"] for entity in entities]
         metadata = {
             "strategy": "shared_context_batch",
@@ -141,6 +151,8 @@ class TripletGenerator:
                     entity_name,
                     entity_type,
                     context,
+                    set(entity_evidence_ids[entity_name]),
+                    evidence_by_id,
                 )
 
             llm_call_id = None
@@ -182,6 +194,7 @@ class TripletGenerator:
                 self.recorder.record_llm_call(
                     stage="triplet_extraction_batch",
                     prompt=prompt,
+                    raw_response=raw_result,
                     latency_ms=int(
                         (time.perf_counter() - started) * 1000
                     ),
@@ -225,6 +238,7 @@ class TripletGenerator:
                         + self.schema.render_allowed_tail_types(
                             entity_type
                         ),
+                        "  required_output_field: evidence_sentence_ids, for example [1]",
                     ]
                 )
             )
@@ -235,6 +249,11 @@ class TripletGenerator:
 
 【目标实体】
 {chr(10).join(target_blocks)}
+
+Required JSON output format:
+[
+  {{"head":"target head","head_type":"type","relation":"relation","tail":"tail","tail_type":"type","evidence_sentence_ids":[1]}}
+]
 
 约束：
 - head 必须是目标实体之一，禁止输出其他 head。
@@ -247,15 +266,76 @@ class TripletGenerator:
 [
   {{"head": "目标实体", "head_type": "实体类型", "relation": "关系", "tail": "尾实体", "tail_type": "尾实体类型"}}
 ]
+
+Each (head, relation, tail) may appear at most once. Never repeat an item.
+At most 5 triplets per head. If no new valid item remains, end the JSON array immediately.
+
+Final output schema (use this exact six-field structure):
+[
+  {{"head":"target head","head_type":"type","relation":"relation","tail":"tail","tail_type":"type","evidence_sentence_ids":[142]}}
+]
+evidence_sentence_ids is mandatory and must be an integer array such as [142], never [S142].
 """
 
     def _parse_batch_array(self, raw_text):
+        raw_text = self._normalize_evidence_id_syntax(raw_text)
         match = re.search(r"\[[\s\S]*\]", raw_text)
         payload = match.group(0) if match else raw_text
-        data = json.loads(payload)
+        try:
+            data = json.loads(payload)
+        except json.JSONDecodeError:
+            data = self._recover_complete_batch_items(payload)
         if not isinstance(data, list):
             raise ValueError("批量三元组响应必须是 JSON 数组")
-        return data
+        return self._deduplicate_batch_items(data)
+
+    @staticmethod
+    def _recover_complete_batch_items(payload):
+        decoder = json.JSONDecoder()
+        items = []
+        index = payload.find("[") + 1
+        length = len(payload)
+        while index < length:
+            while index < length and payload[index].isspace():
+                index += 1
+            if index >= length or payload[index] == "]":
+                break
+            if payload[index] == ",":
+                index += 1
+                continue
+            try:
+                item, index = decoder.raw_decode(payload, index)
+            except json.JSONDecodeError:
+                if items:
+                    break
+                raise
+            if isinstance(item, dict):
+                items.append(item)
+        if not items:
+            raise ValueError("批量三元组响应不包含可恢复的完整对象")
+        return items
+
+    @staticmethod
+    def _deduplicate_batch_items(items):
+        unique_items = []
+        seen = set()
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            signature = json.dumps(item, ensure_ascii=False, sort_keys=True)
+            if signature in seen:
+                continue
+            seen.add(signature)
+            unique_items.append(item)
+        return unique_items
+
+    @staticmethod
+    def _normalize_evidence_id_syntax(raw_text):
+        return re.sub(
+            r"(?<=[\[,])\s*S(\d+)(?=\s*[,\]])",
+            r"\1",
+            raw_text,
+        )
 
     def load_saved_triplets(self, entity_name):
         save_path = self._debug_path(entity_name)
@@ -274,7 +354,7 @@ class TripletGenerator:
             return None
         return triplets
 
-    def _build_prompt(self, entity_name, entity_type, context):
+    def _build_prompt(self, entity_name, entity_type, evidence_by_id):
         allowed_relations = self.schema.render_allowed_relation_schema(entity_type)
         allowed_tail_types = self.schema.render_allowed_tail_types(entity_type)
         return f"""任务：从上下文抽取以指定 head 为中心的知识图谱三元组。
@@ -287,6 +367,11 @@ head_type="{entity_type}"
 
 可选 tail_type：
 {allowed_tail_types}
+
+- Every output item must include evidence_sentence_ids, a non-empty list of S-number integers that directly contain its tail.
+
+Required JSON item example:
+{{"head":"{entity_name}","head_type":"{entity_type}","relation":"relation","tail":"tail","tail_type":"type","evidence_sentence_ids":[1]}}
 
 约束：
 - head 和 head_type 必须固定为上面的值。
@@ -301,10 +386,16 @@ head_type="{entity_type}"
 ]
 
 上下文：
-{context}
+{chr(10).join(f'[S{index}] {sentence}' for index, sentence in evidence_by_id.items())}
 """
 
-    def _parse_triplets(self, raw_text, entity_name, entity_type, context):
+    def _parse_triplets(
+        self, raw_text, entity_name, entity_type, context,
+        allowed_evidence_ids=None, evidence_by_id=None,
+    ):
+        if not hasattr(self, "type_completion_call_count"):
+            self.type_completion_call_count = 0
+        raw_text = self._normalize_evidence_id_syntax(raw_text)
         try:
             match = re.search(r"\[[\s\S]*\]", raw_text)
             payload = match.group(0) if match else raw_text
@@ -319,38 +410,174 @@ head_type="{entity_type}"
             head = str(item.get("head", "")).strip()
             relation = self.schema.normalize_relation(str(item.get("relation", "")).strip())
             tail = str(item.get("tail", "")).strip()
+            head_type = self.schema.normalize_entity_type(entity_type)
             tail_type = self.schema.normalize_entity_type(str(item.get("tail_type", "")).strip())
 
             if head in self.known_entities:
                 head = self.known_entities[head].get("name", head)
 
+            if not is_valid_entity_candidate(head):
+                continue
             if head != entity_name or not relation or not tail:
                 continue
             if len(tail) > 30:
                 continue
+            evidence_ids = item.get("evidence_sentence_ids", [])
+            if allowed_evidence_ids is not None:
+                if not isinstance(evidence_ids, list) or not evidence_ids:
+                    continue
+                try:
+                    evidence_ids = [int(value) for value in evidence_ids]
+                except (TypeError, ValueError):
+                    continue
+                if not set(evidence_ids).issubset(allowed_evidence_ids):
+                    continue
+                selected_text = "\n".join(
+                    evidence_by_id[index]
+                    for index in evidence_ids
+                    if index in evidence_by_id
+                )
+                if tail not in selected_text:
+                    continue
             if tail not in context and tail not in self.known_entities:
                 continue
             if tail in self.known_entities and tail_type == UNKNOWN_TYPE:
-                tail_type = self.known_entities[tail].get("type", UNKNOWN_TYPE)
-            if self.schema.is_relation_allowed(relation, entity_type, tail_type):
+                tail_type = self.schema.normalize_entity_type(
+                    self.known_entities[tail].get("type", UNKNOWN_TYPE)
+                )
+
+            candidate = {
+                "head": head,
+                "head_type": head_type,
+                "relation": relation,
+                "tail": tail,
+                "tail_type": tail_type,
+                "evidence_sentence_ids": evidence_ids,
+            }
+            if allowed_evidence_ids is None:
+                candidate.pop("evidence_sentence_ids")
+            if (
+                not self._is_final_entity_type_allowed(head_type)
+                or not self._is_final_entity_type_allowed(tail_type)
+            ):
+                candidate = self.complete_unknown_types(candidate, context)
+                if candidate is None:
+                    continue
+                head_type = candidate["head_type"]
+                tail_type = candidate["tail_type"]
+
+            if (
+                not self._is_final_entity_type_allowed(head_type)
+                or not self._is_final_entity_type_allowed(tail_type)
+            ):
+                continue
+
+            if self.schema.is_relation_allowed(relation, head_type, tail_type):
                 valid_triplets.append({
                     "head": head,
-                    "head_type": entity_type,
+                    "head_type": head_type,
                     "relation": relation,
                     "tail": tail,
                     "tail_type": tail_type,
+                    **({"evidence_sentence_ids": evidence_ids} if allowed_evidence_ids is not None else {}),
                 })
                 continue
 
-            if self.schema.is_relation_allowed(relation, tail_type, entity_type):
+            if self.schema.is_relation_allowed(relation, tail_type, head_type):
                 valid_triplets.append({
                     "head": tail,
                     "head_type": tail_type,
                     "relation": relation,
                     "tail": head,
-                    "tail_type": entity_type,
+                    "tail_type": head_type,
+                    **({"evidence_sentence_ids": evidence_ids} if allowed_evidence_ids is not None else {}),
                 })
         return valid_triplets
+
+    def _is_final_entity_type_allowed(self, entity_type):
+        validator = getattr(self.schema, "is_final_entity_type_allowed", None)
+        if validator is not None:
+            return validator(entity_type)
+        return bool(entity_type) and entity_type != UNKNOWN_TYPE
+
+    def complete_unknown_types(self, triplet, context):
+        prompt = self._build_type_completion_prompt(triplet, context)
+        started = time.perf_counter()
+        raw_result = None
+        parsed = None
+        error_message = None
+        try:
+            self.type_completion_call_count = (
+                getattr(self, "type_completion_call_count", 0) + 1
+            )
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.0,
+                **self._thinking_options,
+            )
+            raw_result = response.choices[0].message.content.strip()
+            result = json.loads(raw_result)
+            if not isinstance(result, dict) or set(result) != {
+                "head_type", "tail_type",
+            }:
+                raise ValueError("type completion must be a JSON object with head_type and tail_type")
+            head_type = self.schema.normalize_entity_type(result["head_type"])
+            tail_type = self.schema.normalize_entity_type(result["tail_type"])
+            parsed = {"head_type": head_type, "tail_type": tail_type}
+            if (
+                not self._is_final_entity_type_allowed(head_type)
+                or not self._is_final_entity_type_allowed(tail_type)
+            ):
+                raise ValueError("type completion returned an unknown or invalid entity type")
+            if not self.schema.is_relation_allowed(
+                triplet["relation"], head_type, tail_type
+            ):
+                raise ValueError("type completion violates the relation schema")
+            return {
+                **triplet,
+                "head_type": head_type,
+                "tail_type": tail_type,
+            }
+        except Exception as exc:
+            error_message = redact_text(str(exc), secrets=self._secret_values)
+            return None
+        finally:
+            if self.recorder is not None:
+                self.recorder.record_llm_call(
+                    stage="triplet_type_completion",
+                    prompt=prompt,
+                    raw_response=raw_result,
+                    parsed=parsed,
+                    latency_ms=int((time.perf_counter() - started) * 1000),
+                    success=error_message is None,
+                    error_message=error_message,
+                    entity_name=triplet["head"],
+                    metadata={
+                        "context": context,
+                        "triplet": dict(triplet),
+                    },
+                )
+
+    def _build_type_completion_prompt(self, triplet, context):
+        return f'''Task: assign final schema entity types to this existing triplet.
+
+Keep head, relation, and tail exactly unchanged. Do not create, rename, split, or merge entities.
+Use the evidence only to choose types. Return one JSON object and nothing else, exactly:
+{{"head_type":"Schema entity type","tail_type":"Schema entity type"}}
+
+head={triplet["head"]}
+relation={triplet["relation"]}
+tail={triplet["tail"]}
+current_head_type={triplet["head_type"]}
+current_tail_type={triplet["tail_type"]}
+
+Schema entity types:
+{self.schema.render_entity_schema()}
+
+Evidence:
+{context}
+'''
 
     def _parse_line_triplets(self, raw_text, entity_type):
         triplets = []
@@ -412,13 +639,40 @@ class TripletCorrector:
         for entity_name, triplets in raw_triplet_map.items():
             for triplet in triplets:
                 head = triplet.get("head", "").strip()
-                head_type = triplet.get("head_type", UNKNOWN_TYPE).strip()
+                head_type = self.schema.normalize_entity_type(
+                    triplet.get("head_type", UNKNOWN_TYPE).strip()
+                )
                 relation = triplet.get("relation", "").strip()
                 tail = triplet.get("tail", "").strip()
-                tail_type = triplet.get("tail_type", UNKNOWN_TYPE).strip()
+                tail_type = self.schema.normalize_entity_type(
+                    triplet.get("tail_type", UNKNOWN_TYPE).strip()
+                )
                 if (
-                    (head == entity_name or tail == entity_name)
+                    is_valid_entity_candidate(head)
+                    and (head == entity_name or tail == entity_name)
+                    and self._is_final_entity_type_allowed(head_type)
+                    and self._is_final_entity_type_allowed(tail_type)
                     and self.schema.is_relation_allowed(relation, head_type, tail_type)
                 ):
-                    valid_triplets.append((head, head_type, relation, tail, tail_type))
-        return list(set(valid_triplets))
+                    valid_triplets.append({
+                        "head": head,
+                        "head_type": head_type,
+                        "relation": relation,
+                        "tail": tail,
+                        "tail_type": tail_type,
+                        "evidence_sentence_ids": triplet.get("evidence_sentence_ids", []),
+                    })
+        deduplicated = {}
+        for triplet in valid_triplets:
+            key = (
+                triplet["head"], triplet["head_type"], triplet["relation"],
+                triplet["tail"], triplet["tail_type"],
+            )
+            deduplicated.setdefault(key, triplet)
+        return list(deduplicated.values())
+
+    def _is_final_entity_type_allowed(self, entity_type):
+        validator = getattr(self.schema, "is_final_entity_type_allowed", None)
+        if validator is not None:
+            return validator(entity_type)
+        return bool(entity_type) and entity_type != UNKNOWN_TYPE

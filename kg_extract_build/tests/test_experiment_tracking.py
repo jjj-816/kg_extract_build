@@ -102,6 +102,143 @@ class ExperimentRecorderTests(unittest.TestCase):
             callbacks, [{"stage": "entity_extraction", "success": True}]
         )
 
+    def test_evaluation_input_only_attaches_retrieval_for_triplet_head(self):
+        store = MemoryExperimentStore()
+        run_id = store.start_run("test", {}, {}, "")
+        document_id = store.start_document(run_id, "doc.md", "case", "abc", "A B")
+        store.save_triplets([
+            {
+                "run_id": run_id,
+                "document_id": document_id,
+                "stage": "final",
+                "head": "A",
+                "head_type": "类型1",
+                "relation": "REL",
+                "tail": "B",
+                "tail_type": "类型2",
+            }
+        ])
+        store.save_retrieval_results([
+            {
+                "run_id": run_id,
+                "document_id": document_id,
+                "entity_name": "A",
+                "query_alias": "A",
+                "sentence": "A 的检索句",
+            },
+            {
+                "run_id": run_id,
+                "document_id": document_id,
+                "entity_name": "B",
+                "query_alias": "B",
+                "sentence": "B 的检索句",
+            },
+        ])
+
+        store.save_triplet_evidence(1, [1])
+        evidence = store.load_evaluation_input(run_id)["evidence"]
+        triplet = ("A", "类型1", "REL", "B", "类型2")
+        self.assertEqual(evidence["doc"][triplet], ["A 的检索句"])
+
+    def test_final_triplet_links_selected_retrieval_sentence(self):
+        store = MemoryExperimentStore()
+        run_id = store.start_run("test", {}, {}, "")
+        document_id = store.start_document(run_id, "doc.md", "case", "abc", "text")
+        recorder = ExperimentRecorder(store, None, run_id, document_id)
+        recorder.record_chunks(
+            "retrieval_sentence", [{"index": 4, "content": "A REL B"}]
+        )
+        recorder.record_retrieval(
+            "A", "A", [{"sentence_index": 4, "sentence": "A REL B", "score": 1.0, "match_type": "direct"}]
+        )
+        recorder.record_triplets("final", [{
+            "head": "A", "head_type": "T", "relation": "REL", "tail": "B",
+            "tail_type": "T", "evidence_sentence_ids": [4],
+        }])
+
+        self.assertEqual(len(store.triplet_evidence), 1)
+        self.assertEqual(store.triplet_evidence[0]["evidence_order"], 1)
+
+    def test_memory_store_deletes_only_selected_run_and_children(self):
+        store = MemoryExperimentStore()
+        deleted_run_id = store.start_run("delete", {}, {}, "")
+        retained_run_id = store.start_run("retain", {}, {}, "")
+        deleted_document_id = store.start_document(
+            deleted_run_id, "delete.md", "case", "deleted", "delete text"
+        )
+        retained_document_id = store.start_document(
+            retained_run_id, "retain.md", "case", "retained", "retain text"
+        )
+        store.save_chunks(
+            deleted_run_id,
+            deleted_document_id,
+            "retrieval_sentence",
+            [{"index": 0, "content": "delete"}],
+        )
+        store.save_chunks(
+            retained_run_id,
+            retained_document_id,
+            "retrieval_sentence",
+            [{"index": 0, "content": "retain"}],
+        )
+
+        self.assertTrue(store.delete_run(deleted_run_id))
+        self.assertNotIn(deleted_run_id, store.runs)
+        self.assertNotIn(deleted_document_id, store.documents)
+        self.assertFalse(any(row["run_id"] == deleted_run_id for row in store.chunks))
+        self.assertIn(retained_run_id, store.runs)
+        self.assertIn(retained_document_id, store.documents)
+        self.assertTrue(any(row["run_id"] == retained_run_id for row in store.chunks))
+        self.assertFalse(store.delete_run(deleted_run_id))
+
+    def test_memory_store_deletes_evaluation_metrics_for_selected_run(self):
+        store = MemoryExperimentStore()
+        deleted_run_id = store.start_run("delete", {}, {}, "")
+        retained_run_id = store.start_run("retain", {}, {}, "")
+        store.evaluation_runs = [
+            {"evaluation_id": "delete-evaluation", "run_id": deleted_run_id},
+            {"evaluation_id": "retain-evaluation", "run_id": retained_run_id},
+        ]
+        store.evaluation_metrics = [
+            {"evaluation_id": "delete-evaluation"},
+            {"evaluation_id": "retain-evaluation"},
+        ]
+
+        store.delete_run(deleted_run_id)
+
+        self.assertEqual(
+            store.evaluation_metrics,
+            [{"evaluation_id": "retain-evaluation"}],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class EvaluationPersistenceTests(unittest.TestCase):
+    def test_memory_store_saves_and_lists_evaluations(self):
+        from kg_extract_build.evaluation import EvaluationResult, MetricValue
+
+        store = MemoryExperimentStore()
+        run_id = store.start_run("评估测试", {}, {}, "")
+        result = EvaluationResult(
+            overall={"triplet_f1": MetricValue("triplet_f1", 0.75)},
+            by_document={},
+            matched_documents=["doc"],
+            missing_gold_documents=[],
+            extra_gold_documents=[],
+        )
+
+        evaluation_id = store.save_evaluation(
+            run_id=run_id,
+            gold_path="D:/gold",
+            gold_hash="a" * 64,
+            metric_config={"matching": "strict"},
+            result=result,
+        )
+        rows = store.list_evaluations(run_id, gold_hash="a" * 64)
+
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["evaluation_id"], evaluation_id)
+        self.assertEqual(rows[0]["triplet_f1"], 0.75)

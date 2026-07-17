@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS kg_experiment_run (
     run_id CHAR(36) PRIMARY KEY,
     run_name VARCHAR(255) NOT NULL,
     status VARCHAR(32) NOT NULL,
+    deletion_state VARCHAR(32) NOT NULL DEFAULT 'active',
     code_commit VARCHAR(64) NULL,
     config_snapshot JSON NULL,
     schema_snapshot JSON NULL,
@@ -139,4 +140,63 @@ CREATE TABLE IF NOT EXISTS kg_triplet (
         REFERENCES kg_document(document_id) ON DELETE CASCADE,
     CONSTRAINT fk_kg_triplet_llm FOREIGN KEY (source_llm_call_id)
         REFERENCES kg_llm_call(llm_call_id) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS kg_evaluation_run (
+    evaluation_id CHAR(36) PRIMARY KEY,
+    run_id CHAR(36) NOT NULL,
+    gold_path VARCHAR(1024) NOT NULL,
+    gold_hash CHAR(64) NOT NULL,
+    metric_config_json JSON NULL,
+    summary_json JSON NULL,
+    created_at DATETIME(6) NOT NULL,
+    INDEX idx_kg_eval_run_gold (run_id, gold_hash),
+    CONSTRAINT fk_kg_eval_run FOREIGN KEY (run_id)
+        REFERENCES kg_experiment_run(run_id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS kg_triplet_evidence (
+    triplet_id BIGINT UNSIGNED NOT NULL,
+    retrieval_id BIGINT UNSIGNED NOT NULL,
+    evidence_order INT UNSIGNED NOT NULL,
+    source VARCHAR(32) NOT NULL DEFAULT 'model_selected',
+    PRIMARY KEY (triplet_id, retrieval_id),
+    INDEX idx_kg_triplet_evidence_retrieval (retrieval_id),
+    CONSTRAINT fk_kg_triplet_evidence_triplet FOREIGN KEY (triplet_id)
+        REFERENCES kg_triplet(triplet_id) ON DELETE CASCADE,
+    CONSTRAINT fk_kg_triplet_evidence_retrieval FOREIGN KEY (retrieval_id)
+        REFERENCES kg_retrieval_result(retrieval_id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS kg_evaluation_metric (
+    metric_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    evaluation_id CHAR(36) NOT NULL,
+    scope_type VARCHAR(32) NOT NULL,
+    scope_name VARCHAR(512) NOT NULL,
+    metric_name VARCHAR(128) NOT NULL,
+    metric_value DOUBLE NOT NULL,
+    numerator DOUBLE NULL,
+    denominator DOUBLE NULL,
+    details_json JSON NULL,
+    created_at DATETIME(6) NOT NULL,
+    INDEX idx_kg_eval_metric_scope (evaluation_id, scope_type, metric_name),
+    CONSTRAINT fk_kg_eval_metric_run FOREIGN KEY (evaluation_id)
+        REFERENCES kg_evaluation_run(evaluation_id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS kg_evaluation_entity_alignment (
+    alignment_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    evaluation_id CHAR(36) NOT NULL,
+    document_name VARCHAR(512) NOT NULL,
+    entity_name VARCHAR(512) NOT NULL,
+    entity_type VARCHAR(255) NOT NULL,
+    canonical_id VARCHAR(255) NULL,
+    canonical_name VARCHAR(512) NULL,
+    canonical_type VARCHAR(255) NULL,
+    match_status VARCHAR(64) NOT NULL,
+    candidate_count INT UNSIGNED NOT NULL DEFAULT 0,
+    created_at DATETIME(6) NOT NULL,
+    INDEX idx_kg_eval_alignment_eval (evaluation_id, match_status),
+    CONSTRAINT fk_kg_eval_alignment_run FOREIGN KEY (evaluation_id)
+        REFERENCES kg_evaluation_run(evaluation_id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -215,3 +215,31 @@ python -m streamlit run kg_extract_build/dashboard.py
 ```
 
 控制台包含六个页面：运行实验（默认首页）、实验总览、实验批次、文档追踪、LLM 调用和知识图谱。API Key 和数据库密码既可通过 `.env` 提供，也可在侧边栏临时输入，不会持久化到数据库或日志中。
+
+### 批次删除与三元组类型校验
+
+在“实验批次”页面删除已完成或失败的批次时，系统会同时删除该批次在 MySQL 中的所有子记录，以及 Milvus 中对应的检索句向量分段；此操作不可撤销。运行中的批次受保护，不能删除。
+
+跨 MySQL 与 Milvus 的删除采用可恢复状态机。初始状态为 `active`：系统先删除 Milvus 向量，再把批次标记为 `vectors_deleted_sql_pending`，最后删除 MySQL 父记录及其级联子记录。如果最后的 SQL 删除失败，页面会明确显示“向量已删除、SQL 数据待删除”，并提供“恢复删除（仅删除 SQL 数据）”操作；恢复操作不会再次访问 Milvus，也不需要操作者选择要删除哪个数据库。
+
+最终三元组的头、尾实体类型都必须属于当前启用的 Schema。遇到未知类型时，`triplet_type_completion` LLM 阶段只会尝试补全一次；若补全后仍不属于活动 Schema，该三元组会被排除。
+
+## 实验评估
+
+评估模块用于把历史实验输出和人工标注三元组进行对比。使用前需要先启用并初始化 MySQL，确保历史实验已经写入 `kg_experiment_run`、`kg_document` 和 `kg_triplet`。
+
+人工标注文件夹推荐结构：
+
+```text
+gold_annotations/
+  文档名/
+    实体名.json
+```
+
+每个 JSON 文件可以是当前 debug 文件格式：
+
+```json
+{"entity": "实体名", "triplets": [{"head": "A", "head_type": "类型", "relation": "REL", "tail": "B", "tail_type": "类型"}]}
+```
+
+也可以直接是三元组数组。进入 Streamlit 后打开“实验评估”，选择历史实验，输入标注文件夹路径，预览匹配情况后点击“计算指标”。保存后结果会写入 `kg_evaluation_run` 和 `kg_evaluation_metric`。

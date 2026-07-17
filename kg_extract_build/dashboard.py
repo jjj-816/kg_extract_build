@@ -1,9 +1,13 @@
 import json
 import os
+from dataclasses import dataclass
 from pathlib import Path
 
 import pandas as pd
 import streamlit as st
+
+from kg_extract_build.persistence import MySQLExperimentStore
+from kg_extract_build.vector_store import build_vector_store
 
 
 try:
@@ -128,6 +132,104 @@ def frame(rows):
     return pd.DataFrame(rows) if rows else pd.DataFrame()
 
 
+@dataclass(frozen=True)
+class DeletionResult:
+    deleted: bool
+    state: str
+    message: str
+
+
+def _experiment_store(config):
+    options = {
+        key: config[key]
+        for key in ("host", "port", "user", "password", "database", "charset")
+        if key in config
+    }
+    return MySQLExperimentStore(**options)
+
+
+def delete_run_with_vectors(config: dict, run_id: str) -> DeletionResult:
+    """Delete vectors, persist a resume marker, then cascade the SQL parent."""
+    store = _experiment_store(config)
+    state = store.get_deletion_state(run_id)
+    if state is None:
+        return DeletionResult(False, "missing", "未找到实验批次。")
+    if state != "active":
+        return DeletionResult(False, state, "批次删除已进入恢复状态，请使用恢复删除。")
+    vector_store = build_vector_store()
+    try:
+        vector_store.delete_segments_by_run(run_id)
+    finally:
+        vector_store.close()
+    if not store.mark_vectors_deleted_sql_pending(run_id):
+        return DeletionResult(False, "active", "无法记录向量删除状态，SQL 数据未删除。")
+    if store.delete_run(run_id):
+        return DeletionResult(True, "deleted", "实验批次及关联数据已删除。")
+    return DeletionResult(
+        False,
+        "vectors_deleted_sql_pending",
+        "向量已删除，但 SQL 数据仍保留；请使用恢复删除。",
+    )
+
+
+def resume_pending_run_deletion(config: dict, run_id: str) -> DeletionResult:
+    """Complete only the SQL phase for a run whose vectors are already deleted."""
+    store = _experiment_store(config)
+    if store.get_deletion_state(run_id) != "vectors_deleted_sql_pending":
+        return DeletionResult(False, "active", "该批次不需要恢复删除。")
+    if store.delete_run(run_id):
+        return DeletionResult(True, "deleted", "恢复删除完成。")
+    return DeletionResult(False, "vectors_deleted_sql_pending", "恢复删除未完成，请稍后重试。")
+
+
+def render_delete_panel(config, selected_run):
+    """Render the explicit confirmation gate for deleting one completed run."""
+    run_id = selected_run["run_id"]
+    status = selected_run["status"]
+    deletion_state = selected_run.get("deletion_state", "active")
+    with st.expander("危险操作：永久删除此实验批次"):
+        st.caption(
+            " · ".join(
+                [
+                    f"名称：{selected_run['run_name']}",
+                    f"ID：{run_id}",
+                    f"状态：{status}",
+                    f"文档数：{selected_run['document_count']}",
+                    f"最终三元组：{selected_run['final_triplet_count']}",
+                ]
+            )
+        )
+        confirmed = st.checkbox(
+            f"我确认永久删除批次 {run_id} 及其全部关联数据",
+            key=f"confirm_delete_{run_id}",
+        )
+        pending = deletion_state == "vectors_deleted_sql_pending"
+        if pending:
+            st.warning("向量已删除，SQL 批次数据仍待删除。恢复操作不会再次访问 Milvus。")
+        if st.button(
+            "恢复删除（仅删除 SQL 数据）" if pending else "永久删除此实验批次",
+            type="primary",
+            disabled=(status == "running" or not confirmed),
+        ):
+            try:
+                result = (
+                    resume_pending_run_deletion(config, run_id)
+                    if pending
+                    else delete_run_with_vectors(config, run_id)
+                )
+            except Exception as exc:
+                st.error(f"删除失败，未删除 SQL 批次：{exc}")
+                return
+            if result.deleted:
+                st.session_state.pop("preferred_run_id", None)
+                st.success(result.message)
+                st.rerun()
+            else:
+                st.warning(result.message)
+        if status == "running":
+            st.warning("运行中的批次不能删除。")
+
+
 def render_header(title, description):
     st.markdown('<div class="kg-eyebrow">KG Experiment Console</div>', unsafe_allow_html=True)
     st.title(title)
@@ -138,7 +240,7 @@ def run_options(config):
     return query(
         config,
         """
-        SELECT run_id, run_name, status, started_at
+        SELECT run_id, run_name, status, deletion_state, started_at
         FROM kg_experiment_run
         ORDER BY started_at DESC
         LIMIT 200
@@ -228,7 +330,7 @@ def runs_page(config):
     rows = query(
         config,
         f"""
-        SELECT run_id, run_name, status, code_commit, started_at, finished_at,
+        SELECT run_id, run_name, status, deletion_state, code_commit, started_at, finished_at,
                error_message
         FROM kg_experiment_run
         {where}
@@ -244,11 +346,15 @@ def runs_page(config):
         detail = query(
             config,
             """
-            SELECT config_snapshot, schema_snapshot, error_message
+            SELECT run_id, run_name, status, deletion_state, config_snapshot, schema_snapshot,
+                   error_message,
+                   (SELECT COUNT(*) FROM kg_document WHERE run_id=%s) AS document_count,
+                   (SELECT COUNT(*) FROM kg_triplet
+                    WHERE run_id=%s AND stage='final') AS final_triplet_count
             FROM kg_experiment_run
             WHERE run_id=%s
             """,
-            (run_id,),
+            (run_id, run_id, run_id),
         )[0]
         config_tab, schema_tab, error_tab = st.tabs(["配置快照", "Schema 快照", "错误"])
         with config_tab:
@@ -257,6 +363,7 @@ def runs_page(config):
             st.json(detail.get("schema_snapshot") or {})
         with error_tab:
             st.code(detail.get("error_message") or "无错误", language="text")
+        render_delete_panel(config, detail)
 
 
 def documents_page(config):
@@ -510,7 +617,16 @@ def setup_help():
     )
 
 
+from kg_extract_build.dashboard_evaluation import render_evaluation_page
 from kg_extract_build.dashboard_run import render_run_page
+
+RUN_PAGE = "运行实验"
+EVALUATION_PAGE = "实验评估"
+OVERVIEW_PAGE = "实验总览"
+RUNS_PAGE = "实验批次"
+DOCUMENTS_PAGE = "文档追踪"
+LLM_PAGE = "LLM 调用"
+GRAPH_PAGE = "知识图谱"
 
 requested_page = st.session_state.pop("requested_navigation_page", None)
 if requested_page is not None:
@@ -518,23 +634,33 @@ if requested_page is not None:
 
 page = st.sidebar.radio(
     "导航",
-    ["运行实验", "实验总览", "实验批次", "文档追踪", "LLM 调用", "知识图谱"],
+    [
+        RUN_PAGE,
+        EVALUATION_PAGE,
+        OVERVIEW_PAGE,
+        RUNS_PAGE,
+        DOCUMENTS_PAGE,
+        LLM_PAGE,
+        GRAPH_PAGE,
+    ],
     key="navigation_page",
 )
 
-if page == "运行实验":
+if page == RUN_PAGE:
     render_run_page()
+elif page == EVALUATION_PAGE:
+    render_evaluation_page()
 else:
     config = connection_config()
     try:
         with st.spinner("正在读取实验数据库…"):
-            if page == "实验总览":
+            if page == OVERVIEW_PAGE:
                 overview_page(config)
-            elif page == "实验批次":
+            elif page == RUNS_PAGE:
                 runs_page(config)
-            elif page == "文档追踪":
+            elif page == DOCUMENTS_PAGE:
                 documents_page(config)
-            elif page == "LLM 调用":
+            elif page == LLM_PAGE:
                 llm_page(config)
             else:
                 graph_page(config)

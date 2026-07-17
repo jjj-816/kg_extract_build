@@ -8,6 +8,7 @@ from .documents import BreakpointManager, DocumentLoader, discover_documents
 from .entity_aligner import EntityAligner
 from .extractor import LongDocLLMEntityExtractor
 from .persistence import ExperimentRecorder, build_experiment_store, content_hash
+from .preprocess import preprocess_document
 from .relation_batching import build_relation_batches
 # from .neo4j_builder import ShaleGasNeo4jBuilder
 from .retriever import CorpusRetriever
@@ -296,6 +297,24 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
             print("=" * 60)
 
             source_type = infer_source_type(file_name)
+            publish(
+                "preprocessing_started",
+                "preprocessing",
+                "Preprocessing document",
+                document_name=file_name,
+            )
+            preprocess_result = preprocess_document(content)
+            extraction_content = preprocess_result.clean_text
+            stats = preprocess_result.stats
+            publish(
+                "preprocessing_completed",
+                "preprocessing",
+                "Preprocessing completed: "
+                f"images={stats['image_markdown_count']}, "
+                f"sequences={stats['removed_sequence_line_count']}, "
+                f"identifiers={stats['redacted_identifier_count']}",
+                document_name=file_name,
+            )
             document_id = store.start_document(
                 run_id,
                 file_name,
@@ -336,7 +355,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     recorder.record_entities("aligned", entities)
                 else:
                     entities = extractor.extract(
-                        content,
+                        extraction_content,
                         recorder=recorder,
                         cancel_token=cancel_token,
                         progress_callback=lambda completed, total: publish(
@@ -418,7 +437,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     continue
 
                 retriever = CorpusRetriever(
-                    content,
+                    extraction_content,
                     VECTOR_MODEL_PATH,
                     top_n=config.retrieve_sentence_num,
                 )
@@ -504,7 +523,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                         name = entity["name"]
                         raw_triplets[name] = generator.generate(
                             entity,
-                            evidence_context(entity_evidence[name]),
+                            entity_evidence[name],
                         )
                 else:
                     entities_by_name = {
@@ -554,10 +573,11 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                             name = batch.entity_names[0]
                             raw_triplets[name] = generator.generate(
                                 batch_entities[0],
-                                evidence_context(
-                                    batch.evidence,
-                                    batch.entity_evidence_ids[name],
-                                ),
+                                [
+                                    hit for hit in batch.evidence
+                                    if int(hit["sentence_index"])
+                                    in batch.entity_evidence_ids[name]
+                                ],
                             )
                         else:
                             raw_triplets.update(

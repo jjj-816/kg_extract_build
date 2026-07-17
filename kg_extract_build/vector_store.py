@@ -9,6 +9,9 @@ class NullVectorStore:
     def upsert_segments(self, records, embeddings):
         return None
 
+    def delete_segments_by_run(self, run_id: str) -> None:
+        return None
+
     def close(self):
         return None
 
@@ -66,6 +69,13 @@ class MilvusSegmentStore:
         self.client.upsert(
             collection_name=self.collection_name,
             data=payload,
+        )
+
+    def delete_segments_by_run(self, run_id: str) -> None:
+        escaped = str(run_id).replace("\\", "\\\\").replace('"', '\\"')
+        self.client.delete(
+            collection_name=self.collection_name,
+            filter=f'run_id == "{escaped}"',
         )
 
     def close(self):
