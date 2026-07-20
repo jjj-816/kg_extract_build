@@ -13,7 +13,10 @@ class MethodProfile:
     prompt_version: str
     relation_strategy: str
     enable_entity_alignment: bool
+    enable_llm_alignment: bool
     enable_retrieval: bool
+    enable_shared_grouping: bool
+    enable_context_deduplication: bool
     enable_schema_validation: bool
 
     def snapshot(self) -> dict[str, object]:
@@ -28,7 +31,10 @@ METHOD_PROFILES: dict[str, MethodProfile] = {
         prompt_version="direct-v1",
         relation_strategy="llm_direct",
         enable_entity_alignment=False,
+        enable_llm_alignment=False,
         enable_retrieval=False,
+        enable_shared_grouping=False,
+        enable_context_deduplication=False,
         enable_schema_validation=False,
     ),
     "R3": MethodProfile(
@@ -38,7 +44,10 @@ METHOD_PROFILES: dict[str, MethodProfile] = {
         prompt_version="single-entity-v1",
         relation_strategy="single_entity",
         enable_entity_alignment=True,
+        enable_llm_alignment=True,
         enable_retrieval=True,
+        enable_shared_grouping=False,
+        enable_context_deduplication=True,
         enable_schema_validation=False,
     ),
     "R4": MethodProfile(
@@ -48,7 +57,10 @@ METHOD_PROFILES: dict[str, MethodProfile] = {
         prompt_version="relation-batch-v1",
         relation_strategy="fixed_batch",
         enable_entity_alignment=True,
+        enable_llm_alignment=True,
         enable_retrieval=True,
+        enable_shared_grouping=False,
+        enable_context_deduplication=True,
         enable_schema_validation=False,
     ),
     "R5": MethodProfile(
@@ -58,7 +70,10 @@ METHOD_PROFILES: dict[str, MethodProfile] = {
         prompt_version="relation-batch-v1",
         relation_strategy="shared_context_batch",
         enable_entity_alignment=True,
+        enable_llm_alignment=True,
         enable_retrieval=True,
+        enable_shared_grouping=True,
+        enable_context_deduplication=True,
         enable_schema_validation=False,
     ),
     "R6": MethodProfile(
@@ -68,9 +83,19 @@ METHOD_PROFILES: dict[str, MethodProfile] = {
         prompt_version="relation-batch-v1",
         relation_strategy="shared_context_batch",
         enable_entity_alignment=True,
+        enable_llm_alignment=True,
         enable_retrieval=True,
+        enable_shared_grouping=True,
+        enable_context_deduplication=True,
         enable_schema_validation=True,
     ),
+    "D0": MethodProfile("D0", "D0 · Full Method（复用 R6）", "消融基准，与 R6 完全相同。", "relation-batch-v1", "shared_context_batch", True, True, True, True, True, True),
+    "D1": MethodProfile("D1", "D1 · 无实体对齐", "仅移除实体对齐，直接将原始实体作为后续抽取头实体。", "relation-batch-v1", "shared_context_batch", False, False, True, True, True, True),
+    "D2": MethodProfile("D2", "D2 · 无 LLM 对齐", "保留规则/向量候选分组，仅移除 LLM 对齐判定。", "relation-batch-v1", "shared_context_batch", True, False, True, True, True, True),
+    "D3": MethodProfile("D3", "D3 · 无检索", "保留其他模块，但每个实体使用固定文档句子上下文，不做实体条件检索。", "relation-batch-v1", "shared_context_batch", True, True, False, True, True, True),
+    "D4": MethodProfile("D4", "D4 · 无共享分组", "保留其他模块，改用固定顺序批次而不是按共享证据分组。", "relation-batch-v1", "fixed_batch", True, True, True, False, True, True),
+    "D5": MethodProfile("D5", "D5 · 无上下文去重", "保留其他模块，但共享批次中保留同一句证据的重复出现。", "relation-batch-v1", "shared_context_batch", True, True, True, True, False, True),
+    "D6": MethodProfile("D6", "D6 · 无 Schema 校验（复用 R5）", "仅移除后置 Schema 校验，与 R5 完全相同。", "relation-batch-v1", "shared_context_batch", True, True, True, True, True, False),
 }
 
 

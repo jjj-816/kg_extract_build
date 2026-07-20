@@ -35,20 +35,21 @@ def _normalize_hits(hits: Sequence[Mapping]) -> dict[int, dict]:
 def _make_batch(
     entity_names: Sequence[str],
     normalized: Mapping[str, Mapping[int, dict]],
+    deduplicate_evidence: bool = True,
 ) -> RelationBatch:
     evidence_by_id = {}
+    evidence_rows = []
     entity_evidence_ids = {}
     for entity_name in entity_names:
         ids = tuple(sorted(normalized[entity_name]))
         entity_evidence_ids[entity_name] = ids
         for sentence_index in ids:
-            evidence_by_id.setdefault(
-                sentence_index,
-                dict(normalized[entity_name][sentence_index]),
-            )
-    evidence = tuple(
-        evidence_by_id[index] for index in sorted(evidence_by_id)
-    )
+            candidate = dict(normalized[entity_name][sentence_index])
+            if deduplicate_evidence:
+                evidence_by_id.setdefault(sentence_index, candidate)
+            else:
+                evidence_rows.append(candidate)
+    evidence = tuple(evidence_by_id[index] for index in sorted(evidence_by_id)) if deduplicate_evidence else tuple(evidence_rows)
     return RelationBatch(
         entity_names=tuple(entity_names),
         evidence=evidence,
@@ -65,6 +66,7 @@ def build_relation_batches(
     max_entities: int,
     min_overlap: float,
     max_context_chars: int,
+    deduplicate_evidence: bool = True,
 ) -> list[RelationBatch]:
     if max_entities < 1:
         raise ValueError("每批实体数必须至少为 1")
@@ -95,12 +97,12 @@ def build_relation_batches(
                 for member in group
             ):
                 continue
-            proposed = _make_batch([*group, candidate], normalized)
+            proposed = _make_batch([*group, candidate], normalized, deduplicate_evidence)
             if proposed.context_chars > max_context_chars:
                 continue
             group.append(candidate)
             remaining.remove(candidate)
-        batches.append(_make_batch(group, normalized))
+        batches.append(_make_batch(group, normalized, deduplicate_evidence))
     return batches
 
 
@@ -109,6 +111,7 @@ def build_fixed_relation_batches(
     *,
     max_entities: int,
     max_context_chars: int,
+    deduplicate_evidence: bool = True,
 ) -> list[RelationBatch]:
     """Build sequential fixed-size batches without evidence-overlap grouping.
 
@@ -131,12 +134,12 @@ def build_fixed_relation_batches(
         group = []
         while index < len(names) and len(group) < max_entities:
             candidate = names[index]
-            proposed = _make_batch([*group, candidate], normalized)
+            proposed = _make_batch([*group, candidate], normalized, deduplicate_evidence)
             # Preserve input order and never use overlap to select members.
             # A single oversized entity is retained rather than discarded.
             if group and proposed.context_chars > max_context_chars:
                 break
             group.append(candidate)
             index += 1
-        batches.append(_make_batch(group, normalized))
+        batches.append(_make_batch(group, normalized, deduplicate_evidence))
     return batches

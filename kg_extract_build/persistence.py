@@ -1256,7 +1256,9 @@ class ExperimentRecorder:
             )
         self.store.save_entities(records)
 
-    def record_retrieval(self, entity_name, query_alias, hits):
+    def record_retrieval(
+        self, entity_name, query_alias, hits, chunk_type="retrieval_sentence"
+    ):
         records = []
         for rank, hit in enumerate(hits, start=1):
             records.append(
@@ -1266,7 +1268,7 @@ class ExperimentRecorder:
                     "entity_name": entity_name,
                     "query_alias": query_alias,
                     "chunk_id": self.chunk_id(
-                        "retrieval_sentence",
+                        chunk_type,
                         hit.get("sentence_index", -1),
                     ),
                     "sentence": hit.get("sentence", ""),

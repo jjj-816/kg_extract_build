@@ -83,6 +83,7 @@ class EntityAligner:
         recorder=None,
         cancel_token=None,
         progress_callback=None,
+        enable_llm=True,
     ):
         if not entities:
             return [], {}
@@ -101,7 +102,10 @@ class EntityAligner:
             if len(group) <= 1:
                 continue
 
-            decision = self._judge_group(group, recorder=recorder)
+            decision = (
+                self._judge_group(group, recorder=recorder)
+                if enable_llm else self._fallback_decision(group)
+            )
             if cancel_token is not None:
                 cancel_token.raise_if_cancelled()
             if progress_callback is not None:

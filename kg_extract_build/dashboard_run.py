@@ -315,7 +315,7 @@ def render_run_page():
                 )
             else:
                 retrieve_count = 0
-                st.caption("R2 不使用实体检索；Top-K 不适用。")
+                st.caption("当前 Profile 不使用实体检索；Top-K 不适用。")
             relation_strategy = method_profile.relation_strategy
             if relation_strategy in {"fixed_batch", "shared_context_batch"}:
                 relation_batch_max_entities = st.number_input(

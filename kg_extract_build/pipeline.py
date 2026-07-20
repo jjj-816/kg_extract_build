@@ -53,6 +53,41 @@ def build_known_entities(aligned_entities):
     return known_entities
 
 
+def build_unaligned_entities(raw_entities, source_type):
+    """Keep raw extracted entities as heads for the D1 ablation."""
+    result = []
+    seen = set()
+    for item in raw_entities:
+        name = str(item.get("name", "")).strip()
+        if not name or name in seen:
+            continue
+        seen.add(name)
+        result.append({
+            "name": name,
+            "type": item.get("type"),
+            "aliases": [name],
+            "source_type": item.get("source_type", source_type),
+        })
+    return result
+
+
+def build_document_context_evidence(text, max_context_chars):
+    """Build fixed, non-query-specific context for the D3 no-retrieval ablation."""
+    records = CorpusRetriever._split_sentences(None, text)
+    selected = []
+    used = 0
+    for record in records:
+        content = record["content"]
+        if selected and used + len(content) > max_context_chars:
+            break
+        selected.append({
+            "sentence_index": record["index"], "sentence": content,
+            "score": 0.0, "match_type": "document_context",
+        })
+        used += len(content)
+    return selected, records
+
+
 def clean_filename(text):
     for char in ['/', '\\', ':', '*', '?', '"', '<', '>', '|']:
         text = text.replace(char, "_")
@@ -417,7 +452,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     continue
 
                 entities = None
-                if config.reuse_entity_cache:
+                if config.reuse_entity_cache and method_profile.enable_entity_alignment:
                     entities = load_aligned_entities(file_name, entity_run_debug_dir)
                 if entities is not None:
                     for entity in entities:
@@ -462,27 +497,27 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
 
                     for entity in entities:
                         entity["source_type"] = source_type
-                    entities, alias_to_standard = aligner.align(
-                        entities,
-                        source_type=source_type,
-                        recorder=recorder,
-                        cancel_token=cancel_token,
-                        progress_callback=lambda completed, total: publish(
-                            "alignment_progress",
-                            "entity_alignment",
-                            f"实体对齐候选组 {completed}/{total}",
-                            document_name=file_name,
-                            completed=completed,
-                            total=total,
-                        ),
-                    )
-                    recorder.record_entities("aligned", entities)
-                    if alias_to_standard:
-                        print(f"实体对齐映射数：{len(alias_to_standard)}")
-                    entity_debug_path = save_aligned_entities(
-                        file_name, entities, alias_to_standard, entity_run_debug_dir
-                    )
-                    print(f"实体对齐结果已保存至：{entity_debug_path}")
+                    if method_profile.enable_entity_alignment:
+                        entities, alias_to_standard = aligner.align(
+                            entities,
+                            source_type=source_type,
+                            recorder=recorder,
+                            cancel_token=cancel_token,
+                            enable_llm=method_profile.enable_llm_alignment,
+                            progress_callback=lambda completed, total: publish(
+                                "alignment_progress", "entity_alignment",
+                                f"实体对齐候选组 {completed}/{total}",
+                                document_name=file_name, completed=completed, total=total,
+                            ),
+                        )
+                        recorder.record_entities("aligned", entities)
+                        entity_debug_path = save_aligned_entities(
+                            file_name, entities, alias_to_standard, entity_run_debug_dir
+                        )
+                        print(f"实体对齐结果已保存至：{entity_debug_path}")
+                    else:
+                        entities = build_unaligned_entities(entities, source_type)
+                        recorder.record_entities("unaligned", entities)
 
                 publish(
                     "entities_aligned",
@@ -507,22 +542,28 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     )
                     continue
 
-                retriever = CorpusRetriever(
-                    extraction_content,
-                    VECTOR_MODEL_PATH,
-                    top_n=config.retrieve_sentence_num,
-                )
-                recorder.record_chunks(
-                    "retrieval_sentence",
-                    retriever.export_segments(),
-                    embeddings=retriever.sent_embeddings,
-                )
+                retriever = None
+                document_evidence = None
+                if method_profile.enable_retrieval:
+                    retriever = CorpusRetriever(
+                        extraction_content, VECTOR_MODEL_PATH,
+                        top_n=config.retrieve_sentence_num,
+                    )
+                    recorder.record_chunks(
+                        "retrieval_sentence", retriever.export_segments(),
+                        embeddings=retriever.sent_embeddings,
+                    )
+                    chunk_count = len(retriever.sentences)
+                else:
+                    document_evidence, document_records = build_document_context_evidence(
+                        extraction_content, config.relation_batch_max_context_chars,
+                    )
+                    recorder.record_chunks("document_context_sentence", document_records)
+                    chunk_count = len(document_records)
                 publish(
-                    "chunks_created",
-                    "chunking",
-                    f"已保存 {len(retriever.sentences)} 个检索切片",
-                    document_name=file_name,
-                    metrics={"chunks": len(retriever.sentences)},
+                    "chunks_created", "chunking",
+                    f"已保存 {chunk_count} 个{'检索' if method_profile.enable_retrieval else '固定上下文'}切片",
+                    document_name=file_name, metrics={"chunks": chunk_count},
                 )
                 known_entities = build_known_entities(entities)
                 generator = TripletGenerator(
@@ -564,16 +605,21 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                         )
                         continue
 
-                    evidence = retrieve_entity_evidence(
-                        retriever,
-                        entity,
-                        recorder=recorder,
-                    )
+                    if method_profile.enable_retrieval:
+                        evidence = retrieve_entity_evidence(
+                            retriever, entity, recorder=recorder,
+                        )
+                    else:
+                        evidence = list(document_evidence or [])
+                        recorder.record_retrieval(
+                            entity["name"], "document_context", evidence,
+                            chunk_type="document_context_sentence",
+                        )
                     cancel_token.raise_if_cancelled()
                     publish(
                         "retrieval_completed",
-                        "retrieval",
-                        f"已完成实体上下文检索：{entity['name']}",
+                        "retrieval" if method_profile.enable_retrieval else "document_context",
+                        f"已完成{'实体上下文检索' if method_profile.enable_retrieval else '固定文档上下文准备'}：{entity['name']}",
                         document_name=file_name,
                     )
                     if not evidence:
@@ -609,12 +655,15 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     }
                     if relation_strategy == "fixed_batch":
                         batches = build_fixed_relation_batches(
-                            entity_evidence, **batch_options,
+                            entity_evidence,
+                            deduplicate_evidence=method_profile.enable_context_deduplication,
+                            **batch_options,
                         )
                     else:
                         batches = build_relation_batches(
                             entity_evidence,
                             min_overlap=config.relation_batch_min_overlap,
+                            deduplicate_evidence=method_profile.enable_context_deduplication,
                             **batch_options,
                         )
                     for batch_index, batch in enumerate(
