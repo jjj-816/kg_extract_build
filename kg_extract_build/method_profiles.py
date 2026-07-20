@@ -92,7 +92,7 @@ METHOD_PROFILES: dict[str, MethodProfile] = {
     "D0": MethodProfile("D0", "D0 · Full Method（复用 R6）", "消融基准，与 R6 完全相同。", "relation-batch-v1", "shared_context_batch", True, True, True, True, True, True),
     "D1": MethodProfile("D1", "D1 · 无实体对齐", "仅移除实体对齐，直接将原始实体作为后续抽取头实体。", "relation-batch-v1", "shared_context_batch", False, False, True, True, True, True),
     "D2": MethodProfile("D2", "D2 · 无 LLM 对齐", "保留规则/向量候选分组，仅移除 LLM 对齐判定。", "relation-batch-v1", "shared_context_batch", True, False, True, True, True, True),
-    "D3": MethodProfile("D3", "D3 · 无检索", "保留其他模块，但每个实体使用固定文档句子上下文，不做实体条件检索。", "relation-batch-v1", "shared_context_batch", True, True, False, True, True, True),
+    "D3": MethodProfile("D3", "D3 · 无检索", "保留其他模块，但每个实体使用所在位置的局部上下文，不做实体条件检索。", "relation-batch-v1", "shared_context_batch", True, True, False, True, True, True),
     "D4": MethodProfile("D4", "D4 · 无共享分组", "保留其他模块，改用固定顺序批次而不是按共享证据分组。", "relation-batch-v1", "fixed_batch", True, True, True, False, True, True),
     "D5": MethodProfile("D5", "D5 · 无上下文去重", "保留其他模块，但共享批次中保留同一句证据的重复出现。", "relation-batch-v1", "shared_context_batch", True, True, True, True, False, True),
     "D6": MethodProfile("D6", "D6 · 无 Schema 校验（复用 R5）", "仅移除后置 Schema 校验，与 R5 完全相同。", "relation-batch-v1", "shared_context_batch", True, True, True, True, True, False),

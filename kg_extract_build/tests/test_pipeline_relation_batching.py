@@ -4,7 +4,11 @@ from pathlib import Path
 from unittest.mock import Mock, patch
 
 from kg_extract_build.persistence import MemoryExperimentStore
-from kg_extract_build.pipeline import retrieve_entity_evidence, run_pipeline
+from kg_extract_build.pipeline import (
+    build_local_context_evidence,
+    retrieve_entity_evidence,
+    run_pipeline,
+)
 from kg_extract_build.run_config import LLMConfig, PipelineConfig
 from kg_extract_build.vector_store import NullVectorStore
 
@@ -106,6 +110,30 @@ class PipelineRelationBatchingTests(unittest.TestCase):
             [item["sentence_index"] for item in evidence],
             [5, 10],
         )
+
+    def test_d3_uses_entity_local_context_including_late_document_mentions(self):
+        evidence_by_entity, records = build_local_context_evidence(
+            "开头说明内容足够长。中间说明内容足够长。文末实体的施工要求足够长。",
+            [
+                {"name": "开头", "aliases": ["开头"]},
+                {"name": "文末实体", "aliases": ["文末实体"]},
+            ],
+            max_context_chars=2000,
+        )
+
+        self.assertEqual(len(records), 3)
+        self.assertEqual(
+            [item["sentence_index"] for item in evidence_by_entity["开头"]],
+            [0, 1],
+        )
+        self.assertEqual(
+            [item["sentence_index"] for item in evidence_by_entity["文末实体"]],
+            [1, 2],
+        )
+        self.assertTrue(all(
+            item["match_type"] == "local_context"
+            for hits in evidence_by_entity.values() for item in hits
+        ))
 
     def test_pipeline_retrieves_all_entities_before_grouped_generation(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -71,21 +71,47 @@ def build_unaligned_entities(raw_entities, source_type):
     return result
 
 
-def build_document_context_evidence(text, max_context_chars):
-    """Build fixed, non-query-specific context for the D3 no-retrieval ablation."""
+def build_local_context_evidence(text, entities, max_context_chars, window_size=1):
+    """Build per-entity local evidence without semantic retrieval for D3.
+
+    Exact entity or alias mentions select anchor sentences. Adjacent sentences
+    provide local context; no vector model, similarity score, or Top-K search
+    is used.
+    """
     records = CorpusRetriever._split_sentences(None, text)
-    selected = []
-    used = 0
-    for record in records:
-        content = record["content"]
-        if selected and used + len(content) > max_context_chars:
-            break
-        selected.append({
-            "sentence_index": record["index"], "sentence": content,
-            "score": 0.0, "match_type": "document_context",
-        })
-        used += len(content)
-    return selected, records
+    evidence_by_entity = {}
+    for entity in entities:
+        aliases = {
+            str(alias).strip()
+            for alias in [entity.get("name"), *(entity.get("aliases") or [])]
+            if str(alias).strip()
+        }
+        anchors = [
+            record["index"] for record in records
+            if any(alias in record["content"] for alias in aliases)
+        ]
+        selected_indices = set()
+        for anchor in anchors:
+            selected_indices.update(range(
+                max(0, anchor - window_size),
+                min(len(records), anchor + window_size + 1),
+            ))
+
+        hits = []
+        used = 0
+        for sentence_index in sorted(selected_indices):
+            content = records[sentence_index]["content"]
+            if hits and used + len(content) > max_context_chars:
+                break
+            hits.append({
+                "sentence_index": sentence_index,
+                "sentence": content,
+                "score": 0.0,
+                "match_type": "local_context",
+            })
+            used += len(content)
+        evidence_by_entity[entity["name"]] = hits
+    return evidence_by_entity, records
 
 
 def clean_filename(text):
@@ -543,7 +569,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     continue
 
                 retriever = None
-                document_evidence = None
+                local_context_evidence = None
                 if method_profile.enable_retrieval:
                     retriever = CorpusRetriever(
                         extraction_content, VECTOR_MODEL_PATH,
@@ -555,10 +581,10 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     )
                     chunk_count = len(retriever.sentences)
                 else:
-                    document_evidence, document_records = build_document_context_evidence(
-                        extraction_content, config.relation_batch_max_context_chars,
+                    local_context_evidence, document_records = build_local_context_evidence(
+                        extraction_content, entities, config.relation_batch_max_context_chars,
                     )
-                    recorder.record_chunks("document_context_sentence", document_records)
+                    recorder.record_chunks("local_context_sentence", document_records)
                     chunk_count = len(document_records)
                 publish(
                     "chunks_created", "chunking",
@@ -610,16 +636,16 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                             retriever, entity, recorder=recorder,
                         )
                     else:
-                        evidence = list(document_evidence or [])
+                        evidence = list((local_context_evidence or {}).get(entity["name"], []))
                         recorder.record_retrieval(
-                            entity["name"], "document_context", evidence,
-                            chunk_type="document_context_sentence",
+                            entity["name"], "local_context", evidence,
+                            chunk_type="local_context_sentence",
                         )
                     cancel_token.raise_if_cancelled()
                     publish(
                         "retrieval_completed",
                         "retrieval" if method_profile.enable_retrieval else "document_context",
-                        f"已完成{'实体上下文检索' if method_profile.enable_retrieval else '固定文档上下文准备'}：{entity['name']}",
+                        f"已完成{'实体上下文检索' if method_profile.enable_retrieval else '实体局部上下文准备'}：{entity['name']}",
                         document_name=file_name,
                     )
                     if not evidence:
