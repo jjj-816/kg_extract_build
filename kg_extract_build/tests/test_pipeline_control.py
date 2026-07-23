@@ -1,3 +1,4 @@
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -7,7 +8,7 @@ from kg_extract_build.entity_aligner import EntityAligner
 from kg_extract_build.extractor import LongDocLLMEntityExtractor
 from kg_extract_build.llm_thinking import build_thinking_options
 from kg_extract_build.persistence import MemoryExperimentStore
-from kg_extract_build.pipeline import run_pipeline
+from kg_extract_build.pipeline import get_run_debug_dir, run_pipeline
 from kg_extract_build.run_config import ChunkingConfig, LLMConfig, PipelineConfig
 from kg_extract_build.runtime import CancellationToken, PipelineCancelled, PipelineEvent
 from kg_extract_build.vector_store import NullVectorStore
@@ -35,6 +36,27 @@ class PipelineControlTests(unittest.TestCase):
         )
         self._breakpoint_patch.start()
         self.addCleanup(self._breakpoint_patch.stop)
+
+    def test_run_debug_dir_uses_safe_run_name_and_short_id(self):
+        root = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, root)
+
+        self.assertEqual(
+            get_run_debug_dir(
+                root,
+                "实体/对齐:优化",
+                "65fea457-b8a8-4a32-a7d8-bd2c8f978124",
+            ),
+            root / "实体_对齐_优化__65fea457",
+        )
+        self.assertEqual(
+            get_run_debug_dir(root, "", "abcdef12-0000"),
+            root / "run__abcdef12",
+        )
+        self.assertNotEqual(
+            get_run_debug_dir(root, "同名", "aaaaaaaa-0000"),
+            get_run_debug_dir(root, "同名", "bbbbbbbb-0000"),
+        )
 
     def test_extractor_stops_before_first_chunk_request(self):
         token = CancellationToken()

@@ -127,9 +127,10 @@ def get_entity_debug_dir(file_name, debug_dir):
     return save_dir
 
 
-def get_run_debug_dir(debug_dir, run_id):
-    """Keep debug artifacts and optional caches isolated per experiment run."""
-    return Path(debug_dir) / str(run_id)
+def get_run_debug_dir(debug_dir, run_name, run_id):
+    """Keep debug artifacts isolated in a readable, per-experiment directory."""
+    safe_run_name = clean_filename(str(run_name)).strip() or "run"
+    return Path(debug_dir) / f"{safe_run_name}__{str(run_id)[:8]}"
 
 
 def save_raw_entities(file_name, entities, debug_dir):
@@ -335,8 +336,9 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
         print("[实验存储] Milvus 依赖 MySQL chunk_id；请同时启用 KG_MYSQL_ENABLED。")
 
     try:
+        run_name = config.run_name or default_run_name()
         run_id = store.start_run(
-            config.run_name or default_run_name(),
+            run_name,
             {
                 **config.sanitized_snapshot(),
                 "schema_path": str(resolve_schema_path()),
@@ -348,8 +350,10 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
             current_code_commit(),
         )
         print(f"[实验存储] run_id={run_id}")
-        entity_run_debug_dir = get_run_debug_dir(ENTITY_DEBUG_DIR, run_id)
-        triplet_run_debug_dir = get_run_debug_dir(DEBUG_DIR, run_id)
+        entity_run_debug_dir = get_run_debug_dir(
+            ENTITY_DEBUG_DIR, run_name, run_id
+        )
+        triplet_run_debug_dir = get_run_debug_dir(DEBUG_DIR, run_name, run_id)
 
         docs = doc_loader.load_all_unprocessed_docs()
         if not docs:
