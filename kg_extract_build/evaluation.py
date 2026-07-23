@@ -470,6 +470,39 @@ def _canonical_triplet_score(
     return compute_prf(predicted, set(gold_triplets)), list(alignments.values())
 
 
+def _canonical_entity_score(
+    alignments: list[dict[str, object]],
+    canonical_entities: list[dict[str, object]],
+    document: str,
+) -> ScoreBreakdown:
+    """Score unique predicted head/tail entities against document Gold IDs.
+
+    This is an evaluation-only normalization step, so it is available to every
+    method, including LLM-Direct. Multiple mentions or aliases mapped to the
+    same Gold canonical ID count as one predicted entity. An unmapped (or
+    type-mismatched) mention remains a distinct false-positive entity rather
+    than disappearing from the precision denominator.
+    """
+    predicted: set[tuple[str, ...]] = set()
+    for item in alignments:
+        canonical_id = item.get("canonical_id")
+        if canonical_id:
+            predicted.add((document, "canonical", str(canonical_id)))
+        else:
+            predicted.add((
+                document,
+                "unmapped",
+                _normalization_key(item.get("entity_name", "")),
+                str(item.get("entity_type", "")),
+            ))
+    gold = {
+        (document, "canonical", str(entity["canonical_id"]))
+        for entity in canonical_entities
+        if entity.get("canonical_id")
+    }
+    return compute_prf(predicted, gold)
+
+
 def evaluate_documents(
     model: dict[str, list[TripletKey]],
     gold: dict[str, list[TripletKey]],
@@ -510,6 +543,8 @@ def evaluate_documents(
     head_entities = head_entities or {}
     canonical_model: set[CanonicalTripletKey] = set()
     canonical_gold: set[CanonicalTripletKey] = set()
+    canonical_entity_model: set[tuple[str, ...]] = set()
+    canonical_entity_gold: set[tuple[str, ...]] = set()
     entity_alignments: list[dict[str, object]] = []
     conditional_model: set[TripletKey] = set()
     conditional_gold: set[TripletKey] = set()
@@ -563,6 +598,13 @@ def evaluate_documents(
         canonical_gold.update(score.tp_items)
         canonical_gold.update(score.fn_items)
         entity_alignments.extend(doc_alignments)
+        entity_score = _canonical_entity_score(
+            doc_alignments, canonical_entities.get(gold_doc, []), model_doc,
+        )
+        canonical_entity_model.update(entity_score.tp_items)
+        canonical_entity_model.update(entity_score.fp_items)
+        canonical_entity_gold.update(entity_score.tp_items)
+        canonical_entity_gold.update(entity_score.fn_items)
         canonical_nonempty_heads = {
             item["canonical_id"]
             for item in doc_alignments
@@ -585,6 +627,10 @@ def evaluate_documents(
         )
     overall.update(_metric_group(
         "canonical_triplet", compute_prf(canonical_model, canonical_gold),
+    ))
+    overall.update(_metric_group(
+        "canonical_entity",
+        compute_prf(canonical_entity_model, canonical_entity_gold),
     ))
     mapped_count = sum(1 for item in entity_alignments if item["canonical_id"])
     overall["canonical_entity_mapping_rate"] = _rate_metric(
@@ -658,10 +704,14 @@ def evaluate_documents(
             "triplet",
             compute_prf(set(model.get(model_doc, [])), set(gold.get(gold_doc, []))),
         )
-        score, _ = _canonical_triplet_score(
+        score, doc_alignments = _canonical_triplet_score(
             model.get(model_doc, []), canonical_gold_triplets.get(gold_doc, []), canonical_entities.get(gold_doc, []), model_doc,
         )
         by_document[model_doc].update(_metric_group("canonical_triplet", score))
+        by_document[model_doc].update(_metric_group(
+            "canonical_entity",
+            _canonical_entity_score(doc_alignments, canonical_entities.get(gold_doc, []), model_doc),
+        ))
 
     return EvaluationResult(
         overall=overall,

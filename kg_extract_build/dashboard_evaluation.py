@@ -82,6 +82,23 @@ def _render_nonempty_head_cards(overall: dict) -> None:
         col.metric(label, f"{_metric_value(overall, name):.3f}")
 
 
+def _render_canonical_entity_cards(overall: dict) -> None:
+    st.caption("全局规范化实体质量：对最终三元组的全部头、尾实体进行评估阶段映射；适用于所有实验方法。")
+    cols = st.columns(3)
+    names = [
+        "canonical_entity_precision",
+        "canonical_entity_recall",
+        "canonical_entity_f1",
+    ]
+    labels = [
+        "规范化实体 Precision",
+        "规范化实体 Recall",
+        "规范化实体 F1",
+    ]
+    for col, name, label in zip(cols, names, labels):
+        col.metric(label, f"{_metric_value(overall, name):.3f}")
+
+
 def _metric_label_and_description(name: str) -> tuple[str, str]:
     contexts = {
         "entity": ("\u5b9e\u4f53", "\u9884\u6d4b\u5b9e\u4f53\u4e0e Gold \u5b9e\u4f53\u7684\u5339\u914d\u8d28\u91cf"),
@@ -103,6 +120,9 @@ def _metric_label_and_description(name: str) -> tuple[str, str]:
             if name == f"{prefix}_{suffix}":
                 return f"{label}{suffix_label}", f"{description}\uff1b{suffix_description}"
     special = {
+        "canonical_entity_precision": ("规范化实体精确率", "最终三元组的全部头、尾实体映射到 Gold canonical ID 后，预测实体中正确项的比例"),
+        "canonical_entity_recall": ("规范化实体召回率", "最终三元组的全部头、尾实体映射到 Gold canonical ID 后，Gold 实体被找回的比例"),
+        "canonical_entity_f1": ("规范化实体F1值", "最终三元组的全部头、尾实体映射到 Gold canonical ID 后的精确率与召回率调和平均"),
         "invalid_relation_rate": ("\u975e\u6cd5\u5173\u7cfb\u7387", "\u4e0d\u7b26\u5408 Schema \u5934\u5c3e\u7c7b\u578b\u7ea6\u675f\u7684\u9884\u6d4b\u5173\u7cfb\u6bd4\u4f8b"),
         "selected_evidence_coverage": ("\u9009\u5b9a\u8bc1\u636e\u8986\u76d6\u7387", "\u5df2\u7ed1\u5b9a\u6a21\u578b\u9009\u5b9a\u8bc1\u636e\u53e5\u7684\u4e09\u5143\u7ec4\u6bd4\u4f8b"),
         "selected_evidence_tail_absence_rate": ("\u9009\u5b9a\u8bc1\u636e\u5c3e\u5b9e\u4f53\u7f3a\u5931\u7387", "\u6a21\u578b\u9009\u5b9a\u7684\u8bc1\u636e\u53e5\u4e2d\u672a\u51fa\u73b0\u5c3e\u5b9e\u4f53\u7684\u4e09\u5143\u7ec4\u6bd4\u4f8b"),
@@ -313,6 +333,7 @@ def render_evaluation_page() -> None:
 
     st.subheader("评估结果")
     _render_metric_cards(result.overall)
+    _render_canonical_entity_cards(result.overall)
     st.subheader("非空头实体条件下的三元组抽取质量")
     st.caption("仅评价实体对齐后、最终产出至少一条三元组的头实体；全量指标仍保留在上方。")
     _render_nonempty_head_cards(result.overall)

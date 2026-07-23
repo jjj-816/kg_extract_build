@@ -203,6 +203,32 @@ class EvaluationMetricTests(unittest.TestCase):
         self.assertAlmostEqual(result.overall["canonical_entity_mapping_rate"].value, 1.0)
         self.assertEqual(len(result.entity_alignments), 2)
 
+    def test_canonical_entity_metrics_score_all_predicted_heads_and_tails(self):
+        model = {
+            "文档A": [
+                ("井口装置", "设备设施", "USES", "电缆线", "施工对象"),
+                ("井口装置", "设备设施", "USES", "未知设备", "设备设施"),
+            ]
+        }
+        canonical_entities = {
+            "文档A": [
+                {"canonical_id": "EQ001", "canonical_name": "井口装置", "entity_type": "设备设施", "names": ["井口装置"]},
+                {"canonical_id": "OBJ003", "canonical_name": "电缆", "entity_type": "施工对象", "names": ["电缆", "电缆线"]},
+                {"canonical_id": "MAT009", "canonical_name": "水泥", "entity_type": "材料介质", "names": ["水泥"]},
+            ]
+        }
+        result = evaluate_documents(
+            model=model,
+            gold={"文档A": []},
+            documents={"文档A": ""}, evidence={"文档A": {}},
+            canonical_entities=canonical_entities,
+            canonical_gold_triplets={"文档A": []},
+        )
+
+        self.assertAlmostEqual(result.overall["canonical_entity_precision"].value, 2 / 3)
+        self.assertAlmostEqual(result.overall["canonical_entity_recall"].value, 2 / 3)
+        self.assertAlmostEqual(result.overall["canonical_entity_f1"].value, 2 / 3)
+
     def test_evaluation_matches_unique_preprocessing_name_variants(self):
         triplet = ("A", "类型1", "REL", "B", "类型2")
         result = evaluate_documents(
