@@ -1,31 +1,36 @@
-# Readable Run Debug Directories Design
+# 可读实验调试目录设计
 
-## Goal
+## 目标
 
-Name newly created entity and triplet debug directories with the experiment's readable `run_name`, while retaining a short run identifier for uniqueness.
+让新创建的实体调试目录和三元组调试目录使用可读的实验名称 `run_name`，同时保留短 run_id 以确保目录唯一。
 
-## Decision
+## 已确认的命名规则
 
-For every new pipeline run, derive one directory component from the actual `PipelineConfig.run_name` supplied to `run_pipeline` (or the existing default selected before the run starts). Replace Windows-invalid filename characters (`/`, `\\`, `:`, `*`, `?`, `\"`, `<`, `>`, `|`) with `_`, trim the result, and append the first eight characters of `run_id`:
+每次新实验启动时，从传给 `run_pipeline` 的实际 `PipelineConfig.run_name` 获取实验名称；若未显式填写，则沿用程序原有的默认实验名称。对名称进行 Windows 文件名清理：将 `/`、`\\`、`:`、`*`、`?`、`\"`、`<`、`>`、`|` 替换为 `_`，并去除首尾空白。最终目录名为：
 
 ```
-<sanitized-run-name>__<run-id[:8]>
+<清理后的实验名>__<run_id前8位>
 ```
 
-For example, the run `实体对齐优化` with ID `65fea457-b8a8-4a32-a7d8-bd2c8f978124` writes to `实体对齐优化__65fea457` below both `shale_gas_entity_debug` and `shale_gas_triplets_debug`.
+例如，实验名为 `实体对齐优化`、run_id 为 `65fea457-b8a8-4a32-a7d8-bd2c8f978124` 时，以下两个调试根目录下的新实验目录均为 `实体对齐优化__65fea457`：
 
-## Scope and Data Flow
+- `shale_gas_entity_debug`
+- `shale_gas_triplets_debug`
 
-`run_pipeline` already has both values immediately after `store.start_run(...)`. It will pass them to the shared run-debug-directory helper. Entity extraction writes and cache reads use the entity directory returned by that helper; triplet generation receives the corresponding triplet directory. This keeps every artifact from one run isolated under the same readable component.
+## 实现范围与数据流
 
-Existing run-id-only folders are neither renamed nor deleted. They remain readable as historical artifacts. No database schema or stored run data changes.
+`store.start_run(...)` 返回 run_id 后，`run_pipeline` 已同时持有 run_name 和 run_id。该函数将两者传入统一的“运行调试目录”辅助函数，分别得到实体调试根目录和三元组调试根目录。
 
-## Edge Cases
+实体抽取的写入和缓存读取均使用实体调试目录；三元组生成使用三元组调试目录。这样，同一次实验的全部调试产物仍然隔离在同一个可读目录组件下。
 
-- Different runs with the same name remain separate because of the short ID suffix.
-- A blank or all-invalid-character name falls back to `run` before appending the suffix.
-- The function returns a `Path` only; callers retain responsibility for creating artifact subdirectories, matching current behavior.
+已有的纯 run_id 目录不会重命名、迁移或删除，仍可作为历史调试产物读取。本次改动不修改数据库表结构，也不修改已保存的实验记录。
 
-## Verification
+## 边界情况
 
-Add unit tests for a normal Chinese name, Windows-invalid characters, a blank name, and two same-name runs with different IDs. Run the pipeline-control test suite to verify both entity and triplet consumers still receive isolated directories.
+- 两次实验使用相同实验名时，因 run_id 短后缀不同，目录不会冲突。
+- 若实验名为空或只包含非法字符，清理结果使用 `run`，再拼接短 run_id。
+- 辅助函数仅负责返回 `Path`；具体调试文件的子目录创建继续遵循当前调用方逻辑。
+
+## 验证方式
+
+新增单元测试，覆盖正常中文实验名、Windows 非法字符、空实验名，以及“同名但不同 run_id”的目录隔离。运行 pipeline 控制测试，确认实体和三元组消费者仍获得彼此隔离且一致命名的调试目录。
