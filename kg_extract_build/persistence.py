@@ -29,6 +29,8 @@ def env_bool(name, default=False):
 
 
 class BaseExperimentStore:
+    def load_graph_sync_input(self, run_id):
+        raise NotImplementedError("stores must implement minimal graph sync input")
     def delete_run(self, run_id):
         return False
 
@@ -41,6 +43,9 @@ class BaseExperimentStore:
 
 class NullExperimentStore(BaseExperimentStore):
     enabled = False
+
+    def load_graph_sync_input(self, run_id):
+        return {"run": {}, "triplets": [], "evidence_by_triplet": {}}
 
 
     def initialize_schema(self):
@@ -282,6 +287,17 @@ class MemoryExperimentStore(NullExperimentStore):
         rows = list(self.runs.values())
         rows.sort(key=lambda row: row.get("started_at") or datetime.min, reverse=True)
         return rows[:limit]
+
+    def load_graph_sync_input(self, run_id):
+        triplets = [dict(row) for row in self.triplets if row.get("run_id") == run_id and row.get("stage") == "final" and row.get("is_valid", True)]
+        ids = {row["triplet_id"] for row in triplets}
+        retrieval = {row.get("retrieval_id"): row for row in self.retrieval_results}
+        evidence = defaultdict(list)
+        for link in self.triplet_evidence:
+            row = retrieval.get(link.get("retrieval_id"))
+            if row and link["triplet_id"] in ids:
+                evidence[link["triplet_id"]].append({"retrieval_id": row["retrieval_id"], "sentence": row.get("sentence", ""), "chunk_index": row.get("chunk_index"), "evidence_order": link.get("evidence_order"), "source": link.get("source", "model_selected")})
+        return {"run": dict(self.runs.get(run_id, {})), "triplets": triplets, "evidence_by_triplet": evidence}
 
     def load_evaluation_input(self, run_id):
         documents = {}
@@ -829,7 +845,7 @@ class MySQLExperimentStore(BaseExperimentStore):
     def list_experiment_runs(self, limit=100):
         return self._read(
             """
-            SELECT run_id, run_name, status, started_at, finished_at,
+            SELECT run_id, run_name, status, deletion_state, started_at, finished_at,
                    config_snapshot
             FROM kg_experiment_run
             ORDER BY started_at DESC
@@ -996,6 +1012,18 @@ class MySQLExperimentStore(BaseExperimentStore):
             """,
             (run_id,),
         )
+
+    def load_graph_sync_input(self, run_id):
+        run = self._read("SELECT run_id, run_name, config_snapshot, schema_snapshot, started_at FROM kg_experiment_run WHERE run_id=%s", (run_id,))
+        triplets = self._read("""SELECT t.triplet_id,t.run_id,t.document_id,t.source_llm_call_id,t.head,t.head_type,t.relation_name,t.tail,t.tail_type,t.created_at,d.file_name,c.model_name,c.metadata_json AS llm_metadata,r.config_snapshot,r.schema_snapshot
+            FROM kg_triplet t JOIN kg_document d ON d.document_id=t.document_id JOIN kg_experiment_run r ON r.run_id=t.run_id LEFT JOIN kg_llm_call c ON c.llm_call_id=t.source_llm_call_id
+            WHERE t.run_id=%s AND t.stage='final' AND t.is_valid=1 ORDER BY t.triplet_id""", (run_id,))
+        rows = self._read("""SELECT te.triplet_id,rr.retrieval_id,rr.sentence,chunk.chunk_index AS chunk_index,te.evidence_order,te.source
+            FROM kg_triplet_evidence te JOIN kg_triplet t ON t.triplet_id=te.triplet_id JOIN kg_retrieval_result rr ON rr.retrieval_id=te.retrieval_id LEFT JOIN kg_document_chunk chunk ON chunk.chunk_id=rr.chunk_id
+            WHERE t.run_id=%s AND t.stage='final' AND t.is_valid=1 ORDER BY te.triplet_id,te.evidence_order""", (run_id,))
+        evidence = defaultdict(list)
+        for row in rows: evidence[row["triplet_id"]].append(row)
+        return {"run": run[0] if run else {}, "triplets": triplets, "evidence_by_triplet": evidence}
 
     def load_experiment_export(self, run_id):
         run_rows = self._read(

@@ -551,6 +551,9 @@ def dot_escape(text):
 
 def graph_page(config):
     render_header("知识图谱", "按实验或文档查看最终实体关系，并保留表格导出能力。")
+    from kg_extract_build.dashboard_neo4j import render_neo4j_sync_panel
+    with st.expander("Neo4j 图谱发布", expanded=False):
+        render_neo4j_sync_panel()
     run_id = choose_run(config, "graph_run")
     if not run_id:
         return
