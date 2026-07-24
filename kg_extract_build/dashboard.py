@@ -551,9 +551,14 @@ def dot_escape(text):
 
 def graph_page(config):
     render_header("知识图谱", "按实验或文档查看最终实体关系，并保留表格导出能力。")
-    from kg_extract_build.dashboard_neo4j import render_neo4j_sync_panel
+    from kg_extract_build.dashboard_neo4j import (
+        render_neo4j_sync_panel,
+        render_neo4j_view_panel,
+    )
     with st.expander("Neo4j 图谱发布", expanded=False):
         render_neo4j_sync_panel()
+    with st.expander("Neo4j 图谱查看", expanded=False):
+        render_neo4j_view_panel()
     run_id = choose_run(config, "graph_run")
     if not run_id:
         return
@@ -590,19 +595,20 @@ def graph_page(config):
         st.info("当前范围内没有最终三元组。")
         return
 
-    lines = [
-        "digraph KG {",
-        'graph [rankdir="LR", bgcolor="transparent"];',
-        'node [shape="box", style="rounded,filled", fillcolor="#EFF6FF", color="#93C5FD", fontname="Microsoft YaHei"];',
-        'edge [color="#64748B", fontname="Microsoft YaHei"];',
-    ]
-    for item in rows:
-        head = dot_escape(item["head"])
-        tail = dot_escape(item["tail"])
-        relation = dot_escape(item["relation_name"])
-        lines.append(f'"{head}" -> "{tail}" [label="{relation}"];')
-    lines.append("}")
-    st.graphviz_chart("\n".join(lines), use_container_width=True)
+    if st.button("生成 MySQL 三元组预览图", key="render_mysql_triplet_graph"):
+        lines = [
+            "digraph KG {",
+            'graph [rankdir="LR", bgcolor="transparent"];',
+            'node [shape="box", style="rounded,filled", fillcolor="#EFF6FF", color="#93C5FD", fontname="Microsoft YaHei"];',
+            'edge [color="#64748B", fontname="Microsoft YaHei"];',
+        ]
+        for item in rows:
+            head = dot_escape(item["head"])
+            tail = dot_escape(item["tail"])
+            relation = dot_escape(item["relation_name"])
+            lines.append(f'"{head}" -> "{tail}" [label="{relation}"];')
+        lines.append("}")
+        st.graphviz_chart("\n".join(lines), use_container_width=True)
     st.dataframe(frame(rows), use_container_width=True, hide_index=True)
 
 

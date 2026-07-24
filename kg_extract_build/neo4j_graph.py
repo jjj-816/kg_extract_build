@@ -107,6 +107,7 @@ class Neo4jGraphSynchronizer:
         if not run:
             raise ValueError(f"run not found: {run_id}")
 
+        self._ensure_schema()
         evidence = source.get("evidence_by_triplet", {})
         triplets = source.get("triplets", [])
         known = {
@@ -196,15 +197,19 @@ class Neo4jGraphSynchronizer:
             )
         return SyncRunResult(run_id, **stats)
 
-    def _sync_tx(self, tx, run_id, items, relation_types):
-        tx.run(
+    def _ensure_schema(self):
+        statements = (
             "CREATE CONSTRAINT entity_identity IF NOT EXISTS "
-            "FOR (e:Entity) REQUIRE (e.entity_type, e.normalized_name) IS UNIQUE"
-        )
-        tx.run(
+            "FOR (e:Entity) REQUIRE (e.entity_type, e.normalized_name) IS UNIQUE",
             "CREATE CONSTRAINT assertion_identity IF NOT EXISTS "
-            "FOR (a:RelationAssertion) REQUIRE a.assertion_id IS UNIQUE"
+            "FOR (a:RelationAssertion) REQUIRE a.assertion_id IS UNIQUE",
         )
+        with self.driver.session(database=self.database) as session:
+            for statement in statements:
+                result = session.run(statement)
+                result.consume()
+
+    def _sync_tx(self, tx, run_id, items, relation_types):
         assertion_ids = [item["assertion_id"] for item in items]
         existing = tx.run(
             "MATCH (a:RelationAssertion) WHERE a.assertion_id IN $ids "
@@ -281,7 +286,7 @@ class Neo4jGraphSynchronizer:
             "normalized_name:item.tail.normalized_name}) "
             "SET t.name=item.tail.normalized_name "
             "MERGE (a:RelationAssertion {assertion_id:item.assertion_id}) "
-            "OPTIONAL MATCH ()-[old_head:HAS_ASSERTION]->(a) DELETE old_head "
+            "WITH item,a,h,t OPTIONAL MATCH ()-[old_head:HAS_ASSERTION]->(a) DELETE old_head "
             "WITH item,a,h,t OPTIONAL MATCH (a)-[old_tail:OBJECT]->() DELETE old_tail "
             "WITH item,a,h,t SET a += item.metadata, a.relation_type=item.relation_type "
             "MERGE (h)-[:HAS_ASSERTION {role:'head'}]->(a) "

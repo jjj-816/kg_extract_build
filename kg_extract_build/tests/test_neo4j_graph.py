@@ -18,6 +18,9 @@ class _Result:
     def single(self):
         return {"count": self.count}
 
+    def consume(self):
+        return None
+
 
 class _Transaction:
     def __init__(self, graph):
@@ -69,6 +72,7 @@ class _Session:
         self.graph = graph
         self.execute_write_calls = 0
         self.closed = False
+        self.run_calls = []
 
     def __enter__(self):
         return self
@@ -78,6 +82,9 @@ class _Session:
         return False
 
     def run(self, query, **_params):
+        self.run_calls.append(query)
+        if query.startswith("CREATE CONSTRAINT"):
+            return _Result()
         if "MATCH (e:Entity)" in query:
             return [
                 {"entity_type": entity_type, "normalized_name": normalized_name}
@@ -261,12 +268,68 @@ class Neo4jGraphTests(unittest.TestCase):
             if old is not None:
                 os.environ["NEO4J_PASSWORD"] = old
 
+    def test_sync_run_initializes_schema_outside_the_data_write_transaction(self):
+        run_id = "schema-run"
+        store = type(
+            "Store",
+            (),
+            {
+                "load_graph_sync_input": lambda *_: {
+                    "run": {"run_id": run_id},
+                    "triplets": [],
+                    "evidence_by_triplet": {},
+                }
+            },
+        )()
+        driver = _Driver()
+        syncer = Neo4jGraphSynchronizer(
+            driver,
+            store,
+            type("Schema", (), {"relation_type_names": {"USES"}})(),
+        )
+
+        syncer.sync_run(run_id)
+
+        schema_queries = [
+            query
+            for session in driver.sessions
+            for query in session.run_calls
+            if query.startswith("CREATE CONSTRAINT")
+        ]
+        self.assertEqual(len(schema_queries), 2)
+        self.assertFalse(
+            any(
+                query.startswith("CREATE CONSTRAINT")
+                for query, _ in driver.transaction.calls
+            )
+        )
+
     def test_canonical_has_no_legacy_unreachable_candidates_implementation(self):
         source = Path(__file__).resolve().parents[1] / "neo4j_graph.py"
         text = source.read_text(encoding="utf-8")
         function = text[text.index("def _canonical") : text.index("def _json_property")]
         self.assertEqual(function.count("candidates ="), 1)
         self.assertNotIn("return name, \"containment\" if name != raw_norm else \"exact\"\n\n    ", function)
+
+    def test_assertion_write_query_scopes_merge_before_optional_match(self):
+        tx = _Transaction(_GraphState())
+        syncer = Neo4jGraphSynchronizer(
+            None,
+            None,
+            type("Schema", (), {"relation_type_names": {"USES"}})(),
+        )
+        syncer._sync_tx(tx, "run-1", [], ["USES"])
+        query = next(
+            query
+            for query, _ in tx.calls
+            if "MERGE (a:RelationAssertion" in query
+        )
+
+        self.assertIn(
+            "MERGE (a:RelationAssertion {assertion_id:item.assertion_id}) "
+            "WITH item,a,h,t OPTIONAL MATCH ()-[old_head:HAS_ASSERTION]->(a)",
+            query,
+        )
 
     def test_stateful_fake_sync_covers_migration_idempotency_and_empty_run_cleanup(self):
         def source(run_id, triplets):
@@ -344,7 +407,7 @@ class Neo4jGraphTests(unittest.TestCase):
         self.assertEqual(len(driver.graph.assertions), 1)
         self.assertEqual(empty_result.aggregate_edges_total, 1)
 
-        self.assertEqual(len(driver.sessions), 8)
+        self.assertEqual(len(driver.sessions), 12)
         self.assertEqual(sum(s.execute_write_calls for s in driver.sessions), 4)
         self.assertTrue(all(session.closed for session in driver.sessions))
 
