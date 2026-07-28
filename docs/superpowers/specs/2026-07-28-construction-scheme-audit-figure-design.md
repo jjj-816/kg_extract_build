@@ -1,106 +1,96 @@
-# Construction Scheme Audit Method Figure Design
+# 施工方案智能审核方法插图设计
 
-## Purpose
+## 一、插图目的
 
-Create a publication-ready, schematic-led method figure for the proposed
-graph-retrieval-augmented construction-scheme audit method.
+为“图检索增强生成施工方案审核方法”绘制一张可用于科研论文的
+方法总览图。
 
-The figure must communicate one central conclusion:
+插图需要传达的核心结论是：
 
-> Separating historical-case graph retrieval from authoritative normative
-> clause retrieval, then constraining semantic judgement with document and
-> normative evidence, produces an auditable draft that remains subject to
-> human review.
+> 将历史案例图检索与权威规范条款检索分层处理，并用施工方案证据和
+> 规范原文约束语义判断，可以生成可追溯、可复核且最终由人工确认的
+> 智能审核初稿。
 
-## Figure contract
+## 二、插图契约
 
-- **Archetype:** schematic-led composite.
-- **Backend:** Python with Matplotlib only.
-- **Target:** a Nature-style, two-column-width method overview.
-- **Final size:** approximately 180 mm × 115 mm.
-- **Primary export:** editable SVG with text retained as text.
-- **Secondary exports:** PDF and 600 dpi PNG.
-- **Background:** white.
-- **Reading direction:** left to right.
+- **图形类型：** 以方法示意图为主的组合式插图。
+- **绘图后端：** 仅使用 Python 和 Matplotlib。
+- **目标版式：** Nature 风格、双栏宽度的方法总览图。
+- **最终尺寸：** 约 180 mm × 115 mm。
+- **主要格式：** 文本保持可编辑的 SVG。
+- **辅助格式：** PDF 和 600 dpi PNG。
+- **背景：** 白色。
+- **阅读方向：** 从左向右。
 
-## Panel map
+## 三、图中模块
 
-### a. Input and task definition
+### a. 输入与任务定义
 
-Show the construction-scheme Word document entering a structure-preserving
-parser. Represent paragraphs, tables, images, and source locations as evidence
-blocks. Human-confirmed audit year and work type instantiate a versioned audit
-task set.
+施工方案 Word 文档首先进入保留原始结构的解析模块。段落、表格、图片和
+源位置被组织为证据块。人工确认审核年份和作业类型后，系统实例化版本化
+审核任务集。
 
-### b. Hybrid audit routing
+### b. 混合审核任务路由
 
-Split the task set into three routes:
+审核任务集被分为三条路径：
 
-1. deterministic template checks;
-2. the dedicated JSA rule engine;
-3. semantic audit tasks.
+1. 确定性模板检查；
+2. 专用 JSA 规则引擎；
+3. 语义审核任务。
 
-The semantic route is visually dominant because it contains the proposed
-method.
+语义审核路径承载论文提出的主要方法，因此在视觉上占据主导地位。
 
-### c. Dual-source graph-vector retrieval
+### c. 双源分层的图—向量检索
 
-Show two deliberately separated knowledge sources:
+图中明确区分两类知识源：
 
-- a normative-clause vector index supplying authoritative compliance evidence,
-  filtered by declared standards, year, version, and applicability;
-- a historical-case knowledge graph supplying query expansion and engineering
-  reasonableness clues.
+- 规范条款向量索引提供权威合规证据，并按声明规范、年份、版本和适用性
+  进行筛选；
+- 历史案例知识图谱提供查询扩展和工程合理性线索。
 
-Graph-expanded concepts feed a second normative retrieval step. Historical
-case relations must not visually enter the authoritative-evidence channel.
+图谱扩展得到的概念进入第二次规范检索。历史案例关系不得进入权威规范
+证据通道。
 
-### d. Evidence-constrained judgement
+### d. 证据约束的语义判断
 
-Show the language model receiving document evidence, applicable normative
-clauses, and graph-derived clues. A dual-evidence gate permits a definite
-non-compliance finding only when both document evidence and applicable
-normative text are present. Reasonableness findings remain labelled as
-graph-supported clues rather than legal evidence.
+大语言模型接收施工方案证据、适用规范条款和图检索线索。只有施工方案
+证据与适用规范原文同时存在时，双证据门控才允许系统形成确定性不合规
+结论。工程合理性问题应明确标注为图谱线索支持，不能表现为法规依据。
 
-### e. Traceable output and human review
+### e. 可追溯输出与人工复核
 
-Merge deterministic, JSA, compliance, and reasonableness findings into an
-intelligent audit draft. Show evidence IDs being resolved back to immutable
-source excerpts, followed by human confirmation, modification, or rejection,
-and then the final audit report.
+确定性检查、JSA 检查、合规性判断和合理性判断被合并为智能审核初稿。
+系统依据证据 ID 回填不可篡改的来源原文，随后由人工确认、修改或驳回，
+最终形成审核报告。
 
-## Visual language
+## 四、视觉语言
 
-- **Primary blue:** document flow and the proposed method.
-- **Teal/green:** normative clauses and authoritative evidence.
-- **Muted violet:** historical cases, knowledge graph, and engineering clues.
-- **Warm orange/red:** evidence gates, validation, and reviewer attention.
-- **Neutral grey:** deterministic support components and metadata.
+- **主蓝色：** 施工方案数据流和论文提出的方法。
+- **青绿色：** 规范条款与权威合规证据。
+- **低饱和紫色：** 历史案例、知识图谱和工程经验线索。
+- **暖橙红色：** 证据门控、结论校验和人工复核。
+- **中性灰色：** 确定性辅助模块与元数据。
 
-Use rounded rectangles, thin directional arrows, direct labels, and whitespace
-instead of decorative panel borders. Keep saturation low and reserve the warm
-accent for the evidence gate and human decision.
+使用圆角矩形、细方向箭头、直接标注和留白组织信息，不添加装饰性面板
+边框。整体采用低饱和配色，仅在证据门控和人工裁决位置使用暖色强调。
 
-## Integrity and reviewer-risk controls
+## 五、完整性与审稿风险控制
 
-- Do not imply that knowledge-graph triples are normative evidence.
-- Do not imply that the model makes the final decision.
-- Make time/version applicability visible before normative retrieval.
-- Distinguish deterministic, JSA, compliance, and reasonableness routes.
-- Preserve the fallback path from unavailable graph retrieval to normative
-  vector retrieval.
-- Avoid quantitative performance claims because no experimental results are
-  supplied for this figure.
-- Keep every output traceable to document, normative, or graph source IDs.
+- 不得暗示知识图谱三元组属于规范证据。
+- 不得暗示大语言模型直接作出最终审核结论。
+- 在规范检索之前明确显示时间与版本适用性筛选。
+- 清楚区分确定性检查、JSA 检查、合规性判断和合理性判断。
+- 保留图检索不可用时退化为规范向量检索的路径。
+- 由于当前插图不包含实验结果，不展示未经支持的性能提升数据。
+- 所有输出均应能够追溯到施工方案、规范条款或图谱来源 ID。
 
-## Acceptance criteria
+## 六、验收标准
 
-The figure is acceptable when:
+满足下列条件时，插图视为合格：
 
-1. the dual-source division is understandable without reading the manuscript;
-2. the evidence gate is the strongest visual emphasis;
-3. normative evidence and graph clues cannot be confused;
-4. human final review is explicit;
-5. all Chinese labels remain legible at final publication width;
-6. SVG text remains editable and the PDF/PNG exports render consistently.
+1. 无需阅读正文即可理解两类知识源的职责分工；
+2. 双证据门控是全图最突出的机制；
+3. 规范权威证据与图谱经验线索不会被混淆；
+4. 人工完成最终复核和裁决的边界清晰；
+5. 最终论文尺寸下所有中文标签仍然清晰可读；
+6. SVG 中的文字保持可编辑，PDF 和 PNG 的渲染结果一致。
