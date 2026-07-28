@@ -122,9 +122,11 @@ def get_entity_debug_dir(file_name, debug_dir):
     return save_dir
 
 
-def get_run_debug_dir(debug_dir, run_name, run_id):
-    """Keep debug artifacts isolated in a readable, per-experiment directory."""
+def get_run_debug_dir(debug_dir, run_name, run_id=None):
+    """Keep artifacts isolated by run id while supporting legacy two-arg paths."""
     safe_run_name = clean_filename(str(run_name)).strip() or "run"
+    if run_id is None:
+        return Path(debug_dir) / safe_run_name
     return Path(debug_dir) / f"{safe_run_name}__{str(run_id)[:8]}"
 
 

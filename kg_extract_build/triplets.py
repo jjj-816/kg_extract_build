@@ -8,6 +8,7 @@ from .llm_thinking import build_thinking_options
 from .preprocess import is_valid_entity_candidate
 from .run_config import redact_text
 from .settings import UNKNOWN_TYPE
+from .source_profiles import get_source_prompt_profile
 
 
 class TripletGenerator:
@@ -25,6 +26,7 @@ class TripletGenerator:
         enable_thinking=False,
         temperature=0.1,
         prompt_version="relation-batch-v1",
+        source_type="case",
     ):
         self.client = OpenAI(api_key=api_key, base_url=base_url, timeout=120.0)
         self.model = model_name
@@ -40,6 +42,7 @@ class TripletGenerator:
         )
         self.temperature = float(temperature)
         self.prompt_version = str(prompt_version)
+        self.source_type = source_type
         self.type_completion_call_count = 0
 
     def generate(self, entity, evidence):
@@ -303,7 +306,11 @@ class TripletGenerator:
                     ]
                 )
             )
+        profile = get_source_prompt_profile(getattr(self, "source_type", "case"))
         return f"""任务：基于指定证据，为多个目标实体抽取知识图谱三元组。
+
+【文档来源】{profile.label}（{profile.source_type}，提示词版本 {profile.prompt_version}）
+{profile.triplet_guidance}
 
 【证据句】
 {chr(10).join(evidence_lines)}
@@ -347,7 +354,10 @@ evidence_sentence_ids is mandatory and must be an integer array such as [142], n
         return float(getattr(self, "temperature", 0.1))
 
     def _build_direct_prompt(self, document_text):
-        return f"""任务：直接从下列施工文档切片抽取知识图谱三元组。
+        profile = get_source_prompt_profile(getattr(self, "source_type", "case"))
+        return f"""任务：直接从下列{profile.label}切片抽取知识图谱三元组。
+
+{profile.triplet_guidance}
 
 实体类型：
 {self.schema.render_entity_schema()}
@@ -471,7 +481,11 @@ head 和 tail 必须是文档中实际出现的短实体；不要输出完整句
     def _build_prompt(self, entity_name, entity_type, evidence_by_id):
         allowed_relations = self.schema.render_allowed_relation_schema(entity_type)
         allowed_tail_types = self.schema.render_allowed_tail_types(entity_type)
+        profile = get_source_prompt_profile(getattr(self, "source_type", "case"))
         return f"""任务：从上下文抽取以指定 head 为中心的知识图谱三元组。
+
+【文档来源】{profile.label}（{profile.source_type}，提示词版本 {profile.prompt_version}）
+{profile.triplet_guidance}
 
 head="{entity_name}"
 head_type="{entity_type}"
