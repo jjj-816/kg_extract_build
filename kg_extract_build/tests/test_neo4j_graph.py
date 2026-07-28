@@ -347,6 +347,7 @@ class Neo4jGraphTests(unittest.TestCase):
                 "tail": tail,
                 "tail_type": "设备",
                 "relation_name": "USES",
+                "source_type": "spec",
                 "document_id": 9,
                 "file_name": "安全方案.pdf",
                 "source_llm_call_id": 12,
@@ -438,6 +439,7 @@ class Neo4jGraphTests(unittest.TestCase):
         self.assertEqual(
             json.loads(item["metadata"]["evidence_json"])[0]["chunk_index"], 4
         )
+        self.assertEqual(item["metadata"]["source_type"], "spec")
 
     def test_stateful_fake_moves_tail_edges_and_preserves_historical_aliases(self):
         def source(run_id, triplets):

@@ -8,6 +8,7 @@ from .llm_thinking import build_thinking_options
 from .preprocess import is_valid_entity_candidate
 from .run_config import redact_text
 from .settings import UNKNOWN_TYPE
+from .source_profiles import get_source_prompt_profile
 
 
 NORMATIVE_ENTITY_TYPE = "规范条款"
@@ -24,6 +25,7 @@ class LongDocLLMEntityExtractor:
         max_chunk_size=2000,
         provider_id="custom",
         enable_thinking=False,
+        source_type="case",
     ):
         self.expert_entities = expert_entities
         self.client = OpenAI(api_key=api_key, base_url=base_url, timeout=120.0)
@@ -35,6 +37,7 @@ class LongDocLLMEntityExtractor:
             provider_id,
             enable_thinking,
         )
+        self.source_type = source_type
 
     def extract(
         self,
@@ -153,8 +156,12 @@ class LongDocLLMEntityExtractor:
         return entities
 
     def _build_prompt(self, chunk):
+        profile = get_source_prompt_profile(getattr(self, "source_type", "case"))
         return f"""你是页岩气工程知识图谱实体抽取专家。
 请只从给定文本中抽取真实出现的专业实体，并为每个实体标注实体类型。
+
+【文档来源】{profile.label}（{profile.source_type}，提示词版本 {profile.prompt_version}）
+{profile.entity_guidance}
 
 【实体类型schema】
 {self.schema.render_entity_schema()}

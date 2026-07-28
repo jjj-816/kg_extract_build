@@ -168,6 +168,7 @@ class Neo4jGraphSynchronizer:
                         "triplet_id": triplet["triplet_id"],
                         "document_id": triplet.get("document_id"),
                         "file_name": triplet.get("file_name"),
+                        "source_type": triplet.get("source_type"),
                         "source_llm_call_id": triplet.get("source_llm_call_id"),
                         "model_name": triplet.get("model_name"),
                         "prompt_version": llm_metadata.get("prompt_version"),

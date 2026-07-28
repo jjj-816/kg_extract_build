@@ -36,6 +36,14 @@ class SchemaSqlTests(unittest.TestCase):
                 "kg_evaluation_run",
                 "kg_evaluation_metric",
                 "kg_evaluation_entity_alignment",
+                "kg_normative_family",
+                "kg_normative_version",
+                "kg_normative_clause_set",
+                "kg_normative_clause",
+                "kg_normative_index",
+                "kg_normative_index_segment",
+                "kg_normative_index_release",
+                "kg_normative_index_release_member",
             },
         )
 
@@ -48,6 +56,14 @@ class SchemaSqlTests(unittest.TestCase):
         self.assertIn("INDEX idx_kg_eval_run_gold (run_id, gold_hash)", schema_sql)
         self.assertIn("CONSTRAINT fk_kg_eval_run FOREIGN KEY (run_id)", schema_sql)
         self.assertIn("CONSTRAINT fk_kg_eval_metric_run FOREIGN KEY (evaluation_id)", schema_sql)
+
+    def test_normative_evidence_tables_preserve_immutable_references(self):
+        schema_sql = self._schema_sql()
+        self.assertIn("CREATE TABLE IF NOT EXISTS kg_normative_family", schema_sql)
+        self.assertIn("CREATE TABLE IF NOT EXISTS kg_normative_clause_set", schema_sql)
+        self.assertIn("CREATE TABLE IF NOT EXISTS kg_normative_index_release", schema_sql)
+        self.assertIn("REFERENCES kg_document(document_id) ON DELETE RESTRICT", schema_sql)
+        self.assertIn("UNIQUE KEY uk_kg_normative_index_fingerprint", schema_sql)
 
 
 if __name__ == "__main__":

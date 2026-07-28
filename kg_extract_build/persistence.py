@@ -290,6 +290,9 @@ class MemoryExperimentStore(NullExperimentStore):
 
     def load_graph_sync_input(self, run_id):
         triplets = [dict(row) for row in self.triplets if row.get("run_id") == run_id and row.get("stage") == "final" and row.get("is_valid", True)]
+        for triplet in triplets:
+            document = self.documents.get(triplet.get("document_id"), {})
+            triplet["source_type"] = document.get("source_type")
         ids = {row["triplet_id"] for row in triplets}
         retrieval = {row.get("retrieval_id"): row for row in self.retrieval_results}
         evidence = defaultdict(list)
@@ -1015,7 +1018,7 @@ class MySQLExperimentStore(BaseExperimentStore):
 
     def load_graph_sync_input(self, run_id):
         run = self._read("SELECT run_id, run_name, config_snapshot, schema_snapshot, started_at FROM kg_experiment_run WHERE run_id=%s", (run_id,))
-        triplets = self._read("""SELECT t.triplet_id,t.run_id,t.document_id,t.source_llm_call_id,t.head,t.head_type,t.relation_name,t.tail,t.tail_type,t.created_at,d.file_name,c.model_name,c.metadata_json AS llm_metadata,r.config_snapshot,r.schema_snapshot
+        triplets = self._read("""SELECT t.triplet_id,t.run_id,t.document_id,t.source_llm_call_id,t.head,t.head_type,t.relation_name,t.tail,t.tail_type,t.created_at,d.file_name,d.source_type,c.model_name,c.metadata_json AS llm_metadata,r.config_snapshot,r.schema_snapshot
             FROM kg_triplet t JOIN kg_document d ON d.document_id=t.document_id JOIN kg_experiment_run r ON r.run_id=t.run_id LEFT JOIN kg_llm_call c ON c.llm_call_id=t.source_llm_call_id
             WHERE t.run_id=%s AND t.stage='final' AND t.is_valid=1 ORDER BY t.triplet_id""", (run_id,))
         rows = self._read("""SELECT te.triplet_id,rr.retrieval_id,rr.sentence,chunk.chunk_index AS chunk_index,te.evidence_order,te.source

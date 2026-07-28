@@ -200,3 +200,156 @@ CREATE TABLE IF NOT EXISTS kg_evaluation_entity_alignment (
     CONSTRAINT fk_kg_eval_alignment_run FOREIGN KEY (evaluation_id)
         REFERENCES kg_evaluation_run(evaluation_id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS kg_normative_family (
+    family_id CHAR(36) PRIMARY KEY,
+    canonical_name VARCHAR(512) NOT NULL,
+    standard_code_base VARCHAR(255) NULL,
+    created_at DATETIME(6) NOT NULL,
+    updated_at DATETIME(6) NOT NULL,
+    UNIQUE KEY uk_kg_normative_family_identity (canonical_name, standard_code_base)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS kg_normative_version (
+    version_id CHAR(36) PRIMARY KEY,
+    family_id CHAR(36) NOT NULL,
+    document_id BIGINT UNSIGNED NOT NULL,
+    display_name VARCHAR(512) NOT NULL,
+    standard_code VARCHAR(255) NULL,
+    version_year INT UNSIGNED NOT NULL,
+    publication_year INT UNSIGNED NULL,
+    effective_year INT UNSIGNED NULL,
+    invalid_year INT UNSIGNED NULL,
+    status VARCHAR(32) NOT NULL,
+    supersedes_version_id CHAR(36) NULL,
+    metadata_confirmed TINYINT(1) NOT NULL DEFAULT 0,
+    metadata_hash CHAR(64) NOT NULL,
+    confirmed_at DATETIME(6) NULL,
+    created_at DATETIME(6) NOT NULL,
+    updated_at DATETIME(6) NOT NULL,
+    INDEX idx_kg_normative_version_family_year (family_id, effective_year, invalid_year),
+    CONSTRAINT fk_kg_normative_version_family FOREIGN KEY (family_id)
+        REFERENCES kg_normative_family(family_id) ON DELETE RESTRICT,
+    CONSTRAINT fk_kg_normative_version_document FOREIGN KEY (document_id)
+        REFERENCES kg_document(document_id) ON DELETE RESTRICT,
+    CONSTRAINT fk_kg_normative_version_supersedes FOREIGN KEY (supersedes_version_id)
+        REFERENCES kg_normative_version(version_id) ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS kg_normative_clause_set (
+    clause_set_id CHAR(36) PRIMARY KEY,
+    version_id CHAR(36) NOT NULL,
+    document_id BIGINT UNSIGNED NOT NULL,
+    source_content_hash CHAR(64) NOT NULL,
+    parser_version VARCHAR(128) NOT NULL,
+    parser_config_hash CHAR(64) NOT NULL,
+    status VARCHAR(32) NOT NULL,
+    created_at DATETIME(6) NOT NULL,
+    published_at DATETIME(6) NULL,
+    INDEX idx_kg_normative_clause_set_version (version_id, status),
+    CONSTRAINT fk_kg_normative_clause_set_version FOREIGN KEY (version_id)
+        REFERENCES kg_normative_version(version_id) ON DELETE RESTRICT,
+    CONSTRAINT fk_kg_normative_clause_set_document FOREIGN KEY (document_id)
+        REFERENCES kg_document(document_id) ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS kg_normative_clause (
+    clause_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    clause_set_id CHAR(36) NOT NULL,
+    version_id CHAR(36) NOT NULL,
+    document_id BIGINT UNSIGNED NOT NULL,
+    clause_number VARCHAR(128) NULL,
+    hierarchy_path JSON NULL,
+    clause_title VARCHAR(1024) NULL,
+    raw_text LONGTEXT NOT NULL,
+    normalized_text LONGTEXT NOT NULL,
+    start_offset INT NOT NULL,
+    end_offset INT NOT NULL,
+    content_hash CHAR(64) NOT NULL,
+    parse_status VARCHAR(32) NOT NULL,
+    created_at DATETIME(6) NOT NULL,
+    INDEX idx_kg_normative_clause_set (clause_set_id, clause_number),
+    CONSTRAINT fk_kg_normative_clause_set FOREIGN KEY (clause_set_id)
+        REFERENCES kg_normative_clause_set(clause_set_id) ON DELETE RESTRICT,
+    CONSTRAINT fk_kg_normative_clause_version FOREIGN KEY (version_id)
+        REFERENCES kg_normative_version(version_id) ON DELETE RESTRICT,
+    CONSTRAINT fk_kg_normative_clause_document FOREIGN KEY (document_id)
+        REFERENCES kg_document(document_id) ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS kg_normative_index (
+    index_id CHAR(36) PRIMARY KEY,
+    version_id CHAR(36) NOT NULL,
+    clause_set_id CHAR(36) NOT NULL,
+    collection_name VARCHAR(255) NOT NULL,
+    embedding_model_key VARCHAR(255) NOT NULL,
+    embedding_model_revision VARCHAR(255) NOT NULL,
+    embedding_dimension INT UNSIGNED NOT NULL,
+    encoder_profile_json JSON NOT NULL,
+    encoder_profile_hash CHAR(64) NOT NULL,
+    metric_type VARCHAR(32) NOT NULL,
+    milvus_index_params_json JSON NULL,
+    milvus_search_params_json JSON NULL,
+    chunker_version VARCHAR(128) NOT NULL,
+    chunk_config_json JSON NOT NULL,
+    index_fingerprint CHAR(64) NOT NULL,
+    status VARCHAR(32) NOT NULL,
+    error_message TEXT NULL,
+    built_at DATETIME(6) NULL,
+    created_at DATETIME(6) NOT NULL,
+    UNIQUE KEY uk_kg_normative_index_fingerprint (index_fingerprint),
+    INDEX idx_kg_normative_index_version (version_id, status),
+    CONSTRAINT fk_kg_normative_index_version FOREIGN KEY (version_id)
+        REFERENCES kg_normative_version(version_id) ON DELETE RESTRICT,
+    CONSTRAINT fk_kg_normative_index_clause_set FOREIGN KEY (clause_set_id)
+        REFERENCES kg_normative_clause_set(clause_set_id) ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS kg_normative_index_segment (
+    segment_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    index_id CHAR(36) NOT NULL,
+    clause_id BIGINT UNSIGNED NOT NULL,
+    segment_index INT UNSIGNED NOT NULL,
+    embedding_text LONGTEXT NOT NULL,
+    token_count INT UNSIGNED NULL,
+    text_hash CHAR(64) NOT NULL,
+    milvus_vector_id VARCHAR(128) NOT NULL,
+    created_at DATETIME(6) NOT NULL,
+    UNIQUE KEY uk_kg_normative_segment_index_order (index_id, clause_id, segment_index),
+    UNIQUE KEY uk_kg_normative_segment_vector (index_id, milvus_vector_id),
+    CONSTRAINT fk_kg_normative_segment_index FOREIGN KEY (index_id)
+        REFERENCES kg_normative_index(index_id) ON DELETE RESTRICT,
+    CONSTRAINT fk_kg_normative_segment_clause FOREIGN KEY (clause_id)
+        REFERENCES kg_normative_clause(clause_id) ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS kg_normative_index_release (
+    release_id CHAR(36) PRIMARY KEY,
+    release_name VARCHAR(255) NOT NULL,
+    collection_name VARCHAR(255) NOT NULL,
+    embedding_model_key VARCHAR(255) NOT NULL,
+    embedding_model_revision VARCHAR(255) NOT NULL,
+    encoder_profile_hash CHAR(64) NOT NULL,
+    release_fingerprint CHAR(64) NOT NULL,
+    status VARCHAR(32) NOT NULL,
+    published_at DATETIME(6) NULL,
+    created_at DATETIME(6) NOT NULL,
+    UNIQUE KEY uk_kg_normative_release_fingerprint (release_fingerprint)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS kg_normative_index_release_member (
+    release_id CHAR(36) NOT NULL,
+    index_id CHAR(36) NOT NULL,
+    version_id CHAR(36) NOT NULL,
+    clause_set_id CHAR(36) NOT NULL,
+    included_at DATETIME(6) NOT NULL,
+    PRIMARY KEY (release_id, index_id),
+    CONSTRAINT fk_kg_normative_release_member_release FOREIGN KEY (release_id)
+        REFERENCES kg_normative_index_release(release_id) ON DELETE RESTRICT,
+    CONSTRAINT fk_kg_normative_release_member_index FOREIGN KEY (index_id)
+        REFERENCES kg_normative_index(index_id) ON DELETE RESTRICT,
+    CONSTRAINT fk_kg_normative_release_member_version FOREIGN KEY (version_id)
+        REFERENCES kg_normative_version(version_id) ON DELETE RESTRICT,
+    CONSTRAINT fk_kg_normative_release_member_clause_set FOREIGN KEY (clause_set_id)
+        REFERENCES kg_normative_clause_set(clause_set_id) ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

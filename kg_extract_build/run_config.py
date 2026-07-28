@@ -156,6 +156,7 @@ class PipelineConfig:
     document_folder: Path
     selected_files: tuple[str, ...]
     llm: LLMConfig
+    document_source_type: str = "case"
     chunking: ChunkingConfig = field(default_factory=ChunkingConfig)
     retrieve_sentence_num: int = 10
     respect_legacy_breakpoint: bool = False
@@ -169,6 +170,7 @@ class PipelineConfig:
 
     def validate(self) -> None:
         from .method_profiles import get_method_profile
+        from .source_profiles import SOURCE_TYPES
 
         profile = get_method_profile(self.method_id)
         preset = _provider(self.llm.provider_id)
@@ -195,6 +197,8 @@ class PipelineConfig:
             )
         if not self.selected_files:
             raise ValueError("至少选择一份文档")
+        if self.document_source_type not in SOURCE_TYPES:
+            raise ValueError("文档来源类型必须是 case、spec 或 auto")
         if not 200 <= self.chunking.max_chars <= 20_000:
             raise ValueError("切片字符数必须在 200 到 20000 之间")
         if self.relation_strategy not in {
@@ -256,6 +260,7 @@ class PipelineConfig:
                 redact_text(name, secrets=secret)
                 for name in self.selected_files
             ],
+            "document_source_type_requested": self.document_source_type,
             "llm": self.llm.sanitized(),
             "chunking": asdict(self.chunking),
             "retrieve_sentence_num": self.retrieve_sentence_num,
@@ -297,6 +302,9 @@ class PipelineConfig:
                 enable_thinking=_env_flag(
                     os.environ.get("LLM_ENABLE_THINKING", "")
                 ),
+            ),
+            document_source_type=os.environ.get(
+                "KG_DOCUMENT_SOURCE_TYPE", "auto"
             ),
             chunking=ChunkingConfig(),
             retrieve_sentence_num=settings.RETRIEVE_SENTENCE_NUM,

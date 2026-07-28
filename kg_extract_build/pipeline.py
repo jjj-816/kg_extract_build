@@ -35,12 +35,7 @@ from .settings import (
 )
 from .triplets import TripletCorrector, TripletGenerator
 from .vector_store import build_vector_store
-
-
-def infer_source_type(file_name):
-    if "规范" in file_name or "标准" in file_name:
-        return "spec"
-    return "case"
+from .source_profiles import infer_source_type, resolve_source_type
 
 
 def build_known_entities(aligned_entities):
@@ -294,6 +289,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
         max_chunk_size=config.chunking.max_chars,
         provider_id=config.llm.provider_id,
         enable_thinking=config.llm.enable_thinking,
+        source_type=config.document_source_type if config.document_source_type != "auto" else "case",
     )
     aligner = EntityAligner(
         config.llm.api_key,
@@ -371,7 +367,10 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
             print(f"正在处理文档：{file_name}")
             print("=" * 60)
 
-            source_type = infer_source_type(file_name)
+            source_type = resolve_source_type(
+                config.document_source_type, file_name
+            )
+            extractor.source_type = source_type
             publish(
                 "preprocessing_started",
                 "preprocessing",
@@ -428,6 +427,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                         enable_thinking=config.llm.enable_thinking,
                         temperature=config.llm.temperature,
                         prompt_version=method_profile.prompt_version,
+                        source_type=source_type,
                     )
                     direct_chunks = extractor._split_document(extraction_content)
                     recorder.record_chunks("direct_extraction", direct_chunks)
@@ -609,6 +609,7 @@ def run_pipeline(config=None, emit=None, cancel_token=None):
                     enable_thinking=config.llm.enable_thinking,
                     temperature=config.llm.temperature,
                     prompt_version=method_profile.prompt_version,
+                    source_type=source_type,
                 )
 
                 raw_triplets = {}

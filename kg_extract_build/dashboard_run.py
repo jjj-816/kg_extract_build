@@ -17,6 +17,7 @@ from kg_extract_build.run_config import (
     PROVIDERS,
     resolve_provider_api_key,
 )
+from kg_extract_build.source_profiles import SOURCE_PROMPT_PROFILES, UI_SOURCE_TYPES
 from kg_extract_build.runtime import PipelineRunRegistry, reduce_events
 
 
@@ -234,6 +235,14 @@ def render_run_page():
             default=[item.name for item in documents],
             disabled=registry.is_running,
         )
+        document_source_type = st.selectbox(
+            "文档来源类型",
+            options=UI_SOURCE_TYPES,
+            format_func=lambda value: SOURCE_PROMPT_PROFILES[value].label,
+            disabled=registry.is_running,
+            help="一次实验中的全部文档必须使用同一种来源类型。",
+        )
+        st.caption("来源决定实体与三元组提示词配置；不会复制处理 pipeline。")
 
         provider_id = st.selectbox(
             "LLM 提供商",
@@ -401,6 +410,7 @@ def render_run_page():
                         enable_thinking=enable_thinking,
                         temperature=float(temperature),
                     ),
+                    document_source_type=document_source_type,
                     chunking=ChunkingConfig(max_chars=int(max_chars)),
                     retrieve_sentence_num=int(retrieve_count),
                     respect_legacy_breakpoint=respect_breakpoint,
