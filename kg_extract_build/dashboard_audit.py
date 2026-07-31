@@ -9,6 +9,10 @@ import pandas as pd
 import streamlit as st
 
 from .audit.document_store import AuditDocumentError
+from .audit.evidence_reader import (
+    block_text_for_export, build_task_evidence_export, group_section_label,
+    location_status_label, readable_source, resolve_group_blocks, safe_export_filename, task_option_label,
+)
 from .audit.persistence import MySQLAuditStore
 from .audit.preview import AuditPreview, create_audit_preview
 from .audit.settings import AUDIT_CONVERSION_TIMEOUT, AUDIT_DOC_CONVERTER, AUDIT_STORAGE_DIR, LIBREOFFICE_PATH
@@ -134,7 +138,7 @@ def render_audit_page() -> None:
         st.warning("封面主要为图片，封面信息和签字将转入人工核验；不影响其他章节预览。")
     _render_environment_health(preview)
 
-    preview_tab, task_tab, context_tab = st.tabs(["证据块预览", "任务定位预览", "审核上下文"])
+    preview_tab, task_tab, context_tab = st.tabs(["证据块预览", "任务证据阅读器", "审核上下文"])
     with preview_tab:
         block_rows = [
             {
@@ -156,16 +160,45 @@ def render_audit_page() -> None:
             if parsed.cover_visual_only:
                 st.warning("封面为整页图片或主要由图片构成，需要人工核验封面签字。")
     with task_tab:
-        rows = preview.task_rows()
-        st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
-        located = sum(row["定位状态"] != "not_located" for row in rows)
-        st.caption(f"已产生全部 {len(rows)} 项定位记录；其中 {located} 项至少有一个候选证据块。")
-        selected_task_id = st.selectbox("展开单项任务证据组", [task.task_id for task in preview.task_library.tasks])
-        location = preview.locations[selected_task_id]
-        st.write(f"定位状态：{location.status}；{location.diagnostic or '已形成候选证据组'}")
-        for group in location.evidence_groups:
-            st.markdown(f"**{group.group_id}** · 得分 {group.score:.2f} · {' / '.join(group.section_path)}")
-            st.caption(f"锚点：{group.anchor_block_id}；支持块：{', '.join(group.supporting_block_ids)}；{group.reason}")
+        export = build_task_evidence_export(preview)
+        st.download_button("下载全部任务证据 CSV", export.to_csv(index=False).encode("utf-8-sig"),
+                           file_name=safe_export_filename(parsed.document.original_filename), mime="text/csv")
+        tasks_by_id = {task.task_id: task for task in preview.task_library.tasks}
+        selected_task_id = st.selectbox("选择任务", list(tasks_by_id), format_func=lambda item: task_option_label(tasks_by_id[item]))
+        task, location = tasks_by_id[selected_task_id], preview.locations[selected_task_id]
+        st.markdown(f"#### {task.name}")
+        summary = st.columns(3)
+        summary[0].write(f"**预期章节**：{task.section}")
+        summary[1].write(f"**定位状态**：{location_status_label(location.status)}")
+        primary_group = location.evidence_groups[0] if location.evidence_groups else None
+        summary[2].write(f"**系统定位章节**：{group_section_label(primary_group) or '—'}")
+        if not location.evidence_groups:
+            st.info("系统没有找到该任务对应的候选证据。" + (f"\n\n说明：{location.diagnostic}" if location.diagnostic else ""))
+        else:
+            selected_group = primary_group
+            if location.status == "ambiguous":
+                group_options = list(range(len(location.evidence_groups)))
+                index = st.selectbox("查看候选证据", group_options, format_func=lambda item: f"候选{item + 1}{'（系统首选）' if item == 0 else ''}｜{group_section_label(location.evidence_groups[item])}")
+                selected_group = location.evidence_groups[index]
+            st.markdown("#### 系统首选证据" if selected_group is primary_group else "#### 候选证据")
+            image_map = {image.image_id: image for image in parsed.images}
+            blocks = resolve_group_blocks(parsed, selected_group)
+            for block in blocks:
+                if block.block_type == "heading":
+                    st.markdown(f"##### {block.raw_text}")
+                elif block.block_type == "table" and block.table_json:
+                    st.dataframe(pd.DataFrame(block.table_json.get("rows", [])), use_container_width=True, hide_index=True)
+                elif block.raw_text:
+                    st.write(block.raw_text)
+                for image_id in block.image_refs:
+                    image = image_map.get(image_id)
+                    if image and image.stored_path.is_file():
+                        st.image(str(image.stored_path), width=360)
+                    else:
+                        st.warning("图片文件不可用。")
+            with st.expander("查看来源位置"):
+                for block in blocks:
+                    st.write(f"章节：{' / '.join(block.section_path) or '未归属章节'}；来源：{readable_source(block)}")
     with context_tab:
         st.text_input("项目或平台名称", key="audit_context_project_name")
         st.number_input("审核基准年份", min_value=2000, max_value=2100, value=2025, step=1, key="audit_context_year")
