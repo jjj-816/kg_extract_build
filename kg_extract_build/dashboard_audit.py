@@ -11,7 +11,7 @@ import streamlit as st
 from .audit.document_store import AuditDocumentError
 from .audit.persistence import MySQLAuditStore
 from .audit.preview import AuditPreview, create_audit_preview
-from .audit.settings import AUDIT_STORAGE_DIR
+from .audit.settings import AUDIT_CONVERSION_TIMEOUT, AUDIT_DOC_CONVERTER, AUDIT_STORAGE_DIR, LIBREOFFICE_PATH
 from .audit.word_converter import doc_conversion_capability
 
 
@@ -42,6 +42,8 @@ def _render_environment_health(preview: AuditPreview) -> None:
         st.write(f"任务库：{preview.task_library.version}（{len(preview.task_library.tasks)} 项）")
         st.write(f"任务库哈希：{preview.task_library.sha256}")
         st.write(f"任务绑定：{len(preview.bindings)} 项")
+        st.write(f"转换策略：{AUDIT_DOC_CONVERTER}；超时：{AUDIT_CONVERSION_TIMEOUT} 秒")
+        st.write(f"LibreOffice：{LIBREOFFICE_PATH}（{'可用' if LIBREOFFICE_PATH.is_file() else '不可用'}）")
         try:
             AUDIT_STORAGE_DIR.mkdir(parents=True, exist_ok=True)
             st.success(f"文件存储目录可写：{AUDIT_STORAGE_DIR}")
@@ -92,6 +94,8 @@ def render_audit_page() -> None:
         f"源文件：{parsed.document.original_filename} · SHA-256：{parsed.document.content_hash[:16]}… · "
         f"任务库：{preview.task_library.version}"
     )
+    if parsed.document.converter_name:
+        st.info(f"本次 `.doc` 转换器：{parsed.document.converter_name}；诊断：{parsed.document.conversion_diagnostics.get('validation', {})}")
     if parsed.cover_visual_only:
         st.warning("封面主要为图片，封面信息和签字将转入人工核验；不影响其他章节预览。")
     _render_environment_health(preview)
@@ -137,8 +141,6 @@ def render_audit_page() -> None:
         if st.button("确认审核上下文并创建审核运行", type="primary"):
             if not _mysql_enabled():
                 st.error("MySQL 持久化未启用，当前不能创建审核运行。")
-            elif not reviewer_name.strip():
-                st.error("请填写审核确认人后再创建审核运行。")
             else:
                 context = {
                     "project_name": st.session_state.get("audit_context_project_name", "").strip(),
@@ -146,6 +148,13 @@ def render_audit_page() -> None:
                     "work_purpose": st.session_state.get("audit_context_work_purpose", "").strip(),
                     "work_types": list(st.session_state.get("audit_context_work_types", [])),
                 }
+                missing = [name for name, value in {
+                    "项目或平台名称": context["project_name"], "作业目的": context["work_purpose"],
+                    "涉及作业类型": context["work_types"], "审核确认人": reviewer_name.strip(),
+                }.items() if not value]
+                if missing:
+                    st.error("请先填写：" + "、".join(missing))
+                    return
                 store = MySQLAuditStore.from_env()
                 try:
                     healthy, health_message = store.schema_health()

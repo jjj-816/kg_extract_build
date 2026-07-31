@@ -41,8 +41,8 @@ class AuditLocatorTests(unittest.TestCase):
     def test_multiple_same_score_sections_are_ambiguous_groups(self):
         task = load_published_task_library().task_by_id("ARR-002")
         result = locate_task(task, (
-            block("B1", "施工顺序安排", ("4.1 施工顺序安排",)),
-            block("B2", "施工顺序安排", ("7.1 施工顺序安排",)),
+            block("B1", "施工顺序安排", ("第四章", "4.1 施工顺序安排")),
+            block("B2", "施工顺序安排", ("第四章", "4.2 施工顺序安排")),
         ))
         self.assertEqual(result.status, "ambiguous")
         self.assertEqual(len(result.evidence_groups), 2)

@@ -199,9 +199,11 @@ def convert_doc_to_docx(
             temporary_output.unlink(missing_ok=True)
             try:
                 if converter == "word":
+                    diagnostics["word_com"] = {"attempted": True}
                     version, detail = _word_com_convert(source, temporary_output)
                     diagnostics["word_com"] = detail
                 else:
+                    diagnostics["libreoffice"] = {"attempted": True, "path": str(LIBREOFFICE_PATH)}
                     version, detail = _libreoffice_convert(source, work_dir, timeout or AUDIT_CONVERSION_TIMEOUT)
                     diagnostics["libreoffice"] = detail
                     diagnostics["output_stability"] = _wait_for_stable_docx(temporary_output, timeout or AUDIT_CONVERSION_TIMEOUT)

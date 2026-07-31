@@ -116,6 +116,9 @@ class TaskEvidenceGroup:
     matched_locators: tuple[str, ...]
     score: float
     reason: str
+    anchor_type: str = "section_heading"
+    location_mode: str = "exact_region"
+    truncated: bool = False
 
 
 @dataclass(frozen=True)
