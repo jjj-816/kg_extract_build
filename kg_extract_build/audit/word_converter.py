@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import hashlib
+import os
 import platform
+import shutil
 import subprocess
 import tempfile
 import time
@@ -110,10 +112,14 @@ def _word_com_convert(source: Path, output_path: Path) -> tuple[str | None, dict
 
 def _libreoffice_convert(source: Path, output_dir: Path, timeout: int) -> tuple[str | None, dict]:
     diagnostics: dict = {"attempted": True, "path": str(LIBREOFFICE_PATH)}
-    profile_dir = Path(tempfile.mkdtemp(prefix="kg-audit-lo-profile-", dir=output_dir))
+    profile_root = Path(tempfile.gettempdir()) / "kg-audit"
+    profile_root.mkdir(parents=True, exist_ok=True)
+    profile_dir = Path(tempfile.mkdtemp(prefix="lo-profile-", dir=profile_root))
     started = time.perf_counter()
+    console_path = LIBREOFFICE_PATH.with_suffix(".com")
+    executable = console_path if console_path.is_file() else LIBREOFFICE_PATH
     command = [
-        str(LIBREOFFICE_PATH), "--headless",
+        str(executable), "--headless",
         f"-env:UserInstallation={profile_dir.resolve().as_uri()}",
         "--convert-to", "docx", "--outdir", str(output_dir), str(source),
     ]
@@ -121,7 +127,7 @@ def _libreoffice_convert(source: Path, output_dir: Path, timeout: int) -> tuple[
         result = subprocess.run(command, capture_output=True, text=False, timeout=timeout, check=False)
         stdout = (result.stdout or b"").decode("utf-8", errors="replace")
         stderr = (result.stderr or b"").decode("utf-8", errors="replace")
-        diagnostics.update({"stdout": stdout[-4000:], "stderr": stderr[-4000:], "returncode": result.returncode})
+        diagnostics.update({"executable": str(executable), "stdout": stdout[-4000:], "stderr": stderr[-4000:], "returncode": result.returncode})
         if result.returncode != 0:
             raise RuntimeError(f"LibreOffice 转换失败，返回码 {result.returncode}")
         return None, diagnostics
@@ -132,6 +138,32 @@ def _libreoffice_convert(source: Path, output_dir: Path, timeout: int) -> tuple[
         raise RuntimeError(diagnostics["error"]) from exc
     finally:
         diagnostics["elapsed_ms"] = int((time.perf_counter() - started) * 1000)
+        try:
+            shutil.rmtree(profile_dir)
+            diagnostics["profile_cleanup"] = "removed"
+        except OSError as exc:
+            diagnostics["profile_cleanup"] = f"failed: {exc}"
+
+
+def _wait_for_stable_docx(path: Path, timeout: int, minimum_size: int = 128) -> dict:
+    """等待 soffice 可能异步写入的结果完成，避免读取半成品。"""
+    started, stable_count, previous = time.monotonic(), 0, None
+    checks = 0
+    while time.monotonic() - started < timeout:
+        checks += 1
+        if path.is_file() and path.stat().st_size >= minimum_size:
+            stat = path.stat()
+            current = (stat.st_size, stat.st_mtime_ns)
+            stable_count = stable_count + 1 if current == previous else 0
+            previous = current
+            if stable_count >= 1:
+                try:
+                    _validate_docx(path)
+                    return {"wait_output_ms": int((time.monotonic() - started) * 1000), "stability_checks": checks}
+                except RuntimeError:
+                    pass
+        time.sleep(0.2)
+    raise RuntimeError(f"转换输出在 {timeout} 秒内未生成稳定的有效 DOCX")
 
 
 def convert_doc_to_docx(
@@ -160,20 +192,27 @@ def convert_doc_to_docx(
         attempts.append("word")
     if selected_mode in {"auto", "libreoffice"} and capability.libreoffice_available:
         attempts.append("libreoffice")
-    for converter in attempts:
-        output_path.unlink(missing_ok=True)
-        try:
-            if converter == "word":
-                version, detail = _word_com_convert(source, output_path)
-                diagnostics["word_com"] = detail
-            else:
-                version, detail = _libreoffice_convert(source, destination_dir, timeout or AUDIT_CONVERSION_TIMEOUT)
-                diagnostics["libreoffice"] = detail
-            content_hash, validation = _validate_docx(output_path)
-            diagnostics["validation"] = validation
-            return DocxConversionResult(output_path, content_hash, converter, version, diagnostics)
-        except Exception as exc:
-            diagnostics[f"{converter}_error"] = str(exc)
-            if selected_mode != "auto":
-                break
-    raise RuntimeError(".doc 转换失败：" + str(diagnostics))
+    work_dir = Path(tempfile.mkdtemp(prefix="kg-audit-convert-"))
+    try:
+        for converter in attempts:
+            temporary_output = work_dir / f"{source.stem}.docx"
+            temporary_output.unlink(missing_ok=True)
+            try:
+                if converter == "word":
+                    version, detail = _word_com_convert(source, temporary_output)
+                    diagnostics["word_com"] = detail
+                else:
+                    version, detail = _libreoffice_convert(source, work_dir, timeout or AUDIT_CONVERSION_TIMEOUT)
+                    diagnostics["libreoffice"] = detail
+                    diagnostics["output_stability"] = _wait_for_stable_docx(temporary_output, timeout or AUDIT_CONVERSION_TIMEOUT)
+                content_hash, validation = _validate_docx(temporary_output)
+                diagnostics["validation"] = validation
+                os.replace(temporary_output, output_path)
+                return DocxConversionResult(output_path, content_hash, converter, version, diagnostics)
+            except Exception as exc:
+                diagnostics[f"{converter}_error"] = str(exc)
+                if selected_mode != "auto":
+                    break
+        raise RuntimeError(".doc 转换失败：" + str(diagnostics))
+    finally:
+        shutil.rmtree(work_dir, ignore_errors=True)

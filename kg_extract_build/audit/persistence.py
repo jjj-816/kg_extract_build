@@ -40,6 +40,21 @@ def _json(value) -> str:
     return json.dumps(value, ensure_ascii=False, default=str)
 
 
+def validate_audit_context(context: dict, reviewer_name: str) -> None:
+    required = {
+        "项目或平台名称": context.get("project_name"),
+        "审核基准年份": context.get("audit_year"),
+        "作业目的": context.get("work_purpose"),
+        "涉及作业类型": context.get("work_types"),
+        "审核确认人": reviewer_name,
+    }
+    missing = [name for name, value in required.items() if not value or (isinstance(value, str) and not value.strip())]
+    if missing:
+        raise ValueError("创建审核运行前必须填写：" + "、".join(missing))
+    if not isinstance(context["audit_year"], int) or not 2000 <= context["audit_year"] <= 2100:
+        raise ValueError("审核基准年份无效")
+
+
 class MySQLAuditStore:
     def __init__(self, **connection_options):
         self.connection_options = connection_options
@@ -80,36 +95,41 @@ class MySQLAuditStore:
             return False, "审核数据表尚未初始化（缺少：" + "、".join(missing) + "）。请在确认环境后手动执行 python -m kg_extract_build.init_storage。"
         return True, "审核数据表健康（13 张表）"
 
-    def save_parsed_document(self, parsed: ParsedAuditDocument) -> None:
-        connection = self._connection()
-        document, now = parsed.document, datetime.now(timezone.utc).replace(tzinfo=None)
+    def _save_parsed_document(self, cursor, parsed: ParsedAuditDocument, now) -> None:
+        document = parsed.document
         image_manifest = [
             {**asdict(image), "stored_path": str(image.stored_path)} for image in parsed.images
         ]
-        try:
-            with connection.cursor() as cursor:
-                cursor.execute(
+        cursor.execute(
                     """INSERT INTO audit_document
                     (document_id, original_filename, file_type, content_hash, original_path, converted_path,
                      converted_hash, converter_name, converter_version, conversion_status, conversion_diagnostics,
                      image_manifest_json, parse_status, created_at)
-                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""",
+                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                    ON DUPLICATE KEY UPDATE document_id=VALUES(document_id)""",
                     (document.document_id, document.original_filename, document.file_type, document.content_hash,
                      str(document.original_path), str(document.converted_path) if document.converted_path else None,
                      document.converted_hash, document.converter_name, document.converter_version, document.conversion_status,
                      _json(document.conversion_diagnostics), _json(image_manifest), "parsed", now),
-                )
-                rows = [(
+        )
+        rows = [(
                     block.block_id, block.document_id, block.ordinal, block.block_type, _json(block.section_path),
                     block.source_locator, block.raw_text, block.normalized_text,
                     _json(block.table_json) if block.table_json else None, _json(block.image_refs), block.parse_status, now,
-                ) for block in parsed.blocks]
-                if rows:
-                    cursor.executemany(
+        ) for block in parsed.blocks]
+        if rows:
+            cursor.executemany(
                         """INSERT INTO audit_document_block
                         (block_id,document_id,ordinal,block_type,section_path,source_locator,raw_text,normalized_text,
                          table_json,image_refs_json,parse_status,created_at)
-                        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""", rows)
+                        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                        ON DUPLICATE KEY UPDATE block_id=VALUES(block_id)""", rows)
+
+    def save_parsed_document(self, parsed: ParsedAuditDocument) -> None:
+        connection = self._connection()
+        try:
+            with connection.cursor() as cursor:
+                self._save_parsed_document(cursor, parsed, datetime.now(timezone.utc).replace(tzinfo=None))
             connection.commit()
         except Exception:
             connection.rollback()
@@ -120,9 +140,10 @@ class MySQLAuditStore:
         connection, now = self._connection(), datetime.now(timezone.utc).replace(tzinfo=None)
         run_id = str(uuid.uuid4())
         bindings = build_task_bindings(library)
+        validate_audit_context(context, reviewer_name)
         try:
-            self.save_parsed_document(parsed)
             with connection.cursor() as cursor:
+                self._save_parsed_document(cursor, parsed, now)
                 cursor.execute(
                     """INSERT INTO audit_run
                     (run_id,document_id,status,project_name,audit_year,work_purpose,task_library_id,task_library_version,
@@ -149,6 +170,24 @@ class MySQLAuditStore:
         except Exception:
             connection.rollback()
             raise
+
+    def load_run(self, run_id: str) -> dict | None:
+        with self._connection().cursor() as cursor:
+            cursor.execute(
+                """SELECT run_id, document_id, project_name, audit_year, work_purpose, task_library_version,
+                          config_snapshot, context_confirmed_by, context_confirmed_at, created_at
+                   FROM audit_run WHERE run_id=%s""", (run_id,)
+            )
+            row = cursor.fetchone()
+            if row is None:
+                return None
+            cursor.execute("SELECT COUNT(*) FROM audit_task_execution WHERE run_id=%s", (run_id,))
+            task_count = cursor.fetchone()[0]
+        return {
+            "run_id": row[0], "document_id": row[1], "project_name": row[2], "audit_year": row[3],
+            "work_purpose": row[4], "task_library_version": row[5], "config": json.loads(row[6]),
+            "reviewer_name": row[7], "confirmed_at": row[8], "created_at": row[9], "task_count": task_count,
+        }
 
     def close(self) -> None:
         if self._connection_instance is not None:

@@ -108,10 +108,22 @@ class TaskLocationHit:
 
 
 @dataclass(frozen=True)
+class TaskEvidenceGroup:
+    group_id: str
+    anchor_block_id: str
+    supporting_block_ids: tuple[str, ...]
+    section_path: tuple[str, ...]
+    matched_locators: tuple[str, ...]
+    score: float
+    reason: str
+
+
+@dataclass(frozen=True)
 class TaskLocationResult:
     task_id: str
     status: str
     hits: tuple[TaskLocationHit, ...] = ()
+    evidence_groups: tuple[TaskEvidenceGroup, ...] = ()
     diagnostic: str | None = None
 
 

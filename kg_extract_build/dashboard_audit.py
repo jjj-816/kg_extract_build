@@ -40,6 +40,7 @@ def _mysql_enabled() -> bool:
 def _render_environment_health(preview: AuditPreview) -> None:
     with st.expander("环境与数据域健康检查", expanded=False):
         st.write(f"任务库：{preview.task_library.version}（{len(preview.task_library.tasks)} 项）")
+        st.write(f"任务库哈希：{preview.task_library.sha256}")
         st.write(f"任务绑定：{len(preview.bindings)} 项")
         try:
             AUDIT_STORAGE_DIR.mkdir(parents=True, exist_ok=True)
@@ -109,11 +110,24 @@ def render_audit_page() -> None:
             for block in parsed.blocks
         ]
         st.dataframe(pd.DataFrame(block_rows), use_container_width=True, hide_index=True)
+        if parsed.images:
+            st.subheader("图片预览")
+            for image in parsed.images:
+                st.caption(f"{image.source_part} · {image.source_locator} · {' / '.join(next((b.section_path for b in parsed.blocks if image.image_id in b.image_refs), ())) or '未归属章节'}")
+                st.image(str(image.stored_path), width=260)
+            if parsed.cover_visual_only:
+                st.warning("封面为整页图片或主要由图片构成，需要人工核验封面签字。")
     with task_tab:
         rows = preview.task_rows()
         st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
         located = sum(row["定位状态"] != "not_located" for row in rows)
         st.caption(f"已产生全部 {len(rows)} 项定位记录；其中 {located} 项至少有一个候选证据块。")
+        selected_task_id = st.selectbox("展开单项任务证据组", [task.task_id for task in preview.task_library.tasks])
+        location = preview.locations[selected_task_id]
+        st.write(f"定位状态：{location.status}；{location.diagnostic or '已形成候选证据组'}")
+        for group in location.evidence_groups:
+            st.markdown(f"**{group.group_id}** · 得分 {group.score:.2f} · {' / '.join(group.section_path)}")
+            st.caption(f"锚点：{group.anchor_block_id}；支持块：{', '.join(group.supporting_block_ids)}；{group.reason}")
     with context_tab:
         st.text_input("项目或平台名称", key="audit_context_project_name")
         st.number_input("审核基准年份", min_value=2000, max_value=2100, value=2025, step=1, key="audit_context_year")
@@ -145,3 +159,16 @@ def render_audit_page() -> None:
                     st.error(f"创建审核运行失败：{exc}")
                 finally:
                     store.close()
+        query_run_id = st.text_input("回读已创建的 run_id", key="audit_query_run_id")
+        if query_run_id.strip() and _mysql_enabled():
+            store = MySQLAuditStore.from_env()
+            try:
+                run = store.load_run(query_run_id.strip())
+                if run is None:
+                    st.warning("未找到该审核运行。")
+                else:
+                    st.json(run)
+            except Exception as exc:
+                st.error(f"读取审核运行失败：{exc}")
+            finally:
+                store.close()

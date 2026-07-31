@@ -19,7 +19,7 @@ from .models import AuditDocumentBlock, AuditImage, ParsedAuditDocument, StoredA
 
 
 _CHAPTER_RE = re.compile(r"^第[一二三四五六七八九十百]+章\s+[^。；;]{1,80}$")
-_NUMBERED_HEADING_RE = re.compile(r"^(\d+(?:\.\d+){1,3})\s+[^。；;]{1,100}$")
+_NUMBERED_HEADING_RE = re.compile(r"^(\d+(?:\.\d+){1,3})\s*[^。；;]{1,100}$")
 _APPENDIX_RE = re.compile(r"^附录\s*[A-EＡ-Ｅ](?:[：:、\s].*)?$")
 _STYLE_LEVEL_RE = re.compile(r"(?:heading|标题)\s*([1-9])", re.IGNORECASE)
 _NORMALIZE_RE = re.compile(r"[\s\u3000，,。；;：:（）()【】\[\]《》<>‘’'\"、·—-]+")

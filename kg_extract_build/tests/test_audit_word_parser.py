@@ -62,6 +62,18 @@ class AuditWordParserTests(unittest.TestCase):
             self.assertEqual(parsed.blocks[3].block_type, "paragraph")
             self.assertEqual(parsed.blocks[-1].section_path, ("第五章 健康、安全、环保管理", "5.1 风险控制要求"))
 
+    def test_numbered_heading_without_space_is_recognized(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "无空格标题.docx"
+            document = Document()
+            document.add_paragraph("5.1工作前风险分析")
+            document.add_paragraph("风险分析正文")
+            document.save(path)
+            stored = store_uploaded_word("无空格标题.docx", path.read_bytes(), storage_dir=temp_dir)
+            parsed = parse_docx_document(stored)
+            self.assertEqual(parsed.blocks[0].block_type, "heading")
+            self.assertEqual(parsed.blocks[1].section_path, ("5.1工作前风险分析",))
+
     def test_preview_instantiates_location_records_for_all_published_tasks(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             preview = create_audit_preview(
