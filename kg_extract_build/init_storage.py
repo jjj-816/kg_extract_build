@@ -2,6 +2,7 @@ import os
 import re
 
 from .persistence import MySQLExperimentStore
+from .audit.persistence import MySQLAuditStore
 
 
 def validate_database_name(name):
@@ -39,7 +40,10 @@ def initialize_mysql():
     store = MySQLExperimentStore.from_env()
     store.initialize_schema()
     store.close()
-    print(f"MySQL 实验库初始化完成：{database}")
+    audit_store = MySQLAuditStore.from_env()
+    audit_store.initialize_schema()
+    audit_store.close()
+    print(f"MySQL 实验库和审核数据域初始化完成：{database}")
 
 
 if __name__ == "__main__":

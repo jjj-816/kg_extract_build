@@ -1,0 +1,58 @@
+import tempfile
+import unittest
+from pathlib import Path
+
+from docx import Document
+
+from kg_extract_build.audit.document_store import AuditDocumentError, store_uploaded_word
+from kg_extract_build.audit.preview import create_audit_preview
+from kg_extract_build.audit.word_parser import parse_docx_document
+
+
+class AuditWordParserTests(unittest.TestCase):
+    def _build_docx_bytes(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "方案.docx"
+            document = Document()
+            document.add_paragraph("第一章 编制依据")
+            document.add_paragraph("依据《测试规范》编制。")
+            table = document.add_table(rows=2, cols=2)
+            table.cell(0, 0).text = "设备"
+            table.cell(0, 1).text = "数量"
+            table.cell(1, 0).text = "吊车"
+            table.cell(1, 1).text = "1"
+            document.add_paragraph("4.1 施工顺序")
+            document.add_paragraph("作业准备→开工条件确认→设备安装")
+            document.save(path)
+            return path.read_bytes()
+
+    def test_stores_and_parses_paragraphs_and_tables_in_body_order(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            stored = store_uploaded_word("测试方案.docx", self._build_docx_bytes(), storage_dir=temp_dir)
+            parsed = parse_docx_document(stored)
+
+            self.assertEqual(parsed.paragraph_count, 4)
+            self.assertEqual(parsed.table_count, 1)
+            self.assertEqual([block.block_type for block in parsed.blocks], ["heading", "paragraph", "table", "heading", "paragraph"])
+            self.assertEqual(parsed.blocks[2].table_json["rows"][1], ["吊车", "1"])
+            self.assertIn("第一章 编制依据", parsed.blocks[2].section_path)
+            self.assertIn("4.1 施工顺序", parsed.blocks[-1].section_path)
+
+    def test_rejects_docx_name_with_non_docx_content(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            with self.assertRaises(AuditDocumentError):
+                store_uploaded_word("伪造.docx", b"not a word document", storage_dir=temp_dir)
+
+    def test_preview_instantiates_location_records_for_all_published_tasks(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            preview = create_audit_preview(
+                "测试方案.docx", self._build_docx_bytes(), storage_dir=temp_dir
+            )
+
+            self.assertEqual(len(preview.task_library.tasks), 42)
+            self.assertEqual(len(preview.locations), 42)
+            self.assertNotEqual(preview.locations["ARR-002"].status, "not_located")
+
+
+if __name__ == "__main__":
+    unittest.main()

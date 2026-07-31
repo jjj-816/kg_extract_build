@@ -627,6 +627,7 @@ def setup_help():
 
 
 from kg_extract_build.dashboard_evaluation import render_evaluation_page
+from kg_extract_build.dashboard_audit import render_audit_page
 from kg_extract_build.dashboard_run import render_run_page
 
 RUN_PAGE = "运行实验"
@@ -636,6 +637,7 @@ RUNS_PAGE = "实验批次"
 DOCUMENTS_PAGE = "文档追踪"
 LLM_PAGE = "LLM 调用"
 GRAPH_PAGE = "知识图谱"
+AUDIT_PAGE = "施工方案审核"
 
 requested_page = st.session_state.pop("requested_navigation_page", None)
 if requested_page is not None:
@@ -645,6 +647,7 @@ page = st.sidebar.radio(
     "导航",
     [
         RUN_PAGE,
+        AUDIT_PAGE,
         EVALUATION_PAGE,
         OVERVIEW_PAGE,
         RUNS_PAGE,
@@ -657,6 +660,8 @@ page = st.sidebar.radio(
 
 if page == RUN_PAGE:
     render_run_page()
+elif page == AUDIT_PAGE:
+    render_audit_page()
 elif page == EVALUATION_PAGE:
     render_evaluation_page()
 else:
