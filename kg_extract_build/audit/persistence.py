@@ -20,6 +20,11 @@ AUDIT_TABLES = (
     "audit_retrieval_candidate", "audit_applicability_result", "audit_llm_call",
     "audit_issue", "audit_human_review", "audit_report",
 )
+AUDIT_REQUIRED_COLUMNS = {
+    "audit_document": {"document_id", "converted_hash", "converter_name", "converter_version", "conversion_status", "conversion_diagnostics", "image_manifest_json"},
+    "audit_run": {"run_id", "context_confirmed_by", "context_confirmed_at", "config_snapshot"},
+    "audit_task_execution": {"run_id", "task_id", "task_snapshot", "execution_status"},
+}
 
 
 def audit_schema_path() -> Path:
@@ -93,6 +98,18 @@ class MySQLAuditStore:
         missing = [name for name in AUDIT_TABLES if name not in existing]
         if missing:
             return False, "审核数据表尚未初始化（缺少：" + "、".join(missing) + "）。请在确认环境后手动执行 python -m kg_extract_build.init_storage。"
+        with connection.cursor() as cursor:
+            cursor.execute(
+                "SELECT table_name,column_name FROM information_schema.columns WHERE table_schema=%s AND table_name IN (" +
+                ",".join(["%s"] * len(AUDIT_REQUIRED_COLUMNS)) + ")",
+                (self.connection_options["database"], *AUDIT_REQUIRED_COLUMNS),
+            )
+            columns: dict[str, set[str]] = {}
+            for table_name, column_name in cursor.fetchall():
+                columns.setdefault(table_name, set()).add(column_name)
+        incompatible = [f"{table} 缺少 {','.join(sorted(required - columns.get(table, set())))}" for table, required in AUDIT_REQUIRED_COLUMNS.items() if required - columns.get(table, set())]
+        if incompatible:
+            return False, "审核表结构与当前代码不兼容：" + "；".join(incompatible) + "。请执行受控迁移后再创建审核运行。"
         return True, "审核数据表健康（13 张表）"
 
     def _save_parsed_document(self, cursor, parsed: ParsedAuditDocument, now) -> None:
