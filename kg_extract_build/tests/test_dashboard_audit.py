@@ -12,6 +12,7 @@ class AuditDashboardTests(unittest.TestCase):
 
         self.assertEqual(list(app.exception), [])
         self.assertTrue(any(title.value == "施工方案审核" for title in app.title))
+        self.assertTrue(any(item.label == "输入已创建的 run_id" for item in app.text_input))
 
 
 if __name__ == "__main__":

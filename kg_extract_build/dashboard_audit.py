@@ -12,6 +12,8 @@ from .audit.document_store import AuditDocumentError
 from .audit.persistence import MySQLAuditStore
 from .audit.preview import AuditPreview, create_audit_preview
 from .audit.settings import AUDIT_CONVERSION_TIMEOUT, AUDIT_DOC_CONVERTER, AUDIT_STORAGE_DIR, LIBREOFFICE_PATH
+from .audit.bindings import build_task_bindings
+from .audit.task_library import load_published_task_library
 from .audit.word_converter import doc_conversion_capability
 
 
@@ -37,11 +39,16 @@ def _mysql_enabled() -> bool:
     return os.getenv("KG_MYSQL_ENABLED", "0").strip().lower() in {"1", "true", "yes", "on"}
 
 
-def _render_environment_health(preview: AuditPreview) -> None:
+def _render_environment_health(preview: AuditPreview | None = None) -> None:
     with st.expander("环境与数据域健康检查", expanded=False):
-        st.write(f"任务库：{preview.task_library.version}（{len(preview.task_library.tasks)} 项）")
-        st.write(f"任务库哈希：{preview.task_library.sha256}")
-        st.write(f"任务绑定：{len(preview.bindings)} 项")
+        try:
+            library = preview.task_library if preview is not None else load_published_task_library()
+            bindings = preview.bindings if preview is not None else build_task_bindings(library)
+            st.write(f"任务库：{library.version}（{len(library.tasks)} 项）")
+            st.write(f"任务库哈希：{library.sha256}")
+            st.write(f"任务绑定：{len(bindings)} 项")
+        except Exception as exc:
+            st.error(f"任务库健康检查失败：{exc}")
         st.write(f"转换策略：{AUDIT_DOC_CONVERTER}；超时：{AUDIT_CONVERSION_TIMEOUT} 秒")
         st.write(f"LibreOffice：{LIBREOFFICE_PATH}（{'可用' if LIBREOFFICE_PATH.is_file() else '不可用'}）")
         try:
@@ -62,6 +69,28 @@ def _render_environment_health(preview: AuditPreview) -> None:
             store.close()
 
 
+def _render_run_lookup() -> None:
+    st.subheader("历史审核运行回读")
+    st.caption("不依赖当前上传文件；数据库中的时间按 UTC 保存，以下同时显示北京时间。")
+    run_id = st.text_input("输入已创建的 run_id", key="audit_history_run_id")
+    if not run_id.strip():
+        return
+    if not _mysql_enabled():
+        st.warning("MySQL 持久化未启用，无法回读历史运行。")
+        return
+    store = MySQLAuditStore.from_env()
+    try:
+        run = store.load_run(run_id.strip())
+        if run is None:
+            st.warning("未找到该审核运行。")
+        else:
+            st.json(run)
+    except Exception as exc:
+        st.error(f"读取审核运行失败：{exc}")
+    finally:
+        store.close()
+
+
 def render_audit_page() -> None:
     st.title("施工方案审核")
     st.caption("阶段 1：上传单份 Word、生成证据块、预览 42 项任务定位，并由审核员确认审核上下文。")
@@ -71,6 +100,11 @@ def render_audit_page() -> None:
         st.info(f"`.doc` 转换能力：{capability.message}")
     else:
         st.warning(f"`.doc` 转换能力：{capability.message}；`.docx` 仍可正常预览。")
+
+    _render_environment_health()
+    _render_run_lookup()
+    st.divider()
+    st.subheader("新建审核运行")
 
     uploaded_file = st.file_uploader("上传施工方案 Word", type=["docx", "doc"], accept_multiple_files=False)
     if uploaded_file is None:
@@ -168,16 +202,3 @@ def render_audit_page() -> None:
                     st.error(f"创建审核运行失败：{exc}")
                 finally:
                     store.close()
-        query_run_id = st.text_input("回读已创建的 run_id", key="audit_query_run_id")
-        if query_run_id.strip() and _mysql_enabled():
-            store = MySQLAuditStore.from_env()
-            try:
-                run = store.load_run(query_run_id.strip())
-                if run is None:
-                    st.warning("未找到该审核运行。")
-                else:
-                    st.json(run)
-            except Exception as exc:
-                st.error(f"读取审核运行失败：{exc}")
-            finally:
-                store.close()

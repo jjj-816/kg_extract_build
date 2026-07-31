@@ -8,6 +8,7 @@ import uuid
 from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from .bindings import build_task_bindings
 from .models import ParsedAuditDocument
@@ -43,6 +44,21 @@ def initialize_audit_schema(connection) -> None:
 
 def _json(value) -> str:
     return json.dumps(value, ensure_ascii=False, default=str)
+
+
+def format_beijing_time(value: datetime | None) -> str | None:
+    """数据库 DATETIME 按 UTC 解释，页面统一显示北京时间。"""
+    if value is None:
+        return None
+    utc_value = value.replace(tzinfo=timezone.utc) if value.tzinfo is None else value.astimezone(timezone.utc)
+    return utc_value.astimezone(ZoneInfo("Asia/Shanghai")).strftime("%Y-%m-%d %H:%M:%S UTC+08:00（北京时间）")
+
+
+def format_utc_time(value: datetime | None) -> str | None:
+    if value is None:
+        return None
+    utc_value = value.replace(tzinfo=timezone.utc) if value.tzinfo is None else value.astimezone(timezone.utc)
+    return utc_value.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def validate_audit_context(context: dict, reviewer_name: str) -> None:
@@ -191,9 +207,10 @@ class MySQLAuditStore:
     def load_run(self, run_id: str) -> dict | None:
         with self._connection().cursor() as cursor:
             cursor.execute(
-                """SELECT run_id, document_id, project_name, audit_year, work_purpose, task_library_version,
-                          config_snapshot, context_confirmed_by, context_confirmed_at, created_at
-                   FROM audit_run WHERE run_id=%s""", (run_id,)
+                """SELECT r.run_id, r.document_id, d.original_filename, r.status, r.project_name, r.audit_year,
+                          r.work_purpose, r.task_library_version, r.config_snapshot, r.context_confirmed_by,
+                          r.context_confirmed_at, r.created_at
+                   FROM audit_run r JOIN audit_document d ON d.document_id=r.document_id WHERE r.run_id=%s""", (run_id,)
             )
             row = cursor.fetchone()
             if row is None:
@@ -201,9 +218,12 @@ class MySQLAuditStore:
             cursor.execute("SELECT COUNT(*) FROM audit_task_execution WHERE run_id=%s", (run_id,))
             task_count = cursor.fetchone()[0]
         return {
-            "run_id": row[0], "document_id": row[1], "project_name": row[2], "audit_year": row[3],
-            "work_purpose": row[4], "task_library_version": row[5], "config": json.loads(row[6]),
-            "reviewer_name": row[7], "confirmed_at": row[8], "created_at": row[9], "task_count": task_count,
+            "run_id": row[0], "document_id": row[1], "document_name": row[2], "status": row[3],
+            "project_name": row[4], "audit_year": row[5], "work_purpose": row[6], "task_library_version": row[7],
+            "config": json.loads(row[8]), "reviewer_name": row[9],
+            "confirmed_at_utc": format_utc_time(row[10]), "confirmed_at_beijing": format_beijing_time(row[10]),
+            "created_at_utc": format_utc_time(row[11]), "created_at_beijing": format_beijing_time(row[11]),
+            "task_count": task_count,
         }
 
     def close(self) -> None:
