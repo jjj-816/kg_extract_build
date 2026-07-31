@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 
 from .bindings import build_task_bindings
@@ -48,20 +48,20 @@ def create_audit_preview(
     library = load_published_task_library(task_library_path)
     document = store_uploaded_word(filename, content, storage_dir=storage_dir)
     if document.file_type == "doc":
-        converted_path = convert_doc_to_docx(
+        conversion = convert_doc_to_docx(
             document.original_path,
             document.original_path.parents[1] / "converted",
         )
-        document = type(document)(
-            document_id=document.document_id,
-            original_filename=document.original_filename,
-            file_type=document.file_type,
-            content_hash=document.content_hash,
-            original_path=document.original_path,
-            created_at=document.created_at,
-            converted_path=converted_path,
+        document = replace(
+            document,
+            converted_path=conversion.path,
+            converted_hash=conversion.content_hash,
+            converter_name=conversion.converter_name,
+            converter_version=conversion.converter_version,
+            conversion_status="converted",
+            conversion_diagnostics=conversion.diagnostics,
         )
     parsed_document = parse_docx_document(document)
     bindings = build_task_bindings(library)
-    locations = locate_all_tasks(library.tasks, parsed_document.blocks)
+    locations = locate_all_tasks(library.tasks, parsed_document.blocks, bindings)
     return AuditPreview(parsed_document, library, bindings, locations)

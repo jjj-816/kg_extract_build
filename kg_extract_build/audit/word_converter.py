@@ -2,58 +2,178 @@
 
 from __future__ import annotations
 
+import hashlib
 import platform
+import subprocess
+import tempfile
+import time
 from dataclasses import dataclass
 from pathlib import Path
+
+from docx import Document
+
+from .settings import AUDIT_CONVERSION_TIMEOUT, AUDIT_DOC_CONVERTER, LIBREOFFICE_PATH
 
 
 @dataclass(frozen=True)
 class WordConversionCapability:
     available: bool
     message: str
+    word_com_available: bool = False
+    libreoffice_available: bool = False
+
+
+@dataclass(frozen=True)
+class DocxConversionResult:
+    path: Path
+    content_hash: str
+    converter_name: str
+    converter_version: str | None
+    diagnostics: dict
 
 
 def doc_conversion_capability() -> WordConversionCapability:
-    if platform.system() != "Windows":
-        return WordConversionCapability(False, "当前系统仅支持通过 Windows Word COM 转换 .doc")
+    word_available = False
+    if platform.system() == "Windows":
+        try:
+            import pythoncom  # noqa: F401
+            import win32com.client  # noqa: F401
+            word_available = True
+        except ImportError:
+            pass
+    libreoffice_available = LIBREOFFICE_PATH.is_file()
+    if word_available and libreoffice_available:
+        return WordConversionCapability(True, "Word COM 与 LibreOffice 均可用，自动模式支持回退", True, True)
+    if word_available:
+        return WordConversionCapability(True, "Word COM 可用", True, False)
+    if libreoffice_available:
+        return WordConversionCapability(True, "LibreOffice 可用", False, True)
+    return WordConversionCapability(False, "Word COM 与 LibreOffice 均不可用", False, False)
+
+
+def _validate_docx(path: Path) -> tuple[str, dict]:
+    import zipfile
+
+    if path.suffix.lower() != ".docx" or not path.is_file() or not zipfile.is_zipfile(path):
+        raise RuntimeError("转换输出不是有效 DOCX 压缩包")
+    with zipfile.ZipFile(path) as archive:
+        names = set(archive.namelist())
+    required = {"[Content_Types].xml", "word/document.xml"}
+    if not required.issubset(names):
+        raise RuntimeError("转换输出缺少必要 DOCX 部件")
     try:
-        import pythoncom  # noqa: F401
-        import win32com.client  # noqa: F401
-    except ImportError:
-        return WordConversionCapability(False, "缺少 pywin32，无法转换 .doc")
-    return WordConversionCapability(True, "可尝试通过本机 Microsoft Word 转换 .doc")
+        document = Document(str(path))
+    except Exception as exc:
+        raise RuntimeError(f"python-docx 无法打开转换输出：{exc}") from exc
+    if not document.paragraphs and not document.tables:
+        raise RuntimeError("转换输出不包含段落或表格")
+    return hashlib.sha256(path.read_bytes()).hexdigest().upper(), {
+        "paragraph_count": len(document.paragraphs),
+        "table_count": len(document.tables),
+        "zip_valid": True,
+    }
 
 
-def convert_doc_to_docx(source_path: str | Path, output_dir: str | Path) -> Path:
+def _word_com_convert(source: Path, output_path: Path) -> tuple[str | None, dict]:
+    diagnostics: dict = {"attempted": True}
+    started = time.perf_counter()
+    word = None
+    document = None
+    pythoncom = None
+    try:
+        import pythoncom as pythoncom_module
+        import win32com.client
+
+        pythoncom = pythoncom_module
+        pythoncom.CoInitialize()
+        word = win32com.client.DispatchEx("Word.Application")
+        word.Visible = False
+        word.DisplayAlerts = 0
+        document = word.Documents.Open(
+            str(source), ReadOnly=True, AddToRecentFiles=False, OpenAndRepair=True
+        )
+        document.SaveAs2(str(output_path), FileFormat=16, AddToRecentFiles=False)
+        diagnostics["version"] = str(getattr(word, "Version", "")) or None
+        return diagnostics["version"], diagnostics
+    except Exception as exc:
+        diagnostics["error"] = str(exc)
+        raise
+    finally:
+        diagnostics["elapsed_ms"] = int((time.perf_counter() - started) * 1000)
+        if document is not None:
+            document.Close(False)
+        if word is not None:
+            word.Quit()
+        if pythoncom is not None:
+            pythoncom.CoUninitialize()
+
+
+def _libreoffice_convert(source: Path, output_dir: Path, timeout: int) -> tuple[str | None, dict]:
+    diagnostics: dict = {"attempted": True, "path": str(LIBREOFFICE_PATH)}
+    profile_dir = Path(tempfile.mkdtemp(prefix="kg-audit-lo-profile-", dir=output_dir))
+    started = time.perf_counter()
+    command = [
+        str(LIBREOFFICE_PATH), "--headless",
+        f"-env:UserInstallation={profile_dir.resolve().as_uri()}",
+        "--convert-to", "docx", "--outdir", str(output_dir), str(source),
+    ]
+    try:
+        result = subprocess.run(command, capture_output=True, text=False, timeout=timeout, check=False)
+        stdout = (result.stdout or b"").decode("utf-8", errors="replace")
+        stderr = (result.stderr or b"").decode("utf-8", errors="replace")
+        diagnostics.update({"stdout": stdout[-4000:], "stderr": stderr[-4000:], "returncode": result.returncode})
+        if result.returncode != 0:
+            raise RuntimeError(f"LibreOffice 转换失败，返回码 {result.returncode}")
+        return None, diagnostics
+    except subprocess.TimeoutExpired as exc:
+        diagnostics["error"] = f"转换超时：{timeout} 秒"
+        diagnostics["stdout"] = (exc.stdout or b"").decode("utf-8", errors="replace")[-4000:]
+        diagnostics["stderr"] = (exc.stderr or b"").decode("utf-8", errors="replace")[-4000:]
+        raise RuntimeError(diagnostics["error"]) from exc
+    finally:
+        diagnostics["elapsed_ms"] = int((time.perf_counter() - started) * 1000)
+
+
+def convert_doc_to_docx(
+    source_path: str | Path,
+    output_dir: str | Path,
+    mode: str | None = None,
+    timeout: int | None = None,
+) -> DocxConversionResult:
     source = Path(source_path).expanduser().resolve()
     destination_dir = Path(output_dir).expanduser().resolve()
     if source.suffix.lower() != ".doc":
         raise ValueError("仅支持将 .doc 转换为 .docx")
     if not source.is_file():
         raise FileNotFoundError(f".doc 文件不存在：{source}")
+    selected_mode = (mode or AUDIT_DOC_CONVERTER).lower()
+    if selected_mode not in {"auto", "word", "libreoffice"}:
+        raise ValueError("KG_AUDIT_DOC_CONVERTER 只能为 auto、word 或 libreoffice")
     capability = doc_conversion_capability()
     if not capability.available:
         raise RuntimeError(capability.message)
     destination_dir.mkdir(parents=True, exist_ok=True)
     output_path = destination_dir / f"{source.stem}.docx"
-    import pythoncom
-    import win32com.client
-
-    word = None
-    document = None
-    pythoncom.CoInitialize()
-    try:
-        word = win32com.client.DispatchEx("Word.Application")
-        word.Visible = False
-        word.DisplayAlerts = 0
-        document = word.Documents.Open(str(source))
-        document.SaveAs2(str(output_path), FileFormat=16)
-    finally:
-        if document is not None:
-            document.Close(False)
-        if word is not None:
-            word.Quit()
-        pythoncom.CoUninitialize()
-    if not output_path.is_file():
-        raise RuntimeError("Word 未生成可解析的 .docx 文件")
-    return output_path
+    diagnostics: dict = {"mode": selected_mode, "word_com": {"attempted": False}, "libreoffice": {"attempted": False}}
+    attempts = []
+    if selected_mode in {"auto", "word"} and capability.word_com_available:
+        attempts.append("word")
+    if selected_mode in {"auto", "libreoffice"} and capability.libreoffice_available:
+        attempts.append("libreoffice")
+    for converter in attempts:
+        output_path.unlink(missing_ok=True)
+        try:
+            if converter == "word":
+                version, detail = _word_com_convert(source, output_path)
+                diagnostics["word_com"] = detail
+            else:
+                version, detail = _libreoffice_convert(source, destination_dir, timeout or AUDIT_CONVERSION_TIMEOUT)
+                diagnostics["libreoffice"] = detail
+            content_hash, validation = _validate_docx(output_path)
+            diagnostics["validation"] = validation
+            return DocxConversionResult(output_path, content_hash, converter, version, diagnostics)
+        except Exception as exc:
+            diagnostics[f"{converter}_error"] = str(exc)
+            if selected_mode != "auto":
+                break
+    raise RuntimeError(".doc 转换失败：" + str(diagnostics))

@@ -22,3 +22,9 @@ AUDIT_TASK_LIBRARY_PATH = audit_env_path(
     PROJECT_ROOT / "docs" / "audit-task-library" / "v1" / "audit-task-library.v1.0.0.json",
 )
 AUDIT_MAX_FILE_MB = int(os.getenv("KG_AUDIT_MAX_FILE_MB", "50"))
+AUDIT_DOC_CONVERTER = os.getenv("KG_AUDIT_DOC_CONVERTER", "auto").strip().lower()
+LIBREOFFICE_PATH = audit_env_path(
+    "KG_LIBREOFFICE_PATH",
+    Path(r"D:\Program Files (x86)\LibreOffice\program\soffice.exe"),
+)
+AUDIT_CONVERSION_TIMEOUT = int(os.getenv("KG_AUDIT_CONVERSION_TIMEOUT", "120"))

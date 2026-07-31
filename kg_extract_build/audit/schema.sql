@@ -5,6 +5,12 @@ CREATE TABLE IF NOT EXISTS audit_document (
     content_hash CHAR(64) NOT NULL,
     original_path TEXT NOT NULL,
     converted_path TEXT NULL,
+    converted_hash CHAR(64) NULL,
+    converter_name VARCHAR(64) NULL,
+    converter_version VARCHAR(64) NULL,
+    conversion_status VARCHAR(32) NOT NULL DEFAULT 'not_required',
+    conversion_diagnostics JSON NULL,
+    image_manifest_json JSON NULL,
     parse_status VARCHAR(32) NOT NULL,
     created_at DATETIME(6) NOT NULL,
     INDEX idx_audit_document_hash (content_hash)
@@ -40,6 +46,8 @@ CREATE TABLE IF NOT EXISTS audit_run (
     task_library_hash CHAR(64) NOT NULL,
     binding_version VARCHAR(128) NOT NULL,
     config_snapshot JSON NOT NULL,
+    context_confirmed_by VARCHAR(255) NOT NULL,
+    context_confirmed_at DATETIME(6) NOT NULL,
     created_at DATETIME(6) NOT NULL,
     updated_at DATETIME(6) NOT NULL,
     CONSTRAINT fk_audit_run_document FOREIGN KEY (document_id)

@@ -16,6 +16,26 @@ class StoredAuditDocument:
     original_path: Path
     created_at: str
     converted_path: Path | None = None
+    converted_hash: str | None = None
+    converter_name: str | None = None
+    converter_version: str | None = None
+    conversion_status: str = "not_required"
+    conversion_diagnostics: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass(frozen=True)
+class AuditImage:
+    image_id: str
+    document_id: str
+    relationship_id: str
+    source_part: str
+    source_locator: str
+    content_type: str
+    file_extension: str
+    content_hash: str
+    stored_path: Path
+    width: int | None = None
+    height: int | None = None
 
 
 @dataclass(frozen=True)
@@ -56,6 +76,7 @@ class ParsedAuditDocument:
     table_count: int
     image_count: int
     cover_visual_only: bool
+    images: tuple[AuditImage, ...] = ()
 
 
 @dataclass(frozen=True)
