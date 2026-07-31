@@ -192,7 +192,9 @@ def convert_doc_to_docx(
         attempts.append("word")
     if selected_mode in {"auto", "libreoffice"} and capability.libreoffice_available:
         attempts.append("libreoffice")
-    work_dir = Path(tempfile.mkdtemp(prefix="kg-audit-convert-"))
+    # ``os.replace`` 只支持同一卷；临时转换目录放在当前 document_id 目录下，
+    # 既避免跨盘失败，又会在 finally 中清除，不会作为业务文件保留。
+    work_dir = Path(tempfile.mkdtemp(prefix=".kg-audit-convert-", dir=destination_dir.parent))
     try:
         for converter in attempts:
             temporary_output = work_dir / f"{source.stem}.docx"
