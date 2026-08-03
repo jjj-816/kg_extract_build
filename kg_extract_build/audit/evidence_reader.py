@@ -12,6 +12,8 @@ from .models import AuditDocumentBlock, ParsedAuditDocument, TaskEvidenceGroup
 
 STATUS_LABELS = {"located": "已定位", "ambiguous": "存在多个候选", "not_located": "未定位"}
 EXPORT_COLUMNS = ["文档名称", "任务 ID", "任务名称", "预期章节", "定位状态", "系统首选章节", "首选证据原文", "图片数量", "其他候选章节", "来源位置", "人工判断", "备注"]
+EXCEL_CELL_MAX_LENGTH = 32_767
+TRUNCATION_NOTICE = "[导出内容已截断，请在页面查看完整证据]"
 
 
 def task_option_label(task) -> str:
@@ -40,15 +42,43 @@ def readable_source(block: AuditDocumentBlock) -> str:
     return f"{part}第 {block.ordinal} 个解析位置 · {type_label}"
 
 
+def table_rows(block: AuditDocumentBlock) -> list[list[str]] | None:
+    """Return displayable table rows while preserving cell and row order.
+
+    Older persisted parsing results can contain malformed ``table_json``.  The
+    reader must degrade to raw text in that case instead of breaking the page
+    or CSV export.
+    """
+    if block.block_type != "table" or not isinstance(block.table_json, dict):
+        return None
+    rows = block.table_json.get("rows")
+    if not isinstance(rows, list):
+        return None
+    result: list[list[str]] = []
+    for row in rows:
+        if not isinstance(row, (list, tuple)):
+            return None
+        result.append(["" if cell is None else str(cell) for cell in row])
+    return result
+
+
 def block_text_for_export(block: AuditDocumentBlock) -> str:
-    if block.block_type == "table" and block.table_json:
-        rows = block.table_json.get("rows", [])
+    rows = table_rows(block)
+    if rows is not None:
         content = "\n".join(" | ".join(str(cell) for cell in row) for row in rows)
     else:
         content = block.raw_text
     if block.image_refs:
         content = (content + "\n" if content else "") + "\n".join("[图片]" for _ in block.image_refs)
     return content
+
+
+def excel_safe_cell(value: object) -> object:
+    """Keep text cells importable by Excel without changing non-text values."""
+    if not isinstance(value, str) or len(value) <= EXCEL_CELL_MAX_LENGTH:
+        return value
+    limit = EXCEL_CELL_MAX_LENGTH - len(TRUNCATION_NOTICE)
+    return value[:limit] + TRUNCATION_NOTICE
 
 
 def build_task_evidence_export(preview) -> pd.DataFrame:
@@ -58,7 +88,7 @@ def build_task_evidence_export(preview) -> pd.DataFrame:
         groups = location.evidence_groups
         primary = groups[0] if groups else None
         blocks = resolve_group_blocks(preview.parsed_document, primary)
-        records.append({
+        record = {
             "文档名称": preview.parsed_document.document.original_filename,
             "任务 ID": task.task_id,
             "任务名称": task.name,
@@ -71,7 +101,8 @@ def build_task_evidence_export(preview) -> pd.DataFrame:
             "来源位置": "；".join(readable_source(block) for block in blocks),
             "人工判断": "",
             "备注": "",
-        })
+        }
+        records.append({key: excel_safe_cell(value) for key, value in record.items()})
     return pd.DataFrame(records, columns=EXPORT_COLUMNS)
 
 

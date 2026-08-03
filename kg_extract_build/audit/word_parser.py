@@ -21,20 +21,38 @@ from .models import AuditDocumentBlock, AuditImage, ParsedAuditDocument, StoredA
 _CHAPTER_RE = re.compile(r"^第[一二三四五六七八九十百]+章\s+[^。；;]{1,80}$")
 _NUMBERED_HEADING_RE = re.compile(r"^(\d+(?:\.\d+){1,3})\s*[^。；;]{1,100}$")
 _APPENDIX_RE = re.compile(r"^附录\s*[A-EＡ-Ｅ](?:[：:、\s].*)?$")
+_TABLE_APPENDIX_RE = re.compile(r"^\s*(附录\s*[A-EＡ-Ｅ](?:[：:].*)?)", re.MULTILINE)
 _STYLE_LEVEL_RE = re.compile(r"(?:heading|标题)\s*([1-9])", re.IGNORECASE)
 _NORMALIZE_RE = re.compile(r"[\s\u3000，,。；;：:（）()【】\[\]《》<>‘’'\"、·—-]+")
 _REL_NS = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"
+_TEMPLATE_CHAPTERS = {
+    "编制依据", "工程概况", "施工准备与资源配置计划", "施工安排", "健康、安全、环保管理", "健康安全环保管理", "附录",
+}
+_SENTENCE_END_RE = re.compile(r"[。；;！？!?]$")
 
 
 def normalize_for_match(value: str) -> str:
     return _NORMALIZE_RE.sub("", unicodedata.normalize("NFKC", value or "")).lower()
 
 
+def _iter_block_elements(element):
+    """Yield paragraphs/tables from a container, expanding Word content controls."""
+    for child in element.iterchildren():
+        if isinstance(child, CT_P):
+            yield child
+        elif isinstance(child, CT_Tbl):
+            yield child
+        elif child.tag.endswith("}sdt"):
+            for nested in child.iterchildren():
+                if nested.tag.endswith("}sdtContent"):
+                    yield from _iter_block_elements(nested)
+
+
 def iter_body_blocks(document: DocxDocument) -> Iterable[Paragraph | Table]:
-    for child in document.element.body.iterchildren():
+    for child in _iter_block_elements(document.element.body):
         if isinstance(child, CT_P):
             yield Paragraph(child, document)
-        elif isinstance(child, CT_Tbl):
+        else:
             yield Table(child, document)
 
 
@@ -46,7 +64,7 @@ def _iter_container_blocks(container) -> Iterable[Paragraph | Table]:
         element = container.element.body
     if element is None:
         return
-    for child in element.iterchildren():
+    for child in _iter_block_elements(element):
         if isinstance(child, CT_P):
             yield Paragraph(child, container)
         elif isinstance(child, CT_Tbl):
@@ -66,15 +84,22 @@ def _is_toc_entry(paragraph: Paragraph, text: str) -> bool:
 def _heading_level(paragraph: Paragraph, text: str) -> int | None:
     if _is_toc_entry(paragraph, text):
         return None
-    style_name = getattr(paragraph.style, "name", "") or ""
-    style_match = _STYLE_LEVEL_RE.search(style_name)
-    if style_match:
-        return int(style_match.group(1))
     if _CHAPTER_RE.match(text) or _APPENDIX_RE.match(text):
         return 1
     numbered = _NUMBERED_HEADING_RE.match(text)
     if numbered:
         return numbered.group(1).count(".") + 1
+    normalized = normalize_for_match(text)
+    if normalized in {normalize_for_match(value) for value in _TEMPLATE_CHAPTERS}:
+        return 1
+    # A complete prose sentence is occasionally given a Heading style in
+    # source files.  It must not split the evidence region.
+    if _SENTENCE_END_RE.search(text) or (len(text) > 80 and not re.match(r"^\d", text)):
+        return None
+    style_name = getattr(paragraph.style, "name", "") or ""
+    style_match = _STYLE_LEVEL_RE.search(style_name)
+    if style_match:
+        return int(style_match.group(1))
     return None
 
 
@@ -140,11 +165,24 @@ def _extract_images(paragraph: Paragraph, document: StoredAuditDocument, source_
 
 def _table_payload(table: Table, document: StoredAuditDocument, source_part: str, source_locator: str, image_dir: Path, cache: dict[tuple[str, str], AuditImage]) -> tuple[dict, tuple[str, ...]]:
     rows: list[list[str]] = []
+    cells: list[dict] = []
     image_ids: list[str] = []
+    seen_vertical = set()
     for row_index, row in enumerate(table.rows, start=1):
         row_values: list[str] = []
+        seen_in_row = set()
         for column_index, cell in enumerate(row.cells, start=1):
-            row_values.append("\n".join(p.text.strip() for p in cell.paragraphs).strip())
+            tc_identity = cell._tc
+            text = "\n".join(p.text.strip() for p in cell.paragraphs).strip()
+            merged_continuation = tc_identity in seen_in_row or tc_identity in seen_vertical
+            if merged_continuation:
+                row_values.append("")
+                continue
+            seen_in_row.add(tc_identity)
+            seen_vertical.add(tc_identity)
+            colspan = sum(1 for candidate in row.cells[column_index - 1:] if candidate._tc == tc_identity)
+            row_values.append(text)
+            cells.append({"row": row_index, "column": column_index - 1, "text": text, "rowspan": 1, "colspan": colspan, "merge_origin": True})
             for paragraph_index, paragraph in enumerate(cell.paragraphs, start=1):
                 refs = _extract_images(
                     paragraph, document, source_part,
@@ -155,7 +193,7 @@ def _table_payload(table: Table, document: StoredAuditDocument, source_part: str
                     if ref not in image_ids:
                         image_ids.append(ref)
         rows.append(row_values)
-    return {"rows": rows}, tuple(image_ids)
+    return {"rows": rows, "cells": cells}, tuple(image_ids)
 
 
 def _parse_container(container, document: StoredAuditDocument, source_part: str, start_ordinal: int, section_stack: list[tuple[int, str]], image_dir: Path, cache: dict[tuple[str, str], AuditImage], include_in_body: bool) -> tuple[list[AuditDocumentBlock], int, int, int]:
@@ -188,9 +226,14 @@ def _parse_container(container, document: StoredAuditDocument, source_part: str,
         locator = f"word/{source_part}[{ordinal}]/table[{table_count}]"
         payload, refs = _table_payload(item, document, source_part, locator, image_dir, cache)
         raw_text = "\n".join(" | ".join(row) for row in payload["rows"] if any(row)).strip()
+        appendix_match = _TABLE_APPENDIX_RE.search(raw_text)
+        if include_in_body and appendix_match:
+            section_path = _update_section_stack(section_stack, 1, appendix_match.group(1).strip())
+        else:
+            section_path = tuple(value for _, value in section_stack)
         blocks.append(AuditDocumentBlock(
             block_id=f"{document.document_id}-B{ordinal:04d}", document_id=document.document_id,
-            ordinal=ordinal, block_type="table", section_path=tuple(value for _, value in section_stack),
+            ordinal=ordinal, block_type="table", section_path=section_path,
             source_locator=locator, raw_text=raw_text, normalized_text=normalize_for_match(raw_text),
             table_json=payload, image_refs=refs,
         ))

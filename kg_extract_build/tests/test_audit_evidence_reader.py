@@ -4,7 +4,11 @@ from pathlib import Path
 
 from docx import Document
 
-from kg_extract_build.audit.evidence_reader import build_task_evidence_export, safe_export_filename
+from kg_extract_build.audit.evidence_reader import (
+    EXCEL_CELL_MAX_LENGTH, TRUNCATION_NOTICE, block_text_for_export,
+    build_task_evidence_export, excel_safe_cell, resolve_group_blocks, safe_export_filename,
+)
+from kg_extract_build.audit.models import AuditDocumentBlock, TaskEvidenceGroup
 from kg_extract_build.audit.preview import create_audit_preview
 
 
@@ -28,3 +32,24 @@ class EvidenceReaderTests(unittest.TestCase):
 
     def test_export_filename_removes_windows_illegal_characters(self):
         self.assertEqual(safe_export_filename('方案:测试.docx'), '方案_测试_任务证据.csv')
+
+    def test_resolve_group_blocks_deduplicates_sorts_and_skips_missing_ids(self):
+        first = AuditDocumentBlock("first", "doc", 2, "paragraph", (), "word/body[2]/paragraph", "第二", "第二")
+        second = AuditDocumentBlock("second", "doc", 1, "paragraph", (), "word/body[1]/paragraph", "第一", "第一")
+        parsed = type("Parsed", (), {"blocks": (first, second)})()
+        group = TaskEvidenceGroup("group", "first", ("missing", "first", "second"), (), (), 1, "test")
+
+        self.assertEqual([block.block_id for block in resolve_group_blocks(parsed, group)], ["second", "first"])
+
+    def test_export_table_images_and_long_content_are_readable(self):
+        table = AuditDocumentBlock(
+            "table", "doc", 1, "table", (), "word/body[1]/table[1]", "fallback", "fallback",
+            table_json={"rows": [["表头", ""], ["值", None]]}, image_refs=("image-1",),
+        )
+        self.assertEqual(block_text_for_export(table), "表头 | \n值 | \n[图片]")
+
+        long_text = AuditDocumentBlock("long", "doc", 2, "paragraph", (), "word/body[2]/paragraph", "x" * 40_000, "x")
+        self.assertTrue(len(block_text_for_export(long_text)) > EXCEL_CELL_MAX_LENGTH)
+        truncated = excel_safe_cell(block_text_for_export(long_text))
+        self.assertEqual(len(truncated), EXCEL_CELL_MAX_LENGTH)
+        self.assertTrue(truncated.endswith(TRUNCATION_NOTICE))

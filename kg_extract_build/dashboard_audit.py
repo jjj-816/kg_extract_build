@@ -10,8 +10,8 @@ import streamlit as st
 
 from .audit.document_store import AuditDocumentError
 from .audit.evidence_reader import (
-    block_text_for_export, build_task_evidence_export, group_section_label,
-    location_status_label, readable_source, resolve_group_blocks, safe_export_filename, task_option_label,
+    build_task_evidence_export, group_section_label,
+    location_status_label, readable_source, resolve_group_blocks, safe_export_filename, table_rows, task_option_label,
 )
 from .audit.persistence import MySQLAuditStore
 from .audit.preview import AuditPreview, create_audit_preview
@@ -167,13 +167,16 @@ def render_audit_page() -> None:
         selected_task_id = st.selectbox("选择任务", list(tasks_by_id), format_func=lambda item: task_option_label(tasks_by_id[item]))
         task, location = tasks_by_id[selected_task_id], preview.locations[selected_task_id]
         st.markdown(f"#### {task.name}")
-        summary = st.columns(3)
-        summary[0].write(f"**预期章节**：{task.section}")
-        summary[1].write(f"**定位状态**：{location_status_label(location.status)}")
         primary_group = location.evidence_groups[0] if location.evidence_groups else None
-        summary[2].write(f"**系统定位章节**：{group_section_label(primary_group) or '—'}")
-        if not location.evidence_groups:
+        summary = st.columns(4)
+        summary[0].write(f"**任务 ID**：{task.task_id}")
+        summary[1].write(f"**预期章节**：{task.section}")
+        summary[2].write(f"**定位状态**：{location_status_label(location.status)}")
+        summary[3].write(f"**系统定位章节**：{group_section_label(primary_group) or '—'}")
+        if location.status == "not_located":
             st.info("系统没有找到该任务对应的候选证据。" + (f"\n\n说明：{location.diagnostic}" if location.diagnostic else ""))
+        elif not location.evidence_groups:
+            st.warning("该任务的定位结果没有可读取的证据组。")
         else:
             selected_group = primary_group
             if location.status == "ambiguous":
@@ -186,10 +189,19 @@ def render_audit_page() -> None:
             for block in blocks:
                 if block.block_type == "heading":
                     st.markdown(f"##### {block.raw_text}")
-                elif block.block_type == "table" and block.table_json:
-                    st.dataframe(pd.DataFrame(block.table_json.get("rows", [])), use_container_width=True, hide_index=True)
+                elif block.block_type == "toc_entry":
+                    st.info("该内容来自目录，可能不是正文证据。")
+                    if block.raw_text:
+                        st.text(block.raw_text)
+                elif block.block_type == "table":
+                    rows = table_rows(block)
+                    if rows is None:
+                        if block.raw_text:
+                            st.text(block.raw_text)
+                    else:
+                        st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
                 elif block.raw_text:
-                    st.write(block.raw_text)
+                    st.text(block.raw_text)
                 for image_id in block.image_refs:
                     image = image_map.get(image_id)
                     if image and image.stored_path.is_file():

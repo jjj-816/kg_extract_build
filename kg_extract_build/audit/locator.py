@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from collections import defaultdict
+import re
 
 from .models import AuditDocumentBlock, AuditTaskDefinition, TaskBinding, TaskEvidenceGroup, TaskLocationHit, TaskLocationResult
 from .word_parser import normalize_for_match
@@ -14,6 +15,13 @@ _REGIONS = {
     "APPA": ("附录a",), "APPB": ("附录b",), "APPC": ("附录c",), "APPD": ("附录d",), "APPE": ("附录e",),
 }
 _WEAK = {"施工方案", "工序", "控制措施", "→"}
+_PROFILE_TARGETS = {
+    "BASIS-003": "1.2其他依据",
+    "ARR-003": "4.4.1施工重难点",
+    "ARR-004": "4.4.2施工组织机构及技术措施",
+    "ARR-005": "4.4.2施工组织机构及技术措施",
+    "HSE-001": "5.1", "HSE-002": "5.1", "HSE-003": "5.2",
+}
 
 
 def _family(task: AuditTaskDefinition) -> str:
@@ -123,8 +131,123 @@ def _cross_group(task, blocks, profile):
         tuple(term for _, terms in roles for term in terms), 0.86, f"{profile}：按角色收集章节实际内容" + (f"；未定位角色：{','.join(missing)}" if missing else ""), "section_heading", "cross_section", False),)
 
 
+def _body_blocks(blocks):
+    return [block for block in blocks if _block_part(block) == "body"]
+
+
+def _group(task, selected, reason: str, mode: str, section_path: tuple[str, ...] | None = None) -> TaskEvidenceGroup | None:
+    if not selected:
+        return None
+    ordered = tuple(sorted({block.block_id: block for block in selected}.values(), key=lambda block: block.ordinal))
+    anchor = ordered[0]
+    return TaskEvidenceGroup(
+        f"{task.task_id}-G01", anchor.block_id, tuple(block.block_id for block in ordered),
+        section_path if section_path is not None else anchor.section_path, (), 0.99, reason, "section_heading", mode, False,
+    )
+
+
+def _matches(block: AuditDocumentBlock, value: str) -> bool:
+    needle = normalize_for_match(value)
+    haystack = normalize_for_match(" ".join(block.section_path) + " " + block.raw_text)
+    return bool(needle and needle in haystack)
+
+
+def _section_region(blocks, anchor_index: int):
+    """Return only same-body blocks up to the next peer/parent heading."""
+    anchor = blocks[anchor_index]
+    path = anchor.section_path
+    result = []
+    for block in blocks[anchor_index:]:
+        if _block_part(block) != "body":
+            break
+        if block is not anchor and block.block_type == "heading" and len(block.section_path) <= len(path):
+            break
+        if path and block.section_path[:len(path)] != path:
+            continue
+        result.append(block)
+    return result
+
+
+def _find_section_anchor(blocks, target: str):
+    candidates = [index for index, block in enumerate(blocks) if block.block_type == "heading" and _matches(block, target)]
+    return candidates[0] if candidates else None
+
+
+def _appendix_region(task, blocks, appendix: str):
+    token = normalize_for_match(f"附录{appendix}")
+    candidates = [index for index, block in enumerate(blocks)
+                  if _block_part(block) == "body" and block.block_type != "toc_entry"
+                  and token in normalize_for_match(block.raw_text)]
+    if not candidates:
+        return None
+    # Lists of appendices occur before the real appendix body.  The physical
+    # last occurrence is the actual appendix title/table in normal Word files.
+    start = candidates[-1]
+    selected = []
+    for block in blocks[start:]:
+        if _block_part(block) != "body":
+            break
+        if block is not blocks[start] and block.block_type != "toc_entry" and re.match(r"附录\s*[A-EＡ-Ｅ]", block.raw_text.strip(), re.IGNORECASE):
+            break
+        selected.append(block)
+    return _group(task, selected, f"shared_appendix_{appendix.lower()}：实际附录原文", "appendix_region")
+
+
+def _special_location(task, blocks, profile: str):
+    body = _body_blocks(blocks)
+    if profile == "cover_region":
+        selected = []
+        for block in body[:12]:
+            if block.block_type == "heading" and selected:
+                break
+            selected.append(block)
+            if block.image_refs:
+                break
+        if not any(block.image_refs for block in selected):
+            return None
+        group = _group(task, selected, "cover_region：正文首页封面，需人工视觉核验", "cover_region", ("封面",))
+        return group
+    if profile == "toc_region":
+        toc = [block for block in body if block.block_type == "toc_entry"]
+        return _group(task, toc, "toc_region：目录内容控件中的连续目录条目", "toc_region", ("目录",))
+    if profile.startswith("shared_appendix_"):
+        return _appendix_region(task, body, profile[-1].upper())
+    if profile == "shared_parent_section":
+        index = _find_section_anchor(body, "3.1")
+        return _group(task, _section_region(body, index) if index is not None else [], "shared_parent_section：完整 3.1 施工准备", "section_region")
+    if profile in {"exact_section", "exact_subsection", "shared_subsection", "shared_section"}:
+        target = _PROFILE_TARGETS.get(task.task_id, task.section.split("/")[-1])
+        index = _find_section_anchor(body, target)
+        return _group(task, _section_region(body, index) if index is not None else [], f"{profile}：绑定目标章节", "section_region")
+    if profile == "anchored_subregion":
+        section_index = _find_section_anchor(body, "5.2")
+        if section_index is None:
+            return None
+        section = _section_region(body, section_index)
+        start = next((index for index, block in enumerate(section) if "应急处置" in block.raw_text), None)
+        return _group(task, section[start:] if start is not None else [], "anchored_subregion：5.2 应急处置至章节结束", "section_region")
+    if profile == "person_qualification_composite":
+        personnel = []
+        person_index = _find_section_anchor(body, "3.1.1")
+        if person_index is not None:
+            personnel.extend(_section_region(body, person_index))
+        for block in body:
+            text = normalize_for_match(block.raw_text)
+            if any(term in text for term in ("人员配置", "人员组织", "资格证", "电工")) and not any(term in text for term in ("设备", "材料", "机具")):
+                personnel.append(block)
+        return _group(task, personnel, "person_qualification_composite：人员组织、人员配置与证件图片", "composite_region")
+    return None
+
+
 def locate_task(task: AuditTaskDefinition, blocks: tuple[AuditDocumentBlock, ...] | list[AuditDocumentBlock], binding: TaskBinding | None = None) -> TaskLocationResult:
     profile = binding.locator_profile if binding else "generic_locator"
+    special = _special_location(task, blocks, profile)
+    if profile in {"cover_region", "toc_region", "shared_parent_section", "exact_section", "exact_subsection", "shared_subsection", "shared_section", "anchored_subregion", "person_qualification_composite"} or profile.startswith("shared_appendix_"):
+        if special is None:
+            return TaskLocationResult(task.task_id, "not_located", diagnostic="未在任务绑定的正文证据区域中找到可用原文")
+        diagnostic = "已定位封面图片，需人工视觉核验" if profile == "cover_region" else None
+        return TaskLocationResult(task.task_id, "located", evidence_groups=(special,),
+            hits=(TaskLocationHit(special.anchor_block_id, next(block.source_locator for block in blocks if block.block_id == special.anchor_block_id), special.section_path, (), special.score),), diagnostic=diagnostic)
     groups = _cross_group(task, blocks, profile) if profile in {"cross_section_core_work_coverage", "equipment_material_and_work_items"} else _merge_groups(task, blocks, _anchors(task, blocks, profile), profile)
     if profile == "appendix_e_control_measures":
         groups = tuple(group for group in groups if "附录e" in normalize_for_match(" ".join(group.section_path)))

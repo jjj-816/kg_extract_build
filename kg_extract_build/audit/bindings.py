@@ -15,11 +15,21 @@ HANDLER_BY_ROUTE = {
 }
 
 LOCATOR_PROFILE_BY_TASK = {
+    "COVER-001": "cover_region", "COVER-002": "cover_region", "COVER-003": "cover_region",
+    "DOC-001": "toc_region",
+    "BASIS-003": "exact_section",
+    "PREP-001": "shared_parent_section", "PREP-002": "shared_parent_section",
+    "PREP-006": "person_qualification_composite",
     "PREP-007": "cross_section_core_work_coverage",
     "ARR-002": "ordered_steps",
-    "APPD-002": "equipment_material_and_work_items",
-    "APPE-002": "appendix_e_control_measures",
+    "ARR-003": "exact_subsection", "ARR-004": "shared_subsection", "ARR-005": "shared_subsection",
+    "HSE-001": "shared_section", "HSE-002": "shared_section", "HSE-003": "exact_section", "HSE-004": "anchored_subregion",
+    "APPD-002": "shared_appendix_d",
 }
+
+for _appendix in "ABCDE":
+    for _task_number in range(1, 4):
+        LOCATOR_PROFILE_BY_TASK.setdefault(f"APP{_appendix}-{_task_number:03d}", f"shared_appendix_{_appendix.lower()}")
 
 
 def build_task_bindings(library: PublishedTaskLibrary) -> dict[str, TaskBinding]:
