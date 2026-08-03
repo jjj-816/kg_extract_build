@@ -8,8 +8,8 @@ class AuditTaskLibraryTests(unittest.TestCase):
     def test_loads_the_published_v1_library_and_binds_all_tasks(self):
         library = load_published_task_library()
 
-        self.assertEqual(library.version, "1.0.0")
-        self.assertEqual(len(library.tasks), 42)
+        self.assertEqual(library.version, "1.1.0")
+        self.assertEqual(len(library.tasks), 44)
         self.assertEqual(len(library.sha256), 64)
         self.assertEqual(library.task_by_id("ARR-002").route, "semantic_reasonableness")
 

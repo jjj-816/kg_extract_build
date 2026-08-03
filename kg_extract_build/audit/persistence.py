@@ -249,7 +249,7 @@ class MySQLAuditStore:
                                VALUES (%s,'document',NULL,%s,%s,%s)""",
                             (execution_id, evidence["block_id"], _json(evidence), now),
                         )
-                    for issue in result.issues:
+                    for issue in (*result.issues, *result.manual_reviews, *result.offline_items, *result.advisories):
                         cursor.execute(
                             """INSERT INTO audit_issue
                                (issue_id,execution_id,issue_category,summary,affected_scope,suggestion,machine_status,created_at,updated_at)

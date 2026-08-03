@@ -19,6 +19,9 @@ def build_draft_report(preview, results) -> dict:
             "result_status": result.result_status,
             "diagnostics": list(result.diagnostics),
             "issues": [issue.__dict__ for issue in result.issues],
+            "manual_reviews": [issue.__dict__ for issue in result.manual_reviews],
+            "offline_items": [issue.__dict__ for issue in result.offline_items],
+            "advisories": [issue.__dict__ for issue in result.advisories],
             "evidence": list(result.evidence),
         })
     return {

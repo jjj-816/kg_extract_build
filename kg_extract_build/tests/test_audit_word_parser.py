@@ -165,8 +165,8 @@ class AuditWordParserTests(unittest.TestCase):
                 "测试方案.docx", self._build_docx_bytes(), storage_dir=temp_dir
             )
 
-            self.assertEqual(len(preview.task_library.tasks), 42)
-            self.assertEqual(len(preview.locations), 42)
+            self.assertEqual(len(preview.task_library.tasks), 44)
+            self.assertEqual(len(preview.locations), 44)
             self.assertNotEqual(preview.locations["ARR-002"].status, "not_located")
 
 

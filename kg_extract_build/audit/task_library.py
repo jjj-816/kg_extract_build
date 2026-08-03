@@ -61,7 +61,15 @@ def load_published_task_library(path: str | Path | None = None) -> PublishedTask
         raise TaskLibraryError(f"审核任务库不是有效 UTF-8 JSON：{source_path}") from exc
     if data.get("status") != "published":
         raise TaskLibraryError("正式审核只能加载状态为 published 的任务库")
-    task_records = data.get("tasks")
+    if data.get("base_library"):
+        base_path = (source_path.parent / data["base_library"]).resolve()
+        base_data = json.loads(base_path.read_text(encoding="utf-8"))
+        task_records = list(base_data["tasks"])
+        updates = data.get("task_updates", {})
+        task_records = [{**record, **updates.get(record["task_id"], {})} for record in task_records]
+        task_records.extend(data.get("additional_tasks", []))
+    else:
+        task_records = data.get("tasks")
     if not isinstance(task_records, list) or not task_records:
         raise TaskLibraryError("审核任务库缺少 tasks")
     tasks = tuple(_task_from_record(item) for item in task_records)

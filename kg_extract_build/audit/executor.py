@@ -9,7 +9,7 @@ from .evidence_reader import resolve_group_blocks
 from .models import AuditDocumentBlock, AuditTaskDefinition, TaskLocationResult
 
 
-EXECUTION_STATUSES = frozenset({"pending", "running", "completed", "blocked", "failed"})
+EXECUTION_STATUSES = frozenset({"pending", "running", "completed", "failed"})
 RESULT_STATUSES = frozenset({"no_issue", "issue_found", "manual_review", "offline_completion"})
 
 
@@ -30,6 +30,9 @@ class TaskExecutionResult:
     result_status: str | None
     evidence: tuple[dict[str, Any], ...]
     issues: tuple[AuditIssueResult, ...] = ()
+    manual_reviews: tuple[AuditIssueResult, ...] = ()
+    offline_items: tuple[AuditIssueResult, ...] = ()
+    advisories: tuple[AuditIssueResult, ...] = ()
     diagnostics: tuple[str, ...] = ()
 
 
@@ -57,6 +60,28 @@ def _missing_evidence_result(task: AuditTaskDefinition, location: TaskLocationRe
     return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", (), (issue,), (message,))
 
 
+def _missing_table_values(evidence, required: tuple[str, ...]) -> tuple[str, ...]:
+    """Return required headers whose actual business rows contain blanks."""
+    missing: set[str] = set()
+    for item in evidence:
+        payload = item["table_json"] or {}
+        rows = payload.get("rows", []) if isinstance(payload, dict) else []
+        if not rows:
+            continue
+        header = [str(cell).replace(" ", "") for cell in rows[0]]
+        indexes = {field: next((i for i, value in enumerate(header) if field in value), None) for field in required}
+        if all(index is None for index in indexes.values()):
+            continue
+        for row in rows[1:]:
+            values = [str(cell).strip() for cell in row]
+            if not any(values):
+                continue
+            for field, index in indexes.items():
+                if index is not None and (index >= len(values) or not values[index]):
+                    missing.add(field)
+    return tuple(sorted(missing))
+
+
 def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocationResult) -> TaskExecutionResult:
     """执行阶段二可判定的存在性、结构和可读性检查。
 
@@ -72,7 +97,32 @@ def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocat
         return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
     if task.task_id.startswith("COVER-") and parsed.cover_visual_only:
         issue = AuditIssueResult("人工核验项", f"{task.name}包含封面视觉内容，需人工核验。", machine_status="manual_review")
-        return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, (issue,))
+        return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, manual_reviews=(issue,))
+    table_requirements = {
+        "PREP-004": ("名称", "单位", "数量"), "PREP-005": ("岗位", "工种", "人数"),
+        "HSE-001": ("步骤", "危害", "风险", "控制"), "APPD-001": ("名称", "数量", "完好", "综合"),
+        "APPE-001": ("地点", "工程名称", "作业类型", "作业内容"), "APPE-002": ("控制措施",),
+    }
+    required = table_requirements.get(task.task_id)
+    if required:
+        table_text = "\n".join(item["raw_text"] for item in evidence if item["table_json"])
+        missing = [field for field in required if field not in table_text]
+        if missing:
+            issue = AuditIssueResult("信息问题", f"{task.name}缺少核心字段：{'、'.join(missing)}", affected_scope="；".join(missing))
+            return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
+        blank_fields = _missing_table_values(evidence, required)
+        if blank_fields and task.task_id in {"PREP-004", "PREP-005", "APPD-001", "APPE-002"}:
+            issue = AuditIssueResult("信息问题", f"{task.name}存在业务行字段缺失：{'、'.join(blank_fields)}", affected_scope="；".join(blank_fields))
+            return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
+        if task.task_id in {"PREP-004", "PREP-005", "APPD-001", "APPE-002"} and not any(
+            any(any(str(cell).strip() for cell in row) for row in item["table_json"].get("rows", [])[1:])
+            for item in evidence if item["table_json"]
+        ):
+            issue = AuditIssueResult("信息问题", f"{task.name}未见实际业务行", suggestion="请补充非示例的业务数据。")
+            return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
+    if task.task_id == "PREP-006" and any(item["image_refs"] for item in evidence):
+        review = AuditIssueResult("人工核验项", "特殊工种资格证明包含图片，需人工核验证件有效期。", machine_status="manual_review")
+        return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, manual_reviews=(review,))
     return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
 
 
@@ -84,16 +134,22 @@ def execute_offline_completion(task: AuditTaskDefinition, parsed, location: Task
         "待线下完善项", f"{task.name}属于打印后填写、勾选、签字或验收项目。",
         suggestion="请在纸质或受控线下流程中完成并由审核员确认。", machine_status="offline_completion",
     )
-    return TaskExecutionResult(task.task_id, task.route, "completed", "offline_completion", evidence, (issue,))
+    return TaskExecutionResult(task.task_id, task.route, "completed", "offline_completion", evidence, offline_items=(issue,))
 
 
-def execute_blocked_route(task: AuditTaskDefinition, parsed, location: TaskLocationResult) -> TaskExecutionResult:
+def execute_later_route(task: AuditTaskDefinition, parsed, location: TaskLocationResult) -> TaskExecutionResult:
     evidence = _evidence(parsed, location)
     labels = {
         "jsa_rule": "JSA 只读适配器", "semantic_compliance": "规范检索与合规语义审核", "semantic_reasonableness": "图增强合理性审核",
     }
-    message = f"{labels.get(task.route, task.route)}尚未接入；该任务未被默认判定为通过。"
-    return TaskExecutionResult(task.task_id, task.route, "blocked", None, evidence, diagnostics=(message,))
+    message = f"{labels.get(task.route, task.route)}等待后续语义审核；当前未作业务结论。"
+    return TaskExecutionResult(task.task_id, task.route, "pending", None, evidence, diagnostics=(message,))
+
+
+def execute_jsa_advisory(task: AuditTaskDefinition, parsed, location: TaskLocationResult) -> TaskExecutionResult:
+    evidence = _evidence(parsed, location)
+    advisory = AuditIssueResult("JSA 补充建议", "JSA 只读引擎待配置；未生成普通审核问题。", machine_status="advisory")
+    return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, advisories=(advisory,))
 
 
 class AuditOrchestrator:
@@ -107,8 +163,10 @@ class AuditOrchestrator:
                 result = execute_deterministic(task, preview.parsed_document, location)
             elif task.route == "offline_completion":
                 result = execute_offline_completion(task, preview.parsed_document, location)
+            elif task.route == "jsa_rule":
+                result = execute_jsa_advisory(task, preview.parsed_document, location)
             else:
-                result = execute_blocked_route(task, preview.parsed_document, location)
+                result = execute_later_route(task, preview.parsed_document, location)
             self._validate(result)
             results.append(result)
         return tuple(results)
@@ -121,5 +179,3 @@ class AuditOrchestrator:
             raise ValueError(f"非法业务结果：{result.result_status}")
         if result.execution_status == "completed" and result.result_status is None:
             raise ValueError("已完成任务必须具有业务结果")
-        if result.execution_status == "blocked" and result.result_status is not None:
-            raise ValueError("被阻断任务不能伪造业务结果")

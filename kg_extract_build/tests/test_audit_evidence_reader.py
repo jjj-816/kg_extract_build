@@ -26,7 +26,7 @@ class EvidenceReaderTests(unittest.TestCase):
             document.save(path)
             preview = create_audit_preview("方案.docx", path.read_bytes(), storage_dir=directory)
             exported = build_task_evidence_export(preview)
-            self.assertEqual(len(exported), 42)
+            self.assertEqual(len(exported), 44)
             self.assertEqual(exported.columns.tolist()[-2:], ["人工判断", "备注"])
             self.assertTrue(exported["任务 ID"].iloc[0])
 
