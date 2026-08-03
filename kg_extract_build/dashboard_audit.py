@@ -9,11 +9,13 @@ import pandas as pd
 import streamlit as st
 
 from .audit.document_store import AuditDocumentError
+from .audit.executor import AuditOrchestrator
 from .audit.evidence_reader import (
     build_task_evidence_export, group_section_label,
     location_status_label, readable_source, resolve_group_blocks, safe_export_filename, table_rows, task_option_label,
 )
 from .audit.persistence import MySQLAuditStore
+from .audit.reporting import build_draft_report
 from .audit.preview import AuditPreview, create_audit_preview
 from .audit.settings import AUDIT_CONVERSION_TIMEOUT, AUDIT_DOC_CONVERTER, AUDIT_STORAGE_DIR, LIBREOFFICE_PATH
 from .audit.bindings import build_task_bindings
@@ -241,8 +243,13 @@ def render_audit_page() -> None:
                         st.error(health_message)
                     else:
                         run_id = store.create_confirmed_run(parsed, preview.task_library, context, reviewer_name.strip())
+                        results = AuditOrchestrator().execute_preview(preview)
+                        store.save_execution_results(run_id, results)
+                        report_id = store.save_draft_report(run_id, build_draft_report(preview, results), reviewer_name.strip())
                         st.session_state["audit_run_id"] = run_id
-                        st.success(f"已创建审核运行：{run_id}（共 {len(preview.task_library.tasks)} 项待执行任务）")
+                        completed = sum(result.execution_status == "completed" for result in results)
+                        blocked = sum(result.execution_status == "blocked" for result in results)
+                        st.success(f"已完成审核运行：{run_id}（完成 {completed} 项，局部阻断 {blocked} 项；初稿：{report_id}）")
                 except Exception as exc:
                     st.error(f"创建审核运行失败：{exc}")
                 finally:

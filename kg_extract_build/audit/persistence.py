@@ -184,7 +184,7 @@ class MySQLAuditStore:
                     VALUES (%s,%s,'context_confirmed',%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""",
                     (run_id, parsed.document.document_id, context.get("project_name") or None, context.get("audit_year"),
                      context.get("work_purpose") or None, library.task_library_id, library.version, library.sha256,
-                     "stage1-v1", _json(context), reviewer_name, now, now, now),
+                    "audit-bindings-v1", _json(context), reviewer_name, now, now, now),
                 )
                 work_types = [(run_id, value) for value in context.get("work_types", [])]
                 if work_types:
@@ -225,6 +225,61 @@ class MySQLAuditStore:
             "created_at_utc": format_utc_time(row[11]), "created_at_beijing": format_beijing_time(row[11]),
             "task_count": task_count,
         }
+
+    def save_execution_results(self, run_id: str, results) -> None:
+        """持久化阶段二机器原始结果；不覆盖人工复核记录。"""
+        connection, now = self._connection(), datetime.now(timezone.utc).replace(tzinfo=None)
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute("SELECT execution_id,task_id FROM audit_task_execution WHERE run_id=%s", (run_id,))
+                execution_ids = {task_id: execution_id for execution_id, task_id in cursor.fetchall()}
+                if set(execution_ids) != {result.task_id for result in results}:
+                    raise ValueError("审核运行的任务快照与执行结果不一致")
+                for result in results:
+                    execution_id = execution_ids[result.task_id]
+                    cursor.execute(
+                        """UPDATE audit_task_execution SET execution_status=%s,result_status=%s,failure_reason=%s,updated_at=%s
+                           WHERE execution_id=%s""",
+                        (result.execution_status, result.result_status, "；".join(result.diagnostics) or None, now, execution_id),
+                    )
+                    for evidence in result.evidence:
+                        cursor.execute(
+                            """INSERT INTO audit_task_evidence
+                               (execution_id,evidence_role,external_evidence_id,document_block_id,evidence_snapshot,created_at)
+                               VALUES (%s,'document',NULL,%s,%s,%s)""",
+                            (execution_id, evidence["block_id"], _json(evidence), now),
+                        )
+                    for issue in result.issues:
+                        cursor.execute(
+                            """INSERT INTO audit_issue
+                               (issue_id,execution_id,issue_category,summary,affected_scope,suggestion,machine_status,created_at,updated_at)
+                               VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)""",
+                            (str(uuid.uuid4()), execution_id, issue.category, issue.summary, issue.affected_scope,
+                             issue.suggestion, issue.machine_status, now, now),
+                        )
+                cursor.execute("UPDATE audit_run SET status='executed',updated_at=%s WHERE run_id=%s", (now, run_id))
+            connection.commit()
+        except Exception:
+            connection.rollback()
+            raise
+
+    def save_draft_report(self, run_id: str, report: dict, generated_by: str | None = None) -> str:
+        connection, now = self._connection(), datetime.now(timezone.utc).replace(tzinfo=None)
+        report_id = str(uuid.uuid4())
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute("SELECT COALESCE(MAX(report_version),0)+1 FROM audit_report WHERE run_id=%s", (run_id,))
+                version = cursor.fetchone()[0]
+                cursor.execute(
+                    """INSERT INTO audit_report (report_id,run_id,report_status,report_version,result_json,generated_by,created_at)
+                       VALUES (%s,%s,'draft',%s,%s,%s,%s)""",
+                    (report_id, run_id, version, _json(report), generated_by, now),
+                )
+            connection.commit()
+            return report_id
+        except Exception:
+            connection.rollback()
+            raise
 
     def close(self) -> None:
         if self._connection_instance is not None:
