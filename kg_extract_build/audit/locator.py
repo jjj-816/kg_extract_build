@@ -235,6 +235,24 @@ def _special_location(task, blocks, profile: str):
             text = normalize_for_match(block.raw_text)
             if any(term in text for term in ("人员配置", "人员组织", "资格证", "电工")) and not any(term in text for term in ("设备", "材料", "机具")):
                 personnel.append(block)
+        # A credential scan is deliberately local: the certificate image may
+        # be a textless block immediately after a personnel table/description.
+        # Do not treat all images in 3.2 as qualification evidence.
+        anchors = [
+            index for index, block in enumerate(body)
+            if "3.2" in normalize_for_match(" ".join(block.section_path))
+            and any(term in normalize_for_match(block.raw_text) for term in ("施工人员配置", "特种作业", "资格证", "电工"))
+        ]
+        if anchors:
+            anchor_index = anchors[-1]
+            anchor_path = body[anchor_index].section_path
+            for block in body[anchor_index + 1:]:
+                if block.block_type == "heading" and (
+                    len(block.section_path) <= len(anchor_path) or "3.3" in normalize_for_match(block.raw_text)
+                ):
+                    break
+                if block.image_refs:
+                    personnel.append(block)
         return _group(task, personnel, "person_qualification_composite：人员组织、人员配置与证件图片", "composite_region")
     return None
 
