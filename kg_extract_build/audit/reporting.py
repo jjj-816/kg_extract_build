@@ -14,7 +14,7 @@ RESULT_GROUPS = (
     ("advisories", "JSA 提示项"),
     ("system_errors", "系统错误"),
 )
-STAGE2_RESULT_EXPORT_COLUMNS = ["结果类型", "任务 ID", "任务名称", "问题类别", "问题说明", "实际值", "期望值", "受影响范围", "来源章节", "处理建议"]
+STAGE2_RESULT_EXPORT_COLUMNS = ["结果类型", "任务 ID", "任务名称", "问题类别", "问题说明", "实际值", "期望值", "候选总数", "展示序号", "是否截断", "受影响范围", "来源章节", "处理建议"]
 
 
 def stage2_result_groups(report: dict) -> dict[str, list[dict]]:
@@ -58,18 +58,28 @@ def build_stage2_result_export(report: dict) -> pd.DataFrame:
                 section = " / ".join(evidence.get("section_path") or [])
                 if section and section not in source_sections:
                     source_sections.append(section)
-            records.append({
-                "结果类型": labels[output_type],
-                "任务 ID": item["task_id"],
-                "任务名称": item["task_name"],
-                "问题类别": item.get("category") or "",
-                "问题说明": item.get("summary") or "",
-                "实际值": item.get("summary") or "",
-                "期望值": "；".join(item.get("expected") or []),
+            base = {
+                "结果类型": labels[output_type], "任务 ID": item["task_id"], "任务名称": item["task_name"],
+                "问题类别": item.get("category") or "", "问题说明": item.get("summary") or "",
+                "实际值": item.get("actual_value") or item.get("summary") or "",
                 "受影响范围": item.get("affected_scope") or "",
                 "来源章节": "；".join(source_sections) or item.get("section") or "",
                 "处理建议": item.get("suggestion") or "",
-            })
+            }
+            candidates = item.get("candidate_rows") or []
+            if candidates:
+                for number, candidate in enumerate(candidates, 1):
+                    records.append({
+                        **base,
+                        "期望值": f"候选危害：{candidate.get('hazard') or '—'}；候选控制措施：{candidate.get('control_measure') or '—'}；风险等级：{candidate.get('risk_level') or '—'}；相似度：{candidate.get('similarity') or '—'}",
+                        "候选总数": item.get("candidate_total") or len(candidates), "展示序号": number,
+                        "是否截断": "是" if item.get("candidate_truncated") else "否",
+                    })
+            else:
+                records.append({
+                    **base, "期望值": item.get("expected_value") or "；".join(item.get("expected") or []),
+                    "候选总数": "", "展示序号": "", "是否截断": "",
+                })
     return pd.DataFrame(records, columns=STAGE2_RESULT_EXPORT_COLUMNS)
 
 

@@ -181,6 +181,25 @@ def _render_stage2_result_detail(item: dict, image_paths: dict[str, str]) -> Non
     summary[2].write(f"**结果类型**：{dict(RESULT_GROUPS)[item['output_type']]}")
     summary[3].write(f"**状态**：{item.get('result_status') or item.get('execution_status') or '—'}")
     st.write(f"**观察到**：{item.get('summary') or '—'}")
+    if item.get("actual_value"):
+        st.write(f"**实际值**：{item['actual_value']}")
+    if item.get("expected_value"):
+        st.write(f"**候选值**：{item['expected_value']}")
+    candidates = item.get("candidate_rows") or []
+    if candidates:
+        total = item.get("candidate_total") or len(candidates)
+        st.markdown("#### 风险库缺失危害候选")
+        st.caption(f"该步骤共识别 {total} 条候选，当前展示 {len(candidates)} 条。" + ("其余候选未展示。" if item.get("candidate_truncated") else ""))
+        st.dataframe(pd.DataFrame([
+            {
+                "序号": number,
+                "候选危害": candidate.get("hazard") or "—",
+                "候选控制措施": candidate.get("control_measure") or "—",
+                "风险等级": candidate.get("risk_level") or "—",
+                "相似度": candidate.get("similarity") or "—",
+            }
+            for number, candidate in enumerate(candidates, 1)
+        ]), use_container_width=True, hide_index=True)
     if item.get("expected"):
         st.write(f"**预期**：{'；'.join(item['expected'])}")
     if item.get("affected_scope"):
@@ -414,7 +433,7 @@ def render_audit_page() -> None:
                         st.error(health_message)
                     else:
                         run_id = store.create_confirmed_run(parsed, preview.task_library, context, reviewer_name.strip())
-                        results = AuditOrchestrator().execute_preview(preview, context)
+                        results = AuditOrchestrator().execute_preview(preview, context, run_id)
                         store.save_execution_results(run_id, results)
                         report = build_draft_report(preview, results)
                         report_id = store.save_draft_report(run_id, report, reviewer_name.strip())

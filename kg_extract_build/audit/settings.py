@@ -6,6 +6,16 @@ import os
 from pathlib import Path
 
 
+try:
+    from dotenv import load_dotenv
+
+    # 审核模块可被单独导入，因此在此加载与应用同目录的 .env。
+    load_dotenv(Path(__file__).resolve().parents[1] / ".env", override=False)
+except ImportError:
+    # 保持库模式可用；部署环境仍可直接提供系统环境变量。
+    pass
+
+
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
@@ -25,6 +35,9 @@ AUDIT_RISK_CATALOG_PATH = audit_env_path(
     "KG_AUDIT_RISK_CATALOG_PATH",
     PROJECT_ROOT / "kg_extract_build" / "audit" / "resources" / "risk_catalog",
 )
+AUDIT_JSA_SERVICE_URL = os.getenv("KG_AUDIT_JSA_SERVICE_URL", "http://127.0.0.1:5001/audit_jsa").strip()
+AUDIT_JSA_TIMEOUT_SECONDS = int(os.getenv("KG_AUDIT_JSA_TIMEOUT_SECONDS", "30"))
+AUDIT_JSA_SIMILARITY_THRESHOLD = float(os.getenv("KG_AUDIT_JSA_SIMILARITY_THRESHOLD", "0.9"))
 AUDIT_MAX_FILE_MB = int(os.getenv("KG_AUDIT_MAX_FILE_MB", "50"))
 AUDIT_DOC_CONVERTER = os.getenv("KG_AUDIT_DOC_CONVERTER", "auto").strip().lower()
 LIBREOFFICE_PATH = audit_env_path(

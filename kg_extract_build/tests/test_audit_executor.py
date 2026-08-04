@@ -71,7 +71,7 @@ class AuditExecutorTests(unittest.TestCase):
         self.assertEqual(groups["system_errors"][0]["summary"], "服务不可用")
 
         export = build_stage2_result_export(report)
-        self.assertEqual(export.columns.tolist(), ["结果类型", "任务 ID", "任务名称", "问题类别", "问题说明", "实际值", "期望值", "受影响范围", "来源章节", "处理建议"])
+        self.assertEqual(export.columns.tolist(), ["结果类型", "任务 ID", "任务名称", "问题类别", "问题说明", "实际值", "期望值", "候选总数", "展示序号", "是否截断", "受影响范围", "来源章节", "处理建议"])
         self.assertEqual(export.loc[0, "结果类型"], "审核问题")
 
     def test_appd001_h25a_appendix_rows_only_report_missing_quantity(self):
@@ -182,6 +182,18 @@ class AuditExecutorTests(unittest.TestCase):
         result = AuditOrchestrator().execute_preview(preview)[0]
         self.assertEqual(result.result_status, "issue_found")
         self.assertIn("数量", result.issues[0].summary)
+
+    def test_prep005_accepts_either_role_or_trade_column(self):
+        library = load_published_task_library()
+        task = library.task_by_id("PREP-005")
+        table = AuditDocumentBlock("table", "doc", 1, "table", ("第三章",), "word/body[1]/table[1]", "工种 | 人数\n电工 | 2", "", table_json={"rows": [["工种", "人数"], ["电工", "2"]]})
+        parsed = ParsedAuditDocument(StoredAuditDocument("doc", "方案.docx", "docx", "a" * 64, None, ""), (table,), 0, 1, 0, False)
+        group = TaskEvidenceGroup("g", "table", ("table",), ("第三章",), (), 1, "test")
+        preview = SimpleNamespace(parsed_document=parsed, task_library=SimpleNamespace(tasks=(task,), task_library_id=library.task_library_id, version=library.version, sha256=library.sha256), locations={task.task_id: TaskLocationResult(task.task_id, "located", evidence_groups=(group,))})
+
+        result = AuditOrchestrator().execute_preview(preview)[0]
+
+        self.assertEqual(result.result_status, "no_issue")
 
 
 if __name__ == "__main__":

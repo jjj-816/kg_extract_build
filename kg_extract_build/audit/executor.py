@@ -7,6 +7,7 @@ import re
 from typing import Any
 
 from .evidence_reader import resolve_group_blocks
+from .jsa_adapter import JSAAdapterError, audit_jsa
 from .models import AuditDocumentBlock, AuditTaskDefinition, TaskLocationResult
 from .risk_catalog import RiskCatalogError, detect_work_codes
 
@@ -21,6 +22,11 @@ class AuditIssueResult:
     summary: str
     affected_scope: str | None = None
     suggestion: str | None = None
+    actual_value: str | None = None
+    expected_value: str | None = None
+    candidate_rows: tuple[dict[str, Any], ...] = ()
+    candidate_total: int | None = None
+    candidate_truncated: bool = False
     machine_status: str = "open"
 
 
@@ -136,6 +142,56 @@ def _appd_missing_fields(evidence) -> tuple[tuple[str, ...], tuple[str, ...], bo
     return tuple(sorted(missing_columns)), tuple(sorted(missing_values)), business_row_found
 
 
+def _has_jsa_business_rows(evidence) -> bool:
+    for item in evidence:
+        payload = item["table_json"] or {}
+        rows = payload.get("rows", []) if isinstance(payload, dict) else []
+        if len(rows) < 2:
+            continue
+        header = [str(cell).replace(" ", "") for cell in rows[0]]
+        step_index = next((index for index, value in enumerate(header) if "步骤" in value or "作业活动" in value), None)
+        hazard_index = next((index for index, value in enumerate(header) if "危害" in value), None)
+        if step_index is None or hazard_index is None:
+            continue
+        for row in rows[1:]:
+            values = [str(cell).strip() for cell in row]
+            if (step_index < len(values) and values[step_index]) or (hazard_index < len(values) and values[hazard_index]):
+                return True
+    return False
+
+
+def _prep005_missing_fields(evidence) -> tuple[str, ...]:
+    """PREP-005 accepts either a 岗位 column or a 工种 column for each business row."""
+    has_role_column = has_count_column = False
+    missing_role_or_trade = missing_count = False
+    for item in evidence:
+        payload = item["table_json"] or {}
+        rows = payload.get("rows", []) if isinstance(payload, dict) else []
+        if not rows:
+            continue
+        header = [str(cell).replace(" ", "") for cell in rows[0]]
+        role_index = next((i for i, value in enumerate(header) if "岗位" in value), None)
+        trade_index = next((i for i, value in enumerate(header) if "工种" in value), None)
+        count_index = next((i for i, value in enumerate(header) if "人数" in value), None)
+        has_role_column = has_role_column or role_index is not None or trade_index is not None
+        has_count_column = has_count_column or count_index is not None
+        for row in rows[1:]:
+            values = [str(cell).strip() for cell in row]
+            if not any(values):
+                continue
+            role_or_trade = any(index is not None and index < len(values) and values[index] for index in (role_index, trade_index))
+            if not role_or_trade:
+                missing_role_or_trade = True
+            if count_index is not None and (count_index >= len(values) or not values[count_index]):
+                missing_count = True
+    missing = []
+    if not has_role_column or missing_role_or_trade:
+        missing.append("岗位或工种")
+    if not has_count_column or missing_count:
+        missing.append("人数")
+    return tuple(missing)
+
+
 _NO_RISK_WORK_STATEMENT = re.compile(r"(?:无|不涉及).{0,12}(?:风险作业|特殊作业)")
 
 
@@ -178,7 +234,7 @@ def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocat
     if task.task_id == "ARR-001":
         return _arr001_result(task, evidence, audit_context)
     table_requirements = {
-        "PREP-004": ("名称", "单位", "数量"), "PREP-005": ("岗位", "工种", "人数"),
+        "PREP-004": ("名称", "单位", "数量"),
         "HSE-001": ("步骤", "危害", "风险", "控制"),
         "APPE-001": ("地点", "工程名称", "作业类型", "作业内容"), "APPE-002": ("控制措施",),
     }
@@ -192,6 +248,12 @@ def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocat
             return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
         if missing_values:
             issue = AuditIssueResult("信息问题", f"{task.name}存在设备业务行字段缺失：{'、'.join(missing_values)}", affected_scope="；".join(missing_values))
+            return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
+        return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
+    if task.task_id == "PREP-005":
+        missing = _prep005_missing_fields(evidence)
+        if missing:
+            issue = AuditIssueResult("信息问题", f"{task.name}存在业务行字段缺失：{'、'.join(missing)}", affected_scope="；".join(missing))
             return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
         return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
     required = table_requirements.get(task.task_id)
@@ -210,6 +272,9 @@ def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocat
             for item in evidence if item["table_json"]
         ):
             issue = AuditIssueResult("信息问题", f"{task.name}未见实际业务行", suggestion="请补充非示例的业务数据。")
+            return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
+        if task.task_id == "HSE-001" and not _has_jsa_business_rows(evidence):
+            issue = AuditIssueResult("信息问题", f"{task.name}未见可用的 JSA 业务行", suggestion="请至少填写作业步骤或危害信息。")
             return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
     if task.task_id == "PREP-006" and any(item["image_refs"] for item in evidence):
         review = AuditIssueResult("人工核验项", "特殊工种资格证明包含图片，需人工核验证件有效期。", machine_status="manual_review")
@@ -237,7 +302,56 @@ def execute_later_route(task: AuditTaskDefinition, parsed, location: TaskLocatio
     return TaskExecutionResult(task.task_id, task.route, "pending", None, evidence, diagnostics=(message,))
 
 
-def execute_jsa_advisory(task: AuditTaskDefinition, parsed, location: TaskLocationResult) -> TaskExecutionResult:
+def execute_jsa_advisory(task: AuditTaskDefinition, preview, run_id: str, hse001_result: TaskExecutionResult) -> TaskExecutionResult:
+    location = preview.locations[task.task_id]
+    evidence = _evidence(preview.parsed_document, location)
+    if hse001_result.result_status != "no_issue":
+        return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence, diagnostics=("HSE-001 未通过，未调用 JSA 只读服务。",))
+    try:
+        response = audit_jsa(preview, run_id)
+    except JSAAdapterError as exc:
+        return TaskExecutionResult(task.task_id, task.route, "failed", None, evidence, diagnostics=(str(exc),))
+    advisories = []
+    for item in response.suggestions:
+        if item["kind"] == "missing_jsa_step":
+            advisories.append(AuditIssueResult(
+                "JSA 步骤覆盖建议",
+                f"施工顺序步骤“{item.get('step') or '—'}”未在 JSA 表中找到相同或相似步骤。",
+                affected_scope=f"步骤：{item.get('step') or '—'}；施工顺序来源：{item.get('source_locator') or '—'}",
+                suggestion="请确认该步骤是否适用；如适用，请在 JSA 表中补充该作业步骤后再进行风险辨识。",
+                actual_value="JSA 表中未找到相同或相似步骤。",
+                expected_value="JSA 应覆盖施工顺序中的适用作业步骤。",
+                machine_status="advisory",
+            ))
+            continue
+        if item["kind"] == "missing_hazard_group":
+            total = item["total_missing_hazards"]
+            returned = item["returned_hazards"]
+            suffix = f"，当前展示前 {returned} 条" if item.get("truncated") else ""
+            advisories.append(AuditIssueResult(
+                "JSA 补充建议",
+                f"步骤“{item.get('step') or '—'}”识别到 {total} 条风险库缺失危害候选{suffix}。",
+                affected_scope=f"步骤：{item.get('step') or '—'}；来源：{item.get('source_locator') or '—'}",
+                suggestion="请结合方案原文和现场条件，确认后将适用候选补充至 JSA。",
+                actual_value="当前 JSA 未发现以下候选危害。",
+                expected_value=f"风险库候选危害共 {total} 条，本次展示 {returned} 条。",
+                candidate_rows=tuple(item["candidates"]), candidate_total=total,
+                candidate_truncated=bool(item.get("truncated")), machine_status="advisory",
+            ))
+            continue
+        advisories.append(AuditIssueResult(
+            "JSA 补充建议",
+            f"{item.get('kind')}：{item.get('basis') or '风险库匹配到补充候选。'}",
+            affected_scope=f"步骤：{item.get('step') or '—'}；当前危害/控制措施：{item.get('current_hazard') or item.get('hazard') or '—'} / {item.get('current_control_measure') or '—'}；来源：{item.get('source_locator') or '—'}",
+            suggestion=f"候选危害：{item.get('hazard') or '—'}；候选控制措施：{item.get('control_measure') or '—'}；风险等级：{item.get('risk_level') or '—'}。请补充到 JSA 后由人工确认。",
+            actual_value=f"危害：{item.get('current_hazard') or item.get('hazard') or '—'}；控制措施：{item.get('current_control_measure') or '—'}",
+            expected_value=f"候选危害：{item.get('hazard') or '—'}；候选控制措施：{item.get('control_measure') or '—'}；风险等级：{item.get('risk_level') or '—'}",
+            machine_status="advisory",
+        ))
+    return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence, advisories=tuple(advisories), diagnostics=response.diagnostics)
+
+
+def _deprecated_execute_jsa_advisory(task: AuditTaskDefinition, parsed, location: TaskLocationResult) -> TaskExecutionResult:
     evidence = _evidence(parsed, location)
     advisory = AuditIssueResult("JSA 补充建议", "JSA 只读引擎待配置；未生成普通审核问题。", machine_status="advisory")
     return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, advisories=(advisory,))
@@ -246,8 +360,9 @@ def execute_jsa_advisory(task: AuditTaskDefinition, parsed, location: TaskLocati
 class AuditOrchestrator:
     """对冻结的阶段一预览逐任务执行，单任务问题不影响其他任务。"""
 
-    def execute_preview(self, preview, audit_context: dict | None = None) -> tuple[TaskExecutionResult, ...]:
+    def execute_preview(self, preview, audit_context: dict | None = None, run_id: str = "preview") -> tuple[TaskExecutionResult, ...]:
         results = []
+        result_by_task = {}
         confirmed_work_types = tuple((audit_context or {}).get("confirmed_work_types") or (audit_context or {}).get("work_types", ()))
         for task in preview.task_library.tasks:
             location = preview.locations[task.task_id]
@@ -263,11 +378,12 @@ class AuditOrchestrator:
             elif task.route == "offline_completion":
                 result = execute_offline_completion(task, preview.parsed_document, location)
             elif task.route == "jsa_rule":
-                result = execute_jsa_advisory(task, preview.parsed_document, location)
+                result = execute_jsa_advisory(task, preview, run_id, result_by_task.get("HSE-001"))
             else:
                 result = execute_later_route(task, preview.parsed_document, location)
             self._validate(result)
             results.append(result)
+            result_by_task[task.task_id] = result
         return tuple(results)
 
     @staticmethod
