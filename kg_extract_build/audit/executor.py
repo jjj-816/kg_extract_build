@@ -209,6 +209,36 @@ def _evidence_text(evidence) -> str:
     return "\n".join(item.get("raw_text", "") for item in evidence)
 
 
+def _has_nonempty_table_field(evidence, field: str) -> bool:
+    """表头允许在同一单元格中合并；仅存在表头不算已填写。"""
+    for item in evidence:
+        rows = ((item.get("table_json") or {}).get("rows") or [])
+        if len(rows) < 2:
+            continue
+        index = next((i for i, cell in enumerate(rows[0]) if field in str(cell).replace(" ", "")), None)
+        if index is not None and any(index < len(row) and _meaningful(str(row[index])) for row in rows[1:]):
+            return True
+    return False
+
+
+def _appd002_cross_section_evidence(parsed) -> tuple[dict[str, Any], ...]:
+    """从全文选择设备计划表和附录 D，不能依赖易变的标题编号格式。"""
+    selected = []
+    for block in parsed.blocks:
+        section = " / ".join(block.section_path)
+        text = (block.raw_text or "") + " " + " ".join(
+            str(cell) for row in ((block.table_json or {}).get("rows") or []) for cell in row
+        )
+        is_appendix_d = "附录D" in section.replace(" ", "") or "设备装置评估" in text
+        is_plan_table = (
+            "3.2" in section or "设备材料" in text or "主要设备" in text
+            or (block.table_json and "名称" in text and "单位" in text and "数量" in text)
+        )
+        if is_appendix_d or is_plan_table:
+            selected.append(_snapshot_block(block))
+    return tuple(selected)
+
+
 def _meaningful(value: str) -> bool:
     value = " ".join(value.split()).strip("：:;；")
     return len(value) >= 2 and is_meaningful(value) and not _PLACEHOLDER_RE.search(value)
@@ -287,6 +317,9 @@ def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocat
     # 正式运行必须经规则集路由；预览的直接调用保留兼容性，但同样要求已登记。
     handler = get_handler(handler_name or "fields")
     evidence = _evidence(parsed, location)
+    if task.task_id == "APPD-002":
+        # 一致性规则必须同时看到第三章设备表和附录 D，而不能只使用定位器首选块。
+        evidence = _appd002_cross_section_evidence(parsed)
     if not evidence:
         return _missing_evidence_result(task, location)
     has_content = any(item["raw_text"].strip() or item["table_json"] or item["image_refs"] for item in evidence)
@@ -303,6 +336,34 @@ def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocat
     grouped_result = _execute_directory_and_overview(task, evidence)
     if grouped_result is not None:
         return grouped_result
+    text = _evidence_text(evidence).replace(" ", "")
+    if task.task_id == "PREP-007":
+        if re.search(r"(?:\d+[.、]?)\s*(?:电缆|安装|开挖|恢复|敷设|施工|调试)", text):
+            return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
+    if task.task_id == "ARR-004" and any(item["image_refs"] for item in evidence):
+        review = AuditIssueResult("人工核验项", "施工组织机构以图片呈现，需人工核验关键管理角色与职责。", machine_status="manual_review")
+        return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, manual_reviews=(review,))
+    if task.task_id == "APPA-002":
+        review = AuditIssueResult("人工核验项", "审批角色、意见及对应单位属于打印后线下填写或签批区域，需人工核验。", machine_status="manual_review")
+        return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, manual_reviews=(review,))
+    if task.task_id == "APPB-002":
+        aliases = (("培训目的",), ("HSE培训要点", "施工作业人员HSE培训要点"), ("培训效果",), ("参加培训人员确认",))
+        if all(any(alias in text for alias in group) for group in aliases):
+            return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
+    if task.task_id == "APPC-001" and "培训及交底日期" in text:
+        return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
+    if task.task_id == "APPD-002":
+        has_plan = any(
+            item["table_json"] and ("3.2" in " / ".join(item["section_path"]) or "设备材料" in _evidence_text((item,)) or "主要设备" in _evidence_text((item,)))
+            for item in evidence
+        )
+        has_appendix = any("附录D" in " / ".join(item["section_path"]).replace(" ", "") or "设备装置评估" in _evidence_text((item,)) for item in evidence)
+        if has_plan and has_appendix:
+            return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, manual_reviews=(AuditIssueResult("人工核验项", "已定位第三章设备表与附录 D；设备汇总/拆分关系需人工确认。", machine_status="manual_review"),))
+    if task.task_id == "APPE-001" and "时间" in text:
+        return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
+    if task.task_id == "APPE-002" and _has_nonempty_table_field(evidence, "控制措施"):
+        return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
     table_requirements = {
         "PREP-004": ("名称", "单位", "数量"),
         "HSE-001": ("步骤", "危害", "风险", "控制"),
