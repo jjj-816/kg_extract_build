@@ -17,6 +17,9 @@ from .rules.dates import is_chronological, parse_dates
 from .rules.directory import missing_fixed_entries
 from .rules.fields import is_meaningful
 from .rules.tables import appd_missing_fields, prep005_missing_fields
+from .rules.cross_section import extract_labeled_values, conflicting_values
+from .rules.appendices import appendix_corpus, missing_regions, has_invalid_work_content
+from .rules.equipment import compare_coverage
 from .task_library import load_published_task_library
 
 
@@ -337,6 +340,42 @@ def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocat
     if grouped_result is not None:
         return grouped_result
     text = _evidence_text(evidence).replace(" ", "")
+    if task.task_id in {"OVERVIEW-001", "OVERVIEW-002", "OVERVIEW-004"}:
+        profile = {"OVERVIEW-001": (("工程名称",), "project_name"), "OVERVIEW-002": (("建设地点", "作业场所", "施工地点"), "location"), "OVERVIEW-004": (("施工单位",), "organization")}[task.task_id]
+        values = extract_labeled_values(parsed.blocks, profile[0], profile[1])
+        conflicts = conflicting_values(values)
+        if conflicts:
+            actual = "；".join(f"{value}（{'、'.join(locators)}）" for value, locators in conflicts.items())
+            issue = AuditIssueResult("跨章节信息矛盾", f"{task.name}在多个章节存在不一致值。", actual_value=actual, suggestion="请统一正文、封面和附录中的填写值。")
+            return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
+        if values:
+            return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
+        if any(item["image_refs"] for item in evidence):
+            review = AuditIssueResult("人工核验项", f"{task.name}仅能从图片读取，需人工核验。", machine_status="manual_review")
+            return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, manual_reviews=(review,))
+        return _first_group_issue(task, evidence, (task.name,), "缺少可提取值")
+    if task.task_id == "PREP-003":
+        actual = any(item["table_json"] and len(((item["table_json"] or {}).get("rows") or []) > 1) for item in evidence) or bool(re.search(r"(?:设备|材料|工器具|电工|人员).{0,30}(?:准备|配置|台|把|人)", text))
+        return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence) if actual else _first_group_issue(task, evidence, ("至少一项实际资源内容",), "缺少")
+    if task.task_id in {"APPA-001", "APPA-002", "APPB-001", "APPB-002"}:
+        corpus = appendix_corpus(evidence)
+        if task.task_id == "APPA-001":
+            missing = missing_regions(corpus, ("申请单位", "项目名称", "工作内容"))
+            if has_invalid_work_content(corpus): missing = tuple((*missing, "有效工作内容"))
+        elif task.task_id == "APPA-002":
+            missing = missing_regions(corpus, ("项目负责人", "批准人", "安全管理人员", "单位", "审批意见"))
+        elif task.task_id == "APPB-001":
+            missing = missing_regions(corpus, ("作业场所", "项目名称", "施工单位"))
+        else:
+            missing = missing_regions(corpus, ("培训目的", "HSE培训要点", "培训效果", "参加培训人员确认"))
+            if "HSE培训要点" in missing and "施工作业人员HSE培训要点" in corpus:
+                missing = tuple(x for x in missing if x != "HSE培训要点")
+        if missing:
+            if any(item["image_refs"] for item in evidence) and not corpus:
+                review = AuditIssueResult("人工核验项", f"{task.name}为不可解析图片，需人工核验。", machine_status="manual_review")
+                return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, manual_reviews=(review,))
+            return _first_group_issue(task, evidence, missing, "缺少固定字段或区域")
+        return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
     if task.task_id == "PREP-007":
         if re.search(r"(?:\d+[.、]?)\s*(?:电缆|安装|开挖|恢复|敷设|施工|调试)", text):
             return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
@@ -359,7 +398,12 @@ def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocat
         )
         has_appendix = any("附录D" in " / ".join(item["section_path"]).replace(" ", "") or "设备装置评估" in _evidence_text((item,)) for item in evidence)
         if has_plan and has_appendix:
-            return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, manual_reviews=(AuditIssueResult("人工核验项", "已定位第三章设备表与附录 D；设备汇总/拆分关系需人工确认。", machine_status="manual_review"),))
+            missing, mismatches = compare_coverage(evidence)
+            if missing or mismatches:
+                details = ([f"未覆盖：{name}" for name in missing] + [f"数量不一致：{name}（第三章 {left}，附录D {right}）" for name, left, right in mismatches])
+                issue = AuditIssueResult("设备计划与评估表不一致", "；".join(details), actual_value="；".join(details), suggestion="请补充附录 D 设备或统一一对一设备数量。")
+                return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
+            return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
     if task.task_id == "APPE-001" and "时间" in text:
         return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
     if task.task_id == "APPE-002" and _has_nonempty_table_field(evidence, "控制措施"):
