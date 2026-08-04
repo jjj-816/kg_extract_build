@@ -355,7 +355,7 @@ def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocat
             return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, manual_reviews=(review,))
         return _first_group_issue(task, evidence, (task.name,), "缺少可提取值")
     if task.task_id == "PREP-003":
-        actual = any(item["table_json"] and len(((item["table_json"] or {}).get("rows") or []) > 1) for item in evidence) or bool(re.search(r"(?:设备|材料|工器具|电工|人员).{0,30}(?:准备|配置|台|把|人)", text))
+        actual = any(item["table_json"] and len(((item["table_json"] or {}).get("rows") or [])) > 1 for item in evidence) or bool(re.search(r"(?:设备|材料|工器具|电工|人员).{0,30}(?:准备|配置|台|把|人)", text))
         return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence) if actual else _first_group_issue(task, evidence, ("至少一项实际资源内容",), "缺少")
     if task.task_id in {"APPA-001", "APPA-002", "APPB-001", "APPB-002"}:
         corpus = appendix_corpus(evidence)
