@@ -21,6 +21,10 @@ AUDIT_TASK_LIBRARY_PATH = audit_env_path(
     "KG_AUDIT_TASK_LIBRARY_PATH",
     PROJECT_ROOT / "docs" / "audit-task-library" / "v1" / "audit-task-library.v1.1.0.json",
 )
+AUDIT_RISK_CATALOG_PATH = audit_env_path(
+    "KG_AUDIT_RISK_CATALOG_PATH",
+    PROJECT_ROOT / "kg_extract_build" / "audit" / "resources" / "risk_catalog",
+)
 AUDIT_MAX_FILE_MB = int(os.getenv("KG_AUDIT_MAX_FILE_MB", "50"))
 AUDIT_DOC_CONVERTER = os.getenv("KG_AUDIT_DOC_CONVERTER", "auto").strip().lower()
 LIBREOFFICE_PATH = audit_env_path(

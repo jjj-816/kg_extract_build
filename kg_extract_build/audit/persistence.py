@@ -66,7 +66,6 @@ def validate_audit_context(context: dict, reviewer_name: str) -> None:
         "项目或平台名称": context.get("project_name"),
         "审核基准年份": context.get("audit_year"),
         "作业目的": context.get("work_purpose"),
-        "涉及作业类型": context.get("work_types"),
         "审核确认人": reviewer_name,
     }
     missing = [name for name, value in required.items() if not value or (isinstance(value, str) and not value.strip())]
@@ -224,6 +223,42 @@ class MySQLAuditStore:
             "confirmed_at_utc": format_utc_time(row[10]), "confirmed_at_beijing": format_beijing_time(row[10]),
             "created_at_utc": format_utc_time(row[11]), "created_at_beijing": format_beijing_time(row[11]),
             "task_count": task_count,
+        }
+
+    def load_latest_draft_report(self, run_id: str) -> dict | None:
+        """读取运行最近一次阶段 2 初稿，供历史结果界面复用。"""
+        with self._connection().cursor() as cursor:
+            cursor.execute(
+                """SELECT report_id, report_status, report_version, result_json, generated_by, created_at
+                   FROM audit_report WHERE run_id=%s
+                   ORDER BY report_version DESC LIMIT 1""",
+                (run_id,),
+            )
+            row = cursor.fetchone()
+        if row is None:
+            return None
+        report = json.loads(row[3])
+        report["report_metadata"] = {
+            "report_id": row[0], "status": row[1], "version": row[2], "generated_by": row[4],
+            "created_at_utc": format_utc_time(row[5]), "created_at_beijing": format_beijing_time(row[5]),
+        }
+        return report
+
+    def load_document_image_paths(self, run_id: str) -> dict[str, str]:
+        """从运行关联文档的图片清单恢复可展示的本地图片路径。"""
+        with self._connection().cursor() as cursor:
+            cursor.execute(
+                """SELECT d.image_manifest_json FROM audit_run r
+                   JOIN audit_document d ON d.document_id=r.document_id WHERE r.run_id=%s""",
+                (run_id,),
+            )
+            row = cursor.fetchone()
+        if row is None or not row[0]:
+            return {}
+        images = json.loads(row[0])
+        return {
+            image["image_id"]: image["stored_path"]
+            for image in images if image.get("image_id") and image.get("stored_path")
         }
 
     def save_execution_results(self, run_id: str, results) -> None:
