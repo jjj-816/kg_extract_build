@@ -363,7 +363,12 @@ def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocat
             missing = missing_regions(corpus, ("申请单位", "项目名称", "工作内容"))
             if has_invalid_work_content(corpus): missing = tuple((*missing, "有效工作内容"))
         elif task.task_id == "APPA-002":
-            missing = missing_regions(corpus, ("项目负责人", "批准人", "安全管理人员", "单位", "签字"))
+            missing = list(missing_regions(corpus, ("项目负责人", "批准人", "安全管理人员", "单位")))
+            # 模板实际使用“签名：……年……月……日”；“签字”只是等价写法。
+            has_signature_date = ("签名" in corpus or "签字" in corpus) and all(token in corpus for token in ("年", "月", "日"))
+            if not has_signature_date:
+                missing.append("签字日期位置")
+            missing = tuple(missing)
         elif task.task_id == "APPB-001":
             missing = missing_regions(corpus, ("作业场所", "项目名称", "施工单位"))
         else:

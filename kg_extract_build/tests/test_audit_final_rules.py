@@ -45,6 +45,10 @@ class FinalRuleRegressionTests(unittest.TestCase):
         self.assertNotIn("审批意见填写区域", required)
         self.assertIn("签字日期位置", required)
 
+    def test_approval_form_signature_label_accepts_sign_name(self):
+        corpus = appendix_corpus(({"raw_text": "项目负责人： 单位名称： 批准人： 安全管理人员： 签名：……年……月……日", "table_json": None},))
+        self.assertTrue(("签名" in corpus or "签字" in corpus) and all(value in corpus for value in ("年", "月", "日")))
+
 
 if __name__ == "__main__":
     unittest.main()
