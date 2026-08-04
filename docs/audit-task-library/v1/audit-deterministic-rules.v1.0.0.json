@@ -1,6 +1,6 @@
 {
   "rule_set_id": "audit-deterministic-rules",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "rules": {
     "COVER-001": {"handler": "fields"}, "COVER-002": {"handler": "fields"}, "COVER-003": {"handler": "dates"},
     "DOC-001": {"handler": "directory"}, "BASIS-001": {"handler": "fields"}, "BASIS-003": {"handler": "fields"},

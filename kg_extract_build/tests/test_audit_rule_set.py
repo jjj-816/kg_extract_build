@@ -12,7 +12,7 @@ class DeterministicRuleSetTests(unittest.TestCase):
     def test_published_rule_set_covers_every_deterministic_task(self):
         library = load_published_task_library()
         rule_set = load_deterministic_rule_set(library)
-        self.assertEqual(rule_set.version, "1.0.1")
+        self.assertEqual(rule_set.version, "1.0.2")
         self.assertEqual(set(rule_set.rules), {task.task_id for task in library.tasks if task.route == "deterministic"})
         self.assertEqual(len(rule_set.sha256), 64)
 

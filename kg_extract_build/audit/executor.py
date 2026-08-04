@@ -363,7 +363,7 @@ def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocat
             missing = missing_regions(corpus, ("申请单位", "项目名称", "工作内容"))
             if has_invalid_work_content(corpus): missing = tuple((*missing, "有效工作内容"))
         elif task.task_id == "APPA-002":
-            missing = missing_regions(corpus, ("项目负责人", "批准人", "安全管理人员", "单位", "审批意见"))
+            missing = missing_regions(corpus, ("项目负责人", "批准人", "安全管理人员", "单位", "签字"))
         elif task.task_id == "APPB-001":
             missing = missing_regions(corpus, ("作业场所", "项目名称", "施工单位"))
         else:

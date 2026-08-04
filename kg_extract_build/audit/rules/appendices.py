@@ -1,10 +1,14 @@
 """附录模板字段与固定区域检查。"""
 
+import re
+
 from .fields import is_meaningful
 
 
 def appendix_corpus(evidence) -> str:
-    return "\n".join(item.get("raw_text", "") + " " + " ".join(str(cell) for row in ((item.get("table_json") or {}).get("rows") or []) for cell in row) for item in evidence).replace(" ", "")
+    raw = "\n".join(item.get("raw_text", "") + " " + " ".join(str(cell) for row in ((item.get("table_json") or {}).get("rows") or []) for cell in row) for item in evidence)
+    # Word 单元格会把标签拆成纵向单字或换行；统一为无空白的连续文本。
+    return re.sub(r"\s+", "", raw)
 
 
 def missing_regions(corpus: str, regions: tuple[str, ...]) -> tuple[str, ...]:

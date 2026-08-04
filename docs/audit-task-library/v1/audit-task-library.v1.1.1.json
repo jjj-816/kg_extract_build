@@ -1,0 +1,16 @@
+{
+  "task_library_id": "construction-scheme-audit-v1",
+  "version": "1.1.1",
+  "status": "published",
+  "base_library": "audit-task-library.v1.0.0.json",
+  "task_updates": {
+    "BASIS-003": {"name": "其他项目依据"}, "OVERVIEW-004": {"name": "参建单位（施工单位必填）"}, "PREP-003": {"name": "资源配置计划实质内容"}, "HSE-001": {"name": "JSA 风险分析表结构"}, "HSE-002": {"name": "JSA 补充建议"}, "APPB-002": {"name": "固定 HSE 培训结构"},
+    "APPA-002": {"required": ["项目负责人审批栏", "批准人审批栏", "安全管理人员审批栏", "对应单位栏", "签字日期位置"], "checks": ["规定角色、单位和签字日期位置存在", "电子稿允许签字和日期暂空"]},
+    "APPD-001": {"required": ["名称", "数量", "完好情况", "综合评价", "规格型号列", "入场时间列", "验收结果列", "验收人列", "至少一项设备业务行"], "checks": ["附录 D 表格及固定列存在", "仅有效序号或设备名称的非示例行作为设备业务行", "设备业务行的名称、数量、完好情况、综合评价必填", "规格型号值允许为空", "入场时间、验收结果、验收人仅检查列存在，允许线下填写", "说明、注释、签字、盖章、日期等合并行不参与缺项检查"]},
+    "APPD-002": {"name": "设备计划与评估表一致性", "route": "deterministic", "type": "cross_section_consistency"}, "APPE-002": {"name": "控制措施填写完整性", "route": "deterministic", "type": "table_completeness"}
+  },
+  "additional_tasks": [
+    {"task_id": "APPD-004", "order": 940, "section": "附录D 设备装置评估表", "name": "设备与施工需求适配性", "type": "content_semantic", "route": "semantic_reasonableness", "fallback_route": null, "input_unit": "equipment_plan_and_work_items", "locators": ["3.2资源配置计划", "附录D"], "required": ["设备计划", "施工需求"], "checks": ["后续语义审核"], "evidence_roles": ["document", "graph_clue"], "issue_categories": ["工程合理性风险"], "completion_stage": "electronic_submission", "work_type_scope": "selected"},
+    {"task_id": "APPE-004", "order": 1040, "section": "附录E 施工作业方案控制措施检查确认表", "name": "控制措施作业适配性", "type": "content_semantic", "route": "semantic_reasonableness", "fallback_route": null, "input_unit": "control_measure_table", "locators": ["附录E", "控制措施"], "required": ["控制措施", "作业内容"], "checks": ["后续语义审核"], "evidence_roles": ["document", "graph_clue"], "issue_categories": ["工程合理性风险"], "completion_stage": "electronic_submission", "work_type_scope": "selected"}
+  ]
+}
