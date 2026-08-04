@@ -71,6 +71,10 @@ def extract_labeled_values(blocks, labels: tuple[str, ...], kind: str) -> list[t
                 for following in ordered_blocks[index + 1:]:
                     if following.block_type == "heading":
                         break
+                    candidate = following.raw_text or ""
+                    if candidate.strip():
+                        append(candidate, following.source_locator)
+                        break
         # 表格中常见“标签｜相邻单元格值”：例如 作业场所｜长宁H2B平台。
         rows = ((getattr(block, "table_json", None) or {}).get("rows") or [])
         for row in rows:
@@ -78,8 +82,4 @@ def extract_labeled_values(blocks, labels: tuple[str, ...], kind: str) -> list[t
             for position, cell in enumerate(cells[:-1]):
                 if any(normalize(label) in normalize(cell) for label in labels):
                     append(cells[position + 1], block.source_locator)
-                    candidate = following.raw_text or ""
-                    if candidate.strip():
-                        append(candidate, following.source_locator)
-                        break
     return results
