@@ -1,0 +1,13 @@
+{
+  "rule_set_id": "audit-deterministic-rules",
+  "version": "1.0.0",
+  "rules": {
+    "COVER-001": {"handler": "fields"}, "COVER-002": {"handler": "fields"}, "COVER-003": {"handler": "dates"},
+    "DOC-001": {"handler": "directory"}, "BASIS-001": {"handler": "fields"}, "BASIS-003": {"handler": "fields"},
+    "OVERVIEW-001": {"handler": "cross_section"}, "OVERVIEW-002": {"handler": "cross_section"}, "OVERVIEW-003": {"handler": "dates"}, "OVERVIEW-004": {"handler": "cross_section"},
+    "PREP-003": {"handler": "fields"}, "PREP-004": {"handler": "tables"}, "PREP-005": {"handler": "tables"}, "PREP-006": {"handler": "qualification"}, "PREP-007": {"handler": "tables"},
+    "ARR-001": {"handler": "risk_catalog"}, "ARR-004": {"handler": "organization"}, "HSE-001": {"handler": "tables"},
+    "APPA-001": {"handler": "appendices"}, "APPA-002": {"handler": "appendices"}, "APPB-001": {"handler": "appendices"}, "APPB-002": {"handler": "appendices"}, "APPC-001": {"handler": "appendices"},
+    "APPD-001": {"handler": "tables"}, "APPD-002": {"handler": "equipment"}, "APPE-001": {"handler": "control_table"}, "APPE-002": {"handler": "control_table"}
+  }
+}

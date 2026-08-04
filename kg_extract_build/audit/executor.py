@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime
 import re
 from typing import Any
 
@@ -10,6 +11,13 @@ from .evidence_reader import resolve_group_blocks
 from .jsa_adapter import JSAAdapterError, audit_jsa
 from .models import AuditDocumentBlock, AuditTaskDefinition, TaskLocationResult
 from .risk_catalog import RiskCatalogError, detect_work_codes
+from .rule_set import RuleSetError, load_deterministic_rule_set
+from .rules import get_handler
+from .rules.dates import is_chronological, parse_dates
+from .rules.directory import missing_fixed_entries
+from .rules.fields import is_meaningful
+from .rules.tables import appd_missing_fields, prep005_missing_fields
+from .task_library import load_published_task_library
 
 
 EXECUTION_STATUSES = frozenset({"pending", "running", "completed", "failed"})
@@ -193,6 +201,61 @@ def _prep005_missing_fields(evidence) -> tuple[str, ...]:
 
 
 _NO_RISK_WORK_STATEMENT = re.compile(r"(?:无|不涉及).{0,12}(?:风险作业|特殊作业)")
+_PLACEHOLDER_RE = re.compile(r"(?:待填|待补充|待完善|xx|xxx|项目名称|工程名称|填写)$", re.IGNORECASE)
+_DATE_RE = re.compile(r"(20\d{2})[年./-](\d{1,2})[月./-](\d{1,2})")
+
+
+def _evidence_text(evidence) -> str:
+    return "\n".join(item.get("raw_text", "") for item in evidence)
+
+
+def _meaningful(value: str) -> bool:
+    value = " ".join(value.split()).strip("：:;；")
+    return len(value) >= 2 and is_meaningful(value) and not _PLACEHOLDER_RE.search(value)
+
+
+def _first_group_issue(task, evidence, missing: tuple[str, ...], message: str) -> TaskExecutionResult:
+    issue = AuditIssueResult("信息问题", f"{task.name}{message}：{'、'.join(missing)}", affected_scope="；".join(missing), suggestion="请补充可核验的实际业务内容。")
+    return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
+
+
+def _execute_directory_and_overview(task, evidence) -> TaskExecutionResult | None:
+    text = _evidence_text(evidence)
+    if task.task_id == "DOC-001":
+        missing = missing_fixed_entries(text)
+        return _first_group_issue(task, evidence, missing, "目录未覆盖固定章节") if missing else TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
+    if task.task_id == "BASIS-001":
+        traceable = re.search(r"(?:项目|图纸|设计|合同).{0,20}(?:号|图号|编号|[A-Z]{2,}[-_/]\d+)", text)
+        return _first_group_issue(task, evidence, ("项目号或等价可追溯标识",), "缺少") if not traceable else TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
+    if task.task_id == "BASIS-003":
+        return _first_group_issue(task, evidence, ("其他项目依据说明",), "缺少") if not _meaningful(text) else TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
+    if task.task_id == "OVERVIEW-003":
+        parsed = parse_dates(text)
+        if len(parsed) < 2:
+            return _first_group_issue(task, evidence, ("计划开始时间", "计划完成时间"), "日期不可解析")
+        if not is_chronological(parsed[0], parsed[1]):
+            return _first_group_issue(task, evidence, ("计划开始时间", "计划完成时间"), "日期顺序错误")
+        return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
+    return None
+
+
+def _generic_registered_rule(task, evidence) -> TaskExecutionResult:
+    """收口兜底：未有专用处理器时绝不因定位成功而自动判定通过。"""
+    text = _evidence_text(evidence).replace(" ", "")
+    table_text = "\n".join(" ".join(str(cell) for row in (item.get("table_json") or {}).get("rows", []) for cell in row) for item in evidence).replace(" ", "")
+    corpus = text + table_text
+    missing = []
+    for field in task.required:
+        alternatives = tuple(part for part in re.split(r"或|/", field.replace("专业", "")) if part)
+        if alternatives and not any(part in corpus for part in alternatives):
+            missing.append(field)
+    if missing:
+        return _first_group_issue(task, evidence, tuple(missing), "缺少可核验字段")
+    review = AuditIssueResult(
+        "人工核验项", f"{task.name}已具备字段证据，但尚需按已登记的 {task.task_type} 规则复核内容关系。",
+        suggestion="请审核员核验字段值的项目适用性与跨章节一致性。", machine_status="manual_review",
+    )
+    return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, manual_reviews=(review,))
 
 
 def _arr001_result(task: AuditTaskDefinition, evidence, audit_context: dict | None = None) -> TaskExecutionResult:
@@ -215,12 +278,14 @@ def _arr001_result(task: AuditTaskDefinition, evidence, audit_context: dict | No
     return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
 
 
-def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocationResult, audit_context: dict | None = None) -> TaskExecutionResult:
+def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocationResult, audit_context: dict | None = None, handler_name: str | None = None) -> TaskExecutionResult:
     """执行阶段二可判定的存在性、结构和可读性检查。
 
     任务库中的语义化 ``checks`` 仍由后续语义路由处理；这里不会把
     "定位到原文"扩张解释成规范符合。
     """
+    # 正式运行必须经规则集路由；预览的直接调用保留兼容性，但同样要求已登记。
+    handler = get_handler(handler_name or "fields")
     evidence = _evidence(parsed, location)
     if not evidence:
         return _missing_evidence_result(task, location)
@@ -232,14 +297,19 @@ def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocat
         issue = AuditIssueResult("人工核验项", f"{task.name}包含封面视觉内容，需人工核验。", machine_status="manual_review")
         return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, manual_reviews=(issue,))
     if task.task_id == "ARR-001":
+        if handler.name != "risk_catalog":
+            raise ValueError(f"ARR-001 规则处理器不匹配：{handler.name}")
         return _arr001_result(task, evidence, audit_context)
+    grouped_result = _execute_directory_and_overview(task, evidence)
+    if grouped_result is not None:
+        return grouped_result
     table_requirements = {
         "PREP-004": ("名称", "单位", "数量"),
         "HSE-001": ("步骤", "危害", "风险", "控制"),
         "APPE-001": ("地点", "工程名称", "作业类型", "作业内容"), "APPE-002": ("控制措施",),
     }
     if task.task_id == "APPD-001":
-        missing_columns, missing_values, has_business_rows = _appd_missing_fields(evidence)
+        missing_columns, missing_values, has_business_rows = appd_missing_fields(evidence)
         if missing_columns:
             issue = AuditIssueResult("信息问题", f"{task.name}缺少固定列：{'、'.join(missing_columns)}", affected_scope="；".join(missing_columns))
             return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
@@ -251,7 +321,7 @@ def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocat
             return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
         return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
     if task.task_id == "PREP-005":
-        missing = _prep005_missing_fields(evidence)
+        missing = prep005_missing_fields(evidence)
         if missing:
             issue = AuditIssueResult("信息问题", f"{task.name}存在业务行字段缺失：{'、'.join(missing)}", affected_scope="；".join(missing))
             return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
@@ -276,10 +346,12 @@ def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocat
         if task.task_id == "HSE-001" and not _has_jsa_business_rows(evidence):
             issue = AuditIssueResult("信息问题", f"{task.name}未见可用的 JSA 业务行", suggestion="请至少填写作业步骤或危害信息。")
             return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", evidence, (issue,))
+        if task.task_id == "HSE-001":
+            return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
     if task.task_id == "PREP-006" and any(item["image_refs"] for item in evidence):
         review = AuditIssueResult("人工核验项", "特殊工种资格证明包含图片，需人工核验证件有效期。", machine_status="manual_review")
         return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, manual_reviews=(review,))
-    return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence)
+    return _generic_registered_rule(task, evidence)
 
 
 def execute_offline_completion(task: AuditTaskDefinition, parsed, location: TaskLocationResult) -> TaskExecutionResult:
@@ -348,7 +420,7 @@ def execute_jsa_advisory(task: AuditTaskDefinition, preview, run_id: str, hse001
             expected_value=f"候选危害：{item.get('hazard') or '—'}；候选控制措施：{item.get('control_measure') or '—'}；风险等级：{item.get('risk_level') or '—'}",
             machine_status="advisory",
         ))
-    return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence, advisories=tuple(advisories), diagnostics=response.diagnostics)
+    return TaskExecutionResult(task.task_id, task.route, "completed", "no_issue", evidence, advisories=tuple(advisories), diagnostics=(f"JSA 引擎版本：{response.engine_version}", *response.diagnostics))
 
 
 def _deprecated_execute_jsa_advisory(task: AuditTaskDefinition, parsed, location: TaskLocationResult) -> TaskExecutionResult:
@@ -363,6 +435,12 @@ class AuditOrchestrator:
     def execute_preview(self, preview, audit_context: dict | None = None, run_id: str = "preview") -> tuple[TaskExecutionResult, ...]:
         results = []
         result_by_task = {}
+        try:
+            rule_set = load_deterministic_rule_set(preview.task_library)
+        except RuleSetError:
+            # 单任务夹具用于单元测试和页面预览；它们不是可持久化的正式任务库。
+            # 正式建运行仍在 persistence 层对完整任务库严格校验。
+            rule_set = load_deterministic_rule_set(load_published_task_library())
         confirmed_work_types = tuple((audit_context or {}).get("confirmed_work_types") or (audit_context or {}).get("work_types", ()))
         for task in preview.task_library.tasks:
             location = preview.locations[task.task_id]
@@ -374,7 +452,10 @@ class AuditOrchestrator:
                 ))
                 continue
             if task.route == "deterministic":
-                result = execute_deterministic(task, preview.parsed_document, location, audit_context)
+                result = execute_deterministic(
+                    task, preview.parsed_document, location, audit_context,
+                    handler_name=rule_set.rules[task.task_id]["handler"],
+                )
             elif task.route == "offline_completion":
                 result = execute_offline_completion(task, preview.parsed_document, location)
             elif task.route == "jsa_rule":

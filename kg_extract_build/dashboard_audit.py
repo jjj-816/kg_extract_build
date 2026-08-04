@@ -268,6 +268,14 @@ def _render_run_lookup() -> None:
         if run is None:
             st.warning("未找到该审核运行。")
         else:
+            config = run.get("config") or {}
+            rule_set = config.get("deterministic_rule_set") or {}
+            jsa_versions = "、".join(config.get("jsa_engine_versions") or []) or "本次未调用"
+            st.caption(
+                f"任务库：{run.get('task_library_version') or '—'}｜"
+                f"规则集：{rule_set.get('id') or '—'} {rule_set.get('version') or '—'}｜"
+                f"JSA 引擎：{jsa_versions}"
+            )
             report = store.load_latest_draft_report(run_id.strip())
             if report is None:
                 st.info("该运行尚未生成阶段 2 审核结果。")

@@ -12,6 +12,7 @@ from zoneinfo import ZoneInfo
 
 from .bindings import build_task_bindings
 from .models import ParsedAuditDocument
+from .rule_set import load_deterministic_rule_set
 from .task_library import PublishedTaskLibrary
 
 
@@ -172,6 +173,8 @@ class MySQLAuditStore:
         connection, now = self._connection(), datetime.now(timezone.utc).replace(tzinfo=None)
         run_id = str(uuid.uuid4())
         bindings = build_task_bindings(library)
+        rule_set = load_deterministic_rule_set(library)
+        config_snapshot = {**context, "deterministic_rule_set": rule_set.snapshot()}
         validate_audit_context(context, reviewer_name)
         try:
             with connection.cursor() as cursor:
@@ -183,7 +186,7 @@ class MySQLAuditStore:
                     VALUES (%s,%s,'context_confirmed',%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""",
                     (run_id, parsed.document.document_id, context.get("project_name") or None, context.get("audit_year"),
                      context.get("work_purpose") or None, library.task_library_id, library.version, library.sha256,
-                    "audit-bindings-v1", _json(context), reviewer_name, now, now, now),
+                    "audit-bindings-v1", _json(config_snapshot), reviewer_name, now, now, now),
                 )
                 work_types = [(run_id, value) for value in context.get("work_types", [])]
                 if work_types:
@@ -192,6 +195,8 @@ class MySQLAuditStore:
                 for task in library.tasks:
                     snapshot = asdict(task)
                     snapshot["binding"] = asdict(bindings[task.task_id])
+                    if task.route == "deterministic":
+                        snapshot["deterministic_rule"] = rule_set.rules[task.task_id]
                     executions.append((run_id, task.task_id, _json(snapshot), task.route, "pending", now, now))
                 cursor.executemany(
                     """INSERT INTO audit_task_execution
@@ -266,6 +271,20 @@ class MySQLAuditStore:
         connection, now = self._connection(), datetime.now(timezone.utc).replace(tzinfo=None)
         try:
             with connection.cursor() as cursor:
+                # JSA 服务版本由本次实际响应决定，写回运行快照而不改动表结构。
+                jsa_versions = sorted({
+                    diagnostic.removeprefix("JSA 引擎版本：")
+                    for result in results for diagnostic in result.diagnostics
+                    if diagnostic.startswith("JSA 引擎版本：")
+                })
+                if jsa_versions:
+                    cursor.execute("SELECT config_snapshot FROM audit_run WHERE run_id=%s FOR UPDATE", (run_id,))
+                    row = cursor.fetchone()
+                    if row is None:
+                        raise ValueError("审核运行不存在")
+                    snapshot = json.loads(row[0])
+                    snapshot["jsa_engine_versions"] = jsa_versions
+                    cursor.execute("UPDATE audit_run SET config_snapshot=%s WHERE run_id=%s", (_json(snapshot), run_id))
                 cursor.execute("SELECT execution_id,task_id FROM audit_task_execution WHERE run_id=%s", (run_id,))
                 execution_ids = {task_id: execution_id for execution_id, task_id in cursor.fetchall()}
                 if set(execution_ids) != {result.task_id for result in results}:
