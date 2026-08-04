@@ -387,9 +387,6 @@ def execute_deterministic(task: AuditTaskDefinition, parsed, location: TaskLocat
     if task.task_id == "ARR-004" and any(item["image_refs"] for item in evidence):
         review = AuditIssueResult("人工核验项", "施工组织机构以图片呈现，需人工核验关键管理角色与职责。", machine_status="manual_review")
         return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, manual_reviews=(review,))
-    if task.task_id == "APPA-002":
-        review = AuditIssueResult("人工核验项", "审批角色、意见及对应单位属于打印后线下填写或签批区域，需人工核验。", machine_status="manual_review")
-        return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", evidence, manual_reviews=(review,))
     if task.task_id == "APPB-002":
         aliases = (("培训目的",), ("HSE培训要点", "施工作业人员HSE培训要点"), ("培训效果",), ("参加培训人员确认",))
         if all(any(alias in text for alias in group) for group in aliases):
