@@ -2,7 +2,17 @@
 
 from __future__ import annotations
 
+import re
+
 from .fields import is_meaningful
+
+
+_POSITIVE_HEADCOUNT_RE = re.compile(r"^\s*([1-9]\d*)\s*(?:人|名|位)?\s*$")
+
+
+def is_positive_headcount(value: str) -> bool:
+    """接受 ``2``、``2人``、``2 名`` 等表格中常见的人数填写形式。"""
+    return bool(_POSITIVE_HEADCOUNT_RE.fullmatch(value or ""))
 
 
 def column_indexes(header: list[str], fields: tuple[str, ...]) -> dict[str, int | None]:
@@ -62,6 +72,6 @@ def prep005_missing_fields(evidence) -> tuple[str, ...]:
                 continue
             if role >= len(values) or not is_meaningful(values[role]):
                 missing.add("岗位或工种")
-            if count >= len(values) or not values[count].isdigit() or int(values[count]) <= 0:
+            if count >= len(values) or not is_positive_headcount(values[count]):
                 missing.add("人数")
     return tuple(sorted(missing or ({"人员配置表"} if not found else set())))

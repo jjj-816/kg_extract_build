@@ -195,6 +195,16 @@ class AuditExecutorTests(unittest.TestCase):
 
         self.assertEqual(result.result_status, "no_issue")
 
+    def test_prep005_accepts_positive_headcount_with_person_unit(self):
+        library = load_published_task_library()
+        task = library.task_by_id("PREP-005")
+        table = AuditDocumentBlock("table", "doc", 1, "table", ("第三章",), "word/body[1]/table[1]", "专业岗位 | 人数\n电工 | 1人", "", table_json={"rows": [["序号", "专业岗位", "工种", "人数", "备注"], ["1", "电工", "", "1人", ""]]})
+        parsed = ParsedAuditDocument(StoredAuditDocument("doc", "方案.docx", "docx", "a" * 64, None, ""), (table,), 0, 1, 0, False)
+        group = TaskEvidenceGroup("g", "table", ("table",), ("第三章",), (), 1, "test")
+        preview = SimpleNamespace(parsed_document=parsed, task_library=SimpleNamespace(tasks=(task,), task_library_id=library.task_library_id, version=library.version, sha256=library.sha256), locations={task.task_id: TaskLocationResult(task.task_id, "located", evidence_groups=(group,))})
+
+        self.assertEqual(AuditOrchestrator().execute_preview(preview)[0].result_status, "no_issue")
+
 
 if __name__ == "__main__":
     unittest.main()
