@@ -30,17 +30,28 @@ class InMemoryBackend:
             if not pk:
                 row["id"] = self._auto
                 self._auto += 1
-            existing = [r for r in self.rows[table] if r.get(pk[0]) == key] if pk else []
-            if existing:
-                existing[0].update(row)
-            else:
+            if many:
                 self.rows[table].append(row)
+            else:
+                existing = [r for r in self.rows[table] if r.get(pk[0]) == key] if pk else []
+                if existing:
+                    existing[0].update(row)
+                else:
+                    self.rows[table].append(row)
             last = key
         return last
 
     def _read(self, sql, params=None):
         table = re.search(r"FROM\s+(\w+)", sql).group(1)
-        return [dict(r) for r in self.rows[table]]
+        rows = [dict(r) for r in self.rows[table]]
+        where = re.search(r"WHERE\s+(.+?)(?:\s+(?:LIMIT|ORDER|GROUP)\b|$)", sql, re.IGNORECASE)
+        if where:
+            m = re.match(r"(\w+)\s*=\s*%s", where.group(1).strip())
+            if m:
+                col = m.group(1)
+                value = (params or ())[0]
+                rows = [r for r in rows if r.get(col) == value]
+        return rows
 
 
 class NormativePersistenceTests(unittest.TestCase):
