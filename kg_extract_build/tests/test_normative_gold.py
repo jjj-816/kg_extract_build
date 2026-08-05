@@ -2,7 +2,6 @@ import unittest
 from pathlib import Path
 
 from kg_extract_build.normative import parse_normative_clauses
-from kg_extract_build.normative_segmentation import segment_clause
 
 
 class GoldClauseTests(unittest.TestCase):

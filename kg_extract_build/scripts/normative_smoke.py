@@ -1,10 +1,8 @@
 """端到端冒烟：规范文档登记→索引→检索。前提：Milvus 服务运行、MiniLM 模型就位。"""
 
-import os
-
 from kg_extract_build import settings
 from kg_extract_build.normative_encoder import (
-    EncoderProfile, NormativeEncoder, build_encoder_profile_hash, model_revision,
+    EncoderProfile, NormativeEncoder, model_revision,
 )
 from kg_extract_build.normative_indexer import NormativeIndexer
 from kg_extract_build.normative_persistence import NormativeStore
