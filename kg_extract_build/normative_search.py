@@ -79,10 +79,10 @@ class NormativeSearcher:
                     unique[clause_id] = hit
             if len(unique) >= request.top_k or len(hits) < raw_limit:
                 break
-            raw_limit = min(raw_limit * 2, MAX_RAW_LIMIT)
             if raw_limit == MAX_RAW_LIMIT:
                 stop_reason = "safety_cap"
                 break
+            raw_limit = min(raw_limit * 2, MAX_RAW_LIMIT)
         if raw_segment_count and not unique:
             stop_reason = "no_hits"
 
