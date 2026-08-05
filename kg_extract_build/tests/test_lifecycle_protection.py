@@ -1,5 +1,5 @@
 import unittest
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 from kg_extract_build import dashboard
 
@@ -46,8 +46,11 @@ class LifecycleProtectionTests(unittest.TestCase):
             def has_normative_references(self, document_id):
                 return False
 
+        mock_vs = MagicMock()
         with patch.object(dashboard, "MySQLExperimentStore", return_value=FakeStore()), \
              patch.object(dashboard, "NormativeStore", return_value=FakeNormStore()), \
-             patch.object(dashboard, "build_vector_store"):
+             patch.object(dashboard, "build_vector_store", return_value=mock_vs):
             result = dashboard.delete_run_with_vectors(config, "run-1")
         self.assertTrue(result.deleted)
+        mock_vs.delete_segments_by_run.assert_called_once_with("run-1")
+        mock_vs.close.assert_called_once()

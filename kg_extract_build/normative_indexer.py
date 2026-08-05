@@ -86,33 +86,36 @@ class NormativeIndexer:
             self.store.save_segments(index_id, segments)
             return {"status": "ready", "index_id": index_id, "reason": ""}
         except Exception as exc:
-            self.store.save_index(
-                {
-                    "index_id": index_id, "version_id": version_id,
-                    "clause_set_id": clause_set_id,
-                    "collection_name": self.vector_store.collection_name(self.profile),
-                    "embedding_model_key": self.profile.embedding_model_key,
-                    "embedding_model_revision": self.profile.embedding_model_revision,
-                    "embedding_dimension": self.profile.embedding_dimension,
-                    "encoder_profile_json": json.dumps({
+            try:
+                self.store.save_index(
+                    {
+                        "index_id": index_id, "version_id": version_id,
+                        "clause_set_id": clause_set_id,
+                        "collection_name": self.vector_store.collection_name(self.profile),
                         "embedding_model_key": self.profile.embedding_model_key,
                         "embedding_model_revision": self.profile.embedding_model_revision,
                         "embedding_dimension": self.profile.embedding_dimension,
-                        "query_prefix": self.profile.query_prefix,
-                        "document_prefix": self.profile.document_prefix,
-                        "pooling": self.profile.pooling,
-                        "normalize": self.profile.normalize,
-                        "max_input_tokens": self.profile.max_input_tokens,
-                    }, ensure_ascii=False),
-                    "encoder_profile_hash": build_encoder_profile_hash(self.profile),
-                    "metric_type": "COSINE",
-                    "chunker_version": "normative-clause-v1",
-                    "chunk_config_json": {"max_tokens": self.profile.max_input_tokens, "overlap": 8},
-                    "index_fingerprint": fingerprint,
-                    "status": "failed",
-                    "error_message": str(exc),
-                }
-            )
+                        "encoder_profile_json": json.dumps({
+                            "embedding_model_key": self.profile.embedding_model_key,
+                            "embedding_model_revision": self.profile.embedding_model_revision,
+                            "embedding_dimension": self.profile.embedding_dimension,
+                            "query_prefix": self.profile.query_prefix,
+                            "document_prefix": self.profile.document_prefix,
+                            "pooling": self.profile.pooling,
+                            "normalize": self.profile.normalize,
+                            "max_input_tokens": self.profile.max_input_tokens,
+                        }, ensure_ascii=False),
+                        "encoder_profile_hash": build_encoder_profile_hash(self.profile),
+                        "metric_type": "COSINE",
+                        "chunker_version": "normative-clause-v1",
+                        "chunk_config_json": {"max_tokens": self.profile.max_input_tokens, "overlap": 8},
+                        "index_fingerprint": fingerprint,
+                        "status": "failed",
+                        "error_message": str(exc),
+                    }
+                )
+            except Exception:
+                pass
             return {"status": "failed", "index_id": index_id, "reason": str(exc)}
 
     def _build_segments(self, version, clauses):

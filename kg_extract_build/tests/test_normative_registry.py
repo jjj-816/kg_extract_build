@@ -46,3 +46,36 @@ class NormativeRegistryTests(unittest.TestCase):
         new_clauses = self.store.get_clauses(second["clause_set_id"])
         self.assertEqual(len(old_clauses), 1)
         self.assertEqual(len(new_clauses), 2)
+
+    def test_register_version_detects_supersede_cycle(self):
+        from kg_extract_build.normative_meta import VersionDraft, build_metadata_hash, FamilyDraft
+
+        store = self.store
+        store.save_family("fam-1", FamilyDraft(canonical_name="test"))
+
+        # 预置两个既有版本形成互替环：va → vb → va
+        va = VersionDraft(
+            family_id="fam-1", document_id=1, display_name="版本A",
+            effective_year=2020, status="effective",
+            supersedes_version_id="vb", metadata_confirmed=True,
+        )
+        va = VersionDraft(**{**va.__dict__, "metadata_hash": build_metadata_hash(va), "version_id": "va"})
+        store.save_version(va)
+
+        vb = VersionDraft(
+            family_id="fam-1", document_id=2, display_name="版本B",
+            effective_year=2021, status="effective",
+            supersedes_version_id="va", metadata_confirmed=True,
+        )
+        vb = VersionDraft(**{**vb.__dict__, "metadata_hash": build_metadata_hash(vb), "version_id": "vb"})
+        store.save_version(vb)
+
+        # 登记新版本 C，supersedes_version_id=va
+        # 链：C → va → vb → va（成环！）
+        with self.assertRaisesRegex(ValueError, "循环"):
+            register_version(
+                store, document_id=3, file_name="test.md",
+                content="# 总则\n\n第一条 测试条款。\n",
+                display_name="版本C", effective_year=2022, status="effective",
+                supersedes_version_id="va",
+            )

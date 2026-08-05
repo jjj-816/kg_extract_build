@@ -96,6 +96,9 @@ def render_index_area(store, profile, encoder):
 
 def render_search_preview(searcher_class, searcher, releases):
     st.subheader("③ 检索预览")
+    if not releases:
+        st.info("暂无已发布的规范索引版本，请先在②创建发布版。")
+        return
     with st.form("search_preview_form"):
         query = st.text_input("查询文本")
         year = st.number_input("审核年份", min_value=2000, max_value=2100, value=2025)

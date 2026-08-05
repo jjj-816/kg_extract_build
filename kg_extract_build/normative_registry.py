@@ -43,6 +43,26 @@ def register_version(
         family_id = str(uuid.uuid4())
         store.save_family(family_id, FamilyDraft(canonical_name=canonical))
 
+    existing_rows = store.list_versions(family_id)
+    existing_drafts = [
+        VersionDraft(
+            family_id=r["family_id"],
+            document_id=r["document_id"],
+            display_name=r["display_name"],
+            standard_code=r.get("standard_code"),
+            version_year=r.get("version_year"),
+            publication_year=r.get("publication_year"),
+            effective_year=r.get("effective_year"),
+            invalid_year=r.get("invalid_year"),
+            status=r["status"],
+            supersedes_version_id=r.get("supersedes_version_id"),
+            metadata_confirmed=bool(r.get("metadata_confirmed")),
+            metadata_hash=r.get("metadata_hash") or "",
+            version_id=r["version_id"],
+        )
+        for r in existing_rows
+    ]
+
     # 2) 版本：登记后按当前确认状态存 metadata_hash。
     draft = VersionDraft(
         family_id=family_id,
@@ -57,7 +77,7 @@ def register_version(
         metadata_confirmed=status != "pending_confirmation",
     )
     draft = VersionDraft(**{**draft.__dict__, "metadata_hash": build_metadata_hash(draft)})
-    validate_version_draft(draft, [])
+    validate_version_draft(draft, existing_drafts)
     version_id = store.save_version(draft)
 
     # 3) 条款集：每次登记新生成，不覆盖历史。

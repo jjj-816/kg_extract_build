@@ -85,6 +85,8 @@ class NormativeSearcher:
             raw_limit = min(raw_limit * 2, MAX_RAW_LIMIT)
         if raw_segment_count and not unique:
             stop_reason = "no_hits"
+        if stop_reason == "ok" and len(unique) < request.top_k:
+            stop_reason = "exhausted"
 
         ranked = sorted(unique.values(), key=lambda r: r.get("score", 0), reverse=True)
         evidence = []
