@@ -71,6 +71,18 @@ REUSE_ENTITY_CACHE = env_bool("KG_REUSE_ENTITY_CACHE", False)
 REUSE_TRIPLET_CACHE = env_bool("KG_REUSE_TRIPLET_CACHE", False)
 EXPERIMENT_RUN_NAME = os.getenv("KG_RUN_NAME", "")
 
+# 规范条款向量索引（MVP：MiniLM 单模型，接真实 Milvus 服务）
+NORM_VECTOR_MODEL_PATH = env_path(
+    "KG_NORM_VECTOR_MODEL_PATH",
+    VECTOR_MODEL_PATH,
+)
+NORM_MILVUS_URI = os.getenv("KG_NORM_MILVUS_URI", "http://127.0.0.1:19530")
+NORM_MILVUS_TOKEN = os.getenv("KG_NORM_MILVUS_TOKEN", "")
+NORM_MILVUS_COLLECTION_PREFIX = os.getenv(
+    "KG_NORM_MILVUS_COLLECTION_PREFIX", "kg_normative_clauses"
+)
+NORM_MILVUS_ENABLED = env_bool("KG_NORM_MILVUS_ENABLED", False)
+
 
 def resolve_schema_path():
     if SCHEMA_PATH.exists():
