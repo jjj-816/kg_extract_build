@@ -658,6 +658,12 @@ class MySQLExperimentStore(BaseExperimentStore):
             return_rowcount=True,
         ) > 0
 
+    def run_document_ids(self, run_id):
+        rows = self._read(
+            "SELECT document_id FROM kg_document WHERE run_id=%s", (run_id,)
+        )
+        return [row["document_id"] for row in rows]
+
     def start_document(self, run_id, file_name, source_type, document_hash, content):
         return self._write(
             """

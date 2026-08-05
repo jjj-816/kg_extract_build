@@ -7,6 +7,7 @@ import pandas as pd
 import streamlit as st
 
 from kg_extract_build.persistence import MySQLExperimentStore
+from kg_extract_build.normative_persistence import NormativeStore
 from kg_extract_build.vector_store import build_vector_store
 
 
@@ -149,13 +150,24 @@ def _experiment_store(config):
 
 
 def delete_run_with_vectors(config: dict, run_id: str) -> DeletionResult:
-    """Delete vectors, persist a resume marker, then cascade the SQL parent."""
+    """删除批次前先检查规范证据引用；被引用则拒绝删除（只允许归档）。"""
     store = _experiment_store(config)
     state = store.get_deletion_state(run_id)
     if state is None:
         return DeletionResult(False, "missing", "未找到实验批次。")
     if state != "active":
         return DeletionResult(False, state, "批次删除已进入恢复状态，请使用恢复删除。")
+    # 规范证据生命周期：先检查，被引用禁止物理删除。
+    document_ids = store.run_document_ids(run_id)
+    if document_ids:
+        norm_store = NormativeStore(store)
+        referenced = [d for d in document_ids if norm_store.has_normative_references(d)]
+        if referenced:
+            return DeletionResult(
+                False,
+                "normative_referenced",
+                "该批次包含已被规范版本/条款集/发布版引用的文档，禁止物理删除，只允许归档。",
+            )
     vector_store = build_vector_store()
     try:
         vector_store.delete_segments_by_run(run_id)

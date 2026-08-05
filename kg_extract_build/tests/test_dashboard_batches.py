@@ -87,6 +87,10 @@ class DashboardBatchDeletionTests(unittest.TestCase):
                 test_case.assertEqual(run_id, "run-123")
                 return "active"
 
+            def run_document_ids(self, run_id):
+                test_case.assertEqual(run_id, "run-123")
+                return []
+
             def mark_vectors_deleted_sql_pending(self, run_id):
                 test_case.assertEqual(run_id, "run-123")
                 events.append("pending")
@@ -123,6 +127,7 @@ class DashboardBatchDeletionTests(unittest.TestCase):
 
         sql_store = Mock()
         sql_store.get_deletion_state.return_value = "active"
+        sql_store.run_document_ids.return_value = []
         with patch.object(dashboard, "build_vector_store", return_value=VectorStore()), patch.object(
             dashboard, "MySQLExperimentStore", return_value=sql_store
         ):
@@ -135,6 +140,7 @@ class DashboardBatchDeletionTests(unittest.TestCase):
     def test_sql_failure_after_vector_delete_is_resumable(self):
         store = Mock()
         store.get_deletion_state.return_value = "active"
+        store.run_document_ids.return_value = []
         store.mark_vectors_deleted_sql_pending.return_value = True
         store.delete_run.return_value = False
         vector_store = Mock()
