@@ -122,6 +122,95 @@ class NormativeStore:
             "SELECT * FROM kg_normative_clause WHERE clause_set_id=%s", (clause_set_id,)
         )
 
+    # ---- 条款集查询 ----
+    def latest_clause_set(self, version_id: str) -> dict | None:
+        rows = self._backend._read(
+            "SELECT * FROM kg_normative_clause_set "
+            "WHERE version_id=%s AND status='published' "
+            "ORDER BY created_at DESC LIMIT 1",
+            (version_id,),
+        )
+        return rows[0] if rows else None
+
+    # ---- 索引 ----
+    def save_index(self, record: dict) -> None:
+        import json
+        self._backend._write(
+            "INSERT INTO kg_normative_index "
+            "(index_id, version_id, clause_set_id, collection_name, embedding_model_key, "
+            " embedding_model_revision, embedding_dimension, encoder_profile_json, encoder_profile_hash, "
+            " metric_type, chunker_version, chunk_config_json, index_fingerprint, "
+            " status, error_message, created_at) "
+            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+            (record["index_id"], record["version_id"], record["clause_set_id"],
+             record["collection_name"], record["embedding_model_key"],
+             record["embedding_model_revision"], record["embedding_dimension"],
+             record["encoder_profile_json"], record["encoder_profile_hash"],
+             record["metric_type"],
+             record["chunker_version"],
+             json.dumps(record.get("chunk_config_json") or {}, ensure_ascii=False),
+             record["index_fingerprint"], record["status"],
+             record.get("error_message"), _utc_now()),
+        )
+
+    def get_index_by_fingerprint(self, fingerprint: str) -> dict | None:
+        rows = self._backend._read(
+            "SELECT * FROM kg_normative_index WHERE index_fingerprint=%s", (fingerprint,)
+        )
+        return rows[0] if rows else None
+
+    def save_segments(self, index_id: str, segments) -> None:
+        params = [
+            (index_id, clause_row["clause_id"], draft.segment_index,
+             draft.embedding_text, draft.token_count, draft.text_hash,
+             draft.text_hash[:16], _utc_now())
+            for clause_row, draft in segments
+        ]
+        self._backend._write(
+            "INSERT INTO kg_normative_index_segment "
+            "(index_id, clause_id, segment_index, embedding_text, token_count, "
+            " text_hash, milvus_vector_id, created_at) "
+            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+            params, many=True,
+        )
+
+    # ---- 发布 ----
+    def save_release(self, record: dict) -> None:
+        self._backend._write(
+            "INSERT INTO kg_normative_index_release "
+            "(release_id, release_name, collection_name, embedding_model_key, "
+            " embedding_model_revision, encoder_profile_hash, release_fingerprint, "
+            " status, created_at) "
+            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+            (record["release_id"], record["release_name"], record["collection_name"],
+             record["embedding_model_key"], record["embedding_model_revision"],
+             record["encoder_profile_hash"], record["release_fingerprint"],
+             record["status"], _utc_now()),
+        )
+
+    def save_release_member(self, release_id: str, index_id: str, version_id: str, clause_set_id: str) -> None:
+        self._backend._write(
+            "INSERT INTO kg_normative_index_release_member "
+            "(release_id, index_id, version_id, clause_set_id, included_at) "
+            "VALUES (%s, %s, %s, %s, %s)",
+            (release_id, index_id, version_id, clause_set_id, _utc_now()),
+        )
+
+    def release_member_index_ids(self, release_id: str) -> list[str]:
+        rows = self._backend._read(
+            "SELECT index_id FROM kg_normative_index_release_member WHERE release_id=%s",
+            (release_id,),
+        )
+        return [r["index_id"] for r in rows]
+
+    def index_rows(self, index_ids: list[str]) -> list[dict]:
+        if not index_ids:
+            return []
+        placeholders = ",".join(["%s"] * len(index_ids))
+        return self._backend._read(
+            f"SELECT * FROM kg_normative_index WHERE index_id IN ({placeholders})", list(index_ids)
+        )
+
     # ---- 生命周期 ----
     def has_normative_references(self, document_id: int) -> bool:
         for table in ("kg_normative_version", "kg_normative_clause_set", "kg_normative_clause"):
