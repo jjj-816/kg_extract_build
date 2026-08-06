@@ -141,7 +141,21 @@ class NormativeStore:
             " embedding_model_revision, embedding_dimension, encoder_profile_json, encoder_profile_hash, "
             " metric_type, chunker_version, chunk_config_json, index_fingerprint, "
             " status, error_message, created_at) "
-            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) "
+            "ON DUPLICATE KEY UPDATE "
+            "index_id=VALUES(index_id), "
+            "clause_set_id=VALUES(clause_set_id), "
+            "collection_name=VALUES(collection_name), "
+            "embedding_model_key=VALUES(embedding_model_key), "
+            "embedding_model_revision=VALUES(embedding_model_revision), "
+            "embedding_dimension=VALUES(embedding_dimension), "
+            "encoder_profile_json=VALUES(encoder_profile_json), "
+            "encoder_profile_hash=VALUES(encoder_profile_hash), "
+            "metric_type=VALUES(metric_type), "
+            "chunker_version=VALUES(chunker_version), "
+            "chunk_config_json=VALUES(chunk_config_json), "
+            "status=VALUES(status), "
+            "error_message=VALUES(error_message)",
             (record["index_id"], record["version_id"], record["clause_set_id"],
              record["collection_name"], record["embedding_model_key"],
              record["embedding_model_revision"], record["embedding_dimension"],
@@ -155,7 +169,8 @@ class NormativeStore:
 
     def get_index_by_fingerprint(self, fingerprint: str) -> dict | None:
         rows = self._backend._read(
-            "SELECT * FROM kg_normative_index WHERE index_fingerprint=%s", (fingerprint,)
+            "SELECT * FROM kg_normative_index WHERE index_fingerprint=%s AND status='ready'",
+            (fingerprint,),
         )
         return rows[0] if rows else None
 

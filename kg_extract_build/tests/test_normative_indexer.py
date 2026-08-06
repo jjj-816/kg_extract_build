@@ -58,7 +58,7 @@ def make_store(version_rows, clause_rows):
         get_clauses=lambda cid: [r for r in clause_rows if r.get("clause_set_id") == cid],
         save_index=lambda record: backend.rows.setdefault("kg_normative_index", []).append(record),
         save_segments=lambda index_id, segs: backend.rows.setdefault("segments", []).extend(segs),
-        get_index_by_fingerprint=lambda fp: next((r for r in backend.rows.get("kg_normative_index", []) if r["index_fingerprint"] == fp), None),
+        get_index_by_fingerprint=lambda fp: next((r for r in backend.rows.get("kg_normative_index", []) if r["index_fingerprint"] == fp and r.get("status") == "ready"), None),
     )
 
 
@@ -104,7 +104,7 @@ class IndexerTests(unittest.TestCase):
               "parse_status": "structured", "hierarchy_path": ["总则"],
               "clause_id": 501}],
         )
-        store._backend.rows["kg_normative_index"] = [{"index_fingerprint": "fp", "index_id": "idx-0"}]
+        store._backend.rows["kg_normative_index"] = [{"index_fingerprint": "fp", "index_id": "idx-0", "status": "ready"}]
         indexer = NormativeIndexer(store, FakeNormativeVectorStore(), FakeEncoder(), _make_profile())
         with mock.patch("kg_extract_build.normative_indexer.build_index_fingerprint", return_value="fp"):
             result = indexer.build_index("v1")
@@ -122,3 +122,26 @@ class IndexerTests(unittest.TestCase):
         result = indexer.build_index("v1")
         self.assertEqual(result["status"], "failed")
         self.assertIn("条款", result["reason"])
+
+    def test_build_retries_when_previous_failed(self):
+        store = make_store(
+            [{"version_id": "v1", "family_id": "f1", "document_id": 36,
+              "effective_year": 2020, "invalid_year": None,
+              "metadata_confirmed": True, "status": "effective",
+              "metadata_hash": "mh-1"}],
+            [{"clause_set_id": "set-1", "clause_number": "第二十条",
+              "raw_text": "作业前应通风。", "normalized_text": "作业前应通风。",
+              "start_offset": 0, "end_offset": 8, "content_hash": "h",
+              "parse_status": "structured", "hierarchy_path": ["总则"],
+              "clause_id": 501}],
+        )
+        # 预置一条 status='failed' 的旧记录 — 幂等检查应跳过它，允许重建
+        store._backend.rows["kg_normative_index"] = [
+            {"index_fingerprint": "fp", "index_id": "idx-failed", "status": "failed"}
+        ]
+        encoder = FakeEncoder()
+        indexer = NormativeIndexer(store, FakeNormativeVectorStore(), encoder, _make_profile())
+        with mock.patch("kg_extract_build.normative_indexer.build_index_fingerprint", return_value="fp"):
+            result = indexer.build_index("v1")
+        self.assertEqual(result["status"], "ready")
+        self.assertTrue(encoder.encoded)
