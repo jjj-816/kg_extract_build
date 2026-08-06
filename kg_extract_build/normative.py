@@ -24,6 +24,12 @@ def normalize_clause_text(text: str) -> str:
     return "\n".join(line.rstrip() for line in str(text).strip().splitlines()).strip()
 
 
+def text_hash_int64(text_hash: str) -> int:
+    """将 text_hash 确定性转为正 int64，用于 Milvus 主键 segment_id。"""
+    # 15 hex 字符 = 60 bits，远小于 int64 正数上限，避免溢出
+    return int(text_hash[:15], 16)
+
+
 @dataclass(frozen=True)
 class ClauseDraft:
     clause_number: str | None

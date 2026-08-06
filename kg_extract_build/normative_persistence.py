@@ -5,7 +5,7 @@ from __future__ import annotations
 import uuid
 from datetime import datetime, timezone
 
-from .normative import ClauseDraft, NormativeVersionCandidate, stable_hash
+from .normative import ClauseDraft, NormativeVersionCandidate, stable_hash, text_hash_int64
 from .normative_meta import FamilyDraft, VersionDraft
 
 
@@ -178,7 +178,7 @@ class NormativeStore:
         params = [
             (index_id, clause_row["clause_id"], draft.segment_index,
              draft.embedding_text, draft.token_count, draft.text_hash,
-             draft.text_hash[:16], _utc_now())
+             str(text_hash_int64(draft.text_hash)), _utc_now())
             for clause_row, draft in segments
         ]
         self._backend._write(

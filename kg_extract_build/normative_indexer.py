@@ -6,7 +6,7 @@ import json
 import uuid
 from datetime import datetime, timezone
 
-from .normative import build_index_fingerprint, stable_hash
+from .normative import build_index_fingerprint, stable_hash, text_hash_int64
 from .normative_encoder import build_encoder_profile_hash
 from .normative_persistence import NormativeStore
 from .normative_segmentation import SegmentDraft, segment_clause
@@ -138,7 +138,7 @@ class NormativeIndexer:
         for (clause, draft), embedding in zip(segments, embeddings):
             records.append(
                 {
-                    "segment_id": draft.text_hash[:16],
+                    "segment_id": text_hash_int64(draft.text_hash),
                     "index_id": index_id,
                     "clause_id": clause["clause_id"],
                     "clause_set_id": clause["clause_set_id"],
