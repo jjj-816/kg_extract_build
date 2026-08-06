@@ -23,7 +23,7 @@ class FakeMilvusClient:
         self.dimensions[collection_name] = dimension
 
     def describe_collection(self, collection_name):
-        return {"params": {"dimension": self.dimensions[collection_name]}}
+        return {"fields": [{"name": "embedding", "params": {"dim": self.dimensions[collection_name]}}]}
 
     def upsert(self, collection_name, data):
         self.upserted.extend(data)

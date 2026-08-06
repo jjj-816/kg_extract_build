@@ -14,6 +14,19 @@ def _slug(model_key: str, dimension: int) -> str:
     return f"{base}_{dimension}"
 
 
+def _read_dimension(info: dict) -> int:
+    """从 pymilvus describe_collection 返回的 dict 中提取向量维度。
+
+    pymilvus>=2.5 的 CollectionSchema.dict() 不含顶层 ``params`` 键；
+    维度在 ``fields[].params.dim`` 中。这里遍历字段找到第一个向量字段的维度。
+    """
+    for field in info.get("fields", []):
+        dim = int(field.get("params", {}).get("dim", 0) or 0)
+        if dim:
+            return dim
+    return 0
+
+
 class NormativeMilvusStore:
     def __init__(self, uri, token="", collection_prefix="kg_normative_clauses"):
         try:
@@ -52,8 +65,9 @@ class NormativeMilvusStore:
         name = self.collection_name(profile)
         if client.has_collection(collection_name=name):
             info = client.describe_collection(name)
-            if int(info.get("params", {}).get("dimension", 0)) != profile.embedding_dimension:
-                raise ValueError(f"集合 {name} 维度与 {profile.embedding_dimension} 不匹配")
+            actual_dim = _read_dimension(info)
+            if actual_dim and actual_dim != profile.embedding_dimension:
+                raise ValueError(f"集合 {name} 维度 {actual_dim} 与 {profile.embedding_dimension} 不匹配")
             return
         client.create_collection(
             collection_name=name,
@@ -64,6 +78,11 @@ class NormativeMilvusStore:
             auto_id=False,
             enable_dynamic_field=True,
         )
+        # 创建后立即验证
+        info = client.describe_collection(name)
+        actual_dim = _read_dimension(info)
+        if actual_dim and actual_dim != profile.embedding_dimension:
+            raise ValueError(f"创建后集合 {name} 维度 {actual_dim} 与 {profile.embedding_dimension} 不匹配")
 
     def upsert_segments(self, profile, records) -> None:
         if not records:
