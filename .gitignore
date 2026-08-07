@@ -12,3 +12,8 @@ processed_docs.json
 /audit_data/
 /.codex_tmp/
 /.agents/
+/docs/adr/
+/docs/design/
+/docs/superpowers/
+/kg_extract_build/deleteMilvus.py
+/长宁H3平台泡排工艺施工_gold标注可视化.html
