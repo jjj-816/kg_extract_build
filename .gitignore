@@ -9,3 +9,6 @@ processed_docs.json
 /shale_gas_entity_debug/
 /shale_gas_triplets_debug/
 .worktrees/
+/audit_data/
+/.codex_tmp/
+/.agents/
