@@ -21,6 +21,11 @@ conda run -n env_agent python -m pytest kg_extract_build/tests -q
 - 声明规范、补充规范输入；
 - 页面无未捕获异常。
 
+`kg_extract_build/tests/test_dashboard_audit_report_ui.py` 另外覆盖报告控制 UI：
+
+- 未处理 mandatory review 时不出现正式发布动作；
+- 所有复核完成后发布动作可用，并生成 JSON/DOCX 下载控件与文件。
+
 ## 真实依赖环境验收
 
 以下步骤必须在配置好 MySQL schema、规范检索、图检索以及语义模型 provider 的环境执行；本地安全模式不等价于该验收：
