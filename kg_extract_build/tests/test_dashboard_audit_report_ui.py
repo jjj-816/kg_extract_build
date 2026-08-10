@@ -57,5 +57,36 @@ dashboard_audit._render_stage2_result_detail({
         self.assertGreaterEqual(len(labels), 1)
 
 
+    def test_history_lookup_and_correction_form(self):
+        script = """
+import os
+import streamlit as st
+import kg_extract_build.dashboard_audit as dashboard_audit
+os.environ["KG_MYSQL_ENABLED"] = "1"
+class FakeStore:
+    def load_run(self, run_id):
+        return {"task_library_version": "1.1.1", "config": {}, "run_id": run_id}
+    def load_latest_draft_report(self, run_id):
+        return {"report_id": "r1", "version": 1, "status": "published", "report_metadata": {"status": "published", "report_id": "r1"}, "source_snapshot": {}, "document": {"document_id": "d1"}, "tasks": [{"task_id": "T1", "task_name": "task", "result_status": "no_issue", "execution_status": "completed", "evidence": [], "issues": [], "manual_reviews": [], "offline_items": [], "advisories": []}]}
+    def list_report_versions(self, run_id):
+        return [{"report_id": "r1", "status": "published", "version": 1, "generated_by": "reviewer", "created_at": "now"}]
+    def load_document_image_paths(self, run_id):
+        return {}
+    def save_draft_report(self, run_id, report, reviewer):
+        return "r2"
+    def close(self):
+        pass
+dashboard_audit.MySQLAuditStore = type("StoreFactory", (), {"from_env": staticmethod(lambda: FakeStore())})
+dashboard_audit._render_run_lookup()
+"""
+        app = AppTest.from_string(script).run(timeout=30)
+        app.text_input[0].set_value("run-1")
+        app = app.run(timeout=30)
+        self.assertEqual(list(app.exception), [])
+        self.assertGreaterEqual(len(app.dataframe), 1)
+        self.assertGreaterEqual(len(app.expander), 1)
+        self.assertTrue(any("创建新报告版本" in item.label for item in app.button))
+
+
 if __name__ == "__main__":
     unittest.main()
