@@ -10,10 +10,14 @@ class AuditReportUiTests(unittest.TestCase):
     def _run(report: dict, storage: str) -> AppTest:
         script = f"""
 import streamlit as st
-from kg_extract_build.dashboard_audit import _render_human_review_and_publish
+from pathlib import Path
+import kg_extract_build.audit.settings as audit_settings
+audit_settings.AUDIT_STORAGE_DIR = Path({storage!r})
+import kg_extract_build.dashboard_audit as dashboard_audit
+dashboard_audit.AUDIT_STORAGE_DIR = Path({storage!r})
 
 report = {report!r}
-_render_human_review_and_publish(report)
+dashboard_audit._render_human_review_and_publish(report)
 """
         import os
 
