@@ -39,4 +39,4 @@ conda run -n env_agent python -m pytest kg_extract_build/tests -q
 
 ## 当前限制
 
-当前环境的 MySQL schema health 已通过（13 张审核表），DeepSeek provider 结构化冒烟已通过，Milvus `19530` 已健康；修复 upsert 可见性后规范索引 smoke 返回 `build_index.status=ready` 且 `evidence count=2`。JSA `5001` 仍未暴露，因此图线索和 JSA 降级链路尚未完成真实端到端验收。页面没有内置 provider 模拟器或本地伪造数据库，工单 06 保持 `in-progress`，直到剩余依赖环境验收结果可复现并纳入测试记录。
+当前环境的 MySQL schema health 已通过（13 张审核表），DeepSeek provider 结构化冒烟已通过，Milvus `19530` 已健康；修复 upsert 可见性后规范索引 smoke 返回 `build_index.status=ready` 且 `evidence count=2`。JSA `5001` 已返回 `jsa-readonly-v2`，Neo4j Bolt `7687` 已通过只读 `RETURN 1` 查询。仍需完成真实审核页面从启动到发布/版本更正的完整依赖环境回归；工单 06 保持 `in-progress`，直到该结果可复现并纳入测试记录。
