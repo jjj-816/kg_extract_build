@@ -38,14 +38,19 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
             "correction_pass": correction,
             "evidence_package_id": package.package_id,
             "evidence": [dict(item) for item in package.evidence],
-            "instruction": "仅依据给定证据返回 JSON；不得补造规范或证据。",
+            "instruction": (
+                "仅依据给定证据返回最终审核 JSON，不要回显请求内容或 instruction。"
+                "顶层必须包含 result_status（取值 no_issue、issue_found、manual_review）、"
+                "issues（数组）和 package_id（必须等于 evidence_package_id）。"
+                "不得补造规范或证据。"
+            ),
         }
         response = client.chat.completions.create(
             model=model,
             temperature=0,
             response_format={"type": "json_object"},
             messages=[
-                {"role": "system", "content": "你是审计语义审核器，必须输出符合约定的 JSON。"},
+                {"role": "system", "content": "你是审计语义审核器。只输出最终 JSON 对象，不得复述输入。"},
                 {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
             ],
         )
