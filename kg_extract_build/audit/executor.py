@@ -540,8 +540,12 @@ class AuditOrchestrator:
     """对冻结的阶段一预览逐任务执行，单任务问题不影响其他任务。"""
 
     def execute_preview(self, preview, audit_context: dict | None = None, run_id: str = "preview") -> tuple[TaskExecutionResult, ...]:
+        from .semantic_runtime import SemanticRuntime
         results = []
         result_by_task = {}
+        semantic_runtime = (audit_context or {}).get("semantic_runtime")
+        reasonableness_runtime = (audit_context or {}).get("reasonableness_runtime")
+        compliance_runtime = (audit_context or {}).get("compliance_runtime")
         try:
             rule_set = load_deterministic_rule_set(preview.task_library)
         except RuleSetError:
@@ -567,6 +571,16 @@ class AuditOrchestrator:
                 result = execute_offline_completion(task, preview.parsed_document, location)
             elif task.route == "jsa_rule":
                 result = execute_jsa_advisory(task, preview, run_id, result_by_task.get("HSE-001"))
+            elif task.route == "semantic_compliance" and compliance_runtime is not None:
+                result = compliance_runtime.run(task, _evidence(preview.parsed_document, location), scope_preflight=(audit_context or {}).get("scope_preflight"), run_id=run_id)
+            elif task.route == "semantic_reasonableness" and reasonableness_runtime is not None:
+                graph_result = (audit_context or {}).get("graph_results", {}).get(task.task_id)
+                if graph_result is None:
+                    from .bounded_graph import GraphRetrievalResult
+                    graph_result = GraphRetrievalResult((), False, "未注入图检索结果")
+                result = reasonableness_runtime.run(task, _evidence(preview.parsed_document, location), graph_result, run_id, (audit_context or {}).get("normative_search"))
+            elif task.route in {"semantic_compliance", "semantic_reasonableness"} and semantic_runtime is not None:
+                result = semantic_runtime.run(task, _evidence(preview.parsed_document, location), run_id)
             else:
                 result = execute_later_route(task, preview.parsed_document, location)
             self._validate(result)

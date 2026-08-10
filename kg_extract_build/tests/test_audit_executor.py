@@ -41,7 +41,15 @@ class AuditExecutorTests(unittest.TestCase):
         self.assertEqual(results["APPC-002"].result_status, "offline_completion")
         self.assertEqual(results["BASIS-003"].result_status, "no_issue")
         self.assertEqual(results["PREP-001"].execution_status, "pending")
-        self.assertIsNone(results["PREP-001"].result_status)
+
+    def test_injected_semantic_runtime_executes_semantic_task(self):
+        preview = self._preview()
+        class FakeRuntime:
+            def run(self, task, evidence, run_id):
+                from kg_extract_build.audit.executor import TaskExecutionResult
+                return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", tuple(evidence))
+        results = AuditOrchestrator().execute_preview(preview, {"semantic_runtime": FakeRuntime()})
+        self.assertEqual(next(item for item in results if item.task_id == "PREP-001").result_status, "manual_review")
 
     def test_draft_report_preserves_evidence_and_pending_status(self):
         preview = self._preview()

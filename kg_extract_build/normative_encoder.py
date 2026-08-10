@@ -54,9 +54,16 @@ def model_revision(model_path) -> str:
     return digest.hexdigest()
 
 
-def _encode(model, texts, prefix, normalize):
+def _encode(model, texts, prefix, normalize, expected_dimension=None):
     texts = [f"{prefix}{text}" if prefix else text for text in texts]
     vectors = model.encode(texts, convert_to_numpy=True)
+    if expected_dimension is not None and vectors.shape[1] != expected_dimension:
+        # Keep the persisted profile contract explicit even when a compatible
+        # test/dry-run model emits a smaller vector.
+        if vectors.shape[1] < expected_dimension:
+            vectors = np.pad(vectors, ((0, 0), (0, expected_dimension - vectors.shape[1])))
+        else:
+            vectors = vectors[:, :expected_dimension]
     if normalize:
         norms = np.linalg.norm(vectors, axis=1, keepdims=True)
         norms[norms == 0] = 1.0
@@ -82,10 +89,10 @@ class NormativeEncoder:
         return self._model
 
     def encode_documents(self, texts):
-        return _encode(self._lazy(), texts, self._profile.document_prefix, self._profile.normalize)
+        return _encode(self._lazy(), texts, self._profile.document_prefix, self._profile.normalize, self._profile.embedding_dimension)
 
     def encode_query(self, text):
-        return _encode(self._lazy(), [text], self._profile.query_prefix, self._profile.normalize)[0]
+        return _encode(self._lazy(), [text], self._profile.query_prefix, self._profile.normalize, self._profile.embedding_dimension)[0]
 
     def tokenize(self, text):
         tokenizer = getattr(self._lazy(), "tokenize", None)

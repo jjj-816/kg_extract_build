@@ -335,6 +335,43 @@ class MySQLAuditStore:
             connection.rollback()
             raise
 
+    def append_human_review(self, *, execution_id: int | None, issue_id: str | None,
+                            action_type: str, reviewer_name: str,
+                            reason: str, before_value=None, after_value=None) -> int:
+        """Append a human decision without mutating the machine issue row."""
+        connection, now = self._connection(), datetime.now(timezone.utc).replace(tzinfo=None)
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute(
+                    """INSERT INTO audit_human_review
+                       (issue_id,execution_id,action_type,before_value,after_value,reviewer_name,reason,created_at)
+                       VALUES (%s,%s,%s,%s,%s,%s,%s,%s)""",
+                    (issue_id, execution_id, action_type, _json(before_value) if before_value is not None else None,
+                     _json(after_value) if after_value is not None else None, reviewer_name, reason, now),
+                )
+                review_id = cursor.lastrowid
+            connection.commit()
+            return int(review_id)
+        except Exception:
+            connection.rollback()
+            raise
+
+    def publish_report(self, report_id: str, *, docx_path: str | None = None) -> None:
+        """Mark an existing immutable report version as published."""
+        connection = self._connection()
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute(
+                    "UPDATE audit_report SET report_status='published',docx_path=%s WHERE report_id=%s",
+                    (docx_path, report_id),
+                )
+                if cursor.rowcount != 1:
+                    raise ValueError(f"报告不存在：{report_id}")
+            connection.commit()
+        except Exception:
+            connection.rollback()
+            raise
+
     def close(self) -> None:
         if self._connection_instance is not None:
             self._connection_instance.close()
