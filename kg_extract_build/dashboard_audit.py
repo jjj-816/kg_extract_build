@@ -24,6 +24,8 @@ from .audit.settings import AUDIT_CONVERSION_TIMEOUT, AUDIT_DOC_CONVERTER, AUDIT
 from .audit.bindings import build_task_bindings
 from .audit.task_library import load_published_task_library
 from .audit.word_converter import doc_conversion_capability
+from .audit.provider_runtime import build_structured_model
+from .audit.semantic_runtime import SemanticRuntime
 from .run_config import PROVIDERS, resolve_provider_api_key
 
 
@@ -573,6 +575,19 @@ def render_audit_page() -> None:
                     "llm_api_key_configured": bool(resolve_provider_api_key(provider_id, provider_api_key)),
                     **(work_type_context or {}),
                 }
+                try:
+                    resolved_key = resolve_provider_api_key(provider_id, provider_api_key)
+                    context["semantic_runtime"] = SemanticRuntime(
+                        build_structured_model(
+                            api_key=resolved_key,
+                            base_url=provider_base_url.strip(),
+                            model=provider_model.strip(),
+                        )
+                    )
+                    context["llm_api_key_configured"] = bool(resolved_key)
+                except (ImportError, RuntimeError, ValueError) as exc:
+                    context["semantic_runtime"] = None
+                    st.warning(f"语义 provider 暂不可用，语义任务将逐项降级：{exc}")
                 missing = [name for name, value in {
                     "项目或平台名称": context["project_name"], "作业目的": context["work_purpose"],
                     "审核确认人": reviewer_name.strip(),
@@ -586,6 +601,7 @@ def render_audit_page() -> None:
                 if missing:
                     st.error("请先填写：" + "、".join(missing))
                     return
+                semantic_runtime = context.pop("semantic_runtime", None)
                 store = MySQLAuditStore.from_env()
                 try:
                     healthy, health_message = store.schema_health()
@@ -593,7 +609,10 @@ def render_audit_page() -> None:
                         st.error(health_message)
                     else:
                         run_id = store.create_confirmed_run(parsed, preview.task_library, context, reviewer_name.strip())
-                        results = AuditOrchestrator().execute_preview(preview, context, run_id)
+                        execution_context = dict(context)
+                        if semantic_runtime is not None:
+                            execution_context["semantic_runtime"] = semantic_runtime
+                        results = AuditOrchestrator().execute_preview(preview, execution_context, run_id)
                         store.save_execution_results(run_id, results)
                         report = build_draft_report(preview, results)
                         report_id = store.save_draft_report(run_id, report, reviewer_name.strip())
