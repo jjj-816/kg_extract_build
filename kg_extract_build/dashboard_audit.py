@@ -24,6 +24,7 @@ from .audit.settings import AUDIT_CONVERSION_TIMEOUT, AUDIT_DOC_CONVERTER, AUDIT
 from .audit.bindings import build_task_bindings
 from .audit.task_library import load_published_task_library
 from .audit.word_converter import doc_conversion_capability
+from .run_config import PROVIDERS, resolve_provider_api_key
 
 
 WORK_TYPE_OPTIONS = ["动土作业", "动火作业", "吊装作业", "受限空间作业", "临时用电作业", "高处作业", "上位系统类作业"]
@@ -405,6 +406,37 @@ def render_audit_page() -> None:
     st.divider()
     st.subheader("新建审核运行")
 
+    configured_provider = os.getenv("LLM_PROVIDER", "zhipu").strip().lower()
+    provider_options = list(PROVIDERS)
+    if configured_provider not in provider_options:
+        configured_provider = provider_options[0]
+    provider_id = st.selectbox(
+        "审核 LLM provider",
+        provider_options,
+        index=provider_options.index(configured_provider),
+        format_func=lambda value: PROVIDERS[value].label,
+        key="audit_context_provider_id",
+    )
+    provider_preset = PROVIDERS[provider_id]
+    provider_base_url = st.text_input(
+        "审核 provider Base URL",
+        value=os.getenv("LLM_BASE_URL", "") or provider_preset.default_base_url,
+        key="audit_context_provider_base_url",
+    )
+    provider_model = st.text_input(
+        "审核模型",
+        value=os.getenv("LLM_MODEL", "glm-4.5-air"),
+        key="audit_context_provider_model",
+    )
+    provider_api_key = st.text_input(
+        "审核 API Key（仅本次运行覆盖）",
+        value="",
+        type="password",
+        key="audit_context_provider_api_key",
+    )
+    if resolve_provider_api_key(provider_id, provider_api_key):
+        st.caption("已检测到该 provider 的环境凭据；页面不显示密钥内容。")
+
     uploaded_file = st.file_uploader("上传施工方案 Word", type=["docx", "doc"], accept_multiple_files=False)
     if uploaded_file is None:
         st.info("一次只能上传一份施工方案。上传后将生成结构化证据块，不会调用 LLM、Milvus、Neo4j 或 JSA 服务。")
@@ -535,6 +567,10 @@ def render_audit_page() -> None:
                     "work_purpose": st.session_state.get("audit_context_work_purpose", "").strip(),
                     "declared_norms": declared_norms,
                     "supplemental_norms": supplemental_norms,
+                    "llm_provider": provider_id,
+                    "llm_base_url": provider_base_url.strip(),
+                    "llm_model": provider_model.strip(),
+                    "llm_api_key_configured": bool(resolve_provider_api_key(provider_id, provider_api_key)),
                     **(work_type_context or {}),
                 }
                 missing = [name for name, value in {

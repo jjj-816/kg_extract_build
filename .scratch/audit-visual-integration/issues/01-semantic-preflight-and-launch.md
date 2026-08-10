@@ -6,7 +6,7 @@
 
 **Status:** completed
 
-**Implementation:** Added visible normative scope inputs, dependency capability status, coverage warnings, and preserved the single primary launch action in `dashboard_audit.py`.
+**Implementation:** Added visible normative scope inputs, dependency capability status, coverage warnings, provider selection reused from `run_config.PROVIDERS` (defaulting to `.env` `LLM_PROVIDER`), and preserved the single primary launch action in `dashboard_audit.py`.
 
 - [ ] 预检沿用现有页面结构和原生控件，显示规范范围、版本/年份、发布状态、覆盖缺口及受影响任务。
 - [ ] 未覆盖或不可用状态以明确文本说明，不能渲染为通过或隐藏。

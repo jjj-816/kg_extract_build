@@ -24,6 +24,8 @@ class AuditDashboardTests(unittest.TestCase):
         self.assertEqual(list(app.exception), [])
         self.assertTrue(any(title.value == "施工方案审核" for title in app.title))
         self.assertTrue(any(item.label == "输入已创建的 run_id" for item in app.text_input))
+        self.assertTrue(any(item.label == "审核 LLM provider" for item in app.selectbox))
+        self.assertTrue(any(item.label == "审核 provider Base URL" for item in app.text_input))
 
     def test_audit_page_upload_regression_without_mysql(self):
         dashboard = Path(__file__).resolve().parents[1] / "dashboard.py"
