@@ -88,10 +88,17 @@ class NormativeMilvusStore:
         if not records:
             return
         self.ensure_collection(profile)
-        self._client().upsert(
-            collection_name=self.collection_name(profile),
+        client = self._client()
+        collection_name = self.collection_name(profile)
+        client.upsert(
+            collection_name=collection_name,
             data=records,
         )
+        # Milvus upsert can be eventually visible.  Do not report an index as
+        # ready before the just-written segments are made searchable.
+        flush = getattr(client, "flush", None)
+        if callable(flush):
+            flush(collection_name=collection_name)
 
     def search(self, profile, query_vector, index_ids, version_ids, limit=30):
         client = self._client()
