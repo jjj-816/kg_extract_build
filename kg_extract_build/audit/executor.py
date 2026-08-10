@@ -76,7 +76,15 @@ def _evidence(parsed, location: TaskLocationResult) -> tuple[dict[str, Any], ...
 def _missing_evidence_result(task: AuditTaskDefinition, location: TaskLocationResult) -> TaskExecutionResult:
     message = location.diagnostic or "未找到可供审核的任务证据"
     issue = AuditIssueResult(task.issue_categories[0], f"{task.name}无法核验：{message}", suggestion="请人工确认章节或补充原文。")
-    return TaskExecutionResult(task.task_id, task.route, "completed", "issue_found", (), (issue,), (message,))
+    return TaskExecutionResult(
+        task.task_id,
+        task.route,
+        "completed",
+        "issue_found",
+        (),
+        issues=(issue,),
+        diagnostics=(message,),
+    )
 
 
 def _missing_table_values(evidence, required: tuple[str, ...]) -> tuple[str, ...]:

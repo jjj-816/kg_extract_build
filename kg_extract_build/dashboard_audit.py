@@ -422,7 +422,11 @@ def render_audit_page() -> None:
     provider_preset = PROVIDERS[provider_id]
     provider_base_url = st.text_input(
         "审核 provider Base URL",
-        value=os.getenv("LLM_BASE_URL", "") or provider_preset.default_base_url,
+        value=(
+            os.getenv("LLM_BASE_URL", "")
+            if provider_id == "custom"
+            else provider_preset.default_base_url
+        ) or provider_preset.default_base_url,
         key="audit_context_provider_base_url",
     )
     provider_model = st.text_input(

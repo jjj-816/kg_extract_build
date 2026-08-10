@@ -47,7 +47,8 @@ def validate_output(value: Mapping[str, Any], package: EvidencePackage) -> dict[
     status = value.get("result_status")
     if status not in {"no_issue", "issue_found", "manual_review"}:
         raise StructuredOutputError("模型输出缺少合法 result_status")
-    if not isinstance(value.get("issues", []), list):
+    issues = value.get("issues", [])
+    if not isinstance(issues, list) or any(not isinstance(item, Mapping) for item in issues):
         raise StructuredOutputError("模型输出 issues 必须是列表")
     return dict(value)
 

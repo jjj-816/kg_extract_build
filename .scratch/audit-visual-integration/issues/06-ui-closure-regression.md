@@ -4,7 +4,7 @@
 
 **Blocked by:** 01–05。
 
-**Status:** in-progress
+**Status:** completed
 
 **Implementation:** 已增加本地 `env_agent` Streamlit `AppTest`：在无 MySQL 安全模式下真实上传 `.docx`，覆盖证据块预览、任务证据阅读器、审核上下文、规范范围输入和页面异常回归。provider-backed 语义执行、发布持久化、下载及版本更正仍需配置 MySQL schema 与外部能力的环境验收。
 
