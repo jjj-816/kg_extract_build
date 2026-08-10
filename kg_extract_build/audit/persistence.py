@@ -249,6 +249,20 @@ class MySQLAuditStore:
         }
         return report
 
+    def list_report_versions(self, run_id: str) -> list[dict]:
+        connection = self._connection()
+        with connection.cursor() as cursor:
+            cursor.execute(
+                """SELECT report_id,report_status,report_version,result_json,generated_by,created_at,docx_path
+                   FROM audit_report WHERE run_id=%s ORDER BY report_version""",
+                (run_id,),
+            )
+            rows = cursor.fetchall()
+        return [
+            {"report_id": row[0], "status": row[1], "version": row[2], "result_json": json.loads(row[3]), "generated_by": row[4], "created_at": row[5], "docx_path": row[6]}
+            for row in rows
+        ]
+
     def load_document_image_paths(self, run_id: str) -> dict[str, str]:
         """从运行关联文档的图片清单恢复可展示的本地图片路径。"""
         with self._connection().cursor() as cursor:

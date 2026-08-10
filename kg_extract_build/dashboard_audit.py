@@ -16,6 +16,8 @@ from .audit.evidence_reader import (
 )
 from .audit.persistence import MySQLAuditStore
 from .audit.reporting import RESULT_GROUPS, build_draft_report, build_stage2_result_export, stage2_result_groups
+from .audit.report_service import ReportPublishBlocked, ReportReauditRequired, append_review_action, create_correction_version, export_report_snapshot, freeze_report_snapshot
+from .audit.ui_state import execution_summary, pending_review_task_ids, split_evidence, version_summary
 from .audit.risk_catalog import RiskCatalogError, detect_work_codes, load_risk_catalog
 from .audit.preview import AuditPreview, create_audit_preview
 from .audit.settings import AUDIT_CONVERSION_TIMEOUT, AUDIT_DOC_CONVERTER, AUDIT_STORAGE_DIR, LIBREOFFICE_PATH
@@ -211,7 +213,25 @@ def _render_stage2_result_detail(item: dict, image_paths: dict[str, str]) -> Non
     if item["output_type"] == "advisories":
         st.info("JSA 提示仅用于辅助识别风险控制关注点，需结合方案原文和现场条件判断。")
     st.markdown("#### 任务证据")
-    _render_result_evidence(item.get("evidence", []), image_paths, prefer_images=item["output_type"] == "manual_reviews")
+    evidence = item.get("evidence", [])
+    evidence_groups = split_evidence(evidence)
+    document_evidence = evidence_groups["document"]
+    normative_evidence = evidence_groups["normative_clause"]
+    graph_evidence = evidence_groups["graph_clue"]
+    if document_evidence:
+        st.markdown("##### 文档证据")
+        _render_result_evidence(document_evidence, image_paths, prefer_images=item["output_type"] == "manual_reviews")
+    if normative_evidence:
+        st.markdown("##### 规范证据（支持合规结论）")
+        for entry in normative_evidence:
+            st.info(f"版本：{entry.get('version_id', '未知')}｜条款：{entry.get('clause_id', '未知')}｜发布版：{entry.get('release_id', '未知')}")
+            st.write(entry.get("text", ""))
+    if graph_evidence:
+        st.markdown("##### 图线索（仅工程合理性提示）")
+        for entry in graph_evidence:
+            st.warning(f"历史案例：{entry.get('source_document_id', '未知')}｜关系断言：{entry.get('assertion_id', '未知')}")
+            st.write(entry.get("evidence_sentence") or entry.get("summary", ""))
+        st.caption("图线索不能单独支持规范不符合结论。")
 
 
 def _render_stage2_result_area(report: dict, image_paths: dict[str, str], key_prefix: str) -> None:
@@ -221,6 +241,8 @@ def _render_stage2_result_area(report: dict, image_paths: dict[str, str], key_pr
     metrics = st.columns(5)
     for column, (key, label) in zip(metrics, RESULT_GROUPS):
         column.metric(label, len(groups[key]))
+    execution_counts = execution_summary(report)
+    st.caption("执行状态：" + "｜".join(f"{name} {count}" for name, count in execution_counts.items()))
     export = build_stage2_result_export(report)
     st.download_button(
         "下载阶段 2 审核结果 CSV", export.to_csv(index=False).encode("utf-8-sig"),
@@ -228,7 +250,7 @@ def _render_stage2_result_area(report: dict, image_paths: dict[str, str], key_pr
     )
     pending_count = sum(task.get("execution_status") == "pending" for task in report.get("tasks", []))
     if pending_count:
-        st.caption(f"另有 {pending_count} 项语义审核任务等待后续能力接入。")
+        st.warning(f"仍有 {pending_count} 项任务尚未执行，不能视为审核通过。")
 
     labels = dict(RESULT_GROUPS)
     report_key = report.get("report_metadata", {}).get("report_id", "current")
@@ -280,13 +302,92 @@ def _render_run_lookup() -> None:
             if report is None:
                 st.info("该运行尚未生成阶段 2 审核结果。")
             else:
+                versions = store.list_report_versions(run_id.strip())
+                st.markdown("#### 报告版本")
+                st.dataframe(pd.DataFrame(version_summary(versions)), use_container_width=True, hide_index=True)
                 _render_stage2_result_area(report, store.load_document_image_paths(run_id.strip()), "history")
+                metadata = report.get("report_metadata", {})
+                if metadata.get("status") == "published":
+                    with st.expander("创建人工更正版本"):
+                        correction_reason = st.text_area("更正原因", key="audit_history_correction_reason")
+                        correction_task = st.text_input("更正任务 ID", key="audit_history_correction_task")
+                        correction_status = st.selectbox("更正后的结论", ["no_issue", "issue_found", "manual_review"], key="audit_history_correction_status")
+                        if st.button("创建新报告版本", key="audit_history_create_correction"):
+                            try:
+                                corrected = create_correction_version(
+                                    report,
+                                    changes=[{"task_id": correction_task.strip(), "result_status": correction_status}],
+                                    reason=correction_reason.strip(),
+                                    source_snapshot=report.get("source_snapshot", {}),
+                                )
+                                corrected_id = store.save_draft_report(run_id.strip(), corrected, st.session_state.get("audit_context_reviewer", ""))
+                                st.success(f"已创建新报告版本，报告 ID：{corrected_id}")
+                            except ReportReauditRequired as exc:
+                                st.error(str(exc))
+                            except (ValueError, RuntimeError) as exc:
+                                st.error(f"无法创建更正版本：{exc}")
             with st.expander("查看运行调试信息"):
                 st.json(run)
     except Exception as exc:
         st.error(f"读取审核运行失败：{exc}")
     finally:
         store.close()
+
+
+def _render_human_review_and_publish(report: dict) -> None:
+    """Render append-only review actions and the formal-report gate."""
+    st.subheader("人工复核与正式发布")
+    pending_ids = pending_review_task_ids(report)
+    pending = [task for task in report.get("tasks", []) if task.get("task_id") in pending_ids]
+    if pending:
+        st.warning(f"尚有 {len(pending)} 项人工必办任务未处置；完成前不能发布正式报告。")
+    else:
+        st.success("人工必办项已全部处置，可以发布正式报告。")
+    reviewer = st.text_input("人工复核操作人", key="audit_review_reviewer")
+    for task in pending:
+        task_id = task.get("task_id", "")
+        st.markdown(f"##### {task_id} {task.get('task_name', '')}")
+        st.write("；".join(item.get("summary", "") for item in task.get("manual_reviews", [])))
+        explanation = st.text_area("处置说明", key=f"audit_review_reason_{task_id}")
+        action = st.selectbox("处置动作", ["confirm", "reject", "modify", "supplement"], key=f"audit_review_action_{task_id}")
+        if st.button("追加人工处置记录", key=f"audit_review_submit_{task_id}"):
+            if not reviewer.strip() or not explanation.strip():
+                st.error("请填写操作人和处置说明。")
+            else:
+                updated = append_review_action(report, task_id=task_id, action=action, reviewer=reviewer.strip(), explanation=explanation.strip())
+                if _mysql_enabled() and st.session_state.get("audit_run_id"):
+                    review_store = MySQLAuditStore.from_env()
+                    try:
+                        review_store.append_human_review(
+                            execution_id=None, issue_id=None, action_type=action,
+                            reviewer_name=reviewer.strip(), reason=explanation.strip(),
+                            before_value={"task_id": task_id, "status": "pending"},
+                            after_value={"task_id": task_id, "status": "resolved"},
+                        )
+                    finally:
+                        review_store.close()
+                st.session_state["audit_stage2_report"] = updated
+                st.success("人工处置已追加保存，机器原始结果未覆盖。")
+                st.rerun()
+    report = st.session_state.get("audit_stage2_report", report)
+    if not pending and st.button("发布正式报告", type="primary", key="audit_publish_report"):
+        try:
+            snapshot = freeze_report_snapshot(report, publisher=reviewer.strip())
+            output_dir = AUDIT_STORAGE_DIR / "reports"
+            json_path, docx_path = export_report_snapshot(snapshot, output_dir)
+            report_id = (report.get("report_metadata") or {}).get("report_id")
+            if _mysql_enabled() and report_id:
+                publish_store = MySQLAuditStore.from_env()
+                try:
+                    publish_store.publish_report(report_id, docx_path=str(docx_path))
+                finally:
+                    publish_store.close()
+            st.session_state["audit_published_snapshot"] = snapshot
+            st.success(f"报告已发布：{snapshot['publication']['publisher']}；快照 {snapshot['snapshot_sha256'][:16]}…")
+            st.download_button("下载正式 JSON", json_path.read_bytes(), file_name=json_path.name, key="audit_download_json")
+            st.download_button("下载正式 DOCX", docx_path.read_bytes(), file_name=docx_path.name, key="audit_download_docx")
+        except ReportPublishBlocked as exc:
+            st.error(str(exc))
 
 
 def render_audit_page() -> None:
@@ -410,6 +511,19 @@ def render_audit_page() -> None:
         st.number_input("审核基准年份", min_value=2000, max_value=2100, value=2025, step=1, key="audit_context_year")
         st.text_area("作业目的", key="audit_context_work_purpose")
         work_type_context = _render_work_type_confirmation(preview)
+        st.markdown("#### 规范审核范围预检")
+        st.text_input("方案声明规范（用逗号分隔）", key="audit_declared_norms", help="只将审核员确认的声明规范纳入本次运行范围。")
+        st.text_input("作业类型必备补充规范（用逗号分隔）", key="audit_supplemental_norms", help="补充规范必须由审核员明确登记，不能由模型自动扩展。")
+        declared_norms = [item.strip() for item in st.session_state.get("audit_declared_norms", "").split(",") if item.strip()]
+        supplemental_norms = [item.strip() for item in st.session_state.get("audit_supplemental_norms", "").split(",") if item.strip()]
+        if declared_norms or supplemental_norms:
+            st.info(f"本次范围：声明规范 {len(declared_norms)} 项，补充规范 {len(supplemental_norms)} 项。版本、索引发布状态和覆盖缺口将在启动前复核。")
+        else:
+            st.warning("尚未登记规范范围；语义合规任务将无法形成可用规范依据。")
+        capability_columns = st.columns(3)
+        capability_columns[0].metric("规范检索", "待注入" if not declared_norms else "待预检")
+        capability_columns[1].metric("图检索", "按需")
+        capability_columns[2].metric("结构化审核", "按运行配置")
         reviewer_name = st.text_input("审核确认人", key="audit_context_reviewer")
         if st.button("确认审核上下文并创建审核运行", type="primary"):
             if not _mysql_enabled():
@@ -419,6 +533,8 @@ def render_audit_page() -> None:
                     "project_name": st.session_state.get("audit_context_project_name", "").strip(),
                     "audit_year": st.session_state.get("audit_context_year"),
                     "work_purpose": st.session_state.get("audit_context_work_purpose", "").strip(),
+                    "declared_norms": declared_norms,
+                    "supplemental_norms": supplemental_norms,
                     **(work_type_context or {}),
                 }
                 missing = [name for name, value in {
@@ -467,3 +583,4 @@ def render_audit_page() -> None:
             st.session_state.get("audit_stage2_image_paths", {}),
             "current",
         )
+        _render_human_review_and_publish(st.session_state["audit_stage2_report"])
