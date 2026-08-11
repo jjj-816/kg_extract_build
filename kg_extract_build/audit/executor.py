@@ -583,6 +583,31 @@ class AuditOrchestrator:
                 result = compliance_runtime.run(task, _evidence(preview.parsed_document, location), scope_preflight=(audit_context or {}).get("scope_preflight"), run_id=run_id)
             elif task.route == "semantic_reasonableness" and reasonableness_runtime is not None:
                 graph_result = (audit_context or {}).get("graph_results", {}).get(task.task_id)
+                graph_adapter = (audit_context or {}).get("graph_adapter")
+                retrieval_planner = (audit_context or {}).get("retrieval_planner")
+                if graph_adapter is not None and retrieval_planner is not None:
+                    from .bounded_graph import retrieve_bounded_clues, GraphRetrievalResult
+                    planned = retrieval_planner.plan(task, _evidence(preview.parsed_document, location))
+                    clues = []
+                    diagnostics = list(planned.diagnostics)
+                    for query in planned.graph_queries:
+                        try:
+                            retrieved = retrieve_bounded_clues(
+                                graph_adapter,
+                                task_id=task.task_id,
+                                query=query,
+                                relationship_whitelist=(audit_context or {}).get("graph_relationship_types", ()),
+                                max_hops=2,
+                            )
+                            clues.extend(retrieved.clues)
+                            if retrieved.diagnostic:
+                                diagnostics.append(retrieved.diagnostic)
+                        except Exception as exc:
+                            diagnostics.append(f"图查询规划执行失败：{exc}")
+                    if clues:
+                        graph_result = GraphRetrievalResult(tuple(dict.fromkeys(clues)), False, "; ".join(diagnostics) or None)
+                    elif diagnostics:
+                        graph_result = GraphRetrievalResult((), False, "; ".join(diagnostics))
                 if graph_result is None:
                     from .bounded_graph import GraphRetrievalResult
                     graph_result = GraphRetrievalResult((), False, "未注入图检索结果")

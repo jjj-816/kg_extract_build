@@ -43,9 +43,17 @@ class TaskRetrievalPlanner:
         raw: Mapping[str, Any] = {}
         diagnostics: list[str] = []
         if self.model is not None:
-            raw = self.model(task, evidence, mode="retrieval_planning") or {}
-        normative = self._queries(raw.get("normative_queries", ()))
-        graph = self._queries(raw.get("graph_queries", ()))
+            try:
+                raw = self.model(task, evidence, mode="retrieval_planning") or {}
+            except Exception as exc:
+                diagnostics.append(f"检索规划模型失败：{exc}")
+                raw = {}
+        try:
+            normative = self._queries(raw.get("normative_queries", ()))
+            graph = self._queries(raw.get("graph_queries", ()))
+        except RetrievalPlanError as exc:
+            diagnostics.append(str(exc))
+            normative, graph = (), ()
         anchors = tuple(str(item) for item in raw.get("document_block_ids", block_ids) if str(item) in block_ids)
         if not anchors:
             anchors = block_ids

@@ -23,6 +23,8 @@ class ProductionAuditComposition:
     config_snapshot: Mapping[str, Any]
     scope_preflight: NormativeScopePreflight | None = None
     retrieval_planner: TaskRetrievalPlanner | None = None
+    graph_adapter: Any | None = None
+    graph_relationship_types: tuple[str, ...] = ()
 
     @classmethod
     def build(
@@ -36,6 +38,8 @@ class ProductionAuditComposition:
         config_snapshot: Mapping[str, Any],
         scope_preflight: NormativeScopePreflight | None = None,
         retrieval_planner: TaskRetrievalPlanner | None = None,
+        graph_adapter: Any | None = None,
+        graph_relationship_types: tuple[str, ...] = (),
     ) -> "ProductionAuditComposition":
         graph_results: dict[str, GraphRetrievalResult] = {}
         for task_id, config in graph_queries.items():
@@ -57,6 +61,8 @@ class ProductionAuditComposition:
             dict(config_snapshot),
             scope_preflight,
             retrieval_planner,
+            graph_adapter,
+            graph_relationship_types,
         )
 
     def as_audit_context(self) -> dict[str, Any]:
@@ -68,6 +74,8 @@ class ProductionAuditComposition:
             "production_config_snapshot": dict(self.config_snapshot),
             "scope_preflight": self.scope_preflight,
             "retrieval_planner": self.retrieval_planner,
+            "graph_adapter": self.graph_adapter,
+            "graph_relationship_types": self.graph_relationship_types,
         }
 
     @classmethod
@@ -111,4 +119,6 @@ class ProductionAuditComposition:
             config_snapshot={**dict(config_snapshot), "normative_release_id": release_id, "encoder_profile": profile.__dict__},
             scope_preflight=scope_preflight,
             retrieval_planner=TaskRetrievalPlanner(getattr(model, "retrieval_planner", None), prompt_version="retrieval-plan-v1"),
+            graph_adapter=graph,
+            graph_relationship_types=tuple(os.getenv("KG_AUDIT_GRAPH_RELATION_TYPES", "USES,REQUIRES,CONTROLS").split(",")),
         )
