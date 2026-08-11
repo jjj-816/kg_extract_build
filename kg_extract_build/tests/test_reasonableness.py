@@ -11,8 +11,23 @@ TASK = AuditTaskDefinition("R-1", 1, "s", "合理性", "content_semantic", "sema
 class ReasonablenessTests(unittest.TestCase):
     def test_graph_unavailable_degrades_to_manual_review(self):
         result = ReasonablenessRuntime().run(TASK, [{"block_id": "d1"}], GraphRetrievalResult((), True, "图服务不可用"), "run")
-        self.assertEqual(result.result_status, "manual_review")
+        self.assertEqual(result.execution_status, "failed")
+        self.assertIsNone(result.result_status)
         self.assertIn("图服务不可用", result.diagnostics[0])
+
+    def test_graph_mapping_failure_skips_model(self):
+        called = []
+
+        def model(*args, **kwargs):
+            called.append(True)
+            return {}
+
+        result = ReasonablenessRuntime(model).run(
+            TASK, (), GraphRetrievalResult((), True, "图字段映射失败"), "run"
+        )
+        self.assertEqual(result.execution_status, "failed")
+        self.assertIn("图字段映射失败", result.diagnostics[0])
+        self.assertEqual(called, [])
 
     def test_graph_clues_are_separate_and_second_search_runs_once(self):
         clue = GraphClue("c1", "R-1", "USES", 1, "a1", "doc-old", "历史句子", "提示")

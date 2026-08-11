@@ -37,7 +37,8 @@ class ProductionClosureTests(unittest.TestCase):
         self.assertEqual(failed.execution_status, "failed")
         graph_task = AuditTaskDefinition("R-1", 2, "s", "合理性", "content_semantic", "semantic_reasonableness", None, "document", (), (), (), (), (), "stage", "all")
         degraded = ReasonablenessRuntime().run(graph_task, [{"block_id": "d2"}], GraphRetrievalResult((), True, "图服务不可用"), "run-1")
-        self.assertEqual(degraded.result_status, "manual_review")
+        self.assertEqual(degraded.execution_status, "failed")
+        self.assertIsNone(degraded.result_status)
 
 
 if __name__ == "__main__":

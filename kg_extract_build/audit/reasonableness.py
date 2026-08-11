@@ -22,7 +22,12 @@ class ReasonablenessRuntime:
             "evidence_sentence": clue.evidence_sentence,
             "summary": clue.summary,
         } for clue in graph_result.clues)
-        if graph_result.degraded or not graph_result.clues:
+        if graph_result.degraded:
+            return TaskExecutionResult(
+                task.task_id, task.route, "failed", None, tuple(evidence),
+                diagnostics=(graph_result.diagnostic or "图检索服务或字段映射失败",),
+            )
+        if not graph_result.clues:
             review = AuditIssueResult("工程合理性风险", task.name + "缺少可用图线索，需专家复核", suggestion=graph_result.diagnostic or "未找到足够历史案例线索", machine_status="manual_review")
             return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", tuple(evidence), manual_reviews=(review,), diagnostics=(graph_result.diagnostic or "图线索不足",))
 
