@@ -47,6 +47,9 @@ def _task_from_record(record: dict) -> AuditTaskDefinition:
         issue_categories=tuple(str(value) for value in record.get("issue_categories", [])),
         completion_stage=str(record["completion_stage"]),
         work_type_scope=str(record["work_type_scope"]),
+        retrieval_instruction=str(record.get("retrieval_instruction") or (
+            f"依据任务 {record['task_id']} 的方案证据锚点召回适用规范条款和历史案例线索；不得直接生成审核结论。"
+        )),
     )
 
 

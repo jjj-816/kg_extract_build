@@ -25,7 +25,6 @@ from .audit.bindings import build_task_bindings
 from .audit.task_library import load_published_task_library
 from .audit.word_converter import doc_conversion_capability
 from .audit.provider_runtime import build_structured_model
-from .audit.semantic_runtime import SemanticRuntime
 from .audit.normative_scope import NormativeScope
 from .audit.production_composition import ProductionAuditComposition
 from .audit.normative_recognition import freeze_confirmed_candidates, recognize_declared_norms
@@ -638,8 +637,9 @@ def render_audit_page() -> None:
                         )
                         context.update(composition.as_audit_context())
                     except (ImportError, RuntimeError, ValueError) as exc:
-                        context["semantic_runtime"] = SemanticRuntime(semantic_model)
-                        st.warning(f"生产适配器暂不可用，语义任务将逐项降级：{exc}")
+                        context["semantic_runtime"] = None
+                        context["semantic_runtime_diagnostic"] = f"生产审核服务不可用：{exc}"
+                        st.warning(f"生产审核服务暂不可用，语义任务将记录为未执行：{exc}")
                     context["llm_api_key_configured"] = bool(resolved_key)
                 except (ImportError, RuntimeError, ValueError) as exc:
                     context["semantic_runtime"] = None

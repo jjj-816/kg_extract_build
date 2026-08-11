@@ -59,13 +59,13 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
         result.setdefault("package_id", package.package_id)
         return result
 
-    def retrieval_plan(task, evidence, *, mode="retrieval_planning"):
+    def retrieval_plan(task, evidence, *, mode="retrieval_planning", instruction=""):
         prompt = {
             "task_id": task.task_id,
             "task_name": task.name,
             "mode": mode,
             "evidence": [dict(item) for item in evidence],
-            "instruction": "仅返回 document_block_ids、normative_queries、graph_queries；查询词必须依据给定方案证据，不得返回审核结论或证据 ID。",
+            "instruction": instruction or "仅返回 document_block_ids、normative_queries、graph_queries；查询词必须依据给定方案证据，不得返回审核结论或证据 ID。",
         }
         response = client.chat.completions.create(
             model=model,

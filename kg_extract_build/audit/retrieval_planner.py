@@ -44,7 +44,10 @@ class TaskRetrievalPlanner:
         diagnostics: list[str] = []
         if self.model is not None:
             try:
-                raw = self.model(task, evidence, mode="retrieval_planning") or {}
+                try:
+                    raw = self.model(task, evidence, mode="retrieval_planning", instruction=getattr(task, "retrieval_instruction", "")) or {}
+                except TypeError:
+                    raw = self.model(task, evidence, mode="retrieval_planning") or {}
             except Exception as exc:
                 diagnostics.append(f"检索规划模型失败：{exc}")
                 raw = {}

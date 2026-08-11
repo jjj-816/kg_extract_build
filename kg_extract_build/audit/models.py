@@ -96,6 +96,7 @@ class AuditTaskDefinition:
     issue_categories: tuple[str, ...]
     completion_stage: str
     work_type_scope: str
+    retrieval_instruction: str = ""
 
 
 @dataclass(frozen=True)

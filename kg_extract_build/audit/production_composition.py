@@ -88,16 +88,23 @@ class ProductionAuditComposition:
         from ..persistence import MySQLExperimentStore
         from .. import settings
 
+        backend = MySQLExperimentStore.from_env()
+        store = NormativeStore(backend)
         release_id = (release_id or os.getenv("KG_AUDIT_NORMATIVE_RELEASE_ID", "")).strip()
         if not release_id:
-            raise ValueError("KG_AUDIT_NORMATIVE_RELEASE_ID must select a published release")
+            rows = store._read(
+                "SELECT release_id FROM kg_normative_index_release "
+                "WHERE status='published' ORDER BY created_at DESC LIMIT 1"
+            )
+            if rows:
+                release_id = str(rows[0].get("release_id") if isinstance(rows[0], dict) else rows[0][0])
+        if not release_id:
+            raise ValueError("no published normative release is available")
         profile = EncoderProfile(
             embedding_model_key="paraphrase-multilingual-MiniLM-L12-v2",
             embedding_model_revision=model_revision(settings.NORM_VECTOR_MODEL_PATH),
             embedding_dimension=384,
         )
-        backend = MySQLExperimentStore.from_env()
-        store = NormativeStore(backend)
         searcher = NormativeSearcher(
             store, NormativeMilvusStore.from_env(), NormativeEncoder(settings.NORM_VECTOR_MODEL_PATH, profile), profile,
         )
