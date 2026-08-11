@@ -60,7 +60,7 @@ class Neo4jReadOnlyGraph(ReadOnlyGraph):
             "OR toLower(coalesce(finish.name,'')) CONTAINS toLower($query_text)) "
             "WITH p, [n IN nodes(p) WHERE n:RelationAssertion] AS assertions "
             "UNWIND assertions AS a "
-            "WHERE a.relation_type IN $relationship_types "
+            "WITH assertions, a WHERE a.relation_type IN $relationship_types "
             "RETURN a.assertion_id AS clue_id, a.assertion_id AS assertion_id, "
             "a.relation_type AS relationship_type, "
             "CASE WHEN size(assertions) = 0 THEN 0 ELSE size(assertions) END AS hops, "

@@ -36,6 +36,9 @@ class LiveAuditDashboardTests(unittest.TestCase):
                 continue
             if "Base URL" in item.label:
                 continue
+            if "发布版 ID" in item.label:
+                item.set_value(os.environ["KG_AUDIT_NORMATIVE_RELEASE_ID"])
+                continue
             item.set_value("qwen3:0.6b")
         for item in app.text_area:
             item.set_value("验证审核页面生产链路")
@@ -50,6 +53,10 @@ class LiveAuditDashboardTests(unittest.TestCase):
         self.assertEqual(list(app.exception), [])
         messages = [item.value for item in (*app.error, *app.warning, *app.info, *app.success)]
         self.assertTrue(any("阶段 2" in value for value in messages), "\\n".join(messages))
+
+        report = app.session_state["audit_stage2_report"]
+        self.assertEqual(len(report["tasks"]), 44)
+        self.assertTrue(app.session_state["audit_run_id"])
 
 
 if __name__ == "__main__":

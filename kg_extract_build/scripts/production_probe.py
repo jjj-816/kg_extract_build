@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import urllib.request
+import json
 
 import kg_extract_build.audit.settings  # loads repository .env
 from kg_extract_build.audit.neo4j_readonly import Neo4jReadOnlyGraph
@@ -31,7 +32,13 @@ def main() -> int:
     except Exception as exc:
         print(f"neo4j_readonly_degraded={type(exc).__name__}:{exc}")
     try:
-        with urllib.request.urlopen("http://127.0.0.1:5001/audit_jsa", timeout=5) as response:
+        request = urllib.request.Request(
+            "http://127.0.0.1:5001/audit_jsa",
+            data=json.dumps({"run_id": "production-probe", "construction_steps": [], "jsa_rows": [], "similarity_threshold": 0.9}).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        with urllib.request.urlopen(request, timeout=5) as response:
             print(f"jsa_http_status={response.status}")
     except Exception as exc:
         print(f"jsa_probe_error={type(exc).__name__}:{exc}")
