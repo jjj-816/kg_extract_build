@@ -13,7 +13,9 @@ def main() -> int:
     store = MySQLExperimentStore.from_env()
     try:
         releases = store._read("SELECT release_id, status FROM kg_normative_index_release WHERE status='published'")
+        versions = store._read("SELECT version_id, family_id, status, metadata_confirmed FROM kg_normative_version")
         print(f"published_releases={releases}")
+        print(f"normative_versions={versions}")
     finally:
         store.close()
     try:
