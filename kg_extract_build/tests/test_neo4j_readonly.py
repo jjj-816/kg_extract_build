@@ -52,6 +52,8 @@ class Neo4jReadOnlyTests(unittest.TestCase):
         query, params = driver.session_instance.calls[0]
         self.assertIn("2..8", query)
         self.assertIn("__kg_aggregate", query)
+        self.assertIn("aliases", query)
+        self.assertIn("-(finish:Entity)", query)
         self.assertEqual(params["relationship_types"], ["USES"])
         self.assertNotRegex(query, r"\b(CREATE|MERGE|SET|DELETE)\b")
 

@@ -54,10 +54,12 @@ class Neo4jReadOnlyGraph(ReadOnlyGraph):
         # One assertion hop is four physical graph edges; two assertion hops are eight.
         max_edges = 4 * max_hops
         cypher = (
-            "MATCH p=(start:Entity)-[:HAS_ASSERTION|OBJECT*2.." + str(max_edges) + "]->(finish:Entity) "
+            "MATCH p=(start:Entity)-[:HAS_ASSERTION|OBJECT*2.." + str(max_edges) + "]-(finish:Entity) "
             "WHERE NOT any(r IN relationships(p) WHERE coalesce(r.__kg_aggregate,false)) "
             "AND (toLower(coalesce(start.name,'')) CONTAINS toLower($query_text) "
-            "OR toLower(coalesce(finish.name,'')) CONTAINS toLower($query_text)) "
+            "OR any(alias IN coalesce(start.aliases,[]) WHERE toLower(alias) CONTAINS toLower($query_text)) "
+            "OR toLower(coalesce(finish.name,'')) CONTAINS toLower($query_text) "
+            "OR any(alias IN coalesce(finish.aliases,[]) WHERE toLower(alias) CONTAINS toLower($query_text))) "
             "WITH p, [n IN nodes(p) WHERE n:RelationAssertion] AS assertions "
             "UNWIND assertions AS a "
             "WITH assertions, a WHERE a.relation_type IN $relationship_types "

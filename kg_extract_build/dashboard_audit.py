@@ -214,6 +214,10 @@ def _render_stage2_result_detail(item: dict, image_paths: dict[str, str]) -> Non
         st.write(f"**涉及范围**：{item['affected_scope']}")
     if item.get("suggestion"):
         st.write(f"**处理建议**：{item['suggestion']}")
+    if item.get("diagnostics"):
+        st.markdown("#### 执行诊断")
+        for diagnostic in item["diagnostics"]:
+            st.caption(str(diagnostic))
     if item.get("section"):
         st.write(f"**任务预期章节**：{item['section']}")
     if item["output_type"] == "advisories":

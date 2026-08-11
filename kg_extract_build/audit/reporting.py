@@ -28,6 +28,7 @@ def stage2_result_groups(report: dict) -> dict[str, list[dict]]:
             "expected": task.get("expected", []),
             "route": task.get("route"),
             "execution_status": task.get("execution_status"),
+            "diagnostics": task.get("diagnostics", []),
             "result_status": task.get("result_status"),
             "evidence": task.get("evidence", []),
         }
