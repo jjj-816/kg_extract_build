@@ -26,6 +26,8 @@ from .audit.task_library import load_published_task_library
 from .audit.word_converter import doc_conversion_capability
 from .audit.provider_runtime import build_structured_model
 from .audit.semantic_runtime import SemanticRuntime
+from .audit.normative_scope import NormativeScope
+from .audit.production_composition import ProductionAuditComposition
 from .run_config import PROVIDERS, resolve_provider_api_key
 
 
@@ -581,13 +583,46 @@ def render_audit_page() -> None:
                 }
                 try:
                     resolved_key = resolve_provider_api_key(provider_id, provider_api_key)
-                    context["semantic_runtime"] = SemanticRuntime(
-                        build_structured_model(
-                            api_key=resolved_key,
-                            base_url=provider_base_url.strip(),
-                            model=provider_model.strip(),
-                        )
+                    semantic_model = build_structured_model(
+                        api_key=resolved_key,
+                        base_url=provider_base_url.strip(),
+                        model=provider_model.strip(),
                     )
+                    try:
+                        scope = NormativeScope.freeze(
+                            int(context["audit_year"]),
+                            context["declared_norms"],
+                            context["supplemental_norms"],
+                            context.get("confirmed_work_types", ()),
+                        )
+                        relationship_types = tuple(
+                            item.strip() for item in os.getenv(
+                                "KG_AUDIT_GRAPH_RELATION_TYPES", "USES,REQUIRES,CONTROLS"
+                            ).split(",") if item.strip()
+                        )
+                        graph_queries = {
+                            task.task_id: {
+                                "query": task.name,
+                                "relationship_types": relationship_types,
+                                "max_hops": 2,
+                            }
+                            for task in preview.task_library.tasks
+                            if task.route == "semantic_reasonableness"
+                        }
+                        composition = ProductionAuditComposition.from_env(
+                            model=semantic_model,
+                            scope=scope,
+                            config_snapshot={
+                                "provider": provider_id,
+                                "model": provider_model.strip(),
+                                "prompt_version": "semantic-audit-v1",
+                            },
+                            graph_queries=graph_queries,
+                        )
+                        context.update(composition.as_audit_context())
+                    except (ImportError, RuntimeError, ValueError) as exc:
+                        context["semantic_runtime"] = SemanticRuntime(semantic_model)
+                        st.warning(f"生产适配器暂不可用，语义任务将逐项降级：{exc}")
                     context["llm_api_key_configured"] = bool(resolved_key)
                 except (ImportError, RuntimeError, ValueError) as exc:
                     context["semantic_runtime"] = None
