@@ -25,6 +25,7 @@ class ProviderPreset:
     default_base_url: str
     env_keys: tuple[str, ...]
     requires_api_key: bool = True
+    default_model: str = ""
 
 
 PROVIDERS: dict[str, ProviderPreset] = {
@@ -33,12 +34,14 @@ PROVIDERS: dict[str, ProviderPreset] = {
         label="智谱",
         default_base_url="https://open.bigmodel.cn/api/paas/v4/",
         env_keys=("ZAI_API_KEY", "LLM_API_KEY"),
+        default_model="glm-4.5-air",
     ),
     "deepseek": ProviderPreset(
         provider_id="deepseek",
         label="DeepSeek",
         default_base_url="https://api.deepseek.com",
         env_keys=("DEEPSEEK_API_KEY", "LLM_API_KEY"),
+        default_model="deepseek-chat",
     ),
     "ollama": ProviderPreset(
         provider_id="ollama",
@@ -46,30 +49,35 @@ PROVIDERS: dict[str, ProviderPreset] = {
         default_base_url="http://localhost:11434/v1/",
         env_keys=(),
         requires_api_key=False,
+        default_model="qwen3:0.6b",
     ),
     "qwen": ProviderPreset(
         provider_id="qwen",
         label="Qwen / 阿里云百炼",
         default_base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
         env_keys=("DASHSCOPE_API_KEY",),
+        default_model="qwen-plus",
     ),
     "modelscope": ProviderPreset(
         provider_id="modelscope",
         label="ModelScope / 魔搭",
         default_base_url="https://api-inference.modelscope.cn/v1",
         env_keys=("MODELSCOPE_API_TOKEN",),
+        default_model="Qwen/Qwen2.5-72B-Instruct",
     ),
     "huggingface": ProviderPreset(
         provider_id="huggingface",
         label="Hugging Face",
         default_base_url="https://router.huggingface.co/v1",
         env_keys=("HF_TOKEN",),
+        default_model="meta-llama/Llama-3.3-70B-Instruct",
     ),
     "custom": ProviderPreset(
         provider_id="custom",
         label="本地 / 自定义 OpenAI 兼容接口",
         default_base_url=os.environ.get("LLM_BASE_URL", ""),
         env_keys=("LLM_API_KEY",),
+        default_model=os.environ.get("LLM_MODEL", ""),
     ),
 }
 

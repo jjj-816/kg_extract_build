@@ -34,6 +34,16 @@ from .run_config import PROVIDERS, resolve_provider_api_key
 WORK_TYPE_OPTIONS = ["动土作业", "动火作业", "吊装作业", "受限空间作业", "临时用电作业", "高处作业", "上位系统类作业"]
 
 
+def _on_audit_provider_change() -> None:
+    """Refresh provider-owned fields when the provider selectbox changes."""
+    provider_id = st.session_state.get("audit_context_provider_id", "")
+    preset = PROVIDERS.get(provider_id)
+    if preset is None:
+        return
+    st.session_state["audit_context_provider_base_url"] = preset.default_base_url
+    st.session_state["audit_context_provider_model"] = preset.default_model or os.getenv("LLM_MODEL", "")
+
+
 def _load_preview(uploaded_file) -> tuple[AuditPreview | None, str | None]:
     data = uploaded_file.getvalue()
     upload_hash = hashlib.sha256(uploaded_file.name.encode("utf-8") + b"\0" + data).hexdigest()
@@ -424,6 +434,7 @@ def render_audit_page() -> None:
         index=provider_options.index(configured_provider),
         format_func=lambda value: PROVIDERS[value].label,
         key="audit_context_provider_id",
+        on_change=_on_audit_provider_change,
     )
     provider_preset = PROVIDERS[provider_id]
     provider_base_url = st.text_input(
@@ -437,7 +448,11 @@ def render_audit_page() -> None:
     )
     provider_model = st.text_input(
         "审核模型",
-        value=os.getenv("LLM_MODEL", "glm-4.5-air"),
+        value=(
+            os.getenv("LLM_MODEL", "")
+            if provider_id == configured_provider
+            else ""
+        ) or provider_preset.default_model or "glm-4.5-air",
         key="audit_context_provider_model",
     )
     provider_api_key = st.text_input(
@@ -557,18 +572,16 @@ def render_audit_page() -> None:
         work_type_context = _render_work_type_confirmation(preview)
         st.markdown("#### 规范审核范围预检")
         recognized_norms = recognize_declared_norms(parsed.blocks)
-        confirmed_norms = st.multiselect(
-            "自动识别的声明规范候选（请确认）",
-            [item.candidate_id for item in recognized_norms],
-            format_func=lambda candidate_id: next(item.value for item in recognized_norms if item.candidate_id == candidate_id),
-            key="audit_confirmed_norm_candidates",
-        )
+        recognized_values = [item.value for item in recognized_norms]
+        recognized_signature = tuple(item.candidate_id for item in recognized_norms)
+        if st.session_state.get("audit_declared_norm_signature") != recognized_signature:
+            st.session_state["audit_declared_norms"] = ", ".join(recognized_values)
+            st.session_state["audit_declared_norm_signature"] = recognized_signature
         if recognized_norms:
-            st.caption("候选均保留原文块位置；只有勾选确认的候选进入本次审核上下文。")
-        st.text_input("方案声明规范（用逗号分隔）", key="audit_declared_norms", help="只将审核员确认的声明规范纳入本次运行范围。")
+            st.caption("已将自动识别结果写入输入框；可直接编辑、删除或补充，来源位置会保留在审核上下文中。")
+        st.text_input("方案声明规范（用逗号分隔）", key="audit_declared_norms", help="系统会自动填入识别结果，审核员可编辑本次运行范围。")
         st.text_input("作业类型必备补充规范（用逗号分隔）", key="audit_supplemental_norms", help="补充规范必须由审核员明确登记，不能由模型自动扩展。")
         declared_norms = [item.strip() for item in st.session_state.get("audit_declared_norms", "").split(",") if item.strip()]
-        declared_norms.extend(item.value for item in recognized_norms if item.candidate_id in confirmed_norms)
         declared_norms = list(dict.fromkeys(declared_norms))
         supplemental_norms = [item.strip() for item in st.session_state.get("audit_supplemental_norms", "").split(",") if item.strip()]
         if declared_norms or supplemental_norms:
@@ -589,7 +602,9 @@ def render_audit_page() -> None:
                     "audit_year": st.session_state.get("audit_context_year"),
                     "work_purpose": st.session_state.get("audit_context_work_purpose", "").strip(),
                     "declared_norms": declared_norms,
-                    "declared_norm_candidates": freeze_confirmed_candidates(recognized_norms, confirmed_norms),
+                    "declared_norm_candidates": freeze_confirmed_candidates(
+                        recognized_norms, [item.candidate_id for item in recognized_norms if item.value in declared_norms]
+                    ),
                     "supplemental_norms": supplemental_norms,
                     "llm_provider": provider_id,
                     "llm_base_url": provider_base_url.strip(),
