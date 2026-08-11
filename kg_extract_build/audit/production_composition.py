@@ -66,7 +66,7 @@ class ProductionAuditComposition:
         }
 
     @classmethod
-    def from_env(cls, *, model, scope, config_snapshot, graph_queries):
+    def from_env(cls, *, model, scope, config_snapshot, graph_queries, release_id: str | None = None):
         """Build the production dependencies from the configured services."""
         from ..normative_encoder import EncoderProfile, NormativeEncoder, model_revision
         from ..normative_persistence import NormativeStore
@@ -75,7 +75,7 @@ class ProductionAuditComposition:
         from ..persistence import MySQLExperimentStore
         from .. import settings
 
-        release_id = os.getenv("KG_AUDIT_NORMATIVE_RELEASE_ID", "").strip()
+        release_id = (release_id or os.getenv("KG_AUDIT_NORMATIVE_RELEASE_ID", "")).strip()
         if not release_id:
             raise ValueError("KG_AUDIT_NORMATIVE_RELEASE_ID must select a published release")
         profile = EncoderProfile(

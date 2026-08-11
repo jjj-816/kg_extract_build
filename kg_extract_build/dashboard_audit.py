@@ -554,6 +554,12 @@ def render_audit_page() -> None:
         st.markdown("#### 规范审核范围预检")
         st.text_input("方案声明规范（用逗号分隔）", key="audit_declared_norms", help="只将审核员确认的声明规范纳入本次运行范围。")
         st.text_input("作业类型必备补充规范（用逗号分隔）", key="audit_supplemental_norms", help="补充规范必须由审核员明确登记，不能由模型自动扩展。")
+        normative_release_id = st.text_input(
+            "规范索引发布版 ID",
+            value=os.getenv("KG_AUDIT_NORMATIVE_RELEASE_ID", ""),
+            help="必须选择 MySQL 中 status=published 的规范索引发布版；该值会冻结到本次审核快照。",
+            key="audit_normative_release_id",
+        ).strip()
         declared_norms = [item.strip() for item in st.session_state.get("audit_declared_norms", "").split(",") if item.strip()]
         supplemental_norms = [item.strip() for item in st.session_state.get("audit_supplemental_norms", "").split(",") if item.strip()]
         if declared_norms or supplemental_norms:
@@ -575,6 +581,7 @@ def render_audit_page() -> None:
                     "work_purpose": st.session_state.get("audit_context_work_purpose", "").strip(),
                     "declared_norms": declared_norms,
                     "supplemental_norms": supplemental_norms,
+                    "normative_release_id": normative_release_id,
                     "llm_provider": provider_id,
                     "llm_base_url": provider_base_url.strip(),
                     "llm_model": provider_model.strip(),
@@ -618,6 +625,7 @@ def render_audit_page() -> None:
                                 "prompt_version": "semantic-audit-v1",
                             },
                             graph_queries=graph_queries,
+                            release_id=context["normative_release_id"],
                         )
                         context.update(composition.as_audit_context())
                     except (ImportError, RuntimeError, ValueError) as exc:
