@@ -28,6 +28,7 @@ from .audit.provider_runtime import build_structured_model
 from .audit.semantic_runtime import SemanticRuntime
 from .audit.normative_scope import NormativeScope
 from .audit.production_composition import ProductionAuditComposition
+from .audit.normative_recognition import freeze_confirmed_candidates, recognize_declared_norms
 from .run_config import PROVIDERS, resolve_provider_api_key
 
 
@@ -552,15 +553,20 @@ def render_audit_page() -> None:
         st.text_area("作业目的", key="audit_context_work_purpose")
         work_type_context = _render_work_type_confirmation(preview)
         st.markdown("#### 规范审核范围预检")
+        recognized_norms = recognize_declared_norms(parsed.blocks)
+        confirmed_norms = st.multiselect(
+            "自动识别的声明规范候选（请确认）",
+            [item.candidate_id for item in recognized_norms],
+            format_func=lambda candidate_id: next(item.value for item in recognized_norms if item.candidate_id == candidate_id),
+            key="audit_confirmed_norm_candidates",
+        )
+        if recognized_norms:
+            st.caption("候选均保留原文块位置；只有勾选确认的候选进入本次审核上下文。")
         st.text_input("方案声明规范（用逗号分隔）", key="audit_declared_norms", help="只将审核员确认的声明规范纳入本次运行范围。")
         st.text_input("作业类型必备补充规范（用逗号分隔）", key="audit_supplemental_norms", help="补充规范必须由审核员明确登记，不能由模型自动扩展。")
-        normative_release_id = st.text_input(
-            "规范索引发布版 ID",
-            value=os.getenv("KG_AUDIT_NORMATIVE_RELEASE_ID", ""),
-            help="必须选择 MySQL 中 status=published 的规范索引发布版；该值会冻结到本次审核快照。",
-            key="audit_normative_release_id",
-        ).strip()
         declared_norms = [item.strip() for item in st.session_state.get("audit_declared_norms", "").split(",") if item.strip()]
+        declared_norms.extend(item.value for item in recognized_norms if item.candidate_id in confirmed_norms)
+        declared_norms = list(dict.fromkeys(declared_norms))
         supplemental_norms = [item.strip() for item in st.session_state.get("audit_supplemental_norms", "").split(",") if item.strip()]
         if declared_norms or supplemental_norms:
             st.info(f"本次范围：声明规范 {len(declared_norms)} 项，补充规范 {len(supplemental_norms)} 项。版本、索引发布状态和覆盖缺口将在启动前复核。")
@@ -580,8 +586,8 @@ def render_audit_page() -> None:
                     "audit_year": st.session_state.get("audit_context_year"),
                     "work_purpose": st.session_state.get("audit_context_work_purpose", "").strip(),
                     "declared_norms": declared_norms,
+                    "declared_norm_candidates": freeze_confirmed_candidates(recognized_norms, confirmed_norms),
                     "supplemental_norms": supplemental_norms,
-                    "normative_release_id": normative_release_id,
                     "llm_provider": provider_id,
                     "llm_base_url": provider_base_url.strip(),
                     "llm_model": provider_model.strip(),
@@ -625,7 +631,6 @@ def render_audit_page() -> None:
                                 "prompt_version": "semantic-audit-v1",
                             },
                             graph_queries=graph_queries,
-                            release_id=context["normative_release_id"],
                         )
                         context.update(composition.as_audit_context())
                     except (ImportError, RuntimeError, ValueError) as exc:
@@ -639,8 +644,6 @@ def render_audit_page() -> None:
                     "项目或平台名称": context["project_name"], "作业目的": context["work_purpose"],
                     "审核确认人": reviewer_name.strip(),
                 }.items() if not value]
-                if not context["normative_release_id"]:
-                    missing.append("规范索引发布版 ID")
                 if work_type_context is None:
                     missing.append("风险作业目录")
                 elif not work_type_context["work_types_confirmed"]:

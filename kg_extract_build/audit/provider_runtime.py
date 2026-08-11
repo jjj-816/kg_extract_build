@@ -59,4 +59,25 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
         result.setdefault("package_id", package.package_id)
         return result
 
+    def retrieval_plan(task, evidence, *, mode="retrieval_planning"):
+        prompt = {
+            "task_id": task.task_id,
+            "task_name": task.name,
+            "mode": mode,
+            "evidence": [dict(item) for item in evidence],
+            "instruction": "仅返回 document_block_ids、normative_queries、graph_queries；查询词必须依据给定方案证据，不得返回审核结论或证据 ID。",
+        }
+        response = client.chat.completions.create(
+            model=model,
+            temperature=0,
+            response_format={"type": "json_object"},
+            messages=[
+                {"role": "system", "content": "你是受证据约束的检索规划器，只输出 JSON，不做审核结论。"},
+                {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
+            ],
+        )
+        return json.loads(response.choices[0].message.content or "{}")
+
+    call.retrieval_planner = retrieval_plan
+
     return call

@@ -11,6 +11,7 @@ from .compliance_runtime import ComplianceRuntime
 from .reasonableness import ReasonablenessRuntime
 from .normative_production import PublishedNormativeAdapter
 from .normative_scope import NormativeScopePreflight
+from .retrieval_planner import TaskRetrievalPlanner
 
 
 @dataclass(frozen=True)
@@ -21,6 +22,7 @@ class ProductionAuditComposition:
     normative_search: Callable[..., Mapping[str, Any]]
     config_snapshot: Mapping[str, Any]
     scope_preflight: NormativeScopePreflight | None = None
+    retrieval_planner: TaskRetrievalPlanner | None = None
 
     @classmethod
     def build(
@@ -33,6 +35,7 @@ class ProductionAuditComposition:
         graph_queries: Mapping[str, Mapping[str, Any]],
         config_snapshot: Mapping[str, Any],
         scope_preflight: NormativeScopePreflight | None = None,
+        retrieval_planner: TaskRetrievalPlanner | None = None,
     ) -> "ProductionAuditComposition":
         graph_results: dict[str, GraphRetrievalResult] = {}
         for task_id, config in graph_queries.items():
@@ -47,12 +50,13 @@ class ProductionAuditComposition:
                 max_hops=int(config.get("max_hops", 2)),
             )
         return cls(
-            ComplianceRuntime(normative_search, compliance_model),
+            ComplianceRuntime(normative_search, compliance_model, retrieval_planner),
             ReasonablenessRuntime(reasonableness_model),
             graph_results,
             normative_search,
             dict(config_snapshot),
             scope_preflight,
+            retrieval_planner,
         )
 
     def as_audit_context(self) -> dict[str, Any]:
@@ -63,6 +67,7 @@ class ProductionAuditComposition:
             "normative_search": self.normative_search,
             "production_config_snapshot": dict(self.config_snapshot),
             "scope_preflight": self.scope_preflight,
+            "retrieval_planner": self.retrieval_planner,
         }
 
     @classmethod
@@ -105,4 +110,5 @@ class ProductionAuditComposition:
             graph_queries=graph_queries,
             config_snapshot={**dict(config_snapshot), "normative_release_id": release_id, "encoder_profile": profile.__dict__},
             scope_preflight=scope_preflight,
+            retrieval_planner=TaskRetrievalPlanner(getattr(model, "retrieval_planner", None), prompt_version="retrieval-plan-v1"),
         )
