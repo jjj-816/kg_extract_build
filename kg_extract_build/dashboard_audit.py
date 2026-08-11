@@ -639,6 +639,8 @@ def render_audit_page() -> None:
                     "项目或平台名称": context["project_name"], "作业目的": context["work_purpose"],
                     "审核确认人": reviewer_name.strip(),
                 }.items() if not value]
+                if not context["normative_release_id"]:
+                    missing.append("规范索引发布版 ID")
                 if work_type_context is None:
                     missing.append("风险作业目录")
                 elif not work_type_context["work_types_confirmed"]:
