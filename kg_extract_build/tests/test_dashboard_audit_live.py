@@ -1,10 +1,14 @@
 import os
 import unittest
+import tempfile
 from io import BytesIO
 from pathlib import Path
 
 from docx import Document
 from streamlit.testing.v1 import AppTest
+from kg_extract_build.audit.persistence import MySQLAuditStore
+from kg_extract_build.audit.report_service import append_review_action, create_correction_version, export_report_snapshot, freeze_report_snapshot
+from kg_extract_build.audit.ui_state import pending_review_task_ids
 
 
 def _docx_bytes() -> bytes:
@@ -56,7 +60,33 @@ class LiveAuditDashboardTests(unittest.TestCase):
 
         report = app.session_state["audit_stage2_report"]
         self.assertEqual(len(report["tasks"]), 44)
-        self.assertTrue(app.session_state["audit_run_id"])
+        run_id = app.session_state["audit_run_id"]
+        self.assertTrue(run_id)
+        reviewed = report
+        for task_id in pending_review_task_ids(reviewed):
+            reviewed = append_review_action(
+                reviewed, task_id=task_id, action="confirm", reviewer="live-acceptance",
+                explanation="live production acceptance disposition",
+            )
+        snapshot = freeze_report_snapshot(reviewed, publisher="live-acceptance")
+        with tempfile.TemporaryDirectory() as output_dir:
+            json_path, docx_path = export_report_snapshot(snapshot, output_dir)
+            self.assertTrue(json_path.is_file())
+            self.assertTrue(docx_path.is_file())
+            report_id = report["report_metadata"]["report_id"]
+            store = MySQLAuditStore.from_env()
+            try:
+                store.publish_report(report_id, docx_path=str(docx_path))
+                corrected = create_correction_version(
+                    snapshot,
+                    changes=[{"task_id": snapshot["tasks"][0]["task_id"], "result_status": "manual_review"}],
+                    reason="live acceptance correction",
+                    source_snapshot=snapshot.get("source_snapshot", {}),
+                )
+                corrected_id = store.save_draft_report(run_id, corrected, "live-acceptance")
+                self.assertTrue(corrected_id)
+            finally:
+                store.close()
 
 
 if __name__ == "__main__":
