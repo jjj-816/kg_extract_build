@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from dataclasses import replace
 from typing import Any
 
 from ..normative import applicable_versions
@@ -23,7 +24,19 @@ class PublishedNormativeAdapter:
         self.store = store
         self.searcher = searcher
 
+    def _canonical_scope(self, scope: NormativeScope) -> NormativeScope:
+        resolver = getattr(self.store, "resolve_family_ids", None)
+        if resolver is None:
+            return scope
+        mapping = resolver((*scope.declared_families, *scope.supplemental_families))
+        family_ids = tuple(dict.fromkeys(
+            mapping.get(value, value)
+            for value in (*scope.declared_families, *scope.supplemental_families)
+        ))
+        return replace(scope, family_ids=family_ids)
+
     def preflight(self, scope: NormativeScope, release_id: str) -> NormativeScopePreflight:
+        scope = self._canonical_scope(scope)
         # Releases remain immutable build/replay snapshots.  Formal audit scope
         # comes from the explicitly enabled unified corpus instead.
         list_enabled = getattr(self.store, "list_audit_enabled_indexes", None)
@@ -43,6 +56,7 @@ class PublishedNormativeAdapter:
         return preflight_normative_scope(scope, by_family, index_by_version, conflicts)
 
     def search(self, *, query: str, audit_year: int, release_id: str, scope: NormativeScope, top_k: int = 5) -> dict[str, Any]:
+        scope = self._canonical_scope(scope)
         preflight = self.preflight(scope, release_id)
         if preflight.blocked:
             return {

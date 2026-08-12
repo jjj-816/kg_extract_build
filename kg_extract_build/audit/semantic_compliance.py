@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Any, Mapping, Protocol
+import re
+import unicodedata
 
 
 class NormativeEvidenceProvider(Protocol):
@@ -24,6 +26,9 @@ def select_published_clause_evidence(result: Mapping[str, Any], scope) -> tuple[
     if result.get("coverage") and any(item.get("coverage_status") != "covered" for item in result["coverage"]):
         return ()
     selected = []
+    declared = tuple(getattr(scope, "declared_families", ()) or ())
+    declared_keys = {_norm_normative_identity(value) for value in declared}
+    allowed_family_ids = {str(value) for value in (getattr(scope, "family_ids", ()) or ())}
     for item in result.get("evidence", ()):
         if item.get("source_type") != "spec" or not item.get("release_id"):
             continue
@@ -31,8 +36,28 @@ def select_published_clause_evidence(result: Mapping[str, Any], scope) -> tuple[
             continue
         if not item.get("text") or not item.get("version_id") or not item.get("clause_id"):
             continue
+        if declared_keys and not _matches_declared(item, declared_keys, allowed_family_ids):
+            continue
         selected.append(dict(item, evidence_type="normative_clause", applicability_status="candidate"))
     return tuple(selected)
+
+
+def _norm_normative_identity(value) -> str:
+    text = unicodedata.normalize("NFKC", str(value or "")).casefold()
+    return re.sub(r"[《》()（）\[\]{}\s·,，、:：;；/\\_-]+", "", text)
+
+
+def _matches_declared(item: Mapping[str, Any], declared_keys: set[str], allowed_family_ids: set[str]) -> bool:
+    if str(item.get("family_id", "")) in allowed_family_ids:
+        return True
+    values = (
+        item.get("family_name"), item.get("canonical_name"), item.get("display_name"),
+        item.get("standard_code_base"), item.get("standard_code"), item.get("family_id"),
+    )
+    if not any(value for value in values):
+        return True
+    keys = {_norm_normative_identity(value) for value in values if value}
+    return any(key in declared_keys or key and any(key in declared or declared in key for declared in declared_keys) for key in keys)
 
 
 def validate_compliance_conclusion(output: Mapping[str, Any], document_evidence_ids: set[str], normative_evidence: tuple[Mapping[str, Any], ...]) -> dict:

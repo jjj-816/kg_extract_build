@@ -38,7 +38,7 @@ class ComplianceRuntime:
         if not normative_evidence:
             record("compliance_model", "not_called", output_data={"reason": "no_applicable_normative_evidence"})
             review = AuditIssueResult("规范库覆盖缺口", f"{task.name}未获得可用规范条款", suggestion="不得将检索缺失解释为符合", machine_status="manual_review")
-            return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", document_evidence, manual_reviews=(review,), diagnostics=("规范检索未返回可用条款",), execution_trace=tuple(trace))
+            return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", document_evidence, manual_reviews=(review,), diagnostics=("规范检索未返回可用条款", *(tuple(plan.diagnostics) if plan else ())), execution_trace=tuple(trace))
         package = {"run_id": run_id, "task_id": task.task_id, "document_evidence": document_evidence, "normative_evidence": normative_evidence}
         try:
             record("compliance_model", "started", {"document_evidence_count": len(document_evidence), "normative_evidence_count": len(normative_evidence)})

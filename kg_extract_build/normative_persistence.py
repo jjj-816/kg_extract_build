@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import uuid
+import re
+import unicodedata
 from datetime import datetime, timezone
 
 from .normative import ClauseDraft, NormativeVersionCandidate, stable_hash, text_hash_int64
@@ -67,6 +69,26 @@ class NormativeStore:
         return self._backend._read(
             "SELECT * FROM kg_normative_version WHERE family_id=%s", (family_id,)
         )
+
+    def resolve_family_ids(self, values) -> dict[str, str]:
+        """Resolve UI declaration text to canonical family IDs."""
+        rows = self._backend._read(
+            "SELECT f.family_id, f.canonical_name, f.standard_code_base, "
+            "v.display_name, v.standard_code "
+            "FROM kg_normative_family f JOIN kg_normative_version v "
+            "ON v.family_id=f.family_id"
+        )
+        result = {}
+        for value in values:
+            key = _norm_identity(value)
+            matches = []
+            for row in rows:
+                fields = (row.get("canonical_name"), row.get("standard_code_base"), row.get("display_name"), row.get("standard_code"))
+                if key and any(key == _norm_identity(field) or key in _norm_identity(field) or _norm_identity(field) in key for field in fields if field):
+                    matches.append(row["family_id"])
+            if matches:
+                result[str(value)] = matches[0]
+        return result
 
     def version_candidates(self) -> list[NormativeVersionCandidate]:
         rows = self._backend._read("SELECT * FROM kg_normative_version")
@@ -253,3 +275,9 @@ class NormativeStore:
 def _json(value):
     import json
     return json.dumps(list(value or ()), ensure_ascii=False)
+
+
+def _norm_identity(value) -> str:
+    text = unicodedata.normalize("NFKC", str(value or "")).casefold()
+    text = re.sub(r"[《》()（）\[\]{}\s·,，、:：;；/\\_-]+", "", text)
+    return text
