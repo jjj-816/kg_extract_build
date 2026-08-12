@@ -597,7 +597,7 @@ class AuditOrchestrator:
                                 graph_adapter,
                                 task_id=task.task_id,
                                 query=query,
-                                relationship_whitelist=(audit_context or {}).get("graph_relationship_types", ()),
+                                relationship_whitelist=planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ()),
                                 max_hops=2,
                             )
                             clues.extend(retrieved.clues)

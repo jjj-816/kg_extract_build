@@ -42,15 +42,18 @@ class ProductionAuditComposition:
         graph_relationship_types: tuple[str, ...] = (),
     ) -> "ProductionAuditComposition":
         graph_results: dict[str, GraphRetrievalResult] = {}
+        allowed_relationships = set(graph_relationship_types)
         for task_id, config in graph_queries.items():
             if graph is None:
                 graph_results[task_id] = GraphRetrievalResult((), True, "图服务未配置，已降级为人工复核")
                 continue
+            requested = tuple(config.get("relationship_types", ()))
+            relationship_types = tuple(item for item in requested if not allowed_relationships or item in allowed_relationships)
             graph_results[task_id] = retrieve_bounded_clues(
                 graph,
                 task_id=task_id,
                 query=str(config.get("query", "")),
-                relationship_whitelist=tuple(config.get("relationship_types", ())),
+                relationship_whitelist=relationship_types,
                 max_hops=int(config.get("max_hops", 2)),
             )
         return cls(
@@ -87,6 +90,7 @@ class ProductionAuditComposition:
         from ..normative_vector_store import NormativeMilvusStore
         from ..persistence import MySQLExperimentStore
         from .. import settings
+        from ..schema import KGSchema
 
         backend = MySQLExperimentStore.from_env()
         store = NormativeStore(backend)
@@ -116,6 +120,8 @@ class ProductionAuditComposition:
         if os.getenv("KG_AUDIT_NEO4J_ENABLED", "1") == "1":
             from .neo4j_readonly import Neo4jReadOnlyGraph
             graph = Neo4jReadOnlyGraph.from_env()
+        schema = KGSchema(settings.SCHEMA_PATH)
+        schema_relationship_types = tuple(item["name"] for item in schema.relation_types)
         scope_preflight = adapter.preflight(scope, release_id)
         return cls.build(
             normative_search=lambda **kwargs: adapter.search(
@@ -130,5 +136,5 @@ class ProductionAuditComposition:
             scope_preflight=scope_preflight,
             retrieval_planner=TaskRetrievalPlanner(getattr(model, "retrieval_planner", None), prompt_version="retrieval-plan-v1"),
             graph_adapter=graph,
-            graph_relationship_types=tuple(os.getenv("KG_AUDIT_GRAPH_RELATION_TYPES", "USES,REQUIRES,CONTROLS").split(",")),
+            graph_relationship_types=schema_relationship_types,
         )

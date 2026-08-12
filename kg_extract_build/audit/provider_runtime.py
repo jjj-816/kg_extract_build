@@ -81,10 +81,6 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
             {"role": "system", "content": "受证据约束的检索规划器，只输出 JSON。"},
             {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
         ]
-        messages = [
-            {"role": "system", "content": "??????????????? JSON?"},
-            {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
-        ]
         response = client.chat.completions.create(
             model=model, temperature=0, response_format={"type": "json_object"}, messages=messages,
         )

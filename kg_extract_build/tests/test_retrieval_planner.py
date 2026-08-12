@@ -23,6 +23,19 @@ class RetrievalPlannerTests(unittest.TestCase):
         self.assertEqual(plan.normative_queries, ())
         self.assertTrue(plan.diagnostics)
 
+    def test_relationships_are_limited_to_schema(self):
+        planner = TaskRetrievalPlanner(
+            lambda task, evidence, mode: {
+                "document_block_ids": ["b1"],
+                "graph_queries": ["设备"],
+                "relationship_types": ["USES_EQUIPMENT", "NOT_IN_SCHEMA"],
+            },
+            allowed_relationships=("USES_EQUIPMENT", "HAS_PARAMETER"),
+        )
+        plan = planner.plan(SimpleNamespace(task_id="T2"), ({"block_id": "b1", "raw_text": "设备"},))
+        self.assertEqual(plan.relationship_types, ("USES_EQUIPMENT",))
+        self.assertIn("过滤", " ".join(plan.diagnostics))
+
 
 if __name__ == "__main__":
     unittest.main()

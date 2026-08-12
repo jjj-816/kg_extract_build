@@ -650,11 +650,9 @@ def render_audit_page() -> None:
                             context["supplemental_norms"],
                             context.get("confirmed_work_types", ()),
                         )
-                        relationship_types = tuple(
-                            item.strip() for item in os.getenv(
-                                "KG_AUDIT_GRAPH_RELATION_TYPES", "USES,REQUIRES,CONTROLS"
-                            ).split(",") if item.strip()
-                        )
+                        from .schema import KGSchema
+                        from . import settings
+                        relationship_types = tuple(item["name"] for item in KGSchema(settings.SCHEMA_PATH).relation_types)
                         graph_queries = {
                             task.task_id: {
                                 "query": task.name,
