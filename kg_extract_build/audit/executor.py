@@ -606,9 +606,9 @@ class AuditOrchestrator:
                         except Exception as exc:
                             diagnostics.append(f"图查询规划执行失败：{exc}")
                     if clues:
-                        graph_result = GraphRetrievalResult(tuple(dict.fromkeys(clues)), False, "; ".join(diagnostics) or None)
+                        graph_result = GraphRetrievalResult(tuple(dict.fromkeys(clues)), False, "; ".join(diagnostics) or None, tuple(planned.graph_queries), tuple(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())), len(clues))
                     elif diagnostics:
-                        graph_result = GraphRetrievalResult((), False, "; ".join(diagnostics))
+                        graph_result = GraphRetrievalResult((), False, "; ".join(diagnostics), tuple(planned.graph_queries), tuple(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())), 0)
                 if graph_result is None:
                     from .bounded_graph import GraphRetrievalResult
                     graph_result = GraphRetrievalResult((), False, "未注入图检索结果")

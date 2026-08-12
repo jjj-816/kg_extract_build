@@ -24,20 +24,20 @@ class ReasonablenessRuntime:
             "summary": clue.summary,
         } for clue in graph_result.clues)
         if graph_result.degraded:
-            trace.append({"step": 2, "stage": "graph_retrieval", "status": "failed", "input": {}, "output": {}, "error": graph_result.diagnostic})
+            trace.append({"step": 2, "stage": "graph_retrieval", "status": "failed", "input": {"queries": list(graph_result.queries), "relationship_types": list(graph_result.relationship_types)}, "output": {"raw_hit_count": graph_result.raw_hit_count}, "error": graph_result.diagnostic})
             return TaskExecutionResult(
                 task.task_id, task.route, "failed", None, tuple(evidence),
                 diagnostics=(graph_result.diagnostic or "图检索服务或字段映射失败",), execution_trace=tuple(trace + [{"step": 3, "stage": "reasonableness_model", "status": "not_called", "input": {}, "output": {"reason": "graph_failure"}, "error": None}]),
             )
         if not graph_result.clues:
-            trace.append({"step": 2, "stage": "graph_retrieval", "status": "no_evidence", "input": {}, "output": {"diagnostic": graph_result.diagnostic}, "error": None})
+            trace.append({"step": 2, "stage": "graph_retrieval", "status": "no_evidence", "input": {"queries": list(graph_result.queries), "relationship_types": list(graph_result.relationship_types)}, "output": {"raw_hit_count": graph_result.raw_hit_count, "accepted_clue_count": 0, "diagnostic": graph_result.diagnostic}, "error": None})
             review = AuditIssueResult("工程合理性风险", task.name + "缺少可用图线索，需专家复核", suggestion=graph_result.diagnostic or "未找到足够历史案例线索", machine_status="manual_review")
             return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", tuple(evidence), manual_reviews=(review,), diagnostics=(graph_result.diagnostic or "图线索不足",), execution_trace=tuple(trace + [{"step": 3, "stage": "reasonableness_model", "status": "not_called", "input": {}, "output": {"reason": "no_graph_evidence"}, "error": None}]))
 
         second_search = None
         output = {}
         if self.model:
-            trace.append({"step": 3, "stage": "reasonableness_model", "status": "started", "input": {"evidence_count": len(evidence), "graph_clue_count": len(graph_result.clues)}, "output": {}, "error": None})
+            trace.append({"step": 3, "stage": "reasonableness_model", "status": "started", "input": {"evidence_count": len(evidence), "graph_clue_count": len(graph_result.clues), "queries": list(graph_result.queries), "relationship_types": list(graph_result.relationship_types)}, "output": {}, "error": None})
             output = dict(self.model(task, tuple(evidence), graph_result, run_id=run_id))
             interaction = getattr(self.model, "last_interaction", None)
             if interaction:

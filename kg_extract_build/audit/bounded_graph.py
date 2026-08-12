@@ -31,6 +31,9 @@ class GraphRetrievalResult:
     clues: tuple[GraphClue, ...]
     degraded: bool = False
     diagnostic: str | None = None
+    queries: tuple[str, ...] = ()
+    relationship_types: tuple[str, ...] = ()
+    raw_hit_count: int = 0
 
 
 def retrieve_bounded_clues(graph: ReadOnlyGraph, *, task_id: str, query: str, relationship_whitelist: Iterable[str], max_hops: int = 2) -> GraphRetrievalResult:
@@ -38,7 +41,7 @@ def retrieve_bounded_clues(graph: ReadOnlyGraph, *, task_id: str, query: str, re
     if max_hops < 1 or max_hops > 2:
         raise ValueError("图检索路径上限必须为 1 或 2 跳")
     try:
-        rows = graph.query_clues(task_id=task_id, query=query, relationship_types=allowed, max_hops=max_hops)
+        rows = list(graph.query_clues(task_id=task_id, query=query, relationship_types=allowed, max_hops=max_hops))
         clues = []
         for row in rows:
             relationship = str(row.get("relationship_type", ""))
@@ -52,7 +55,7 @@ def retrieve_bounded_clues(graph: ReadOnlyGraph, *, task_id: str, query: str, re
                 continue
             clues.append(GraphClue(str(row["clue_id"]), task_id, relationship, hops, str(row["assertion_id"]), str(row["source_document_id"]), str(row["evidence_sentence"]), str(row.get("summary", ""))))
         if not clues:
-            return GraphRetrievalResult((), False, "未找到满足关系白名单和两跳限制的已确认历史案例线索")
-        return GraphRetrievalResult(tuple(clues))
+            return GraphRetrievalResult((), False, "未找到满足关系白名单和两跳限制的已确认历史案例线索", (), allowed, len(rows))
+        return GraphRetrievalResult(tuple(clues), False, None, (), allowed, len(clues))
     except Exception as exc:
         return GraphRetrievalResult((), True, f"图服务不可用，已降级为信息不足：{exc}")
