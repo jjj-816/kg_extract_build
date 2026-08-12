@@ -17,21 +17,35 @@ class ComplianceRuntime:
 
     def run(self, task, evidence, *, scope_preflight: NormativeScopePreflight, run_id: str) -> TaskExecutionResult:
         document_evidence = tuple(dict(item, evidence_type="document") for item in evidence)
+        trace = []
+        def record(stage, status, input_data=None, output_data=None, error=None):
+            trace.append({"step": len(trace) + 1, "stage": stage, "status": status, "input": input_data or {}, "output": output_data or {}, "error": error})
+        record("task_input", "started", {"task_id": task.task_id, "evidence_block_ids": [item.get("block_id") for item in evidence]})
         if scope_preflight.blocked:
+            record("applicability_preflight", "blocked", output_data={"reasons": list(scope_preflight.blocking_reasons)})
             review = AuditIssueResult("规范库覆盖缺口", f"{task.name}无法启动合规结论", suggestion="；".join(scope_preflight.blocking_reasons), machine_status="manual_review")
-            return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", document_evidence, manual_reviews=(review,), diagnostics=scope_preflight.blocking_reasons)
+            return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", document_evidence, manual_reviews=(review,), diagnostics=scope_preflight.blocking_reasons, execution_trace=tuple(trace))
         plan = self.planner.plan(task, tuple(evidence)) if self.planner is not None else None
+        if plan:
+            record("retrieval_planning", "completed" if not plan.diagnostics else "degraded", {"evidence_block_ids": list(getattr(plan, "document_block_ids", ()))}, {"normative_queries": list(plan.normative_queries), "graph_queries": list(getattr(plan, "graph_queries", ())), "diagnostics": list(plan.diagnostics)})
         query = "\n".join(plan.normative_queries) if plan and plan.normative_queries else "\n".join(item.get("raw_text", "") for item in evidence)
+        record("normative_retrieval", "started", {"query": query})
         search_result = self.normative_search(query=query, scope=scope_preflight.scope)
         normative_evidence = select_published_clause_evidence(search_result, scope_preflight.scope)
+        record("normative_retrieval", "completed" if normative_evidence else "no_evidence", {"query": query}, {"evidence_count": len(normative_evidence), "diagnostic": search_result.get("diagnostic")})
         if not normative_evidence:
+            record("compliance_model", "not_called", output_data={"reason": "no_applicable_normative_evidence"})
             review = AuditIssueResult("规范库覆盖缺口", f"{task.name}未获得可用规范条款", suggestion="不得将检索缺失解释为符合", machine_status="manual_review")
-            return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", document_evidence, manual_reviews=(review,), diagnostics=("规范检索未返回可用条款",))
+            return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", document_evidence, manual_reviews=(review,), diagnostics=("规范检索未返回可用条款",), execution_trace=tuple(trace))
         package = {"run_id": run_id, "task_id": task.task_id, "document_evidence": document_evidence, "normative_evidence": normative_evidence}
         try:
+            record("compliance_model", "started", {"document_evidence_count": len(document_evidence), "normative_evidence_count": len(normative_evidence)})
             output = validate_compliance_conclusion(self.model(task, package), {item["block_id"] for item in document_evidence}, normative_evidence)
+            record("compliance_model", "completed", output_data={"result_status": output.get("result_status"), "issue_count": len(output.get("issues", []))})
         except (ValueError, TypeError, KeyError) as exc:
-            return TaskExecutionResult(task.task_id, task.route, "failed", None, document_evidence + normative_evidence, diagnostics=(f"合规结论校验失败：{exc}",))
+            record("compliance_model", "failed", error=str(exc))
+            return TaskExecutionResult(task.task_id, task.route, "failed", None, document_evidence + normative_evidence, diagnostics=(f"合规结论校验失败：{exc}",), execution_trace=tuple(trace))
         issues = tuple(AuditIssueResult(**item) for item in output.get("issues", []))
         plan_diagnostics = tuple(plan.diagnostics) if plan else ()
-        return TaskExecutionResult(task.task_id, task.route, "completed", output["result_status"], document_evidence + normative_evidence, issues=issues, diagnostics=(f"normative_clause_count={len(normative_evidence)}", *plan_diagnostics))
+        record("task_result", "completed", output_data={"result_status": output["result_status"], "issue_count": len(issues)})
+        return TaskExecutionResult(task.task_id, task.route, "completed", output["result_status"], document_evidence + normative_evidence, issues=issues, diagnostics=(f"normative_clause_count={len(normative_evidence)}", *plan_diagnostics), execution_trace=tuple(trace))

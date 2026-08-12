@@ -14,6 +14,7 @@ class ReasonablenessRuntime:
 
     def run(self, task, evidence, graph_result: GraphRetrievalResult, run_id: str, normative_search=None):
         evidence = list(evidence)
+        trace = [{"step": 1, "stage": "task_input", "status": "started", "input": {"task_id": task.task_id, "evidence_block_ids": [item.get("block_id") for item in evidence]}, "output": {}, "error": None}]
         evidence.extend({
             "evidence_type": "graph_clue",
             "clue_id": clue.clue_id,
@@ -23,18 +24,22 @@ class ReasonablenessRuntime:
             "summary": clue.summary,
         } for clue in graph_result.clues)
         if graph_result.degraded:
+            trace.append({"step": 2, "stage": "graph_retrieval", "status": "failed", "input": {}, "output": {}, "error": graph_result.diagnostic})
             return TaskExecutionResult(
                 task.task_id, task.route, "failed", None, tuple(evidence),
-                diagnostics=(graph_result.diagnostic or "图检索服务或字段映射失败",),
+                diagnostics=(graph_result.diagnostic or "图检索服务或字段映射失败",), execution_trace=tuple(trace + [{"step": 3, "stage": "reasonableness_model", "status": "not_called", "input": {}, "output": {"reason": "graph_failure"}, "error": None}]),
             )
         if not graph_result.clues:
+            trace.append({"step": 2, "stage": "graph_retrieval", "status": "no_evidence", "input": {}, "output": {"diagnostic": graph_result.diagnostic}, "error": None})
             review = AuditIssueResult("工程合理性风险", task.name + "缺少可用图线索，需专家复核", suggestion=graph_result.diagnostic or "未找到足够历史案例线索", machine_status="manual_review")
-            return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", tuple(evidence), manual_reviews=(review,), diagnostics=(graph_result.diagnostic or "图线索不足",))
+            return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", tuple(evidence), manual_reviews=(review,), diagnostics=(graph_result.diagnostic or "图线索不足",), execution_trace=tuple(trace + [{"step": 3, "stage": "reasonableness_model", "status": "not_called", "input": {}, "output": {"reason": "no_graph_evidence"}, "error": None}]))
 
         second_search = None
         output = {}
         if self.model:
+            trace.append({"step": 3, "stage": "reasonableness_model", "status": "started", "input": {"evidence_count": len(evidence), "graph_clue_count": len(graph_result.clues)}, "output": {}, "error": None})
             output = dict(self.model(task, tuple(evidence), graph_result, run_id=run_id))
+            trace.append({"step": 4, "stage": "reasonableness_model", "status": "completed", "input": {}, "output": {"issue_count": len(output.get("issues", [])), "needs_normative_candidates": bool(output.get("needs_normative_candidates"))}, "error": None})
             if output.get("needs_normative_candidates") and normative_search is not None:
                 second_search = normative_search(query=output.get("normative_query", task.name), scope=output.get("normative_scope", {}))
                 output["normative_candidate_search"] = second_search
@@ -49,4 +54,5 @@ class ReasonablenessRuntime:
         diagnostics = [f"graph_clue_count={len(graph_result.clues)}"]
         if second_search is not None:
             diagnostics.append("规范候选二次检索=1")
-        return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", tuple(evidence), manual_reviews=tuple(issues), diagnostics=tuple(diagnostics))
+        trace.append({"step": len(trace) + 1, "stage": "task_result", "status": "completed", "input": {}, "output": {"result_status": "manual_review", "issue_count": len(issues)}, "error": None})
+        return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", tuple(evidence), manual_reviews=tuple(issues), diagnostics=tuple(diagnostics), execution_trace=tuple(trace))

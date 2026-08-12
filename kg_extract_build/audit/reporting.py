@@ -31,6 +31,7 @@ def stage2_result_groups(report: dict) -> dict[str, list[dict]]:
             "diagnostics": task.get("diagnostics", []),
             "result_status": task.get("result_status"),
             "evidence": task.get("evidence", []),
+            "execution_trace": task.get("execution_trace", []),
         }
         for key in ("issues", "manual_reviews", "offline_items", "advisories"):
             for item in task.get(key, []):
@@ -104,6 +105,7 @@ def build_draft_report(preview, results) -> dict:
             "offline_items": [issue.__dict__ for issue in result.offline_items],
             "advisories": [issue.__dict__ for issue in result.advisories],
             "evidence": list(result.evidence),
+            "execution_trace": list(result.execution_trace),
         })
     return {
         "report_type": "audit_draft_v1",
@@ -112,3 +114,13 @@ def build_draft_report(preview, results) -> dict:
         "summary": {"task_count": len(tasks), "status_counts": dict(status_counts)},
         "tasks": tasks,
     }
+
+
+def build_execution_trace_export(report: dict) -> pd.DataFrame:
+    rows = []
+    for task in report.get("tasks", []):
+        if task.get("route") not in {"semantic_compliance", "semantic_reasonableness"}:
+            continue
+        for entry in task.get("execution_trace", []):
+            rows.append({"task_id": task.get("task_id"), "task_name": task.get("task_name"), "route": task.get("route"), **entry})
+    return pd.DataFrame(rows, columns=["task_id", "task_name", "route", "step", "stage", "status", "input", "output", "error"])

@@ -53,6 +53,7 @@ class TaskExecutionResult:
     offline_items: tuple[AuditIssueResult, ...] = ()
     advisories: tuple[AuditIssueResult, ...] = ()
     diagnostics: tuple[str, ...] = ()
+    execution_trace: tuple[dict[str, Any], ...] = ()
 
 
 def _snapshot_block(block: AuditDocumentBlock) -> dict[str, Any]:

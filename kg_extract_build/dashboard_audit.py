@@ -15,7 +15,7 @@ from .audit.evidence_reader import (
     location_status_label, readable_source, resolve_group_blocks, safe_export_filename, table_rows, task_option_label,
 )
 from .audit.persistence import MySQLAuditStore
-from .audit.reporting import RESULT_GROUPS, build_draft_report, build_stage2_result_export, stage2_result_groups
+from .audit.reporting import RESULT_GROUPS, build_draft_report, build_execution_trace_export, build_stage2_result_export, stage2_result_groups
 from .audit.report_service import ReportPublishBlocked, ReportReauditRequired, append_review_action, create_correction_version, export_report_snapshot, freeze_report_snapshot
 from .audit.ui_state import execution_summary, pending_review_task_ids, split_evidence, version_summary
 from .audit.risk_catalog import RiskCatalogError, detect_work_codes, load_risk_catalog
@@ -227,6 +227,17 @@ def _render_stage2_result_detail(item: dict, image_paths: dict[str, str]) -> Non
         st.markdown("#### 执行诊断")
         for diagnostic in item["diagnostics"]:
             st.caption(str(diagnostic))
+    trace = item.get("execution_trace") or []
+    if trace:
+        st.markdown("#### 执行流水日志")
+        for entry in trace:
+            st.write(f"`{entry.get('step')}` **{entry.get('stage')}** · {entry.get('status')}")
+            if entry.get("input"):
+                st.caption(f"输入：{entry['input']}")
+            if entry.get("output"):
+                st.caption(f"输出：{entry['output']}")
+            if entry.get("error"):
+                st.error(str(entry["error"]))
     if item.get("section"):
         st.write(f"**任务预期章节**：{item['section']}")
     if item["output_type"] == "advisories":
@@ -267,6 +278,11 @@ def _render_stage2_result_area(report: dict, image_paths: dict[str, str], key_pr
         "下载阶段 2 审核结果 CSV", export.to_csv(index=False).encode("utf-8-sig"),
         file_name="阶段2审核结果.csv", mime="text/csv", key=f"audit_result_export_{key_prefix}_{report.get('report_metadata', {}).get('report_id', 'current')}",
     )
+    trace_export = build_execution_trace_export(report)
+    st.download_button("下载合规/合理性执行日志 CSV", trace_export.to_csv(index=False).encode("utf-8-sig"), file_name="合规合理性执行日志.csv", mime="text/csv", key=f"audit_trace_export_{key_prefix}")
+    import json
+    trace_json = json.dumps([task for task in report.get("tasks", []) if task.get("route") in {"semantic_compliance", "semantic_reasonableness"}], ensure_ascii=False, indent=2).encode("utf-8")
+    st.download_button("下载合规/合理性执行日志 JSON", trace_json, file_name="合规合理性执行日志.json", mime="application/json", key=f"audit_trace_json_export_{key_prefix}")
     pending_count = sum(task.get("execution_status") == "pending" for task in report.get("tasks", []))
     if pending_count:
         st.warning(f"仍有 {pending_count} 项任务尚未执行，不能视为审核通过。")
