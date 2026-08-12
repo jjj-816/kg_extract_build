@@ -163,7 +163,8 @@ def render_index_area(store, profile, encoder):
 
 
 def render_search_preview(searcher_class, searcher, releases):
-    st.subheader("③ 检索预览")
+    st.subheader("③ 发布快照检索预览（仅用于复现/调试）")
+    st.caption("正式施工方案审核不使用此处的发布版选择，而是自动使用已启用且索引就绪的统一规范库。")
     if not releases:
         st.info("暂无已发布的规范索引版本，请先在②创建发布版。")
         return
