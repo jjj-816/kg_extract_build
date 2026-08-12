@@ -45,18 +45,28 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
                 "不得补造规范或证据。"
             ),
         }
+        messages = [
+            {"role": "system", "content": "审计语义审核器，只输出最终 JSON。"},
+            {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
+        ]
+        messages = [
+            {"role": "system", "content": "????????????? JSON?"},
+            {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
+        ]
         response = client.chat.completions.create(
-            model=model,
-            temperature=0,
-            response_format={"type": "json_object"},
-            messages=[
-                {"role": "system", "content": "你是审计语义审核器。只输出最终 JSON 对象，不得复述输入。"},
-                {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
-            ],
+            model=model, temperature=0, response_format={"type": "json_object"}, messages=messages,
         )
         content = response.choices[0].message.content or "{}"
         result = json.loads(content)
         result.setdefault("package_id", package.package_id)
+        call.last_interaction = {
+            "kind": "audit_conclusion",
+            "model": model,
+            "prompt": prompt,
+            "messages": messages,
+            "raw_response": content,
+            "parsed_response": result,
+        }
         return result
 
     def retrieval_plan(task, evidence, *, mode="retrieval_planning", instruction=""):
@@ -67,16 +77,28 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
             "evidence": [dict(item) for item in evidence],
             "instruction": instruction or "仅返回 document_block_ids、normative_queries、graph_queries；查询词必须依据给定方案证据，不得返回审核结论或证据 ID。",
         }
+        messages = [
+            {"role": "system", "content": "受证据约束的检索规划器，只输出 JSON。"},
+            {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
+        ]
+        messages = [
+            {"role": "system", "content": "??????????????? JSON?"},
+            {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
+        ]
         response = client.chat.completions.create(
-            model=model,
-            temperature=0,
-            response_format={"type": "json_object"},
-            messages=[
-                {"role": "system", "content": "你是受证据约束的检索规划器，只输出 JSON，不做审核结论。"},
-                {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
-            ],
+            model=model, temperature=0, response_format={"type": "json_object"}, messages=messages,
         )
-        return json.loads(response.choices[0].message.content or "{}")
+        content = response.choices[0].message.content or "{}"
+        parsed = json.loads(content)
+        retrieval_plan.last_interaction = {
+            "kind": "retrieval_planning",
+            "model": model,
+            "prompt": prompt,
+            "messages": messages,
+            "raw_response": content,
+            "parsed_response": parsed,
+        }
+        return parsed
 
     call.retrieval_planner = retrieval_plan
 

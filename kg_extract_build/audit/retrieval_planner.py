@@ -63,6 +63,9 @@ class TaskRetrievalPlanner:
             diagnostics.append("模型未返回有效证据锚点，回退为全部方案证据")
         if not normative and not graph:
             diagnostics.append("未生成规范或图查询词")
+        interaction = getattr(self.model, "last_interaction", None)
+        if interaction:
+            diagnostics.append("retrieval_planner_io_captured")
         return RetrievalPlan(task.task_id, self.prompt_version, anchors, normative, graph, tuple(diagnostics))
 
     @staticmethod

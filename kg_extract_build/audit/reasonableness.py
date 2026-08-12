@@ -39,6 +39,9 @@ class ReasonablenessRuntime:
         if self.model:
             trace.append({"step": 3, "stage": "reasonableness_model", "status": "started", "input": {"evidence_count": len(evidence), "graph_clue_count": len(graph_result.clues)}, "output": {}, "error": None})
             output = dict(self.model(task, tuple(evidence), graph_result, run_id=run_id))
+            interaction = getattr(self.model, "last_interaction", None)
+            if interaction:
+                trace.append({"step": len(trace) + 1, "stage": "reasonableness_model_io", "status": "captured", "input": interaction.get("prompt", {}), "output": {"raw_response": interaction.get("raw_response"), "parsed_response": interaction.get("parsed_response")}, "error": None})
             trace.append({"step": 4, "stage": "reasonableness_model", "status": "completed", "input": {}, "output": {"issue_count": len(output.get("issues", [])), "needs_normative_candidates": bool(output.get("needs_normative_candidates"))}, "error": None})
             if output.get("needs_normative_candidates") and normative_search is not None:
                 second_search = normative_search(query=output.get("normative_query", task.name), scope=output.get("normative_scope", {}))

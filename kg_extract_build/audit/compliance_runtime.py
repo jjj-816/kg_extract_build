@@ -27,7 +27,9 @@ class ComplianceRuntime:
             return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", document_evidence, manual_reviews=(review,), diagnostics=scope_preflight.blocking_reasons, execution_trace=tuple(trace))
         plan = self.planner.plan(task, tuple(evidence)) if self.planner is not None else None
         if plan:
-            record("retrieval_planning", "completed" if not plan.diagnostics else "degraded", {"evidence_block_ids": list(getattr(plan, "document_block_ids", ()))}, {"normative_queries": list(plan.normative_queries), "graph_queries": list(getattr(plan, "graph_queries", ())), "diagnostics": list(plan.diagnostics)})
+            planner_model = getattr(self.planner, "model", None)
+            planner_io = getattr(planner_model, "last_interaction", None)
+            record("retrieval_planning", "completed" if not plan.diagnostics else "degraded", {"evidence_block_ids": list(getattr(plan, "document_block_ids", ()))}, {"normative_queries": list(plan.normative_queries), "graph_queries": list(getattr(plan, "graph_queries", ())), "diagnostics": list(plan.diagnostics), "llm_prompt": planner_io.get("prompt") if planner_io else None, "llm_raw_response": planner_io.get("raw_response") if planner_io else None, "llm_parsed_response": planner_io.get("parsed_response") if planner_io else None})
         query = "\n".join(plan.normative_queries) if plan and plan.normative_queries else "\n".join(item.get("raw_text", "") for item in evidence)
         record("normative_retrieval", "started", {"query": query})
         search_result = self.normative_search(query=query, scope=scope_preflight.scope)
@@ -40,7 +42,11 @@ class ComplianceRuntime:
         package = {"run_id": run_id, "task_id": task.task_id, "document_evidence": document_evidence, "normative_evidence": normative_evidence}
         try:
             record("compliance_model", "started", {"document_evidence_count": len(document_evidence), "normative_evidence_count": len(normative_evidence)})
-            output = validate_compliance_conclusion(self.model(task, package), {item["block_id"] for item in document_evidence}, normative_evidence)
+            raw_output = self.model(task, package)
+            interaction = getattr(self.model, "last_interaction", None)
+            if interaction:
+                record("compliance_model_io", "captured", output_data=interaction)
+            output = validate_compliance_conclusion(raw_output, {item["block_id"] for item in document_evidence}, normative_evidence)
             record("compliance_model", "completed", output_data={"result_status": output.get("result_status"), "issue_count": len(output.get("issues", []))})
         except (ValueError, TypeError, KeyError) as exc:
             record("compliance_model", "failed", error=str(exc))
