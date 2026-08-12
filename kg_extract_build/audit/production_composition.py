@@ -91,6 +91,17 @@ class ProductionAuditComposition:
         backend = MySQLExperimentStore.from_env()
         store = NormativeStore(backend)
         release_id = (release_id or os.getenv("KG_AUDIT_NORMATIVE_RELEASE_ID", "")).strip()
+        if release_id:
+            release_rows = store._read("SELECT release_id FROM kg_normative_index_release WHERE release_id=%s AND status='published'", (release_id,))
+            if not release_rows:
+                member_rows = store._read(
+                    "SELECT r.release_id FROM kg_normative_index_release r "
+                    "JOIN kg_normative_index_release_member m ON m.release_id=r.release_id "
+                    "WHERE m.index_id=%s AND r.status='published' ORDER BY r.created_at DESC LIMIT 1",
+                    (release_id,),
+                )
+                if member_rows:
+                    release_id = str(member_rows[0].get("release_id") if isinstance(member_rows[0], dict) else member_rows[0][0])
         if not release_id:
             rows = store._read(
                 "SELECT release_id FROM kg_normative_index_release "
