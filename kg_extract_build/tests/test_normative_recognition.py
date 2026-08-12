@@ -17,6 +17,16 @@ class NormativeRecognitionTests(unittest.TestCase):
             ["《页岩气地面工程设计规范》Q/SY1858-2015", "《石油天然气工程设计防火规范》GB50183-2004"],
         )
 
+    def test_pairs_parenthesized_code_on_same_line(self):
+        candidates = recognize_declared_norms([SimpleNamespace(
+            block_id="b1", source_locator="p1",
+            raw_text="《供配电系统设计规范》（GB50052-2009）\n《建筑物防雷设计规范》（GB50057-2010）",
+        )])
+        self.assertEqual(
+            [item.value for item in candidates],
+            ["《供配电系统设计规范》GB50052-2009", "《建筑物防雷设计规范》GB50057-2010"],
+        )
+
     def test_extracts_books_codes_and_reference_phrases_with_evidence(self):
         candidates = recognize_declared_norms([SimpleNamespace(block_id="b1", source_locator="p1", raw_text="依据《建筑施工安全检查标准》JGJ 59-2011，按照 GB/T 50430-2017 执行。")])
         self.assertGreaterEqual(len(candidates), 2)

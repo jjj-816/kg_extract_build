@@ -35,7 +35,7 @@ def recognize_declared_norms(blocks: Iterable[object]) -> tuple[NormativeCandida
         for book in _BOOK_PATTERN.finditer(text):
             value = book.group(0).strip()
             tail = text[book.end():book.end() + 24]
-            prefix = tail.lstrip(" \t:：,，")
+            prefix = tail.lstrip(" \t:：,，（(")
             code = _CODE_PATTERN.match(prefix)
             if code:
                 code_start = book.end() + len(tail) - len(prefix) + code.start()

@@ -571,7 +571,15 @@ def render_audit_page() -> None:
         st.text_area("作业目的", key="audit_context_work_purpose")
         work_type_context = _render_work_type_confirmation(preview)
         st.markdown("#### 规范审核范围预检")
-        recognized_norms = recognize_declared_norms(parsed.blocks)
+        basis_location = preview.locations.get("BASIS-002")
+        basis_block_ids: set[str] = set()
+        if basis_location is not None:
+            basis_block_ids.update(hit.block_id for hit in basis_location.hits)
+            for group in basis_location.evidence_groups:
+                basis_block_ids.add(group.anchor_block_id)
+                basis_block_ids.update(group.supporting_block_ids)
+        basis_blocks = tuple(block for block in parsed.blocks if block.block_id in basis_block_ids)
+        recognized_norms = recognize_declared_norms(basis_blocks)
         recognized_values = [item.value for item in recognized_norms]
         recognized_signature = tuple(item.candidate_id for item in recognized_norms)
         if st.session_state.get("audit_declared_norm_signature") != recognized_signature:
