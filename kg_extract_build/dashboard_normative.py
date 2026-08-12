@@ -124,6 +124,29 @@ def render_index_area(store, profile, encoder):
                             st.success("已启用，将进入后续正式审核。")
                             st.rerun()
                         st.error("版本必须为 effective 且元数据已确认后才能启用。")
+                st.divider()
+                st.warning("以下操作会清理规范资产，请先确认。")
+                confirm = st.checkbox("我确认执行规范索引清理", key=f"confirm_normative_delete_{selected_index['index_id']}")
+                if confirm and st.button("删除索引（保留版本和条款）", key=f"delete_normative_index_{selected_index['index_id']}"):
+                    try:
+                        build_normative_vector_store().delete_index(profile, selected_index["index_id"])
+                        store.delete_index_records(selected_index["index_id"])
+                        st.success("索引已删除，规范版本和条款已保留，可重新构建索引。")
+                        st.rerun()
+                    except Exception as exc:
+                        st.error(f"删除索引失败，已停止后续清理：{exc}")
+                if confirm and st.button("彻底删除规范版本", key=f"delete_normative_version_{version['version_id']}"):
+                    try:
+                        refs = store.historical_version_references(version["version_id"])
+                        if refs:
+                            st.error("该版本已被历史审核引用，只允许停用，禁止物理删除。")
+                        else:
+                            build_normative_vector_store().delete_index(profile, selected_index["index_id"])
+                            store.delete_version_records(version["version_id"])
+                            st.success("规范版本及其索引、条款已彻底删除。")
+                            st.rerun()
+                    except Exception as exc:
+                        st.error(f"彻底删除失败，系统保留可诊断状态：{exc}")
     if st.button("构建 / 重建索引"):
         indexer = NormativeIndexer(store, build_normative_vector_store(), encoder, profile)
         result = indexer.build_index(version["version_id"])

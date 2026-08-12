@@ -261,6 +261,48 @@ class NormativeStore:
             (int(bool(enabled)), index_id),
         )
 
+    def historical_version_references(self, version_id: str) -> list[dict]:
+        return self._backend._read(
+            "SELECT DISTINCT e.execution_id, e.run_id, c.clause_id, c.version_id "
+            "FROM audit_task_execution e "
+            "JOIN audit_retrieval_candidate c ON c.execution_id=e.execution_id "
+            "WHERE c.version_id=%s", (version_id,)
+        )
+
+    def delete_index_records(self, index_id: str) -> None:
+        self._backend._write(
+            "DELETE FROM kg_normative_index_release_member WHERE index_id=%s", (index_id,)
+        )
+        self._backend._write(
+            "DELETE FROM kg_normative_index_segment WHERE index_id=%s", (index_id,)
+        )
+        self._backend._write(
+            "DELETE FROM kg_normative_index WHERE index_id=%s", (index_id,)
+        )
+
+    def delete_version_records(self, version_id: str) -> None:
+        refs = self.historical_version_references(version_id)
+        if refs:
+            raise ValueError(f"规范版本 {version_id} 已被历史审核引用，禁止物理删除")
+        rows = self._backend._read(
+            "SELECT index_id, clause_set_id FROM kg_normative_index WHERE version_id=%s", (version_id,)
+        )
+        for row in rows:
+            self.delete_index_records(row["index_id"])
+        clause_sets = self._backend._read(
+            "SELECT clause_set_id FROM kg_normative_clause_set WHERE version_id=%s", (version_id,)
+        )
+        for row in clause_sets:
+            self._backend._write("DELETE FROM kg_normative_clause WHERE clause_set_id=%s", (row["clause_set_id"],))
+            self._backend._write("DELETE FROM kg_normative_clause_set WHERE clause_set_id=%s", (row["clause_set_id"],))
+        family_rows = self._backend._read("SELECT family_id FROM kg_normative_version WHERE version_id=%s", (version_id,))
+        self._backend._write("DELETE FROM kg_normative_version WHERE version_id=%s", (version_id,))
+        if family_rows:
+            family_id = family_rows[0]["family_id"]
+            remaining = self._backend._read("SELECT version_id FROM kg_normative_version WHERE family_id=%s", (family_id,))
+            if not remaining:
+                self._backend._write("DELETE FROM kg_normative_family WHERE family_id=%s", (family_id,))
+
     def asset_overview(self) -> list[dict]:
         return self._backend._read(
             "SELECT f.family_id, f.canonical_name, f.standard_code_base, "

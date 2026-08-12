@@ -130,6 +130,11 @@ class NormativeMilvusStore:
             )
         return hits
 
+    def delete_index(self, profile, index_id: str) -> None:
+        client = self._client()
+        name = self.collection_name(profile)
+        client.delete(collection_name=name, filter=f'index_id == "{index_id}"')
+
     def close(self):
         close = getattr(self.client, "close", None)
         if callable(close):
@@ -147,6 +152,9 @@ class NullNormativeVectorStore:
 
     def search(self, profile, query_vector, index_ids, version_ids, limit=30):
         return []
+
+    def delete_index(self, profile, index_id: str) -> None:
+        return None
 
     def close(self):
         return None
