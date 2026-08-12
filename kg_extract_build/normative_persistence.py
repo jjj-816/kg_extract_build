@@ -226,6 +226,19 @@ class NormativeStore:
             f"SELECT * FROM kg_normative_index WHERE index_id IN ({placeholders})", list(index_ids)
         )
 
+    def list_audit_enabled_indexes(self) -> list[dict]:
+        """Return the explicit unified-corpus membership, independent of releases."""
+        return self._backend._read(
+            "SELECT * FROM kg_normative_index "
+            "WHERE status='ready' AND enabled_for_audit=1"
+        )
+
+    def set_audit_enabled(self, index_id: str, enabled: bool) -> None:
+        self._backend._write(
+            "UPDATE kg_normative_index SET enabled_for_audit=%s WHERE index_id=%s",
+            (int(bool(enabled)), index_id),
+        )
+
     # ---- 生命周期 ----
     def has_normative_references(self, document_id: int) -> bool:
         for table in ("kg_normative_version", "kg_normative_clause_set", "kg_normative_clause"):

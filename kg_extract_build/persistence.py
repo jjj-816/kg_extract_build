@@ -599,6 +599,19 @@ class MySQLExperimentStore(BaseExperimentStore):
                         "ALTER TABLE kg_experiment_run ADD COLUMN deletion_state "
                         "VARCHAR(32) NOT NULL DEFAULT 'active'"
                     )
+                cursor.execute(
+                    """
+                    SELECT COUNT(*) FROM information_schema.columns
+                    WHERE table_schema=DATABASE()
+                      AND table_name='kg_normative_index'
+                      AND column_name='enabled_for_audit'
+                    """
+                )
+                if cursor.fetchone()[0] == 0:
+                    cursor.execute(
+                        "ALTER TABLE kg_normative_index ADD COLUMN enabled_for_audit "
+                        "TINYINT(1) NOT NULL DEFAULT 0"
+                    )
             connection.commit()
         except Exception:
             connection.rollback()

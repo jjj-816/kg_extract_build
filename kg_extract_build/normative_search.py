@@ -16,7 +16,7 @@ MAX_RAW_LIMIT = 300
 class SearchRequest:
     query: str
     audit_year: int
-    release_id: str
+    release_id: str | None
     norm_scope: dict
     top_k: int
 
@@ -29,13 +29,16 @@ class NormativeSearcher:
         self.profile = profile
 
     def search(self, request: SearchRequest) -> dict:
-        index_ids = self.store.release_member_index_ids(request.release_id)
-        if not index_ids:
+        list_enabled = getattr(self.store, "list_audit_enabled_indexes", None)
+        index_rows = list_enabled() if list_enabled else self.store.index_rows(
+            self.store.release_member_index_ids(request.release_id)
+        )
+        if not index_rows:
             return {
                 "coverage": [],
                 "evidence": [],
                 "retrieval_trace": {"raw_segment_limit": 0, "raw_segment_count": 0, "unique_clause_count": 0, "stop_reason": "release_empty"},
-                "warnings": [f"发布版 {request.release_id} 无成员索引"],
+                "warnings": ["统一规范库没有已启用且索引就绪的规范版本"],
             }
 
         scope = request.norm_scope or {}
@@ -45,7 +48,6 @@ class NormativeSearcher:
         candidates, conflicts = applicable_versions(
             versions, request.audit_year, allowed_families, allowed_versions,
         )
-        index_rows = self.store.index_rows(index_ids)
         index_by_version = {r["version_id"]: r for r in index_rows}
         version_index_map = {r["version_id"]: r["index_id"] for r in index_rows}
 
@@ -94,7 +96,7 @@ class NormativeSearcher:
             clause = self._fetch_clause(hit.get("clause_set_id"), hit.get("clause_id"))
             evidence.append(
                 {
-                    "release_id": request.release_id,
+                    "release_id": request.release_id or "enabled-corpus",
                     "index_id": hit.get("index_id"),
                     "family_id": hit.get("family_id"),
                     "version_id": hit.get("version_id"),

@@ -91,26 +91,16 @@ class ProductionAuditComposition:
         backend = MySQLExperimentStore.from_env()
         store = NormativeStore(backend)
         release_id = (release_id or os.getenv("KG_AUDIT_NORMATIVE_RELEASE_ID", "")).strip()
+        # A release is optional for daily audit. If supplied, retain it only as
+        # a replay/configuration reference; enabled corpus membership is used
+        # for coverage and search.
         if release_id:
-            release_rows = store._read("SELECT release_id FROM kg_normative_index_release WHERE release_id=%s AND status='published'", (release_id,))
-            if not release_rows:
-                member_rows = store._read(
-                    "SELECT r.release_id FROM kg_normative_index_release r "
-                    "JOIN kg_normative_index_release_member m ON m.release_id=r.release_id "
-                    "WHERE m.index_id=%s AND r.status='published' ORDER BY r.created_at DESC LIMIT 1",
-                    (release_id,),
-                )
-                if member_rows:
-                    release_id = str(member_rows[0].get("release_id") if isinstance(member_rows[0], dict) else member_rows[0][0])
-        if not release_id:
-            rows = store._read(
+            release_rows = store._read(
                 "SELECT release_id FROM kg_normative_index_release "
-                "WHERE status='published' ORDER BY created_at DESC LIMIT 1"
+                "WHERE release_id=%s AND status='published'", (release_id,)
             )
-            if rows:
-                release_id = str(rows[0].get("release_id") if isinstance(rows[0], dict) else rows[0][0])
-        if not release_id:
-            raise ValueError("no published normative release is available")
+            if not release_rows:
+                release_id = ""
         profile = EncoderProfile(
             embedding_model_key="paraphrase-multilingual-MiniLM-L12-v2",
             embedding_model_revision=model_revision(settings.NORM_VECTOR_MODEL_PATH),
@@ -120,6 +110,8 @@ class ProductionAuditComposition:
             store, NormativeMilvusStore.from_env(), NormativeEncoder(settings.NORM_VECTOR_MODEL_PATH, profile), profile,
         )
         adapter = PublishedNormativeAdapter(store, searcher)
+        if not store.list_audit_enabled_indexes():
+            raise ValueError("no enabled ready normative index is available")
         graph = None
         if os.getenv("KG_AUDIT_NEO4J_ENABLED", "1") == "1":
             from .neo4j_readonly import Neo4jReadOnlyGraph
@@ -134,7 +126,7 @@ class ProductionAuditComposition:
             reasonableness_model=model,
             graph=graph,
             graph_queries=graph_queries,
-            config_snapshot={**dict(config_snapshot), "normative_release_id": release_id, "encoder_profile": profile.__dict__},
+            config_snapshot={**dict(config_snapshot), "normative_release_id": release_id or None, "normative_corpus": "enabled_ready_indexes", "encoder_profile": profile.__dict__},
             scope_preflight=scope_preflight,
             retrieval_planner=TaskRetrievalPlanner(getattr(model, "retrieval_planner", None), prompt_version="retrieval-plan-v1"),
             graph_adapter=graph,

@@ -24,9 +24,16 @@ class PublishedNormativeAdapter:
         self.searcher = searcher
 
     def preflight(self, scope: NormativeScope, release_id: str) -> NormativeScopePreflight:
-        index_ids = self.store.release_member_index_ids(release_id)
-        index_rows = self.store.index_rows(index_ids)
-        index_by_version = {row["version_id"]: row for row in index_rows if row.get("status") == "ready"}
+        # Releases remain immutable build/replay snapshots.  Formal audit scope
+        # comes from the explicitly enabled unified corpus instead.
+        list_enabled = getattr(self.store, "list_audit_enabled_indexes", None)
+        index_rows = list_enabled() if list_enabled else self.store.index_rows(
+            self.store.release_member_index_ids(release_id)
+        )
+        index_by_version = {
+            row["version_id"]: row for row in index_rows
+            if row.get("status", "ready") == "ready" and row.get("enabled_for_audit", 1)
+        }
         versions = self.store.version_candidates()
         candidates, conflicts = applicable_versions(versions, scope.audit_year, scope.family_ids, ())
         by_family: dict[str, list] = {}
@@ -50,7 +57,7 @@ class PublishedNormativeAdapter:
             }, top_k))
         except Exception as exc:
             return {"coverage": [dict(item) for item in preflight.coverage], "evidence": [], "warnings": [f"规范检索服务不可用：{exc}"], "diagnostic": {"status": "unavailable", "message": str(exc)}}
-        valid = [item for item in result.get("evidence", []) if item.get("text") and item.get("version_id") and item.get("clause_id") and item.get("release_id") == release_id]
+        valid = [item for item in result.get("evidence", []) if item.get("text") and item.get("version_id") and item.get("clause_id") and (not release_id or item.get("release_id") in {release_id, "enabled-corpus"})]
         result["evidence"] = valid
         result["coverage"] = [dict(item) for item in preflight.coverage]
         return result
