@@ -261,6 +261,21 @@ class NormativeStore:
             (int(bool(enabled)), index_id),
         )
 
+    def asset_overview(self) -> list[dict]:
+        return self._backend._read(
+            "SELECT f.family_id, f.canonical_name, f.standard_code_base, "
+            "v.version_id, v.display_name, v.standard_code, v.version_year, "
+            "v.effective_year, v.invalid_year, v.status AS version_status, "
+            "v.metadata_confirmed, i.index_id, i.collection_name, i.status AS index_status, "
+            "i.enabled_for_audit, i.error_message, "
+            "(SELECT COUNT(*) FROM kg_normative_clause c WHERE c.clause_set_id=i.clause_set_id) AS clause_count, "
+            "(SELECT COUNT(*) FROM kg_normative_index_release_member m WHERE m.index_id=i.index_id) AS release_count "
+            "FROM kg_normative_family f "
+            "JOIN kg_normative_version v ON v.family_id=f.family_id "
+            "LEFT JOIN kg_normative_index i ON i.version_id=v.version_id "
+            "ORDER BY f.canonical_name, v.version_year DESC, i.created_at DESC"
+        )
+
     # ---- 生命周期 ----
     def has_normative_references(self, document_id: int) -> bool:
         for table in ("kg_normative_version", "kg_normative_clause_set", "kg_normative_clause"):

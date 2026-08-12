@@ -5,6 +5,7 @@ from __future__ import annotations
 import os
 
 import streamlit as st
+import pandas as pd
 
 from . import settings
 from .normative_encoder import EncoderProfile, NormativeEncoder, build_encoder_profile_hash, model_revision
@@ -79,6 +80,50 @@ def render_index_area(store, profile, encoder):
     options = {f"{v['display_name']}（{v['version_id']}）": v for v in versions}
     selected = st.selectbox("选择版本", list(options))
     version = options[selected]
+    st.caption("统一规范库资产状态")
+    overview = store.asset_overview()
+    if overview:
+        rows = []
+        for item in overview:
+            if item["version_id"] != version["version_id"]:
+                continue
+            if not item.get("index_id"):
+                state = "索引未就绪"
+            elif item.get("version_status") != "effective" or not item.get("metadata_confirmed"):
+                state = "元数据待确认"
+            elif item.get("index_status") != "ready":
+                state = "索引未就绪"
+            elif item.get("enabled_for_audit"):
+                state = "已启用"
+            else:
+                state = "索引就绪但未启用"
+            rows.append({**item, "asset_state": state})
+        if rows:
+            st.dataframe(pd.DataFrame(rows)[[
+                "canonical_name", "standard_code", "version_year", "effective_year",
+                "metadata_confirmed", "clause_count", "index_id", "collection_name",
+                "release_count", "asset_state",
+            ]], use_container_width=True, hide_index=True)
+            ready = [row for row in rows if row.get("index_status") == "ready"]
+            if ready:
+                selected_index = st.selectbox(
+                    "选择要启用/停用的索引",
+                    ready,
+                    format_func=lambda row: f"{row['display_name']} · {row['index_id']}",
+                    key=f"normative_enable_index_{version['version_id']}",
+                )
+                if selected_index.get("enabled_for_audit"):
+                    if st.button("停用统一规范库", key=f"disable_normative_{selected_index['index_id']}"):
+                        store.set_audit_enabled(selected_index["index_id"], False)
+                        st.success("已停用；规范资产和历史发布快照保留。")
+                        st.rerun()
+                else:
+                    if st.button("启用统一规范库", key=f"enable_normative_{selected_index['index_id']}"):
+                        if selected_index.get("version_status") == "effective" and selected_index.get("metadata_confirmed"):
+                            store.set_audit_enabled(selected_index["index_id"], True)
+                            st.success("已启用，将进入后续正式审核。")
+                            st.rerun()
+                        st.error("版本必须为 effective 且元数据已确认后才能启用。")
     if st.button("构建 / 重建索引"):
         indexer = NormativeIndexer(store, build_normative_vector_store(), encoder, profile)
         result = indexer.build_index(version["version_id"])
