@@ -67,7 +67,7 @@ class AuditExecutorTests(unittest.TestCase):
             "retrieval_planner": planner,
             "graph_adapter": graph,
             "confirmed_work_types": ("压裂作业",),
-            "execution_trace_recorder": lambda entry: events.append(("trace", entry["stage"])),
+            "execution_trace_recorder": lambda _task_id, entry: events.append(("trace", entry["stage"])),
         })[0]
 
         self.assertIn("压裂车", planner.evidence[1]["table_json"]["rows"][1])

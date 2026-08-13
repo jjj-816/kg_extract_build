@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import os
 import uuid
+import hashlib
 from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -279,6 +280,42 @@ class MySQLAuditStore:
             image["image_id"]: image["stored_path"]
             for image in images if image.get("image_id") and image.get("stored_path")
         }
+
+    def save_execution_trace_entry(self, run_id: str, task_id: str, entry: dict, *, provider_id: str, model_name: str) -> None:
+        """Append one durable semantic execution trace entry before external retrieval."""
+        connection, now = self._connection(), datetime.now(timezone.utc).replace(tzinfo=None)
+        payload = _json(entry)
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute(
+                    "SELECT execution_id FROM audit_task_execution WHERE run_id=%s AND task_id=%s",
+                    (run_id, task_id),
+                )
+                row = cursor.fetchone()
+                if row is None:
+                    raise ValueError("审核运行任务不存在")
+                cursor.execute(
+                    """INSERT INTO audit_llm_call
+                       (llm_call_id,run_id,execution_id,stage,provider_id,model_name,parameters_json,prompt_version,prompt_hash,request_payload,parsed_response,validation_errors_json,created_at)
+                       VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""",
+                    (
+                        str(uuid.uuid4()), run_id, row[0], str(entry.get("stage") or "execution_trace"),
+                        provider_id, model_name, _json({"status": entry.get("status")}),
+                        str((entry.get("input") or {}).get("prompt_version") or "execution-trace-v1"),
+                        hashlib.sha256(payload.encode("utf-8")).hexdigest(), payload,
+                        _json(entry.get("output") or {}), _json([entry["error"]] if entry.get("error") else []), now,
+                    ),
+                )
+            connection.commit()
+        except Exception:
+            connection.rollback()
+            raise
+
+    def execution_trace_recorder(self, run_id: str, *, provider_id: str, model_name: str):
+        """Return the production callback injected into semantic execution."""
+        return lambda task_id, entry: self.save_execution_trace_entry(
+            run_id, task_id, entry, provider_id=provider_id, model_name=model_name,
+        )
 
     def save_execution_results(self, run_id: str, results) -> None:
         """持久化阶段二机器原始结果；不覆盖人工复核记录。"""

@@ -44,3 +44,18 @@ The required command initially hit a Conda GBK encoding error while printing Chi
 ## Review follow-up
 
 The executor now assembles and emits the `retrieval_planning` trace before the first graph-adapter call. A focused order assertion verifies that this event precedes `graph_adapter.query_clues`, so the complete planning record survives an interruption during graph retrieval. Per-query graph metrics remain recorded in the completed task trace.
+
+## Production persistence follow-up
+
+- `MySQLAuditStore.execution_trace_recorder` creates a production callback that appends the pre-retrieval planning record to the existing `audit_llm_call` audit table, linked to the confirmed run and task execution.
+- The dashboard creates the confirmed run first, then injects this callback through `ProductionAuditComposition.as_audit_context` before calling `AuditOrchestrator.execute_preview`.
+- Callback persistence is synchronous; a persistence failure aborts before the graph adapter is invoked.
+- The production composition integration test proves the durable planning write occurs before `graph_adapter.query_clues`.
+
+Verification after this follow-up:
+
+```powershell
+$env:PYTHONPATH='.'; $env:PYTHONIOENCODING='utf-8'; conda run -n env_agent python -m pytest kg_extract_build/tests/test_production_composition.py kg_extract_build/tests/test_audit_executor.py kg_extract_build/tests/test_audit_persistence_contract.py kg_extract_build/tests/test_dashboard_audit.py -q
+```
+
+Result: `22 passed`.

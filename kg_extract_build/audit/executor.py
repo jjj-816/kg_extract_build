@@ -626,7 +626,7 @@ class AuditOrchestrator:
                     planning_trace = build_retrieval_planning_trace(planned, semantic_evidence, planner_interaction)
                     trace_recorder = (audit_context or {}).get("execution_trace_recorder")
                     if trace_recorder is not None:
-                        trace_recorder({"step": 2, **planning_trace})
+                        trace_recorder(task.task_id, {"step": 2, **planning_trace})
                     clues = []
                     diagnostics = list(planned.diagnostics)
                     raw_hit_count = 0
