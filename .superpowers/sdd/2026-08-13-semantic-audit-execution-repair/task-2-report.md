@@ -40,3 +40,7 @@ Result: `8 passed`.
 ## Note
 
 The required command initially hit a Conda GBK encoding error while printing Chinese pytest output. Setting `PYTHONIOENCODING=utf-8` retained the same `env_agent` command and produced the passing test result.
+
+## Review follow-up
+
+The executor now assembles and emits the `retrieval_planning` trace before the first graph-adapter call. A focused order assertion verifies that this event precedes `graph_adapter.query_clues`, so the complete planning record survives an interruption during graph retrieval. Per-query graph metrics remain recorded in the completed task trace.

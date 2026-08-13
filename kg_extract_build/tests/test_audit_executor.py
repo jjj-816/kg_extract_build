@@ -53,6 +53,7 @@ class AuditExecutorTests(unittest.TestCase):
         class Graph:
             def query_clues(self, **kwargs):
                 self.kwargs = kwargs
+                events.append(("graph_adapter", "query_clues"))
                 return [
                     {"relationship_type": "USES", "hops": 1, "confirmed_case": True, "clue_id": "c1", "assertion_id": "a1", "source_document_id": "old-doc", "evidence_sentence": "历史压裂车记录", "summary": "设备线索"},
                     {"relationship_type": "UNSAFE", "hops": 1, "confirmed_case": True, "clue_id": "c2", "assertion_id": "a2", "source_document_id": "old-doc", "evidence_sentence": "应被过滤", "summary": "无效"},
@@ -60,11 +61,13 @@ class AuditExecutorTests(unittest.TestCase):
 
         planner = Planner()
         graph = Graph()
+        events = []
         result = AuditOrchestrator().execute_preview(preview, {
             "reasonableness_runtime": ReasonablenessRuntime(),
             "retrieval_planner": planner,
             "graph_adapter": graph,
             "confirmed_work_types": ("压裂作业",),
+            "execution_trace_recorder": lambda entry: events.append(("trace", entry["stage"])),
         })[0]
 
         self.assertIn("压裂车", planner.evidence[1]["table_json"]["rows"][1])
@@ -76,6 +79,7 @@ class AuditExecutorTests(unittest.TestCase):
         self.assertEqual(graph_trace["output"]["accepted_clue_count"], 1)
         self.assertEqual(graph_trace["output"]["filter_reasons"], ["relationship_type 不在白名单"])
         self.assertEqual(graph.kwargs["query"], "压裂车")
+        self.assertEqual(events[:2], [("trace", "retrieval_planning"), ("graph_adapter", "query_clues")])
 
     def test_reasonableness_trace_marks_empty_graph_plan_as_degraded(self):
         task = SimpleNamespace(task_id="T1", route="semantic_reasonableness", name="task")

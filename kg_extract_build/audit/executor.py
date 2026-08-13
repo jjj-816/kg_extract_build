@@ -617,9 +617,16 @@ class AuditOrchestrator:
                 planned = None
                 semantic_evidence = _semantic_audit_input_unit(preview.parsed_document, location)
                 graph_query_trace = []
+                planning_trace = None
                 if retrieval_planner is not None:
                     from .bounded_graph import retrieve_bounded_clues, GraphRetrievalResult
+                    from .reasonableness import build_retrieval_planning_trace
                     planned = retrieval_planner.plan(task, semantic_evidence)
+                    planner_interaction = getattr(getattr(retrieval_planner, "model", None), "last_interaction", None)
+                    planning_trace = build_retrieval_planning_trace(planned, semantic_evidence, planner_interaction)
+                    trace_recorder = (audit_context or {}).get("execution_trace_recorder")
+                    if trace_recorder is not None:
+                        trace_recorder({"step": 2, **planning_trace})
                     clues = []
                     diagnostics = list(planned.diagnostics)
                     raw_hit_count = 0
@@ -669,7 +676,7 @@ class AuditOrchestrator:
                     from .bounded_graph import GraphRetrievalResult
                     graph_result = GraphRetrievalResult((), False, "未注入图检索结果")
                 planner_interaction = getattr(getattr(retrieval_planner, "model", None), "last_interaction", None) if retrieval_planner is not None else None
-                result = reasonableness_runtime.run(task, semantic_evidence, graph_result, run_id, (audit_context or {}).get("normative_search"), retrieval_plan=planned, planner_interaction=planner_interaction, graph_query_trace=tuple(graph_query_trace))
+                result = reasonableness_runtime.run(task, semantic_evidence, graph_result, run_id, (audit_context or {}).get("normative_search"), retrieval_plan=planned, planner_interaction=planner_interaction, graph_query_trace=tuple(graph_query_trace), planning_trace=planning_trace)
             elif task.route in {"semantic_compliance", "semantic_reasonableness"} and semantic_runtime is not None:
                 result = semantic_runtime.run(task, _semantic_audit_input_unit(preview.parsed_document, location), run_id)
             else:

@@ -8,16 +8,43 @@ from .bounded_graph import GraphRetrievalResult
 from .executor import AuditIssueResult, TaskExecutionResult
 
 
+def build_retrieval_planning_trace(retrieval_plan, evidence, planner_interaction=None) -> dict[str, Any]:
+    """Freeze the planning trace before any external graph operation starts."""
+    evidence_text = "\n".join(_evidence_text(item) for item in evidence if _evidence_text(item))
+    return {
+        "stage": "retrieval_planning",
+        "status": "completed" if not retrieval_plan.diagnostics else "degraded",
+        "input": {
+            "prompt_version": retrieval_plan.prompt_version,
+            "evidence_block_ids": list(retrieval_plan.document_block_ids),
+            "evidence_locators": [item.get("source_locator") for item in evidence],
+            "evidence_text": evidence_text,
+        },
+        "output": {
+            "normative_queries": list(retrieval_plan.normative_queries),
+            "graph_queries": list(retrieval_plan.graph_queries),
+            "relationship_types": list(retrieval_plan.relationship_types),
+            "diagnostics": list(retrieval_plan.diagnostics),
+            "llm_prompt": planner_interaction.get("prompt") if planner_interaction else None,
+            "llm_messages": planner_interaction.get("messages") if planner_interaction else None,
+            "llm_raw_response": planner_interaction.get("raw_response") if planner_interaction else None,
+            "llm_parsed_response": planner_interaction.get("parsed_response") if planner_interaction else None,
+            "correction_raw_response": planner_interaction.get("correction_raw_response") if planner_interaction else None,
+            "correction_parsed_response": planner_interaction.get("correction_parsed_response") if planner_interaction else None,
+        },
+        "error": None,
+    }
+
+
 class ReasonablenessRuntime:
     def __init__(self, model: Callable[..., Mapping[str, Any]] | None = None):
         self.model = model
 
-    def run(self, task, evidence, graph_result: GraphRetrievalResult, run_id: str, normative_search=None, retrieval_plan=None, planner_interaction=None, graph_query_trace=()):
+    def run(self, task, evidence, graph_result: GraphRetrievalResult, run_id: str, normative_search=None, retrieval_plan=None, planner_interaction=None, graph_query_trace=(), planning_trace=None):
         evidence = list(evidence)
         trace = [{"step": 1, "stage": "task_input", "status": "started", "input": {"task_id": task.task_id, "evidence_block_ids": [item.get("block_id") for item in evidence]}, "output": {}, "error": None}]
         if retrieval_plan is not None:
-            evidence_text = "\n".join(_evidence_text(item) for item in evidence if _evidence_text(item))
-            trace.append({"step": 2, "stage": "retrieval_planning", "status": "completed" if not retrieval_plan.diagnostics else "degraded", "input": {"prompt_version": retrieval_plan.prompt_version, "evidence_block_ids": list(retrieval_plan.document_block_ids), "evidence_locators": [item.get("source_locator") for item in evidence], "evidence_text": evidence_text}, "output": {"normative_queries": list(retrieval_plan.normative_queries), "graph_queries": list(retrieval_plan.graph_queries), "relationship_types": list(retrieval_plan.relationship_types), "diagnostics": list(retrieval_plan.diagnostics), "llm_prompt": planner_interaction.get("prompt") if planner_interaction else None, "llm_messages": planner_interaction.get("messages") if planner_interaction else None, "llm_raw_response": planner_interaction.get("raw_response") if planner_interaction else None, "llm_parsed_response": planner_interaction.get("parsed_response") if planner_interaction else None, "correction_raw_response": planner_interaction.get("correction_raw_response") if planner_interaction else None, "correction_parsed_response": planner_interaction.get("correction_parsed_response") if planner_interaction else None}, "error": None})
+            trace.append({"step": 2, **(planning_trace or build_retrieval_planning_trace(retrieval_plan, evidence, planner_interaction))})
         for query_trace in graph_query_trace:
             trace.append({"step": len(trace) + 1, "stage": "graph_retrieval", "status": query_trace["status"], "input": {"queries": [query_trace["query"]], "relationship_types": query_trace["relationship_types"]}, "output": {"raw_hit_count": query_trace["raw_hit_count"], "accepted_clue_count": query_trace["accepted_clue_count"], "filter_reasons": query_trace["filter_reasons"], "diagnostic": query_trace["diagnostic"]}, "error": query_trace["diagnostic"] if query_trace["status"] == "failed" else None})
         evidence.extend({
