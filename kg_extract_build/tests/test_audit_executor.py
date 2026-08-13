@@ -20,6 +20,76 @@ def _block(block_id: str, text: str, ordinal: int, images=()):
 
 
 class AuditExecutorTests(unittest.TestCase):
+    def test_reasonableness_plans_from_complete_table_input_unit_and_traces_graph_query(self):
+        """A semantic task must plan from the business table, not its heading alone."""
+        library = load_published_task_library()
+        task = library.task_by_id("APPD-004")
+        heading = AuditDocumentBlock(
+            "appd-heading", "doc", 1, "heading", ("附录D",), "word/body[1]/paragraph",
+            "附录D 设备装置评估表", normalize_for_match("附录D 设备装置评估表"),
+        )
+        table = AuditDocumentBlock(
+            "appd-table", "doc", 2, "table", ("附录D",), "word/body[2]/table[1]", "", "",
+            table_json={"rows": [["设备名称", "数量"], ["压裂车", "2"]]},
+        )
+        parsed = ParsedAuditDocument(
+            StoredAuditDocument("doc", "方案.docx", "docx", "a" * 64, None, ""),
+            (heading, table), 1, 1, 0, False,
+        )
+        group = TaskEvidenceGroup("g", "appd-heading", (), ("附录D",), (), 1, "test")
+        preview = SimpleNamespace(
+            parsed_document=parsed,
+            task_library=SimpleNamespace(tasks=(task,), task_library_id=library.task_library_id, version=library.version, sha256=library.sha256),
+            locations={task.task_id: TaskLocationResult(task.task_id, "located", evidence_groups=(group,))},
+        )
+
+        class Planner:
+            model = None
+
+            def plan(self, planned_task, evidence):
+                self.evidence = tuple(evidence)
+                return RetrievalPlan(planned_task.task_id, "test-v1", ("appd-heading", "appd-table"), (), ("压裂车",), ("USES",), ())
+
+        class Graph:
+            def query_clues(self, **kwargs):
+                self.kwargs = kwargs
+                return [
+                    {"relationship_type": "USES", "hops": 1, "confirmed_case": True, "clue_id": "c1", "assertion_id": "a1", "source_document_id": "old-doc", "evidence_sentence": "历史压裂车记录", "summary": "设备线索"},
+                    {"relationship_type": "UNSAFE", "hops": 1, "confirmed_case": True, "clue_id": "c2", "assertion_id": "a2", "source_document_id": "old-doc", "evidence_sentence": "应被过滤", "summary": "无效"},
+                ]
+
+        planner = Planner()
+        graph = Graph()
+        result = AuditOrchestrator().execute_preview(preview, {
+            "reasonableness_runtime": ReasonablenessRuntime(),
+            "retrieval_planner": planner,
+            "graph_adapter": graph,
+            "confirmed_work_types": ("压裂作业",),
+        })[0]
+
+        self.assertIn("压裂车", planner.evidence[1]["table_json"]["rows"][1])
+        planning = next(item for item in result.execution_trace if item["stage"] == "retrieval_planning")
+        self.assertIn("压裂车", planning["input"]["evidence_text"])
+        graph_trace = next(item for item in result.execution_trace if item["stage"] == "graph_retrieval")
+        self.assertEqual(graph_trace["input"]["queries"], ["压裂车"])
+        self.assertEqual(graph_trace["output"]["raw_hit_count"], 2)
+        self.assertEqual(graph_trace["output"]["accepted_clue_count"], 1)
+        self.assertEqual(graph_trace["output"]["filter_reasons"], ["relationship_type 不在白名单"])
+        self.assertEqual(graph.kwargs["query"], "压裂车")
+
+    def test_reasonableness_trace_marks_empty_graph_plan_as_degraded(self):
+        task = SimpleNamespace(task_id="T1", route="semantic_reasonableness", name="task")
+        plan = RetrievalPlan("T1", "v1", ("d1",), (), (), (), ("graph_queries 为空列表",))
+
+        result = ReasonablenessRuntime().run(
+            task, [{"block_id": "d1", "raw_text": "完整审核输入"}], GraphRetrievalResult((), False), "r",
+            retrieval_plan=plan,
+        )
+
+        planning = next(item for item in result.execution_trace if item["stage"] == "retrieval_planning")
+        self.assertEqual(planning["status"], "degraded")
+        self.assertIn("graph_queries 为空列表", planning["output"]["diagnostics"])
+
     def test_reasonableness_planning_trace_includes_correction_responses(self):
         task = SimpleNamespace(task_id="T1", route="semantic_reasonableness", name="task")
         plan = RetrievalPlan("T1", "v1", ("d1",), (), (), (), ())
