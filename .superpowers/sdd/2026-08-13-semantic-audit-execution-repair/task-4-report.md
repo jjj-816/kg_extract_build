@@ -6,19 +6,21 @@
 - A `mismatch` asset is visibly warned in the normative dashboard and excluded from version candidates and enabled unified-corpus indexes, so it cannot be used as a substitute-chain candidate or formal audit source.
 - Either a normalized name conflict or a standard-code conflict marks an asset `mismatch`; a matching standard code cannot mask a conflicting version name.
 - Mismatched assets remain selectable in management UI for a separately confirmed safe disable or the existing confirmed destructive delete. After delete confirmation, the flow checks historical audit references and clears every vector index attached to the selected version through the vector-store lifecycle API before persistence records are removed.
+- Safe-management operations use a separate selector that includes normal and mismatched indexes with explicit labels. The selected management index, not the first ready index, receives the confirmed disable/delete action.
 
 ## TDD evidence
 
 - Red: asset-overview and dashboard-warning tests failed before the implementation because `family_consistency` and the warning did not exist.
 - Red: enabled-index eligibility test failed before the implementation because a mismatched asset remained in the unified corpus.
 - Red: a matching code plus conflicting name incorrectly produced `match`; a mismatched asset did not render confirmed management controls.
-- Green: `conda run -n env_agent pytest kg_extract_build/tests/test_normative_persistence.py kg_extract_build/tests/test_dashboard_normative.py -q` → `12 passed`.
+- Red: when a normal index preceded a mismatch, confirmed management actions targeted the normal index instead of allowing selection of the mismatch.
+- Green: `conda run -n env_agent pytest kg_extract_build/tests/test_normative_persistence.py kg_extract_build/tests/test_dashboard_normative.py -q` → `13 passed`.
 
 ## Regression
 
 ```text
 conda run -n env_agent pytest kg_extract_build/tests -q
-360 passed, 1 skipped, 51 subtests passed in 5.04s
+361 passed, 1 skipped, 51 subtests passed in 5.11s
 ```
 
 ## Live-service acceptance — blocked without mutation

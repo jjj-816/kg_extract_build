@@ -51,7 +51,7 @@ class DashboardNormativeTests(unittest.TestCase):
         store = MagicMock()
         store.list_versions.return_value = [mismatched]
         store.asset_overview.return_value = [mismatched]
-        with patch.object(dn.st, "selectbox", return_value="有限空间作业安全规范 2020（version-confined-space）"), \
+        with patch.object(dn.st, "selectbox", side_effect=["有限空间作业安全规范 2020（version-confined-space）", mismatched]), \
              patch.object(dn.st, "caption"), patch.object(dn.st, "dataframe"), \
              patch.object(dn.st, "warning") as warning, patch.object(dn.st, "button", return_value=False):
             dn.render_index_area(store, MagicMock(), MagicMock())
@@ -95,3 +95,29 @@ class DashboardNormativeTests(unittest.TestCase):
         labels = [call.args[0] for call in checkbox.call_args_list]
         self.assertTrue(any("确认停用误挂资产" in label for label in labels))
         self.assertTrue(any("彻底删除该规范版本" in label for label in labels))
+
+    def test_management_selector_targets_mismatch_when_normal_index_also_exists(self):
+        normal = {
+            "family_id": "family-shale-gas", "canonical_name": "页岩气地面工程设计规范",
+            "standard_code_base": "Q/SY1858", "version_id": "version-shale-gas",
+            "display_name": "页岩气地面工程设计规范 2015", "standard_code": "Q/SY1858-2015",
+            "family_consistency": "match", "index_id": "index-normal", "version_year": 2015,
+            "effective_year": 2015, "version_status": "effective", "metadata_confirmed": True,
+            "index_status": "ready", "audit_disabled_at": None, "clause_count": 5,
+            "collection_name": "normative", "release_count": 0,
+        }
+        mismatched = {
+            **normal, "version_id": "version-confined-space", "display_name": "有限空间作业安全规范 2020",
+            "standard_code": "GB 30871-2022", "family_consistency": "mismatch", "index_id": "index-mismatch",
+        }
+        store = MagicMock()
+        store.list_versions.return_value = [normal]
+        store.asset_overview.return_value = [normal, mismatched]
+        normal_label = "页岩气地面工程设计规范 2015（version-shale-gas）"
+        with patch.object(dn.st, "selectbox", side_effect=[normal_label, normal, mismatched]), \
+             patch.object(dn.st, "caption"), patch.object(dn.st, "dataframe"), \
+             patch.object(dn.st, "warning"), patch.object(dn.st, "checkbox", return_value=True), \
+             patch.object(dn.st, "button", side_effect=[False, True, False, False, False, False]), patch.object(dn.st, "rerun"):
+            dn.render_index_area(store, MagicMock(), MagicMock())
+
+        store.set_audit_enabled.assert_called_once_with("index-mismatch", False)

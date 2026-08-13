@@ -130,7 +130,7 @@ def render_index_area(store, profile, encoder):
                 if row.get("index_status") == "ready"
                 and row.get("family_consistency") != "mismatch"
             ]
-            manageable = [row for row in rows if row.get("index_id")]
+            manageable = [row for row in overview if row.get("index_id")]
             if ready:
                 selected_index = st.selectbox(
                     "选择要启用/停用的索引",
@@ -151,9 +151,14 @@ def render_index_area(store, profile, encoder):
                             st.rerun()
                         st.error("版本必须为 effective 且元数据已确认后才能启用。")
             if manageable:
-                management_index = next(
-                    (row for row in manageable if row.get("index_id") == (ready[0].get("index_id") if ready else None)),
-                    manageable[0],
+                management_index = st.selectbox(
+                    "选择要安全处置的索引",
+                    manageable,
+                    format_func=lambda row: (
+                        f"{'⚠️ 误挂' if row.get('family_consistency') == 'mismatch' else '正常'} · "
+                        f"{row['display_name']} · {row['index_id']}"
+                    ),
+                    key=f"normative_manage_index_{version['version_id']}",
                 )
                 if management_index.get("family_consistency") == "mismatch" and not management_index.get("audit_disabled_at"):
                     confirm_disable_mismatch = st.checkbox(
@@ -187,7 +192,7 @@ def render_index_area(store, profile, encoder):
                 if confirm_version_delete and st.button("彻底删除规范版本", key=f"delete_normative_version_{version['version_id']}"):
                     try:
                         delete_normative_version(
-                            store, build_normative_vector_store(), profile, version["version_id"],
+                            store, build_normative_vector_store(), profile, management_index["version_id"],
                         )
                         st.success("规范版本及其索引、条款已彻底删除。")
                         st.rerun()
