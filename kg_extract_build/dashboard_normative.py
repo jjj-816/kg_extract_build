@@ -95,7 +95,7 @@ def render_index_area(store, profile, encoder):
                 state = "元数据待确认"
             elif item.get("index_status") != "ready":
                 state = "索引未就绪"
-            elif item.get("enabled_for_audit"):
+            elif not item.get("audit_disabled_at"):
                 state = "已启用"
             else:
                 state = "索引就绪但未启用"
@@ -114,7 +114,7 @@ def render_index_area(store, profile, encoder):
                     format_func=lambda row: f"{row['display_name']} · {row['index_id']}",
                     key=f"normative_enable_index_{version['version_id']}",
                 )
-                if selected_index.get("enabled_for_audit"):
+                if not selected_index.get("audit_disabled_at"):
                     if st.button("停用统一规范库", key=f"disable_normative_{selected_index['index_id']}"):
                         store.set_audit_enabled(selected_index["index_id"], False)
                         st.success("已停用；规范资产和历史发布快照保留。")

@@ -45,7 +45,7 @@ class PublishedNormativeAdapter:
         )
         index_by_version = {
             row["version_id"]: row for row in index_rows
-            if row.get("status", "ready") == "ready" and row.get("enabled_for_audit", 1)
+            if row.get("status", "ready") == "ready" and not row.get("audit_disabled_at")
         }
         versions = self.store.version_candidates()
         candidates, conflicts = applicable_versions(versions, scope.audit_year, scope.family_ids, ())

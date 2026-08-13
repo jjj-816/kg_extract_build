@@ -620,8 +620,25 @@ class MySQLExperimentStore(BaseExperimentStore):
                 if cursor.fetchone()[0] == 0:
                     cursor.execute(
                         "ALTER TABLE kg_normative_index ADD COLUMN enabled_for_audit "
-                        "TINYINT(1) NOT NULL DEFAULT 0"
+                        "TINYINT(1) NOT NULL DEFAULT 1"
                     )
+                cursor.execute(
+                    """
+                    SELECT COUNT(*) FROM information_schema.columns
+                    WHERE table_schema=DATABASE()
+                      AND table_name='kg_normative_index'
+                      AND column_name='audit_disabled_at'
+                    """
+                )
+                if cursor.fetchone()[0] == 0:
+                    cursor.execute(
+                        "ALTER TABLE kg_normative_index ADD COLUMN audit_disabled_at "
+                        "DATETIME(6) NULL AFTER enabled_for_audit"
+                    )
+                cursor.execute(
+                    "ALTER TABLE kg_normative_index "
+                    "ALTER COLUMN enabled_for_audit SET DEFAULT 1"
+                )
             connection.commit()
         except Exception:
             connection.rollback()

@@ -249,16 +249,16 @@ class NormativeStore:
         )
 
     def list_audit_enabled_indexes(self) -> list[dict]:
-        """Return the explicit unified-corpus membership, independent of releases."""
+        """Return eligible indexes except those explicitly stopped by an administrator."""
         return self._backend._read(
             "SELECT * FROM kg_normative_index "
-            "WHERE status='ready' AND enabled_for_audit=1"
+            "WHERE status='ready' AND audit_disabled_at IS NULL"
         )
 
     def set_audit_enabled(self, index_id: str, enabled: bool) -> None:
         self._backend._write(
-            "UPDATE kg_normative_index SET enabled_for_audit=%s WHERE index_id=%s",
-            (int(bool(enabled)), index_id),
+            "UPDATE kg_normative_index SET enabled_for_audit=%s, audit_disabled_at=%s WHERE index_id=%s",
+            (int(bool(enabled)), None if enabled else _utc_now(), index_id),
         )
 
     def historical_version_references(self, version_id: str) -> list[dict]:
@@ -309,7 +309,7 @@ class NormativeStore:
             "v.version_id, v.display_name, v.standard_code, v.version_year, "
             "v.effective_year, v.invalid_year, v.status AS version_status, "
             "v.metadata_confirmed, i.index_id, i.collection_name, i.status AS index_status, "
-            "i.enabled_for_audit, i.error_message, "
+            "i.enabled_for_audit, i.audit_disabled_at, i.error_message, "
             "(SELECT COUNT(*) FROM kg_normative_clause c WHERE c.clause_set_id=i.clause_set_id) AS clause_count, "
             "(SELECT COUNT(*) FROM kg_normative_index_release_member m WHERE m.index_id=i.index_id) AS release_count "
             "FROM kg_normative_family f "
