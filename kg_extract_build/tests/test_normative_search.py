@@ -62,6 +62,11 @@ class SearchTests(unittest.TestCase):
         self.assertEqual(len(result["evidence"]), 1)
         self.assertEqual(result["evidence"][0]["clause_id"], 501)
         self.assertEqual(result["evidence"][0]["text"], "有限空间作业应当先通风。")
+        self.assertTrue(result["evidence"][0]["metadata_confirmed"])
+        self.assertEqual(result["evidence"][0]["version_status"], "effective")
+        self.assertEqual(result["evidence"][0]["index_status"], "ready")
+        self.assertEqual(result["evidence"][0]["effective_year"], 2020)
+        self.assertIsNone(result["evidence"][0]["invalid_year"])
         self.assertEqual(result["retrieval_trace"]["unique_clause_count"], 1)
 
     def test_expands_window_when_dedup_below_topk(self):

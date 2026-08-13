@@ -98,11 +98,11 @@ def _candidate_filter_reason(*, declared_match, version_valid, substitute_chain_
 def _version_is_valid(item: Mapping[str, Any], audit_year: int | None) -> bool:
     if item.get("same_year_version_conflict"):
         return False
-    if item.get("metadata_confirmed") is False or item.get("audit_disabled_at"):
+    if item.get("metadata_confirmed") is not True or item.get("audit_disabled_at"):
         return False
-    if item.get("index_status") and item.get("index_status") != "ready":
+    if item.get("index_status") != "ready":
         return False
-    if item.get("version_status") and item.get("version_status") not in {"effective", "published", "ready"}:
+    if item.get("version_status") != "effective":
         return False
     if audit_year is not None:
         effective = item.get("effective_year")
