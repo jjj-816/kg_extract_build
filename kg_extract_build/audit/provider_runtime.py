@@ -10,6 +10,8 @@ from __future__ import annotations
 import json
 from typing import Any, Callable
 
+from .semantic_runtime import EvidencePackage
+
 
 _RETRIEVAL_PLAN_FIELDS = (
     "document_block_ids",
@@ -51,20 +53,63 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
         factory = OpenAI
     client = factory(api_key=api_key or "ollama", base_url=base_url, timeout=120.0)
 
-    def call(task, package, *, correction=False):
+    def call(task, package_or_evidence, graph_result=None, *, correction=False, run_id=None):
+        """Adapt every semantic execution route to the selected provider.
+
+        ``SemanticRuntime`` uses :class:`EvidencePackage`, while the production
+        compliance and reasonableness executors pass their route-specific
+        evidence contracts.  Keep those contracts distinct instead of forcing
+        the production routes through the legacy package-id validator.
+        """
+        legacy_package = isinstance(package_or_evidence, EvidencePackage)
+        if legacy_package:
+            evidence = [dict(item) for item in package_or_evidence.evidence]
+            route_contract = {
+                "evidence_package_id": package_or_evidence.package_id,
+                "evidence": evidence,
+                "instruction": (
+                    "仅依据给定证据返回最终审核 JSON，不要回显请求内容或 instruction。"
+                    "顶层必须包含 result_status（取值 no_issue、issue_found、manual_review）、"
+                    "issues（数组）和 package_id（必须等于 evidence_package_id）。"
+                    "不得补造规范或证据。"
+                ),
+            }
+        elif isinstance(package_or_evidence, dict) and task.route == "semantic_compliance":
+            route_contract = {
+                "run_id": package_or_evidence.get("run_id"),
+                "document_evidence": [dict(item) for item in package_or_evidence.get("document_evidence", ())],
+                "normative_evidence": [dict(item) for item in package_or_evidence.get("normative_evidence", ())],
+                "instruction": (
+                    "仅依据方案证据和规范条款返回合规审核 JSON。顶层必须包含 result_status、issues、"
+                    "document_evidence_ids 和 normative_evidence_ids；不符合时必须同时引用两类证据。"
+                    "不得补造规范或证据。"
+                ),
+            }
+        else:
+            route_contract = {
+                "run_id": run_id,
+                "document_evidence": [dict(item) for item in package_or_evidence],
+                "graph_clues": [
+                    {
+                        "clue_id": clue.clue_id,
+                        "assertion_id": clue.assertion_id,
+                        "source_document_id": clue.source_document_id,
+                        "evidence_sentence": clue.evidence_sentence,
+                        "summary": clue.summary,
+                    }
+                    for clue in getattr(graph_result, "clues", ())
+                ],
+                "instruction": (
+                    "仅依据方案证据和图检索线索返回合理性审核 JSON。顶层必须包含 issues 数组；"
+                    "每项仅作为需人工复核的工程风险提示，不得声称规范不符合。"
+                ),
+            }
         prompt = {
             "task_id": task.task_id,
             "task_name": task.name,
             "route": task.route,
             "correction_pass": correction,
-            "evidence_package_id": package.package_id,
-            "evidence": [dict(item) for item in package.evidence],
-            "instruction": (
-                "仅依据给定证据返回最终审核 JSON，不要回显请求内容或 instruction。"
-                "顶层必须包含 result_status（取值 no_issue、issue_found、manual_review）、"
-                "issues（数组）和 package_id（必须等于 evidence_package_id）。"
-                "不得补造规范或证据。"
-            ),
+            **route_contract,
         }
         messages = [
             {"role": "system", "content": "审计语义审核器，只输出最终 JSON。"},
@@ -79,7 +124,8 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
         )
         content = response.choices[0].message.content or "{}"
         result = json.loads(content)
-        result.setdefault("package_id", package.package_id)
+        if legacy_package:
+            result.setdefault("package_id", package_or_evidence.package_id)
         call.last_interaction = {
             "kind": "audit_conclusion",
             "model": model,
