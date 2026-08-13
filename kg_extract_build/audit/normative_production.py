@@ -58,20 +58,14 @@ class PublishedNormativeAdapter:
     def search(self, *, query: str, audit_year: int, release_id: str, scope: NormativeScope, top_k: int = 5) -> dict[str, Any]:
         scope = self._canonical_scope(scope)
         preflight = self.preflight(scope, release_id)
-        if preflight.blocked:
-            return {
-                "coverage": [dict(item) for item in preflight.coverage],
-                "evidence": [],
-                "warnings": list(preflight.blocking_reasons),
-                "diagnostic": NormativeAdapterDiagnostic("coverage_blocked", "规范覆盖或适用性未通过预检").__dict__,
-            }
         try:
             result = self.searcher.search(SearchRequest(query, audit_year, release_id, {
-                "scope_type": "declared", "allowed_family_ids": scope.family_ids,
+                "scope_type": "unified_corpus",
             }, top_k))
         except Exception as exc:
             return {"coverage": [dict(item) for item in preflight.coverage], "evidence": [], "warnings": [f"规范检索服务不可用：{exc}"], "diagnostic": {"status": "unavailable", "message": str(exc)}}
         valid = [item for item in result.get("evidence", []) if item.get("text") and item.get("version_id") and item.get("clause_id") and (not release_id or item.get("release_id") in {release_id, "enabled-corpus"})]
         result["evidence"] = valid
         result["coverage"] = [dict(item) for item in preflight.coverage]
+        result["warnings"] = [*result.get("warnings", []), *preflight.blocking_reasons]
         return result

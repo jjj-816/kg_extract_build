@@ -21,11 +21,7 @@ class ComplianceRuntime:
         def record(stage, status, input_data=None, output_data=None, error=None):
             trace.append({"step": len(trace) + 1, "stage": stage, "status": status, "input": input_data or {}, "output": output_data or {}, "error": error})
         record("task_input", "started", {"task_id": task.task_id, "evidence_block_ids": [item.get("block_id") for item in evidence]})
-        if scope_preflight.blocked:
-            record("applicability_preflight", "blocked", output_data={"reasons": list(scope_preflight.blocking_reasons)})
-            review = AuditIssueResult("规范库覆盖缺口", f"{task.name}无法启动合规结论", suggestion="；".join(scope_preflight.blocking_reasons), machine_status="manual_review")
-            return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", document_evidence, manual_reviews=(review,), diagnostics=scope_preflight.blocking_reasons, execution_trace=tuple(trace))
-        record("applicability_preflight", "completed", output_data={"coverage": [dict(item) for item in scope_preflight.coverage], "scope": scope_preflight.display_summary()})
+        record("applicability_preflight", "advisory", output_data={"coverage": [dict(item) for item in scope_preflight.coverage], "scope": scope_preflight.display_summary(), "reasons": list(scope_preflight.blocking_reasons)})
         plan = self.planner.plan(task, tuple(evidence)) if self.planner is not None else None
         if plan:
             planner_model = getattr(self.planner, "model", None)

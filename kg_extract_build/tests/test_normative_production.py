@@ -25,11 +25,11 @@ class NormativeProductionTests(unittest.TestCase):
         result = adapter.search(query="安全", audit_year=2025, release_id="rel-1", scope=NormativeScope.freeze(2025, ["f1"], []))
         self.assertEqual(result["evidence"][0]["clause_id"], "c1")
 
-    def test_uncovered_scope_blocks_conclusion(self):
+    def test_uncovered_scope_still_permits_unified_corpus_retrieval(self):
         adapter = PublishedNormativeAdapter(Store(), Searcher())
         result = adapter.search(query="安全", audit_year=2025, release_id="rel-1", scope=NormativeScope.freeze(2025, ["missing"], []))
-        self.assertEqual(result["evidence"], [])
-        self.assertEqual(result["diagnostic"]["status"], "coverage_blocked")
+        self.assertEqual(result["evidence"][0]["clause_id"], "c1")
+        self.assertTrue(result["warnings"])
 
 
 if __name__ == "__main__":

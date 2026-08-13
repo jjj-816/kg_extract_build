@@ -14,11 +14,13 @@ def preflight(blocked=False):
 
 
 class ComplianceRuntimeTests(unittest.TestCase):
-    def test_coverage_gap_blocks_conclusion(self):
-        runtime = ComplianceRuntime(lambda **_: {}, lambda *_: {})
+    def test_coverage_gap_is_advisory_and_retrieval_still_runs(self):
+        called = []
+        runtime = ComplianceRuntime(lambda **_: called.append(True) or {}, lambda *_: {})
         result = runtime.run(TASK, [{"block_id": "d1", "raw_text": "内容"}], scope_preflight=preflight(True), run_id="r")
         self.assertEqual(result.result_status, "manual_review")
-        self.assertIn("覆盖不足", result.diagnostics)
+        self.assertEqual(called, [True])
+        self.assertIn("规范检索未返回可用条款", result.diagnostics)
 
     def test_published_clause_supports_traceable_noncompliance(self):
         def search(**_):

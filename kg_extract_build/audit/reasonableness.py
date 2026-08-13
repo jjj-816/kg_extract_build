@@ -12,9 +12,11 @@ class ReasonablenessRuntime:
     def __init__(self, model: Callable[..., Mapping[str, Any]] | None = None):
         self.model = model
 
-    def run(self, task, evidence, graph_result: GraphRetrievalResult, run_id: str, normative_search=None):
+    def run(self, task, evidence, graph_result: GraphRetrievalResult, run_id: str, normative_search=None, retrieval_plan=None, planner_interaction=None):
         evidence = list(evidence)
         trace = [{"step": 1, "stage": "task_input", "status": "started", "input": {"task_id": task.task_id, "evidence_block_ids": [item.get("block_id") for item in evidence]}, "output": {}, "error": None}]
+        if retrieval_plan is not None:
+            trace.append({"step": 2, "stage": "retrieval_planning", "status": "completed" if not retrieval_plan.diagnostics else "degraded", "input": {"prompt_version": retrieval_plan.prompt_version, "evidence_block_ids": list(retrieval_plan.document_block_ids)}, "output": {"normative_queries": list(retrieval_plan.normative_queries), "graph_queries": list(retrieval_plan.graph_queries), "relationship_types": list(retrieval_plan.relationship_types), "diagnostics": list(retrieval_plan.diagnostics), "llm_prompt": planner_interaction.get("prompt") if planner_interaction else None, "llm_messages": planner_interaction.get("messages") if planner_interaction else None, "llm_raw_response": planner_interaction.get("raw_response") if planner_interaction else None, "llm_parsed_response": planner_interaction.get("parsed_response") if planner_interaction else None}, "error": None})
         evidence.extend({
             "evidence_type": "graph_clue",
             "clue_id": clue.clue_id,
@@ -24,13 +26,13 @@ class ReasonablenessRuntime:
             "summary": clue.summary,
         } for clue in graph_result.clues)
         if graph_result.degraded:
-            trace.append({"step": 2, "stage": "graph_retrieval", "status": "failed", "input": {"queries": list(graph_result.queries), "relationship_types": list(graph_result.relationship_types)}, "output": {"raw_hit_count": graph_result.raw_hit_count}, "error": graph_result.diagnostic})
+            trace.append({"step": len(trace) + 1, "stage": "graph_retrieval", "status": "failed", "input": {"queries": list(graph_result.queries), "relationship_types": list(graph_result.relationship_types)}, "output": {"raw_hit_count": graph_result.raw_hit_count}, "error": graph_result.diagnostic})
             return TaskExecutionResult(
                 task.task_id, task.route, "failed", None, tuple(evidence),
                 diagnostics=(graph_result.diagnostic or "图检索服务或字段映射失败",), execution_trace=tuple(trace + [{"step": 3, "stage": "reasonableness_model", "status": "not_called", "input": {}, "output": {"reason": "graph_failure"}, "error": None}]),
             )
         if not graph_result.clues:
-            trace.append({"step": 2, "stage": "graph_retrieval", "status": "no_evidence", "input": {"queries": list(graph_result.queries), "relationship_types": list(graph_result.relationship_types)}, "output": {"raw_hit_count": graph_result.raw_hit_count, "accepted_clue_count": 0, "diagnostic": graph_result.diagnostic}, "error": None})
+            trace.append({"step": len(trace) + 1, "stage": "graph_retrieval", "status": "no_evidence", "input": {"queries": list(graph_result.queries), "relationship_types": list(graph_result.relationship_types)}, "output": {"raw_hit_count": graph_result.raw_hit_count, "accepted_clue_count": 0, "diagnostic": graph_result.diagnostic}, "error": None})
             review = AuditIssueResult("工程合理性风险", task.name + "缺少可用图线索，需专家复核", suggestion=graph_result.diagnostic or "未找到足够历史案例线索", machine_status="manual_review")
             return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", tuple(evidence), manual_reviews=(review,), diagnostics=(graph_result.diagnostic or "图线索不足",), execution_trace=tuple(trace + [{"step": 3, "stage": "reasonableness_model", "status": "not_called", "input": {}, "output": {"reason": "no_graph_evidence"}, "error": None}]))
 

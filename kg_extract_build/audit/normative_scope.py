@@ -55,9 +55,8 @@ def preflight_normative_scope(
 ) -> NormativeScopePreflight:
     """Return an auditable, frozen preflight result.
 
-    Coverage is advisory for the UI but blocking for semantic compliance:
-    missing, unindexed, unpublished, unconfirmed, and same-year-conflicted
-    families cannot support a compliance conclusion.
+    Coverage is advisory: formal compliance first retrieves from the unified
+    corpus, then applies declared-norm and applicability filters per task.
     """
     conflicts = conflicts or {}
     coverage = compute_coverage(candidates_by_family, version_index_map, scope.family_ids, conflicts)
@@ -73,9 +72,7 @@ def preflight_normative_scope(
         for candidate in candidates:
             if not candidate.metadata_confirmed:
                 reasons.append(f"规范 {family} 的版本 {candidate.version_id} 尚未确认适用")
-            if candidate.status != "published":
-                reasons.append(f"规范 {family} 的版本 {candidate.version_id} 未发布")
             if not candidate.applies_in(scope.audit_year):
                 reasons.append(f"规范 {family} 的版本 {candidate.version_id} 不适用于审核年份 {scope.audit_year}")
     frozen_coverage = tuple(MappingProxyType(dict(item)) for item in coverage)
-    return NormativeScopePreflight(scope, frozen_coverage, bool(reasons), tuple(dict.fromkeys(reasons)))
+    return NormativeScopePreflight(scope, frozen_coverage, False, tuple(dict.fromkeys(reasons)))

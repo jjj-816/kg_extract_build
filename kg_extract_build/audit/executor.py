@@ -586,12 +586,13 @@ class AuditOrchestrator:
                 graph_result = (audit_context or {}).get("graph_results", {}).get(task.task_id)
                 graph_adapter = (audit_context or {}).get("graph_adapter")
                 retrieval_planner = (audit_context or {}).get("retrieval_planner")
-                if graph_adapter is not None and retrieval_planner is not None:
+                planned = None
+                if retrieval_planner is not None:
                     from .bounded_graph import retrieve_bounded_clues, GraphRetrievalResult
                     planned = retrieval_planner.plan(task, _evidence(preview.parsed_document, location))
                     clues = []
                     diagnostics = list(planned.diagnostics)
-                    for query in planned.graph_queries:
+                    for query in planned.graph_queries if graph_adapter is not None else ():
                         try:
                             retrieved = retrieve_bounded_clues(
                                 graph_adapter,
@@ -605,14 +606,17 @@ class AuditOrchestrator:
                                 diagnostics.append(retrieved.diagnostic)
                         except Exception as exc:
                             diagnostics.append(f"图查询规划执行失败：{exc}")
-                    if clues:
+                    if graph_adapter is None:
+                        graph_result = GraphRetrievalResult((), True, "图服务未配置，已降级", tuple(planned.graph_queries), tuple(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())), 0)
+                    elif clues:
                         graph_result = GraphRetrievalResult(tuple(dict.fromkeys(clues)), False, "; ".join(diagnostics) or None, tuple(planned.graph_queries), tuple(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())), len(clues))
                     elif diagnostics:
                         graph_result = GraphRetrievalResult((), False, "; ".join(diagnostics), tuple(planned.graph_queries), tuple(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())), 0)
                 if graph_result is None:
                     from .bounded_graph import GraphRetrievalResult
                     graph_result = GraphRetrievalResult((), False, "未注入图检索结果")
-                result = reasonableness_runtime.run(task, _evidence(preview.parsed_document, location), graph_result, run_id, (audit_context or {}).get("normative_search"))
+                planner_interaction = getattr(getattr(retrieval_planner, "model", None), "last_interaction", None) if retrieval_planner is not None else None
+                result = reasonableness_runtime.run(task, _evidence(preview.parsed_document, location), graph_result, run_id, (audit_context or {}).get("normative_search"), retrieval_plan=planned, planner_interaction=planner_interaction)
             elif task.route in {"semantic_compliance", "semantic_reasonableness"} and semantic_runtime is not None:
                 result = semantic_runtime.run(task, _evidence(preview.parsed_document, location), run_id)
             else:
