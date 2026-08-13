@@ -87,6 +87,49 @@ class SemanticComplianceTests(unittest.TestCase):
         self.assertEqual(trace[1]["filter_reason"], "not_declared_norm")
         self.assertEqual(warnings, ("declared_norm_omission",))
 
+    def test_opaque_candidate_without_normative_identity_is_never_automatic_evidence(self):
+        scope = NormativeScope.freeze(2025, ["Q/SY 1858-2015"], ["supplemental-family"])
+
+        selected, trace, warnings = filter_clause_candidates(
+            {"evidence": [{
+                "clause_id": "opaque", "version_id": "20d13f65-24b4-42bd-929f-9514d45d9808",
+                "release_id": "enabled-corpus", "text": "补充规范条款", "source_type": "spec",
+                **eligible_version_fields(),
+            }]},
+            scope,
+        )
+
+        self.assertEqual(selected, ())
+        self.assertEqual(trace[0]["filter_reason"], "not_declared_norm")
+        self.assertEqual(warnings, ("declared_norm_omission",))
+
+    def test_production_shaped_identity_selects_declared_and_omits_undeclared_candidate(self):
+        scope = NormativeScope.freeze(2025, ["《页岩气地面工程设计规范》 Q/SY 1858-2015"], [])
+        common = {
+            "release_id": "enabled-corpus", "source_type": "spec", "text": "完整条款",
+            **eligible_version_fields(),
+        }
+
+        selected, trace, warnings = filter_clause_candidates(
+            {"evidence": [
+                {
+                    **common, "clause_id": "declared", "version_id": "version-1", "family_id": "family-1",
+                    "standard_code": "Q/SY1858-2015", "standard_code_base": "Q/SY1858",
+                    "canonical_name": "页岩气地面工程设计规范", "display_name": "页岩气地面工程设计规范 2015",
+                },
+                {
+                    **common, "clause_id": "undeclared", "version_id": "version-2", "family_id": "family-2",
+                    "standard_code": "GB 50052-2009", "standard_code_base": "GB50052",
+                    "canonical_name": "供配电系统设计规范", "display_name": "供配电系统设计规范 2009",
+                },
+            ]},
+            scope,
+        )
+
+        self.assertEqual([item["clause_id"] for item in selected], ["declared"])
+        self.assertEqual(trace[1]["filter_reason"], "not_declared_norm")
+        self.assertEqual(warnings, ("declared_norm_omission",))
+
 
 if __name__ == "__main__":
     unittest.main()

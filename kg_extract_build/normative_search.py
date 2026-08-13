@@ -101,8 +101,12 @@ class NormativeSearcher:
                 {
                     "release_id": request.release_id or "enabled-corpus",
                     "index_id": hit.get("index_id"),
-                    "family_id": hit.get("family_id"),
+                    "family_id": index.get("family_id") or hit.get("family_id"),
                     "version_id": hit.get("version_id"),
+                    "standard_code": index.get("standard_code"),
+                    "standard_code_base": index.get("standard_code_base"),
+                    "canonical_name": index.get("canonical_name"),
+                    "display_name": index.get("display_name"),
                     "clause_set_id": hit.get("clause_set_id"),
                     "clause_id": hit.get("clause_id"),
                     "clause_number": hit.get("clause_number"),

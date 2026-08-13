@@ -31,3 +31,9 @@
 ## Remaining concern
 
 当前机器全量 pytest 仍会在导入 pandas 时因环境中的 pandas/numpy ABI 不兼容而中断收集；这是既有环境问题，不在本次三项修复范围内。
+
+## Final rereview follow-up: opaque normative identity
+
+- 残留根因：候选没有规范代码、名称或可识别版本号时，声明匹配函数仍默认返回真；生产 `NormativeSearcher` 也没有把已从 MySQL index row 读到的规范身份投影到 evidence。
+- 修复：无足够规范身份的候选一律不能进入自动证据，只按 `not_declared_norm` 产生 `declared_norm_omission`；生产 evidence 现在携带权威的 `family_id`、`standard_code`、`standard_code_base`、`canonical_name`、`display_name`。
+- TDD：新增 opaque supplemental 拒绝测试、实际生产形态声明标准号选中测试、实际生产形态未声明规范遗漏测试，并扩展 `NormativeSearcher` 测试校验身份投影。RED 为 opaque 候选错误选中及生产 evidence 缺少 `standard_code`；GREEN 后相关链路 `18 passed`。

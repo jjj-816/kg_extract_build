@@ -138,7 +138,7 @@ def _matches_declared(item: Mapping[str, Any], declared_keys: set[str]) -> bool:
     if re.match(r"^(?:[A-Za-z]{2,4}\d+|[A-Za-z]{1,4}/[A-Za-z]{1,4}\d+)(?:-\d{4})?$", version_id):
         values = (*values, version_id)
     if not any(value for value in values):
-        return True
+        return False
     keys = {_norm_normative_identity(value) for value in values if value}
     return any(key in declared_keys or key and any(key in declared or declared in key for declared in declared_keys) for key in keys)
 

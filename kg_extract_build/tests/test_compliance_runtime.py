@@ -140,7 +140,7 @@ class ComplianceRuntimeTests(unittest.TestCase):
 
     def test_published_clause_supports_traceable_noncompliance(self):
         def search(**_):
-            return {"coverage": [{"coverage_status": "covered"}], "evidence": [{"clause_id": "c1", "version_id": "v1", "release_id": "rel", "text": "完整条款", "source_type": "spec", **eligible_version_fields()}]}
+            return {"coverage": [{"coverage_status": "covered"}], "evidence": [{"clause_id": "c1", "version_id": "v1", "release_id": "rel", "standard_code": "f1", "text": "完整条款", "source_type": "spec", **eligible_version_fields()}]}
         def model(_task, package):
             return {"result_status": "issue_found", "document_evidence_ids": ["d1"], "normative_evidence_ids": ["c1"], "issues": [{"category": "规范不符合", "summary": "不符合", "machine_status": "open"}]}
         result = ComplianceRuntime(search, model).run(TASK, [{"block_id": "d1", "raw_text": "内容"}], scope_preflight=preflight(), run_id="r")
