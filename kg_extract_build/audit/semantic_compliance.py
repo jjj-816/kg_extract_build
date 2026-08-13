@@ -161,7 +161,12 @@ def validate_compliance_conclusion(output: Mapping[str, Any], document_evidence_
 def normalize_compliance_conclusion(output: Mapping[str, Any]) -> dict[str, Any]:
     """Map provider wording to the controlled compliance conclusion contract."""
     value = dict(output)
-    status_map = {"不符合": "issue_found", "存在问题": "issue_found", "发现问题": "issue_found", "符合": "no_issue", "无问题": "no_issue", "需人工复核": "manual_review", "无法判断": "manual_review"}
+    status_map = {
+        "不符合": "issue_found", "存在问题": "issue_found", "发现问题": "issue_found",
+        "non_compliant": "issue_found",
+        "符合": "no_issue", "无问题": "no_issue", "compliant": "no_issue",
+        "需人工复核": "manual_review", "无法判断": "manual_review", "needs_manual_review": "manual_review",
+    }
     value["result_status"] = status_map.get(value.get("result_status"), value.get("result_status"))
     document_ids = list(value.get("document_evidence_ids", ()))
     normative_ids = list(value.get("normative_evidence_ids", ()))

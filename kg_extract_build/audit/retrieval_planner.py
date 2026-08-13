@@ -63,11 +63,9 @@ class TaskRetrievalPlanner:
                 relationships = tuple(sorted(self.allowed_relationships))
                 diagnostics.append("planning_mode=compatibility_recovered")
             else:
-                fallback = self._evidence_query(evidence)
-                normative = graph = (fallback,) if fallback else ()
+                normative = graph = ()
                 relationships = tuple(sorted(self.allowed_relationships))
-                if fallback:
-                    diagnostics.append("planning_mode=evidence_derived_fallback")
+                diagnostics.append("planning_mode=query_generation_failed")
             anchors = block_ids
         else:
             normative = self._queries(controlled["normative_queries"])
@@ -87,10 +85,7 @@ class TaskRetrievalPlanner:
                 anchors = block_ids
                 diagnostics.append("模型未返回有效证据锚点，回退为全部方案证据")
             if not graph:
-                fallback = self._evidence_query(evidence)
-                if fallback:
-                    graph = (fallback,)
-                    diagnostics.append("planning_mode=evidence_derived_fallback")
+                diagnostics.append("planning_mode=query_generation_failed")
         if not normative and not graph:
             diagnostics.append("未生成规范或图查询词")
         interaction = getattr(self.model, "last_interaction", None)
@@ -136,7 +131,7 @@ class TaskRetrievalPlanner:
         if not isinstance(raw, Mapping):
             return ()
         values: list[Any] = []
-        for field in ("retrieval_queries", "search_queries", "case_hints"):
+        for field in ("retrieval_queries", "search_queries", "case_hints", "retrieval_keywords"):
             value = raw.get(field, ())
             if isinstance(value, list):
                 values.extend(value)
@@ -145,12 +140,27 @@ class TaskRetrievalPlanner:
             for item in plans:
                 if isinstance(item, Mapping) and isinstance(item.get("keywords"), list):
                     values.extend(item["keywords"])
+        elif isinstance(plans, Mapping):
+            values.extend(cls._query_values(plans.get("queries", ())))
+            values.extend(cls._query_values(plans.get("retrieval_actions", ())))
+        plan = raw.get("plan", {})
+        if isinstance(plan, Mapping):
+            values.extend(cls._query_values(plan.get("queries", ())))
         return cls._queries(values)
 
     @staticmethod
-    def _evidence_query(evidence: tuple[dict, ...]) -> str:
-        for item in evidence:
-            text = str(item.get("raw_text") or "").strip()
-            if text:
-                return text[:200]
-        return ""
+    def _query_values(value) -> list[Any]:
+        if not isinstance(value, list):
+            return []
+        extracted: list[Any] = []
+        for item in value:
+            if isinstance(item, str):
+                extracted.append(item)
+            elif isinstance(item, Mapping):
+                query = item.get("query")
+                if isinstance(query, str):
+                    extracted.append(query)
+                keywords = item.get("keywords")
+                if isinstance(keywords, list):
+                    extracted.extend(keywords)
+        return extracted

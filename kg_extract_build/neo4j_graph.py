@@ -151,6 +151,15 @@ class Neo4jGraphSynchronizer:
             schema_snapshot = triplet.get("schema_snapshot")
             if schema_snapshot is None:
                 schema_snapshot = run.get("schema_snapshot")
+            linked_evidence = evidence.get(triplet["triplet_id"], [])
+            evidence_sentence = next(
+                (
+                    str(item.get("sentence") or "").strip()
+                    for item in linked_evidence
+                    if str(item.get("sentence") or "").strip()
+                ),
+                "",
+            )
             items.append(
                 {
                     "assertion_id": f"{run_id}:{triplet['triplet_id']}",
@@ -178,8 +187,9 @@ class Neo4jGraphSynchronizer:
                         "raw_tail_name": triplet["tail"],
                         "head_canonicalization_method": head_method,
                         "tail_canonicalization_method": tail_method,
+                        "evidence_sentence": evidence_sentence,
                         "evidence_json": _json_property(
-                            evidence.get(triplet["triplet_id"], [])
+                            linked_evidence
                         ),
                         "extracted_at": str(
                             triplet.get("created_at") or datetime.now(timezone.utc)

@@ -538,6 +538,46 @@ class Neo4jGraphTests(unittest.TestCase):
             )
         )
 
+    def test_sync_persists_first_linked_evidence_sentence_on_assertion(self):
+        run_id = "evidence-run"
+        store = type("Store", (), {
+            "load_graph_sync_input": lambda *_: {
+                "run": {"run_id": run_id},
+                "triplets": [{
+                    "triplet_id": 1, "head": "压力试验", "head_type": "作业",
+                    "tail": "泄压装置", "tail_type": "设备", "relation_name": "REQUIRES",
+                    "document_id": 9,
+                }],
+                "evidence_by_triplet": {1: [{"sentence": "压力试验前应设置泄压装置。"}]},
+            },
+        })()
+        driver = _Driver()
+        Neo4jGraphSynchronizer(driver, store, type("Schema", (), {"relation_type_names": {"REQUIRES"}})()).sync_run(run_id)
+
+        self.assertEqual(
+            driver.graph.assertions["evidence-run:1"]["metadata"]["evidence_sentence"],
+            "压力试验前应设置泄压装置。",
+        )
+
+    def test_sync_persists_empty_evidence_sentence_when_no_link_exists(self):
+        run_id = "no-evidence-run"
+        store = type("Store", (), {
+            "load_graph_sync_input": lambda *_: {
+                "run": {"run_id": run_id},
+                "triplets": [{
+                    "triplet_id": 1, "head": "压力试验", "head_type": "作业",
+                    "tail": "泄压装置", "tail_type": "设备", "relation_name": "REQUIRES",
+                    "document_id": 9,
+                }],
+                "evidence_by_triplet": {},
+            },
+        })()
+        driver = _Driver()
+        Neo4jGraphSynchronizer(driver, store, type("Schema", (), {"relation_type_names": {"REQUIRES"}})()).sync_run(run_id)
+
+        self.assertEqual(driver.graph.assertions["no-evidence-run:1"]["metadata"]["evidence_sentence"], "")
+
+
 
 if __name__ == "__main__":
     unittest.main()

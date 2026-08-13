@@ -160,6 +160,7 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
         ]
         raw_responses: list[str] = []
         parsed_responses: list[Any] = []
+        returned_payload: dict[str, Any] = {}
         for correction in (False, True):
             request_messages = messages
             if correction:
@@ -179,12 +180,19 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
             content = response.choices[0].message.content or "{}"
             raw_responses.append(content)
             try:
-                parsed = _validate_retrieval_plan_payload(json.loads(content))
+                raw_payload = json.loads(content)
+                parsed = _validate_retrieval_plan_payload(raw_payload)
                 parsed_responses.append(parsed)
+                returned_payload = parsed
                 break
             except (ValueError, TypeError, json.JSONDecodeError) as exc:
                 parsed_responses.append({"validation_error": str(exc)})
-                parsed = {}
+                try:
+                    raw_payload = json.loads(content)
+                except json.JSONDecodeError:
+                    raw_payload = {}
+                returned_payload = raw_payload if isinstance(raw_payload, dict) else {}
+                parsed = {"validation_error": str(exc)}
                 if correction:
                     break
         retrieval_plan.last_interaction = {
@@ -197,7 +205,7 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
             "correction_raw_response": raw_responses[1] if len(raw_responses) > 1 else None,
             "correction_parsed_response": parsed_responses[1] if len(parsed_responses) > 1 else None,
         }
-        return parsed
+        return returned_payload
 
     call.retrieval_planner = retrieval_plan
 

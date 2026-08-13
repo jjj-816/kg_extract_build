@@ -96,6 +96,22 @@ class AuditExecutorTests(unittest.TestCase):
         self.assertEqual(planning["status"], "degraded")
         self.assertIn("graph_queries 为空列表", planning["output"]["diagnostics"])
 
+    def test_reasonableness_query_generation_failure_skips_neo4j_and_calls_model(self):
+        task = SimpleNamespace(task_id="T1", route="semantic_reasonableness", name="task")
+        plan = RetrievalPlan("T1", "v1", ("d1",), (), (), ("USES",), ("planning_mode=query_generation_failed",))
+        graph = GraphRetrievalResult((), False, "未生成图检索词", (), ("USES",))
+        calls = []
+
+        result = ReasonablenessRuntime(
+            lambda *_args, **_kwargs: calls.append(True) or {"issues": [{"summary": "请人工复核"}]}
+        ).run(task, [{"block_id": "d1", "raw_text": "完整审核输入"}], graph, "r", retrieval_plan=plan)
+
+        self.assertEqual(calls, [True])
+        self.assertEqual(result.result_status, "manual_review")
+        graph_trace = next(item for item in result.execution_trace if item["stage"] == "graph_retrieval")
+        self.assertEqual(graph_trace["input"]["queries"], [])
+        self.assertFalse(graph_trace["input"].get("query_sent_to_neo4j", False))
+
     def test_reasonableness_planning_trace_includes_correction_responses(self):
         task = SimpleNamespace(task_id="T1", route="semantic_reasonableness", name="task")
         plan = RetrievalPlan("T1", "v1", ("d1",), (), (), (), ())

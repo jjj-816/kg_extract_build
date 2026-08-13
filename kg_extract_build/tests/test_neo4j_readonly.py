@@ -54,6 +54,7 @@ class Neo4jReadOnlyTests(unittest.TestCase):
         self.assertIn("__kg_aggregate", query)
         self.assertIn("aliases", query)
         self.assertIn("-(finish:Entity)", query)
+        self.assertIn("coalesce(a.evidence_sentence,a.raw_text,'') AS evidence_sentence", query)
         self.assertEqual(params["relationship_types"], ["USES"])
         self.assertNotRegex(query, r"\b(CREATE|MERGE|SET|DELETE)\b")
 

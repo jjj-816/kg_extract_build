@@ -3,6 +3,7 @@ from types import SimpleNamespace
 
 from kg_extract_build.audit.semantic_compliance import (
     filter_clause_candidates,
+    normalize_compliance_conclusion,
     select_published_clause_evidence,
     validate_compliance_conclusion,
 )
@@ -20,6 +21,18 @@ def eligible_version_fields():
 
 
 class SemanticComplianceTests(unittest.TestCase):
+    def test_normalize_common_provider_status_aliases(self):
+        cases = {
+            "non_compliant": "issue_found",
+            "compliant": "no_issue",
+            "needs_manual_review": "manual_review",
+        }
+        for provider_status, expected in cases.items():
+            with self.subTest(provider_status=provider_status):
+                self.assertEqual(
+                    normalize_compliance_conclusion({"result_status": provider_status})["result_status"],
+                    expected,
+                )
     def test_incomplete_coverage_cannot_supply_normative_evidence(self):
         result = select_published_clause_evidence({"coverage": [{"coverage_status": "uncovered"}], "evidence": [{"clause_id": "1", "text": "x"}]}, None)
         self.assertEqual(result, ())

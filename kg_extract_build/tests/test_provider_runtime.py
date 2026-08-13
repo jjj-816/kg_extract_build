@@ -41,6 +41,22 @@ class SemanticRouteClient:
 
 
 class ProviderRuntimeTests(unittest.TestCase):
+    def test_retrieval_plan_preserves_invalid_json_compatibility_payload(self):
+        class Completions:
+            def create(self, **_kwargs):
+                return SimpleNamespace(choices=[SimpleNamespace(message=SimpleNamespace(
+                    content='{"search_queries":["pressure test","pressure relief"]}'
+                ))])
+
+        class Client:
+            def __init__(self, **_kwargs):
+                self.chat = SimpleNamespace(completions=Completions())
+
+        model = build_structured_model(api_key="key", base_url="http://localhost:8000/v1", model="audit", client_factory=Client)
+        result = model.retrieval_planner(SimpleNamespace(task_id="T1", name="task"), [{"block_id": "B1"}])
+
+        self.assertEqual(result, {"search_queries": ["pressure test", "pressure relief"]})
+        self.assertIn("validation_error", model.retrieval_planner.last_interaction["parsed_response"])
     def test_structured_model_uses_selected_provider_and_package_id(self):
         client = None
 
