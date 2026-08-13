@@ -71,3 +71,27 @@ class DashboardNormativeTests(unittest.TestCase):
             ["index-1", "index-2"],
         )
         store.delete_version_records.assert_called_once_with("version-confined-space")
+
+    def test_mismatched_asset_keeps_confirmed_management_controls(self):
+        mismatched = {
+            "family_id": "family-shale-gas", "canonical_name": "页岩气地面工程设计规范",
+            "standard_code_base": "Q/SY1858", "version_id": "version-confined-space",
+            "display_name": "有限空间作业安全规范 2020", "standard_code": "GB 30871-2022",
+            "family_consistency": "mismatch", "index_id": "index-1", "version_year": 2020,
+            "effective_year": 2020, "version_status": "effective", "metadata_confirmed": True,
+            "index_status": "ready", "audit_disabled_at": None, "clause_count": 5,
+            "collection_name": "normative", "release_count": 0,
+        }
+        store = MagicMock()
+        store.list_versions.return_value = [mismatched]
+        store.asset_overview.return_value = [mismatched]
+        label = "有限空间作业安全规范 2020（version-confined-space）"
+        with patch.object(dn.st, "selectbox", side_effect=[label, mismatched]), \
+             patch.object(dn.st, "caption"), patch.object(dn.st, "dataframe"), \
+             patch.object(dn.st, "warning"), patch.object(dn.st, "button", return_value=False), \
+             patch.object(dn.st, "checkbox", return_value=False) as checkbox:
+            dn.render_index_area(store, MagicMock(), MagicMock())
+
+        labels = [call.args[0] for call in checkbox.call_args_list]
+        self.assertTrue(any("确认停用误挂资产" in label for label in labels))
+        self.assertTrue(any("彻底删除该规范版本" in label for label in labels))

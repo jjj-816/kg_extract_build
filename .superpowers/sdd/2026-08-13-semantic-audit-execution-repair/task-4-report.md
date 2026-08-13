@@ -4,19 +4,21 @@
 
 - Asset overview now classifies each version as `match`, `mismatch`, or `unknown` against its normative family using standard-code identity first and normalized name as a fallback.
 - A `mismatch` asset is visibly warned in the normative dashboard and excluded from version candidates and enabled unified-corpus indexes, so it cannot be used as a substitute-chain candidate or formal audit source.
-- The existing destructive-operation confirmation remains required.  After confirmation, deletion checks historical audit references and clears every vector index attached to the selected version through the vector-store lifecycle API before persistence records are removed.
+- Either a normalized name conflict or a standard-code conflict marks an asset `mismatch`; a matching standard code cannot mask a conflicting version name.
+- Mismatched assets remain selectable in management UI for a separately confirmed safe disable or the existing confirmed destructive delete. After delete confirmation, the flow checks historical audit references and clears every vector index attached to the selected version through the vector-store lifecycle API before persistence records are removed.
 
 ## TDD evidence
 
 - Red: asset-overview and dashboard-warning tests failed before the implementation because `family_consistency` and the warning did not exist.
 - Red: enabled-index eligibility test failed before the implementation because a mismatched asset remained in the unified corpus.
-- Green: `conda run -n env_agent pytest kg_extract_build/tests/test_normative_persistence.py kg_extract_build/tests/test_dashboard_normative.py -q` → `10 passed`.
+- Red: a matching code plus conflicting name incorrectly produced `match`; a mismatched asset did not render confirmed management controls.
+- Green: `conda run -n env_agent pytest kg_extract_build/tests/test_normative_persistence.py kg_extract_build/tests/test_dashboard_normative.py -q` → `12 passed`.
 
 ## Regression
 
 ```text
 conda run -n env_agent pytest kg_extract_build/tests -q
-358 passed, 1 skipped, 51 subtests passed in 4.86s
+360 passed, 1 skipped, 51 subtests passed in 5.04s
 ```
 
 ## Live-service acceptance — blocked without mutation

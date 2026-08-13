@@ -367,13 +367,14 @@ def family_consistency(version: dict, family: dict) -> str:
     """Classify whether a version belongs to its registered normative family."""
     family_code = _norm_identity(family.get("standard_code_base"))
     version_code = _norm_identity(version.get("standard_code"))
-    if family_code and version_code:
-        return "match" if family_code in version_code or version_code in family_code else "mismatch"
-
     family_name = _strip_years(_norm_identity(family.get("canonical_name")))
     version_name = _strip_years(_norm_identity(version.get("display_name")))
-    if family_name and len(version_name) >= 4:
-        return "match" if family_name in version_name or version_name in family_name else "mismatch"
+    code_matches = not (family_code and version_code) or family_code in version_code or version_code in family_code
+    name_matches = not (family_name and len(version_name) >= 4) or family_name in version_name or version_name in family_name
+    if not code_matches or not name_matches:
+        return "mismatch"
+    if family_code and version_code or family_name and len(version_name) >= 4:
+        return "match"
     return "unknown"
 
 

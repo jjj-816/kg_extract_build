@@ -121,6 +121,24 @@ class NormativePersistenceTests(unittest.TestCase):
         self.assertEqual(rows[0]["family_consistency"], "mismatch")
         self.assertFalse(rows[0]["eligible_for_supersession"])
 
+    def test_asset_overview_flags_name_mismatch_even_when_standard_code_matches(self):
+        class AssetOverviewBackend(InMemoryBackend):
+            def _read(self, sql, params=None):
+                if "FROM kg_normative_family f" in sql:
+                    return [{
+                        "family_id": "family-shale-gas",
+                        "canonical_name": "页岩气地面工程设计规范",
+                        "standard_code_base": "Q/SY1858",
+                        "version_id": "version-confined-space",
+                        "display_name": "有限空间作业安全规范 2020",
+                        "standard_code": "Q/SY1858-2015",
+                    }]
+                return super()._read(sql, params)
+
+        rows = NormativeStore(AssetOverviewBackend()).asset_overview()
+
+        self.assertEqual(rows[0]["family_consistency"], "mismatch")
+
     def test_version_candidates_exclude_confirmed_mismatched_family_asset(self):
         self.store.save_family("family-shale-gas", FamilyDraft("页岩气地面工程设计规范", "Q/SY1858"))
         self.store.save_version(
