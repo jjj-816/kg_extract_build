@@ -57,6 +57,24 @@ class ReasonablenessTests(unittest.TestCase):
         self.assertNotIn("规范不符合", result.manual_reviews[0].summary)
 
 
+    def test_model_description_becomes_observed_conclusion(self):
+        clue = GraphClue("c1", "R-1", "PRECEDES", 1, "a1", "doc-old", "baseline sequence", "sequence")
+
+        def model(*_args, **_kwargs):
+            return {
+                "issues": [{
+                    "description": "Cable trenching is placed before the safety briefing.",
+                    "suggestion": "Brief workers before construction.",
+                }]
+            }
+
+        result = ReasonablenessRuntime(model).run(
+            TASK, [{"block_id": "d1", "raw_text": "sequence"}], GraphRetrievalResult((clue,)), "run"
+        )
+
+        self.assertEqual(result.manual_reviews[0].summary, "Cable trenching is placed before the safety briefing.")
+        self.assertEqual(result.manual_reviews[0].suggestion, "Brief workers before construction.")
+
     def test_no_graph_clue_still_calls_model_for_manual_review_advisory(self):
         calls = []
         def model(*_args, **_kwargs):
