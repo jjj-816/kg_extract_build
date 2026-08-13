@@ -1,8 +1,10 @@
 import unittest
+from types import SimpleNamespace
 
 from kg_extract_build.audit.compliance_runtime import ComplianceRuntime
 from kg_extract_build.audit.models import AuditTaskDefinition
 from kg_extract_build.audit.normative_scope import NormativeScope, NormativeScopePreflight
+from kg_extract_build.audit.retrieval_planner import RetrievalPlan
 
 
 TASK = AuditTaskDefinition("C-1", 1, "s", "合规", "content_semantic", "semantic_compliance", None, "document", (), (), (), (), (), "stage", "all")
@@ -14,6 +16,28 @@ def preflight(blocked=False):
 
 
 class ComplianceRuntimeTests(unittest.TestCase):
+    def test_retrieval_planning_trace_includes_correction_responses(self):
+        interaction = {
+            "raw_response": "{\"invalid\": true}",
+            "parsed_response": {},
+            "correction_raw_response": "{\"graph_queries\": []}",
+            "correction_parsed_response": {"graph_queries": []},
+        }
+
+        class Planner:
+            model = SimpleNamespace(last_interaction=interaction)
+
+            def plan(self, task, evidence):
+                return RetrievalPlan(task.task_id, "v1", ("d1",), (), (), (), ())
+
+        result = ComplianceRuntime(lambda **_: {}, lambda *_: {}, Planner()).run(
+            TASK, [{"block_id": "d1", "raw_text": "内容"}], scope_preflight=preflight(), run_id="r",
+        )
+
+        planning = next(item for item in result.execution_trace if item["stage"] == "retrieval_planning")
+        self.assertEqual(planning["output"]["correction_raw_response"], interaction["correction_raw_response"])
+        self.assertEqual(planning["output"]["correction_parsed_response"], interaction["correction_parsed_response"])
+
     def test_coverage_gap_is_advisory_and_retrieval_still_runs(self):
         called = []
         runtime = ComplianceRuntime(lambda **_: called.append(True) or {}, lambda *_: {})

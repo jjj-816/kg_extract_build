@@ -3,6 +3,9 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 from kg_extract_build.audit.executor import AuditOrchestrator
+from kg_extract_build.audit.bounded_graph import GraphRetrievalResult
+from kg_extract_build.audit.reasonableness import ReasonablenessRuntime
+from kg_extract_build.audit.retrieval_planner import RetrievalPlan
 from kg_extract_build.audit.models import (
     AuditDocumentBlock, ParsedAuditDocument, StoredAuditDocument, TaskEvidenceGroup, TaskLocationResult,
 )
@@ -17,6 +20,23 @@ def _block(block_id: str, text: str, ordinal: int, images=()):
 
 
 class AuditExecutorTests(unittest.TestCase):
+    def test_reasonableness_planning_trace_includes_correction_responses(self):
+        task = SimpleNamespace(task_id="T1", route="semantic_reasonableness", name="task")
+        plan = RetrievalPlan("T1", "v1", ("d1",), (), (), (), ())
+        interaction = {
+            "raw_response": "{\"invalid\": true}",
+            "correction_raw_response": "{\"graph_queries\": []}",
+            "correction_parsed_response": {"graph_queries": []},
+        }
+        result = ReasonablenessRuntime().run(
+            task, [{"block_id": "d1"}], GraphRetrievalResult((), False), "r",
+            retrieval_plan=plan, planner_interaction=interaction,
+        )
+
+        planning = next(item for item in result.execution_trace if item["stage"] == "retrieval_planning")
+        self.assertEqual(planning["output"]["correction_raw_response"], interaction["correction_raw_response"])
+        self.assertEqual(planning["output"]["correction_parsed_response"], interaction["correction_parsed_response"])
+
     def _preview(self):
         library = load_published_task_library()
         selected = tuple(library.task_by_id(task_id) for task_id in ("COVER-001", "APPC-002", "BASIS-003", "PREP-001"))
