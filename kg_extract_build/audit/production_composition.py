@@ -68,8 +68,8 @@ class ProductionAuditComposition:
             graph_relationship_types,
         )
 
-    def as_audit_context(self) -> dict[str, Any]:
-        return {
+    def as_audit_context(self, *, execution_trace_recorder=None) -> dict[str, Any]:
+        context = {
             "compliance_runtime": self.compliance_runtime,
             "reasonableness_runtime": self.reasonableness_runtime,
             "graph_results": dict(self.graph_results),
@@ -80,6 +80,9 @@ class ProductionAuditComposition:
             "graph_adapter": self.graph_adapter,
             "graph_relationship_types": self.graph_relationship_types,
         }
+        if execution_trace_recorder is not None:
+            context["execution_trace_recorder"] = execution_trace_recorder
+        return context
 
     @classmethod
     def from_env(cls, *, model, scope, config_snapshot, graph_queries, release_id: str | None = None):
@@ -135,7 +138,11 @@ class ProductionAuditComposition:
             graph_queries=graph_queries,
             config_snapshot={**dict(config_snapshot), "normative_release_id": release_id or None, "normative_corpus": "enabled_ready_indexes", "encoder_profile": profile.__dict__},
             scope_preflight=scope_preflight,
-            retrieval_planner=TaskRetrievalPlanner(getattr(model, "retrieval_planner", None), prompt_version="retrieval-plan-v1"),
+            retrieval_planner=TaskRetrievalPlanner(
+                getattr(model, "retrieval_planner", None),
+                prompt_version="retrieval-plan-v1",
+                allowed_relationships=schema_relationship_types,
+            ),
             graph_adapter=graph,
             graph_relationship_types=schema_relationship_types,
         )

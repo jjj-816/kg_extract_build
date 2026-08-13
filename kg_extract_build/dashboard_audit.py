@@ -636,6 +636,7 @@ def render_audit_page() -> None:
                     "llm_api_key_configured": bool(resolve_provider_api_key(provider_id, provider_api_key)),
                     **(work_type_context or {}),
                 }
+                production_composition = None
                 try:
                     resolved_key = resolve_provider_api_key(provider_id, provider_api_key)
                     semantic_model = build_structured_model(
@@ -662,7 +663,7 @@ def render_audit_page() -> None:
                             for task in preview.task_library.tasks
                             if task.route == "semantic_reasonableness"
                         }
-                        composition = ProductionAuditComposition.from_env(
+                        production_composition = ProductionAuditComposition.from_env(
                             model=semantic_model,
                             scope=scope,
                             config_snapshot={
@@ -672,7 +673,6 @@ def render_audit_page() -> None:
                             },
                             graph_queries=graph_queries,
                         )
-                        context.update(composition.as_audit_context())
                     except (ImportError, RuntimeError, ValueError) as exc:
                         context["semantic_runtime"] = None
                         context["semantic_runtime_diagnostic"] = f"生产审核服务不可用：{exc}"
@@ -703,6 +703,14 @@ def render_audit_page() -> None:
                     else:
                         run_id = store.create_confirmed_run(parsed, preview.task_library, context, reviewer_name.strip())
                         execution_context = dict(context)
+                        if production_composition is not None:
+                            execution_context.update(production_composition.as_audit_context(
+                                execution_trace_recorder=store.execution_trace_recorder(
+                                    run_id,
+                                    provider_id=str(context.get("llm_provider") or "configured-provider"),
+                                    model_name=str(context.get("llm_model") or "configured-model"),
+                                ),
+                            ))
                         if semantic_runtime is not None:
                             execution_context["semantic_runtime"] = semantic_runtime
                         results = AuditOrchestrator().execute_preview(preview, execution_context, run_id)

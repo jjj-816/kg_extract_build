@@ -50,6 +50,7 @@ class NormativeSearcher:
         )
         index_by_version = {r["version_id"]: r for r in index_rows}
         version_index_map = {r["version_id"]: r["index_id"] for r in index_rows}
+        version_by_id = {version.version_id: version for version in candidates}
 
         target_versions = [v.version_id for v in candidates if v.version_id in version_index_map]
 
@@ -94,12 +95,18 @@ class NormativeSearcher:
         evidence = []
         for rank, hit in enumerate(ranked[: request.top_k], start=1):
             clause = self._fetch_clause(hit.get("clause_set_id"), hit.get("clause_id"))
+            version = version_by_id.get(hit.get("version_id"))
+            index = index_by_version.get(hit.get("version_id"), {})
             evidence.append(
                 {
                     "release_id": request.release_id or "enabled-corpus",
                     "index_id": hit.get("index_id"),
-                    "family_id": hit.get("family_id"),
+                    "family_id": index.get("family_id") or hit.get("family_id"),
                     "version_id": hit.get("version_id"),
+                    "standard_code": index.get("standard_code"),
+                    "standard_code_base": index.get("standard_code_base"),
+                    "canonical_name": index.get("canonical_name"),
+                    "display_name": index.get("display_name"),
                     "clause_set_id": hit.get("clause_set_id"),
                     "clause_id": hit.get("clause_id"),
                     "clause_number": hit.get("clause_number"),
@@ -110,6 +117,12 @@ class NormativeSearcher:
                     "source_type": "spec",
                     "same_year_version_conflict": bool(conflicts.get(hit.get("family_id"))),
                     "hit_segment_ids": [hit.get("text_hash")],
+                    "metadata_confirmed": bool(version and version.metadata_confirmed),
+                    "version_status": version.status if version else None,
+                    "effective_year": version.effective_year if version else None,
+                    "invalid_year": version.invalid_year if version else None,
+                    "index_status": index.get("status", "ready"),
+                    "audit_disabled_at": index.get("audit_disabled_at"),
                 }
             )
 

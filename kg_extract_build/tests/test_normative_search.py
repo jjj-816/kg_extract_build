@@ -56,12 +56,26 @@ class SearchTests(unittest.TestCase):
              "clause_set_id": "set-1", "clause_number": "第二十条", "text_hash": "s2", "score": 0.7},
         ]
         store = FakeStore(versions, clauses, {"v1": "i1"}, ["i1"],
-                          [{"index_id": "i1", "clause_set_id": "set-1", "version_id": "v1", "family_id": "f1"}])
+                          [{
+                              "index_id": "i1", "clause_set_id": "set-1", "version_id": "v1", "family_id": "f1",
+                              "standard_code": "Q/SY1858-2015", "standard_code_base": "Q/SY1858",
+                              "canonical_name": "页岩气地面工程设计规范", "display_name": "页岩气地面工程设计规范 2015",
+                          }])
         searcher = NormativeSearcher(store, FakeVectorStore(hits), FakeEncoder(), PROFILE)
         result = searcher.search(SearchRequest("通风", 2025, "rel-1", {}, top_k=1))
         self.assertEqual(len(result["evidence"]), 1)
         self.assertEqual(result["evidence"][0]["clause_id"], 501)
         self.assertEqual(result["evidence"][0]["text"], "有限空间作业应当先通风。")
+        self.assertTrue(result["evidence"][0]["metadata_confirmed"])
+        self.assertEqual(result["evidence"][0]["version_status"], "effective")
+        self.assertEqual(result["evidence"][0]["index_status"], "ready")
+        self.assertEqual(result["evidence"][0]["effective_year"], 2020)
+        self.assertIsNone(result["evidence"][0]["invalid_year"])
+        self.assertEqual(result["evidence"][0]["family_id"], "f1")
+        self.assertEqual(result["evidence"][0]["standard_code"], "Q/SY1858-2015")
+        self.assertEqual(result["evidence"][0]["standard_code_base"], "Q/SY1858")
+        self.assertEqual(result["evidence"][0]["canonical_name"], "页岩气地面工程设计规范")
+        self.assertEqual(result["evidence"][0]["display_name"], "页岩气地面工程设计规范 2015")
         self.assertEqual(result["retrieval_trace"]["unique_clause_count"], 1)
 
     def test_expands_window_when_dedup_below_topk(self):

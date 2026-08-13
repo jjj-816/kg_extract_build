@@ -74,6 +74,34 @@ def _evidence(parsed, location: TaskLocationResult) -> tuple[dict[str, Any], ...
     return tuple(_snapshot_block(block) for block in resolve_group_blocks(parsed, group))
 
 
+def _semantic_audit_input_unit(parsed, location: TaskLocationResult) -> tuple[dict[str, Any], ...]:
+    """Expand a heading anchor into its continuous, same-section audit input.
+
+    Semantic routes need the business content beneath a heading (paragraphs,
+    table rows and image references), rather than planning from the heading
+    label alone.  Existing non-heading composite locations remain explicit.
+    """
+    group = location.evidence_groups[0] if location.evidence_groups else None
+    selected = resolve_group_blocks(parsed, group)
+    if group is None or group.anchor_type != "section_heading":
+        return tuple(_snapshot_block(block) for block in selected)
+    blocks = parsed.blocks
+    anchor_index = next((index for index, block in enumerate(blocks) if block.block_id == group.anchor_block_id), None)
+    if anchor_index is None:
+        return tuple(_snapshot_block(block) for block in selected)
+    anchor = blocks[anchor_index]
+    by_id = {block.block_id: block for block in selected}
+    for block in blocks[anchor_index:]:
+        if not block.source_locator.startswith("word/body"):
+            break
+        if block is not anchor and block.block_type == "heading" and len(block.section_path) <= len(anchor.section_path):
+            break
+        if anchor.section_path and block.section_path[:len(anchor.section_path)] != anchor.section_path:
+            continue
+        by_id[block.block_id] = block
+    return tuple(_snapshot_block(block) for block in sorted(by_id.values(), key=lambda item: item.ordinal))
+
+
 def _missing_evidence_result(task: AuditTaskDefinition, location: TaskLocationResult) -> TaskExecutionResult:
     message = location.diagnostic or "未找到可供审核的任务证据"
     issue = AuditIssueResult(task.issue_categories[0], f"{task.name}无法核验：{message}", suggestion="请人工确认章节或补充原文。")
@@ -581,17 +609,28 @@ class AuditOrchestrator:
             elif task.route == "jsa_rule":
                 result = execute_jsa_advisory(task, preview, run_id, result_by_task.get("HSE-001"))
             elif task.route == "semantic_compliance" and compliance_runtime is not None:
-                result = compliance_runtime.run(task, _evidence(preview.parsed_document, location), scope_preflight=(audit_context or {}).get("scope_preflight"), run_id=run_id)
+                result = compliance_runtime.run(task, _semantic_audit_input_unit(preview.parsed_document, location), scope_preflight=(audit_context or {}).get("scope_preflight"), run_id=run_id)
             elif task.route == "semantic_reasonableness" and reasonableness_runtime is not None:
                 graph_result = (audit_context or {}).get("graph_results", {}).get(task.task_id)
                 graph_adapter = (audit_context or {}).get("graph_adapter")
                 retrieval_planner = (audit_context or {}).get("retrieval_planner")
                 planned = None
+                semantic_evidence = _semantic_audit_input_unit(preview.parsed_document, location)
+                graph_query_trace = []
+                planning_trace = None
                 if retrieval_planner is not None:
                     from .bounded_graph import retrieve_bounded_clues, GraphRetrievalResult
-                    planned = retrieval_planner.plan(task, _evidence(preview.parsed_document, location))
+                    from .reasonableness import build_retrieval_planning_trace
+                    planned = retrieval_planner.plan(task, semantic_evidence)
+                    planner_interaction = getattr(getattr(retrieval_planner, "model", None), "last_interaction", None)
+                    planning_trace = build_retrieval_planning_trace(planned, semantic_evidence, planner_interaction)
+                    trace_recorder = (audit_context or {}).get("execution_trace_recorder")
+                    if trace_recorder is not None:
+                        trace_recorder(task.task_id, {"step": 2, **planning_trace})
                     clues = []
                     diagnostics = list(planned.diagnostics)
+                    raw_hit_count = 0
+                    graph_degraded = False
                     for query in planned.graph_queries if graph_adapter is not None else ():
                         try:
                             retrieved = retrieve_bounded_clues(
@@ -602,23 +641,44 @@ class AuditOrchestrator:
                                 max_hops=2,
                             )
                             clues.extend(retrieved.clues)
+                            raw_hit_count += retrieved.raw_hit_count
+                            graph_degraded = graph_degraded or retrieved.degraded
+                            graph_query_trace.append({
+                                "query": query,
+                                "relationship_types": list(retrieved.relationship_types),
+                                "status": "failed" if retrieved.degraded else ("completed" if retrieved.clues else "no_evidence"),
+                                "raw_hit_count": retrieved.raw_hit_count,
+                                "accepted_clue_count": len(retrieved.clues),
+                                "filter_reasons": list(retrieved.filter_reasons),
+                                "diagnostic": retrieved.diagnostic,
+                            })
                             if retrieved.diagnostic:
                                 diagnostics.append(retrieved.diagnostic)
                         except Exception as exc:
                             diagnostics.append(f"图查询规划执行失败：{exc}")
+                            graph_degraded = True
+                            graph_query_trace.append({
+                                "query": query,
+                                "relationship_types": list(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())),
+                                "status": "failed",
+                                "raw_hit_count": 0,
+                                "accepted_clue_count": 0,
+                                "filter_reasons": [],
+                                "diagnostic": str(exc),
+                            })
                     if graph_adapter is None:
                         graph_result = GraphRetrievalResult((), True, "图服务未配置，已降级", tuple(planned.graph_queries), tuple(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())), 0)
                     elif clues:
-                        graph_result = GraphRetrievalResult(tuple(dict.fromkeys(clues)), False, "; ".join(diagnostics) or None, tuple(planned.graph_queries), tuple(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())), len(clues))
+                        graph_result = GraphRetrievalResult(tuple(dict.fromkeys(clues)), graph_degraded, "; ".join(diagnostics) or None, tuple(planned.graph_queries), tuple(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())), raw_hit_count)
                     elif diagnostics:
-                        graph_result = GraphRetrievalResult((), False, "; ".join(diagnostics), tuple(planned.graph_queries), tuple(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())), 0)
+                        graph_result = GraphRetrievalResult((), graph_degraded, "; ".join(diagnostics), tuple(planned.graph_queries), tuple(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())), raw_hit_count)
                 if graph_result is None:
                     from .bounded_graph import GraphRetrievalResult
                     graph_result = GraphRetrievalResult((), False, "未注入图检索结果")
                 planner_interaction = getattr(getattr(retrieval_planner, "model", None), "last_interaction", None) if retrieval_planner is not None else None
-                result = reasonableness_runtime.run(task, _evidence(preview.parsed_document, location), graph_result, run_id, (audit_context or {}).get("normative_search"), retrieval_plan=planned, planner_interaction=planner_interaction)
+                result = reasonableness_runtime.run(task, semantic_evidence, graph_result, run_id, (audit_context or {}).get("normative_search"), retrieval_plan=planned, planner_interaction=planner_interaction, graph_query_trace=tuple(graph_query_trace), planning_trace=planning_trace)
             elif task.route in {"semantic_compliance", "semantic_reasonableness"} and semantic_runtime is not None:
-                result = semantic_runtime.run(task, _evidence(preview.parsed_document, location), run_id)
+                result = semantic_runtime.run(task, _semantic_audit_input_unit(preview.parsed_document, location), run_id)
             else:
                 result = execute_later_route(task, preview.parsed_document, location)
             self._validate(result)

@@ -92,6 +92,10 @@ class NormativeStore:
 
     def version_candidates(self) -> list[NormativeVersionCandidate]:
         rows = self._backend._read("SELECT * FROM kg_normative_version")
+        families = {
+            row["family_id"]: row
+            for row in self._backend._read("SELECT * FROM kg_normative_family")
+        }
         return [
             NormativeVersionCandidate(
                 version_id=r["version_id"],
@@ -103,6 +107,7 @@ class NormativeStore:
             )
             for r in rows
             if r["metadata_confirmed"]
+            and family_consistency(r, families.get(r["family_id"], {})) != "mismatch"
         ]
 
     # ---- 条款集与条款 ----
@@ -248,12 +253,22 @@ class NormativeStore:
             f"SELECT * FROM kg_normative_index WHERE index_id IN ({placeholders})", list(index_ids)
         )
 
+    def index_rows_for_version(self, version_id: str) -> list[dict]:
+        return self._backend._read(
+            "SELECT * FROM kg_normative_index WHERE version_id=%s", (version_id,)
+        )
+
     def list_audit_enabled_indexes(self) -> list[dict]:
         """Return eligible indexes except those explicitly stopped by an administrator."""
-        return self._backend._read(
-            "SELECT * FROM kg_normative_index "
-            "WHERE status='ready' AND audit_disabled_at IS NULL"
+        rows = self._backend._read(
+            "SELECT i.*, v.display_name, v.standard_code, "
+            "f.canonical_name, f.standard_code_base "
+            "FROM kg_normative_index i "
+            "JOIN kg_normative_version v ON v.version_id=i.version_id "
+            "JOIN kg_normative_family f ON f.family_id=v.family_id "
+            "WHERE i.status='ready' AND i.audit_disabled_at IS NULL"
         )
+        return [row for row in rows if family_consistency(row, row) != "mismatch"]
 
     def set_audit_enabled(self, index_id: str, enabled: bool) -> None:
         self._backend._write(
@@ -262,12 +277,23 @@ class NormativeStore:
         )
 
     def historical_version_references(self, version_id: str) -> list[dict]:
-        return self._backend._read(
-            "SELECT DISTINCT e.execution_id, e.run_id, c.clause_id, c.version_id "
-            "FROM audit_task_execution e "
-            "JOIN audit_retrieval_candidate c ON c.execution_id=e.execution_id "
-            "WHERE c.version_id=%s", (version_id,)
+        declared = self._backend._read(
+            "SELECT 'declared_norm' AS reference_type, declared_norm_id AS reference_id, run_id "
+            "FROM audit_declared_norm WHERE version_id=%s", (version_id,)
         )
+        applicability = self._backend._read(
+            "SELECT 'applicability' AS reference_type, a.applicability_id AS reference_id, e.run_id "
+            "FROM audit_applicability_result a "
+            "JOIN audit_task_execution e ON e.execution_id=a.execution_id "
+            "WHERE a.version_id=%s", (version_id,)
+        )
+        evidence = self._backend._read(
+            "SELECT 'task_evidence' AS reference_type, t.task_evidence_id AS reference_id, e.run_id "
+            "FROM audit_task_evidence t "
+            "JOIN audit_task_execution e ON e.execution_id=t.execution_id "
+            "WHERE JSON_UNQUOTE(JSON_EXTRACT(t.evidence_snapshot, '$.version_id'))=%s", (version_id,)
+        )
+        return [*declared, *applicability, *evidence]
 
     def delete_index_records(self, index_id: str) -> None:
         self._backend._write(
@@ -304,7 +330,7 @@ class NormativeStore:
                 self._backend._write("DELETE FROM kg_normative_family WHERE family_id=%s", (family_id,))
 
     def asset_overview(self) -> list[dict]:
-        return self._backend._read(
+        rows = self._backend._read(
             "SELECT f.family_id, f.canonical_name, f.standard_code_base, "
             "v.version_id, v.display_name, v.standard_code, v.version_year, "
             "v.effective_year, v.invalid_year, v.status AS version_status, "
@@ -317,6 +343,14 @@ class NormativeStore:
             "LEFT JOIN kg_normative_index i ON i.version_id=v.version_id "
             "ORDER BY f.canonical_name, v.version_year DESC, i.created_at DESC"
         )
+        return [
+            dict(
+                row,
+                family_consistency=family_consistency(row, row),
+                eligible_for_supersession=family_consistency(row, row) != "mismatch",
+            )
+            for row in rows
+        ]
 
     # ---- 生命周期 ----
     def has_normative_references(self, document_id: int) -> bool:
@@ -338,3 +372,22 @@ def _norm_identity(value) -> str:
     text = unicodedata.normalize("NFKC", str(value or "")).casefold()
     text = re.sub(r"[《》()（）\[\]{}\s·,，、:：;；/\\_-]+", "", text)
     return text
+
+
+def family_consistency(version: dict, family: dict) -> str:
+    """Classify whether a version belongs to its registered normative family."""
+    family_code = _norm_identity(family.get("standard_code_base"))
+    version_code = _norm_identity(version.get("standard_code"))
+    family_name = _strip_years(_norm_identity(family.get("canonical_name")))
+    version_name = _strip_years(_norm_identity(version.get("display_name")))
+    code_matches = not (family_code and version_code) or family_code in version_code or version_code in family_code
+    name_matches = not (family_name and len(version_name) >= 4) or family_name in version_name or version_name in family_name
+    if not code_matches or not name_matches:
+        return "mismatch"
+    if family_code and version_code or family_name and len(version_name) >= 4:
+        return "match"
+    return "unknown"
+
+
+def _strip_years(value: str) -> str:
+    return re.sub(r"(?:19|20)\d{2}", "", value)

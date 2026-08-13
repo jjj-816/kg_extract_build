@@ -73,6 +73,20 @@ def _document_content(document_id):
     return rows[0]["content"] if rows else ""
 
 
+def delete_normative_version(store, vector_store, profile, version_id: str) -> None:
+    """Delete a user-confirmed version only after preserving audit history.
+
+    Every attached vector index is removed through the vector-store lifecycle
+    API before the persistence layer removes its indexes, clauses and version.
+    """
+    refs = store.historical_version_references(version_id)
+    if refs:
+        raise ValueError("该版本已被历史审核引用，只允许停用，禁止物理删除。")
+    for index_row in store.index_rows_for_version(version_id):
+        vector_store.delete_index(profile, index_row["index_id"])
+    store.delete_version_records(version_id)
+
+
 def render_index_area(store, profile, encoder):
     st.subheader("② 索引管理")
     versions = store.list_versions()
@@ -104,9 +118,19 @@ def render_index_area(store, profile, encoder):
             st.dataframe(pd.DataFrame(rows)[[
                 "canonical_name", "standard_code", "version_year", "effective_year",
                 "metadata_confirmed", "clause_count", "index_id", "collection_name",
-                "release_count", "asset_state",
+                "release_count", "family_consistency", "asset_state",
             ]], use_container_width=True, hide_index=True)
-            ready = [row for row in rows if row.get("index_status") == "ready"]
+            if any(row.get("family_consistency") == "mismatch" for row in rows):
+                st.warning(
+                    "规范族不一致：该版本名称或标准号与当前规范族不匹配，"
+                    "已禁止其作为替代链候选或进入统一规范库。请核对后停用或彻底删除。"
+                )
+            ready = [
+                row for row in rows
+                if row.get("index_status") == "ready"
+                and row.get("family_consistency") != "mismatch"
+            ]
+            manageable = [row for row in overview if row.get("index_id")]
             if ready:
                 selected_index = st.selectbox(
                     "选择要启用/停用的索引",
@@ -126,16 +150,37 @@ def render_index_area(store, profile, encoder):
                             st.success("已启用，将进入后续正式审核。")
                             st.rerun()
                         st.error("版本必须为 effective 且元数据已确认后才能启用。")
+            if manageable:
+                management_index = st.selectbox(
+                    "选择要安全处置的索引",
+                    manageable,
+                    format_func=lambda row: (
+                        f"{'⚠️ 误挂' if row.get('family_consistency') == 'mismatch' else '正常'} · "
+                        f"{row['display_name']} · {row['index_id']}"
+                    ),
+                    key=f"normative_manage_index_{version['version_id']}",
+                )
+                if management_index.get("family_consistency") == "mismatch" and not management_index.get("audit_disabled_at"):
+                    confirm_disable_mismatch = st.checkbox(
+                        "我确认停用误挂资产（保留版本、条款和历史记录）",
+                        key=f"confirm_disable_mismatched_normative_{management_index['index_id']}",
+                    )
+                    if confirm_disable_mismatch and st.button(
+                        "停用误挂规范资产", key=f"disable_mismatched_normative_{management_index['index_id']}"
+                    ):
+                        store.set_audit_enabled(management_index["index_id"], False)
+                        st.success("误挂规范资产已停用；请继续核对后决定是否彻底删除。")
+                        st.rerun()
                 st.divider()
                 st.warning("以下是两类独立的危险操作，请分别确认；删除索引不会删除规范版本和条款。")
                 confirm_index_delete = st.checkbox(
                     "我确认删除该规范索引（保留规范版本、条款和发布快照）",
-                    key=f"confirm_normative_index_delete_{selected_index['index_id']}",
+                    key=f"confirm_normative_index_delete_{management_index['index_id']}",
                 )
-                if confirm_index_delete and st.button("删除索引（保留版本和条款）", key=f"delete_normative_index_{selected_index['index_id']}"):
+                if confirm_index_delete and st.button("删除索引（保留版本和条款）", key=f"delete_normative_index_{management_index['index_id']}"):
                     try:
-                        build_normative_vector_store().delete_index(profile, selected_index["index_id"])
-                        store.delete_index_records(selected_index["index_id"])
+                        build_normative_vector_store().delete_index(profile, management_index["index_id"])
+                        store.delete_index_records(management_index["index_id"])
                         st.success("索引已删除，规范版本和条款已保留，可重新构建索引。")
                         st.rerun()
                     except Exception as exc:
@@ -146,14 +191,11 @@ def render_index_area(store, profile, encoder):
                 )
                 if confirm_version_delete and st.button("彻底删除规范版本", key=f"delete_normative_version_{version['version_id']}"):
                     try:
-                        refs = store.historical_version_references(version["version_id"])
-                        if refs:
-                            st.error("该版本已被历史审核引用，只允许停用，禁止物理删除。")
-                        else:
-                            build_normative_vector_store().delete_index(profile, selected_index["index_id"])
-                            store.delete_version_records(version["version_id"])
-                            st.success("规范版本及其索引、条款已彻底删除。")
-                            st.rerun()
+                        delete_normative_version(
+                            store, build_normative_vector_store(), profile, management_index["version_id"],
+                        )
+                        st.success("规范版本及其索引、条款已彻底删除。")
+                        st.rerun()
                     except Exception as exc:
                         st.error(f"彻底删除失败，系统保留可诊断状态：{exc}")
     if st.button("构建 / 重建索引"):

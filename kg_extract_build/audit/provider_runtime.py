@@ -11,6 +11,27 @@ import json
 from typing import Any, Callable
 
 
+_RETRIEVAL_PLAN_FIELDS = (
+    "document_block_ids",
+    "normative_queries",
+    "graph_queries",
+    "relationship_types",
+)
+
+
+def _validate_retrieval_plan_payload(payload: Any) -> dict[str, list[str]]:
+    """Accept only the executable retrieval-planning contract from a provider."""
+    if not isinstance(payload, dict) or set(payload) != set(_RETRIEVAL_PLAN_FIELDS):
+        raise ValueError("检索规划输出不符合受控 JSON 契约")
+    validated: dict[str, list[str]] = {}
+    for field in _RETRIEVAL_PLAN_FIELDS:
+        values = payload[field]
+        if not isinstance(values, list) or len(values) > 5 or any(not isinstance(value, str) for value in values):
+            raise ValueError("检索规划输出不符合受控 JSON 契约")
+        validated[field] = values
+    return validated
+
+
 def build_structured_model(*, api_key: str, base_url: str, model: str, client_factory: Callable[..., Any] | None = None):
     """Build the callable expected by :class:`SemanticRuntime`.
 
@@ -75,24 +96,54 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
             "task_name": task.name,
             "mode": mode,
             "evidence": [dict(item) for item in evidence],
-            "instruction": instruction or "仅返回 document_block_ids、normative_queries、graph_queries；查询词必须依据给定方案证据，不得返回审核结论或证据 ID。",
+            "instruction": instruction or (
+                "只返回 JSON 对象，且顶层只能包含 document_block_ids、normative_queries、"
+                "graph_queries、relationship_types 四个字段。每个字段必须是最多 5 个字符串的数组；"
+                "查询词必须依据给定方案证据，不得返回审核结论或证据 ID。"
+            ),
         }
         messages = [
             {"role": "system", "content": "受证据约束的检索规划器，只输出 JSON。"},
             {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
         ]
-        response = client.chat.completions.create(
-            model=model, temperature=0, response_format={"type": "json_object"}, messages=messages,
-        )
-        content = response.choices[0].message.content or "{}"
-        parsed = json.loads(content)
+        raw_responses: list[str] = []
+        parsed_responses: list[Any] = []
+        for correction in (False, True):
+            request_messages = messages
+            if correction:
+                request_messages = [
+                    *messages,
+                    {
+                        "role": "user",
+                        "content": (
+                            "上一轮输出不符合受控 JSON 契约。仅返回要求的四个顶层数组字段，"
+                            "不要解释或添加其他字段。"
+                        ),
+                    },
+                ]
+            response = client.chat.completions.create(
+                model=model, temperature=0, response_format={"type": "json_object"}, messages=request_messages,
+            )
+            content = response.choices[0].message.content or "{}"
+            raw_responses.append(content)
+            try:
+                parsed = _validate_retrieval_plan_payload(json.loads(content))
+                parsed_responses.append(parsed)
+                break
+            except (ValueError, TypeError, json.JSONDecodeError) as exc:
+                parsed_responses.append({"validation_error": str(exc)})
+                parsed = {}
+                if correction:
+                    break
         retrieval_plan.last_interaction = {
             "kind": "retrieval_planning",
             "model": model,
             "prompt": prompt,
             "messages": messages,
-            "raw_response": content,
+            "raw_response": raw_responses[0],
             "parsed_response": parsed,
+            "correction_raw_response": raw_responses[1] if len(raw_responses) > 1 else None,
+            "correction_parsed_response": parsed_responses[1] if len(parsed_responses) > 1 else None,
         }
         return parsed
 

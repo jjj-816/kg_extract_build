@@ -101,3 +101,98 @@ class NormativePersistenceTests(unittest.TestCase):
         )
         candidates = self.store.version_candidates()
         self.assertEqual([c.metadata_confirmed for c in candidates], [True])
+
+    def test_asset_overview_flags_version_name_not_matching_family(self):
+        class AssetOverviewBackend(InMemoryBackend):
+            def _read(self, sql, params=None):
+                if "FROM kg_normative_family f" in sql:
+                    return [{
+                        "family_id": "family-shale-gas",
+                        "canonical_name": "页岩气地面工程设计规范",
+                        "standard_code_base": "Q/SY1858",
+                        "version_id": "version-confined-space",
+                        "display_name": "有限空间作业安全规范 2020",
+                        "standard_code": "GB 30871-2022",
+                    }]
+                return super()._read(sql, params)
+
+        rows = NormativeStore(AssetOverviewBackend()).asset_overview()
+
+        self.assertEqual(rows[0]["family_consistency"], "mismatch")
+        self.assertFalse(rows[0]["eligible_for_supersession"])
+
+    def test_asset_overview_flags_name_mismatch_even_when_standard_code_matches(self):
+        class AssetOverviewBackend(InMemoryBackend):
+            def _read(self, sql, params=None):
+                if "FROM kg_normative_family f" in sql:
+                    return [{
+                        "family_id": "family-shale-gas",
+                        "canonical_name": "页岩气地面工程设计规范",
+                        "standard_code_base": "Q/SY1858",
+                        "version_id": "version-confined-space",
+                        "display_name": "有限空间作业安全规范 2020",
+                        "standard_code": "Q/SY1858-2015",
+                    }]
+                return super()._read(sql, params)
+
+        rows = NormativeStore(AssetOverviewBackend()).asset_overview()
+
+        self.assertEqual(rows[0]["family_consistency"], "mismatch")
+
+    def test_version_candidates_exclude_confirmed_mismatched_family_asset(self):
+        self.store.save_family("family-shale-gas", FamilyDraft("页岩气地面工程设计规范", "Q/SY1858"))
+        self.store.save_version(
+            VersionDraft(
+                family_id="family-shale-gas", document_id=36,
+                display_name="有限空间作业安全规范 2020", standard_code="GB 30871-2022",
+                effective_year=2020, status="effective", metadata_confirmed=True,
+            )
+        )
+
+        candidates = self.store.version_candidates()
+
+        self.assertEqual(candidates, [])
+
+    def test_enabled_indexes_exclude_mismatched_family_asset(self):
+        class EnabledIndexBackend(InMemoryBackend):
+            def _read(self, sql, params=None):
+                if "FROM kg_normative_index" in sql:
+                    return [{
+                        "index_id": "index-confined-space",
+                        "version_id": "version-confined-space",
+                        "display_name": "有限空间作业安全规范 2020",
+                        "standard_code": "GB 30871-2022",
+                        "canonical_name": "页岩气地面工程设计规范",
+                        "standard_code_base": "Q/SY1858",
+                    }]
+                return super()._read(sql, params)
+
+        indexes = NormativeStore(EnabledIndexBackend()).list_audit_enabled_indexes()
+
+        self.assertEqual(indexes, [])
+
+    def test_historical_version_references_use_columns_defined_by_audit_schema(self):
+        class HistoricalReferenceBackend(InMemoryBackend):
+            def _read(self, sql, params=None):
+                compact = " ".join(sql.split())
+                self.statements.append(compact)
+                if "FROM audit_declared_norm" in compact:
+                    return [{"reference_type": "declared_norm", "reference_id": 7, "run_id": "run-1"}]
+                if "FROM audit_applicability_result" in compact:
+                    return [{"reference_type": "applicability", "reference_id": 11, "run_id": "run-2"}]
+                if "FROM audit_task_evidence" in compact:
+                    return [{"reference_type": "task_evidence", "reference_id": 13, "run_id": "run-3"}]
+                return []
+
+        backend = HistoricalReferenceBackend()
+
+        refs = NormativeStore(backend).historical_version_references("version-1")
+
+        sql = " ".join(backend.statements)
+        self.assertNotIn("audit_retrieval_candidate c", sql)
+        self.assertNotIn("c.version_id", sql)
+        self.assertNotIn("c.clause_id", sql)
+        self.assertIn("audit_declared_norm", sql)
+        self.assertIn("audit_applicability_result", sql)
+        self.assertIn("audit_task_evidence", sql)
+        self.assertEqual([item["reference_type"] for item in refs], ["declared_norm", "applicability", "task_evidence"])
