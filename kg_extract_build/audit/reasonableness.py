@@ -100,7 +100,7 @@ class ReasonablenessRuntime:
         issues = []
         for item in output.get("issues", []):
             issues.append(AuditIssueResult(
-                "工程合理性风险", str(item.get("summary", "工程合理性提示")),
+                "工程合理性风险", str(item.get("summary") or item.get("description") or "工程合理性提示"),
                 suggestion=item.get("suggestion"), actual_value=item.get("actual_value"), expected_value=item.get("expected_value"), machine_status="advisory",
             ))
         if not issues:
