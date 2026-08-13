@@ -41,6 +41,40 @@ class SemanticRouteClient:
 
 
 class ProviderRuntimeTests(unittest.TestCase):
+    def test_graph_entity_extractor_corrects_contract_and_records_responses(self):
+        responses = [
+            '{"items":[{"name":"地下管线","type":"施工对象"}]}',
+            '{"entities":[{"name":"地下管线","type":"施工对象","evidence_block_ids":["B1"]}]}',
+        ]
+
+        class Client:
+            def __init__(self, **_kwargs):
+                self.chat = SimpleNamespace(completions=self)
+                self.calls = 0
+
+            def create(self, **_kwargs):
+                content = responses[self.calls]
+                self.calls += 1
+                return SimpleNamespace(choices=[SimpleNamespace(message=SimpleNamespace(content=content))])
+
+        client = Client()
+        model = build_structured_model(
+            api_key="test-key", base_url="http://localhost:8000/v1", model="test-model",
+            client_factory=lambda **_kwargs: client,
+        )
+
+        result = model.graph_entity_extractor(
+            SimpleNamespace(task_id="T1", name="现场准备"),
+            [{"block_id": "B1", "raw_text": "动土作业前确认地下管线"}],
+            ("施工对象", "作业活动"),
+        )
+
+        self.assertEqual(client.calls, 2)
+        self.assertEqual(result["entities"][0]["name"], "地下管线")
+        self.assertEqual(result["entities"][0]["evidence_block_ids"], ["B1"])
+        interaction = model.graph_entity_extractor.last_interaction
+        self.assertEqual(interaction["raw_response"], responses[0])
+        self.assertEqual(interaction["correction_raw_response"], responses[1])
     def test_retrieval_plan_preserves_invalid_json_compatibility_payload(self):
         class Completions:
             def create(self, **_kwargs):

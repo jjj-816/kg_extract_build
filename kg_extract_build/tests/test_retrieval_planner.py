@@ -6,6 +6,27 @@ from kg_extract_build.audit.retrieval_planner import TaskRetrievalPlanner
 
 
 class RetrievalPlannerTests(unittest.TestCase):
+    def test_graph_entities_must_be_schema_typed_and_evidence_anchored(self):
+        class Extractor:
+            def __call__(self, *_args, **_kwargs):
+                return {"entities": [
+                    {"name": "地下管线", "type": "施工对象", "evidence_block_ids": ["B1"]},
+                    {"name": "地下管线", "type": "施工对象", "evidence_block_ids": ["B1"]},
+                    {"name": "现场准备", "type": "未知类型", "evidence_block_ids": ["B1"]},
+                    {"name": "不存在的设备", "type": "设备工具", "evidence_block_ids": ["B1"]},
+                ]}
+
+        planner = TaskRetrievalPlanner(
+            allowed_entity_types=("施工对象", "设备工具"), graph_entity_extractor=Extractor(),
+        )
+        plan = planner.plan(
+            SimpleNamespace(task_id="T1", name="现场准备"),
+            [{"block_id": "B1", "raw_text": "动土作业前确认地下管线"}],
+        )
+
+        self.assertEqual([(item.name, item.entity_type) for item in plan.graph_entities], [("地下管线", "施工对象")])
+        self.assertEqual(plan.graph_queries, ("地下管线",))
+        self.assertIn("graph_query_mode=entity_extraction", plan.diagnostics)
     def test_provider_corrects_invalid_retrieval_plan_once_and_records_both_responses(self):
         responses = [
             '{"retrieval_plan": [{"keywords": ["设备"]}]}',

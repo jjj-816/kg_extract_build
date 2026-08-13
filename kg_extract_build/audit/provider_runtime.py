@@ -34,6 +34,24 @@ def _validate_retrieval_plan_payload(payload: Any) -> dict[str, list[str]]:
     return validated
 
 
+def _validate_graph_entity_payload(payload: Any) -> dict[str, list[dict[str, Any]]]:
+    if not isinstance(payload, dict) or set(payload) != {"entities"}:
+        raise ValueError("图检索实体抽取输出不符合受控 JSON 契约")
+    entities = payload["entities"]
+    if not isinstance(entities, list) or len(entities) > 8:
+        raise ValueError("图检索实体抽取输出不符合受控 JSON 契约")
+    normalized: list[dict[str, Any]] = []
+    for item in entities:
+        if not isinstance(item, dict) or set(item) != {"name", "type", "evidence_block_ids"}:
+            raise ValueError("图检索实体抽取输出不符合受控 JSON 契约")
+        if not isinstance(item["name"], str) or not isinstance(item["type"], str):
+            raise ValueError("图检索实体抽取输出不符合受控 JSON 契约")
+        if not isinstance(item["evidence_block_ids"], list) or any(not isinstance(value, str) for value in item["evidence_block_ids"]):
+            raise ValueError("图检索实体抽取输出不符合受控 JSON 契约")
+        normalized.append(dict(item))
+    return {"entities": normalized}
+
+
 def build_structured_model(*, api_key: str, base_url: str, model: str, client_factory: Callable[..., Any] | None = None):
     """Build the callable expected by :class:`SemanticRuntime`.
 
@@ -207,6 +225,58 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
         }
         return returned_payload
 
+    def graph_entity_extractor(task, evidence, schema_entity_types):
+        prompt = {
+            "task_id": task.task_id,
+            "task_name": task.name,
+            "schema_entity_types": list(schema_entity_types),
+            "evidence": [dict(item) for item in evidence],
+            "instruction": (
+                "仅从给定方案证据原文抽取可用于图检索的短实体。名称必须在原文原样出现，"
+                "类型必须来自 schema_entity_types；不得输出章节标题、完整句子、审核结论或推测。"
+                "只返回 JSON 对象，顶层仅含 entities。entities 最多 8 项，每项必须且只能含"
+                "name、type、evidence_block_ids。"
+            ),
+        }
+        messages = [
+            {"role": "system", "content": "受 Schema 约束的施工方案图检索实体抽取器，只输出 JSON。"},
+            {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
+        ]
+        raw_responses: list[str] = []
+        parsed_responses: list[Any] = []
+        returned_payload: dict[str, Any] = {}
+        for correction in (False, True):
+            request_messages = messages if not correction else [
+                *messages,
+                {"role": "user", "content": "上一轮输出不符合受控 JSON 契约。仅返回 entities 数组，不要解释或其他字段。"},
+            ]
+            response = client.chat.completions.create(
+                model=model, temperature=0, response_format={"type": "json_object"}, messages=request_messages,
+            )
+            content = response.choices[0].message.content or "{}"
+            raw_responses.append(content)
+            try:
+                parsed = _validate_graph_entity_payload(json.loads(content))
+                parsed_responses.append(parsed)
+                returned_payload = parsed
+                break
+            except (ValueError, TypeError, json.JSONDecodeError) as exc:
+                parsed_responses.append({"validation_error": str(exc)})
+                if correction:
+                    break
+        graph_entity_extractor.last_interaction = {
+            "kind": "graph_entity_extraction",
+            "model": model,
+            "prompt": prompt,
+            "messages": messages,
+            "raw_response": raw_responses[0] if raw_responses else None,
+            "parsed_response": parsed_responses[0] if parsed_responses else None,
+            "correction_raw_response": raw_responses[1] if len(raw_responses) > 1 else None,
+            "correction_parsed_response": parsed_responses[1] if len(parsed_responses) > 1 else None,
+        }
+        return returned_payload
+
     call.retrieval_planner = retrieval_plan
+    call.graph_entity_extractor = graph_entity_extractor
 
     return call

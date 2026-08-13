@@ -89,8 +89,11 @@ class ProductionCompositionTests(unittest.TestCase):
             return SimpleNamespace()
 
         backend = SimpleNamespace(ensure_normative_audit_schema=lambda: None)
-        schema = SimpleNamespace(relation_types=({"name": "USES_EQUIPMENT"}, {"name": "HAS_PARAMETER"}))
-        model = SimpleNamespace(retrieval_planner=lambda *_args, **_kwargs: {})
+        schema = SimpleNamespace(
+            relation_types=({"name": "USES_EQUIPMENT"}, {"name": "HAS_PARAMETER"}),
+            entity_types=({"name": "设备工具"}, {"name": "施工参数"}),
+        )
+        model = SimpleNamespace(retrieval_planner=lambda *_args, **_kwargs: {}, graph_entity_extractor=lambda *_args, **_kwargs: {})
         scope = SimpleNamespace(audit_year=2026)
         with (
             patch("kg_extract_build.persistence.MySQLExperimentStore.from_env", return_value=backend),
@@ -111,6 +114,8 @@ class ProductionCompositionTests(unittest.TestCase):
             captured["retrieval_planner"].allowed_relationships,
             frozenset({"USES_EQUIPMENT", "HAS_PARAMETER"}),
         )
+        self.assertEqual(captured["retrieval_planner"].allowed_entity_types, frozenset({"设备工具", "施工参数"}))
+        self.assertIs(captured["retrieval_planner"].graph_entity_extractor, model.graph_entity_extractor)
 
     def test_build_routes_graph_and_runtime_seams(self):
         composition = ProductionAuditComposition.build(

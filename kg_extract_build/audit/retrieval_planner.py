@@ -11,6 +11,13 @@ class RetrievalPlanError(ValueError):
 
 
 @dataclass(frozen=True)
+class GraphQueryEntity:
+    name: str
+    entity_type: str
+    evidence_block_ids: tuple[str, ...]
+
+
+@dataclass(frozen=True)
 class RetrievalPlan:
     task_id: str
     prompt_version: str
@@ -19,6 +26,7 @@ class RetrievalPlan:
     graph_queries: tuple[str, ...]
     relationship_types: tuple[str, ...] = ()
     diagnostics: tuple[str, ...] = ()
+    graph_entities: tuple[GraphQueryEntity, ...] = ()
 
     def to_record(self) -> dict[str, Any]:
         return {
@@ -29,14 +37,20 @@ class RetrievalPlan:
             "graph_queries": list(self.graph_queries),
             "relationship_types": list(self.relationship_types),
             "diagnostics": list(self.diagnostics),
+            "graph_entities": [
+                {"name": item.name, "entity_type": item.entity_type, "evidence_block_ids": list(item.evidence_block_ids)}
+                for item in self.graph_entities
+            ],
         }
 
 
 class TaskRetrievalPlanner:
-    def __init__(self, model: Callable[..., Mapping[str, Any]] | None = None, prompt_version: str = "retrieval-plan-v1", allowed_relationships=()):
+    def __init__(self, model: Callable[..., Mapping[str, Any]] | None = None, prompt_version: str = "retrieval-plan-v1", allowed_relationships=(), allowed_entity_types=(), graph_entity_extractor=None):
         self.model = model
         self.prompt_version = prompt_version
         self.allowed_relationships = frozenset(str(item) for item in allowed_relationships if str(item).strip())
+        self.allowed_entity_types = frozenset(str(item) for item in allowed_entity_types if str(item).strip())
+        self.graph_entity_extractor = graph_entity_extractor
 
     def plan(self, task, evidence: tuple[dict, ...] | list[dict]) -> RetrievalPlan:
         evidence = tuple(dict(item) for item in evidence)
@@ -45,6 +59,7 @@ class TaskRetrievalPlanner:
             return RetrievalPlan(task.task_id, self.prompt_version, (), (), (), (), ("无方案证据锚点，未生成检索计划",))
         raw: Mapping[str, Any] = {}
         diagnostics: list[str] = []
+        graph_entities = self._graph_entities(task, evidence, block_ids, diagnostics)
         if self.model is not None:
             try:
                 try:
@@ -93,7 +108,44 @@ class TaskRetrievalPlanner:
             diagnostics.append("retrieval_planner_io_captured")
         if raw_relationships and len(raw_relationships) != len(relationships):
             diagnostics.append("模型返回的关系不在完整 Schema 中，已过滤")
-        return RetrievalPlan(task.task_id, self.prompt_version, anchors, normative, graph, relationships, tuple(diagnostics))
+        if graph_entities:
+            graph = tuple(item.name for item in graph_entities)
+            diagnostics.append("graph_query_mode=entity_extraction")
+        return RetrievalPlan(task.task_id, self.prompt_version, anchors, normative, graph, relationships, tuple(diagnostics), graph_entities)
+
+    def _graph_entities(self, task, evidence, block_ids: tuple[str, ...], diagnostics: list[str]) -> tuple[GraphQueryEntity, ...]:
+        if self.graph_entity_extractor is None:
+            return ()
+        try:
+            raw = self.graph_entity_extractor(task, evidence, tuple(sorted(self.allowed_entity_types))) or {}
+        except Exception as exc:
+            diagnostics.append(f"图检索实体抽取模型失败：{exc}")
+            return ()
+        entities = raw.get("entities", ()) if isinstance(raw, Mapping) else ()
+        if not isinstance(entities, list):
+            diagnostics.append("图检索实体抽取输出不符合受控 JSON 契约")
+            return ()
+        result: list[GraphQueryEntity] = []
+        seen: set[tuple[str, str]] = set()
+        raw_text_by_id = {str(item.get("block_id")): str(item.get("raw_text") or "") for item in evidence}
+        for item in entities:
+            if not isinstance(item, Mapping):
+                continue
+            name = str(item.get("name") or "").strip()
+            entity_type = str(item.get("type") or "").strip()
+            evidence_ids = tuple(str(value) for value in item.get("evidence_block_ids", ()) if str(value) in block_ids)
+            if not 2 <= len(name) <= 40 or entity_type not in self.allowed_entity_types or not evidence_ids:
+                continue
+            if not any(name in raw_text_by_id[block_id] for block_id in evidence_ids):
+                continue
+            key = (name, entity_type)
+            if key in seen:
+                continue
+            seen.add(key)
+            result.append(GraphQueryEntity(name, entity_type, evidence_ids))
+            if len(result) == 8:
+                break
+        return tuple(result)
 
     @staticmethod
     def _controlled_lists(raw: Mapping[str, Any], diagnostics: list[str]) -> dict[str, list[str]] | None:

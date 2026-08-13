@@ -54,11 +54,16 @@ class Neo4jReadOnlyTests(unittest.TestCase):
         rows = graph.query_clues(task_id="HSE-001", query="pump", relationship_types=("USES",), max_hops=2)
         self.assertEqual(rows[0]["clue_id"], "a1")
         query, params = driver.session_instance.calls[0]
-        self.assertIn("2..8", query)
+        self.assertIn("MATCH (matched:Entity)-[head:HAS_ASSERTION]-(direct:RelationAssertion)", query)
+        self.assertIn("UNION", query)
+        self.assertIn("DISTINCT", query)
+        self.assertIn("1 AS hops", query)
+        self.assertIn("2 AS hops", query)
+        self.assertNotIn("UNWIND assertions", query)
         self.assertIn("__kg_aggregate", query)
         self.assertIn("aliases", query)
-        self.assertIn("-(finish:Entity)", query)
-        self.assertIn("coalesce(a.evidence_sentence,a.raw_text,'') AS evidence_sentence", query)
+        self.assertIn("-(neighbor:Entity)", query)
+        self.assertIn("coalesce(candidate.evidence_sentence,candidate.raw_text,'') AS evidence_sentence", query)
         self.assertEqual(params["relationship_types"], ["USES"])
         self.assertNotRegex(query, r"\b(CREATE|MERGE|SET|DELETE)\b")
 
@@ -82,7 +87,7 @@ class Neo4jReadOnlyTests(unittest.TestCase):
 
         self.assertEqual(rows[0]["evidence_sentence"], "作业人员正确佩戴劳动保护用品。")
         query, _ = driver.session_instance.calls[0]
-        self.assertIn("a.evidence_json AS evidence_json", query)
+        self.assertIn("candidate.evidence_json AS evidence_json", query)
 
 
 if __name__ == "__main__":
