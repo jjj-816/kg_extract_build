@@ -6,7 +6,7 @@ from typing import Any, Callable, Mapping
 
 from .executor import AuditIssueResult, TaskExecutionResult
 from .normative_scope import NormativeScopePreflight
-from .semantic_compliance import select_published_clause_evidence, validate_compliance_conclusion
+from .semantic_compliance import filter_clause_candidates, validate_compliance_conclusion
 
 
 class ComplianceRuntime:
@@ -30,9 +30,9 @@ class ComplianceRuntime:
         query = "\n".join(plan.normative_queries) if plan and plan.normative_queries else "\n".join(item.get("raw_text", "") for item in evidence)
         record("normative_retrieval", "started", {"query": query})
         search_result = self.normative_search(query=query, scope=scope_preflight.scope)
-        normative_evidence = select_published_clause_evidence(search_result, scope_preflight.scope)
+        normative_evidence, candidate_trace, filtering_warnings = filter_clause_candidates(search_result, scope_preflight.scope)
         raw_evidence = list(search_result.get("evidence", ()))
-        record("normative_retrieval", "completed" if normative_evidence else "no_evidence", {"query": query}, {"candidate_count": len(raw_evidence), "selected_count": len(normative_evidence), "filtered_count": max(0, len(raw_evidence) - len(normative_evidence)), "coverage": search_result.get("coverage", []), "warnings": search_result.get("warnings", []), "retrieval_trace": search_result.get("retrieval_trace", {}), "diagnostic": search_result.get("diagnostic")})
+        record("normative_retrieval", "completed" if normative_evidence else "no_evidence", {"query": query}, {"candidate_count": len(raw_evidence), "selected_count": len(normative_evidence), "filtered_count": max(0, len(raw_evidence) - len(normative_evidence)), "candidates": list(candidate_trace), "coverage": search_result.get("coverage", []), "warnings": [*search_result.get("warnings", []), *filtering_warnings], "retrieval_trace": search_result.get("retrieval_trace", {}), "diagnostic": search_result.get("diagnostic")})
         if not normative_evidence:
             record("compliance_model", "not_called", output_data={"reason": "no_applicable_normative_evidence"})
             review = AuditIssueResult("规范库覆盖缺口", f"{task.name}未获得可用规范条款", suggestion="不得将检索缺失解释为符合", machine_status="manual_review")
