@@ -156,3 +156,29 @@ def validate_compliance_conclusion(output: Mapping[str, Any], document_evidence_
     if status == "issue_found" and (not referenced_docs or not referenced_norms):
         raise ValueError("不符合结论必须同时引用文档证据和规范证据")
     return dict(output)
+
+
+def normalize_compliance_conclusion(output: Mapping[str, Any]) -> dict[str, Any]:
+    """Map provider wording to the controlled compliance conclusion contract."""
+    value = dict(output)
+    status_map = {"不符合": "issue_found", "存在问题": "issue_found", "发现问题": "issue_found", "符合": "no_issue", "无问题": "no_issue", "需人工复核": "manual_review", "无法判断": "manual_review"}
+    value["result_status"] = status_map.get(value.get("result_status"), value.get("result_status"))
+    document_ids = list(value.get("document_evidence_ids", ()))
+    normative_ids = list(value.get("normative_evidence_ids", ()))
+    issues = []
+    for item in value.get("issues", ()):
+        if not isinstance(item, Mapping):
+            continue
+        normalized = dict(item)
+        normalized.setdefault("category", normalized.get("issue_type") or normalized.get("type") or "合规性问题")
+        normalized.setdefault("summary", normalized.get("description") or normalized.get("content") or "需核对合规性要求")
+        normalized.setdefault("machine_status", "open")
+        document_ids.extend(normalized.get("document_evidence_ids", ()) or ())
+        normative_ids.extend(normalized.get("normative_evidence_ids", ()) or ())
+        for key in ("issue_type", "type", "description", "content", "document_evidence_ids", "normative_evidence_ids"):
+            normalized.pop(key, None)
+        issues.append(normalized)
+    value["issues"] = issues
+    value["document_evidence_ids"] = list(dict.fromkeys(document_ids))
+    value["normative_evidence_ids"] = list(dict.fromkeys(str(item) for item in normative_ids))
+    return value

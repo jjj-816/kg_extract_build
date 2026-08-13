@@ -98,6 +98,21 @@ class ProviderRuntimeTests(unittest.TestCase):
 
         self.assertEqual(output, {"issues": []})
 
+    def test_compliance_correction_prompt_requires_controlled_conclusion_fields(self):
+        client = None
+        def factory(**kwargs):
+            nonlocal client
+            client = SemanticRouteClient(**kwargs)
+            return client
+        model = build_structured_model(api_key="key", base_url="https://provider.test/v1", model="audit-model", client_factory=factory)
+        task = SimpleNamespace(task_id="C-1", name="合规", route="semantic_compliance")
+
+        model(task, {"run_id": "r", "document_evidence": [], "normative_evidence": []}, correction=True)
+
+        prompt = __import__("json").loads(client.chat.completions.kwargs["messages"][1]["content"])
+        self.assertIn("issue_found", prompt["instruction"])
+        self.assertIn("document_evidence_ids", prompt["instruction"])
+
 
 if __name__ == "__main__":
     unittest.main()

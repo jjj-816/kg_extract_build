@@ -111,6 +111,12 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
             "correction_pass": correction,
             **route_contract,
         }
+        if correction and task.route == "semantic_compliance":
+            prompt["instruction"] += (
+                "上一轮结论未通过结构或证据引用校验。现在只修正为 JSON：result_status 只能是 "
+                "issue_found、no_issue 或 manual_review；每个问题必须有 category、summary、machine_status；"
+                "issue_found 必须在顶层给出本输入中实际存在的 document_evidence_ids 和 normative_evidence_ids。"
+            )
         messages = [
             {"role": "system", "content": "审计语义审核器，只输出最终 JSON。"},
             {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},

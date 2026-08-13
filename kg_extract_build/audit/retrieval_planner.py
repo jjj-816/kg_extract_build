@@ -57,7 +57,18 @@ class TaskRetrievalPlanner:
         controlled = self._controlled_lists(raw, diagnostics)
         raw_relationships: tuple[str, ...] = ()
         if controlled is None:
-            normative, graph, relationships, anchors = (), (), (), block_ids
+            recovered = self._compatible_queries(raw)
+            if recovered:
+                normative = graph = recovered
+                relationships = tuple(sorted(self.allowed_relationships))
+                diagnostics.append("planning_mode=compatibility_recovered")
+            else:
+                fallback = self._evidence_query(evidence)
+                normative = graph = (fallback,) if fallback else ()
+                relationships = tuple(sorted(self.allowed_relationships))
+                if fallback:
+                    diagnostics.append("planning_mode=evidence_derived_fallback")
+            anchors = block_ids
         else:
             normative = self._queries(controlled["normative_queries"])
             graph = self._queries(controlled["graph_queries"])
@@ -66,6 +77,8 @@ class TaskRetrievalPlanner:
                 item for item in raw_relationships
                 if not self.allowed_relationships or item in self.allowed_relationships
             )
+            if not relationships and self.allowed_relationships:
+                relationships = tuple(self.allowed_relationships)
             anchors = tuple(item for item in controlled["document_block_ids"] if item in block_ids)
             unknown_anchors = tuple(item for item in controlled["document_block_ids"] if item not in block_ids)
             if unknown_anchors:
@@ -73,6 +86,11 @@ class TaskRetrievalPlanner:
             if not anchors:
                 anchors = block_ids
                 diagnostics.append("模型未返回有效证据锚点，回退为全部方案证据")
+            if not graph:
+                fallback = self._evidence_query(evidence)
+                if fallback:
+                    graph = (fallback,)
+                    diagnostics.append("planning_mode=evidence_derived_fallback")
         if not normative and not graph:
             diagnostics.append("未生成规范或图查询词")
         interaction = getattr(self.model, "last_interaction", None)
@@ -112,3 +130,27 @@ class TaskRetrievalPlanner:
             if text and text not in result:
                 result.append(text)
         return tuple(result[:5])
+
+    @classmethod
+    def _compatible_queries(cls, raw: Mapping[str, Any]) -> tuple[str, ...]:
+        if not isinstance(raw, Mapping):
+            return ()
+        values: list[Any] = []
+        for field in ("retrieval_queries", "search_queries", "case_hints"):
+            value = raw.get(field, ())
+            if isinstance(value, list):
+                values.extend(value)
+        plans = raw.get("retrieval_plan", ())
+        if isinstance(plans, list):
+            for item in plans:
+                if isinstance(item, Mapping) and isinstance(item.get("keywords"), list):
+                    values.extend(item["keywords"])
+        return cls._queries(values)
+
+    @staticmethod
+    def _evidence_query(evidence: tuple[dict, ...]) -> str:
+        for item in evidence:
+            text = str(item.get("raw_text") or "").strip()
+            if text:
+                return text[:200]
+        return ""

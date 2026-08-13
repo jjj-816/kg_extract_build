@@ -44,5 +44,21 @@ class ReasonablenessTests(unittest.TestCase):
         self.assertNotIn("规范不符合", result.manual_reviews[0].summary)
 
 
+    def test_no_graph_clue_still_calls_model_for_manual_review_advisory(self):
+        calls = []
+        def model(*_args, **_kwargs):
+            calls.append(True)
+            return {"issues": [{"summary": "需核对现场隔离措施"}]}
+
+        result = ReasonablenessRuntime(model).run(
+            TASK, [{"block_id": "d1", "raw_text": "未确认危险区域隔离"}],
+            GraphRetrievalResult((), False, "图查询已发起但无有效线索"), "run",
+        )
+
+        self.assertEqual(calls, [True])
+        self.assertEqual(result.result_status, "manual_review")
+        self.assertIn("需核对现场隔离措施", result.manual_reviews[0].summary)
+
+
 if __name__ == "__main__":
     unittest.main()

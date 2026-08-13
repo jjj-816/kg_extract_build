@@ -64,10 +64,10 @@ class RetrievalPlannerTests(unittest.TestCase):
             },
         )
 
-        plan = planner.plan(SimpleNamespace(task_id="T1"), [{"block_id": "B1"}])
+        plan = planner.plan(SimpleNamespace(task_id="T1"), [{"block_id": "B1", "raw_text": "施工准备"}])
 
         self.assertIn("检索规划输出不符合受控 JSON 契约", plan.diagnostics)
-        self.assertEqual(plan.normative_queries, ())
+        self.assertEqual(plan.normative_queries, ("设备适配性",))
 
     def test_plan_records_empty_top_level_list_diagnostics(self):
         planner = TaskRetrievalPlanner(
@@ -79,12 +79,14 @@ class RetrievalPlannerTests(unittest.TestCase):
             },
         )
 
-        plan = planner.plan(SimpleNamespace(task_id="T1"), [{"block_id": "B1"}])
+        plan = planner.plan(SimpleNamespace(task_id="T1"), [{"block_id": "B1", "raw_text": "施工准备"}])
 
         self.assertIn("document_block_ids 为空列表", plan.diagnostics)
         self.assertIn("normative_queries 为空列表", plan.diagnostics)
         self.assertIn("graph_queries 为空列表", plan.diagnostics)
         self.assertIn("relationship_types 为空列表", plan.diagnostics)
+        self.assertEqual(plan.graph_queries, ("施工准备",))
+        self.assertIn("planning_mode=evidence_derived_fallback", plan.diagnostics)
 
     def test_planner_returns_only_anchored_queries(self):
         task = SimpleNamespace(task_id="BASIS-002")
@@ -117,6 +119,18 @@ class RetrievalPlannerTests(unittest.TestCase):
         plan = planner.plan(SimpleNamespace(task_id="T2"), ({"block_id": "b1", "raw_text": "设备"},))
         self.assertEqual(plan.relationship_types, ("USES_EQUIPMENT",))
         self.assertIn("过滤", " ".join(plan.diagnostics))
+
+
+    def test_plan_uses_evidence_query_when_model_has_no_compatible_queries(self):
+        planner = TaskRetrievalPlanner(lambda *_args, **_kwargs: {"unrelated": []})
+
+        plan = planner.plan(
+            SimpleNamespace(task_id="T1"),
+            [{"block_id": "B1", "raw_text": "施工前不核图纸，不做技术交底"}],
+        )
+
+        self.assertEqual(plan.graph_queries, ("施工前不核图纸，不做技术交底",))
+        self.assertIn("planning_mode=evidence_derived_fallback", plan.diagnostics)
 
 
 if __name__ == "__main__":

@@ -148,5 +148,34 @@ class ComplianceRuntimeTests(unittest.TestCase):
         self.assertEqual({item.get("evidence_type") for item in result.evidence}, {"document", "normative_clause"})
 
 
+    def test_chinese_provider_conclusion_is_normalized_to_traceable_issue(self):
+        def search(**_):
+            return {"evidence": [{"clause_id": "c1", "version_id": "v1", "release_id": "rel", "standard_code": "f1", "text": "完整条款", "source_type": "spec", **eligible_version_fields()}]}
+
+        def model(_task, _package, **_kwargs):
+            return {"result_status": "不符合", "issues": [{"issue_type": "missing_requirement", "description": "缺少控制措施", "document_evidence_ids": ["d1"], "normative_evidence_ids": ["c1"]}]}
+
+        result = ComplianceRuntime(search, model).run(TASK, [{"block_id": "d1", "raw_text": "方案内容"}], scope_preflight=preflight(), run_id="r")
+
+        self.assertEqual(result.result_status, "issue_found")
+        self.assertEqual(result.issues[0].category, "missing_requirement")
+        self.assertEqual(result.issues[0].summary, "缺少控制措施")
+
+    def test_compliance_output_is_corrected_once_after_validation_failure(self):
+        calls = []
+        def search(**_):
+            return {"evidence": [{"clause_id": "c1", "version_id": "v1", "release_id": "rel", "standard_code": "f1", "text": "完整条款", "source_type": "spec", **eligible_version_fields()}]}
+        def model(_task, _package, *, correction=False):
+            calls.append(correction)
+            if not correction:
+                return {"result_status": "不符合", "issues": [{"description": "缺少措施"}]}
+            return {"result_status": "issue_found", "document_evidence_ids": ["d1"], "normative_evidence_ids": ["c1"], "issues": [{"category": "信息问题", "summary": "缺少措施", "machine_status": "open"}]}
+
+        result = ComplianceRuntime(search, model).run(TASK, [{"block_id": "d1", "raw_text": "方案内容"}], scope_preflight=preflight(), run_id="r")
+
+        self.assertEqual(calls, [False, True])
+        self.assertEqual(result.result_status, "issue_found")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -631,6 +631,7 @@ class AuditOrchestrator:
                     diagnostics = list(planned.diagnostics)
                     raw_hit_count = 0
                     graph_degraded = False
+                    planning_mode = next((item for item in planned.diagnostics if item.startswith("planning_mode=")), "planning_mode=strict_contract")
                     for query in planned.graph_queries if graph_adapter is not None else ():
                         try:
                             retrieved = retrieve_bounded_clues(
@@ -645,6 +646,8 @@ class AuditOrchestrator:
                             graph_degraded = graph_degraded or retrieved.degraded
                             graph_query_trace.append({
                                 "query": query,
+                                "query_source": planning_mode,
+                                "query_sent_to_neo4j": True,
                                 "relationship_types": list(retrieved.relationship_types),
                                 "status": "failed" if retrieved.degraded else ("completed" if retrieved.clues else "no_evidence"),
                                 "raw_hit_count": retrieved.raw_hit_count,
@@ -659,6 +662,8 @@ class AuditOrchestrator:
                             graph_degraded = True
                             graph_query_trace.append({
                                 "query": query,
+                                "query_source": planning_mode,
+                                "query_sent_to_neo4j": True,
                                 "relationship_types": list(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())),
                                 "status": "failed",
                                 "raw_hit_count": 0,

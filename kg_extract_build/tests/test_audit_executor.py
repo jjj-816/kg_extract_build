@@ -75,6 +75,8 @@ class AuditExecutorTests(unittest.TestCase):
         self.assertIn("压裂车", planning["input"]["evidence_text"])
         graph_trace = next(item for item in result.execution_trace if item["stage"] == "graph_retrieval")
         self.assertEqual(graph_trace["input"]["queries"], ["压裂车"])
+        self.assertTrue(graph_trace["input"]["query_sent_to_neo4j"])
+        self.assertEqual(graph_trace["input"]["query_source"], "planning_mode=strict_contract")
         self.assertEqual(graph_trace["output"]["raw_hit_count"], 2)
         self.assertEqual(graph_trace["output"]["accepted_clue_count"], 1)
         self.assertEqual(graph_trace["output"]["filter_reasons"], ["relationship_type 不在白名单"])

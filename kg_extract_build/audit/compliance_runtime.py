@@ -6,7 +6,7 @@ from typing import Any, Callable, Mapping
 
 from .executor import AuditIssueResult, TaskExecutionResult
 from .normative_scope import NormativeScopePreflight
-from .semantic_compliance import filter_clause_candidates, validate_compliance_conclusion
+from .semantic_compliance import filter_clause_candidates, normalize_compliance_conclusion, validate_compliance_conclusion
 
 
 class ComplianceRuntime:
@@ -41,14 +41,24 @@ class ComplianceRuntime:
         try:
             record("compliance_model", "started", {"document_evidence_count": len(document_evidence), "normative_evidence_count": len(normative_evidence)})
             raw_output = self.model(task, package)
-            interaction = getattr(self.model, "last_interaction", None)
-            if interaction:
-                record("compliance_model_io", "captured", output_data=interaction)
-            output = validate_compliance_conclusion(raw_output, {item["block_id"] for item in document_evidence}, normative_evidence)
+            normalized_output = normalize_compliance_conclusion(raw_output)
+            record("compliance_model_normalization", "completed", output_data={"raw_output": raw_output, "normalized_output": normalized_output})
+            output = validate_compliance_conclusion(normalized_output, {item["block_id"] for item in document_evidence}, normative_evidence)
             record("compliance_model", "completed", output_data={"result_status": output.get("result_status"), "issue_count": len(output.get("issues", []))})
         except (ValueError, TypeError, KeyError) as exc:
-            record("compliance_model", "failed", error=str(exc))
-            return TaskExecutionResult(task.task_id, task.route, "failed", None, document_evidence + normative_evidence, diagnostics=(f"合规结论校验失败：{exc}",), execution_trace=tuple(trace))
+            record("compliance_model", "correction_requested", error=str(exc))
+            try:
+                raw_output = self.model(task, package, correction=True)
+                normalized_output = normalize_compliance_conclusion(raw_output)
+                record("compliance_model_normalization", "corrected", output_data={"raw_output": raw_output, "normalized_output": normalized_output})
+                output = validate_compliance_conclusion(normalized_output, {item["block_id"] for item in document_evidence}, normative_evidence)
+                record("compliance_model", "completed_after_correction", output_data={"result_status": output.get("result_status"), "issue_count": len(output.get("issues", []))})
+            except (ValueError, TypeError, KeyError) as correction_exc:
+                record("compliance_model", "failed", error=str(correction_exc))
+                return TaskExecutionResult(task.task_id, task.route, "failed", None, document_evidence + normative_evidence, diagnostics=(f"合规结论校验失败（已纠正一次）：{correction_exc}",), execution_trace=tuple(trace))
+        interaction = getattr(self.model, "last_interaction", None)
+        if interaction:
+            record("compliance_model_io", "captured", output_data=interaction)
         issues = tuple(AuditIssueResult(**item) for item in output.get("issues", []))
         plan_diagnostics = tuple(plan.diagnostics) if plan else ()
         record("task_result", "completed", output_data={"result_status": output["result_status"], "issue_count": len(issues)})

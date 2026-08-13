@@ -46,7 +46,7 @@ class ReasonablenessRuntime:
         if retrieval_plan is not None:
             trace.append({"step": 2, **(planning_trace or build_retrieval_planning_trace(retrieval_plan, evidence, planner_interaction))})
         for query_trace in graph_query_trace:
-            trace.append({"step": len(trace) + 1, "stage": "graph_retrieval", "status": query_trace["status"], "input": {"queries": [query_trace["query"]], "relationship_types": query_trace["relationship_types"]}, "output": {"raw_hit_count": query_trace["raw_hit_count"], "accepted_clue_count": query_trace["accepted_clue_count"], "filter_reasons": query_trace["filter_reasons"], "diagnostic": query_trace["diagnostic"]}, "error": query_trace["diagnostic"] if query_trace["status"] == "failed" else None})
+            trace.append({"step": len(trace) + 1, "stage": "graph_retrieval", "status": query_trace["status"], "input": {"queries": [query_trace["query"]], "relationship_types": query_trace["relationship_types"], "query_source": query_trace.get("query_source"), "query_sent_to_neo4j": query_trace.get("query_sent_to_neo4j", False)}, "output": {"raw_hit_count": query_trace["raw_hit_count"], "accepted_clue_count": query_trace["accepted_clue_count"], "filter_reasons": query_trace["filter_reasons"], "diagnostic": query_trace["diagnostic"]}, "error": query_trace["diagnostic"] if query_trace["status"] == "failed" else None})
         evidence.extend({
             "evidence_type": "graph_clue",
             "clue_id": clue.clue_id,
@@ -65,8 +65,18 @@ class ReasonablenessRuntime:
         if not graph_result.clues:
             if not graph_query_trace:
                 trace.append({"step": len(trace) + 1, "stage": "graph_retrieval", "status": "no_evidence", "input": {"queries": list(graph_result.queries), "relationship_types": list(graph_result.relationship_types)}, "output": {"raw_hit_count": graph_result.raw_hit_count, "accepted_clue_count": 0, "filter_reasons": list(graph_result.filter_reasons), "diagnostic": graph_result.diagnostic}, "error": None})
-            review = AuditIssueResult("工程合理性风险", task.name + "缺少可用图线索，需专家复核", suggestion=graph_result.diagnostic or "未找到足够历史案例线索", machine_status="manual_review")
-            return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", tuple(evidence), manual_reviews=(review,), diagnostics=(graph_result.diagnostic or "图线索不足",), execution_trace=tuple(trace + [{"step": 3, "stage": "reasonableness_model", "status": "not_called", "input": {}, "output": {"reason": "no_graph_evidence"}, "error": None}]))
+            summary = task.name + "缺少可用图线索，需专家复核"
+            if self.model:
+                trace.append({"step": len(trace) + 1, "stage": "reasonableness_model", "status": "started", "input": {"evidence_count": len(evidence), "graph_clue_count": 0, "no_graph_evidence": True}, "output": {}, "error": None})
+                output = dict(self.model(task, tuple(evidence), graph_result, run_id=run_id))
+                suggestions = [str(item.get("summary") or item.get("description") or "工程合理性需人工复核") for item in output.get("issues", ()) if isinstance(item, Mapping)]
+                if suggestions:
+                    summary = "；".join(suggestions)
+                trace.append({"step": len(trace) + 1, "stage": "reasonableness_model", "status": "completed", "input": {}, "output": {"issue_count": len(suggestions), "no_graph_evidence": True}, "error": None})
+            review = AuditIssueResult("工程合理性风险", summary, suggestion=graph_result.diagnostic or "未找到足够历史案例线索", machine_status="manual_review")
+            if not self.model:
+                trace.append({"step": len(trace) + 1, "stage": "reasonableness_model", "status": "not_called", "input": {}, "output": {"reason": "no_graph_evidence"}, "error": None})
+            return TaskExecutionResult(task.task_id, task.route, "completed", "manual_review", tuple(evidence), manual_reviews=(review,), diagnostics=(graph_result.diagnostic or "图线索不足",), execution_trace=tuple(trace))
 
         second_search = None
         output = {}
