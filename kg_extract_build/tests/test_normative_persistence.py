@@ -170,3 +170,29 @@ class NormativePersistenceTests(unittest.TestCase):
         indexes = NormativeStore(EnabledIndexBackend()).list_audit_enabled_indexes()
 
         self.assertEqual(indexes, [])
+
+    def test_historical_version_references_use_columns_defined_by_audit_schema(self):
+        class HistoricalReferenceBackend(InMemoryBackend):
+            def _read(self, sql, params=None):
+                compact = " ".join(sql.split())
+                self.statements.append(compact)
+                if "FROM audit_declared_norm" in compact:
+                    return [{"reference_type": "declared_norm", "reference_id": 7, "run_id": "run-1"}]
+                if "FROM audit_applicability_result" in compact:
+                    return [{"reference_type": "applicability", "reference_id": 11, "run_id": "run-2"}]
+                if "FROM audit_task_evidence" in compact:
+                    return [{"reference_type": "task_evidence", "reference_id": 13, "run_id": "run-3"}]
+                return []
+
+        backend = HistoricalReferenceBackend()
+
+        refs = NormativeStore(backend).historical_version_references("version-1")
+
+        sql = " ".join(backend.statements)
+        self.assertNotIn("audit_retrieval_candidate c", sql)
+        self.assertNotIn("c.version_id", sql)
+        self.assertNotIn("c.clause_id", sql)
+        self.assertIn("audit_declared_norm", sql)
+        self.assertIn("audit_applicability_result", sql)
+        self.assertIn("audit_task_evidence", sql)
+        self.assertEqual([item["reference_type"] for item in refs], ["declared_norm", "applicability", "task_evidence"])

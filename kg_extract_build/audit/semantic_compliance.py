@@ -35,10 +35,9 @@ def filter_clause_candidates(
     warnings: list[str] = []
     declared = tuple(getattr(scope, "declared_families", ()) or ())
     declared_keys = {_norm_normative_identity(value) for value in declared}
-    allowed_family_ids = {str(value) for value in (getattr(scope, "family_ids", ()) or ())}
     for item in result.get("evidence", ()):
         candidate = dict(item)
-        declared_match = not declared_keys or _matches_declared(candidate, declared_keys, allowed_family_ids)
+        declared_match = scope is None or bool(declared_keys) and _matches_declared(candidate, declared_keys)
         version_valid = _version_is_valid(candidate, getattr(scope, "audit_year", None))
         substitute_chain_valid = _substitute_chain_is_valid(candidate)
         clause_complete = bool(
@@ -130,9 +129,7 @@ def _norm_normative_identity(value) -> str:
     return re.sub(r"[《》()（）\[\]{}\s·,，、:：;；/\\_-]+", "", text)
 
 
-def _matches_declared(item: Mapping[str, Any], declared_keys: set[str], allowed_family_ids: set[str]) -> bool:
-    if str(item.get("family_id", "")) in allowed_family_ids:
-        return True
+def _matches_declared(item: Mapping[str, Any], declared_keys: set[str]) -> bool:
     values = (
         item.get("family_name"), item.get("canonical_name"), item.get("display_name"),
         item.get("standard_code_base"), item.get("standard_code"), item.get("family_id"),

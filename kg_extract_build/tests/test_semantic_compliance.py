@@ -2,9 +2,11 @@ import unittest
 from types import SimpleNamespace
 
 from kg_extract_build.audit.semantic_compliance import (
+    filter_clause_candidates,
     select_published_clause_evidence,
     validate_compliance_conclusion,
 )
+from kg_extract_build.audit.normative_scope import NormativeScope
 
 
 def eligible_version_fields():
@@ -44,6 +46,7 @@ class SemanticComplianceTests(unittest.TestCase):
                     {
                         "clause_id": "c1", "text": "条款一", "release_id": "r1",
                         "version_id": "v1", "family_id": "family-1",
+                        "standard_code": "Q/SY1858-2015",
                         "source_type": "spec", **eligible_version_fields(),
                     },
                     {
@@ -56,6 +59,33 @@ class SemanticComplianceTests(unittest.TestCase):
             scope,
         )
         self.assertEqual([item["clause_id"] for item in result], ["c1"])
+
+    def test_only_canonicalized_declared_families_can_supply_automatic_evidence(self):
+        scope = NormativeScope.freeze(
+            2025,
+            ["《页岩气地面工程设计规范》 Q/SY 1858-2015"],
+            ["supplemental-family"],
+        )
+
+        selected, trace, warnings = filter_clause_candidates(
+            {"evidence": [
+                {
+                    "clause_id": "declared", "version_id": "declared-version", "release_id": "r1",
+                    "standard_code": "Q/SY1858-2015", "text": "声明规范条款", "source_type": "spec",
+                    **eligible_version_fields(),
+                },
+                {
+                    "clause_id": "supplemental", "version_id": "supplemental-version", "release_id": "r1",
+                    "family_id": "supplemental-family", "text": "补充规范条款", "source_type": "spec",
+                    **eligible_version_fields(),
+                },
+            ]},
+            scope,
+        )
+
+        self.assertEqual([item["clause_id"] for item in selected], ["declared"])
+        self.assertEqual(trace[1]["filter_reason"], "not_declared_norm")
+        self.assertEqual(warnings, ("declared_norm_omission",))
 
 
 if __name__ == "__main__":

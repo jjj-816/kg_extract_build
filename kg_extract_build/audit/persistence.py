@@ -348,11 +348,18 @@ class MySQLAuditStore:
                         (result.execution_status, result.result_status, "；".join(result.diagnostics) or None, now, execution_id),
                     )
                     for evidence in result.evidence:
+                        evidence_role = evidence.get("evidence_type") or "document"
+                        document_block_id = evidence.get("block_id") if evidence_role == "document" else None
+                        external_evidence_id = (
+                            evidence.get("clause_id") if evidence_role == "normative_clause"
+                            else evidence.get("clue_id") if evidence_role == "graph_clue"
+                            else None
+                        )
                         cursor.execute(
                             """INSERT INTO audit_task_evidence
                                (execution_id,evidence_role,external_evidence_id,document_block_id,evidence_snapshot,created_at)
-                               VALUES (%s,'document',NULL,%s,%s,%s)""",
-                            (execution_id, evidence["block_id"], _json(evidence), now),
+                               VALUES (%s,%s,%s,%s,%s,%s)""",
+                            (execution_id, evidence_role, external_evidence_id, document_block_id, _json(evidence), now),
                         )
                     for issue in (*result.issues, *result.manual_reviews, *result.offline_items, *result.advisories):
                         cursor.execute(

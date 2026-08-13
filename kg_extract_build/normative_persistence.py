@@ -277,12 +277,23 @@ class NormativeStore:
         )
 
     def historical_version_references(self, version_id: str) -> list[dict]:
-        return self._backend._read(
-            "SELECT DISTINCT e.execution_id, e.run_id, c.clause_id, c.version_id "
-            "FROM audit_task_execution e "
-            "JOIN audit_retrieval_candidate c ON c.execution_id=e.execution_id "
-            "WHERE c.version_id=%s", (version_id,)
+        declared = self._backend._read(
+            "SELECT 'declared_norm' AS reference_type, declared_norm_id AS reference_id, run_id "
+            "FROM audit_declared_norm WHERE version_id=%s", (version_id,)
         )
+        applicability = self._backend._read(
+            "SELECT 'applicability' AS reference_type, a.applicability_id AS reference_id, e.run_id "
+            "FROM audit_applicability_result a "
+            "JOIN audit_task_execution e ON e.execution_id=a.execution_id "
+            "WHERE a.version_id=%s", (version_id,)
+        )
+        evidence = self._backend._read(
+            "SELECT 'task_evidence' AS reference_type, t.task_evidence_id AS reference_id, e.run_id "
+            "FROM audit_task_evidence t "
+            "JOIN audit_task_execution e ON e.execution_id=t.execution_id "
+            "WHERE JSON_UNQUOTE(JSON_EXTRACT(t.evidence_snapshot, '$.version_id'))=%s", (version_id,)
+        )
+        return [*declared, *applicability, *evidence]
 
     def delete_index_records(self, index_id: str) -> None:
         self._backend._write(
