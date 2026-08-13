@@ -18,7 +18,9 @@ from .persistence import MySQLExperimentStore
 
 
 def _store():
-    return NormativeStore(MySQLExperimentStore.from_env())
+    backend = MySQLExperimentStore.from_env()
+    backend.ensure_normative_audit_schema()
+    return NormativeStore(backend)
 
 
 def _encoder():

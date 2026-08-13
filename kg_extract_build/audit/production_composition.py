@@ -93,6 +93,7 @@ class ProductionAuditComposition:
         from ..schema import KGSchema
 
         backend = MySQLExperimentStore.from_env()
+        backend.ensure_normative_audit_schema()
         store = NormativeStore(backend)
         release_id = (release_id or os.getenv("KG_AUDIT_NORMATIVE_RELEASE_ID", "")).strip()
         # A release is optional for daily audit. If supplied, retain it only as

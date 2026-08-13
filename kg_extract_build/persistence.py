@@ -599,6 +599,16 @@ class MySQLExperimentStore(BaseExperimentStore):
                         "ALTER TABLE kg_experiment_run ADD COLUMN deletion_state "
                         "VARCHAR(32) NOT NULL DEFAULT 'active'"
                     )
+            connection.commit()
+        except Exception:
+            connection.rollback()
+            raise
+
+    def ensure_normative_audit_schema(self):
+        """Apply only the idempotent migration required by normative auditing."""
+        connection = self._connection()
+        try:
+            with connection.cursor() as cursor:
                 cursor.execute(
                     """
                     SELECT COUNT(*) FROM information_schema.columns
