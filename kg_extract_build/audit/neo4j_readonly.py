@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import json
 import os
 from typing import Any, Mapping
 
@@ -68,12 +69,35 @@ class Neo4jReadOnlyGraph(ReadOnlyGraph):
             "CASE WHEN size(assertions) = 0 THEN 0 ELSE size(assertions) END AS hops, "
             "a.document_id AS source_document_id, "
             "coalesce(a.evidence_sentence,a.raw_text,'') AS evidence_sentence, "
+            "a.evidence_json AS evidence_json, "
             "coalesce(a.summary,'') AS summary, true AS confirmed_case"
         )
         with self.driver.session(database=self.database) as session:
-            return [record.data() if hasattr(record, "data") else dict(record) for record in session.run(
+            rows = [record.data() if hasattr(record, "data") else dict(record) for record in session.run(
                 cypher, query_text=query or "", relationship_types=list(allowed), task_id=task_id,
             )]
+        for row in rows:
+            if not str(row.get("evidence_sentence") or "").strip():
+                row["evidence_sentence"] = _legacy_evidence_sentence(row.get("evidence_json"))
+        return rows
 
     def close(self) -> None:
         self.driver.close()
+
+
+def _legacy_evidence_sentence(value: Any) -> str:
+    """Read the first usable sentence from legacy RelationAssertion evidence_json."""
+    if not value:
+        return ""
+    try:
+        evidence = json.loads(value) if isinstance(value, str) else value
+    except (TypeError, json.JSONDecodeError):
+        return ""
+    if not isinstance(evidence, list):
+        return ""
+    for item in evidence:
+        if isinstance(item, Mapping):
+            sentence = str(item.get("sentence") or "").strip()
+            if sentence:
+                return sentence
+    return ""

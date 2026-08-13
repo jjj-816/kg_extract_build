@@ -12,13 +12,17 @@ class Record:
 
 
 class Result:
+    def __init__(self, rows=None):
+        self.rows = rows or [Record(clue_id="a1", relationship_type="USES", source_document_id="d1", evidence_sentence="source")]
+
     def __iter__(self):
-        return iter([Record(clue_id="a1", relationship_type="USES", source_document_id="d1", evidence_sentence="source")])
+        return iter(self.rows)
 
 
 class Session:
-    def __init__(self):
+    def __init__(self, rows=None):
         self.calls = []
+        self.rows = rows
 
     def __enter__(self):
         return self
@@ -28,12 +32,12 @@ class Session:
 
     def run(self, query, **params):
         self.calls.append((query, params))
-        return Result()
+        return Result(self.rows)
 
 
 class Driver:
-    def __init__(self):
-        self.session_instance = Session()
+    def __init__(self, rows=None):
+        self.session_instance = Session(rows)
         self.closed = False
 
     def session(self, **kwargs):
@@ -62,6 +66,23 @@ class Neo4jReadOnlyTests(unittest.TestCase):
         driver = Driver()
         Neo4jReadOnlyGraph(driver).close()
         self.assertTrue(driver.closed)
+
+    def test_query_uses_legacy_evidence_json_when_direct_evidence_is_empty(self):
+        driver = Driver([Record(
+            clue_id="a1", assertion_id="a1", relationship_type="USES", source_document_id="d1",
+            evidence_sentence="", evidence_json=(
+                '[{"sentence":"作业人员正确佩戴劳动保护用品。"},'
+                '{"sentence":"另一条证据。"}]'
+            ),
+        )])
+
+        rows = Neo4jReadOnlyGraph(driver).query_clues(
+            task_id="HSE-001", query="劳动保护用品", relationship_types=("USES",), max_hops=2,
+        )
+
+        self.assertEqual(rows[0]["evidence_sentence"], "作业人员正确佩戴劳动保护用品。")
+        query, _ = driver.session_instance.calls[0]
+        self.assertIn("a.evidence_json AS evidence_json", query)
 
 
 if __name__ == "__main__":
