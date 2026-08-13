@@ -54,29 +54,53 @@ class TaskRetrievalPlanner:
             except Exception as exc:
                 diagnostics.append(f"检索规划模型失败：{exc}")
                 raw = {}
-        try:
-            normative = self._queries(raw.get("normative_queries", ()))
-            graph = self._queries(raw.get("graph_queries", ()))
+        controlled = self._controlled_lists(raw, diagnostics)
+        raw_relationships: tuple[str, ...] = ()
+        if controlled is None:
+            normative, graph, relationships, anchors = (), (), (), block_ids
+        else:
+            normative = self._queries(controlled["normative_queries"])
+            graph = self._queries(controlled["graph_queries"])
+            raw_relationships = self._queries(controlled["relationship_types"])
             relationships = tuple(
-                item for item in self._queries(raw.get("relationship_types", ()))
+                item for item in raw_relationships
                 if not self.allowed_relationships or item in self.allowed_relationships
             )
-        except RetrievalPlanError as exc:
-            diagnostics.append(str(exc))
-            normative, graph, relationships = (), (), ()
-        anchors = tuple(str(item) for item in raw.get("document_block_ids", block_ids) if str(item) in block_ids)
-        if not anchors:
-            anchors = block_ids
-            diagnostics.append("模型未返回有效证据锚点，回退为全部方案证据")
+            anchors = tuple(item for item in controlled["document_block_ids"] if item in block_ids)
+            unknown_anchors = tuple(item for item in controlled["document_block_ids"] if item not in block_ids)
+            if unknown_anchors:
+                diagnostics.append("document_block_ids 包含不存在的证据锚点")
+            if not anchors:
+                anchors = block_ids
+                diagnostics.append("模型未返回有效证据锚点，回退为全部方案证据")
         if not normative and not graph:
             diagnostics.append("未生成规范或图查询词")
         interaction = getattr(self.model, "last_interaction", None)
         if interaction:
             diagnostics.append("retrieval_planner_io_captured")
-        raw_relationships = tuple(self._queries(raw.get("relationship_types", ()))) if raw.get("relationship_types") else ()
         if raw_relationships and len(raw_relationships) != len(relationships):
             diagnostics.append("模型返回的关系不在完整 Schema 中，已过滤")
         return RetrievalPlan(task.task_id, self.prompt_version, anchors, normative, graph, relationships, tuple(diagnostics))
+
+    @staticmethod
+    def _controlled_lists(raw: Mapping[str, Any], diagnostics: list[str]) -> dict[str, list[str]] | None:
+        fields = ("document_block_ids", "normative_queries", "graph_queries", "relationship_types")
+        if not isinstance(raw, Mapping) or set(raw) != set(fields):
+            diagnostics.append("检索规划输出不符合受控 JSON 契约")
+            return None
+        result: dict[str, list[str]] = {}
+        for field in fields:
+            values = raw[field]
+            if not isinstance(values, list):
+                diagnostics.append(f"{field} 必须是列表")
+                return None
+            if len(values) > 5 or any(not isinstance(value, str) for value in values):
+                diagnostics.append("检索规划输出不符合受控 JSON 契约")
+                return None
+            if not values:
+                diagnostics.append(f"{field} 为空列表")
+            result[field] = values
+        return result
 
     @staticmethod
     def _queries(values) -> tuple[str, ...]:
