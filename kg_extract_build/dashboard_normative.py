@@ -127,9 +127,12 @@ def render_index_area(store, profile, encoder):
                             st.rerun()
                         st.error("版本必须为 effective 且元数据已确认后才能启用。")
                 st.divider()
-                st.warning("以下操作会清理规范资产，请先确认。")
-                confirm = st.checkbox("我确认执行规范索引清理", key=f"confirm_normative_delete_{selected_index['index_id']}")
-                if confirm and st.button("删除索引（保留版本和条款）", key=f"delete_normative_index_{selected_index['index_id']}"):
+                st.warning("以下是两类独立的危险操作，请分别确认；删除索引不会删除规范版本和条款。")
+                confirm_index_delete = st.checkbox(
+                    "我确认删除该规范索引（保留规范版本、条款和发布快照）",
+                    key=f"confirm_normative_index_delete_{selected_index['index_id']}",
+                )
+                if confirm_index_delete and st.button("删除索引（保留版本和条款）", key=f"delete_normative_index_{selected_index['index_id']}"):
                     try:
                         build_normative_vector_store().delete_index(profile, selected_index["index_id"])
                         store.delete_index_records(selected_index["index_id"])
@@ -137,7 +140,11 @@ def render_index_area(store, profile, encoder):
                         st.rerun()
                     except Exception as exc:
                         st.error(f"删除索引失败，已停止后续清理：{exc}")
-                if confirm and st.button("彻底删除规范版本", key=f"delete_normative_version_{version['version_id']}"):
+                confirm_version_delete = st.checkbox(
+                    "我确认彻底删除该规范版本（同时删除条款、索引及关联向量）",
+                    key=f"confirm_normative_version_delete_{version['version_id']}",
+                )
+                if confirm_version_delete and st.button("彻底删除规范版本", key=f"delete_normative_version_{version['version_id']}"):
                     try:
                         refs = store.historical_version_references(version["version_id"])
                         if refs:
