@@ -8,7 +8,7 @@ from .bounded_graph import GraphRetrievalResult
 from .executor import AuditIssueResult, TaskExecutionResult
 
 
-def build_retrieval_planning_trace(retrieval_plan, evidence, planner_interaction=None) -> dict[str, Any]:
+def build_retrieval_planning_trace(retrieval_plan, evidence, planner_interaction=None, graph_entity_interaction=None) -> dict[str, Any]:
     """Freeze the planning trace before any external graph operation starts."""
     evidence_text = "\n".join(_evidence_text(item) for item in evidence if _evidence_text(item))
     return {
@@ -23,6 +23,10 @@ def build_retrieval_planning_trace(retrieval_plan, evidence, planner_interaction
         "output": {
             "normative_queries": list(retrieval_plan.normative_queries),
             "graph_queries": list(retrieval_plan.graph_queries),
+            "graph_entities": [
+                {"name": item.name, "entity_type": item.entity_type, "evidence_block_ids": list(item.evidence_block_ids)}
+                for item in getattr(retrieval_plan, "graph_entities", ())
+            ],
             "relationship_types": list(retrieval_plan.relationship_types),
             "diagnostics": list(retrieval_plan.diagnostics),
             "llm_prompt": planner_interaction.get("prompt") if planner_interaction else None,
@@ -31,6 +35,9 @@ def build_retrieval_planning_trace(retrieval_plan, evidence, planner_interaction
             "llm_parsed_response": planner_interaction.get("parsed_response") if planner_interaction else None,
             "correction_raw_response": planner_interaction.get("correction_raw_response") if planner_interaction else None,
             "correction_parsed_response": planner_interaction.get("correction_parsed_response") if planner_interaction else None,
+            "graph_entity_llm_prompt": graph_entity_interaction.get("prompt") if graph_entity_interaction else None,
+            "graph_entity_llm_raw_response": graph_entity_interaction.get("raw_response") if graph_entity_interaction else None,
+            "graph_entity_correction_raw_response": graph_entity_interaction.get("correction_raw_response") if graph_entity_interaction else None,
         },
         "error": None,
     }
@@ -46,7 +53,7 @@ class ReasonablenessRuntime:
         if retrieval_plan is not None:
             trace.append({"step": 2, **(planning_trace or build_retrieval_planning_trace(retrieval_plan, evidence, planner_interaction))})
         for query_trace in graph_query_trace:
-            trace.append({"step": len(trace) + 1, "stage": "graph_retrieval", "status": query_trace["status"], "input": {"queries": [query_trace["query"]], "relationship_types": query_trace["relationship_types"], "query_source": query_trace.get("query_source"), "query_sent_to_neo4j": query_trace.get("query_sent_to_neo4j", False)}, "output": {"raw_hit_count": query_trace["raw_hit_count"], "accepted_clue_count": query_trace["accepted_clue_count"], "filter_reasons": query_trace["filter_reasons"], "diagnostic": query_trace["diagnostic"]}, "error": query_trace["diagnostic"] if query_trace["status"] == "failed" else None})
+            trace.append({"step": len(trace) + 1, "stage": "graph_retrieval", "status": query_trace["status"], "input": {"queries": [query_trace["query"]], "entity": query_trace.get("entity"), "entity_type": query_trace.get("entity_type"), "evidence_block_ids": query_trace.get("evidence_block_ids", []), "relationship_types": query_trace["relationship_types"], "query_source": query_trace.get("query_source"), "query_sent_to_neo4j": query_trace.get("query_sent_to_neo4j", False)}, "output": {"raw_hit_count": query_trace["raw_hit_count"], "candidate_count": query_trace.get("candidate_count", query_trace["raw_hit_count"]), "deduplicated_count": query_trace.get("deduplicated_count", query_trace["accepted_clue_count"]), "limit_applied": query_trace.get("limit_applied", False), "accepted_clue_count": query_trace["accepted_clue_count"], "filter_reasons": query_trace["filter_reasons"], "diagnostic": query_trace["diagnostic"]}, "error": query_trace["diagnostic"] if query_trace["status"] == "failed" else None})
         evidence.extend({
             "evidence_type": "graph_clue",
             "clue_id": clue.clue_id,

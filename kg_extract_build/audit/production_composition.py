@@ -126,6 +126,7 @@ class ProductionAuditComposition:
             graph = Neo4jReadOnlyGraph.from_env()
         schema = KGSchema(settings.SCHEMA_PATH)
         schema_relationship_types = tuple(item["name"] for item in schema.relation_types)
+        schema_entity_types = tuple(item["name"] for item in schema.entity_types)
         scope_preflight = adapter.preflight(scope, release_id)
         return cls.build(
             normative_search=lambda **kwargs: adapter.search(
@@ -142,6 +143,8 @@ class ProductionAuditComposition:
                 getattr(model, "retrieval_planner", None),
                 prompt_version="retrieval-plan-v1",
                 allowed_relationships=schema_relationship_types,
+                allowed_entity_types=schema_entity_types,
+                graph_entity_extractor=getattr(model, "graph_entity_extractor", None),
             ),
             graph_adapter=graph,
             graph_relationship_types=schema_relationship_types,

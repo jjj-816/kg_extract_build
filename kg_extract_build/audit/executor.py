@@ -623,7 +623,8 @@ class AuditOrchestrator:
                     from .reasonableness import build_retrieval_planning_trace
                     planned = retrieval_planner.plan(task, semantic_evidence)
                     planner_interaction = getattr(getattr(retrieval_planner, "model", None), "last_interaction", None)
-                    planning_trace = build_retrieval_planning_trace(planned, semantic_evidence, planner_interaction)
+                    graph_entity_interaction = getattr(getattr(retrieval_planner, "graph_entity_extractor", None), "last_interaction", None)
+                    planning_trace = build_retrieval_planning_trace(planned, semantic_evidence, planner_interaction, graph_entity_interaction)
                     trace_recorder = (audit_context or {}).get("execution_trace_recorder")
                     if trace_recorder is not None:
                         trace_recorder(task.task_id, {"step": 2, **planning_trace})
@@ -632,7 +633,13 @@ class AuditOrchestrator:
                     raw_hit_count = 0
                     graph_degraded = False
                     planning_mode = next((item for item in planned.diagnostics if item.startswith("planning_mode=")), "planning_mode=strict_contract")
-                    for query in planned.graph_queries if graph_adapter is not None else ():
+                    graph_entities = getattr(planned, "graph_entities", ())
+                    query_items = graph_entities or tuple(
+                        type("LegacyGraphQuery", (), {"name": query, "entity_type": None, "evidence_block_ids": ()})
+                        for query in planned.graph_queries
+                    )
+                    for graph_entity in query_items if graph_adapter is not None else ():
+                        query = graph_entity.name
                         try:
                             retrieved = retrieve_bounded_clues(
                                 graph_adapter,
@@ -646,11 +653,17 @@ class AuditOrchestrator:
                             graph_degraded = graph_degraded or retrieved.degraded
                             graph_query_trace.append({
                                 "query": query,
+                                "entity": query,
+                                "entity_type": graph_entity.entity_type,
+                                "evidence_block_ids": list(graph_entity.evidence_block_ids),
                                 "query_source": planning_mode,
                                 "query_sent_to_neo4j": True,
                                 "relationship_types": list(retrieved.relationship_types),
                                 "status": "failed" if retrieved.degraded else ("completed" if retrieved.clues else "no_evidence"),
                                 "raw_hit_count": retrieved.raw_hit_count,
+                                "candidate_count": retrieved.candidate_count,
+                                "deduplicated_count": retrieved.deduplicated_count,
+                                "limit_applied": retrieved.limit_applied,
                                 "accepted_clue_count": len(retrieved.clues),
                                 "filter_reasons": list(retrieved.filter_reasons),
                                 "diagnostic": retrieved.diagnostic,
@@ -662,11 +675,17 @@ class AuditOrchestrator:
                             graph_degraded = True
                             graph_query_trace.append({
                                 "query": query,
+                                "entity": query,
+                                "entity_type": graph_entity.entity_type,
+                                "evidence_block_ids": list(graph_entity.evidence_block_ids),
                                 "query_source": planning_mode,
                                 "query_sent_to_neo4j": True,
                                 "relationship_types": list(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())),
                                 "status": "failed",
                                 "raw_hit_count": 0,
+                                "candidate_count": 0,
+                                "deduplicated_count": 0,
+                                "limit_applied": False,
                                 "accepted_clue_count": 0,
                                 "filter_reasons": [],
                                 "diagnostic": str(exc),
@@ -674,7 +693,11 @@ class AuditOrchestrator:
                     if graph_adapter is None:
                         graph_result = GraphRetrievalResult((), True, "图服务未配置，已降级", tuple(planned.graph_queries), tuple(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())), 0)
                     elif clues:
-                        graph_result = GraphRetrievalResult(tuple(dict.fromkeys(clues)), graph_degraded, "; ".join(diagnostics) or None, tuple(planned.graph_queries), tuple(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())), raw_hit_count)
+                        deduplicated_clues = {}
+                        for clue in sorted(clues, key=lambda item: (item.hops, item.assertion_id)):
+                            deduplicated_clues.setdefault(clue.assertion_id, clue)
+                        selected_clues = tuple(list(deduplicated_clues.values())[:20])
+                        graph_result = GraphRetrievalResult(selected_clues, graph_degraded, "; ".join(diagnostics) or None, tuple(planned.graph_queries), tuple(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())), raw_hit_count, (), raw_hit_count, len(selected_clues), len(deduplicated_clues) > len(selected_clues))
                     elif diagnostics:
                         graph_result = GraphRetrievalResult((), graph_degraded, "; ".join(diagnostics), tuple(planned.graph_queries), tuple(planned.relationship_types or (audit_context or {}).get("graph_relationship_types", ())), raw_hit_count)
                 if graph_result is None:

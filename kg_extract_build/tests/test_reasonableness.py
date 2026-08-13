@@ -1,7 +1,7 @@
 import unittest
 
 from kg_extract_build.audit.bounded_graph import GraphClue, GraphRetrievalResult
-from kg_extract_build.audit.reasonableness import ReasonablenessRuntime
+from kg_extract_build.audit.reasonableness import ReasonablenessRuntime, build_retrieval_planning_trace
 from kg_extract_build.audit.models import AuditTaskDefinition
 
 
@@ -9,6 +9,19 @@ TASK = AuditTaskDefinition("R-1", 1, "s", "合理性", "content_semantic", "sema
 
 
 class ReasonablenessTests(unittest.TestCase):
+    def test_planning_trace_contains_extracted_graph_entities_and_entity_llm_io(self):
+        from kg_extract_build.audit.retrieval_planner import GraphQueryEntity, RetrievalPlan
+        plan = RetrievalPlan(
+            "T1", "v1", ("B1",), (), ("地下管线",), ("HAS_PARAMETER",), (),
+            (GraphQueryEntity("地下管线", "施工对象", ("B1",)),),
+        )
+        trace = build_retrieval_planning_trace(
+            plan, [{"block_id": "B1", "raw_text": "确认地下管线"}],
+            graph_entity_interaction={"raw_response": '{"entities":[]}', "correction_raw_response": None},
+        )
+        self.assertEqual(trace["output"]["graph_entities"][0]["name"], "地下管线")
+        self.assertEqual(trace["output"]["graph_entity_llm_raw_response"], '{"entities":[]}')
+
     def test_graph_unavailable_degrades_to_manual_review(self):
         result = ReasonablenessRuntime().run(TASK, [{"block_id": "d1"}], GraphRetrievalResult((), True, "图服务不可用"), "run")
         self.assertEqual(result.execution_status, "failed")

@@ -83,6 +83,36 @@ class AuditExecutorTests(unittest.TestCase):
         self.assertEqual(graph.kwargs["query"], "压裂车")
         self.assertEqual(events[:2], [("trace", "retrieval_planning"), ("graph_adapter", "query_clues")])
 
+    def test_reasonableness_queries_each_extracted_entity_and_deduplicates_task_clues(self):
+        task = SimpleNamespace(task_id="T1", route="semantic_reasonableness", name="设备合理性", issue_categories=("工程合理性风险",), work_type_scope="all")
+        document = StoredAuditDocument("doc", "方案.docx", "docx", "a" * 64, None, "")
+        block = AuditDocumentBlock("B1", "doc", 1, "paragraph", ("章节",), "word/body[1]/paragraph", "压裂车与高压管汇", "压裂车与高压管汇")
+        parsed = ParsedAuditDocument(document, (block,), 1, 0, 0, False)
+        group = TaskEvidenceGroup("g", "B1", (), ("章节",), (), 1, "test")
+        preview = SimpleNamespace(parsed_document=parsed, task_library=SimpleNamespace(tasks=(task,), task_library_id="lib", version="v", sha256="x"), locations={"T1": TaskLocationResult("T1", "located", evidence_groups=(group,))})
+
+        class Planner:
+            model = None
+            def plan(self, _task, _evidence):
+                from kg_extract_build.audit.retrieval_planner import GraphQueryEntity
+                return RetrievalPlan("T1", "v1", ("B1",), (), ("压裂车", "高压管汇"), ("USES",), ("graph_query_mode=entity_extraction",), (
+                    GraphQueryEntity("压裂车", "设备工具", ("B1",)), GraphQueryEntity("高压管汇", "设备工具", ("B1",)),
+                ))
+
+        class Graph:
+            def __init__(self): self.calls = []
+            def query_clues(self, **kwargs):
+                self.calls.append(kwargs)
+                return [{"clue_id": "a1", "assertion_id": "a1", "relationship_type": "USES", "hops": 1, "match_kind": "direct", "confirmed_case": True, "source_document_id": "23", "evidence_sentence": "正确方案证据"}]
+
+        graph = Graph()
+        result = AuditOrchestrator().execute_preview(preview, {"reasonableness_runtime": ReasonablenessRuntime(), "retrieval_planner": Planner(), "graph_adapter": graph, "graph_relationship_types": ("USES",)})[0]
+        self.assertEqual([call["query"] for call in graph.calls], ["压裂车", "高压管汇"])
+        self.assertEqual([item["assertion_id"] for item in result.evidence if item.get("evidence_type") == "graph_clue"], ["a1"])
+        graph_traces = [item for item in result.execution_trace if item["stage"] == "graph_retrieval"]
+        self.assertEqual(graph_traces[0]["input"]["entity"], "压裂车")
+        self.assertEqual(graph_traces[0]["output"]["candidate_count"], 1)
+
     def test_reasonableness_trace_marks_empty_graph_plan_as_degraded(self):
         task = SimpleNamespace(task_id="T1", route="semantic_reasonableness", name="task")
         plan = RetrievalPlan("T1", "v1", ("d1",), (), (), (), ("graph_queries 为空列表",))
