@@ -175,9 +175,11 @@ def normalize_compliance_conclusion(output: Mapping[str, Any]) -> dict[str, Any]
         normalized.setdefault("machine_status", "open")
         document_ids.extend(normalized.get("document_evidence_ids", ()) or ())
         normative_ids.extend(normalized.get("normative_evidence_ids", ()) or ())
-        for key in ("issue_type", "type", "description", "content", "document_evidence_ids", "normative_evidence_ids"):
-            normalized.pop(key, None)
-        issues.append(normalized)
+        allowed_issue_fields = {
+            "category", "summary", "affected_scope", "suggestion", "actual_value", "expected_value",
+            "candidate_rows", "candidate_total", "candidate_truncated", "machine_status",
+        }
+        issues.append({key: item for key, item in normalized.items() if key in allowed_issue_fields})
     value["issues"] = issues
     value["document_evidence_ids"] = list(dict.fromkeys(document_ids))
     value["normative_evidence_ids"] = list(dict.fromkeys(str(item) for item in normative_ids))
