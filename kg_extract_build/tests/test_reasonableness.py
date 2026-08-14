@@ -75,6 +75,36 @@ class ReasonablenessTests(unittest.TestCase):
         self.assertEqual(result.manual_reviews[0].summary, "Cable trenching is placed before the safety briefing.")
         self.assertEqual(result.manual_reviews[0].suggestion, "Brief workers before construction.")
 
+    def test_model_risk_becomes_observed_conclusion(self):
+        clue = GraphClue("c1", "R-1", "PRECEDES", 1, "a1", "doc-old", "baseline sequence", "sequence")
+
+        def model(*_args, **_kwargs):
+            return {"issues": [{"risk": "The sequence omits the safety briefing."}]}
+
+        result = ReasonablenessRuntime(model).run(
+            TASK, [{"block_id": "d1", "raw_text": "sequence"}], GraphRetrievalResult((clue,)), "run"
+        )
+
+        self.assertEqual(result.manual_reviews[0].summary, "The sequence omits the safety briefing.")
+
+    def test_model_io_trace_keeps_correction_response(self):
+        clue = GraphClue("c1", "R-1", "PRECEDES", 1, "a1", "doc-old", "baseline sequence", "sequence")
+
+        def model(*_args, **_kwargs):
+            return {"issues": []}
+
+        model.last_interaction = {
+            "raw_response": "first response",
+            "parsed_response": {"issues": []},
+            "correction_raw_response": "corrected response",
+        }
+        result = ReasonablenessRuntime(model).run(
+            TASK, [{"block_id": "d1", "raw_text": "sequence"}], GraphRetrievalResult((clue,)), "run"
+        )
+
+        trace = next(item for item in result.execution_trace if item["stage"] == "reasonableness_model_io")
+        self.assertEqual(trace["output"]["correction_raw_response"], "corrected response")
+
     def test_no_graph_clue_still_calls_model_for_manual_review_advisory(self):
         calls = []
         def model(*_args, **_kwargs):

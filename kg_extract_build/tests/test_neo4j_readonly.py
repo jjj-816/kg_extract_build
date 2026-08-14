@@ -55,6 +55,7 @@ class Neo4jReadOnlyTests(unittest.TestCase):
         self.assertEqual(rows[0]["clue_id"], "a1")
         query, params = driver.session_instance.calls[0]
         self.assertIn("MATCH (matched:Entity)-[head:HAS_ASSERTION]-(direct:RelationAssertion)", query)
+        self.assertIn("MATCH (matched:Entity)-[tail:OBJECT]-(direct:RelationAssertion)", query)
         self.assertIn("UNION", query)
         self.assertIn("DISTINCT", query)
         self.assertIn("1 AS hops", query)

@@ -62,17 +62,25 @@ class Neo4jReadOnlyGraph(ReadOnlyGraph):
             "candidate.document_id AS source_document_id, coalesce(candidate.evidence_sentence,candidate.raw_text,'') AS evidence_sentence, "
             "candidate.evidence_json AS evidence_json, coalesce(candidate.summary,'') AS summary, true AS confirmed_case"
         )
-        direct = (
+        direct_head = (
             "MATCH (matched:Entity)-[head:HAS_ASSERTION]-(direct:RelationAssertion) "
             "WHERE " + match_condition + "AND direct.relation_type IN $relationship_types "
             "AND NOT coalesce(head.__kg_aggregate,false) "
             "WITH matched, direct AS candidate, 1 AS hops, 'direct' AS match_kind "
             "RETURN DISTINCT " + fields
         )
+        direct_tail = (
+            "MATCH (matched:Entity)-[tail:OBJECT]-(direct:RelationAssertion) "
+            "WHERE " + match_condition + "AND direct.relation_type IN $relationship_types "
+            "AND NOT coalesce(tail.__kg_aggregate,false) "
+            "WITH matched, direct AS candidate, 1 AS hops, 'direct' AS match_kind "
+            "RETURN DISTINCT " + fields
+        )
+        direct = direct_head + " UNION " + direct_tail
         if max_hops == 1:
             cypher = direct
         else:
-            expanded = (
+            expanded_head = (
                 "MATCH (matched:Entity)-[head:HAS_ASSERTION]-(first:RelationAssertion)-[tail:OBJECT]-(neighbor:Entity) "
                 "MATCH (neighbor)-[next_head:HAS_ASSERTION]-(expanded:RelationAssertion) "
                 "WHERE " + match_condition + "AND expanded.relation_type IN $relationship_types "
@@ -82,6 +90,17 @@ class Neo4jReadOnlyGraph(ReadOnlyGraph):
                 "WITH matched, expanded AS candidate, 2 AS hops, 'expanded' AS match_kind "
                 "RETURN DISTINCT " + fields
             )
+            expanded_tail = (
+                "MATCH (matched:Entity)-[tail:OBJECT]-(first:RelationAssertion)-[head:HAS_ASSERTION]-(neighbor:Entity) "
+                "MATCH (neighbor)-[next_tail:OBJECT]-(expanded:RelationAssertion) "
+                "WHERE " + match_condition + "AND expanded.relation_type IN $relationship_types "
+                "AND expanded.assertion_id <> first.assertion_id "
+                "AND NOT coalesce(tail.__kg_aggregate,false) AND NOT coalesce(head.__kg_aggregate,false) "
+                "AND NOT coalesce(next_tail.__kg_aggregate,false) "
+                "WITH matched, expanded AS candidate, 2 AS hops, 'expanded' AS match_kind "
+                "RETURN DISTINCT " + fields
+            )
+            expanded = expanded_head + " UNION " + expanded_tail
             cypher = direct + " UNION " + expanded
         with self.driver.session(database=self.database) as session:
             rows = [record.data() if hasattr(record, "data") else dict(record) for record in session.run(
