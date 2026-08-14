@@ -148,6 +148,35 @@ class ProviderRuntimeTests(unittest.TestCase):
 
         self.assertEqual(output, {"issues": []})
 
+    def test_reasonableness_contract_corrects_risk_to_summary(self):
+        class Completions:
+            def __init__(self):
+                self.calls = []
+
+            def create(self, **kwargs):
+                self.calls.append(kwargs)
+                content = (
+                    '{"issues":[{"risk":"unsafe sequence","evidence":["a1"]}]}'
+                    if len(self.calls) == 1 else
+                    '{"issues":[{"summary":"unsafe sequence","suggestion":"fix it","evidence":["a1"]}]}'
+                )
+                return SimpleNamespace(choices=[SimpleNamespace(message=SimpleNamespace(content=content))])
+
+        class Client:
+            def __init__(self, **_kwargs):
+                self.chat = SimpleNamespace(completions=Completions())
+
+        client = Client()
+        model = build_structured_model(api_key="key", base_url="https://provider.test/v1", model="audit-model", client_factory=lambda **_kwargs: client)
+        task = SimpleNamespace(task_id="R-1", name="reasonableness", route="semantic_reasonableness")
+
+        result = model(task, [{"block_id": "d1", "raw_text": "evidence"}], SimpleNamespace(clues=()), run_id="run-1")
+
+        self.assertEqual(result["issues"][0]["summary"], "unsafe sequence")
+        self.assertEqual(len(client.chat.completions.calls), 2)
+        correction = client.chat.completions.calls[1]["messages"][-1]["content"]
+        self.assertIn("summary", correction)
+
     def test_compliance_correction_prompt_requires_controlled_conclusion_fields(self):
         client = None
         def factory(**kwargs):

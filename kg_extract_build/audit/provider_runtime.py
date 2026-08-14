@@ -52,6 +52,23 @@ def _validate_graph_entity_payload(payload: Any) -> dict[str, list[dict[str, Any
     return {"entities": normalized}
 
 
+def _validate_reasonableness_payload(payload: Any) -> dict[str, list[dict[str, Any]]]:
+    if not isinstance(payload, dict) or set(payload) != {"issues"} or not isinstance(payload["issues"], list):
+        raise ValueError("reasonable audit output violates the controlled JSON contract")
+    normalized: list[dict[str, Any]] = []
+    for item in payload["issues"]:
+        if not isinstance(item, dict) or set(item) - {"summary", "suggestion", "evidence"}:
+            raise ValueError("reasonable audit output violates the controlled JSON contract")
+        summary = item.get("summary")
+        evidence = item.get("evidence")
+        if not isinstance(summary, str) or not summary.strip() or not isinstance(evidence, list) or any(not isinstance(value, str) for value in evidence):
+            raise ValueError("reasonable audit output violates the controlled JSON contract")
+        if "suggestion" in item and not isinstance(item["suggestion"], str):
+            raise ValueError("reasonable audit output violates the controlled JSON contract")
+        normalized.append(dict(item))
+    return {"issues": normalized}
+
+
 def build_structured_model(*, api_key: str, base_url: str, model: str, client_factory: Callable[..., Any] | None = None):
     """Build the callable expected by :class:`SemanticRuntime`.
 
@@ -135,6 +152,15 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
                 "issue_found、no_issue 或 manual_review；每个问题必须有 category、summary、machine_status；"
                 "issue_found 必须在顶层给出本输入中实际存在的 document_evidence_ids 和 normative_evidence_ids。"
             )
+        if not legacy_package and task.route == "semantic_reasonableness":
+            prompt["instruction"] = (
+                "Return only a JSON object with one top-level field: issues. "
+                "Each issue may contain only summary, suggestion, and evidence. "
+                "summary and evidence are required; evidence is an array of IDs present in the supplied evidence. "
+                "Example: {\"issues\":[{\"summary\":\"The construction sequence conflicts with a graph clue; manual review is required.\","
+                "\"suggestion\":\"Verify and correct the construction sequence.\",\"evidence\":[\"block_id: B1\",\"graph_clue: A1\"]}]}. "
+                "Do not use risk, description, or any other field, and do not claim normative non-compliance."
+            )
         messages = [
             {"role": "system", "content": "审计语义审核器，只输出最终 JSON。"},
             {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
@@ -148,6 +174,27 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
         )
         content = response.choices[0].message.content or "{}"
         result = json.loads(content)
+        correction_content = None
+        if not legacy_package and task.route == "semantic_reasonableness":
+            try:
+                result = _validate_reasonableness_payload(result)
+            except (ValueError, TypeError):
+                correction_messages = [
+                    *messages,
+                    {"role": "user", "content": (
+                        "The prior output violates the JSON contract. Return only issues; every issue must use only "
+                        "summary, suggestion, and evidence, with summary and evidence required. Do not use risk or description."
+                    )},
+                ]
+                correction_response = client.chat.completions.create(
+                    model=model, temperature=0, response_format={"type": "json_object"}, messages=correction_messages,
+                )
+                correction_content = correction_response.choices[0].message.content or "{}"
+                try:
+                    result = _validate_reasonableness_payload(json.loads(correction_content))
+                except (ValueError, TypeError, json.JSONDecodeError):
+                    # Preserve a legacy response for the runtime's explicit fallback mapper.
+                    result = json.loads(content)
         if legacy_package:
             result.setdefault("package_id", package_or_evidence.package_id)
         call.last_interaction = {
@@ -157,6 +204,7 @@ def build_structured_model(*, api_key: str, base_url: str, model: str, client_fa
             "messages": messages,
             "raw_response": content,
             "parsed_response": result,
+            "correction_raw_response": correction_content,
         }
         return result
 
