@@ -4,9 +4,22 @@ from pathlib import Path
 
 from docx import Document
 from streamlit.testing.v1 import AppTest
+from kg_extract_build import dashboard_audit
 
 
 class AuditDashboardTests(unittest.TestCase):
+    def test_provider_widget_defaults_are_initialized_only_when_absent(self):
+        state = {"audit_context_provider_base_url": "https://user.example/v1"}
+        original_state = dashboard_audit.st.session_state
+        try:
+            dashboard_audit.st.session_state = state
+            dashboard_audit._initialize_audit_provider_fields("zhipu", "zhipu")
+        finally:
+            dashboard_audit.st.session_state = original_state
+
+        self.assertEqual(state["audit_context_provider_base_url"], "https://user.example/v1")
+        self.assertTrue(state["audit_context_provider_model"])
+
     @staticmethod
     def _docx_bytes() -> bytes:
         document = Document()
