@@ -14,6 +14,9 @@ processed_docs.json
 /.agents/
 /docs/adr/
 /docs/design/
+/docs/agents/
 /docs/superpowers/
 /kg_extract_build/deleteMilvus.py
 /长宁H3平台泡排工艺施工_gold标注可视化.html
+/.scratch/
+AGENTS.md
