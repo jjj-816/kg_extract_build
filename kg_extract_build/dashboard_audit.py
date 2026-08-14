@@ -44,6 +44,23 @@ def _on_audit_provider_change() -> None:
     st.session_state["audit_context_provider_model"] = preset.default_model or os.getenv("LLM_MODEL", "")
 
 
+def _initialize_audit_provider_fields(provider_id: str, configured_provider: str) -> None:
+    """Set first-render provider defaults without overwriting widget state."""
+    preset = PROVIDERS[provider_id]
+    base_url = (
+        os.getenv("LLM_BASE_URL", "")
+        if provider_id == "custom"
+        else preset.default_base_url
+    ) or preset.default_base_url
+    model = (
+        os.getenv("LLM_MODEL", "")
+        if provider_id == configured_provider
+        else ""
+    ) or preset.default_model or "glm-4.5-air"
+    st.session_state.setdefault("audit_context_provider_base_url", base_url)
+    st.session_state.setdefault("audit_context_provider_model", model)
+
+
 def _load_preview(uploaded_file) -> tuple[AuditPreview | None, str | None]:
     data = uploaded_file.getvalue()
     upload_hash = hashlib.sha256(uploaded_file.name.encode("utf-8") + b"\0" + data).hexdigest()
@@ -453,22 +470,13 @@ def render_audit_page() -> None:
         on_change=_on_audit_provider_change,
     )
     provider_preset = PROVIDERS[provider_id]
+    _initialize_audit_provider_fields(provider_id, configured_provider)
     provider_base_url = st.text_input(
         "审核 provider Base URL",
-        value=(
-            os.getenv("LLM_BASE_URL", "")
-            if provider_id == "custom"
-            else provider_preset.default_base_url
-        ) or provider_preset.default_base_url,
         key="audit_context_provider_base_url",
     )
     provider_model = st.text_input(
         "审核模型",
-        value=(
-            os.getenv("LLM_MODEL", "")
-            if provider_id == configured_provider
-            else ""
-        ) or provider_preset.default_model or "glm-4.5-air",
         key="audit_context_provider_model",
     )
     provider_api_key = st.text_input(
